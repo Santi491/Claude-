@@ -2,7 +2,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: two-column workbench (inputs left, verdict right), stacks to one column on phones */
+/* Layout: order sheet on top (line items + boxes), verdict and courier comparison below; stacks on phones */
 :root {
   --bg: #f3f5f4; --surface: #ffffff; --fg: #17201d; --muted: #5d6b66; --line: #d6dedb;
   --accent: #0f7a5c; --accent-soft: #e1f2ec; --good: #157a3e; --bad: #b3261e; --warn: #9a6700;
@@ -17,160 +17,209 @@
   --bg: #0f1513; --surface: #17201d; --fg: #e6edea; --muted: #94a59f; --line: #2a3632;
   --accent: #3fc79c; --accent-soft: #163a2f; --good: #5fd28a; --bad: #ff8a80; --warn: #e5b94e; color-scheme: dark }
 body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 15px; line-height: 1.5; }
-.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 48px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 48px; display: flex; flex-direction: column; gap: 20px; }
 h1 { font-family: var(--display); font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
-.sub { color: var(--muted); margin: 6px 0 0; max-width: 65ch; }
-.grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 20px; margin-top: 24px; }
+.sub { color: var(--muted); margin: 6px 0 0; max-width: 70ch; }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
 @media (max-width: 820px) { .grid { grid-template-columns: minmax(0, 1fr); } }
-.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 h2 { font-family: var(--display); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0; font-weight: 700; }
-.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-@media (max-width: 460px) { .fields { grid-template-columns: minmax(0, 1fr); } }
-.full { grid-column: 1 / -1; }
-label { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--muted); font-weight: 500; }
-input, select { font: inherit; font-family: var(--mono); color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; width: 100%; box-sizing: border-box; }
+.fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 620px) { .fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+label { display: flex; flex-direction: column; gap: 4px; font-size: 0.82rem; color: var(--muted); font-weight: 500; }
+input, select { font: inherit; font-family: var(--mono); font-size: 0.9rem; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 7px 9px; width: 100%; box-sizing: border-box; }
 input:focus-visible, select:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-.presets { display: flex; flex-wrap: wrap; gap: 8px; }
-button.chip { font: inherit; font-size: 0.85rem; background: var(--accent-soft); color: var(--fg); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
-button.chip:hover { border-color: var(--accent); }
-.note { font-size: 0.8rem; color: var(--muted); margin: 0; }
+.tablewrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 760px; }
+th { text-align: left; font-size: 0.75rem; color: var(--muted); font-weight: 600; padding: 4px 6px; }
+td { padding: 4px 6px; vertical-align: middle; }
+td.num, th.num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 0.85rem; }
+td input { min-width: 0; }
+.c-name { width: 30%; }
+button { font: inherit; cursor: pointer; }
+.btn { font-size: 0.85rem; background: var(--accent); color: var(--surface); border: 0; border-radius: 6px; padding: 7px 12px; font-weight: 600; }
+.btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--line); }
+.x { background: transparent; border: 0; color: var(--muted); font-size: 1.1rem; padding: 2px 6px; }
+.x:hover { color: var(--bad); }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.note { font-size: 0.8rem; color: var(--muted); margin: 0; max-width: 80ch; }
 .verdict { border-radius: 8px; padding: 14px 16px; background: var(--accent-soft); display: flex; flex-direction: column; gap: 4px; }
 .verdict .big { font-family: var(--display); font-weight: 800; font-size: 1.5rem; }
 .verdict.good .big { color: var(--good); } .verdict.bad .big { color: var(--bad); } .verdict.warn .big { color: var(--warn); }
 .cmp { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 460px) { .cmp { grid-template-columns: minmax(0, 1fr); } }
 .card { border: 1px solid var(--line); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .card.best { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
 .card h3 { margin: 0; font-family: var(--display); font-size: 1rem; display: flex; justify-content: space-between; align-items: center; gap: 6px; flex-wrap: wrap; }
 .pill { font-family: var(--body); font-size: 0.7rem; font-weight: 600; background: var(--accent); color: var(--surface); border-radius: 999px; padding: 2px 8px; }
 .row { display: flex; justify-content: space-between; gap: 8px; font-size: 0.85rem; }
 .row span:last-child { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; }
-.row.total { border-top: 1px solid var(--line); padding-top: 6px; font-weight: 600; color: var(--fg); }
+.row.total { border-top: 1px solid var(--line); padding-top: 6px; font-weight: 600; }
 .row.dim { color: var(--muted); }
 .pos { color: var(--good); } .neg { color: var(--bad); }
+.weight { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.85rem; }
+.weight b { font-family: var(--mono); font-weight: 500; }
 </style>
 
 <div class="wrap">
-  <h1>Calculadora de Importación</h1>
-  <p class="sub">Componentes de EE.UU. a Cochabamba. Compara los dos couriers y te dice si conviene traerlo, frente al precio local.</p>
+  <header>
+    <h1>Calculadora de Importación</h1>
+    <p class="sub">Arma el pedido completo. El courier por kg cobra el peso de la caja de envío entera (productos con su caja + la caja exterior + relleno), así que pedir varios juntos reparte ese costo.</p>
+  </header>
+
+  <section class="panel">
+    <h2>Pedido</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr>
+          <th class="c-name">Producto</th><th>Cant.</th><th>Precio eBay USD c/u</th><th>Envío a casilla USD c/u</th><th>Peso c/u con su caja (g)</th><th>Venta Cbba Bs c/u</th><th class="num">Ganancia c/u</th><th></th>
+        </tr></thead>
+        <tbody id="lines"></tbody>
+      </table>
+    </div>
+    <div class="bar">
+      <button class="btn" type="button" id="add">Agregar producto</button>
+      <button class="btn ghost" type="button" id="sample">Cargar pedido de ejemplo</button>
+    </div>
+    <p class="note">Ejemplo con precios y pesos estimados, no son cotizaciones reales. Un procesador en caja pesa ~400–500 g, una RAM en blíster ~80–150 g, un SSD NVMe en caja ~60–100 g.</p>
+  </section>
 
   <div class="grid">
     <section class="panel">
-      <h2>Ejemplos rápidos</h2>
-      <div class="presets" id="presets"></div>
-      <p class="note">Los precios y pesos de los ejemplos son estimados, no cotizaciones reales. Reemplázalos por los del anuncio.</p>
-
-      <h2>Producto</h2>
+      <h2>Caja de envío (courier por kg)</h2>
       <div class="fields">
-        <label class="full">Nombre<input id="name" type="text" value="RAM DDR4 16GB (2x8) 3200MHz"></label>
-        <label>Precio en eBay (USD)<input id="price" type="number" min="0" step="0.01" value="30"></label>
-        <label>Envío a la casilla (USD)<input id="ship" type="number" min="0" step="0.01" value="0"></label>
-        <label>Peso con empaque (g)<input id="weight" type="number" min="0" step="10" value="120"></label>
-        <label>Cantidad<input id="qty" type="number" min="1" step="1" value="1"></label>
-        <label class="full">Precio de venta en Cochabamba (Bs, por unidad)<input id="local" type="number" min="0" step="1" value="550"></label>
-      </div>
-
-      <h2>Couriers y tipo de cambio</h2>
-      <div class="fields">
-        <label>Courier A: USD por producto<input id="aFee" type="number" min="0" step="0.5" value="10"></label>
-        <label>Courier A: sales tax eBay (%)<input id="aTax" type="number" min="0" step="0.1" value="7"></label>
-        <label>Courier B: USD por kg<input id="bRate" type="number" min="0" step="0.5" value="28"></label>
-        <label>Courier B: cómo cobra el peso
+        <label>Cajas que llegan a la casilla<input id="boxes" type="number" min="1" step="1" value="1"></label>
+        <label>Peso de cada caja vacía + relleno (g)<input id="tare" type="number" min="0" step="10" value="300"></label>
+        <label>Cómo redondea el peso
           <select id="bRound">
             <option value="exact">Peso exacto</option>
-            <option value="0.1">Redondea a 0,1 kg</option>
-            <option value="0.5">Redondea a 0,5 kg</option>
-            <option value="1">Mínimo / redondea a 1 kg</option>
+            <option value="0.1">A 0,1 kg</option>
+            <option value="0.5">A 0,5 kg</option>
+            <option value="1">A 1 kg (mínimo 1)</option>
           </select>
         </label>
-        <label>Tipo de cambio (Bs por USD)<input id="fx" type="number" min="0" step="0.01" value="11.90"></label>
-        <label>Otros gastos por envío (USD)<input id="extra" type="number" min="0" step="0.5" value="0"></label>
+        <label>Largo caja (cm)<input id="dl" type="number" min="0" step="1" value="0"></label>
+        <label>Ancho caja (cm)<input id="dw" type="number" min="0" step="1" value="0"></label>
+        <label>Alto caja (cm)<input id="dh" type="number" min="0" step="1" value="0"></label>
       </div>
-      <p class="note">Courier B no cobra sales tax (casilla en estado sin impuesto). Si algún courier cobra aduana aparte, súmala en "Otros gastos".</p>
+      <div class="weight" id="weightInfo"></div>
+      <p class="note">Si compras a varios vendedores, cada uno manda su propia caja: pon cuántas cajas llegan, salvo que el courier las junte en una. Las medidas son opcionales: si el courier cobra peso volumétrico (largo × ancho × alto ÷ 5000), se usa el mayor.</p>
+
+      <h2>Tarifas y tipo de cambio</h2>
+      <div class="fields">
+        <label>Courier A: USD por producto<input id="aFee" type="number" min="0" step="0.5" value="10"></label>
+        <label>Courier A: sales tax (%)<input id="aTax" type="number" min="0" step="0.1" value="7"></label>
+        <label>Courier B: USD por kg<input id="bRate" type="number" min="0" step="0.5" value="28"></label>
+        <label>Tipo de cambio Bs/USD<input id="fx" type="number" min="0" step="0.01" value="11.90"></label>
+        <label>Otros gastos del pedido (USD)<input id="extra" type="number" min="0" step="0.5" value="0"></label>
+        <label>Ganancia por producto con
+          <select id="perLine"><option value="best">El courier más barato</option><option value="A">Courier A</option><option value="B">Courier B</option></select>
+        </label>
+      </div>
     </section>
 
     <section class="panel" aria-live="polite">
-      <h2>Resultado</h2>
+      <h2>Resultado del pedido</h2>
       <div class="verdict" id="verdict"></div>
       <div class="cmp" id="cmp"></div>
-      <p class="note" id="breakeven"></p>
+      <p class="note" id="foot"></p>
     </section>
   </div>
 </div>
 
 <script>
-const PRESETS = [
-  { name: "RAM DDR4 16GB (2x8) 3200MHz", price: 30, weight: 120, local: 550 },
-  { name: "SSD NVMe 1TB", price: 55, weight: 80, local: 900 },
-  { name: "Ryzen 5 5600 (caja)", price: 95, weight: 450, local: 1500 },
-  { name: "RAM DDR5 32GB (2x16)", price: 85, weight: 140, local: 1400 },
+const SAMPLE = [
+  { name: "Ryzen 5 5600 (caja)", qty: 2, price: 95, ship: 0, g: 450, local: 1500 },
+  { name: "RAM DDR4 16GB (2x8) 3200", qty: 3, price: 30, ship: 0, g: 120, local: 550 },
+  { name: "SSD NVMe 1TB", qty: 3, price: 55, ship: 0, g: 80, local: 900 },
 ];
 const $ = id => document.getElementById(id);
-const ids = ["name","price","ship","weight","qty","local","aFee","aTax","bRate","bRound","fx","extra"];
 const usd = n => "$" + n.toFixed(2);
 const bs = n => "Bs " + Math.round(n).toLocaleString("es-BO");
+const num = x => parseFloat(x) || 0;
+let lines = SAMPLE.map(l => ({ ...l }));
 
 function billKg(kg, mode) {
   if (mode === "exact") return kg;
   const step = parseFloat(mode);
   return Math.max(step, Math.ceil(kg / step - 1e-9) * step);
 }
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
 
-function calc() {
-  const v = k => parseFloat($(k).value) || 0;
-  const qty = Math.max(1, Math.round(v("qty")));
-  const goods = (v("price") + v("ship")) * qty;
-  const fx = v("fx"), extra = v("extra");
-  const kg = v("weight") * qty / 1000;
-
-  const aTax = goods * v("aTax") / 100;
-  const aShip = v("aFee") * qty;
-  const aTotal = goods + aTax + aShip + extra;
-
-  const bKg = billKg(kg, $("bRound").value);
-  const bShip = bKg * v("bRate");
-  const bTotal = goods + bShip + extra;
-
-  const revenue = v("local") * qty;
-  const opts = [
-    { key: "A", title: "Courier A · por producto", rows: [["Producto + envío EE.UU.", goods], ["Sales tax " + v("aTax") + "%", aTax], ["Courier " + usd(v("aFee")) + " × " + qty, aShip], ["Otros", extra]], total: aTotal },
-    { key: "B", title: "Courier B · por kg", rows: [["Producto + envío EE.UU.", goods], ["Sales tax", 0], ["Courier " + bKg.toFixed(2) + " kg cobrados", bShip], ["Otros", extra]], total: bTotal },
-  ];
-  const best = aTotal <= bTotal ? opts[0] : opts[1];
-
-  $("cmp").innerHTML = opts.map(o => {
-    const costBs = o.total * fx, profit = revenue - costBs;
-    return `<div class="card${o === best ? " best" : ""}">
-      <h3>${o.title}${o === best ? '<span class="pill">Más barato</span>' : ""}</h3>
-      ${o.rows.map(r => `<div class="row dim"><span>${r[0]}</span><span>${usd(r[1])}</span></div>`).join("")}
-      <div class="row total"><span>Costo puesto</span><span>${usd(o.total)}</span></div>
-      <div class="row"><span>En bolivianos</span><span>${bs(costBs)}</span></div>
-      <div class="row"><span>Ganancia</span><span class="${profit >= 0 ? "pos" : "neg"}">${bs(profit)}</span></div>
-    </div>`;
-  }).join("");
-
-  const costBs = best.total * fx, profit = revenue - costBs;
-  const margin = revenue > 0 ? profit / revenue * 100 : 0;
-  const cls = margin >= 20 ? "good" : margin >= 8 ? "warn" : "bad";
-  const word = margin >= 20 ? "Conviene traerlo" : margin >= 8 ? "Margen justo" : "No conviene";
-  $("verdict").className = "verdict " + cls;
-  $("verdict").innerHTML = `<span class="big">${word}</span>
-    <span>Con courier ${best.key}: ganancia de <strong>${bs(profit)}</strong> (${margin.toFixed(1)}% del precio de venta) por ${qty} unidad${qty > 1 ? "es" : ""}.</span>`;
-
-  // Punto en que ambos couriers cuestan lo mismo, para 1 unidad
-  const unitGoods = v("price") + v("ship");
-  const aUnit = unitGoods * v("aTax") / 100 + v("aFee");
-  const bUnitKg = billKg(v("weight") / 1000, $("bRound").value) * v("bRate");
-  $("breakeven").textContent = `Por unidad: courier A suma ${usd(aUnit)} y courier B suma ${usd(bUnitKg)} sobre el precio. ` +
-    `Margen ≥ 20% en verde, 8–20% en amarillo, menos de 8% en rojo.`;
+function renderLines() {
+  $("lines").innerHTML = lines.map((l, i) => `<tr data-i="${i}">
+    <td><input id="n${i}" data-k="name" type="text" value="${esc(l.name)}" aria-label="Producto"></td>
+    <td><input id="q${i}" data-k="qty" type="number" min="1" step="1" value="${l.qty}" aria-label="Cantidad"></td>
+    <td><input id="p${i}" data-k="price" type="number" min="0" step="0.01" value="${l.price}" aria-label="Precio eBay"></td>
+    <td><input id="s${i}" data-k="ship" type="number" min="0" step="0.01" value="${l.ship}" aria-label="Envío a casilla"></td>
+    <td><input id="g${i}" data-k="g" type="number" min="0" step="10" value="${l.g}" aria-label="Peso"></td>
+    <td><input id="l${i}" data-k="local" type="number" min="0" step="1" value="${l.local}" aria-label="Venta Cochabamba"></td>
+    <td class="num" id="m${i}"></td>
+    <td><button class="x" type="button" data-del="${i}" aria-label="Quitar">×</button></td>
+  </tr>`).join("");
+  calc();
 }
 
-$("presets").innerHTML = PRESETS.map((p, i) => `<button class="chip" type="button" data-i="${i}">${p.name}</button>`).join("");
-$("presets").addEventListener("click", e => {
-  const b = e.target.closest("button"); if (!b) return;
-  const p = PRESETS[b.dataset.i];
-  $("name").value = p.name; $("price").value = p.price; $("weight").value = p.weight; $("local").value = p.local;
-  calc();
+function calc() {
+  const fx = num($("fx").value), taxR = num($("aTax").value) / 100, aFee = num($("aFee").value);
+  const boxes = Math.max(1, Math.round(num($("boxes").value)));
+  const itemsG = lines.reduce((s, l) => s + Math.max(0, l.qty) * l.g, 0);
+  const realKg = (itemsG + boxes * num($("tare").value)) / 1000;
+  const volKg = boxes * num($("dl").value) * num($("dw").value) * num($("dh").value) / 5000;
+  const usedKg = Math.max(realKg, volKg);
+  const billed = billKg(usedKg, $("bRound").value);
+  const bShip = billed * num($("bRate").value);
+  const extra = num($("extra").value);
+
+  let goods = 0, units = 0, revenue = 0, aShip = 0, aTax = 0;
+  lines.forEach(l => { const q = Math.max(0, l.qty); goods += (l.price + l.ship) * q; units += q; revenue += l.local * q; aShip += aFee * q; aTax += (l.price + l.ship) * q * taxR; });
+  const aTotal = goods + aTax + aShip + extra, bTotal = goods + bShip + extra;
+
+  $("weightInfo").innerHTML = `<span>Productos: <b>${(itemsG / 1000).toFixed(2)} kg</b></span><span>Con cajas: <b>${realKg.toFixed(2)} kg</b></span>` +
+    (volKg > 0 ? `<span>Volumétrico: <b>${volKg.toFixed(2)} kg</b></span>` : "") + `<span>Se cobra: <b>${billed.toFixed(2)} kg</b></span>`;
+
+  const opts = [
+    { key: "A", title: "Courier A · por producto", total: aTotal, rows: [["Productos + envío EE.UU.", goods], ["Sales tax", aTax], [`Courier ${usd(aFee)} × ${units}`, aShip], ["Otros", extra]] },
+    { key: "B", title: "Courier B · por kg", total: bTotal, rows: [["Productos + envío EE.UU.", goods], ["Sales tax", 0], [`Courier ${billed.toFixed(2)} kg × ${usd(num($("bRate").value))}`, bShip], ["Otros", extra]] },
+  ];
+  const best = aTotal <= bTotal ? opts[0] : opts[1];
+  $("cmp").innerHTML = opts.map(o => {
+    const p = revenue - o.total * fx;
+    return `<div class="card${o === best ? " best" : ""}"><h3>${o.title}${o === best ? '<span class="pill">Más barato</span>' : ""}</h3>
+      ${o.rows.map(r => `<div class="row dim"><span>${r[0]}</span><span>${usd(r[1])}</span></div>`).join("")}
+      <div class="row total"><span>Costo puesto</span><span>${usd(o.total)}</span></div>
+      <div class="row"><span>En bolivianos</span><span>${bs(o.total * fx)}</span></div>
+      <div class="row"><span>Ganancia del pedido</span><span class="${p >= 0 ? "pos" : "neg"}">${bs(p)}</span></div></div>`;
+  }).join("");
+
+  const profit = revenue - best.total * fx, margin = revenue > 0 ? profit / revenue * 100 : 0;
+  const cls = margin >= 20 ? "good" : margin >= 8 ? "warn" : "bad";
+  $("verdict").className = "verdict " + cls;
+  $("verdict").innerHTML = `<span class="big">${margin >= 20 ? "Conviene traerlo" : margin >= 8 ? "Margen justo" : "No conviene"}</span>
+    <span>${units} producto${units === 1 ? "" : "s"} con courier ${best.key}: ganancia de <strong>${bs(profit)}</strong> (${margin.toFixed(1)}% de lo que vendes).</span>`;
+
+  // Ganancia por producto: courier B se reparte según peso (cajas incluidas, proporcional); extras según valor
+  const mode = $("perLine").value === "best" ? best.key : $("perLine").value;
+  lines.forEach((l, i) => {
+    const q = Math.max(0, l.qty), cell = $("m" + i); if (!cell) return;
+    if (!q) { cell.textContent = "—"; return; }
+    const base = l.price + l.ship;
+    const extraShare = goods > 0 ? extra * base / goods : 0;
+    const ship = mode === "A" ? aFee + base * taxR : (itemsG > 0 ? bShip * l.g / itemsG : 0);
+    const p = l.local - (base + ship + extraShare) * fx;
+    cell.innerHTML = `<span class="${p >= 0 ? "pos" : "neg"}">${bs(p)}</span>`;
+  });
+  const perUnitB = units ? bShip / units : 0;
+  $("foot").textContent = `Courier B sale a ${usd(perUnitB)} por producto en este pedido, contra ${usd(aFee)} + tax con courier A. La ganancia por producto reparte el courier por kg según el peso de cada uno. Verde ≥ 20%, amarillo 8–20%, rojo < 8%.`;
+}
+
+$("lines").addEventListener("input", e => {
+  const tr = e.target.closest("tr"), k = e.target.dataset.k; if (!tr || !k) return;
+  const l = lines[tr.dataset.i]; l[k] = k === "name" ? e.target.value : num(e.target.value); calc();
 });
-ids.forEach(id => $(id).addEventListener("input", calc));
-calc();
+$("lines").addEventListener("click", e => { const d = e.target.dataset.del; if (d !== undefined) { lines.splice(+d, 1); renderLines(); } });
+$("add").addEventListener("click", () => { lines.push({ name: "", qty: 1, price: 0, ship: 0, g: 100, local: 0 }); renderLines(); });
+$("sample").addEventListener("click", () => { lines = SAMPLE.map(l => ({ ...l })); renderLines(); });
+["boxes","tare","bRound","dl","dw","dh","aFee","aTax","bRate","fx","extra","perLine"].forEach(id => $(id).addEventListener("input", calc));
+renderLines();
 </script>

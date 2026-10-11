@@ -7,7 +7,7 @@ Componentes de PC: RAM, procesadores, SSD y piezas parecidas (livianas, de alto 
 
 ## Couriers
 - **Courier A (la señora):** USD 10 por producto. La dirección en EE.UU. está en un estado con sales tax, así que eBay cobra impuesto.
-- **Courier B:** USD 28 por kg, sin importar el tipo de producto. La dirección está en un estado sin sales tax.
+- **Courier B:** USD 28 por kg, sin importar el tipo de producto. La dirección está en un estado sin sales tax. Cobra el peso de la caja de envío completa (productos con su caja + caja exterior + relleno), no solo el producto. Por eso conviene pedir varias unidades juntas en una sola caja: el peso de la caja se reparte.
 - Pendiente de confirmar: si B cobra el peso exacto o tiene mínimo/redondeo, el estado (y % de tax) de A, y si la aduana boliviana está incluida en ambos.
 
 ## Tipo de cambio
