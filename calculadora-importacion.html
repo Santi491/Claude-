@@ -81,7 +81,7 @@ button { font: inherit; cursor: pointer; }
       <button class="btn" type="button" id="add">Agregar producto</button>
       <button class="btn ghost" type="button" id="sample">Cargar pedido de ejemplo</button>
     </div>
-    <p class="note">Ejemplo con precios y pesos estimados, no son cotizaciones reales. Un procesador en caja pesa ~400–500 g, una RAM en blíster ~80–150 g, un SSD NVMe en caja ~60–100 g.</p>
+    <p class="note">Ejemplo con precios y pesos estimados, no son cotizaciones reales. Un procesador en caja pesa ~350 g (sale de tu ejemplo: 2 procesadores = 1 kg, 3 = 1,5 kg), una RAM en blíster ~80–150 g, un SSD NVMe en caja ~60–100 g.</p>
   </section>
 
   <div class="grid">
@@ -92,6 +92,7 @@ button { font: inherit; cursor: pointer; }
         <label>Peso de cada caja vacía + relleno (g)<input id="tare" type="number" min="0" step="10" value="300"></label>
         <label>Cómo redondea el peso
           <select id="bRound">
+            <option value="0.5m1">Sube de 0,5 en 0,5 kg, mínimo 1 kg</option>
             <option value="exact">Peso exacto</option>
             <option value="0.1">A 0,1 kg</option>
             <option value="0.5">A 0,5 kg</option>
@@ -129,7 +130,7 @@ button { font: inherit; cursor: pointer; }
 
 <script>
 const SAMPLE = [
-  { name: "Ryzen 5 5600 (caja)", qty: 2, price: 95, ship: 0, g: 450, local: 1500 },
+  { name: "Ryzen 5 5600 (caja)", qty: 2, price: 95, ship: 0, g: 350, local: 1500 },
   { name: "RAM DDR4 16GB (2x8) 3200", qty: 3, price: 30, ship: 0, g: 120, local: 550 },
   { name: "SSD NVMe 1TB", qty: 3, price: 55, ship: 0, g: 80, local: 900 },
 ];
@@ -141,6 +142,7 @@ let lines = SAMPLE.map(l => ({ ...l }));
 
 function billKg(kg, mode) {
   if (mode === "exact") return kg;
+  if (mode === "0.5m1") return Math.max(1, Math.ceil(kg / 0.5 - 1e-9) * 0.5);
   const step = parseFloat(mode);
   return Math.max(step, Math.ceil(kg / step - 1e-9) * step);
 }
