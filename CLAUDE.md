@@ -3,7 +3,7 @@
 Claude trabaja como agente del usuario para decidir si conviene traer productos de EE.UU. a Cochabamba (Bolivia) y revenderlos.
 
 ## Productos
-Componentes de PC: RAM, procesadores, SSD y piezas parecidas (livianas, de alto valor).
+Componentes de PC: procesadores Ryzen e Intel, memorias RAM (ej. Corsair Vengeance RGB DDR5 32GB 2x16 5600/6000 MHz) y SSD. La lista exacta está en `vigilar.csv`.
 
 ## Couriers
 - **Courier A (la señora):** USD 10 por producto. La dirección en EE.UU. está en un estado con sales tax, así que eBay cobra impuesto.
@@ -16,7 +16,8 @@ Se calcula en cada análisis (oficial BCB y paralelo). Referencia del 10/10/2026
 
 ## Fuentes de precios
 - EE.UU.: eBay (API oficial con clave de desarrollador, pendiente de aprobación); búsqueda web como respaldo.
-- Cochabamba: Facebook Marketplace y vendedores por WhatsApp, a través de Claude in Chrome con la sesión del usuario.
+- Cochabamba: tiendas (por WhatsApp) y Facebook Marketplace, a través de Claude in Chrome en la PC del usuario. El proceso completo está en `PROCESO-LOCAL.md`.
+- WhatsApp: el usuario compró un número exclusivo para el agente (no es su número personal). Se puede usar para preguntar precios siguiendo los límites de `PROCESO-LOCAL.md`.
 
 ## Reglas
 - Se puede preguntar precios a vendedores por WhatsApp/Marketplace con mensajes cortos y personales, pocos por día, nunca masivos.
@@ -26,6 +27,8 @@ Se calcula en cada análisis (oficial BCB y paralelo). Referencia del 10/10/2026
 ## Archivos (compartidos entre la sesión de la nube y la local)
 - `calculadora-importacion.html`: calculadora de costo puesto y ganancia por courier.
 - `vigilar.csv`: productos que vigila la revisión diaria (lo edita el usuario o Claude).
+- `tiendas-cochabamba.csv`: tiendas locales, su WhatsApp y el estado del contacto.
+- `PROCESO-LOCAL.md`: paso a paso y mensajes modelo para la sesión local.
 - `precios-cochabamba.csv`: precios locales que junta la sesión local (Marketplace/WhatsApp). Una fila por precio visto.
 - `informes/AAAA-MM-DD.md`: informe diario de la nube con precios de EE.UU., costo puesto y comparación.
 
