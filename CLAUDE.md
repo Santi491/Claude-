@@ -23,5 +23,13 @@ Se calcula en cada análisis (oficial BCB y paralelo). Referencia del 10/10/2026
 - Nunca comprar, pagar, ofertar ni acordar nada sin confirmación explícita del usuario.
 - Los precios inventados o estimados se marcan siempre como estimados.
 
-## Archivos
+## Archivos (compartidos entre la sesión de la nube y la local)
 - `calculadora-importacion.html`: calculadora de costo puesto y ganancia por courier.
+- `vigilar.csv`: productos que vigila la revisión diaria (lo edita el usuario o Claude).
+- `precios-cochabamba.csv`: precios locales que junta la sesión local (Marketplace/WhatsApp). Una fila por precio visto.
+- `informes/AAAA-MM-DD.md`: informe diario de la nube con precios de EE.UU., costo puesto y comparación.
+
+## Quién hace qué
+- **Nube (rutina diaria, funciona con la PC apagada):** busca precios de EE.UU. de `vigilar.csv`, calcula el costo puesto con el courier más barato (pedido de 2 y de 4 unidades), compara con el último precio de `precios-cochabamba.csv` y escribe el informe. Notifica al celular y por email.
+- **Local (PC encendida, Claude in Chrome):** revisa Marketplace de Cochabamba y WhatsApp, agrega filas a `precios-cochabamba.csv`, hace commit y push.
+- Antes de trabajar, siempre `git pull` para tener lo último de la otra sesión.
