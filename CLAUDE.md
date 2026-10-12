@@ -15,7 +15,7 @@ Componentes de PC: procesadores Ryzen e Intel, memorias RAM (ej. Corsair Vengean
 Se calcula en cada análisis (oficial BCB y paralelo). Referencia del 10/10/2026: oficial 11,73 Bs/USD, paralelo ~11,86–11,91. Usar ~11,90 por defecto.
 
 ## Fuentes de precios
-- EE.UU.: eBay (API oficial con clave de desarrollador, pendiente de aprobación); búsqueda web como respaldo.
+- EE.UU.: eBay con la API oficial: `python3 ebay.py --vigilar` (claves en las variables de entorno EBAY_CLIENT_ID / EBAY_CLIENT_SECRET). Búsqueda web solo como respaldo si la API falla.
 - Cochabamba: tiendas (por WhatsApp) y Facebook Marketplace, a través de Claude in Chrome en la PC del usuario. El proceso completo está en `PROCESO-LOCAL.md`.
 - WhatsApp: el usuario compró un número exclusivo para el agente (no es su número personal). Se puede usar para preguntar precios siguiendo los límites de `PROCESO-LOCAL.md`.
 
@@ -25,6 +25,7 @@ Se calcula en cada análisis (oficial BCB y paralelo). Referencia del 10/10/2026
 - Los precios inventados o estimados se marcan siempre como estimados.
 
 ## Archivos (compartidos entre la sesión de la nube y la local)
+- `ebay.py`: busca precios reales en eBay EE.UU. (vendedores con ≥98% de feedback, ubicados en EE.UU.).
 - `calculadora-importacion.html`: calculadora de costo puesto y ganancia por courier.
 - `vigilar.csv`: productos que vigila la revisión diaria (lo edita el usuario o Claude).
 - `tiendas-cochabamba.csv`: tiendas locales, su WhatsApp y el estado del contacto.
