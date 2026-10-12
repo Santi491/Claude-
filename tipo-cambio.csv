@@ -1,4 +1,4 @@
 fecha,oficial,paralelo_compra,paralelo_venta,usado,fuente
 2026-10-10,11.73,11.86,11.91,11.90,referencia del usuario (CLAUDE.md)
 2026-10-11,,,,11.90,sin cotización del día: se usó la referencia del 10/10 (estimado)
-2026-10-12,11.85,11.90,11.82,11.90,BCB oficial del 08/10; paralelo dolarboliviahoy.com del 08/10 (no se encontró la del 12/10)
+2026-10-12,11.73,11.86,11.83,11.85,BCB oficial del 12/10 (Red Uno); paralelo dolarbolivia.net 12/10 08:50 (promedio de 8 plataformas P2P); usado = promedio del paralelo

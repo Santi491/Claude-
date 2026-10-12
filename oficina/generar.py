@@ -115,17 +115,42 @@ def main():
         ultimo[m["serie"]] = m["valor"]
         del m["orden"]
 
-    # ---------- Documentos ----------
+    # ---------- Documentos (gabinete) ----------
+    gh = "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/"
     docs = []
-    for ruta in sorted(glob.glob(os.path.join(RAIZ, "informes", "*.md")), reverse=True):
-        nombre = os.path.basename(ruta)[:-3]
-        docs.append({"id": "inf-" + nombre, "titulo": f"Informe diario {nombre}", "tipo": "Informe de la nube",
-                     "fecha": nombre, "md": open(ruta, encoding="utf-8").read()})
+
+    def leer_txt(ruta):
+        with open(ruta, encoding="utf-8-sig") as f:
+            return f.read()
+
+    excel = os.path.join(RAIZ, "importacion-cochabamba.xlsx")
+    if os.path.exists(excel):
+        docs.append({"id": "excel", "carpeta": "Excel", "titulo": "Importación Cochabamba (Excel)", "tipo": "Excel",
+                     "fecha": datetime.fromtimestamp(os.path.getmtime(excel)).strftime("%Y-%m-%d"),
+                     "url": gh + "importacion-cochabamba.xlsx",
+                     "nota": "Hojas: Hoy (con fórmulas), Historial, Dólar, Movimientos y Supuestos. Se abre en GitHub y se descarga desde ahí."})
+    h = os.path.join(RAIZ, "historial", "historial.csv")
+    if os.path.exists(h):
+        docs.append({"id": "historial", "carpeta": "Tabla diaria", "titulo": "Historial completo", "tipo": "CSV",
+                     "fecha": datetime.fromtimestamp(os.path.getmtime(h)).strftime("%Y-%m-%d"),
+                     "url": gh + "historial/historial.csv", "csv": leer_txt(h)})
+    for ruta in sorted(glob.glob(os.path.join(RAIZ, "historial", "2*.csv")), reverse=True):
+        dia = os.path.basename(ruta)[:-4]
+        docs.append({"id": "tabla-" + dia, "carpeta": "Tabla diaria", "titulo": f"Tabla del {dia}", "tipo": "CSV",
+                     "fecha": dia, "url": gh + f"historial/{dia}.csv", "csv": leer_txt(ruta)})
+        if os.path.exists(ruta[:-4] + ".pdf"):
+            docs.append({"id": "pdf-" + dia, "carpeta": "Tabla diaria", "titulo": f"Tabla del {dia}", "tipo": "PDF",
+                         "fecha": dia, "url": gh + f"historial/{dia}.pdf",
+                         "nota": "La misma tabla del día en PDF (A4 horizontal). Se abre en GitHub."})
     comp = os.path.join(RAIZ, "comparacion.md")
     if os.path.exists(comp):
-        docs.insert(0, {"id": "comparacion", "titulo": "Comparación EE.UU. → Cochabamba", "tipo": "Tabla de comparación",
-                        "fecha": datetime.fromtimestamp(os.path.getmtime(comp)).strftime("%Y-%m-%d"),
-                        "md": open(comp, encoding="utf-8").read()})
+        docs.append({"id": "comparacion", "carpeta": "Informes", "titulo": "Comparación EE.UU. → Cochabamba", "tipo": "Tabla de comparación",
+                     "fecha": datetime.fromtimestamp(os.path.getmtime(comp)).strftime("%Y-%m-%d"),
+                     "url": gh + "comparacion.md", "md": leer_txt(comp)})
+    for ruta in sorted(glob.glob(os.path.join(RAIZ, "informes", "*.md")), reverse=True):
+        nombre = os.path.basename(ruta)[:-3]
+        docs.append({"id": "inf-" + nombre, "carpeta": "Informes", "titulo": f"Informe diario {nombre}", "tipo": "Informe de la nube",
+                     "fecha": nombre, "url": gh + f"informes/{nombre}.md", "md": leer_txt(ruta)})
 
     lista_tiendas = [{"tienda": t["tienda"], "ciudad": t["ciudad"], "estado": t["estado_contacto"],
                       "ultima": t["ultima_consulta"]} for t in tiendas]

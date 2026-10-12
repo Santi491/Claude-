@@ -68,6 +68,27 @@ canvas.zoomed{touch-action:none;cursor:grab}
 .acts div{font:400 12.5px/1.45 var(--f-mono)}
 .acts time{color:var(--o-muted);margin-right:6px}
 .dot{width:10px;height:10px;border-radius:50%;flex:none;display:inline-block}
+.files{display:grid;gap:14px}
+.files .fold{display:grid;gap:6px}
+.file{display:flex;gap:10px;align-items:baseline;text-align:left;font:500 13.5px var(--f-body);color:var(--o-ink);background:#0D1D2A;border:1px solid var(--o-line);border-radius:7px;padding:8px 10px;cursor:pointer;width:100%}
+.file:hover,.file[aria-pressed="true"]{border-color:var(--o-amber)}
+.file .ext{font:700 10px var(--f-mono);letter-spacing:.06em;color:var(--o-amber);min-width:44px}
+.file .fd{margin-left:auto;font:500 11px var(--f-mono);color:var(--o-muted)}
+.viewer{display:grid;gap:10px}
+.viewer .vbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.viewer .vbar b{margin-right:auto;font:700 15px var(--f-display);font-stretch:88%}
+.viewer button,.viewer .gh{font:600 12px var(--f-mono);color:var(--o-ink);background:transparent;border:1px solid var(--o-line);border-radius:5px;padding:5px 10px;cursor:pointer;text-decoration:none}
+.viewer .gh{color:var(--o-cyan)}
+.dbody .tw{overflow-x:auto;border:1px solid var(--o-line);border-radius:8px}
+.dbody table{font:11.5px var(--f-mono);min-width:560px}
+.dbody th{background:#0D1D2A;color:var(--o-muted);border-bottom:1px solid var(--o-line);padding:6px 8px;font-size:10px}
+.dbody td{border-bottom:1px solid var(--o-line);padding:5px 8px;font-size:11.5px;color:var(--o-ink)}
+.dbody td.t{text-align:left;font-family:var(--f-body)}
+.dbody a{color:var(--o-cyan)}
+.dbody .md{font-size:13.5px;line-height:1.5}
+.dbody .md h1{font-size:20px;margin:0 0 6px}.dbody .md h2{font-size:16px;margin:14px 0 4px}.dbody .md h3{font-size:14px;margin:12px 0 4px}
+.dbody .md p{margin:6px 0}
+.dbody .md code{font-family:var(--f-mono);background:#0D1D2A;padding:0 3px;border-radius:3px}
 @media (max-width:760px){
   .drawer{position:static;width:auto;box-shadow:none;border-left:0;border-top:1px solid var(--o-line)}
   .zoom button{height:40px;min-width:44px;font-size:16px}
@@ -167,6 +188,10 @@ tr.row.open td{background:var(--accent-soft)}
 .reader table{min-width:640px}
 .reader th,.reader td{padding:6px 9px;text-align:left;white-space:normal;font-family:var(--f-body);font-size:13px;border-bottom:1px solid var(--line)}
 .reader code{font-family:var(--f-mono);font-size:.9em;background:var(--bg);padding:1px 4px;border-radius:4px}
+.reader .vbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;margin-bottom:10px}
+.reader .vbar b{font:800 22px var(--f-display);font-stretch:82%;margin-right:auto}
+.reader td.t{text-align:left}
+.doclist h3{margin:8px 0 2px;font:600 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 @media (max-width:760px){
   .mv{grid-template-columns:minmax(0,1fr) auto}
   .mv .num.old,.mv .chg{grid-column:2}
@@ -182,7 +207,7 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
   <header>
     <div class="eyebrow" id="eyebrow">EE.UU. → Cochabamba</div>
     <h1>Oficina de agentes</h1>
-    <p class="lede">Toca un agente para acercarte y ver lo que hizo. Tócalo otra vez para volver a la vista general.</p>
+    <p class="lede">Toca un agente para acercarte y ver lo que hizo, o el gabinete para abrir los documentos. Tócalo otra vez para volver a la vista general.</p>
   </header>
 
   <section class="office" aria-label="Oficina de agentes">
@@ -258,7 +283,7 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
   <header style="margin-top:14px" id="historial">
     <div class="eyebrow">Registro diario · eBay, Cochabamba y dólar</div>
     <h2>Historial y documentos</h2>
-    <p class="lede">Cada precio que vieron los agentes queda anotado como un movimiento, con el valor anterior y la diferencia. Los informes diarios y la tabla de comparación están en Documentos.</p>
+    <p class="lede">Cada precio que vieron los agentes queda anotado como un movimiento, con el valor anterior y la diferencia. En Documentos (o en el gabinete de la oficina) están el Excel, la tabla de cada día en CSV y PDF, y los informes.</p>
   </header>
   <div class="tabs" role="tablist" aria-label="Historial">
     <button type="button" role="tab" id="tab-mov" aria-selected="true" aria-controls="pane-mov">Estado de cuenta</button>
@@ -414,6 +439,8 @@ const AG=[
   info:["Revisa Marketplace de Cochabamba para los productos de vigilar.csv y guarda precio, estado y link.","El 12/10 no aparecieron anuncios útiles nuevos del 5600, 5700X3D ni DDR5 32GB de escritorio.","Los anuncios de otras ciudades se guardan solo como referencia."]},
  {id:"ana",name:"Analista",where:"Calcula costo puesto y margen",state:"working",x:6.0,y:5.2,shirt:"#C46FD8",info:[]}
 ];
+const CAB={id:"docs",name:"Documentos",x:8.15,y:4.6,mon:null};
+let cabSel=null;
 const short=n=>n.replace("Intel Core ","").replace("Corsair Vengeance RGB ","").replace(" (2x16)","").replace("Ryzen ","R");
 let ranking=[];let sel=null;let open=false;
 const TEX={};
@@ -465,7 +492,36 @@ function drawHud(all){
    <div class="kv"><span>Movimientos</span><b>${D.movimientos.length}</b></div>
    <div class="kv"><span>Conviene</span><b class="c">${ok} de ${P.length}</b></div>`;
 }
+function parseCSV(t){const rows=[];let row=[],f="",q=false;for(let i=0;i<t.length;i++){const c=t[i];if(q){if(c==='"'){if(t[i+1]==='"'){f+='"';i++}else q=false}else f+=c}else if(c==='"')q=true;else if(c===","){row.push(f);f=""}else if(c==="\n"){row.push(f);rows.push(row);row=[];f=""}else if(c!=="\r")f+=c}if(f||row.length){row.push(f);rows.push(row)}return rows.filter(r=>r.some(x=>x!==""))}
+function csvTable(t){
+  const [h,...rows]=parseCSV(t.replace(/^\uFEFF/,""));if(!h)return "";
+  const cell=(v,k)=>{if(v==="")return "";if(/^https?:/.test(v))return `<a href="${esc(v)}" target="_blank" rel="noopener">ver</a>`;
+    if(/^-?\d+(\.\d+)?$/.test(v)){const n=+v;if(k==="Margen")return fmt(n*100)+" %";if(/Bs$/.test(k)&&!/Dólar/.test(k))return fmt(n);return fmt(n,k==="Peso g"?0:2)}return esc(v)};
+  const txt=k=>/Producto|Tipo|Estado|Fecha|Link/.test(k);
+  return `<div class="tw"><table><thead><tr>${h.map(k=>`<th class="${txt(k)?"l":""}">${esc(k)}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((v,i)=>`<td class="${txt(h[i])?"t":""}">${cell(v,h[i])}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+}
+const extOf=d=>d.tipo==="Excel"?"XLSX":d.tipo==="PDF"?"PDF":d.csv?"CSV":"MD";
+function docView(d,back){
+  const body=d.csv?csvTable(d.csv):d.md?`<div class="md">${md(d.md)}</div>`:`<p>${esc(d.nota||"")}</p>`;
+  return `<div class="viewer"><div class="vbar">${back?'<button type="button" data-back>← Archivos</button>':""}<b>${esc(d.titulo)} · ${extOf(d)}</b><a class="gh" href="${esc(d.url)}" target="_blank" rel="noopener">Abrir en GitHub</a></div>${body}</div>`;
+}
+const CARPETAS=["Tabla diaria","Excel","Informes"];
+function fileList(btnAttr){
+  return CARPETAS.map(c=>{const ds=D.documentos.filter(d=>d.carpeta===c);if(!ds.length)return "";
+    return `<div class="fold"><h4>${c}</h4>${ds.map(d=>`<button type="button" class="file" ${btnAttr}="${esc(d.id)}"><span class="ext">${extOf(d)}</span><span>${esc(d.titulo)}</span><span class="fd">${fechaCorta(d.fecha)}</span></button>`).join("")}</div>`}).join("");
+}
+function drawCabinet(){
+  $("dDot").style.background="#C9A35A";$("dName").textContent="Gabinete de documentos";$("dWhere").textContent="Archivos del repo en GitHub · se actualizan en cada ronda";
+  $("dState").textContent=`${D.documentos.length} archivos`;$("dState").style.color="#C9A35A";
+  const d=D.documentos.find(x=>x.id===cabSel);
+  $("dBody").innerHTML=d?docView(d,true):`<div class="files">${fileList("data-file")}</div>`;
+}
+$("dBody").addEventListener("click",e=>{
+  const f=e.target.closest("[data-file]");if(f){cabSel=f.dataset.file;drawCabinet();$("dBody").scrollTop=0;return}
+  if(e.target.closest("[data-back]")){cabSel=null;drawCabinet()}
+});
 function drawDrawer(){
+  if(sel==="docs"){drawCabinet();return}
   const a=AG.find(x=>x.id===sel),s=STATES[a.state];
   $("dDot").style.background=s.c;$("dName").textContent=a.name;$("dWhere").textContent=a.where;
   $("dState").textContent=s.t;$("dState").style.color=s.c;
@@ -560,6 +616,21 @@ function agent(a,t){
     hits.push({id:a.id,x:Math.min(bb[0],p[0]-34*sc),y:bb[1],w:Math.max(bb[2],68*sc),h:foot[1]-bb[1]});
   });
 }
+function cabinet(){
+  const X=CAB.x,Y=CAB.y,w=0.62,d=0.5,h=66,sc=scale,act=open&&sel==="docs";
+  const c=iso(X+w/2,Y+d+0.35);ctx.save();ctx.globalAlpha=act?.4:.18;ctx.fillStyle="#C9A35A";ctx.beginPath();ctx.ellipse(c[0],c[1],26*sc,13*sc,0,0,7);ctx.fill();ctx.restore();
+  box(X,Y,w,d,h,0,"#6E7F8C","#3E4F5C","#526472");
+  for(let k=0;k<3;k++){const z0=6+k*20,z1=z0+16;
+    const p1=iso(X+0.05,Y+d,z0),p2=iso(X+w-0.05,Y+d,z0),p3=iso(X+w-0.05,Y+d,z1),p4=iso(X+0.05,Y+d,z1);
+    poly([p1,p2,p3,p4],k===1&&act?"#5B6D7A":"#4A5B68","#2C3A45");
+    const hc=iso(X+w/2,Y+d,z0+8);ctx.fillStyle="#C9A35A";ctx.fillRect(hc[0]-5*sc,hc[1]-1.2*sc,10*sc,2.4*sc);
+    const lb=iso(X+w/2,Y+d,z0+12.5);ctx.fillStyle="#E8E2D2";ctx.fillRect(lb[0]-4*sc,lb[1]-1.5*sc,8*sc,3*sc)}
+  if(act){const a=iso(X,Y+d,h),b=iso(X+w,Y+d,h);ctx.fillStyle="#F2EEE4";poly([iso(X+0.12,Y+0.12,h+1),iso(X+0.4,Y+0.1,h+1),iso(X+0.42,Y+0.3,h+1),iso(X+0.14,Y+0.32,h+1)],"#F2EEE4")}
+  CAB.mon={cx:iso(X+w/2,Y+d/2,h/2)[0],cy:iso(X+w/2,Y+d/2,h/2)[1]};
+  const top=iso(X+w/2,Y+d/2,h+16),foot=iso(X+w/2,Y+d+0.3);
+  overlay.push(()=>{const bb=label(top[0],top[1],`Documentos · ${D.documentos.length}`,"#C9A35A",act);
+    hits.push({id:"docs",x:Math.min(bb[0],foot[0]-30*sc),y:bb[1],w:Math.max(bb[2],60*sc),h:foot[1]-bb[1]})});
+}
 function frame(t){
   const k=reduce?1:.16;cam.z+=(camT.z-cam.z)*k;cam.x+=(camT.x-cam.x)*k;cam.y+=(camT.y-cam.y)*k;
   cv.classList.toggle("zoomed",camT.z>1.01);
@@ -568,6 +639,7 @@ function frame(t){
   ctx.setTransform(dpr*cam.z,0,0,dpr*cam.z,dpr*cam.x,dpr*cam.y);
   floor();rack(0.2,6.6,t);plant(8.3,0.3);plant(8.4,6.9);
   [...AG].sort((a,b)=>(a.x+a.y)-(b.x+b.y)).forEach(a=>agent(a,t));
+  cabinet();
   overlay.forEach(f=>f());
   requestAnimationFrame(frame);
 }
@@ -580,8 +652,9 @@ function zoomAt(sx,sy,f){const nz=Math.min(5,Math.max(1,camT.z*f));const wx=(sx-
 const narrow=()=>matchMedia("(max-width:760px)").matches;
 function focusAgent(id){
   if(open&&sel===id){closeAgent();return}
-  sel=id;open=true;$("drawer").hidden=false;drawDrawer();
-  const a=AG.find(x=>x.id===id);if(!a.mon)return;
+  if(id==="docs"&&sel!=="docs")cabSel=null;
+  sel=id;open=true;$("drawer").hidden=false;drawDrawer();$("dBody").scrollTop=0;
+  const a=id==="docs"?CAB:AG.find(x=>x.id===id);if(!a.mon)return;
   const side=narrow()?0:$("drawer").offsetWidth;
   const z=narrow()?2:2.2;camT={z,x:(W-side)/2-a.mon.cx*z,y:H*0.42-a.mon.cy*z};
   camT.x=Math.min(0,Math.max(W-side-W*z,camT.x));camT.y=Math.min(0,Math.max(H-H*z,camT.y));
@@ -609,6 +682,7 @@ cv.addEventListener("touchmove",e=>{if(e.touches.length>1||camT.z>1.01)e.prevent
 cv.addEventListener("pointerup",up);cv.addEventListener("pointercancel",e=>{ptrs.delete(e.pointerId);pinch=null});
 cv.addEventListener("wheel",e=>{e.preventDefault();zoomAt(e.offsetX,e.offsetY,Math.exp(-e.deltaY*0.0015));cam={...camT}},{passive:false});
 cv.addEventListener("keydown",e=>{
+  if(e.key==="d"||e.key==="D"){open=false;focusAgent("docs")}
   if(e.key==="ArrowRight"||e.key==="ArrowLeft"){const i=Math.max(0,AG.findIndex(a=>a.id===sel));const next=AG[(i+(sel==null?0:(e.key==="ArrowRight"?1:AG.length-1)))%AG.length].id;open=false;focusAgent(next)}
   if(e.key==="Enter"&&!open)focusAgent(AG[0].id);
   if(e.key==="Escape")closeAgent();if(e.key==="+"||e.key==="=")zoomAt(W/2,H/2,1.25);if(e.key==="-")zoomAt(W/2,H/2,.8);
@@ -676,10 +750,12 @@ function md(src){
   }
   return out;
 }
-let docSel=D.documentos[0]?.id;
+let docSel=(D.documentos.find(d=>d.id.startsWith("tabla-"))||D.documentos[0])?.id;
 function renderDocs(){
-  $("docList").innerHTML=D.documentos.map(d=>`<button type="button" data-doc="${esc(d.id)}" aria-pressed="${d.id===docSel}"><small>${esc(d.tipo)} · ${fechaCorta(d.fecha)}</small>${esc(d.titulo)}</button>`).join("");
-  const d=D.documentos.find(x=>x.id===docSel);$("reader").innerHTML=d?md(d.md):'<p class="dash">Todavía no hay documentos.</p>';
+  $("docList").innerHTML=CARPETAS.map(c=>{const ds=D.documentos.filter(d=>d.carpeta===c);if(!ds.length)return "";
+    return `<h3>${c}</h3>`+ds.map(d=>`<button type="button" data-doc="${esc(d.id)}" aria-pressed="${d.id===docSel}"><small>${extOf(d)} · ${fechaCorta(d.fecha)}</small>${esc(d.titulo)}</button>`).join("")}).join("");
+  const d=D.documentos.find(x=>x.id===docSel);
+  $("reader").innerHTML=d?`<div class="vbar"><b>${esc(d.titulo)}</b><a href="${esc(d.url)}" target="_blank" rel="noopener">Abrir en GitHub</a></div>${d.csv?csvTable(d.csv):d.md?md(d.md):`<p>${esc(d.nota||"")}</p>`}`:'<p class="dash">Todavía no hay documentos.</p>';
 }
 $("docList").addEventListener("click",e=>{const b=e.target.closest("button[data-doc]");if(!b)return;docSel=b.dataset.doc;renderDocs()});
 const tabs=[["tab-mov","pane-mov"],["tab-dias","pane-dias"],["tab-docs","pane-docs"]];

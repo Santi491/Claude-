@@ -17,6 +17,7 @@ DIR = os.path.dirname(os.path.abspath(__file__))
 CAJA_EXTERIOR_G = 300           # caja exterior + relleno del courier B
 B_USD_KG, B_MIN_KG, B_PASO_KG = 28, 1.0, 0.5
 A_USD_UNIDAD = 10
+A_TAX_DEF = 0.07                # sales tax del courier A (pendiente de confirmar)
 CONVIENE, JUSTO = 0.15, 0.05     # margen sobre el mejor precio local
 
 
