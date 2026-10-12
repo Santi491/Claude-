@@ -1,6 +1,12 @@
 # Proceso local: mercado de Cochabamba
 
-Lo hace la sesión local (PC del usuario) con Claude in Chrome. Antes de empezar: `git pull`.
+Lo hace la sesión local con Claude in Chrome. Hay dos computadoras: la **PC de la casa** (Windows) y la **Mac** (cuando el usuario está fuera). Las dos usan el mismo repo y el mismo número de WhatsApp.
+
+## Coordinación entre la PC y la Mac
+- Al empezar: `git pull`. Al terminar cada tanda de mensajes: commit y push enseguida, para que la otra computadora vea lo que ya se hizo.
+- Antes de escribir a una tienda, revisar en `tiendas-cochabamba.csv` su `estado_contacto` y `ultima_consulta`: si ya se le escribió en los últimos 3 días, no volver a escribirle; solo revisar si respondió en WhatsApp Web.
+- El límite de ~10 chats nuevos por día es **por número**, no por computadora: sumar lo que ya hizo la otra.
+- No trabajar en las dos computadoras al mismo tiempo.
 
 ## Cuentas
 - **WhatsApp:** número exclusivo para el agente (no es el personal del usuario). Sesión en WhatsApp Web en el Chrome del usuario.
