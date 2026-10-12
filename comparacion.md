@@ -10,11 +10,12 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | SSD NVMe 2TB | [209.99](https://www.ebay.com/itm/227402767941) | 2.654 (B 1 kg) | 2.571 (B 1 kg) | 3.550 | 896 (25%) | 979 (28%) | conviene |
 | Intel Core Ultra 7 265K | [244.87](https://www.ebay.com/itm/840012484062) | 3.068 (B 1 kg) | 3.026 (B 1.5 kg) | 3.950 | 882 (22%) | 924 (23%) | conviene |
 | Intel Core i5-14400F | [164.49](https://www.ebay.com/itm/389945918228) | 2.115 (B 1 kg) | 2.074 (B 1.5 kg) | 2.537 | 422 (17%) | 463 (18%) | conviene |
-| Ryzen 7 7800X3D | [329.00](https://www.ebay.com/itm/187668752673) | 4.065 (B 1 kg) | 4.065 (B 2 kg) | 4.800 | 735 (15%) | 735 (15%) | conviene |
 | SSD NVMe 1TB | [114.99](https://www.ebay.com/itm/800572518683) | 1.529 (B 1 kg) | 1.446 (B 1 kg) | 1.800 | 271 (15%) | 354 (20%) | conviene |
+| Ryzen 7 7800X3D | [329.00](https://www.ebay.com/itm/187668752673) | 4.065 (B 1 kg) | 4.065 (B 2 kg) | 4.760 | 695 (15%) | 695 (15%) | justo |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [435.99](https://www.ebay.com/itm/960033835048) | 5.332 (B 1 kg) | 5.249 (B 1 kg) | 6.200 | 868 (14%) | 951 (15%) | justo |
 | Ryzen 9 9950X | [499.99](https://www.ebay.com/itm/267809260226) | 6.091 (B 1 kg) | 6.091 (B 2 kg) | 5.580 | -511 (-9%) | -511 (-9%) | no conviene |
 | RAM DDR4 16GB (2x8) 3200 | [75.00](https://www.ebay.com/itm/198709471618) | 1.055 (B 1 kg) | 972 (B 1 kg) | 900 | -155 (-17%) | -72 (-8%) | no conviene |
+| Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [493.00](https://www.ebay.com/itm/237072275336) | 6.008 (B 1 kg) | 5.925 (B 1 kg) | 4.500 | -1.508 (-34%) | -1.425 (-32%) | no conviene |
 | Intel Core i5-13400 | [259.78](https://www.ebay.com/itm/278289521729) | 3.244 (B 1 kg) | 3.203 (B 1.5 kg) | 2.300 | -944 (-41%) | -903 (-39%) | no conviene |
 
 ## eBay usado (mejor caso: se compara contra precios locales de nuevos)
@@ -24,12 +25,13 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | SSD NVMe 2TB | [179.99](https://www.ebay.com/itm/366729072023) | 2.299 (B 1 kg) | 2.216 (B 1 kg) | 3.550 | 1.251 (35%) | 1.334 (38%) | conviene |
 | Intel Core Ultra 7 265K | [209.99](https://www.ebay.com/itm/128130997262) | 2.654 (B 1 kg) | 2.613 (B 1.5 kg) | 3.950 | 1.296 (33%) | 1.337 (34%) | conviene |
 | Intel Core i5-14400F | [136.99](https://www.ebay.com/itm/407274530658) | 1.789 (B 1 kg) | 1.748 (B 1.5 kg) | 2.537 | 748 (29%) | 789 (31%) | conviene |
-| Ryzen 7 7800X3D | [283.99](https://www.ebay.com/itm/366706722500) | 3.531 (B 1 kg) | 3.531 (B 2 kg) | 4.800 | 1.269 (26%) | 1.269 (26%) | conviene |
+| Ryzen 7 7800X3D | [283.99](https://www.ebay.com/itm/366706722500) | 3.531 (B 1 kg) | 3.531 (B 2 kg) | 4.760 | 1.229 (26%) | 1.229 (26%) | conviene |
 | SSD NVMe 1TB | [99.99](https://www.ebay.com/itm/206619927751) | 1.351 (B 1 kg) | 1.268 (B 1 kg) | 1.800 | 449 (25%) | 532 (30%) | conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [399.90](https://www.ebay.com/itm/298605370806) | 4.905 (B 1 kg) | 4.822 (B 1 kg) | 6.200 | 1.295 (21%) | 1.378 (22%) | conviene |
 | Intel Core i5-13400 | [149.99](https://www.ebay.com/itm/366720837166) | 1.943 (B 1 kg) | 1.902 (B 1.5 kg) | 2.300 | 357 (16%) | 398 (17%) | conviene |
 | RAM DDR4 16GB (2x8) 3200 | [59.99](https://www.ebay.com/itm/820171389776) | 877 (B 1 kg) | 794 (B 1 kg) | 900 | 23 (3%) | 106 (12%) | no conviene |
 | Ryzen 9 9950X | [454.99](https://www.ebay.com/itm/257573828939) | 5.558 (B 1 kg) | 5.558 (B 2 kg) | 5.580 | 22 (0%) | 22 (0%) | no conviene |
+| Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [399.99](https://www.ebay.com/itm/860016176225) | 4.906 (B 1 kg) | 4.823 (B 1 kg) | 4.500 | -406 (-9%) | -323 (-7%) | no conviene |
 
 ## Detalle por vendedor (eBay nuevo)
 
@@ -38,6 +40,7 @@ eBay nuevo: USD 329.00 con envío en EE.UU. (eBay API; vendedor aaawavecom 99.8%
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
+| Tienda Supermall (WhatsApp) · [ver](https://www.facebook.com/marketplace/item/1292124363069503/) | no indicado (la tienda lo ofrece como "7700x3d"; foto de caja 7800X3D; stock bajo; garantía 6 meses; confirmar modelo) | 4.760 | 695 (15%) | 2026-10-12 |
 | Marketplace Cochabamba (particular/vendedor) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado (según anuncio) | 4.800 | 735 (15%) | 2026-10-11 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2669179450145313/) | no indicado | 5.190 | 1.125 (22%) | 2026-10-11 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1361869715871206/) | no indicado | 5.390 | 1.325 (25%) | 2026-10-11 |
@@ -49,6 +52,7 @@ eBay nuevo: USD 499.99 con envío en EE.UU. (eBay API; vendedor saguarowholesale
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | MSR Computers (web; fecha de actualización desconocida) · [ver](https://msrcomputers.framer.website/) | nuevo | 5.580 | -511 (-9%) | 2026-10-11 |
+| Tienda Supermall (WhatsApp) · [ver](https://www.facebook.com/marketplace/item/1292124363069503/) | nuevo OEM (garantía 6 meses) | 6.140 | 49 (1%) | 2026-10-12 |
 
 ### Intel Core i5-13400
 eBay nuevo: USD 259.78 con envío en EE.UU. (eBay vía Chrome, vendedor en EE.UU. (PC de la casa); tray/OEM; pocos anuncios, 2026-10-12). Costo puesto: **Bs 3.244**/u en pedido de 2, **Bs 3.203**/u en pedido de 4.
@@ -71,6 +75,13 @@ eBay nuevo: USD 244.87 con envío en EE.UU. (eBay API; vendedor reverendreed779 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | MSR Computers (web; fecha de actualización desconocida) · [ver](https://msrcomputers.framer.website/) | nuevo | 3.950 | 882 (22%) | 2026-10-11 |
+
+### Corsair Vengeance RGB DDR5 32GB (2x16) 5600
+eBay nuevo: USD 493.00 con envío en EE.UU. (eBay API; vendedor blessshoppingshangrila 100.0%, 2026-10-12). Costo puesto: **Bs 6.008**/u en pedido de 2, **Bs 5.925**/u en pedido de 4.
+
+| Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
+|---|---|---|---|---|
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/2840215069674304/) | usado como nuevo (4 meses de uso; publicado hace 7 semanas) | 4.500 | -1.508 (-34%) | 2026-10-12 |
 
 ### Corsair Vengeance RGB DDR5 32GB (2x16) 6000
 eBay nuevo: USD 435.99 con envío en EE.UU. (eBay API; vendedor wojiapanpan_4 100.0%; Vengeance RGB RS, 2026-10-12). Costo puesto: **Bs 5.332**/u en pedido de 2, **Bs 5.249**/u en pedido de 4.
@@ -111,6 +122,5 @@ eBay nuevo: USD 209.99 con envío en EE.UU. (eBay API; vendedor ram_technologies
 - **Ryzen 7 5700X3D**: falta precio de eBay nuevo y Cochabamba
 - **Ryzen 5 7600**: falta precio de Cochabamba
 - **Intel Core i5-12400F**: falta precio de Cochabamba
-- **Corsair Vengeance RGB DDR5 32GB (2x16) 5600**: falta precio de Cochabamba
 
 _Generado con `python3 comparar.py`._
