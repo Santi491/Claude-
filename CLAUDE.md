@@ -40,8 +40,11 @@ Se calcula en cada análisis (oficial BCB y paralelo). Referencia del 10/10/2026
 - `comparar.py` → `comparacion.md`: tabla de comparación por producto y por vendedor (costo puesto 2 y 4 u, ganancia y veredicto). Se regenera después de agregar precios de cualquier lado: `python3 comparar.py --tc <tipo de cambio>`.
 
 ## Quién hace qué
-- **Nube (rutina diaria, funciona con la PC apagada):** busca precios de EE.UU. de `vigilar.csv`, calcula el costo puesto con el courier más barato (pedido de 2 y de 4 unidades), compara con el último precio de `precios-cochabamba.csv` y escribe el informe. Notifica al celular y por email.
-- **Local (PC encendida, Claude in Chrome):** revisa Marketplace de Cochabamba y WhatsApp, agrega filas a `precios-cochabamba.csv`, hace commit y push.
+- **Nube · rutina "Revisión diaria de importación" (todos los días 7:52, hora de Bolivia; funciona con las computadoras apagadas):** dólar del día, eBay con la API si tiene claves en su entorno (si no, usa los últimos precios reales; nunca estima), comparación, Excel, copia del día, informe en `informes/`, actividad y push. No publica la oficina. Notifica al celular y por email.
+- **Mac · tarea programada "Ronda local de la mañana" (todos los días 10:30; la app tiene que estar abierta):** dólar y eBay con las claves de `~/.ebay-claves` si faltan los de hoy, WhatsApp (respuestas + chats nuevos dentro del límite), Marketplace con Chrome, regenera todo, publica la oficina y hace push.
+- **Mac · tarea programada "WhatsApp de la tarde" (lunes a sábado 17:30):** solo lee respuestas, anota precios, publica la oficina y hace push. No abre chats nuevos.
+- **PC de la casa:** puede hacer la ronda local manualmente con el mismo proceso; nunca al mismo tiempo que la Mac.
+- La oficina muestra el estado real de cada agente según su última fila en `actividad.csv`: si un agente no anota lo que hizo, aparece "En espera".
 - Antes de trabajar, siempre `git pull` para tener lo último de la otra sesión.
 - Al terminar cada ronda (nube o local): agregar la fila del día a `tipo-cambio.csv` (nube), anotar lo hecho en `actividad.csv`, correr `python3 comparar.py`, `python3 reportes.py` (Excel + copia del día en `historial/` en CSV y PDF) y `python3 oficina/generar.py`, republicar la oficina en la misma URL con `files: {"datos.js": "oficina/datos.js"}` (si la sesión puede publicar artefactos) y hacer commit y push. El historial de la oficina se arma solo con esas filas: nunca borrar filas viejas de los CSV, solo agregar.
 - Computadoras: PC de la casa (Windows) y Mac (repo en `~/Documents/agente-importacion`, login de GitHub con `gh`).
