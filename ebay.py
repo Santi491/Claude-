@@ -12,6 +12,7 @@ import base64
 import csv
 import json
 import os
+import re
 import sys
 import urllib.parse
 import urllib.request
@@ -21,6 +22,9 @@ SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
 CONDICIONES = {"nuevo": "NEW", "usado": "USED", "todos": None}
 # Categorías de eBay: procesadores, memoria RAM de escritorio, SSD
 CATEGORIAS = {"cpu": "164", "ram": "170083", "ssd": "175669"}
+# Anuncios que no son el producto en sí
+EXCLUIR = ("box only", "empty box", "caja vacía", "for parts", "not working", "broken", "lot of",
+           "cooler only", "heatsink only", "bundle", "combo", "motherboard", "laptop", "sodimm", "so-dimm")
 MIN_FEEDBACK_PCT = 98.0
 MIN_FEEDBACK_SCORE = 50
 
@@ -54,6 +58,23 @@ def categoria(texto):
     return CATEGORIAS["cpu"]
 
 
+def normalizar(texto):
+    t = texto.lower().replace("-", " ")
+    t = re.sub(r"(\d)\s*x\s*(\d)", r"\1x\2", t)      # "2 x 16GB" -> "2x16gb"
+    t = re.sub(r"(\d)\s+(gb|tb)\b", r"\1\2", t)      # "32 GB" -> "32gb"
+    t = re.sub(r"(\d)\s*mhz\b", r"\1", t)             # "6000MHz" -> "6000"
+    return t
+
+
+def coincide(consulta, titulo):
+    """El título debe tener todas las palabras con números de la consulta (modelo, capacidad, velocidad)."""
+    t = normalizar(titulo)
+    if any(x in t for x in EXCLUIR):
+        return False
+    claves = [w for w in normalizar(consulta).split() if any(c.isdigit() for c in w)]
+    return all(re.search(rf"(?<![0-9a-z]){re.escape(w)}(?![0-9a-z])", t) for w in claves)
+
+
 def buscar(tok, consulta, condicion="nuevo", limite=50):
     filtros = ["buyingOptions:{FIXED_PRICE}", "itemLocationCountry:US", "deliveryCountry:US"]
     if CONDICIONES[condicion]:
@@ -69,12 +90,10 @@ def buscar(tok, consulta, condicion="nuevo", limite=50):
     with urllib.request.urlopen(req, timeout=30) as r:
         data = json.load(r)
 
-    palabras = [w.lower() for w in consulta.replace('"', "").split() if len(w) > 2 and w.upper() != "OR"]
     out = []
     for it in data.get("itemSummaries", []):
         titulo = it.get("title", "")
-        # Descarta anuncios que no mencionan al menos la mitad de las palabras clave (accesorios, lotes raros)
-        if sum(w in titulo.lower() for w in palabras) < max(1, len(palabras) // 2):
+        if not coincide(consulta, titulo):
             continue
         vend = it.get("seller", {})
         pct = float(vend.get("feedbackPercentage") or 0)
