@@ -4,7 +4,7 @@
 Lee vigilar.csv, precios-eeuu.csv y precios-cochabamba.csv y escribe comparacion.md.
 Mismos supuestos que la oficina de agentes (artefacto "Importación Cochabamba").
 
-    python3 comparar.py                          # nuevo, 11,90 Bs/USD
+    python3 comparar.py                          # dólar del día de tipo-cambio.csv
     python3 comparar.py --tc 11.88 --aduana 10
 """
 import argparse
@@ -97,11 +97,14 @@ def tabla(vigilar, eeuu, cbba, condicion, a):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tc", type=float, default=11.90, help="Bs por USD")
+    ap.add_argument("--tc", type=float, default=None, help="Bs por USD (por defecto: el último 'usado' de tipo-cambio.csv)")
     ap.add_argument("--tax", type=float, default=7, help="sales tax del courier A, %%")
     ap.add_argument("--aduana", type=float, default=0, help="aduana boliviana, %% del valor")
     a = ap.parse_args()
     a.tax, a.aduana = a.tax / 100, a.aduana / 100
+    if a.tc is None:
+        tcs = [f for f in leer("tipo-cambio.csv") if f["usado"]]
+        a.tc = float(max(tcs, key=lambda f: f["fecha"])["usado"]) if tcs else 11.90
 
     vigilar, eeuu, cbba = leer("vigilar.csv"), leer("precios-eeuu.csv"), leer("precios-cochabamba.csv")
     enc = ("| Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs "

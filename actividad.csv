@@ -1,0 +1,21 @@
+fecha,hora,agente,texto
+2026-10-11,,nube,informe 2026-10-11 con precios estimados
+2026-10-11,,mkt,15 anuncios guardados en precios-cochabamba.csv
+2026-10-11,14:47,wa,"3 consultas: Compucenter, Gamer Store, Smart Cube"
+2026-10-11,,wa,TiendasClick y Concordex no tienen WhatsApp
+2026-10-11,16:42,wa,"5 consultas: Cyrex, MSR, Geek Store, Ovni Express, Computer Magic"
+2026-10-11,16:50,wa,MSR: no vende componentes sueltos
+2026-10-11,17:28,wa,Ovni Express: sin stock por ahora
+2026-10-11,17:52,wa,respondió a MSR y a Ovni Express
+2026-10-12,,nube,informe 2026-10-12 (precios de eBay estimados: la rutina aún no tiene la clave de API)
+2026-10-12,,ebay,9 productos más con precio nuevo (Chrome)
+2026-10-12,,ebay,usado más barato de los 14 productos (Chrome)
+2026-10-12,,wa,"Smart Cube: “sí, algunos” · Ovni Express: “Ok”"
+2026-10-12,09:26,wa,Computer Magic: no tiene CPU ni RAM
+2026-10-12,10:29,wa,Cyrex: 7800X3D Bs 5.664 · i5-14400F Bs 2.537
+2026-10-12,10:41,wa,consulta de precios a Smart Cube; repregunta a Cyrex
+2026-10-12,10:43,wa,Compucenter: DDR5 agotada; pidió NIT (no se dio)
+2026-10-12,10:45,wa,"consultas nuevas: TecnoGamer, Electro-TTS, PC Components (Santa Cruz)"
+2026-10-12,10:50,mkt,"revisión de 5600, 5700X3D y DDR5 32GB: sin anuncios nuevos útiles"
+2026-10-12,11:00,ana,comparacion.md con precios reales de eBay (python3 comparar.py)
+2026-10-12,11:15,ebay,API oficial: 12 nuevos y 14 usados guardados en precios-eeuu.csv

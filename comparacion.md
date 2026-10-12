@@ -34,7 +34,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 ## Detalle por vendedor (eBay nuevo)
 
 ### Ryzen 7 7800X3D
-eBay nuevo: USD 329.00 con envío en EE.UU. (eBay API (nuevo; aaawavecom 99.8%), 2026-10-12). Costo puesto: **Bs 4.082**/u en pedido de 2, **Bs 4.082**/u en pedido de 4.
+eBay nuevo: USD 329.00 con envío en EE.UU. (eBay API; vendedor aaawavecom 99.8%; sin caja (tray), 2026-10-12). Costo puesto: **Bs 4.082**/u en pedido de 2, **Bs 4.082**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
@@ -44,7 +44,7 @@ eBay nuevo: USD 329.00 con envío en EE.UU. (eBay API (nuevo; aaawavecom 99.8%),
 | Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | BOX (según foto de su web; USD 480) | 5.664 | 1.582 (28%) | 2026-10-12 |
 
 ### Ryzen 9 9950X
-eBay nuevo: USD 499.99 con envío en EE.UU. (eBay API (nuevo; saguarowholesalesupply 100.0%), 2026-10-12). Costo puesto: **Bs 6.116**/u en pedido de 2, **Bs 6.116**/u en pedido de 4.
+eBay nuevo: USD 499.99 con envío en EE.UU. (eBay API; vendedor saguarowholesalesupply 100.0%; sellado; envío no indicado, 2026-10-12). Costo puesto: **Bs 6.116**/u en pedido de 2, **Bs 6.116**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
@@ -58,7 +58,7 @@ eBay nuevo: USD 259.78 con envío en EE.UU. (eBay vía Chrome, vendedor en EE.UU
 | MSR Computers (web; fecha de actualización desconocida) · [ver](https://msrcomputers.framer.website/) | nuevo | 2.300 | -958 (-42%) | 2026-10-11 |
 
 ### Intel Core i5-14400F
-eBay nuevo: USD 164.49 con envío en EE.UU. (eBay API (nuevo; newegg 99.6%), 2026-10-12). Costo puesto: **Bs 2.124**/u en pedido de 2, **Bs 2.082**/u en pedido de 4.
+eBay nuevo: USD 164.49 con envío en EE.UU. (eBay API; vendedor newegg 99.6%, 2026-10-12). Costo puesto: **Bs 2.124**/u en pedido de 2, **Bs 2.082**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
@@ -66,21 +66,21 @@ eBay nuevo: USD 164.49 con envío en EE.UU. (eBay API (nuevo; newegg 99.6%), 202
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1796562071723775/) | no indicado (anuncio dice i5 14400; confirmar si es F) | 2.700 | 576 (21%) | 2026-10-11 |
 
 ### Intel Core Ultra 7 265K
-eBay nuevo: USD 244.87 con envío en EE.UU. (eBay API (nuevo; reverendreed779 100.0%), 2026-10-12). Costo puesto: **Bs 3.081**/u en pedido de 2, **Bs 3.039**/u en pedido de 4.
+eBay nuevo: USD 244.87 con envío en EE.UU. (eBay API; vendedor reverendreed779 100.0%, 2026-10-12). Costo puesto: **Bs 3.081**/u en pedido de 2, **Bs 3.039**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | MSR Computers (web; fecha de actualización desconocida) · [ver](https://msrcomputers.framer.website/) | nuevo | 3.950 | 869 (22%) | 2026-10-11 |
 
 ### Corsair Vengeance RGB DDR5 32GB (2x16) 6000
-eBay nuevo: USD 435.99 con envío en EE.UU. (eBay API (nuevo; wojiapanpan_4 100.0%), 2026-10-12). Costo puesto: **Bs 5.355**/u en pedido de 2, **Bs 5.272**/u en pedido de 4.
+eBay nuevo: USD 435.99 con envío en EE.UU. (eBay API; vendedor wojiapanpan_4 100.0%; Vengeance RGB RS, 2026-10-12). Costo puesto: **Bs 5.355**/u en pedido de 2, **Bs 5.272**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1414394683871926/) | no indicado (modelo RS) | 6.200 | 845 (14%) | 2026-10-11 |
 
 ### RAM DDR4 16GB (2x8) 3200
-eBay nuevo: USD 75.00 con envío en EE.UU. (eBay API (nuevo; juniorarredondo 100.0%), 2026-10-12). Costo puesto: **Bs 1.059**/u en pedido de 2, **Bs 976**/u en pedido de 4.
+eBay nuevo: USD 75.00 con envío en EE.UU. (eBay API; vendedor juniorarredondo 100.0%; Silicon Power 2x8, 2026-10-12). Costo puesto: **Bs 1.059**/u en pedido de 2, **Bs 976**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
@@ -89,7 +89,7 @@ eBay nuevo: USD 75.00 con envío en EE.UU. (eBay API (nuevo; juniorarredondo 100
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2345958202816013/) | no indicado (Corsair Vengeance 2x8; Sacaba; rebajado de 1600) | 1.500 | 441 (29%) | 2026-10-11 |
 
 ### SSD NVMe 1TB
-eBay nuevo: USD 114.99 con envío en EE.UU. (eBay API (nuevo; gadgetworld03 99.0%), 2026-10-12). Costo puesto: **Bs 1.535**/u en pedido de 2, **Bs 1.452**/u en pedido de 4.
+eBay nuevo: USD 114.99 con envío en EE.UU. (eBay API; vendedor gadgetworld03 99.0%; Derlar DN-850Q, marca poco conocida, 2026-10-12). Costo puesto: **Bs 1.535**/u en pedido de 2, **Bs 1.452**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
@@ -98,7 +98,7 @@ eBay nuevo: USD 114.99 con envío en EE.UU. (eBay API (nuevo; gadgetworld03 99.0
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2817371738643128/) | no indicado (Crucial P310 1TB) | 2.000 | 465 (23%) | 2026-10-11 |
 
 ### SSD NVMe 2TB
-eBay nuevo: USD 209.99 con envío en EE.UU. (eBay API (nuevo; ram_technologies 100.0%), 2026-10-12). Costo puesto: **Bs 2.665**/u en pedido de 2, **Bs 2.582**/u en pedido de 4.
+eBay nuevo: USD 209.99 con envío en EE.UU. (eBay API; vendedor ram_technologies 100.0%; RAM Tech 2TB Gen4, 2026-10-12). Costo puesto: **Bs 2.665**/u en pedido de 2, **Bs 2.582**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|

@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
-/* Layout: arriba la oficina isométrica (pantalla oscura fija, como un monitor), debajo el manifiesto de productos y la sección de usados */
+/* Layout: la oficina isométrica a todo el ancho (pantalla oscura fija); al tocar un agente se abre su panel. Debajo: tabla de productos, usados e historial tipo estado de cuenta con documentos */
 :root{
   --bg:#F2F4F6; --surface:#FFFFFF; --ink:#15212B; --muted:#5B6873; --line:#D9DFE5;
   --accent:#C9701C; --accent-soft:#F7E7D6;
@@ -25,80 +25,67 @@
   color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
-.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:24px 48px;display:grid;gap:22px}
+.wrap{max-width:1400px;margin:0 auto;padding-inline:16px;padding-block:24px 48px;display:grid;gap:22px}
 .eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 h1{font-family:var(--f-display);font-stretch:78%;font-weight:800;font-size:clamp(28px,5vw,44px);line-height:1.05;margin:0;text-wrap:balance}
 h2{font-family:var(--f-display);font-stretch:80%;font-weight:800;font-size:clamp(22px,3.4vw,30px);line-height:1.1;margin:0;text-wrap:balance}
 header{display:grid;gap:6px}
 .lede{color:var(--muted);max-width:70ch;margin:0}
+a{color:var(--accent);text-underline-offset:2px}
 
 /* ---------- Oficina ---------- */
 .office{background:var(--o-bg);color:var(--o-ink);border:1px solid var(--o-line);border-radius:14px;overflow:hidden;display:grid;color-scheme:dark}
-.hud{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--o-line);background:var(--o-panel);font-family:var(--f-mono);font-size:12px}
+.hud{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--o-line);background:var(--o-panel);font-family:var(--f-mono);font-size:12px}
 .hud .brand{font:800 15px var(--f-display);font-stretch:80%;color:var(--o-ink);margin-right:auto}
 .hud .brand i{font-style:normal;color:var(--o-cyan)}
 .hud .kv{display:grid}
 .hud .kv span{color:var(--o-muted);font-size:10px;letter-spacing:.08em;text-transform:uppercase}
 .hud .kv b{font-weight:600;font-variant-numeric:tabular-nums}
-.hud .kv b.c{color:var(--o-cyan)} .hud .kv b.a{color:var(--o-amber)} .hud .kv b.r{color:#F07A7A}
-.stage{display:grid;grid-template-columns:minmax(0,1fr) 300px}
-@media (max-width:820px){.stage{grid-template-columns:minmax(0,1fr)}}
-.canvasbox{position:relative;min-width:0;overflow:hidden}
-canvas{display:block;width:100%;height:auto;cursor:grab;touch-action:pan-y}
-canvas.zoomed{touch-action:none}
-canvas:active{cursor:grabbing}
-.hint{position:absolute;left:12px;bottom:10px;font:500 11px var(--f-mono);color:var(--o-muted);pointer-events:none}
-.zoom{position:absolute;right:10px;top:10px;display:flex;gap:6px}
-.zoom button{font:600 14px var(--f-mono);color:var(--o-ink);background:rgba(16,34,48,.9);border:1px solid var(--o-line);border-radius:6px;min-width:34px;height:32px;padding:0 10px;cursor:pointer}
+.hud .kv b.c{color:var(--o-cyan)} .hud .kv b.a{color:var(--o-amber)}
+.stage{position:relative;min-width:0}
+canvas{display:block;width:100%;cursor:pointer;touch-action:pan-y}
+canvas.zoomed{touch-action:none;cursor:grab}
+.hint{position:absolute;left:14px;bottom:12px;font:500 12px var(--f-mono);color:var(--o-muted);pointer-events:none}
+.zoom{position:absolute;left:14px;top:12px;display:flex;gap:6px}
+.zoom button{font:600 14px var(--f-mono);color:var(--o-ink);background:rgba(16,34,48,.9);border:1px solid var(--o-line);border-radius:6px;min-width:36px;height:34px;padding:0 10px;cursor:pointer}
 .zoom button:hover{border-color:var(--o-cyan)}
-.screen{position:absolute;inset:auto 10px 10px 10px;max-height:calc(100% - 56px);display:grid;grid-template-rows:auto minmax(0,1fr);background:#0A141C;border:2px solid var(--o-line);border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,.5);overflow:hidden}
-.sbar{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;padding:7px 10px;background:var(--o-panel);border-bottom:1px solid var(--o-line);font:500 12px var(--f-mono)}
-.sbar b{font:700 13px var(--f-body);color:var(--o-ink)}
-.sbar .meta{color:var(--o-muted);margin-right:auto}
-.sbar button{font:600 12px var(--f-mono);color:var(--o-ink);background:transparent;border:1px solid var(--o-line);border-radius:5px;padding:3px 9px;cursor:pointer}
-.sbody{position:relative;overflow:auto;min-height:0}
-.sbody img{display:block;width:100%;height:auto}
-.sbody .term{font:13px/1.6 var(--f-mono);color:var(--o-ink);padding:12px 14px;white-space:pre-wrap}
-.sbody .term .k{color:var(--o-cyan)} .sbody .term .g{color:#5CD69A} .sbody .term .y{color:var(--o-amber)}
-@media (max-width:640px){
-  .canvasbox{display:flex;flex-direction:column}
-  .zoom{position:static;order:-1;padding:8px 10px;justify-content:flex-end;border-bottom:1px solid var(--o-line)}
-  .zoom button{height:40px;min-width:44px;font-size:16px}
-  .hint{position:static;padding:6px 12px 10px}
-  .screen{position:static;margin:0 8px 10px;max-height:none;box-shadow:none}
-  .sbody{max-height:65vh}
-  .sbar button{padding:8px 12px}
-  .card button{padding:9px 14px}
-  .sbody .badge{position:static;display:inline-block;margin:8px 10px}
-}
-.badge{position:absolute;left:10px;top:10px;font:700 12px var(--f-mono);letter-spacing:.08em;padding:4px 9px;border-radius:5px;background:rgba(10,20,28,.88);border:1px solid currentColor}
-.side{border-left:1px solid var(--o-line);background:var(--o-panel);display:grid;grid-template-rows:auto 1fr;min-width:0}
-@media (max-width:820px){.side{border-left:0;border-top:1px solid var(--o-line)}}
-.card{padding:14px 16px;border-bottom:1px solid var(--o-line);display:grid;gap:8px}
-.card .who{display:flex;gap:10px;align-items:center}
+.drawer{position:absolute;top:0;right:0;bottom:0;width:min(420px,46%);background:var(--o-panel);border-left:1px solid var(--o-line);display:grid;grid-template-rows:auto minmax(0,1fr);box-shadow:-18px 0 40px rgba(0,0,0,.35)}
+.dhead{display:grid;gap:4px;padding:14px 16px 12px;border-bottom:1px solid var(--o-line)}
+.dhead .who{display:flex;gap:10px;align-items:center}
+.dhead h3{margin:0;font:700 22px var(--f-display);font-stretch:85%;margin-right:auto}
+.dhead .where{font:500 11px var(--f-mono);color:var(--o-muted)}
+.dhead .state{font:600 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
+.dhead button{font:600 12px var(--f-mono);color:var(--o-ink);background:transparent;border:1px solid var(--o-line);border-radius:5px;padding:5px 10px;cursor:pointer}
+.dhead button:hover{border-color:var(--o-cyan)}
+.dbody{overflow:auto;padding:14px 16px 18px;display:grid;gap:18px;align-content:start}
+.dbody h4{margin:0 0 6px;font:600 10px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--o-muted)}
+.dbody ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14px}
+.shot{border:1px solid var(--o-line);border-radius:8px;overflow:hidden;background:#07111A}
+.shot img{display:block;width:100%;height:auto}
+.term{font:12.5px/1.6 var(--f-mono);color:var(--o-ink);padding:10px 12px;white-space:pre-wrap;margin:0}
+.term .k{color:var(--o-cyan)} .term .g{color:#5CD69A} .term .y{color:var(--o-amber)} .term .r{color:#F07A7A}
+.acts{display:grid;gap:7px}
+.acts div{font:400 12.5px/1.45 var(--f-mono)}
+.acts time{color:var(--o-muted);margin-right:6px}
 .dot{width:10px;height:10px;border-radius:50%;flex:none;display:inline-block}
-.card h3{margin:0;font:700 18px var(--f-display);font-stretch:85%}
-.card .where{font:500 11px var(--f-mono);color:var(--o-muted)}
-.card .state{font:600 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
-.card ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:14px}
-.card button{justify-self:start;font:600 12px var(--f-mono);color:var(--o-bg);background:var(--o-cyan);border:0;border-radius:5px;padding:5px 10px;cursor:pointer}
-.log{padding:12px 16px;display:grid;gap:6px;align-content:start;max-height:300px;overflow:auto}
-.log h4{margin:0 0 4px;font:600 10px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--o-muted)}
-.log div{font:400 12px/1.45 var(--f-mono)}
-.log time{color:var(--o-muted);margin-right:6px}
-.log em{font-style:normal;color:var(--o-cyan)}
+@media (max-width:760px){
+  .drawer{position:static;width:auto;box-shadow:none;border-left:0;border-top:1px solid var(--o-line)}
+  .zoom button{height:40px;min-width:44px;font-size:16px}
+  .hint{position:static;padding:6px 14px 10px;display:block}
+}
 
 /* ---------- Tablas ---------- */
 .controls{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:flex-end;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
-.ctl{display:grid;gap:4px}
+.ctl{display:grid;gap:4px;min-width:0}
 .ctl label,.ctl .lbl{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.ctl input[type=number],.ctl input[type=search]{font:500 15px var(--f-mono);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px 8px;width:96px}
+.ctl input[type=number],.ctl input[type=search],.ctl select{font:500 15px var(--f-mono);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px 8px;width:96px}
 .ctl input[type=search]{font-family:var(--f-body);width:200px}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:7px;overflow:hidden}
+.ctl select{font-family:var(--f-body);width:auto;max-width:100%}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:7px;overflow:hidden}
 .seg button{font:600 14px var(--f-body);background:var(--bg);color:var(--ink);border:0;padding:6px 12px;cursor:pointer}
 .seg button+button{border-left:1px solid var(--line)}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-button:focus-visible,input:focus-visible,tr:focus-visible,canvas:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button:focus-visible,input:focus-visible,select:focus-visible,tr:focus-visible,canvas:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .summary{display:flex;flex-wrap:wrap;gap:10px}
 .chip{display:inline-flex;align-items:center;gap:8px;font:600 13px var(--f-body);padding:6px 12px;border-radius:999px}
 .chip b{font-family:var(--f-mono);font-size:15px}
@@ -107,65 +94,118 @@ button:focus-visible,input:focus-visible,tr:focus-visible,canvas:focus-visible{o
 .st-bad{background:var(--bad-soft);color:var(--bad)}
 .st-none{background:var(--none-soft);color:var(--none)}
 .tablebox{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
-table{border-collapse:collapse;width:100%;min-width:1020px;font-variant-numeric:tabular-nums}
-th{font:600 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:right;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap;cursor:pointer;user-select:none;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+#main{min-width:1260px}
+#usedT{min-width:1020px}
+th{font:600 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:right;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap;user-select:none;background:var(--surface)}
+#main th{cursor:pointer}
 th.l{text-align:left}
+th.grp,td.grp{border-left:1px solid var(--line)}
 th.use,td.use{background:color-mix(in srgb,var(--accent-soft) 55%,transparent)}
 th[aria-sort="ascending"]::after{content:" ▲";color:var(--accent)}
 th[aria-sort="descending"]::after{content:" ▼";color:var(--accent)}
 td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;font-family:var(--f-mono);font-size:14px;white-space:nowrap}
-td.name{text-align:left;font-family:var(--f-body);font-weight:600;white-space:normal;min-width:210px}
+td.name{text-align:left;font-family:var(--f-body);font-weight:600;white-space:normal;min-width:200px}
 td.cat{text-align:left;font-size:12px;color:var(--muted)}
-td a{color:var(--accent);text-underline-offset:2px}
+td .n{font-size:11px;color:var(--muted);margin-left:4px}
 tr.row{cursor:pointer}
 tr.row:hover td{background:color-mix(in srgb,var(--accent-soft) 45%,transparent)}
 tr.row.open td{background:var(--accent-soft)}
 .tag{font:600 10px var(--f-mono);letter-spacing:.05em;padding:1px 5px;border-radius:4px;margin-left:5px;vertical-align:1px;color:var(--none);background:var(--none-soft)}
 .dash{color:var(--muted)}
 .pos{color:var(--good);font-weight:600}.neg{color:var(--bad);font-weight:600}
-.pill{display:inline-block;font:600 12px var(--f-body);padding:3px 9px;border-radius:999px}
+.pill{display:inline-block;font:600 12px var(--f-body);padding:3px 9px;border-radius:999px;white-space:nowrap}
 .detail td{background:var(--bg);text-align:left;white-space:normal;font-family:var(--f-body);padding:14px 16px 18px}
-.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
 .dgrid>div{min-width:0}
 .dgrid h3{font:600 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
 .dgrid ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .dgrid li{font-size:14px}
-.dgrid a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
 .calc{font-family:var(--f-mono);font-size:13px;display:grid;grid-template-columns:auto auto;gap:2px 14px;justify-content:start}
 .calc span:nth-child(even){text-align:right}
 .calc .tot{font-weight:600;border-top:1px solid var(--line);padding-top:3px}
 .note{background:var(--warn-soft);color:var(--warn);border-radius:8px;padding:10px 14px;font-size:14px;max-width:90ch;margin:0}
+
+/* ---------- Historial (estado de cuenta) ---------- */
+.tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid var(--line)}
+.tabs button{font:700 16px var(--f-display);font-stretch:85%;color:var(--muted);background:none;border:0;border-bottom:3px solid transparent;padding:8px 14px 9px;cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.pane{display:grid;gap:14px}
+.stmt{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.day{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline;padding:12px 16px;background:var(--bg);border-bottom:1px solid var(--line);font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.day b{font:800 17px var(--f-display);font-stretch:82%;color:var(--ink);margin-right:auto}
+.day b::first-letter{text-transform:uppercase}
+.mv{display:grid;grid-template-columns:minmax(0,1fr) 110px 110px 150px;gap:4px 16px;align-items:baseline;padding:9px 16px;border-bottom:1px dashed var(--line)}
+.mv .what{min-width:0}
+.mv .what b{font-weight:600}
+.mv .what small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35;overflow-wrap:anywhere}
+.mv .num{font-family:var(--f-mono);font-size:14px;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.mv .num.old{color:var(--muted)}
+.mv .chg{justify-self:end}
+.mvhead{font:600 10px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+.mvhead span:not(:first-child){text-align:right}
+.kind{font:600 10px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:1px 6px;border-radius:4px;margin-right:6px;vertical-align:1px}
+.k-ebay{background:var(--accent-soft);color:var(--accent)}
+.k-local{background:var(--good-soft);color:var(--good)}
+.k-dolar{background:var(--none-soft);color:var(--none)}
+.empty{padding:18px 16px;color:var(--muted)}
+#daysT{min-width:520px}
+#daysT td.name{min-width:220px}
+#fxT{min-width:720px}
+.up{color:var(--bad)} .down{color:var(--good)}
+.docs{display:grid;grid-template-columns:280px minmax(0,1fr);gap:16px;align-items:start}
+.doclist{display:grid;gap:6px}
+.doclist button{text-align:left;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;cursor:pointer;display:grid;gap:2px}
+.doclist button small{font:500 11px var(--f-mono);color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.doclist button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.reader{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 22px;min-width:0;overflow:hidden}
+.reader h1{font-size:28px;margin:0 0 10px}
+.reader h2{font-size:21px;margin:22px 0 8px}
+.reader h3{font:700 17px var(--f-display);margin:18px 0 6px}
+.reader p,.reader li{max-width:80ch}
+.reader .tw{overflow-x:auto;margin:8px 0}
+.reader table{min-width:640px}
+.reader th,.reader td{padding:6px 9px;text-align:left;white-space:normal;font-family:var(--f-body);font-size:13px;border-bottom:1px solid var(--line)}
+.reader code{font-family:var(--f-mono);font-size:.9em;background:var(--bg);padding:1px 4px;border-radius:4px}
+@media (max-width:760px){
+  .mv{grid-template-columns:minmax(0,1fr) auto}
+  .mv .num.old,.mv .chg{grid-column:2}
+  .mv .num.old{display:none}
+  .mvhead{display:none}
+  .docs{grid-template-columns:minmax(0,1fr)}
+}
 footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 @media (prefers-reduced-motion:no-preference){tr.row td{transition:background .15s}}
 </style>
 
 <div class="wrap">
   <header>
-    <div class="eyebrow">EE.UU. → Cochabamba · actualizado 12/10/2026 11:15 (Mac)</div>
+    <div class="eyebrow" id="eyebrow">EE.UU. → Cochabamba</div>
     <h1>Oficina de agentes</h1>
-    <p class="lede">Cada escritorio es un agente. Su monitor muestra la última captura de lo que estaba haciendo; si no está trabajando, dice “En espera”. Toca un agente para acercarte y ver su pantalla.</p>
+    <p class="lede">Toca un agente para acercarte y ver lo que hizo. Tócalo otra vez para volver a la vista general.</p>
   </header>
 
   <section class="office" aria-label="Oficina de agentes">
     <div class="hud" id="hud"></div>
-    <div class="stage">
-      <div class="canvasbox" id="box">
-        <canvas id="cv" tabindex="0" aria-label="Oficina isométrica con los agentes"></canvas>
-        <div class="zoom"><button type="button" id="zout" aria-label="Alejar">−</button><button type="button" id="zin" aria-label="Acercar">+</button><button type="button" id="zreset">Vista general</button></div>
-        <div class="hint" id="hint">Rueda o pellizco para zoom · arrastra para moverte · toca un agente</div>
-        <div class="screen" id="screen" hidden>
-          <div class="sbar"><span class="dot" id="sDot"></span><b id="sTitle"></b><span class="meta" id="sMeta"></span><button type="button" id="sClose">Cerrar pantalla</button></div>
-          <div class="sbody" id="sBody"></div>
+    <div class="stage" id="stage">
+      <canvas id="cv" tabindex="0" aria-label="Oficina isométrica con los agentes. Flechas para cambiar de agente, Escape para cerrar."></canvas>
+      <div class="zoom"><button type="button" id="zout" aria-label="Alejar">−</button><button type="button" id="zin" aria-label="Acercar">+</button><button type="button" id="zreset">Vista general</button></div>
+      <div class="hint" id="hint">Toca un agente · rueda o pellizco para zoom</div>
+      <aside class="drawer" id="drawer" hidden aria-live="polite">
+        <div class="dhead">
+          <div class="who"><span class="dot" id="dDot"></span><h3 id="dName"></h3><button type="button" id="dClose">Cerrar</button></div>
+          <div class="where" id="dWhere"></div>
+          <div class="state" id="dState"></div>
         </div>
-      </div>
-      <aside class="side"><div class="card" id="card"></div><div class="log" id="log"></div></aside>
+        <div class="dbody" id="dBody"></div>
+      </aside>
     </div>
   </section>
 
   <header style="margin-top:10px">
     <div class="eyebrow">Los 14 productos de vigilar.csv</div>
     <h2>¿Qué conviene traer?</h2>
-    <p class="lede">Precio más barato en eBay nuevo y usado (vendedor de EE.UU.), costo puesto con el courier más barato y el mejor precio visto en Cochabamba. La columna resaltada es la que se usa para el cálculo. Toca una fila para ver anuncios y el cálculo.</p>
+    <p class="lede">Primero lo más barato en eBay (nuevo y usado, vendedor en EE.UU.), después lo más barato en Marketplace y en tiendas de Cochabamba, y al final el cálculo. La columna resaltada de eBay es la que se usa. Toca una fila para ver anuncios y el cálculo.</p>
   </header>
 
   <section class="controls" aria-label="Supuestos del cálculo">
@@ -193,7 +233,9 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
     <table id="main">
       <thead><tr>
         <th class="l" data-k="name">Producto</th><th class="l" data-k="cat">Tipo</th>
-        <th data-k="new" id="thNew">eBay nuevo</th><th data-k="used" id="thUsed">eBay usado</th><th data-k="ship">Courier /u</th><th data-k="cost">Costo puesto Bs</th>
+        <th class="grp" data-k="new" id="thNew">eBay nuevo</th><th data-k="used" id="thUsed">eBay usado</th>
+        <th class="grp" data-k="mkt">Marketplace Bs</th><th data-k="shop">Tiendas Bs</th>
+        <th class="grp" data-k="ship">Courier /u</th><th data-k="cost">Costo puesto Bs</th>
         <th data-k="local">Mejor local Bs</th><th data-k="gain">Ganancia /u</th><th data-k="margin">Margen</th><th class="l" data-k="rank">Estado</th>
       </tr></thead>
       <tbody id="tb"></tbody>
@@ -213,53 +255,74 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
     </table>
   </div>
 
+  <header style="margin-top:14px" id="historial">
+    <div class="eyebrow">Registro diario · eBay, Cochabamba y dólar</div>
+    <h2>Historial y documentos</h2>
+    <p class="lede">Cada precio que vieron los agentes queda anotado como un movimiento, con el valor anterior y la diferencia. Los informes diarios y la tabla de comparación están en Documentos.</p>
+  </header>
+  <div class="tabs" role="tablist" aria-label="Historial">
+    <button type="button" role="tab" id="tab-mov" aria-selected="true" aria-controls="pane-mov">Estado de cuenta</button>
+    <button type="button" role="tab" id="tab-dias" aria-selected="false" aria-controls="pane-dias">Precio por día</button>
+    <button type="button" role="tab" id="tab-docs" aria-selected="false" aria-controls="pane-docs">Documentos</button>
+  </div>
+
+  <section class="pane" id="pane-mov" role="tabpanel" aria-labelledby="tab-mov">
+    <div class="controls">
+      <div class="ctl"><span class="lbl">Mostrar</span>
+        <div class="seg" role="group" aria-label="Tipo de movimiento" id="mvKinds">
+          <button type="button" data-t="" aria-pressed="true">Todo</button><button type="button" data-t="ebay" aria-pressed="false">eBay</button><button type="button" data-t="local" aria-pressed="false">Cochabamba</button><button type="button" data-t="dolar" aria-pressed="false">Dólar</button>
+        </div></div>
+      <div class="ctl"><label for="mvProd">Producto</label><select id="mvProd"><option value="">Todos los productos</option></select></div>
+      <div class="ctl"><span class="lbl">Movimientos</span>
+        <div class="seg" role="group" aria-label="Filtrar por cambio" id="mvOnly">
+          <button type="button" data-o="" aria-pressed="true">Todos</button><button type="button" data-o="chg" aria-pressed="false">Solo con cambio</button>
+        </div></div>
+    </div>
+    <div class="stmt" id="stmt"></div>
+  </section>
+
+  <section class="pane" id="pane-dias" role="tabpanel" aria-labelledby="tab-dias" hidden>
+    <div class="controls">
+      <div class="ctl"><span class="lbl">Serie</span>
+        <div class="seg" role="group" aria-label="Serie" id="dSeries">
+          <button type="button" data-s="nuevo" aria-pressed="true">eBay nuevo</button><button type="button" data-s="usado" aria-pressed="false">eBay usado</button><button type="button" data-s="local" aria-pressed="false">Mejor local</button>
+        </div></div>
+    </div>
+    <div class="tablebox"><table id="daysT"><thead id="daysH"></thead><tbody id="daysB"></tbody></table></div>
+    <div class="tablebox"><table id="fxT"><thead><tr><th class="l">Fecha</th><th>Oficial BCB</th><th>Paralelo compra</th><th>Paralelo venta</th><th>Usado en cálculos</th><th class="l">Fuente</th></tr></thead><tbody id="fxB"></tbody></table></div>
+  </section>
+
+  <section class="pane" id="pane-docs" role="tabpanel" aria-labelledby="tab-docs" hidden>
+    <div class="docs"><div class="doclist" id="docList"></div><article class="reader" id="reader"></article></div>
+  </section>
+
   <footer>
     <div><b>Courier B:</b> USD 28/kg, mínimo 1 kg, sube de 0,5 en 0,5 kg; peso = peso con caja × unidades + 300 g de caja exterior. <b>Courier A:</b> USD 10 por producto + sales tax. Se usa el más barato.</div>
-    <div><b>Estado:</b> conviene ≥ 15 % de margen · justo 5–15 % · no conviene &lt; 5 %. Los precios de Marketplace son lo que piden los vendedores. La aduana boliviana sigue sin confirmar; pruébala con “Aduana %”.</div>
-    <div>Precios de eBay del 12/10/2026 con la API oficial (compra inmediata, vendedor en EE.UU. con ≥ 98 % de feedback; “nuevo” excluye open box). El i5-13400 nuevo sigue con el anuncio visto con Chrome. Capturas de pantalla del 12/10/2026.</div>
+    <div><b>Estado:</b> conviene ≥ 15 % de margen · justo 5–15 % · no conviene &lt; 5 %, contra el mejor precio local (Marketplace o tienda). Los precios de Marketplace son lo que piden los vendedores. La aduana boliviana sigue sin confirmar; pruébala con “Aduana %”.</div>
+    <div id="srcNote"></div>
   </footer>
 </div>
 
+<script src="datos.js"></script>
 <script>
-/* ================== Productos ================== */
-const MSR="MSR Computers (web; por WhatsApp dijeron que no venden sueltos)";
-const P=[
- {name:"Ryzen 5 5600",cat:"CPU",g:350,nw:{usd:138.9,ship:0.0,url:"https://www.ebay.com/itm/389732753480",note:"Nuevo · API eBay 12/10"},us:{usd:135.0,ship:0.0,url:"https://www.ebay.com/itm/287620955096",note:"Usado · API eBay 12/10"},local:[]},
- {name:"Ryzen 7 5700X3D",cat:"CPU",g:350,nw:null,us:{usd:305.0,ship:0.0,url:"https://www.ebay.com/itm/377562785374",note:"Usado · API eBay 12/10"},note:"No hay nuevos de vendedores de EE.UU.",local:[]},
- {name:"Ryzen 5 7600",cat:"CPU",g:350,nw:{usd:144.25,ship:0.0,url:"https://www.ebay.com/itm/158132772011",note:"Nuevo · API eBay 12/10"},us:{usd:122.99,ship:0.0,url:"https://www.ebay.com/itm/307194675494",note:"Usado · API eBay 12/10"},local:[
-   {bs:2000,ref:false,txt:"Ryzen 5 7600X · La Paz (solo referencia)",url:"https://www.facebook.com/marketplace/item/1582597166589691/"},
-   {bs:2650,ref:false,txt:"Ryzen 5 7600X · La Paz (solo referencia)",url:"https://www.facebook.com/marketplace/item/2167313420829167/"}]},
- {name:"Ryzen 7 7800X3D",cat:"CPU",g:350,nw:{usd:329.0,ship:0.0,url:"https://www.ebay.com/itm/187668752673",note:"Nuevo sin caja (tray) · API eBay 12/10"},us:{usd:283.99,ship:0.0,url:"https://www.ebay.com/itm/366706722500",note:"Usado · API eBay 12/10"},local:[
-   {bs:4800,ref:true,txt:"Sellado · Marketplace",url:"https://www.facebook.com/marketplace/item/2555034215012611/"},
-   {bs:5190,ref:true,txt:"Marketplace",url:"https://www.facebook.com/marketplace/item/2669179450145313/"},
-   {bs:5390,ref:true,txt:"Marketplace",url:"https://www.facebook.com/marketplace/item/1361869715871206/"},
-   {bs:5664,ref:true,txt:"BOX · Cyrex Store (WhatsApp 12/10)",url:"https://cyrexstore.com/"}]},
- {name:"Ryzen 9 9950X",cat:"CPU",g:350,nw:{usd:499.99,ship:0.0,url:"https://www.ebay.com/itm/267809260226",note:"Nuevo · API eBay 12/10"},us:{usd:454.99,ship:0.0,url:"https://www.ebay.com/itm/257573828939",note:"Usado · API eBay 12/10"},local:[{bs:5580,ref:true,txt:MSR,url:"https://msrcomputers.framer.website/"}]},
- {name:"Intel Core i5-12400F",cat:"CPU",g:250,nw:{usd:150.0,ship:0.0,url:"https://www.ebay.com/itm/800773514419",note:"Nuevo · API eBay 12/10"},us:{usd:119.95,ship:0.0,url:"https://www.ebay.com/itm/800786033506",note:"Usado · API eBay 12/10"},local:[]},
- {name:"Intel Core i5-13400",cat:"CPU",g:300,nw:{usd:259.78,ship:0,url:"https://www.ebay.com/itm/278289521729",note:"Nuevo, tray/OEM; pocos anuncios"},us:{usd:149.99,ship:0.0,url:"https://www.ebay.com/itm/366720837166",note:"Usado · API eBay 12/10"},local:[{bs:2300,ref:true,txt:MSR,url:"https://msrcomputers.framer.website/"}]},
- {name:"Intel Core i5-14400F",cat:"CPU",g:250,nw:{usd:164.49,ship:0.0,url:"https://www.ebay.com/itm/389945918228",note:"Nuevo · API eBay 12/10"},us:{usd:136.99,ship:0.0,url:"https://www.ebay.com/itm/407274530658",note:"Usado · API eBay 12/10"},local:[
-   {bs:2537,ref:true,txt:"OEM (sin caja) · Cyrex Store (WhatsApp 12/10)",url:"https://cyrexstore.com/"},
-   {bs:2700,ref:true,txt:"“i5 14400” (no dice si es F) · Marketplace",url:"https://www.facebook.com/marketplace/item/1796562071723775/"}]},
- {name:"Intel Core Ultra 7 265K",cat:"CPU",g:300,nw:{usd:244.87,ship:0.0,url:"https://www.ebay.com/itm/840012484062",note:"Nuevo · API eBay 12/10"},us:{usd:209.99,ship:0.0,url:"https://www.ebay.com/itm/128130997262",note:"Usado · API eBay 12/10"},local:[{bs:3950,ref:true,txt:MSR,url:"https://msrcomputers.framer.website/"}]},
- {name:"Corsair Vengeance RGB DDR5 32GB (2x16) 5600",cat:"RAM",g:150,nw:{usd:485.0,ship:8.0,url:"https://www.ebay.com/itm/237072275336",note:"Nuevo · API eBay 12/10"},us:{usd:399.99,ship:0.0,url:"https://www.ebay.com/itm/860016176225",note:"Usado · API eBay 12/10"},local:[]},
- {name:"Corsair Vengeance RGB DDR5 32GB (2x16) 6000",cat:"RAM",g:150,nw:{usd:425.0,ship:10.99,url:"https://www.ebay.com/itm/960033835048",note:"Vengeance RGB RS · API eBay 12/10"},us:{usd:399.9,ship:0.0,url:"https://www.ebay.com/itm/298605370806",note:"Usado · API eBay 12/10"},local:[
-   {bs:6200,ref:true,txt:"Vengeance RGB RS · “última unidad” · Marketplace",url:"https://www.facebook.com/marketplace/item/1414394683871926/"}]},
- {name:"RAM DDR4 16GB (2x8) 3200",cat:"RAM",g:120,nw:{usd:75.0,ship:0.0,url:"https://www.ebay.com/itm/198709471618",note:"Silicon Power 2x8 · API eBay 12/10"},us:{usd:59.99,ship:0.0,url:"https://www.ebay.com/itm/820171389776",note:"Micron 2x8 · API eBay 12/10"},local:[
-   {bs:540,ref:false,txt:"Kingston Fury Beast 16GB (probablemente 1x16; no se usa)",url:"https://www.facebook.com/marketplace/item/1074400352041144/"},
-   {bs:900,ref:true,txt:"16GB 3200 (configuración no indicada) · Marketplace",url:"https://www.facebook.com/marketplace/item/959874386670350/"},
-   {bs:1500,ref:true,txt:"2x8 3200 · Sacaba",url:"https://www.facebook.com/marketplace/item/2347323546077904/"},
-   {bs:1500,ref:true,txt:"Corsair Vengeance 2x8 · Sacaba",url:"https://www.facebook.com/marketplace/item/2345958202816013/"}]},
- {name:"SSD NVMe 1TB",cat:"SSD",g:80,nw:{usd:114.99,ship:0.0,url:"https://www.ebay.com/itm/800572518683",note:"Derlar DN-850Q (marca poco conocida) · API eBay 12/10"},us:{usd:99.99,ship:0.0,url:"https://www.ebay.com/itm/206619927751",note:"Intel 665P · API eBay 12/10"},local:[
-   {bs:1800,ref:true,txt:"M.2 1TB (marca no indicada) · Marketplace",url:"https://www.facebook.com/marketplace/item/2078197563584097/"},
-   {bs:1850,ref:true,txt:"Kingston NV3 1TB · Marketplace",url:"https://www.facebook.com/marketplace/item/1448988227128820/"},
-   {bs:2000,ref:true,txt:"Crucial P310 1TB · Marketplace",url:"https://www.facebook.com/marketplace/item/2817371738643128/"}]},
- {name:"SSD NVMe 2TB",cat:"SSD",g:80,nw:{usd:209.99,ship:0.0,url:"https://www.ebay.com/itm/227402767941",note:"RAM Tech 2TB Gen4 · API eBay 12/10"},us:{usd:179.99,ship:0.0,url:"https://www.ebay.com/itm/366729072023",note:"ORICO e3500 · API eBay 12/10"},local:[
-   {bs:3550,ref:true,txt:"SanDisk 2TB (no dice si es NVMe) · Marketplace",url:"https://www.facebook.com/marketplace/item/1537210071754803/"}]}
-];
-const S={mode:"new",qty:2,cat:"",q:"",sort:{k:"rank",dir:1},open:new Set()};
+const D=Object.assign({productos:[],movimientos:[],dolar:[],actividad:[],documentos:[],tiendas:[],generado:""},window.DATOS||{});
 const $=id=>document.getElementById(id);
 const fmt=(n,d=0)=>n==null||isNaN(n)?"—":n.toLocaleString("es-BO",{minimumFractionDigits:d,maximumFractionDigits:d});
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fechaLarga=f=>new Date(f+"T12:00:00").toLocaleDateString("es-BO",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+const fechaCorta=f=>{const [y,m,d]=String(f).split("-");return `${d}/${m}`};
+
+/* ================== Productos ================== */
+const P=D.productos;
+const lastFx=[...D.dolar].reverse().find(f=>f.usado);
+if(lastFx)$("tc").value=(+lastFx.usado).toFixed(2);
+if(D.generado){const [f,h]=D.generado.split(" ");$("eyebrow").textContent=`EE.UU. → Cochabamba · datos al ${f.split("-").reverse().join("/")} ${h||""}`}
+$("srcNote").textContent=`Precios de eBay: compra inmediata, vendedor en EE.UU. con ≥ 98 % de feedback; “nuevo” no incluye open box. Datos generados el ${D.generado} desde los archivos del repo.`;
+
+const S={mode:"new",qty:2,cat:"",q:"",sort:{k:"rank",dir:1},open:new Set()};
 const tot=o=>o?o.usd+(o.ship||0):null;
+const refs=(p,src)=>p.local.filter(l=>l.ref&&(!src||l.src===src));
+const minOf=a=>a.length?a.reduce((m,l)=>l.bs<m.bs?l:m):null;
 function courierB(g,n){const kg=Math.max(1,Math.ceil((g*n+300)/500)/2);return {per:kg*28/n,kg}}
 function pickOffer(p,mode){
   if(mode==="new")return p.nw?{o:p.nw,kind:"nuevo"}:null;
@@ -269,37 +332,44 @@ function pickOffer(p,mode){
 }
 function calc(p,mode=S.mode){
   const tc=+$("tc").value||0,tax=(+$("tax").value||0)/100,adu=(+$("adu").value||0)/100,n=S.qty;
-  const refs=p.local.filter(l=>l.ref);const local=refs.length?Math.min(...refs.map(l=>l.bs)):null;
+  const mk=minOf(refs(p,"mkt")),sh=minOf(refs(p,"tienda")),best=minOf(refs(p)),local=best?best.bs:null;
   const pk=pickOffer(p,mode);
-  if(!pk)return {local,status:local==null?"none":"noUS"};
+  if(!pk)return {mk,sh,local,status:local==null?"none":"noUS"};
   const o=pk.o,base=tot(o),b=courierB(p.g,n),a=10+o.usd*tax,useA=a<b.per,ship=useA?a:b.per,aduUsd=base*adu;
   const costUsd=base+ship+aduUsd,cost=costUsd*tc,gain=local==null?null:local-cost,margin=local==null?null:gain/local;
   let status="noLocal";if(margin!=null)status=margin>=.15?"good":margin>=.05?"warn":"bad";
-  return {local,kind:pk.kind,o,base,b,a,useA,ship,aduUsd,costUsd,cost,gain,margin,status};
+  return {mk,sh,local,kind:pk.kind,o,base,b,a,useA,ship,aduUsd,costUsd,cost,gain,margin,status};
 }
 const ST={good:["Conviene","st-good",0],warn:["Justo","st-warn",1],bad:["No conviene","st-bad",2],noLocal:["Sin precio local","st-none",3],noUS:["Sin precio eBay","st-none",4],none:["Sin datos","st-none",5]};
-const money=o=>o?`<a href="${o.url}" target="_blank" rel="noopener">${fmt(tot(o),2)}</a>${o.cond?`<span class="tag">${o.cond}</span>`:""}`:'<span class="dash">—</span>';
+const dash='<span class="dash">—</span>';
+const money=o=>o?`<a href="${esc(o.url)}" target="_blank" rel="noopener">${fmt(tot(o),2)}</a>${o.cond?`<span class="tag">${o.cond}</span>`:""}`:dash;
+const localCell=(l,count)=>l?`${l.url?`<a href="${esc(l.url)}" target="_blank" rel="noopener">${fmt(l.bs)}</a>`:fmt(l.bs)}${count>1?`<span class="n">+${count-1}</span>`:""}`:dash;
+function localItem(l){
+  const extra=[l.estado,l.contacto?`contacto: ${l.contacto}`:""].filter(Boolean).join(" · ");
+  return `<li>Bs ${fmt(l.bs)} — ${esc(l.vendedor)}${extra?` <span class="dash">(${esc(extra)})</span>`:""}${l.ref?"":' <span class="dash">· no cuenta</span>'}${l.url?` · <a href="${esc(l.url)}" target="_blank" rel="noopener">ver</a>`:""}</li>`;
+}
 function render(){
   const all=P.map(p=>({p,c:calc(p)}));
   const rows=all.filter(({p})=>(!S.cat||p.cat===S.cat)&&(!S.q||p.name.toLowerCase().includes(S.q)));
-  const key={name:r=>r.p.name,cat:r=>r.p.cat,new:r=>tot(r.p.nw),used:r=>tot(r.p.us),ship:r=>r.c.ship,cost:r=>r.c.cost,local:r=>r.c.local,gain:r=>r.c.gain,margin:r=>r.c.margin,rank:r=>ST[r.c.status][2]*10-(r.c.margin||0)};
+  const key={name:r=>r.p.name,cat:r=>r.p.cat,new:r=>tot(r.p.nw),used:r=>tot(r.p.us),mkt:r=>r.c.mk?.bs,shop:r=>r.c.sh?.bs,ship:r=>r.c.ship,cost:r=>r.c.cost,local:r=>r.c.local,gain:r=>r.c.gain,margin:r=>r.c.margin,rank:r=>ST[r.c.status][2]*10-(r.c.margin||0)};
   const f=key[S.sort.k],d=S.sort.dir;
   rows.sort((x,y)=>{const a=f(x),b=f(y);if(a==null&&b==null)return 0;if(a==null)return 1;if(b==null)return -1;return (typeof a==="string"?a.localeCompare(b):a-b)*d});
   document.querySelectorAll("#main th").forEach(th=>th.setAttribute("aria-sort",th.dataset.k===S.sort.k?(d>0?"ascending":"descending"):"none"));
   $("thNew").classList.toggle("use",S.mode==="new");$("thUsed").classList.toggle("use",S.mode==="used");
   const cnt={good:0,warn:0,bad:0,other:0};rows.forEach(r=>{cnt[r.c.status in cnt?r.c.status:"other"]++});
-  $("summary").innerHTML=`<span class="chip st-good"><b>${cnt.good}</b> conviene</span><span class="chip st-warn"><b>${cnt.warn}</b> justo</span><span class="chip st-bad"><b>${cnt.bad}</b> no conviene</span><span class="chip st-none"><b>${cnt.other}</b> sin precio local</span>`;
+  $("summary").innerHTML=`<span class="chip st-good"><b>${cnt.good}</b> conviene</span><span class="chip st-warn"><b>${cnt.warn}</b> justo</span><span class="chip st-bad"><b>${cnt.bad}</b> no conviene</span><span class="chip st-none"><b>${cnt.other}</b> sin datos suficientes</span>`;
   const tb=$("tb");tb.innerHTML="";
   rows.forEach(({p,c})=>{
     const tr=document.createElement("tr");tr.className="row"+(S.open.has(p.name)?" open":"");tr.tabIndex=0;tr.setAttribute("aria-expanded",S.open.has(p.name));
     const st=ST[c.status];const uN=c.kind==="nuevo",uU=c.kind==="usado";
-    tr.innerHTML=`<td class="name">${p.name}</td><td class="cat">${p.cat}</td>
-      <td class="${uN?"use":""}">${money(p.nw)}</td><td class="${uU?"use":""}">${money(p.us)}</td>
-      <td>${c.ship==null?'<span class="dash">—</span>':fmt(c.ship,2)+' <span class="dash">'+(c.useA?'A':'B')+'</span>'}</td>
-      <td>${c.cost==null?'<span class="dash">—</span>':fmt(c.cost)}</td>
-      <td>${c.local==null?'<span class="dash">—</span>':fmt(c.local)}</td>
-      <td class="${c.gain==null?'':c.gain>=0?'pos':'neg'}">${c.gain==null?'<span class="dash">—</span>':(c.gain>=0?'+':'')+fmt(c.gain)}</td>
-      <td class="${c.margin==null?'':c.margin>=0?'pos':'neg'}">${c.margin==null?'<span class="dash">—</span>':fmt(c.margin*100,0)+' %'}</td>
+    tr.innerHTML=`<td class="name">${esc(p.name)}</td><td class="cat">${p.cat}</td>
+      <td class="grp ${uN?"use":""}">${money(p.nw)}</td><td class="${uU?"use":""}">${money(p.us)}</td>
+      <td class="grp">${localCell(c.mk,refs(p,"mkt").length)}</td><td>${localCell(c.sh,refs(p,"tienda").length)}</td>
+      <td class="grp">${c.ship==null?dash:fmt(c.ship,2)+' <span class="dash">'+(c.useA?'A':'B')+'</span>'}</td>
+      <td>${c.cost==null?dash:fmt(c.cost)}</td>
+      <td>${c.local==null?dash:fmt(c.local)}</td>
+      <td class="${c.gain==null?'':c.gain>=0?'pos':'neg'}">${c.gain==null?dash:(c.gain>=0?'+':'')+fmt(c.gain)}</td>
+      <td class="${c.margin==null?'':c.margin>=0?'pos':'neg'}">${c.margin==null?dash:fmt(c.margin*100,0)+' %'}</td>
       <td style="text-align:left"><span class="pill ${st[1]}">${st[0]}</span></td>`;
     tr.querySelectorAll("a").forEach(a=>a.addEventListener("click",e=>e.stopPropagation()));
     const toggle=()=>{S.open.has(p.name)?S.open.delete(p.name):S.open.add(p.name);render()};
@@ -307,67 +377,45 @@ function render(){
     tb.appendChild(tr);
     if(S.open.has(p.name)){
       const dt=document.createElement("tr");dt.className="detail";
-      const loc=p.local.length?p.local.map(l=>`<li>Bs ${fmt(l.bs)} — ${l.txt}${l.ref?'':' <span class="dash">(no cuenta)</span>'} · <a href="${l.url}" target="_blank" rel="noopener">ver</a></li>`).join(""):'<li class="dash">Sin anuncios en Cochabamba todavía. Las tiendas consultadas por WhatsApp aún no dieron precio.</li>';
-      const us=`<ul><li>Nuevo: ${p.nw?`USD ${fmt(tot(p.nw),2)} — ${p.nw.note||""} · <a href="${p.nw.url}" target="_blank" rel="noopener">eBay</a>`:`<span class="dash">${p.note||"sin nuevo"}</span>`}</li>
-        <li>Usado: ${p.us?`USD ${fmt(tot(p.us),2)}${p.us.note?" — "+p.us.note:""} · <a href="${p.us.url}" target="_blank" rel="noopener">eBay</a>`:'<span class="dash">sin usado</span>'}</li></ul>`;
+      const lst=(src,empty)=>{const a=p.local.filter(l=>l.src===src).sort((x,y)=>x.bs-y.bs);return a.length?`<ul>${a.map(localItem).join("")}</ul>`:`<p class="dash" style="margin:0">${empty}</p>`};
+      const eb=o=>o?`USD ${fmt(tot(o),2)}${o.note?" — "+esc(o.note):""} <span class="dash">(${o.via}, ${fechaCorta(o.fecha)})</span> · <a href="${esc(o.url)}" target="_blank" rel="noopener">eBay</a>`:'<span class="dash">sin anuncio de vendedor en EE.UU.</span>';
       const cl=c.cost==null?"":`<div class="calc" style="margin-top:8px"><span>Precio ${c.kind} + envío EE.UU.</span><span>USD ${fmt(c.base,2)}</span>
         <span>Courier B (${fmt(c.b.kg,1)} kg ÷ ${S.qty})</span><span>USD ${fmt(c.b.per,2)}</span>
         <span>Courier A (10 + tax)</span><span>USD ${fmt(c.a,2)}</span><span>Aduana</span><span>USD ${fmt(c.aduUsd,2)}</span>
         <span class="tot">Costo puesto</span><span class="tot">USD ${fmt(c.costUsd,2)} = Bs ${fmt(c.cost)}</span></div>`;
-      dt.innerHTML=`<td colspan="10"><div class="dgrid"><div><h3>Cochabamba</h3><ul>${loc}</ul></div><div><h3>eBay</h3>${us}${cl}</div></div></td>`;
+      dt.innerHTML=`<td colspan="12"><div class="dgrid">
+        <div><h3>eBay</h3><ul><li>Nuevo: ${eb(p.nw)}</li><li>Usado: ${eb(p.us)}</li></ul>${cl}</div>
+        <div><h3>Marketplace Cochabamba</h3>${lst("mkt","Sin anuncios todavía.")}</div>
+        <div><h3>Tiendas</h3>${lst("tienda","Ninguna tienda dio precio todavía.")}</div></div></td>`;
       tb.appendChild(dt);
     }
   });
   const ur=P.filter(p=>p.us).map(p=>({p,c:calc(p,"used")})).sort((x,y)=>(y.c.margin??-9)-(x.c.margin??-9));
   $("tbUsed").innerHTML=ur.map(({p,c})=>{const nw=tot(p.nw),uu=tot(p.us),sav=nw!=null?(nw-uu)/nw:null;
-    return `<tr><td class="name">${p.name}</td><td>${fmt(uu,2)}</td><td>${nw==null?'<span class="dash">—</span>':fmt(nw,2)}</td>
-    <td class="${sav==null?'':sav>0?'pos':'neg'}">${sav==null?'<span class="dash">—</span>':fmt(sav*100)+' %'}</td>
-    <td>${fmt(c.cost)}</td><td>${c.local==null?'<span class="dash">—</span>':fmt(c.local)}</td>
-    <td class="${c.gain==null?'':c.gain>=0?'pos':'neg'}">${c.gain==null?'<span class="dash">—</span>':(c.gain>=0?'+':'')+fmt(c.gain)}</td>
-    <td class="${c.margin==null?'':c.margin>=0?'pos':'neg'}">${c.margin==null?'<span class="dash">—</span>':fmt(c.margin*100)+' %'}</td>
-    <td style="text-align:left"><a href="${p.us.url}" target="_blank" rel="noopener">ver en eBay</a>${p.us.note?` <span class="dash">${p.us.note}</span>`:""}</td></tr>`}).join("");
+    return `<tr><td class="name">${esc(p.name)}</td><td>${fmt(uu,2)}</td><td>${nw==null?dash:fmt(nw,2)}</td>
+    <td class="${sav==null?'':sav>0?'pos':'neg'}">${sav==null?dash:fmt(sav*100)+' %'}</td>
+    <td>${fmt(c.cost)}</td><td>${c.local==null?dash:fmt(c.local)}</td>
+    <td class="${c.gain==null?'':c.gain>=0?'pos':'neg'}">${c.gain==null?dash:(c.gain>=0?'+':'')+fmt(c.gain)}</td>
+    <td class="${c.margin==null?'':c.margin>=0?'pos':'neg'}">${c.margin==null?dash:fmt(c.margin*100)+' %'}</td>
+    <td style="text-align:left"><a href="${esc(p.us.url)}" target="_blank" rel="noopener">ver en eBay</a>${p.us.note?` <span class="dash">${esc(p.us.note)}</span>`:""}</td></tr>`}).join("");
   updateAnalyst(all);
 }
 
 /* ================== Agentes ================== */
-const STATES={working:{t:"Trabajando",c:"#4FD1E8"},waiting:{t:"Esperando",c:"#F2A541"},done:{t:"Terminó",c:"#5CD69A"},sleep:{t:"En espera",c:"#7F9AAD"},alert:{t:"Mensajes nuevos",c:"#F07A7A"}};
+const STATES={working:{t:"Trabajando",c:"#4FD1E8"},waiting:{t:"Esperando respuestas",c:"#F2A541"},done:{t:"Terminó",c:"#5CD69A"},sleep:{t:"En espera",c:"#7F9AAD"}};
 const AG=[
- {id:"nube",name:"Informe diario",where:"Nube · rutina diaria de GitHub",state:"sleep",bubble:"Último informe 12/10",x:1.2,y:1.4,shirt:"#6C8CF5",
-  shotTitle:"Informe diario",shotMeta:"informes/2026-10-11.md · nube (sin captura)",
-  info:["Busca precios de eBay y escribe el informe en informes/.","Último informe: 12/10/2026, todavía con precios estimados (sin clave de API).","Las tablas de comparación del repo (comparacion.md) ya usan los precios reales del Rastreador eBay.","Pendiente: clave de API de eBay para la rutina."]},
- {id:"ebay",name:"Rastreador eBay",where:"API oficial de eBay (antes: Chrome)",state:"done",bubble:"API eBay: 12 nuevos + 14 usados",x:4.4,y:1.4,shirt:"#E8923E",img:"capturas/ebay.jpg",
-  shotTitle:"eBay",shotMeta:"Captura 12/10 · Ryzen 7 7800X3D, nuevo, vendedor EE.UU.",
-  info:["12/10 11:15: primera corrida con la API oficial de eBay (python3 ebay.py --vigilar --guardar). Nuevo = solo “New”, sin open box.","Sin nuevos de vendedores de EE.UU.: 5700X3D y i5-13400 (este queda con el precio visto con Chrome).","5700X3D no tiene nuevos de vendedores de EE.UU.; la DDR5 5600 solo open box.","El usado ahorra hasta 40 % (i5-13400); en el SSD de 1TB el usado sale apenas más caro que el nuevo."]},
- {id:"wa",name:"WhatsApp",where:"Sesión local · número del agente",state:"waiting",bubble:"4 respuestas · 3 chats nuevos",x:7.6,y:1.4,shirt:"#3FBF7F",
-  shotTitle:"WhatsApp",shotMeta:"Resumen 12/10 10:45 (Mac) · sin captura (la página está compartida)",
-  info:["Cyrex: 7800X3D BOX Bs 5.664 · i5-14400F OEM Bs 2.537 · Patriot DDR5 16GB (1x16) Bs 3.127. Se le preguntó por 2/4 u y la Corsair 2x16.","Computer Magic: no tiene procesadores ni RAM.","Smart Cube: se le mandó la consulta de precios (7800X3D, 14400F, DDR5 6000).","Compucenter: DDR5 agotada; tiene DDR4 16GB. Pidió empresa, NIT y correo: no se dieron datos, se pidió precio referencial.","Chats nuevos hoy: TecnoGamer, Electro-TTS y PC Components (Santa Cruz). Sin contestar: Gamer Store, Geek Store."]},
- {id:"mkt",name:"Marketplace",where:"Sesión local · Facebook",state:"sleep",bubble:"15 anuncios guardados",x:2.8,y:5.2,shirt:"#4F8DF0",img:"capturas/marketplace.jpg",
-  shotTitle:"Facebook Marketplace",shotMeta:"Captura 12/10 · Cochabamba, búsqueda “7800x3d”",
-  info:["Revisó Marketplace de Cochabamba para los 14 productos el 11/10.","15 precios guardados en precios-cochabamba.csv.","Sin anuncios de: 5600, 5700X3D, 12400F, 13400, 265K, DDR5 5600."]},
- {id:"ana",name:"Analista",where:"Calcula costo puesto y margen",state:"working",bubble:"…",x:6.0,y:5.2,shirt:"#C46FD8",
-  shotTitle:"Analista",shotMeta:"Cálculo en vivo con los supuestos de la tabla",info:[]}
-];
-const LOG=[
- ["12/10 11:15","Rastreador eBay","API oficial: 12 nuevos y 14 usados guardados en precios-eeuu.csv"],
- ["12/10 10:45","WhatsApp","consultas nuevas: TecnoGamer, Electro-TTS, PC Components (Santa Cruz)"],
- ["12/10 10:43","WhatsApp","Compucenter: DDR5 agotada; pidió NIT (no se dio)"],
- ["12/10 10:41","WhatsApp","consulta de precios a Smart Cube; repregunta a Cyrex"],
- ["12/10 10:29","WhatsApp","Cyrex: 7800X3D Bs 5.664 · i5-14400F Bs 2.537"],
- ["12/10 09:26","WhatsApp","Computer Magic: no tiene CPU ni RAM"],
- ["12/10","WhatsApp","Smart Cube: “sí, algunos” · Ovni Express: “Ok”"],
- ["12/10","Rastreador eBay","usado más barato de los 14 productos"],
- ["12/10","Rastreador eBay","9 productos más con precio nuevo"],
- ["11/10 17:52","WhatsApp","respondió a MSR y a Ovni Express"],
- ["11/10 17:28","WhatsApp","Ovni Express: sin stock por ahora"],
- ["11/10 16:50","WhatsApp","MSR: no vende componentes sueltos"],
- ["11/10 16:42","WhatsApp","5 consultas: Cyrex, MSR, Geek Store, Ovni Express, Computer Magic"],
- ["11/10","WhatsApp","TiendasClick y Concordex no tienen WhatsApp"],
- ["11/10 14:47","WhatsApp","3 consultas: Compucenter, Gamer Store, Smart Cube"],
- ["11/10","Marketplace","15 anuncios guardados en precios-cochabamba.csv"],
- ["11/10","Informe diario","informe 2026-10-11 con precios estimados"]
+ {id:"nube",name:"Informe diario",where:"Nube · rutina diaria de GitHub",state:"sleep",x:1.2,y:1.4,shirt:"#6C8CF5",
+  info:["Cada día busca precios de eBay, calcula el costo puesto y escribe el informe en informes/.","El informe del 12/10 todavía usa precios de eBay estimados: a la rutina le faltan las claves de la API.","Para arreglarlo: cargar EBAY_CLIENT_ID y EBAY_CLIENT_SECRET en la configuración de la rutina."]},
+ {id:"ebay",name:"Rastreador eBay",where:"API oficial de eBay (antes: Chrome)",state:"done",x:4.4,y:1.4,shirt:"#E8923E",img:"capturas/ebay.jpg",
+  info:["12/10 11:15: primera corrida con la API oficial (python3 ebay.py --vigilar --guardar).","Guarda el nuevo y el usado más baratos de cada producto en precios-eeuu.csv; “nuevo” no incluye open box.","Sin nuevos de vendedores de EE.UU.: 5700X3D. El i5-13400 nuevo queda con el anuncio visto con Chrome.","Antes de la API, la PC de la casa juntó los 14 productos a mano con Chrome."]},
+ {id:"wa",name:"WhatsApp",where:"Sesión local · número del agente",state:"waiting",x:7.6,y:1.4,shirt:"#3FBF7F",
+  info:["Cyrex dio precios: 7800X3D Bs 5.664 (caja) e i5-14400F Bs 2.537 (OEM).","Computer Magic no tiene procesadores ni RAM.","Compucenter pidió empresa, NIT y correo para cotizar: no se dieron datos.","Límite del número nuevo: unos 10 chats nuevos por día, sumando la PC y la Mac."]},
+ {id:"mkt",name:"Marketplace",where:"Sesión local · Facebook",state:"sleep",x:2.8,y:5.2,shirt:"#4F8DF0",img:"capturas/marketplace.jpg",
+  info:["Revisa Marketplace de Cochabamba para los productos de vigilar.csv y guarda precio, estado y link.","El 12/10 no aparecieron anuncios útiles nuevos del 5600, 5700X3D ni DDR5 32GB de escritorio.","Los anuncios de otras ciudades se guardan solo como referencia."]},
+ {id:"ana",name:"Analista",where:"Calcula costo puesto y margen",state:"working",x:6.0,y:5.2,shirt:"#C46FD8",info:[]}
 ];
 const short=n=>n.replace("Intel Core ","").replace("Corsair Vengeance RGB ","").replace(" (2x16)","").replace("Ryzen ","R");
-let ranking=[];let sel="wa";
+let ranking=[];let sel=null;let open=false;
 const TEX={};
 function termCanvas(title,lines){
   const c=document.createElement("canvas");c.width=640;c.height=360;const g=c.getContext("2d");
@@ -378,74 +426,53 @@ function termCanvas(title,lines){
   lines.forEach(([k,t],i)=>{g.fillStyle=col[k]||"#D8E8F2";g.fillText(t,14,68+i*40)});
   return c;
 }
-TEX.nube=termCanvas("informes/2026-10-12.md",[["k","# Informe diario"],["y","eBay: ESTIMADO (sin API)"],["","TC 11,90 Bs/USD"],["g","comparacion.md con eBay real"],["k","próximo: rutina diaria"]]);
-TEX.wa=termCanvas("whatsapp · resumen 12/10 10:45",[["g","Cyrex: 7800X3D Bs 5.664"],["g","Cyrex: i5-14400F Bs 2.537"],["r","Computer Magic: no tiene"],["y","Compucenter pidió NIT"],["k","chats nuevos hoy: 3 / 10"],["","esperando 7 respuestas"]]);
+const T=D.tiendas;
+const byState=s=>T.filter(t=>t.estado===s).map(t=>t.tienda);
+const closedRe=/no vende|sin stock|no contactar/;
+const waiting=T.filter(t=>/esperando/.test(t.estado));
+const lastInf=D.documentos.find(d=>d.id.startsWith("inf-"));
+const resumen=lastInf?(lastInf.md.split("## Resumen")[1]||"").split("\n## ")[0].trim().replace(/\*\*/g,""):"";
+TEX.nube=termCanvas(lastInf?`informes/${lastInf.fecha}.md`:"informes/",[["k","# Informe diario"],["y","eBay: estimado (sin API)"],["",`TC ${lastFx?(+lastFx.usado).toFixed(2):"—"} Bs/USD`],["g","comparacion.md con API"],["k","próximo: rutina diaria"]]);
+TEX.wa=termCanvas("whatsapp · tiendas",[["g",`respondieron: ${byState("respondió").length}`],["y",`esperando: ${waiting.length}`],["r",`cerradas: ${T.filter(t=>closedRe.test(t.estado)).length}`],["",`sin WhatsApp: ${byState("número sin WhatsApp").length}`],["k",`tiendas en la lista: ${T.length}`]]);
+function screenHtml(a){
+  if(a.img)return `<div class="shot"><img src="${a.img}" alt="Última captura de ${esc(a.name)}"></div>`;
+  if(a.id==="nube")return `<div class="shot"><pre class="term"><span class="k">$ cat informes/${lastInf?lastInf.fecha:""}.md</span>\n${esc(resumen)||"Sin informes todavía."}</pre></div>`;
+  if(a.id==="wa"){
+    const line=(lbl,arr,cls)=>arr.length?`<span class="${cls}">${lbl}</span>\n  ${esc(arr.join(" · "))}\n\n`:"";
+    return `<div class="shot"><pre class="term"><span class="k">$ whatsapp --tiendas</span>\n\n${line("Respondieron",byState("respondió"),"g")}${line("Esperando respuesta",waiting.map(t=>t.tienda),"y")}${line("Cerradas",T.filter(t=>closedRe.test(t.estado)).map(t=>`${t.tienda} (${t.estado})`),"r")}${line("Sin WhatsApp",byState("número sin WhatsApp"),"")}${line("Por contactar",byState("por contactar"),"k")}</pre></div>`;
+  }
+  if(a.id==="ana"){
+    const mlabel={new:"nuevo",used:"usado",min:"el más barato"}[S.mode];
+    return `<div class="shot"><pre class="term"><span class="k">$ analista --precio ${mlabel} --unidades ${S.qty}</span>\n${ranking.map(r=>`<span class="${r.c.margin>=.15?"g":r.c.margin>=.05?"y":"r"}">${esc(short(r.p.name).padEnd(20))} costo ${fmt(r.c.cost).padStart(6)}  local ${fmt(r.c.local).padStart(6)}  ${r.c.margin>=0?"+":""}${fmt(r.c.margin*100)} %</span>`).join("\n")}</pre></div>`;
+  }
+  return "";
+}
 function updateAnalyst(all){
   const a=AG.find(x=>x.id==="ana");
   ranking=all.filter(r=>r.c.margin!=null).sort((x,y)=>y.c.margin-x.c.margin);
-  const best=ranking[0];const mlabel={new:"nuevo",used:"usado",min:"el más barato"}[S.mode];
-  a.bubble=best?`Mejor: ${short(best.p.name)} +${fmt(best.c.margin*100)}%`:"Sin datos";
-  a.info=[`Calculando con precio ${mlabel}, ${S.qty} unidades por pedido y ${$("tc").value} Bs/USD.`].concat(ranking.slice(0,4).map(r=>`${r.p.name}: ${r.c.gain>=0?"+":""}Bs ${fmt(r.c.gain)} por unidad (${fmt(r.c.margin*100)} %)`)).concat([`${all.filter(r=>r.c.status==="noLocal").length} productos sin precio local todavía.`]);
+  const mlabel={new:"nuevo",used:"usado",min:"el más barato"}[S.mode];
+  a.info=[`Calcula con precio ${mlabel} de eBay, ${S.qty} unidades por pedido y ${$("tc").value} Bs/USD (se cambia en la tabla de abajo).`].concat(ranking.slice(0,4).map(r=>`${r.p.name}: ${r.c.gain>=0?"+":""}Bs ${fmt(r.c.gain)} por unidad (${fmt(r.c.margin*100)} %)`)).concat([`${all.filter(r=>r.c.status==="noLocal"||r.c.status==="none").length} productos todavía sin precio en Cochabamba.`]);
   TEX.ana=termCanvas("analista · "+mlabel,ranking.slice(0,7).map(r=>[r.c.margin>=.15?"g":r.c.margin>=.05?"y":"r",`${short(r.p.name).padEnd(20)} ${(r.c.margin*100).toFixed(0).padStart(4)}%`]));
-  if(sel==="ana")drawCard();
-  if(sel==="ana"&&!$("screen").hidden)openScreen("ana");
+  if(open&&sel==="ana")drawDrawer();
   drawHud(all);
 }
 function drawHud(all){
   const ok=all.filter(r=>r.c.status==="good").length;
   $("hud").innerHTML=`<div class="brand">Oficina <i>EE.UU.→CBBA</i></div>
    <div class="kv"><span>Agentes</span><b>${AG.length}</b></div>
-   <div class="kv"><span>Trabajando</span><b class="c">${AG.filter(a=>a.state==="working").length}</b></div>
-   <div class="kv"><span>En espera</span><b>${AG.filter(a=>a.state==="sleep").length}</b></div>
-   <div class="kv"><span>WhatsApp esperando</span><b class="a">7</b></div>
-   <div class="kv"><span>Chats hoy</span><b>3 / 10</b></div>
-   <div class="kv"><span>Conviene</span><b class="c">${ok} de 14</b></div>`;
+   <div class="kv"><span>Dólar</span><b>${lastFx?(+lastFx.usado).toFixed(2):"—"} Bs</b></div>
+   <div class="kv"><span>Tiendas esperando</span><b class="a">${waiting.length}</b></div>
+   <div class="kv"><span>Movimientos</span><b>${D.movimientos.length}</b></div>
+   <div class="kv"><span>Conviene</span><b class="c">${ok} de ${P.length}</b></div>`;
 }
-function drawCard(){
+function drawDrawer(){
   const a=AG.find(x=>x.id===sel),s=STATES[a.state];
-  $("card").innerHTML=`<div class="who"><span class="dot" style="background:${s.c}"></span><h3>${a.name}</h3></div>
-   <div class="where">${a.where}</div><div class="state" style="color:${s.c}">${s.t} · ${a.bubble}</div>
-   <ul>${a.info.map(i=>`<li>${i}</li>`).join("")}</ul><button type="button" id="seeScreen">Ver su pantalla</button>`;
-  $("seeScreen").onclick=()=>focusAgent(sel);
-  $("log").innerHTML=`<h4>Actividad</h4>`+LOG.map(([t,w,m])=>`<div><time>${t}</time><em>${w}</em> ${m}</div>`).join("");
-}
-function openScreen(id){
-  const a=AG.find(x=>x.id===id),s=STATES[a.state];
-  $("sDot").style.background=s.c;$("sTitle").textContent=a.shotTitle;$("sMeta").textContent=a.shotMeta;
-  let body="";
-  if(a.img)body=`<img src="${a.img}" alt="Captura de ${a.shotTitle}">`;
-  else if(id==="nube")body=`<div class="term"><span class="k">$ cat informes/2026-10-11.md · 2026-10-12.md</span>
-# Informe diario 2026-10-11
-Resumen: nada destacado.
-Sin precios de Cochabamba y sin anuncios de eBay verificables.
-<span class="y">Todo ESTIMADO</span> (sin clave de API de eBay).
-Tipo de cambio usado: 11,90 Bs/USD
-
-<span class="k">$ cat informes/2026-10-12.md</span>
-Precios de eBay todavía ESTIMADOS en el informe (sin clave de API).
-<span class="g">comparacion.md</span> (python3 comparar.py) ya usa los precios reales del Rastreador eBay.</div>`;
-  else if(id==="wa")body=`<div class="term"><span class="k">$ whatsapp --resumen</span>
-<span class="y">Respuestas (12/10, Mac)</span>
-  <span class="g">Cyrex</span>           7800X3D BOX Bs 5.664 · i5-14400F OEM Bs 2.537
-                  Patriot DDR5 16GB (1x16) 6000 Bs 3.127 (otro modelo)
-  Computer Magic  no tiene procesadores ni RAM
-  Smart Cube      “sí, algunos” → se le pidió precio
-  Compucenter     DDR5 agotada; tiene DDR4 16GB
-                  pidió empresa, NIT y correo → <span class="y">no se dieron datos</span>
-
-<span class="y">Esperando respuesta</span>
-  Cyrex (2/4 u y Corsair) · Smart Cube · Compucenter · Gamer Store
-  Geek Store · TecnoGamer · Electro-TTS · PC Components (Santa Cruz)
-
-<span class="y">Cerradas</span>
-  MSR (no vende sueltos) · Ovni Express (sin stock) · Computer Magic
-  Sin WhatsApp: CompuMasters, sYsbol, TiendasClick, Concordex
-
-<span class="k">Chats nuevos hoy: 3 / 10</span></div>`;
-  else if(id==="ana")body=`<div class="term"><span class="k">$ analista --modo ${S.mode} --unidades ${S.qty}</span>
-${ranking.map(r=>`<span class="${r.c.margin>=.15?"g":r.c.margin>=.05?"y":""}">${short(r.p.name).padEnd(22)} costo Bs ${fmt(r.c.cost).padStart(6)}  local Bs ${fmt(r.c.local).padStart(6)}  ${r.c.margin>=0?"+":""}${fmt(r.c.margin*100)} %</span>`).join("\n")}</div>`;
-  const badge=a.state==="sleep"?`<span class="badge" style="color:${s.c}">EN ESPERA · última captura</span>`:a.state==="alert"?`<span class="badge" style="color:${s.c}">2 MENSAJES SIN LEER</span>`:"";
-  $("sBody").innerHTML=badge+body;$("screen").hidden=false;
+  $("dDot").style.background=s.c;$("dName").textContent=a.name;$("dWhere").textContent=a.where;
+  $("dState").textContent=s.t;$("dState").style.color=s.c;
+  const acts=D.actividad.filter(x=>x.agente===a.id).slice().reverse();
+  $("dBody").innerHTML=`<div><h4>Su pantalla</h4>${screenHtml(a)}</div>
+    <div><h4>Qué hizo</h4><ul>${a.info.map(i=>`<li>${esc(i)}</li>`).join("")}</ul></div>
+    <div><h4>Actividad</h4><div class="acts">${acts.length?acts.map(x=>`<div><time>${fechaCorta(x.fecha)}${x.hora?" "+x.hora:""}</time>${esc(x.texto)}</div>`).join(""):'<div class="dash">Sin actividad registrada.</div>'}</div></div>`;
 }
 
 /* ================== Oficina isométrica (canvas) ================== */
@@ -457,11 +484,12 @@ const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 AG.forEach(a=>{if(a.img){const im=new Image();im.onload=()=>{TEX[a.id]=im};im.src=a.img}});
 function iso(x,y,z=0){return [ox+(x-y)*TW/2*scale, oy+(x+y)*TH/2*scale - z*scale]}
 function resize(){
-  const w=cv.parentElement.clientWidth;dpr=Math.min(2,window.devicePixelRatio||1);
-  const natW=(COLS+ROWS)*TW/2+40,natH=(COLS+ROWS)*TH/2+150;
-  scale=Math.min(1.6,w/natW);W=w;H=Math.round(natH*scale);
+  const w=$("stage").clientWidth;dpr=Math.min(2,window.devicePixelRatio||1);
+  const natW=(COLS+ROWS)*TW/2+40,natH=(COLS+ROWS)*TH/2+130;
+  const maxH=Math.max(380,window.innerHeight*0.74);
+  scale=Math.min(2.6,w/natW,maxH/natH);W=w;H=Math.round(natH*scale);
   cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);cv.style.height=H+"px";
-  ox=W/2+((ROWS-COLS)*TW/4)*scale;oy=95*scale;
+  ox=W/2+((ROWS-COLS)*TW/4)*scale;oy=70*scale;
   camT={z:1,x:0,y:0};cam={...camT};
 }
 function poly(pts,fill,stroke){ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=1/cam.z;ctx.stroke()}}
@@ -482,16 +510,13 @@ function rack(x,y,t){
   for(let i=0;i<6;i++){const p=iso(x+0.7,y+0.15,14+i*11);const on=(Math.floor(t/400)+i)%3!==0;ctx.fillStyle=on?"#4FD1E8":"#1F4A5A";ctx.fillRect(p[0]+2*scale,p[1],5*scale,2*scale);ctx.fillStyle=(i%2&&on)?"#5CD69A":"#24384A";ctx.fillRect(p[0]+10*scale,p[1],3*scale,2*scale)}
 }
 function plant(x,y){box(x,y,0.4,0.4,14,0,"#3B4A55","#2A3640","#33414C");const p=iso(x+0.2,y+0.2,30);ctx.fillStyle="#2F8F5B";ctx.beginPath();ctx.ellipse(p[0],p[1],11*scale,14*scale,0,0,7);ctx.fill();ctx.fillStyle="#3FB373";ctx.beginPath();ctx.ellipse(p[0]-4*scale,p[1]-5*scale,6*scale,8*scale,0,0,7);ctx.fill()}
-function bubble(x,y,text,color,name,active){
-  const f1=`600 ${Math.max(9,11*scale)}px "IBM Plex Mono", Consolas, monospace`,f2=`700 ${Math.max(8,8.5*scale)}px "IBM Plex Mono", Consolas, monospace`;
-  ctx.font=f1;const w1=ctx.measureText(text).width;ctx.font=f2;const w2=ctx.measureText(name).width;
-  const w=Math.max(w1,w2)+14*scale,h=32*scale,bx=x-w/2,by=y-h;
-  ctx.fillStyle="rgba(11,22,32,.94)";ctx.strokeStyle=color;ctx.lineWidth=(active?2.2:1.2)/cam.z;
-  ctx.beginPath();ctx.roundRect(bx,by,w,h,5*scale);ctx.fill();ctx.stroke();
-  ctx.beginPath();ctx.moveTo(x-4*scale,by+h);ctx.lineTo(x,by+h+5*scale);ctx.lineTo(x+4*scale,by+h);ctx.fillStyle=color;ctx.fill();
-  ctx.textBaseline="middle";ctx.textAlign="center";
-  ctx.font=f2;ctx.fillStyle=active?"#F2A541":"#7F9AAD";ctx.fillText(name,x,by+10*scale);
-  ctx.font=f1;ctx.fillStyle="#D8E8F2";ctx.fillText(text,x,by+22*scale);
+function label(x,y,name,color,active){
+  ctx.font=`700 ${Math.max(9,9.5*scale)}px "IBM Plex Mono", Consolas, monospace`;const tw=ctx.measureText(name).width;
+  const pad=8*scale,dot=6*scale,w=tw+pad*2+dot+5*scale,h=18*scale,bx=x-w/2,by=y-h;
+  ctx.fillStyle="rgba(11,22,32,.92)";ctx.strokeStyle=active?"#F2A541":color;ctx.lineWidth=(active?2:1)/cam.z;
+  ctx.beginPath();ctx.roundRect(bx,by,w,h,h/2);ctx.fill();ctx.stroke();
+  ctx.fillStyle=color;ctx.beginPath();ctx.arc(bx+pad+dot/2,by+h/2,dot/2,0,7);ctx.fill();
+  ctx.textBaseline="middle";ctx.textAlign="left";ctx.fillStyle=active?"#F2A541":"#D8E8F2";ctx.fillText(name,bx+pad+dot+5*scale,by+h/2+.5);
   return [bx,by,w,h];
 }
 function monitor(a,X,Y,t,s){
@@ -507,7 +532,6 @@ function monitor(a,X,Y,t,s){
     ctx.fillStyle="rgba(5,12,18,.66)";ctx.fillRect(0,0,tw,th);
     ctx.globalAlpha=reduce?.9:.85+Math.sin(t/700)*.15;ctx.fillStyle="#9FB6C7";ctx.font="700 64px 'IBM Plex Mono', monospace";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText("EN ESPERA",tw/2,th/2);ctx.globalAlpha=1;
   }
-  if(a.state==="alert"&&(reduce||Math.floor(t/500)%2)){ctx.strokeStyle=s.c;ctx.lineWidth=18;ctx.strokeRect(0,0,tw,th)}
   if(a.state==="working"&&!reduce){ctx.fillStyle="rgba(79,209,232,.18)";ctx.fillRect(0,(t/8)%th,tw,24)}
   ctx.restore();
   return {cx:(TL[0]+BR[0])/2,cy:(TL[1]+BR[1])/2};
@@ -516,7 +540,7 @@ function agent(a,t){
   const s=STATES[a.state],X=a.x,Y=a.y,sc=scale;
   box(X,Y,1.5,0.75,19,0,"#3A5266","#273B4C","#2F4659");
   a.mon=monitor(a,X,Y,t,s);
-  const c=iso(X+0.75,Y+1.25);ctx.save();ctx.globalAlpha=.22+(a.state==="working"&&!reduce?.12*Math.sin(t/250):0);ctx.fillStyle=s.c;ctx.beginPath();ctx.ellipse(c[0],c[1],30*sc,15*sc,0,0,7);ctx.fill();ctx.restore();
+  const c=iso(X+0.75,Y+1.25);ctx.save();ctx.globalAlpha=.22+(a.state==="working"&&!reduce?.12*Math.sin(t/250):0)+(open&&sel===a.id?.18:0);ctx.fillStyle=s.c;ctx.beginPath();ctx.ellipse(c[0],c[1],30*sc,15*sc,0,0,7);ctx.fill();ctx.restore();
   box(X+0.5,Y+1.15,0.5,0.45,10,0,"#22303C","#18222B","#1D2933");
   box(X+0.5,Y+1.52,0.5,0.08,24,10,"#2A3A48","#1E2A35","#24323E");
   const bob=reduce?0:(a.state==="working"?Math.sin(t/120)*1.2:a.state==="sleep"?Math.sin(t/900)*.8:0);
@@ -530,10 +554,9 @@ function agent(a,t){
   if(a.state==="sleep"){const k=reduce?.3:(t/1200)%1;ctx.globalAlpha=1-k;ctx.fillStyle="#9FB6C7";ctx.fillText("z",p[0]+12*sc+k*8*sc,p[1]-30*sc-k*14*sc);ctx.globalAlpha=1}
   if(a.state==="waiting"){ctx.fillStyle=s.c;ctx.fillText(".".repeat(reduce?3:Math.floor(t/400)%4),p[0]+14*sc,p[1]-26*sc)}
   if(a.state==="done"){ctx.fillStyle=s.c;ctx.fillText("✓",p[0]+13*sc,p[1]-28*sc)}
-  if(a.state==="alert"){ctx.fillStyle=s.c;ctx.beginPath();ctx.arc(p[0]+13*sc,p[1]-32*sc,7*sc,0,7);ctx.fill();ctx.fillStyle="#0B1620";ctx.textBaseline="middle";ctx.fillText("2",p[0]+13*sc,p[1]-32*sc)}
-  const foot=iso(X+0.75,Y+1.9),bp=iso(X+0.75,Y+0.6,66);
+  const foot=iso(X+0.75,Y+1.9),bp=iso(X+0.75,Y+0.6,62);
   overlay.push(()=>{
-    const bb=bubble(bp[0],bp[1],a.bubble,s.c,a.name.toUpperCase(),sel===a.id);
+    const bb=label(bp[0],bp[1],a.name,s.c,open&&sel===a.id);
     hits.push({id:a.id,x:Math.min(bb[0],p[0]-34*sc),y:bb[1],w:Math.max(bb[2],68*sc),h:foot[1]-bb[1]});
   });
 }
@@ -554,14 +577,19 @@ function clampCam(){
   camT.x=Math.min(0,Math.max(W-W*camT.z,camT.x));camT.y=Math.min(0,Math.max(H-H*camT.z,camT.y));
 }
 function zoomAt(sx,sy,f){const nz=Math.min(5,Math.max(1,camT.z*f));const wx=(sx-camT.x)/camT.z,wy=(sy-camT.y)/camT.z;camT={z:nz,x:sx-wx*nz,y:sy-wy*nz};clampCam()}
+const narrow=()=>matchMedia("(max-width:760px)").matches;
 function focusAgent(id){
-  sel=id;drawCard();const a=AG.find(x=>x.id===id);if(!a.mon)return;
-  const stacked=matchMedia("(max-width:640px)").matches;const z=stacked?2.2:W<520?3.2:2.6;camT={z,x:W/2-a.mon.cx*z,y:H*(stacked?0.5:0.3)-a.mon.cy*z};clampCam();openScreen(id);
-  if(stacked)requestAnimationFrame(()=>$("screen").scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"}));
+  if(open&&sel===id){closeAgent();return}
+  sel=id;open=true;$("drawer").hidden=false;drawDrawer();
+  const a=AG.find(x=>x.id===id);if(!a.mon)return;
+  const side=narrow()?0:$("drawer").offsetWidth;
+  const z=narrow()?2:2.2;camT={z,x:(W-side)/2-a.mon.cx*z,y:H*0.42-a.mon.cy*z};
+  camT.x=Math.min(0,Math.max(W-side-W*z,camT.x));camT.y=Math.min(0,Math.max(H-H*z,camT.y));
+  if(narrow())requestAnimationFrame(()=>$("drawer").scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"}));
 }
-function resetView(){camT={z:1,x:0,y:0};$("screen").hidden=true}
+function closeAgent(){open=false;camT={z:1,x:0,y:0};$("drawer").hidden=true}
 const ptrs=new Map();let moved=false,pinch=null,start=null;
-if(matchMedia("(pointer:coarse)").matches)$("hint").textContent="Pellizca para zoom · arrastra con un dedo para moverte · toca un agente";
+if(matchMedia("(pointer:coarse)").matches)$("hint").textContent="Toca un agente · pellizca para zoom";
 cv.addEventListener("pointerdown",e=>{ptrs.set(e.pointerId,{x:e.offsetX,y:e.offsetY});if(ptrs.size===1){moved=false;start={x:e.offsetX,y:e.offsetY}}if(ptrs.size===2){const [p1,p2]=[...ptrs.values()];pinch={d:Math.hypot(p1.x-p2.x,p1.y-p2.y)||1}}if(camT.z>1.01||ptrs.size===2)cv.setPointerCapture(e.pointerId)});
 cv.addEventListener("pointermove",e=>{
   const prev=ptrs.get(e.pointerId);if(!prev)return;const cur={x:e.offsetX,y:e.offsetY};
@@ -572,28 +600,104 @@ cv.addEventListener("pointermove",e=>{
 });
 function up(e){
   if(!ptrs.has(e.pointerId))return;ptrs.delete(e.pointerId);if(ptrs.size<2)pinch=null;
-  if(!moved&&ptrs.size===0){const wx=(e.offsetX-cam.x)/cam.z,wy=(e.offsetY-cam.y)/cam.z;const h=hits.find(h=>wx>=h.x&&wx<=h.x+h.w&&wy>=h.y&&wy<=h.y+h.h);if(h)focusAgent(h.id)}
+  if(!moved&&ptrs.size===0){
+    const wx=(e.offsetX-cam.x)/cam.z,wy=(e.offsetY-cam.y)/cam.z;const h=hits.find(h=>wx>=h.x&&wx<=h.x+h.w&&wy>=h.y&&wy<=h.y+h.h);
+    if(h)focusAgent(h.id);else if(open||camT.z>1.01)closeAgent();
+  }
 }
 cv.addEventListener("touchmove",e=>{if(e.touches.length>1||camT.z>1.01)e.preventDefault()},{passive:false});
 cv.addEventListener("pointerup",up);cv.addEventListener("pointercancel",e=>{ptrs.delete(e.pointerId);pinch=null});
 cv.addEventListener("wheel",e=>{e.preventDefault();zoomAt(e.offsetX,e.offsetY,Math.exp(-e.deltaY*0.0015));cam={...camT}},{passive:false});
 cv.addEventListener("keydown",e=>{
-  if(e.key==="ArrowRight"||e.key==="ArrowLeft"){const i=AG.findIndex(a=>a.id===sel);focusAgent(AG[(i+(e.key==="ArrowRight"?1:AG.length-1))%AG.length].id)}
-  if(e.key==="Escape")resetView();if(e.key==="+"||e.key==="=")zoomAt(W/2,H/2,1.25);if(e.key==="-")zoomAt(W/2,H/2,.8);
+  if(e.key==="ArrowRight"||e.key==="ArrowLeft"){const i=Math.max(0,AG.findIndex(a=>a.id===sel));const next=AG[(i+(sel==null?0:(e.key==="ArrowRight"?1:AG.length-1)))%AG.length].id;open=false;focusAgent(next)}
+  if(e.key==="Enter"&&!open)focusAgent(AG[0].id);
+  if(e.key==="Escape")closeAgent();if(e.key==="+"||e.key==="=")zoomAt(W/2,H/2,1.25);if(e.key==="-")zoomAt(W/2,H/2,.8);
 });
-$("zin").onclick=()=>zoomAt(W/2,H/2,1.3);$("zout").onclick=()=>zoomAt(W/2,H/2,1/1.3);$("zreset").onclick=resetView;$("sClose").onclick=resetView;
-let lastW=cv.parentElement.clientWidth;
-window.addEventListener("resize",()=>{const w=cv.parentElement.clientWidth;if(w===lastW)return;lastW=w;resize();$("screen").hidden=true});
+$("zin").onclick=()=>zoomAt(W/2,H/2,1.3);$("zout").onclick=()=>zoomAt(W/2,H/2,1/1.3);$("zreset").onclick=closeAgent;$("dClose").onclick=closeAgent;
+let lastW=0;
+window.addEventListener("resize",()=>{const w=$("stage").clientWidth;if(w===lastW)return;lastW=w;resize();closeAgent()});
+
+/* ================== Historial ================== */
+const HS={tipo:"",prod:"",only:"",serie:"nuevo"};
+const M=D.movimientos;
+P.forEach(p=>{const o=document.createElement("option");o.value=p.name;o.textContent=p.name;$("mvProd").appendChild(o)});
+const valFmt=(v,mon)=>v==null?"":mon==="USD"?`USD ${fmt(v,2)}`:mon==="Bs/USD"?`${fmt(v,2)} Bs`:`Bs ${fmt(v)}`;
+const changed=m=>m.antes!=null&&Math.abs(m.valor-m.antes)>1e-9;
+function chg(m){
+  if(m.antes==null)return `<span class="pill st-none">primer dato</span>`;
+  if(!changed(m))return `<span class="pill st-none">sin cambio</span>`;
+  const d=m.valor-m.antes,pct=m.antes?d/m.antes*100:0,dec=m.moneda==="Bs"?0:2;
+  // eBay y dólar: subir encarece traer (malo). Cochabamba: subir es mejor precio de venta (bueno)
+  const good=m.tipo==="local"?d>0:d<0;
+  return `<span class="pill ${good?"st-good":"st-bad"}">${d>0?"+":"−"}${fmt(Math.abs(d),dec)} · ${d>0?"+":"−"}${fmt(Math.abs(pct),1)} %</span>`;
+}
+function renderStmt(){
+  const list=M.filter(m=>(!HS.tipo||m.tipo===HS.tipo)&&(!HS.prod||m.producto===HS.prod)&&(!HS.only||changed(m)));
+  const days=[...new Set(list.map(m=>m.fecha))].sort().reverse();
+  if(!days.length){$("stmt").innerHTML='<div class="empty">No hay movimientos con estos filtros.</div>';return}
+  const kindLbl={ebay:"eBay",local:"Cbba",dolar:"Dólar"};
+  $("stmt").innerHTML=days.map(d=>{
+    const ms=list.filter(m=>m.fecha===d);
+    const fx=D.dolar.find(f=>f.fecha===d);
+    return `<div class="day"><b>${fechaLarga(d)}</b><span>${ms.length} movimiento${ms.length===1?"":"s"}</span><span>${ms.filter(changed).length} con cambio</span>${fx&&fx.usado?`<span>dólar ${(+fx.usado).toFixed(2)} Bs</span>`:""}</div>
+      <div class="mv mvhead"><span>Concepto</span><span>Anterior</span><span>Nuevo</span><span>Cambio</span></div>
+      ${ms.map(m=>`<div class="mv"><div class="what"><span class="kind k-${m.tipo}">${kindLbl[m.tipo]}</span><b>${esc(m.producto||m.concepto)}</b>${m.producto?` · ${esc(m.concepto)}`:""}<small>${esc(m.detalle)}${m.url?` · <a href="${esc(m.url)}" target="_blank" rel="noopener">ver</a>`:""}</small></div>
+        <div class="num old">${m.antes==null?"—":valFmt(m.antes,m.moneda)}</div><div class="num">${valFmt(m.valor,m.moneda)}</div><div class="chg">${chg(m)}</div></div>`).join("")}`;
+  }).join("");
+}
+function serieDia(p,serie,fecha){
+  if(serie==="local"){const a=M.filter(m=>m.tipo==="local"&&m.producto===p&&m.fecha===fecha&&!/no cuenta/.test(m.detalle));return a.length?Math.min(...a.map(m=>m.valor)):null}
+  const a=M.filter(m=>m.tipo==="ebay"&&m.producto===p&&m.fecha===fecha&&m.concepto==="eBay "+serie);return a.length?a[a.length-1].valor:null;
+}
+function renderDays(){
+  const dates=[...new Set(M.filter(m=>m.tipo!=="dolar").map(m=>m.fecha))].sort();
+  const usd=HS.serie!=="local";
+  $("daysH").innerHTML=`<tr><th class="l">${usd?`eBay ${HS.serie}, USD con envío`:"Mejor precio en Cochabamba, Bs"}</th>${dates.map(d=>`<th>${fechaCorta(d)}</th>`).join("")}</tr>`;
+  $("daysB").innerHTML=P.map(p=>{let prev=null;
+    const cells=dates.map(d=>{const v=serieDia(p.name,HS.serie,d);if(v==null)return `<td>${dash}</td>`;
+      let arrow="";if(prev!=null&&Math.abs(v-prev)>1e-9){const upv=v>prev;const good=usd?!upv:upv;arrow=` <span class="${good?"down":"up"}" title="${upv?"subió":"bajó"}">${upv?"▲":"▼"}</span>`}
+      prev=v;return `<td>${usd?fmt(v,2):fmt(v)}${arrow}</td>`}).join("");
+    return `<tr><td class="name">${esc(p.name)}</td>${cells}</tr>`}).join("");
+  $("fxB").innerHTML=[...D.dolar].reverse().map(f=>`<tr><td style="text-align:left">${fechaCorta(f.fecha)}</td><td>${f.oficial||dash}</td><td>${f.paralelo_compra||dash}</td><td>${f.paralelo_venta||dash}</td><td><b>${f.usado||"—"}</b></td><td style="text-align:left;white-space:normal;min-width:260px" class="dash">${esc(f.fuente)}</td></tr>`).join("");
+}
+function md(src){
+  const inline=s=>esc(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/`([^`]+)`/g,"<code>$1</code>").replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+  const L=src.split("\n");let out="",i=0;
+  while(i<L.length){const l=L[i];
+    if(/^#{1,3} /.test(l)){const n=l.match(/^#+/)[0].length;out+=`<h${n}>${inline(l.slice(n+1))}</h${n}>`;i++;continue}
+    if(l.startsWith("|")){const rows=[];while(i<L.length&&L[i].startsWith("|")){rows.push(L[i]);i++}
+      const cells=r=>r.trim().replace(/^\||\|$/g,"").split("|").map(c=>c.trim());
+      const body=rows.filter(r=>!/^\|[\s|:-]+\|?$/.test(r.trim()));
+      out+=`<div class="tw"><table><thead><tr>${cells(body[0]).map(c=>`<th>${inline(c)}</th>`).join("")}</tr></thead><tbody>${body.slice(1).map(r=>`<tr>${cells(r).map(c=>`<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;continue}
+    if(/^- /.test(l)){out+="<ul>";while(i<L.length&&/^- /.test(L[i])){out+=`<li>${inline(L[i].slice(2))}</li>`;i++}out+="</ul>";continue}
+    if(!l.trim()){i++;continue}
+    const para=[];while(i<L.length&&L[i].trim()&&!/^(#{1,3} |\||- )/.test(L[i])){para.push(L[i]);i++}
+    out+=`<p>${inline(para.join(" "))}</p>`;
+  }
+  return out;
+}
+let docSel=D.documentos[0]?.id;
+function renderDocs(){
+  $("docList").innerHTML=D.documentos.map(d=>`<button type="button" data-doc="${esc(d.id)}" aria-pressed="${d.id===docSel}"><small>${esc(d.tipo)} · ${fechaCorta(d.fecha)}</small>${esc(d.titulo)}</button>`).join("");
+  const d=D.documentos.find(x=>x.id===docSel);$("reader").innerHTML=d?md(d.md):'<p class="dash">Todavía no hay documentos.</p>';
+}
+$("docList").addEventListener("click",e=>{const b=e.target.closest("button[data-doc]");if(!b)return;docSel=b.dataset.doc;renderDocs()});
+const tabs=[["tab-mov","pane-mov"],["tab-dias","pane-dias"],["tab-docs","pane-docs"]];
+tabs.forEach(([t])=>$(t).onclick=()=>{tabs.forEach(([t2,p2])=>{$(t2).setAttribute("aria-selected",t2===t);$(p2).hidden=t2!==t})});
+const segBind=(id,attr,fn)=>document.querySelectorAll(`#${id} button`).forEach(b=>b.onclick=()=>{document.querySelectorAll(`#${id} button`).forEach(x=>x.setAttribute("aria-pressed",x===b));fn(b.dataset[attr])});
+segBind("mvKinds","t",v=>{HS.tipo=v;renderStmt()});
+segBind("mvOnly","o",v=>{HS.only=v;renderStmt()});
+segBind("dSeries","s",v=>{HS.serie=v;renderDays()});
+$("mvProd").addEventListener("change",e=>{HS.prod=e.target.value;renderStmt()});
 
 /* ================== Controles ================== */
 $("q2").onclick=()=>{S.qty=2;$("q2").setAttribute("aria-pressed","true");$("q4").setAttribute("aria-pressed","false");render()};
 $("q4").onclick=()=>{S.qty=4;$("q4").setAttribute("aria-pressed","true");$("q2").setAttribute("aria-pressed","false");render()};
-document.querySelectorAll("#modes button").forEach(b=>b.onclick=()=>{S.mode=b.dataset.m;document.querySelectorAll("#modes button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
-document.querySelectorAll("#cats button").forEach(b=>b.onclick=()=>{S.cat=b.dataset.c;document.querySelectorAll("#cats button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
+segBind("modes","m",v=>{S.mode=v;render()});
+segBind("cats","c",v=>{S.cat=v;render()});
 ["tc","tax","adu"].forEach(id=>$(id).addEventListener("input",render));
 $("q").addEventListener("input",e=>{S.q=e.target.value.trim().toLowerCase();render()});
 document.querySelectorAll("#main th").forEach(th=>th.onclick=()=>{const k=th.dataset.k;S.sort=S.sort.k===k?{k,dir:-S.sort.dir}:{k,dir:k==="name"||k==="cat"||k==="rank"?1:-1};render()});
 
-resize();render();drawCard();requestAnimationFrame(frame);
+resize();lastW=$("stage").clientWidth;render();renderStmt();renderDays();renderDocs();requestAnimationFrame(frame);
 </script>
-

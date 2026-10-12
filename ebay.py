@@ -147,7 +147,8 @@ def guardar(resultados, condicion):
                 it = items[0]
                 w.writerow([hoy, nombre, condicion,
                             f"{it['precio_usd']:.2f}", f"{it['envio_usd'] or 0:.2f}", "real",
-                            f"eBay API ({condicion}; {it['vendedor']} {it['feedback_pct']}%)", it["link"]])
+                            f"eBay API; vendedor {it['vendedor']} {it['feedback_pct']}%; {it['titulo'][:60]}"
+                            + ("; envío no indicado" if it["envio_usd"] is None else ""), it["link"]])
 
 
 def main():
