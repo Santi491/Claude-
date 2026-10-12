@@ -22,12 +22,14 @@ import urllib.request
 
 TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
-CONDICIONES = {"nuevo": "NEW", "usado": "USED", "todos": None}
+# conditionIds de eBay: 1000 nuevo; 1500 open box; 3000 usado
+CONDICIONES = {"nuevo": "1000", "openbox": "1500", "usado": "3000", "todos": None}
 # Categorías de eBay: procesadores, memoria RAM de escritorio, SSD
 CATEGORIAS = {"cpu": "164", "ram": "170083", "ssd": "175669"}
 # Anuncios que no son el producto en sí
 EXCLUIR = ("box only", "empty box", "caja vacía", "for parts", "not working", "broken", "lot of",
-           "cooler only", "heatsink only", "fan only", "replacement fan", "so dimm", "sodimm", "bundle", "combo", "motherboard", "laptop", "sodimm", "so-dimm")
+           "cooler only", "heatsink only", "fan only", "replacement fan", "so dimm", "sodimm", "bundle", "combo", "motherboard", "laptop", "sodimm", "so-dimm",
+           "macbook", "imac", "mac mini", "mac pro")
 MIN_FEEDBACK_PCT = 98.0
 MIN_FEEDBACK_SCORE = 50
 
@@ -97,7 +99,7 @@ def coincide(consulta, titulo):
 def buscar(tok, consulta, condicion="nuevo", limite=50):
     filtros = ["buyingOptions:{FIXED_PRICE}", "itemLocationCountry:US", "deliveryCountry:US"]
     if CONDICIONES[condicion]:
-        filtros.append(f"conditions:{{{CONDICIONES[condicion]}}}")
+        filtros.append(f"conditionIds:{{{CONDICIONES[condicion]}}}")
     q = urllib.parse.urlencode({
         "q": consulta, "category_ids": categoria(consulta),
         "filter": ",".join(filtros), "limit": limite,
@@ -114,6 +116,8 @@ def buscar(tok, consulta, condicion="nuevo", limite=50):
         titulo = it.get("title", "")
         if not coincide(consulta, titulo):
             continue
+        if condicion == "nuevo" and it.get("condition") != "New":
+            continue
         vend = it.get("seller", {})
         pct = float(vend.get("feedbackPercentage") or 0)
         score = int(vend.get("feedbackScore") or 0)
@@ -127,7 +131,7 @@ def buscar(tok, consulta, condicion="nuevo", limite=50):
             "titulo": titulo, "precio_usd": precio, "envio_usd": envio,
             "total_usd": precio + (envio or 0), "estado": it.get("condition", ""),
             "vendedor": vend.get("username", ""), "feedback_pct": pct, "feedback_score": score,
-            "link": it.get("itemWebUrl", ""),
+            "link": it.get("itemWebUrl", "").split("?")[0],
         })
     unicos = {(x["vendedor"], x["titulo"], x["precio_usd"]): x for x in out}
     return sorted(unicos.values(), key=lambda x: x["total_usd"])
@@ -141,7 +145,7 @@ def guardar(resultados, condicion):
         for nombre, items in resultados.items():
             if items:
                 it = items[0]
-                w.writerow([hoy, nombre, "usado" if condicion == "usado" else "nuevo",
+                w.writerow([hoy, nombre, condicion,
                             f"{it['precio_usd']:.2f}", f"{it['envio_usd'] or 0:.2f}", "real",
                             f"eBay API ({condicion}; {it['vendedor']} {it['feedback_pct']}%)", it["link"]])
 

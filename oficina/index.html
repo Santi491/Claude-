@@ -141,7 +141,7 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 
 <div class="wrap">
   <header>
-    <div class="eyebrow">EE.UU. → Cochabamba · actualizado 12/10/2026 10:45 (Mac)</div>
+    <div class="eyebrow">EE.UU. → Cochabamba · actualizado 12/10/2026 11:15 (Mac)</div>
     <h1>Oficina de agentes</h1>
     <p class="lede">Cada escritorio es un agente. Su monitor muestra la última captura de lo que estaba haciendo; si no está trabajando, dice “En espera”. Toca un agente para acercarte y ver su pantalla.</p>
   </header>
@@ -216,7 +216,7 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
   <footer>
     <div><b>Courier B:</b> USD 28/kg, mínimo 1 kg, sube de 0,5 en 0,5 kg; peso = peso con caja × unidades + 300 g de caja exterior. <b>Courier A:</b> USD 10 por producto + sales tax. Se usa el más barato.</div>
     <div><b>Estado:</b> conviene ≥ 15 % de margen · justo 5–15 % · no conviene &lt; 5 %. Los precios de Marketplace son lo que piden los vendedores. La aduana boliviana sigue sin confirmar; pruébala con “Aduana %”.</div>
-    <div>Precios de eBay del 11 y 12/10/2026, compra inmediata, vendedor en EE.UU. Capturas de pantalla del 12/10/2026.</div>
+    <div>Precios de eBay del 12/10/2026 con la API oficial (compra inmediata, vendedor en EE.UU. con ≥ 98 % de feedback; “nuevo” excluye open box). El i5-13400 nuevo sigue con el anuncio visto con Chrome. Capturas de pantalla del 12/10/2026.</div>
   </footer>
 </div>
 
@@ -224,36 +224,36 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 /* ================== Productos ================== */
 const MSR="MSR Computers (web; por WhatsApp dijeron que no venden sueltos)";
 const P=[
- {name:"Ryzen 5 5600",cat:"CPU",g:350,nw:{usd:159.99,ship:0,url:"https://www.ebay.com/itm/186930960267",note:"Nuevo, envío gratis"},us:{usd:119,ship:5.68,url:"https://www.ebay.com/itm/407253287799"},local:[]},
- {name:"Ryzen 7 5700X3D",cat:"CPU",g:350,nw:null,us:{usd:299.99,ship:5.80,url:"https://www.ebay.com/itm/206619893802"},note:"No hay nuevos de vendedores de EE.UU.",local:[]},
- {name:"Ryzen 5 7600",cat:"CPU",g:350,nw:{usd:137.04,ship:0,url:"https://www.ebay.com/itm/158132772011",note:"Nuevo, versión tray/OEM; en caja USD 240,53"},us:{usd:115,ship:5.99,url:"https://www.ebay.com/itm/800671991805"},local:[
+ {name:"Ryzen 5 5600",cat:"CPU",g:350,nw:{usd:138.9,ship:0.0,url:"https://www.ebay.com/itm/389732753480",note:"Nuevo · API eBay 12/10"},us:{usd:135.0,ship:0.0,url:"https://www.ebay.com/itm/287620955096",note:"Usado · API eBay 12/10"},local:[]},
+ {name:"Ryzen 7 5700X3D",cat:"CPU",g:350,nw:null,us:{usd:305.0,ship:0.0,url:"https://www.ebay.com/itm/377562785374",note:"Usado · API eBay 12/10"},note:"No hay nuevos de vendedores de EE.UU.",local:[]},
+ {name:"Ryzen 5 7600",cat:"CPU",g:350,nw:{usd:144.25,ship:0.0,url:"https://www.ebay.com/itm/158132772011",note:"Nuevo · API eBay 12/10"},us:{usd:122.99,ship:0.0,url:"https://www.ebay.com/itm/307194675494",note:"Usado · API eBay 12/10"},local:[
    {bs:2000,ref:false,txt:"Ryzen 5 7600X · La Paz (solo referencia)",url:"https://www.facebook.com/marketplace/item/1582597166589691/"},
    {bs:2650,ref:false,txt:"Ryzen 5 7600X · La Paz (solo referencia)",url:"https://www.facebook.com/marketplace/item/2167313420829167/"}]},
- {name:"Ryzen 7 7800X3D",cat:"CPU",g:350,nw:{usd:320,ship:0,url:"https://www.ebay.com/itm/267810883117",note:"Nuevo, envío gratis"},us:{usd:275,ship:7.52,url:"https://www.ebay.com/itm/820226445864"},local:[
+ {name:"Ryzen 7 7800X3D",cat:"CPU",g:350,nw:{usd:329.0,ship:0.0,url:"https://www.ebay.com/itm/187668752673",note:"Nuevo sin caja (tray) · API eBay 12/10"},us:{usd:283.99,ship:0.0,url:"https://www.ebay.com/itm/366706722500",note:"Usado · API eBay 12/10"},local:[
    {bs:4800,ref:true,txt:"Sellado · Marketplace",url:"https://www.facebook.com/marketplace/item/2555034215012611/"},
    {bs:5190,ref:true,txt:"Marketplace",url:"https://www.facebook.com/marketplace/item/2669179450145313/"},
    {bs:5390,ref:true,txt:"Marketplace",url:"https://www.facebook.com/marketplace/item/1361869715871206/"},
    {bs:5664,ref:true,txt:"BOX · Cyrex Store (WhatsApp 12/10)",url:"https://cyrexstore.com/"}]},
- {name:"Ryzen 9 9950X",cat:"CPU",g:350,nw:{usd:500,ship:12.10,url:"https://www.ebay.com/itm/158074799377",note:"Nuevo"},us:{usd:405,ship:5,url:"https://www.ebay.com/itm/287637897624"},local:[{bs:5580,ref:true,txt:MSR,url:"https://msrcomputers.framer.website/"}]},
- {name:"Intel Core i5-12400F",cat:"CPU",g:250,nw:{usd:159.95,ship:0,url:"https://www.ebay.com/itm/227555308176",note:"Nuevo en caja, envío gratis"},us:{usd:124.99,ship:0,url:"https://www.ebay.com/itm/407281535535"},local:[]},
- {name:"Intel Core i5-13400",cat:"CPU",g:300,nw:{usd:259.78,ship:0,url:"https://www.ebay.com/itm/278289521729",note:"Nuevo, tray/OEM; pocos anuncios"},us:{usd:150,ship:5.72,url:"https://www.ebay.com/itm/318668183718"},local:[{bs:2300,ref:true,txt:MSR,url:"https://msrcomputers.framer.website/"}]},
- {name:"Intel Core i5-14400F",cat:"CPU",g:250,nw:{usd:164.49,ship:0,url:"https://www.ebay.com/itm/389945918228",note:"Nuevo, envío gratis"},us:{usd:139.99,ship:0,url:"https://www.ebay.com/itm/198689948845"},local:[
+ {name:"Ryzen 9 9950X",cat:"CPU",g:350,nw:{usd:499.99,ship:0.0,url:"https://www.ebay.com/itm/267809260226",note:"Nuevo · API eBay 12/10"},us:{usd:454.99,ship:0.0,url:"https://www.ebay.com/itm/257573828939",note:"Usado · API eBay 12/10"},local:[{bs:5580,ref:true,txt:MSR,url:"https://msrcomputers.framer.website/"}]},
+ {name:"Intel Core i5-12400F",cat:"CPU",g:250,nw:{usd:150.0,ship:0.0,url:"https://www.ebay.com/itm/800773514419",note:"Nuevo · API eBay 12/10"},us:{usd:119.95,ship:0.0,url:"https://www.ebay.com/itm/800786033506",note:"Usado · API eBay 12/10"},local:[]},
+ {name:"Intel Core i5-13400",cat:"CPU",g:300,nw:{usd:259.78,ship:0,url:"https://www.ebay.com/itm/278289521729",note:"Nuevo, tray/OEM; pocos anuncios"},us:{usd:149.99,ship:0.0,url:"https://www.ebay.com/itm/366720837166",note:"Usado · API eBay 12/10"},local:[{bs:2300,ref:true,txt:MSR,url:"https://msrcomputers.framer.website/"}]},
+ {name:"Intel Core i5-14400F",cat:"CPU",g:250,nw:{usd:164.49,ship:0.0,url:"https://www.ebay.com/itm/389945918228",note:"Nuevo · API eBay 12/10"},us:{usd:136.99,ship:0.0,url:"https://www.ebay.com/itm/407274530658",note:"Usado · API eBay 12/10"},local:[
    {bs:2537,ref:true,txt:"OEM (sin caja) · Cyrex Store (WhatsApp 12/10)",url:"https://cyrexstore.com/"},
    {bs:2700,ref:true,txt:"“i5 14400” (no dice si es F) · Marketplace",url:"https://www.facebook.com/marketplace/item/1796562071723775/"}]},
- {name:"Intel Core Ultra 7 265K",cat:"CPU",g:300,nw:{usd:244.88,ship:0,url:"https://www.ebay.com/itm/189020669164",note:"Nuevo, envío gratis"},us:{usd:199.99,ship:0,url:"https://www.ebay.com/itm/860027091566"},local:[{bs:3950,ref:true,txt:MSR,url:"https://msrcomputers.framer.website/"}]},
- {name:"Corsair Vengeance RGB DDR5 32GB (2x16) 5600",cat:"RAM",g:150,nw:{usd:429,ship:0,cond:"OPEN BOX",url:"https://www.ebay.com/itm/287633650375",note:"No hay nuevo de vendedor de EE.UU.; el más barato es open box"},us:{usd:399.99,ship:0,url:"https://www.ebay.com/itm/860016176225"},local:[]},
- {name:"Corsair Vengeance RGB DDR5 32GB (2x16) 6000",cat:"RAM",g:150,nw:{usd:425,ship:5.99,url:"https://www.ebay.com/itm/168784156010",note:"Vengeance RGB RS, nuevo"},us:{usd:399.95,ship:0,url:"https://www.ebay.com/itm/198706246268"},local:[
+ {name:"Intel Core Ultra 7 265K",cat:"CPU",g:300,nw:{usd:244.87,ship:0.0,url:"https://www.ebay.com/itm/840012484062",note:"Nuevo · API eBay 12/10"},us:{usd:209.99,ship:0.0,url:"https://www.ebay.com/itm/128130997262",note:"Usado · API eBay 12/10"},local:[{bs:3950,ref:true,txt:MSR,url:"https://msrcomputers.framer.website/"}]},
+ {name:"Corsair Vengeance RGB DDR5 32GB (2x16) 5600",cat:"RAM",g:150,nw:{usd:485.0,ship:8.0,url:"https://www.ebay.com/itm/237072275336",note:"Nuevo · API eBay 12/10"},us:{usd:399.99,ship:0.0,url:"https://www.ebay.com/itm/860016176225",note:"Usado · API eBay 12/10"},local:[]},
+ {name:"Corsair Vengeance RGB DDR5 32GB (2x16) 6000",cat:"RAM",g:150,nw:{usd:425.0,ship:10.99,url:"https://www.ebay.com/itm/960033835048",note:"Vengeance RGB RS · API eBay 12/10"},us:{usd:399.9,ship:0.0,url:"https://www.ebay.com/itm/298605370806",note:"Usado · API eBay 12/10"},local:[
    {bs:6200,ref:true,txt:"Vengeance RGB RS · “última unidad” · Marketplace",url:"https://www.facebook.com/marketplace/item/1414394683871926/"}]},
- {name:"RAM DDR4 16GB (2x8) 3200",cat:"RAM",g:120,nw:{usd:91.5,ship:5.99,url:"https://www.ebay.com/itm/178173001185",note:"G.Skill Ripjaws V 2x8 3200, nuevo"},us:{usd:59.99,ship:5.72,url:"https://www.ebay.com/itm/820171389776",note:"Micron 2x8"},local:[
+ {name:"RAM DDR4 16GB (2x8) 3200",cat:"RAM",g:120,nw:{usd:75.0,ship:0.0,url:"https://www.ebay.com/itm/198709471618",note:"Silicon Power 2x8 · API eBay 12/10"},us:{usd:59.99,ship:0.0,url:"https://www.ebay.com/itm/820171389776",note:"Micron 2x8 · API eBay 12/10"},local:[
    {bs:540,ref:false,txt:"Kingston Fury Beast 16GB (probablemente 1x16; no se usa)",url:"https://www.facebook.com/marketplace/item/1074400352041144/"},
    {bs:900,ref:true,txt:"16GB 3200 (configuración no indicada) · Marketplace",url:"https://www.facebook.com/marketplace/item/959874386670350/"},
    {bs:1500,ref:true,txt:"2x8 3200 · Sacaba",url:"https://www.facebook.com/marketplace/item/2347323546077904/"},
    {bs:1500,ref:true,txt:"Corsair Vengeance 2x8 · Sacaba",url:"https://www.facebook.com/marketplace/item/2345958202816013/"}]},
- {name:"SSD NVMe 1TB",cat:"SSD",g:80,nw:{usd:129.99,ship:15,url:"https://www.ebay.com/itm/147617796465",note:"Kingston NV3 1TB, nuevo"},us:{usd:140,ship:5.72,url:"https://www.ebay.com/itm/366727856686",note:"Samsung 990 EVO Plus"},local:[
+ {name:"SSD NVMe 1TB",cat:"SSD",g:80,nw:{usd:114.99,ship:0.0,url:"https://www.ebay.com/itm/800572518683",note:"Derlar DN-850Q (marca poco conocida) · API eBay 12/10"},us:{usd:99.99,ship:0.0,url:"https://www.ebay.com/itm/206619927751",note:"Intel 665P · API eBay 12/10"},local:[
    {bs:1800,ref:true,txt:"M.2 1TB (marca no indicada) · Marketplace",url:"https://www.facebook.com/marketplace/item/2078197563584097/"},
    {bs:1850,ref:true,txt:"Kingston NV3 1TB · Marketplace",url:"https://www.facebook.com/marketplace/item/1448988227128820/"},
    {bs:2000,ref:true,txt:"Crucial P310 1TB · Marketplace",url:"https://www.facebook.com/marketplace/item/2817371738643128/"}]},
- {name:"SSD NVMe 2TB",cat:"SSD",g:80,nw:{usd:279.99,ship:0,url:"https://www.ebay.com/itm/307207851818",note:"Kingston NV3 2TB, nuevo, envío gratis"},us:{usd:180,ship:5.34,url:"https://www.ebay.com/itm/206614369454",note:"Kingston NV3 2TB"},local:[
+ {name:"SSD NVMe 2TB",cat:"SSD",g:80,nw:{usd:209.99,ship:0.0,url:"https://www.ebay.com/itm/227402767941",note:"RAM Tech 2TB Gen4 · API eBay 12/10"},us:{usd:179.99,ship:0.0,url:"https://www.ebay.com/itm/366729072023",note:"ORICO e3500 · API eBay 12/10"},local:[
    {bs:3550,ref:true,txt:"SanDisk 2TB (no dice si es NVMe) · Marketplace",url:"https://www.facebook.com/marketplace/item/1537210071754803/"}]}
 ];
 const S={mode:"new",qty:2,cat:"",q:"",sort:{k:"rank",dir:1},open:new Set()};
@@ -335,9 +335,9 @@ const AG=[
  {id:"nube",name:"Informe diario",where:"Nube · rutina diaria de GitHub",state:"sleep",bubble:"Último informe 12/10",x:1.2,y:1.4,shirt:"#6C8CF5",
   shotTitle:"Informe diario",shotMeta:"informes/2026-10-11.md · nube (sin captura)",
   info:["Busca precios de eBay y escribe el informe en informes/.","Último informe: 12/10/2026, todavía con precios estimados (sin clave de API).","Las tablas de comparación del repo (comparacion.md) ya usan los precios reales del Rastreador eBay.","Pendiente: clave de API de eBay para la rutina."]},
- {id:"ebay",name:"Rastreador eBay",where:"Sesión local · Claude in Chrome",state:"done",bubble:"14 nuevos + 14 usados",x:4.4,y:1.4,shirt:"#E8923E",img:"capturas/ebay.jpg",
+ {id:"ebay",name:"Rastreador eBay",where:"API oficial de eBay (antes: Chrome)",state:"done",bubble:"API eBay: 12 nuevos + 14 usados",x:4.4,y:1.4,shirt:"#E8923E",img:"capturas/ebay.jpg",
   shotTitle:"eBay",shotMeta:"Captura 12/10 · Ryzen 7 7800X3D, nuevo, vendedor EE.UU.",
-  info:["Buscó los 14 productos en eBay: el nuevo y el usado más baratos de cada uno.","5700X3D no tiene nuevos de vendedores de EE.UU.; la DDR5 5600 solo open box.","El usado ahorra hasta 40 % (i5-13400); en el SSD de 1TB el usado sale apenas más caro que el nuevo."]},
+  info:["12/10 11:15: primera corrida con la API oficial de eBay (python3 ebay.py --vigilar --guardar). Nuevo = solo “New”, sin open box.","Sin nuevos de vendedores de EE.UU.: 5700X3D y i5-13400 (este queda con el precio visto con Chrome).","5700X3D no tiene nuevos de vendedores de EE.UU.; la DDR5 5600 solo open box.","El usado ahorra hasta 40 % (i5-13400); en el SSD de 1TB el usado sale apenas más caro que el nuevo."]},
  {id:"wa",name:"WhatsApp",where:"Sesión local · número del agente",state:"waiting",bubble:"4 respuestas · 3 chats nuevos",x:7.6,y:1.4,shirt:"#3FBF7F",
   shotTitle:"WhatsApp",shotMeta:"Resumen 12/10 10:45 (Mac) · sin captura (la página está compartida)",
   info:["Cyrex: 7800X3D BOX Bs 5.664 · i5-14400F OEM Bs 2.537 · Patriot DDR5 16GB (1x16) Bs 3.127. Se le preguntó por 2/4 u y la Corsair 2x16.","Computer Magic: no tiene procesadores ni RAM.","Smart Cube: se le mandó la consulta de precios (7800X3D, 14400F, DDR5 6000).","Compucenter: DDR5 agotada; tiene DDR4 16GB. Pidió empresa, NIT y correo: no se dieron datos, se pidió precio referencial.","Chats nuevos hoy: TecnoGamer, Electro-TTS y PC Components (Santa Cruz). Sin contestar: Gamer Store, Geek Store."]},
@@ -348,6 +348,7 @@ const AG=[
   shotTitle:"Analista",shotMeta:"Cálculo en vivo con los supuestos de la tabla",info:[]}
 ];
 const LOG=[
+ ["12/10 11:15","Rastreador eBay","API oficial: 12 nuevos y 14 usados guardados en precios-eeuu.csv"],
  ["12/10 10:45","WhatsApp","consultas nuevas: TecnoGamer, Electro-TTS, PC Components (Santa Cruz)"],
  ["12/10 10:43","WhatsApp","Compucenter: DDR5 agotada; pidió NIT (no se dio)"],
  ["12/10 10:41","WhatsApp","consulta de precios a Smart Cube; repregunta a Cyrex"],
