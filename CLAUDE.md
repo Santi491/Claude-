@@ -32,10 +32,12 @@ Se calcula en cada análisis (oficial BCB y paralelo). Referencia del 10/10/2026
 - `PROCESO-LOCAL.md`: paso a paso y mensajes modelo para la sesión local.
 - `precios-cochabamba.csv`: precios locales que junta la sesión local (Marketplace/WhatsApp). Una fila por precio visto.
 - `informes/AAAA-MM-DD.md`: informe diario de la nube con precios de EE.UU., costo puesto y comparación.
-- `precios-eeuu.csv`: precios de EE.UU. (una fila por producto y día; `tipo` = real de la API o estimado).
+- `precios-eeuu.csv`: precios de eBay EE.UU., una fila por producto, condición (nuevo/usado) y día; `tipo` = real (API o anuncio visto con Chrome) o estimado. Los primeros reales (12/10) los juntó el Rastreador eBay con Chrome en la PC de la casa.
+- `oficina/index.html` (+ `oficina/capturas/`): fuente del panel "Oficina de agentes", publicado en https://claude.ai/artifact/7B7QhWLBKLVZD1kB197TxJ (tablas interactivas, agentes y actividad). Al terminar una ronda: actualizar sus datos (`P`, `AG`, `LOG`, HUD), republicar en esa misma URL y hacer commit, así la PC, la Mac y la nube ven lo mismo.
 - `comparar.py` → `comparacion.md`: tabla de comparación por producto y por vendedor (costo puesto 2 y 4 u, ganancia y veredicto). Se regenera después de agregar precios de cualquier lado: `python3 comparar.py --tc <tipo de cambio>`.
 
 ## Quién hace qué
 - **Nube (rutina diaria, funciona con la PC apagada):** busca precios de EE.UU. de `vigilar.csv`, calcula el costo puesto con el courier más barato (pedido de 2 y de 4 unidades), compara con el último precio de `precios-cochabamba.csv` y escribe el informe. Notifica al celular y por email.
 - **Local (PC encendida, Claude in Chrome):** revisa Marketplace de Cochabamba y WhatsApp, agrega filas a `precios-cochabamba.csv`, hace commit y push.
-- Antes de trabajar, siempre `git pull` para tener lo último de la otra sesión.
+- Antes de trabajar, siempre `git pull` para tener lo último de la otra sesión. Al terminar: `python3 comparar.py`, actualizar la oficina, commit y push.
+- Computadoras: PC de la casa (Windows) y Mac (repo en `~/Documents/agente-importacion`, login de GitHub con `gh`).

@@ -141,7 +141,8 @@ def guardar(resultados, condicion):
         for nombre, items in resultados.items():
             if items:
                 it = items[0]
-                w.writerow([hoy, nombre, f"{it['precio_usd']:.2f}", f"{it['envio_usd'] or 0:.2f}", "real",
+                w.writerow([hoy, nombre, "usado" if condicion == "usado" else "nuevo",
+                            f"{it['precio_usd']:.2f}", f"{it['envio_usd'] or 0:.2f}", "real",
                             f"eBay API ({condicion}; {it['vendedor']} {it['feedback_pct']}%)", it["link"]])
 
 

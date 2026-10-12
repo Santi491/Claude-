@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
-"""Tabla de comparación: costo puesto en Cochabamba (EE.UU. + courier) contra precios locales.
+"""Tabla de comparación: costo puesto en Cochabamba (eBay + courier) contra precios locales.
 
 Lee vigilar.csv, precios-eeuu.csv y precios-cochabamba.csv y escribe comparacion.md.
+Mismos supuestos que la oficina de agentes (artefacto "Importación Cochabamba").
 
-    python3 comparar.py                 # tipo de cambio 11,90
-    python3 comparar.py --tc 11.88
+    python3 comparar.py                          # nuevo, 11,90 Bs/USD
+    python3 comparar.py --tc 11.88 --aduana 10
 """
 import argparse
 import csv
 import math
 import os
-import statistics
 from datetime import date
 
 DIR = os.path.dirname(os.path.abspath(__file__))
-CAJA_EXTERIOR_G = 300          # caja exterior + relleno del courier B
+CAJA_EXTERIOR_G = 300           # caja exterior + relleno del courier B
 B_USD_KG, B_MIN_KG, B_PASO_KG = 28, 1.0, 0.5
-A_USD_UNIDAD, A_TAX = 10, 0.07  # % de tax de A: pendiente de confirmar
+A_USD_UNIDAD = 10
+CONVIENE, JUSTO = 0.15, 0.05     # margen sobre el mejor precio local
 
 
 def leer(nombre):
@@ -25,91 +26,100 @@ def leer(nombre):
 
 
 def courier_b(peso_g, cant):
-    kg = (peso_g * cant + CAJA_EXTERIOR_G) / 1000
-    cobrado = max(B_MIN_KG, math.ceil(kg / B_PASO_KG - 1e-9) * B_PASO_KG)
-    return cobrado * B_USD_KG / cant, cobrado
+    kg = max(B_MIN_KG, math.ceil((peso_g * cant + CAJA_EXTERIOR_G) / 1000 / B_PASO_KG - 1e-9) * B_PASO_KG)
+    return kg * B_USD_KG / cant, kg
 
 
-def costo_unidad(precio, envio, peso_g, cant):
-    """Costo puesto por unidad en USD con el courier más barato."""
+def costo(oferta, peso_g, cant, tc, tax, aduana):
+    """Costo puesto por unidad en Bs con el courier más barato."""
+    base = float(oferta["precio_usd"]) + float(oferta["envio_usd"] or 0)
     b, kg = courier_b(peso_g, cant)
-    costo_b = precio + envio + b
-    costo_a = (precio + envio) * (1 + A_TAX) + A_USD_UNIDAD
-    return (costo_b, f"B, {kg:g} kg") if costo_b <= costo_a else (costo_a, "A")
+    a = A_USD_UNIDAD + float(oferta["precio_usd"]) * tax
+    envio, via = (a, "A") if a < b else (b, f"B {kg:g} kg")
+    return (base + envio + base * aduana) * tc, via
 
 
 def bs(n):
     return f"{n:,.0f}".replace(",", ".")
 
 
-def ultimo_eeuu(filas, producto):
-    """Precio de EE.UU. más reciente; los reales ganan a los estimados del mismo día o anteriores."""
+def oferta(filas, producto, condicion):
+    """La oferta real más reciente de eBay; 'min' elige la más barata entre nuevo y usado."""
     cand = [f for f in filas if f["producto"] == producto and f["precio_usd"]]
-    cand.sort(key=lambda f: (f["fecha"], f["tipo"] == "real"))
-    reales = [f for f in cand if f["tipo"] == "real"]
-    return (reales or cand or [None])[-1]
+    ult = {}
+    for f in sorted(cand, key=lambda f: (f["fecha"], f["tipo"] == "real")):
+        ult[f["condicion"]] = f
+    if condicion == "min":
+        return min(ult.values(), key=lambda f: float(f["precio_usd"]) + float(f["envio_usd"] or 0), default=None)
+    return ult.get(condicion)
 
 
 def locales(filas, producto):
-    """Precios de Cochabamba del producto (se excluyen los de otras ciudades)."""
-    return [f for f in filas if f["producto"] == producto and "La Paz" not in f["fuente"]
-            and "Santa Cruz" not in f["fuente"]]
+    """Precios de Cochabamba que cuentan (sin otras ciudades ni anuncios de otro modelo)."""
+    return [f for f in filas if f["producto"] == producto and "no cuenta" not in f["estado"]
+            and not any(c in f["fuente"] for c in ("La Paz", "Santa Cruz"))]
+
+
+def veredicto(m):
+    return "conviene" if m >= CONVIENE else "justo" if m >= JUSTO else "no conviene"
+
+
+def tabla(vigilar, eeuu, cbba, condicion, a):
+    filas, detalle, sin = [], [], []
+    for v in vigilar:
+        prod, peso = v["producto"], float(v["peso_g_con_caja"])
+        of, loc = oferta(eeuu, prod, condicion), locales(cbba, prod)
+        if not of or not loc:
+            falta = " y ".join(x for x, ok in (("eBay " + condicion, of), ("Cochabamba", loc)) if not ok)
+            sin.append(f"- **{prod}**: falta precio de {falta}")
+            continue
+        c2, via2 = costo(of, peso, 2, a.tc, a.tax, a.aduana)
+        c4, via4 = costo(of, peso, 4, a.tc, a.tax, a.aduana)
+        mejor = min(loc, key=lambda f: float(f["precio_bs"]))
+        p = float(mejor["precio_bs"])
+        g2, g4 = p - c2, p - c4
+        est = "" if of["tipo"] == "real" else " (est.)"
+        usd = float(of["precio_usd"]) + float(of["envio_usd"] or 0)
+        filas.append((g2 / p, f"| {prod} | [{usd:,.2f}]({of['link']}){est} | {bs(c2)} ({via2}) | {bs(c4)} ({via4}) "
+                              f"| {bs(p)} | {bs(g2)} ({g2 / p:.0%}) | {bs(g4)} ({g4 / p:.0%}) | {veredicto(g2 / p)} |"))
+        lineas = []
+        for f in sorted(loc, key=lambda f: float(f["precio_bs"])):
+            pl = float(f["precio_bs"])
+            link = f" · [ver]({f['link']})" if f["link"] else ""
+            lineas.append(f"| {f['fuente']}{link} | {f['estado']} | {bs(pl)} | {bs(pl - c2)} ({(pl - c2) / pl:.0%}) | {f['fecha']} |")
+        detalle.append(f"### {prod}\neBay {of['condicion']}: USD {usd:,.2f} con envío en EE.UU. ({of['fuente']}, {of['fecha']}). "
+                       f"Costo puesto: **Bs {bs(c2)}**/u en pedido de 2, **Bs {bs(c4)}**/u en pedido de 4.\n\n"
+                       "| Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |\n|---|---|---|---|---|\n"
+                       + "\n".join(lineas) + "\n")
+    filas.sort(reverse=True)
+    return [r for _, r in filas], detalle, sin
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--tc", type=float, default=11.90, help="Bs por USD")
+    ap.add_argument("--tax", type=float, default=7, help="sales tax del courier A, %%")
+    ap.add_argument("--aduana", type=float, default=0, help="aduana boliviana, %% del valor")
     a = ap.parse_args()
+    a.tax, a.aduana = a.tax / 100, a.aduana / 100
 
     vigilar, eeuu, cbba = leer("vigilar.csv"), leer("precios-eeuu.csv"), leer("precios-cochabamba.csv")
-    hoy = date.today().isoformat()
-    resumen, detalle, sin_datos = [], [], []
+    enc = ("| Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs "
+           "| Ganancia 2 u | Ganancia 4 u | Estado |\n|---|---|---|---|---|---|---|---|")
+    nuevo, detalle, sin = tabla(vigilar, eeuu, cbba, "nuevo", a)
+    usado, _, _ = tabla(vigilar, eeuu, cbba, "usado", a)
 
-    for v in vigilar:
-        prod, peso = v["producto"], float(v["peso_g_con_caja"])
-        us, loc = ultimo_eeuu(eeuu, prod), locales(cbba, prod)
-        if not us or not loc:
-            falta = " y ".join(x for x, ok in (("EE.UU.", us), ("Cochabamba", loc)) if not ok)
-            sin_datos.append(f"- **{prod}**: falta precio de {falta}")
-            continue
-        precio, envio = float(us["precio_usd"]), float(us["envio_usd"] or 0)
-        c2, via2 = costo_unidad(precio, envio, peso, 2)
-        c4, via4 = costo_unidad(precio, envio, peso, 4)
-        c2bs, c4bs = c2 * a.tc, c4 * a.tc
-        precios = sorted(float(f["precio_bs"]) for f in loc)
-        minimo, mediana = precios[0], statistics.median(precios)
-        gan = mediana - c4bs
-        marca = " (est.)" if us["tipo"] != "real" else ""
-        veredicto = ("conviene" if gan / mediana >= 0.20 else "margen justo" if gan / mediana >= 0.08
-                     else "no conviene")
-        resumen.append((gan / mediana, f"| {prod} | {precio:,.0f}{marca} | {bs(c2bs)} ({via2}) | {bs(c4bs)} ({via4}) "
-                       f"| {bs(minimo)} | {bs(mediana)} | {bs(gan)} ({gan / mediana:.0%}) | {veredicto}{marca} |"))
-
-        filas = []
-        for f in sorted(loc, key=lambda f: float(f["precio_bs"])):
-            p = float(f["precio_bs"])
-            g = p - c4bs
-            filas.append(f"| {f['fuente']} | {f['estado']} | {bs(p)} | {bs(g)} ({g / p:.0%}) | {f['fecha']} |")
-        detalle.append(f"### {prod}\nEE.UU.: USD {precio:,.2f} + envío {envio:,.2f} — {us['tipo']} "
-                       f"({us['fuente']}, {us['fecha']}). Costo puesto con 4 u: **Bs {bs(c4bs)}**/u.\n\n"
-                       "| Vendedor | Estado | Precio Bs | Ganancia por u (4 u) | Fecha |\n|---|---|---|---|---|\n"
-                       + "\n".join(filas) + "\n")
-
-    resumen.sort(reverse=True)
     out = [
-        f"# Comparación EE.UU. → Cochabamba ({hoy})", "",
-        f"Tipo de cambio: **{a.tc:.2f} Bs/USD**. Courier B: USD {B_USD_KG}/kg, mínimo {B_MIN_KG:g} kg, saltos de "
-        f"{B_PASO_KG:g} kg, + {CAJA_EXTERIOR_G} g de caja exterior. Courier A: USD {A_USD_UNIDAD}/u + {A_TAX:.0%} tax "
-        "(pendiente de confirmar). **Aduana boliviana no incluida.**",
-        "Los precios de EE.UU. marcados **(est.)** son estimados (sin anuncio real de eBay): el veredicto también.", "",
-        "## Resumen (ordenado por margen)", "",
-        "| Producto | EE.UU. USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Local mín. | Local mediana "
-        "| Ganancia por u vs mediana (4 u) | Veredicto |",
-        "|---|---|---|---|---|---|---|---|",
-        *[r for _, r in resumen], "",
-        "Veredicto: ≥ 20% conviene, 8–20% margen justo, < 8% no conviene (sobre la mediana local, pedido de 4).", "",
-        "## Detalle por vendedor", "", *detalle,
-        "## Sin comparación todavía", "", *sin_datos, "",
+        f"# Comparación EE.UU. → Cochabamba ({date.today().isoformat()})", "",
+        f"Tipo de cambio **{a.tc:.2f} Bs/USD** · Courier B: USD {B_USD_KG}/kg, mínimo {B_MIN_KG:g} kg, saltos de {B_PASO_KG:g} kg, "
+        f"+ {CAJA_EXTERIOR_G} g de caja exterior · Courier A: USD {A_USD_UNIDAD}/u + {a.tax:.0%} tax · "
+        f"Aduana: {a.aduana:.0%}{' (sin confirmar: no incluida)' if not a.aduana else ''}.",
+        f"Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ {CONVIENE:.0%}, justo {JUSTO:.0%}–{CONVIENE:.0%}, "
+        f"no conviene < {JUSTO:.0%}. Los precios de Marketplace son lo que piden los vendedores.", "",
+        "## eBay nuevo", "", enc, *nuevo, "",
+        "## eBay usado (mejor caso: se compara contra precios locales de nuevos)", "", enc, *usado, "",
+        "## Detalle por vendedor (eBay nuevo)", "", *detalle,
+        "## Sin comparación todavía (eBay nuevo)", "", *sin, "",
         "_Generado con `python3 comparar.py`._",
     ]
     with open(os.path.join(DIR, "comparacion.md"), "w", encoding="utf-8") as f:
