@@ -7,8 +7,8 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 
 | Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs | Ganancia 2 u | Ganancia 4 u | Estado |
 |---|---|---|---|---|---|---|---|
+| SSD NVMe 2TB | [209.99](https://www.ebay.com/itm/227402767941) | 2.665 (B 1 kg) | 2.582 (B 1 kg) | 4.060 | 1.395 (34%) | 1.478 (36%) | conviene |
 | Ryzen 5 7600 | [144.25](https://www.ebay.com/itm/158132772011) | 1.883 (B 1 kg) | 1.883 (B 2 kg) | 2.860 | 977 (34%) | 977 (34%) | conviene |
-| SSD NVMe 2TB | [209.99](https://www.ebay.com/itm/227402767941) | 2.665 (B 1 kg) | 2.582 (B 1 kg) | 3.550 | 885 (25%) | 968 (27%) | conviene |
 | Intel Core Ultra 7 265K | [244.87](https://www.ebay.com/itm/840012484062) | 3.081 (B 1 kg) | 3.039 (B 1.5 kg) | 3.950 | 869 (22%) | 911 (23%) | conviene |
 | Intel Core i5-12400F | [150.00](https://www.ebay.com/itm/800773514419) | 1.952 (B 1 kg) | 1.910 (B 1.5 kg) | 2.460 | 508 (21%) | 550 (22%) | conviene |
 | Intel Core i5-14400F | [164.49](https://www.ebay.com/itm/389945918228) | 2.124 (B 1 kg) | 2.082 (B 1.5 kg) | 2.520 | 396 (16%) | 438 (17%) | conviene |
@@ -24,9 +24,9 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 
 | Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs | Ganancia 2 u | Ganancia 4 u | Estado |
 |---|---|---|---|---|---|---|---|
+| SSD NVMe 2TB | [179.99](https://www.ebay.com/itm/366729072023) | 2.308 (B 1 kg) | 2.225 (B 1 kg) | 4.060 | 1.752 (43%) | 1.835 (45%) | conviene |
 | Ryzen 5 7600 | [122.99](https://www.ebay.com/itm/307194675494) | 1.630 (B 1 kg) | 1.630 (B 2 kg) | 2.860 | 1.230 (43%) | 1.230 (43%) | conviene |
 | Intel Core i5-12400F | [119.95](https://www.ebay.com/itm/800786033506) | 1.594 (B 1 kg) | 1.552 (B 1.5 kg) | 2.460 | 866 (35%) | 908 (37%) | conviene |
-| SSD NVMe 2TB | [179.99](https://www.ebay.com/itm/366729072023) | 2.308 (B 1 kg) | 2.225 (B 1 kg) | 3.550 | 1.242 (35%) | 1.325 (37%) | conviene |
 | Intel Core Ultra 7 265K | [209.99](https://www.ebay.com/itm/128130997262) | 2.665 (B 1 kg) | 2.624 (B 1.5 kg) | 3.950 | 1.285 (33%) | 1.326 (34%) | conviene |
 | Intel Core i5-14400F | [136.99](https://www.ebay.com/itm/407274530658) | 1.797 (B 1 kg) | 1.755 (B 1.5 kg) | 2.520 | 723 (29%) | 765 (30%) | conviene |
 | Ryzen 7 7800X3D | [283.99](https://www.ebay.com/itm/366706722500) | 3.546 (B 1 kg) | 3.546 (B 2 kg) | 4.760 | 1.214 (26%) | 1.214 (26%) | conviene |
@@ -87,7 +87,6 @@ eBay nuevo: USD 164.49 con envío en EE.UU. (eBay API; vendedor newegg 99.6%, 20
 |---|---|---|---|---|
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | disponible (web) | 2.520 | 396 (16%) | 2026-10-12 |
 | Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | OEM (sin caja; según foto de su web; USD 215) | 2.537 | 413 (16%) | 2026-10-12 |
-| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1796562071723775/) | no indicado (anuncio dice i5 14400; confirmar si es F) | 2.700 | 576 (21%) | 2026-10-11 |
 
 ### Intel Core Ultra 7 265K
 eBay nuevo: USD 244.87 con envío en EE.UU. (eBay API; vendedor reverendreed779 100.0%, 2026-10-12). Costo puesto: **Bs 3.081**/u en pedido de 2, **Bs 3.039**/u en pedido de 4.
@@ -139,7 +138,6 @@ eBay nuevo: USD 209.99 con envío en EE.UU. (eBay API; vendedor ram_technologies
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
-| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1537210071754803/) | no indicado (SanDisk 2TB; no dice si es NVMe o SATA) | 3.550 | 885 (25%) | 2026-10-11 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Apacer M.2 2TB 7400 MB/s) | 4.060 | 1.395 (34%) | 2026-10-12 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; Hiksemi Futurex M.2 2TB) | 4.560 | 1.895 (42%) | 2026-10-12 |
 
