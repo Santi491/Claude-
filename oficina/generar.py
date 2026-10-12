@@ -154,8 +154,14 @@ def main():
 
     lista_tiendas = [{"tienda": t["tienda"], "ciudad": t["ciudad"], "estado": t["estado_contacto"],
                       "ultima": t["ultima_consulta"]} for t in tiendas]
+    # Capturas de pantalla de cada agente (oficina/capturas.csv): la oficina muestra la última de cada uno
+    ruta_cap = os.path.join(OFI, "capturas.csv")
+    capturas = []
+    if os.path.exists(ruta_cap):
+        with open(ruta_cap, encoding="utf-8") as f:
+            capturas = [c for c in csv.DictReader(f) if os.path.exists(os.path.join(OFI, c["archivo"]))]
     datos = {"generado": datetime.now().strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
-             "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas}
+             "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas}
     with open(os.path.join(OFI, "datos.js"), "w", encoding="utf-8") as f:
         f.write("window.DATOS = " + json.dumps(datos, ensure_ascii=False) + ";\n")
     print(f"oficina/datos.js: {len(productos)} productos, {len(mov)} movimientos, {len(docs)} documentos")

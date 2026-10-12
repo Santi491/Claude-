@@ -62,6 +62,8 @@ canvas.zoomed{touch-action:none;cursor:grab}
 .dbody ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14px}
 .shot{border:1px solid var(--o-line);border-radius:8px;overflow:hidden;background:#07111A}
 .shot img{display:block;width:100%;height:auto}
+.shot .cap{margin:0;padding:8px 12px;font:500 12px/1.45 var(--f-mono);color:var(--o-muted);border-top:1px solid var(--o-line)}
+.shot .cap b{color:var(--o-ink);font-weight:600}
 .term{font:12.5px/1.6 var(--f-mono);color:var(--o-ink);padding:10px 12px;white-space:pre-wrap;margin:0}
 .term .k{color:var(--o-cyan)} .term .g{color:#5CD69A} .term .y{color:var(--o-amber)} .term .r{color:#F07A7A}
 .acts{display:grid;gap:7px}
@@ -334,7 +336,7 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 
 <script src="datos.js"></script>
 <script>
-const D=Object.assign({productos:[],movimientos:[],dolar:[],actividad:[],documentos:[],tiendas:[],generado:""},window.DATOS||{});
+const D=Object.assign({productos:[],movimientos:[],dolar:[],actividad:[],documentos:[],tiendas:[],capturas:[],generado:""},window.DATOS||{});
 const $=id=>document.getElementById(id);
 const fmt=(n,d=0)=>n==null||isNaN(n)?"—":n.toLocaleString("es-BO",{minimumFractionDigits:d,maximumFractionDigits:d});
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -458,6 +460,8 @@ const AG=[
   info:["Busca en Marketplace de Cochabamba los productos de vigilar.csv, sobre todo los que todavía no tienen precio local.","Guarda precio, estado y link de cada anuncio útil; los de otras ciudades quedan solo como referencia."]},
  {id:"ana",name:"Analista",where:"Calcula costo puesto y margen",x:6.0,y:5.2,shirt:"#C46FD8",info:[]}
 ];
+// Última captura de pantalla de cada agente (oficina/capturas.csv); si no hay, queda la imagen por defecto
+AG.forEach(a=>{const cs=D.capturas.filter(c=>c.agente===a.id).sort((x,y)=>(x.fecha+x.hora).localeCompare(y.fecha+y.hora));const c=cs[cs.length-1];if(c){a.img=c.archivo;a.cap=c}});
 const HOY=(D.generado||"").split(" ")[0];
 const lastAct=id=>{const a=D.actividad.filter(x=>x.agente===id);return a[a.length-1]};
 AG.forEach(a=>{const l=lastAct(a.id);
@@ -486,7 +490,7 @@ const resumen=lastInf?(lastInf.md.split("## Resumen")[1]||"").split("\n## ")[0].
 TEX.nube=termCanvas(lastInf?`informes/${lastInf.fecha}.md`:"informes/",[["k","# Informe diario"],["",`último: ${lastInf?fechaCorta(lastInf.fecha):"—"}`],["",`dólar ${lastFx?(+lastFx.usado).toFixed(2):"—"} Bs/USD`],["g",`${D.movimientos.length} movimientos`],["k","próximo: mañana 7:52"]]);
 TEX.wa=termCanvas("whatsapp · tiendas",[["g",`respondieron: ${byState("respondió").length}`],["y",`esperando: ${waiting.length}`],["r",`cerradas: ${T.filter(t=>closedRe.test(t.estado)).length}`],["",`sin WhatsApp: ${byState("número sin WhatsApp").length}`],["k",`tiendas en la lista: ${T.length}`]]);
 function screenHtml(a){
-  if(a.img)return `<div class="shot"><img src="${a.img}" alt="Última captura de ${esc(a.name)}"></div>`;
+  if(a.img)return `<div class="shot"><img src="${esc(a.img)}" alt="Última captura de ${esc(a.name)}">${a.cap?`<p class="cap"><b>${fechaCorta(a.cap.fecha)} ${esc(a.cap.hora)}</b> · ${esc(a.cap.descripcion)}${a.state==="sleep"?" · ahora en espera":""}</p>`:""}</div>`;
   if(a.id==="nube")return `<div class="shot"><pre class="term"><span class="k">$ cat informes/${lastInf?lastInf.fecha:""}.md</span>\n${esc(resumen)||"Sin informes todavía."}</pre></div>`;
   if(a.id==="wa"){
     const line=(lbl,arr,cls)=>arr.length?`<span class="${cls}">${lbl}</span>\n  ${esc(arr.join(" · "))}\n\n`:"";
@@ -550,7 +554,7 @@ function drawDrawer(){
   $("dDot").style.background=s.c;$("dName").textContent=a.name;$("dWhere").textContent=a.where;
   $("dState").textContent=s.t+(a.last&&a.id!=="ana"?` · último trabajo ${a.last}`:"");$("dState").style.color=s.c;
   const acts=D.actividad.filter(x=>x.agente===a.id).slice().reverse();
-  $("dBody").innerHTML=`<div><h4>Su pantalla</h4>${screenHtml(a)}</div>
+  $("dBody").innerHTML=`<div><h4>${a.img?"Última captura de lo que hizo":"Su pantalla"}</h4>${screenHtml(a)}</div>
     <div><h4>Qué hace</h4><ul>${a.info.map(i=>`<li>${esc(i)}</li>`).join("")}</ul></div>
     <div><h4>Actividad</h4><div class="acts">${acts.length?acts.map(x=>`<div><time>${fechaCorta(x.fecha)}${x.hora?" "+x.hora:""}</time>${esc(x.texto)}</div>`).join(""):'<div class="dash">Sin actividad registrada.</div>'}</div></div>`;
 }

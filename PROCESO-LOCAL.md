@@ -17,7 +17,7 @@ Lo hace la sesión local con Claude in Chrome. Hay dos computadoras: la **PC de 
 2. **Verificar que venden componentes.** Revisar su página/catálogo. Si no queda claro, preguntar por WhatsApp con el mensaje 1. Actualizar `vende_componentes`.
 3. **Pedir precios** de los productos de `vigilar.csv` con el mensaje 2. Preguntar también precio por cantidad (2 y 4 unidades), si es nuevo/usado/sellado, garantía y factura.
 4. **Revisar Marketplace** de Cochabamba para los mismos productos (particulares). Anotar precio, estado y link.
-5. **Guardar todo** en `precios-cochabamba.csv` (una fila por precio, con fuente y fecha). Commit y push.
+5. **Guardar todo** en `precios-cochabamba.csv` (una fila por precio, con fuente y fecha), una captura de pantalla por agente que trabajó (ver `CLAUDE.md`, “Capturas de pantalla”) y la fila de `actividad.csv`. Commit y push.
 6. **Comparar:** con el último informe de `informes/` y la regla de couriers de `CLAUDE.md`, calcular costo puesto en Bs y ganancia. Tipo de cambio del día.
 7. **Avisar al usuario** solo con el resumen: qué conviene traer, cuánto se gana por unidad, y qué tiendas venden más caro.
 
