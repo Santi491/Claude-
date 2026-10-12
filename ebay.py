@@ -2,14 +2,17 @@
 """Busca precios reales en eBay EE.UU. con la Browse API.
 
 Usa las variables de entorno EBAY_CLIENT_ID y EBAY_CLIENT_SECRET (claves de Production).
+Si no están, las lee de ~/.ebay-claves (lo crea configurar-ebay.sh; queda fuera del repo).
 
     python3 ebay.py "AMD Ryzen 5 5600 CPU"            # un producto
     python3 ebay.py --vigilar                         # todos los de vigilar.csv
     python3 ebay.py --vigilar --condicion usado --json
+    python3 ebay.py --vigilar --guardar               # además agrega el más barato a precios-eeuu.csv
 """
 import argparse
 import base64
 import csv
+import datetime
 import json
 import os
 import re
@@ -29,7 +32,18 @@ MIN_FEEDBACK_PCT = 98.0
 MIN_FEEDBACK_SCORE = 50
 
 
+def cargar_claves():
+    ruta = os.path.expanduser("~/.ebay-claves")
+    if os.path.exists(ruta):
+        with open(ruta, encoding="utf-8") as f:
+            for linea in f:
+                k, _, v = linea.strip().partition("=")
+                if k in ("EBAY_CLIENT_ID", "EBAY_CLIENT_SECRET") and v:
+                    os.environ.setdefault(k, v)
+
+
 def token():
+    cargar_claves()
     cid, secret = os.environ.get("EBAY_CLIENT_ID"), os.environ.get("EBAY_CLIENT_SECRET")
     if not cid or not secret:
         sys.exit("Faltan EBAY_CLIENT_ID / EBAY_CLIENT_SECRET en el entorno.")
@@ -119,6 +133,18 @@ def buscar(tok, consulta, condicion="nuevo", limite=50):
     return sorted(unicos.values(), key=lambda x: x["total_usd"])
 
 
+def guardar(resultados, condicion):
+    ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "precios-eeuu.csv")
+    hoy = datetime.date.today().isoformat()
+    with open(ruta, "a", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, lineterminator="\n")
+        for nombre, items in resultados.items():
+            if items:
+                it = items[0]
+                w.writerow([hoy, nombre, f"{it['precio_usd']:.2f}", f"{it['envio_usd'] or 0:.2f}", "real",
+                            f"eBay API ({condicion}; {it['vendedor']} {it['feedback_pct']}%)", it["link"]])
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("consulta", nargs="?")
@@ -126,6 +152,7 @@ def main():
     ap.add_argument("--condicion", choices=CONDICIONES, default="nuevo")
     ap.add_argument("--top", type=int, default=3)
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--guardar", action="store_true", help="agregar el más barato de cada producto a precios-eeuu.csv")
     a = ap.parse_args()
     if not a.consulta and not a.vigilar:
         ap.error("pasa una consulta o --vigilar")
@@ -139,6 +166,8 @@ def main():
 
     tok = token()
     resultados = {nombre: buscar(tok, q, a.condicion)[: a.top] for nombre, q in productos}
+    if a.guardar:
+        guardar(resultados, a.condicion)
     if a.json:
         print(json.dumps(resultados, ensure_ascii=False, indent=2))
         return

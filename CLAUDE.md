@@ -15,7 +15,7 @@ Componentes de PC: procesadores Ryzen e Intel, memorias RAM (ej. Corsair Vengean
 Se calcula en cada análisis (oficial BCB y paralelo). Referencia del 10/10/2026: oficial 11,73 Bs/USD, paralelo ~11,86–11,91. Usar ~11,90 por defecto.
 
 ## Fuentes de precios
-- EE.UU.: eBay con la API oficial: `python3 ebay.py --vigilar` (claves en las variables de entorno EBAY_CLIENT_ID / EBAY_CLIENT_SECRET). Búsqueda web solo como respaldo si la API falla.
+- EE.UU.: eBay con la API oficial: `python3 ebay.py --vigilar --guardar` (claves en las variables de entorno EBAY_CLIENT_ID / EBAY_CLIENT_SECRET, o en `~/.ebay-claves` en la Mac, creado con `./configurar-ebay.sh`; nunca se suben al repo). Búsqueda web solo como respaldo si la API falla; esos precios van a `precios-eeuu.csv` con tipo `estimado`.
 - Cochabamba: tiendas (por WhatsApp) y Facebook Marketplace, a través de Claude in Chrome en la PC del usuario. El proceso completo está en `PROCESO-LOCAL.md`.
 - WhatsApp: el usuario compró un número exclusivo para el agente (no es su número personal). Se puede usar para preguntar precios siguiendo los límites de `PROCESO-LOCAL.md`.
 
@@ -32,6 +32,8 @@ Se calcula en cada análisis (oficial BCB y paralelo). Referencia del 10/10/2026
 - `PROCESO-LOCAL.md`: paso a paso y mensajes modelo para la sesión local.
 - `precios-cochabamba.csv`: precios locales que junta la sesión local (Marketplace/WhatsApp). Una fila por precio visto.
 - `informes/AAAA-MM-DD.md`: informe diario de la nube con precios de EE.UU., costo puesto y comparación.
+- `precios-eeuu.csv`: precios de EE.UU. (una fila por producto y día; `tipo` = real de la API o estimado).
+- `comparar.py` → `comparacion.md`: tabla de comparación por producto y por vendedor (costo puesto 2 y 4 u, ganancia y veredicto). Se regenera después de agregar precios de cualquier lado: `python3 comparar.py --tc <tipo de cambio>`.
 
 ## Quién hace qué
 - **Nube (rutina diaria, funciona con la PC apagada):** busca precios de EE.UU. de `vigilar.csv`, calcula el costo puesto con el courier más barato (pedido de 2 y de 4 unidades), compara con el último precio de `precios-cochabamba.csv` y escribe el informe. Notifica al celular y por email.
