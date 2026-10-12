@@ -41,7 +41,7 @@ a{color:var(--accent);text-underline-offset:2px}
 .hud .kv{display:grid}
 .hud .kv span{color:var(--o-muted);font-size:10px;letter-spacing:.08em;text-transform:uppercase}
 .hud .kv b{font-weight:600;font-variant-numeric:tabular-nums}
-.hud .kv b.c{color:var(--o-cyan)} .hud .kv b.a{color:var(--o-amber)}
+.hud .kv b.c{color:var(--o-cyan)} .hud .kv b.a{color:var(--o-amber)} .hud .kv b.r{color:#F07A7A}
 .stage{position:relative;min-width:0}
 canvas{display:block;width:100%;cursor:pointer;touch-action:pan-y}
 canvas.zoomed{touch-action:none;cursor:grab}
@@ -338,6 +338,8 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 <script>
 const D=Object.assign({productos:[],movimientos:[],dolar:[],actividad:[],documentos:[],tiendas:[],capturas:[],generado:""},window.DATOS||{});
 const $=id=>document.getElementById(id);
+// Estado en vivo (db del artefacto, colección "vivo"): lo escriben las sesiones mientras trabajan
+let LIVE={},LIVE_ON=false;
 const fmt=(n,d=0)=>n==null||isNaN(n)?"—":n.toLocaleString("es-BO",{minimumFractionDigits:d,maximumFractionDigits:d});
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fechaLarga=f=>new Date(f+"T12:00:00").toLocaleDateString("es-BO",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
@@ -467,6 +469,15 @@ const lastAct=id=>{const a=D.actividad.filter(x=>x.agente===id);return a[a.lengt
 AG.forEach(a=>{const l=lastAct(a.id);
   a.state=a.id==="ana"?"working":!l?"sleep":l.fecha===HOY?(a.id==="wa"&&D.tiendas.some(t=>/esperando/.test(t.estado))?"waiting":"done"):"sleep";
   a.last=l?`${fechaCorta(l.fecha)}${l.hora?" "+l.hora:""}`:"";});
+AG.forEach(a=>a.baseState=a.state);
+const LMAP={"trabajando":"working","esperando":"waiting","terminó":"done","terminado":"done","en espera":"sleep"};
+function applyLive(){
+  const r=LIVE._ronda;LIVE_ON=!!(r&&r.activa);
+  AG.forEach(a=>{const l=LIVE[a.id];if(LIVE_ON&&l&&LMAP[l.estado]){a.state=LMAP[l.estado];a.liveText=String(l.texto||"");a.liveHora=String(l.hora||"")}else{a.state=a.baseState;a.liveText=""}});
+  drawHud(P.map(p=>({p,c:calc(p)})));if(open)drawDrawer();
+}
+(async()=>{try{if(!window.claude||!window.claude.use)return;const db=await window.claude.use("db");if(!db)return;
+  db.collection("vivo").onSnapshot(snap=>{const n={};snap.docs.forEach(d=>{if(d.exists)n[d.id]=d.data()});LIVE=n;applyLive()},()=>{})}catch(e){}})();
 const CAB={id:"docs",name:"Documentos",x:8.15,y:4.6,mon:null};
 let cabSel=null;
 const short=n=>n.replace("Intel Core ","").replace("Corsair Vengeance RGB ","").replace(" (2x16)","").replace("Ryzen ","R");
@@ -572,6 +583,7 @@ function updateAnalyst(all){
 function drawHud(all){
   const ok=all.filter(r=>r.c.status==="good").length;
   $("hud").innerHTML=`<div class="brand">Oficina <i>EE.UU.→CBBA</i></div>
+   ${LIVE_ON?`<div class="kv"><span>En vivo</span><b class="r">● ${esc(LIVE._ronda.quien||"ronda en curso")}</b></div>`:`<div class="kv"><span>Estado</span><b>sin ronda en curso</b></div>`}
    <div class="kv"><span>Agentes</span><b>${AG.length}</b></div>
    <div class="kv"><span>Dólar</span><b>${lastFx?(+lastFx.usado).toFixed(2):"—"} Bs</b></div>
    <div class="kv"><span>Tiendas esperando</span><b class="a">${waiting.length}</b></div>
@@ -610,7 +622,7 @@ function drawDrawer(){
   if(sel==="docs"){drawCabinet();return}
   const a=AG.find(x=>x.id===sel),s=STATES[a.state];
   $("dDot").style.background=s.c;$("dName").textContent=a.name;$("dWhere").textContent=a.where;
-  $("dState").textContent=s.t+(a.last&&a.id!=="ana"?` · último trabajo ${a.last}`:"");$("dState").style.color=s.c;
+  $("dState").textContent=a.liveText?`En vivo · ${s.t}${a.liveHora?" · "+a.liveHora:""} · ${a.liveText}`:s.t+(a.last&&a.id!=="ana"?` · último trabajo ${a.last}`:"");$("dState").style.color=s.c;
   const acts=D.actividad.filter(x=>x.agente===a.id).slice().reverse();
   $("dBody").innerHTML=`<div><h4>${a.img?"Última captura de lo que hizo":"Su pantalla"}</h4>${screenHtml(a)}</div>
     <div><h4>Qué hace</h4><ul>${a.info.map(i=>`<li>${esc(i)}</li>`).join("")}</ul></div>
@@ -699,6 +711,7 @@ function agent(a,t){
   const foot=iso(X+0.75,Y+1.9),bp=iso(X+0.75,Y+0.6,62);
   overlay.push(()=>{
     const bb=label(bp[0],bp[1],a.name,s.c,open&&sel===a.id);
+    if(a.liveText){const t=a.liveText.length>44?a.liveText.slice(0,43)+"…":a.liveText;label(bp[0],bb[1]-4*sc,t,s.c,false)}
     hits.push({id:a.id,x:Math.min(bb[0],p[0]-34*sc),y:bb[1],w:Math.max(bb[2],68*sc),h:foot[1]-bb[1]});
   });
 }
