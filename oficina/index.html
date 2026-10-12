@@ -116,7 +116,10 @@ button:focus-visible,input:focus-visible,select:focus-visible,tr:focus-visible,c
 .st-none{background:var(--none-soft);color:var(--none)}
 .tablebox{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
 table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
-#main{min-width:1260px}
+#main{min-width:1380px}
+#main tfoot td{background:var(--bg);border-top:2px solid var(--line);font-size:13px;white-space:normal;vertical-align:top}
+#main tfoot td.lbl{text-align:left;font-family:var(--f-body);font-weight:700}
+#main tfoot small{display:block;color:var(--muted);font:500 11.5px var(--f-body)}
 #usedT{min-width:1020px}
 th{font:600 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:right;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap;user-select:none;background:var(--surface)}
 #main th{cursor:pointer}
@@ -230,7 +233,7 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
   <header style="margin-top:10px">
     <div class="eyebrow">Los 14 productos de vigilar.csv</div>
     <h2>¿Qué conviene traer?</h2>
-    <p class="lede">Primero lo más barato en eBay (nuevo y usado, vendedor en EE.UU.), después lo más barato en Marketplace y en tiendas de Cochabamba, y al final el cálculo. La columna resaltada de eBay es la que se usa. Toca una fila para ver anuncios y el cálculo.</p>
+    <p class="lede">Primero lo más barato en eBay (nuevo y usado, vendedor en EE.UU.), después lo más barato en Marketplace (mercado informal) y en tiendas (precio estándar) de Cochabamba, cuánto más cobra la tienda, y al final el cálculo. La fila del pie resume la diferencia entre los dos mercados. La columna resaltada de eBay es la que se usa. Toca una fila para ver anuncios y el cálculo.</p>
   </header>
 
   <section class="controls" aria-label="Supuestos del cálculo">
@@ -259,11 +262,12 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
       <thead><tr>
         <th class="l" data-k="name">Producto</th><th class="l" data-k="cat">Tipo</th>
         <th class="grp" data-k="new" id="thNew">eBay nuevo</th><th data-k="used" id="thUsed">eBay usado</th>
-        <th class="grp" data-k="mkt">Marketplace Bs</th><th data-k="shop">Tiendas Bs</th>
+        <th class="grp" data-k="mkt" title="Mercado informal: lo más barato en Marketplace de Cochabamba">Marketplace Bs</th><th data-k="shop" title="Precio estándar: lo más barato en tiendas de Cochabamba">Tiendas Bs</th><th data-k="gap" title="Cuánto más cobra la tienda que Marketplace">Tienda vs Mkt</th>
         <th class="grp" data-k="ship">Courier /u</th><th data-k="cost">Costo puesto Bs</th>
         <th data-k="local">Mejor local Bs</th><th data-k="gain">Ganancia /u</th><th data-k="margin">Margen</th><th class="l" data-k="rank">Estado</th>
       </tr></thead>
       <tbody id="tb"></tbody>
+      <tfoot id="tf"></tfoot>
     </table>
   </div>
 
@@ -373,10 +377,24 @@ function localItem(l){
   const extra=[l.estado,l.contacto?`contacto: ${l.contacto}`:""].filter(Boolean).join(" · ");
   return `<li>Bs ${fmt(l.bs)} — ${esc(l.vendedor)}${extra?` <span class="dash">(${esc(extra)})</span>`:""}${l.ref?"":' <span class="dash">· no cuenta</span>'}${l.url?` · <a href="${esc(l.url)}" target="_blank" rel="noopener">ver</a>`:""}</li>`;
 }
+const gapOf=c=>c.mk&&c.sh?{bs:c.sh.bs-c.mk.bs,pct:(c.sh.bs-c.mk.bs)/c.mk.bs}:null;
+const sgn=v=>v>=0?"+":"−";
+const gapCell=g=>g?`${sgn(g.bs)}${fmt(Math.abs(g.bs))}<span class="n">${sgn(g.pct)}${fmt(Math.abs(g.pct*100))} %</span>`:dash;
+function renderFoot(rows){
+  const both=rows.map(r=>({r,g:gapOf(r.c)})).filter(x=>x.g);
+  const onlyMk=rows.filter(r=>r.c.mk&&!r.c.sh).length,onlySh=rows.filter(r=>r.c.sh&&!r.c.mk).length;
+  const mkCheaper=both.filter(x=>x.g.bs>0).length,shCheaper=both.filter(x=>x.g.bs<0).length;
+  const avg=both.length?both.reduce((s,x)=>s+x.g.pct,0)/both.length:null;
+  $("tf").innerHTML=`<tr><td class="lbl" colspan="4">Precio estándar (tiendas) vs mercado informal (Marketplace)<small>${both.length} de ${rows.length} productos tienen precio en los dos lados</small></td>
+    <td class="grp">${mkCheaper} más barato<small>en Marketplace${onlyMk?` · ${onlyMk} solo aquí`:""}</small></td>
+    <td>${shCheaper} más barato<small>en tienda${onlySh?` · ${onlySh} solo aquí`:""}</small></td>
+    <td>${avg==null?dash:`${sgn(avg)}${fmt(Math.abs(avg*100))} %`}<small>diferencia promedio de la tienda</small></td>
+    <td class="grp" colspan="6"></td></tr>`;
+}
 function render(){
   const all=P.map(p=>({p,c:calc(p)}));
   const rows=all.filter(({p})=>(!S.cat||p.cat===S.cat)&&(!S.q||p.name.toLowerCase().includes(S.q)));
-  const key={name:r=>r.p.name,cat:r=>r.p.cat,new:r=>tot(r.p.nw),used:r=>tot(r.p.us),mkt:r=>r.c.mk?.bs,shop:r=>r.c.sh?.bs,ship:r=>r.c.ship,cost:r=>r.c.cost,local:r=>r.c.local,gain:r=>r.c.gain,margin:r=>r.c.margin,rank:r=>ST[r.c.status][2]*10-(r.c.margin||0)};
+  const key={name:r=>r.p.name,cat:r=>r.p.cat,new:r=>tot(r.p.nw),used:r=>tot(r.p.us),mkt:r=>r.c.mk?.bs,shop:r=>r.c.sh?.bs,gap:r=>gapOf(r.c)?.pct,ship:r=>r.c.ship,cost:r=>r.c.cost,local:r=>r.c.local,gain:r=>r.c.gain,margin:r=>r.c.margin,rank:r=>ST[r.c.status][2]*10-(r.c.margin||0)};
   const f=key[S.sort.k],d=S.sort.dir;
   rows.sort((x,y)=>{const a=f(x),b=f(y);if(a==null&&b==null)return 0;if(a==null)return 1;if(b==null)return -1;return (typeof a==="string"?a.localeCompare(b):a-b)*d});
   document.querySelectorAll("#main th").forEach(th=>th.setAttribute("aria-sort",th.dataset.k===S.sort.k?(d>0?"ascending":"descending"):"none"));
@@ -389,7 +407,7 @@ function render(){
     const st=ST[c.status];const uN=c.kind==="nuevo",uU=c.kind==="usado";
     tr.innerHTML=`<td class="name">${esc(p.name)}</td><td class="cat">${p.cat}</td>
       <td class="grp ${uN?"use":""}">${money(p.nw)}</td><td class="${uU?"use":""}">${money(p.us)}</td>
-      <td class="grp">${localCell(c.mk,refs(p,"mkt").length)}</td><td>${localCell(c.sh,refs(p,"tienda").length)}</td>
+      <td class="grp">${localCell(c.mk,refs(p,"mkt").length)}</td><td>${localCell(c.sh,refs(p,"tienda").length)}</td><td>${gapCell(gapOf(c))}</td>
       <td class="grp">${c.ship==null?dash:fmt(c.ship,2)+' <span class="dash">'+(c.useA?'A':'B')+'</span>'}</td>
       <td>${c.cost==null?dash:fmt(c.cost)}</td>
       <td>${c.local==null?dash:fmt(c.local)}</td>
@@ -408,13 +426,14 @@ function render(){
         <span>Courier B (${fmt(c.b.kg,1)} kg ÷ ${S.qty})</span><span>USD ${fmt(c.b.per,2)}</span>
         <span>Courier A (10 + tax)</span><span>USD ${fmt(c.a,2)}</span><span>Aduana</span><span>USD ${fmt(c.aduUsd,2)}</span>
         <span class="tot">Costo puesto</span><span class="tot">USD ${fmt(c.costUsd,2)} = Bs ${fmt(c.cost)}</span></div>`;
-      dt.innerHTML=`<td colspan="12"><div class="dgrid">
+      dt.innerHTML=`<td colspan="13"><div class="dgrid">
         <div><h3>eBay</h3><ul><li>Nuevo: ${eb(p.nw)}</li><li>Usado: ${eb(p.us)}</li></ul>${cl}</div>
         <div><h3>Marketplace Cochabamba</h3>${lst("mkt","Sin anuncios todavía.")}</div>
         <div><h3>Tiendas</h3>${lst("tienda","Ninguna tienda dio precio todavía.")}</div></div></td>`;
       tb.appendChild(dt);
     }
   });
+  renderFoot(rows);
   const ur=P.filter(p=>p.us).map(p=>({p,c:calc(p,"used")})).sort((x,y)=>(y.c.margin??-9)-(x.c.margin??-9));
   $("tbUsed").innerHTML=ur.map(({p,c})=>{const nw=tot(p.nw),uu=tot(p.us),sav=nw!=null?(nw-uu)/nw:null;
     return `<tr><td class="name">${esc(p.name)}</td><td>${fmt(uu,2)}</td><td>${nw==null?dash:fmt(nw,2)}</td>
