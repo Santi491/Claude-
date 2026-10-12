@@ -487,18 +487,76 @@ const closedRe=/no vende|sin stock|no contactar/;
 const waiting=T.filter(t=>/esperando/.test(t.estado));
 const lastInf=D.documentos.find(d=>d.id.startsWith("inf-"));
 const resumen=lastInf?(lastInf.md.split("## Resumen")[1]||"").split("\n## ")[0].trim().replace(/\*\*/g,""):"";
-TEX.nube=termCanvas(lastInf?`informes/${lastInf.fecha}.md`:"informes/",[["k","# Informe diario"],["",`último: ${lastInf?fechaCorta(lastInf.fecha):"—"}`],["",`dólar ${lastFx?(+lastFx.usado).toFixed(2):"—"} Bs/USD`],["g",`${D.movimientos.length} movimientos`],["k","próximo: mañana 7:52"]]);
-TEX.wa=termCanvas("whatsapp · tiendas",[["g",`respondieron: ${byState("respondió").length}`],["y",`esperando: ${waiting.length}`],["r",`cerradas: ${T.filter(t=>closedRe.test(t.estado)).length}`],["",`sin WhatsApp: ${byState("número sin WhatsApp").length}`],["k",`tiendas en la lista: ${T.length}`]]);
+/* Pantallas dibujadas (1280×720) para los agentes sin captura de navegador: se ven como una captura en el monitor y en el panel */
+function shotCanvas(bg){const c=document.createElement("canvas");c.width=1280;c.height=720;const g=c.getContext("2d");g.fillStyle=bg;g.fillRect(0,0,1280,720);return [c,g]}
+const SANS="'Archivo', 'Segoe UI', system-ui, sans-serif",MONO="'IBM Plex Mono', Consolas, monospace";
+function wrap(g,text,x,y,maxW,lh,maxLines){const words=String(text).split(/\s+/);let line="",n=0;
+  for(const w of words){const t=line?line+" "+w:w;if(g.measureText(t).width>maxW&&line){g.fillText(line,x,y);y+=lh;n++;line=w;if(n>=maxLines-1){const rest=words.slice(words.indexOf(w)).join(" ");let r=rest;while(g.measureText(r+"…").width>maxW&&r.length)r=r.slice(0,-1);g.fillText(r+(r.length<rest.length?"…":""),x,y);return y+lh}}else line=t}
+  if(line){g.fillText(line,x,y);y+=lh}return y}
+const WA_COL=e=>/respondió/.test(e)?"#25D366":/esperando/.test(e)?"#F2A541":/sin stock|no vende|no contactar/.test(e)?"#F07A7A":/sin WhatsApp/.test(e)?"#8696A0":/por contactar/.test(e)?"#53BDEB":"#8696A0";
+function waShot(){
+  const [c,g]=shotCanvas("#0B141A");
+  g.fillStyle="#111B21";g.fillRect(0,0,480,720);g.fillStyle="#202C33";g.fillRect(0,0,1280,72);
+  g.fillStyle="#E9EDEF";g.font=`700 28px ${SANS}`;g.fillText("WhatsApp",28,46);
+  g.fillStyle="#8696A0";g.font=`500 17px ${SANS}`;g.fillText("número del agente",168,46);
+  const rows=[...T].sort((a,b)=>(b.ultima||"").localeCompare(a.ultima||"")).slice(0,9);
+  rows.forEach((t,i)=>{const y=84+i*70,col=WA_COL(t.estado);
+    g.fillStyle=col;g.globalAlpha=.22;g.beginPath();g.arc(52,y+33,24,0,7);g.fill();g.globalAlpha=1;
+    g.fillStyle=col;g.font=`700 20px ${SANS}`;g.textAlign="center";g.fillText((t.tienda[0]||"?").toUpperCase(),52,y+40);g.textAlign="left";
+    g.fillStyle="#E9EDEF";g.font=`600 19px ${SANS}`;let nm=t.tienda;while(g.measureText(nm).width>300)nm=nm.slice(0,-1);g.fillText(nm+(nm.length<t.tienda.length?"…":""),92,y+28);
+    g.fillStyle=col;g.font=`500 16px ${SANS}`;let es=t.estado;while(g.measureText(es).width>330)es=es.slice(0,-1);g.fillText(es,92,y+52);
+    g.fillStyle="#8696A0";g.font=`500 14px ${SANS}`;g.textAlign="right";g.fillText(t.ultima?fechaCorta(t.ultima):"",462,y+28);g.textAlign="left";
+    g.fillStyle="#222D34";g.fillRect(92,y+68,388,1)});
+  g.fillStyle="#E9EDEF";g.font=`700 22px ${SANS}`;g.fillText("Actividad del agente",508,46);
+  const acts=D.actividad.filter(x=>x.agente==="wa").slice(-5);let y=104;
+  acts.forEach(x=>{g.font=`500 18px ${SANS}`;const lines=Math.min(4,Math.ceil(g.measureText(x.texto).width/640)+1);const h=lines*26+40;
+    if(y+h>705)return;g.fillStyle="#005C4B";g.beginPath();g.roundRect(560,y,690,h,10);g.fill();
+    g.fillStyle="#E9EDEF";wrap(g,x.texto,580,y+32,650,26,4);
+    g.fillStyle="#8FD1C2";g.font=`500 14px ${SANS}`;g.textAlign="right";g.fillText(`${fechaCorta(x.fecha)} ${x.hora||""}`,1236,y+h-12);g.textAlign="left";y+=h+14});
+  return c;
+}
+function nubeShot(){
+  const [c,g]=shotCanvas("#0D1117");
+  g.fillStyle="#161B22";g.fillRect(0,0,1280,64);g.fillStyle="#8B949E";g.font=`500 19px ${MONO}`;
+  g.fillText(`Santi491/Claude- · informes/${lastInf?lastInf.fecha:"—"}.md`,28,40);
+  g.fillStyle="#E6EDF3";g.font=`800 40px ${SANS}`;g.fillText(lastInf?lastInf.titulo:"Sin informes todavía",40,124);
+  g.fillStyle="#30363D";g.fillRect(40,144,1200,2);
+  let y=190;g.font=`500 21px ${SANS}`;
+  (resumen||"").split("\n").map(l=>l.trim()).filter(Boolean).forEach(l=>{if(y>690)return;
+    const bullet=l.startsWith("- ");g.fillStyle=bullet?"#E6EDF3":"#7EE787";g.font=bullet?`500 21px ${SANS}`:`700 21px ${SANS}`;
+    if(bullet){g.fillStyle="#8B949E";g.fillText("•",48,y);g.fillStyle="#E6EDF3"}
+    y=wrap(g,bullet?l.slice(2):l,bullet?72:40,y,bullet?1160:1200,30,3)+8});
+  return c;
+}
+function anaShot(mlabel){
+  const [c,g]=shotCanvas("#07111A");
+  g.fillStyle="#12293A";g.fillRect(0,0,1280,64);g.fillStyle="#D8E8F2";g.font=`700 24px ${SANS}`;
+  g.fillText(`Analista · margen por producto`,28,42);g.fillStyle="#7F9AAD";g.font=`500 17px ${MONO}`;g.textAlign="right";
+  g.fillText(`eBay ${mlabel} · ${S.qty} u · ${$("tc").value} Bs/USD`,1252,42);g.textAlign="left";
+  const rows=ranking.slice(0,11);if(!rows.length){g.fillStyle="#7F9AAD";g.font=`500 24px ${SANS}`;g.fillText("Sin datos para calcular",40,140);return c}
+  const max=Math.max(.2,...rows.map(r=>Math.abs(r.c.margin)));const x0=560,half=330,top=96,rh=56;
+  g.fillStyle="#1E3A4C";g.fillRect(x0,top-10,2,rows.length*rh+4);
+  rows.forEach((r,i)=>{const y=top+i*rh,m=r.c.margin,w=Math.abs(m)/max*half,col=m>=.15?"#5CD69A":m>=.05?"#F2A541":"#F07A7A";
+    g.fillStyle="#D8E8F2";g.font=`600 20px ${SANS}`;let nm=r.p.name;while(g.measureText(nm).width>500)nm=nm.slice(0,-1);g.fillText(nm,28,y+26);
+    g.fillStyle=col;g.fillRect(m>=0?x0+2:x0-w,y+8,w,26);
+    g.font=`600 19px ${MONO}`;g.fillStyle=col;g.textAlign=m>=0?"left":"right";g.fillText(`${m>=0?"+":"−"}${Math.abs(m*100).toFixed(0)} %  Bs ${m>=0?"+":"−"}${fmt(Math.abs(r.c.gain))}`,m>=0?x0+w+12:x0-w-12,y+28);g.textAlign="left"});
+  return c;
+}
+const shotUrl=id=>{try{return TEX[id]&&TEX[id].toDataURL?TEX[id].toDataURL("image/jpeg",.9):""}catch(e){return ""}};
+TEX.nube=nubeShot();TEX.wa=waShot();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{TEX.nube=nubeShot();TEX.wa=waShot();render()});
 function screenHtml(a){
   if(a.img)return `<div class="shot"><img src="${esc(a.img)}" alt="Última captura de ${esc(a.name)}">${a.cap?`<p class="cap"><b>${fechaCorta(a.cap.fecha)} ${esc(a.cap.hora)}</b> · ${esc(a.cap.descripcion)}${a.state==="sleep"?" · ahora en espera":""}</p>`:""}</div>`;
-  if(a.id==="nube")return `<div class="shot"><pre class="term"><span class="k">$ cat informes/${lastInf?lastInf.fecha:""}.md</span>\n${esc(resumen)||"Sin informes todavía."}</pre></div>`;
+  const drawn=(cap)=>`<img src="${shotUrl(a.id)}" alt="Pantalla de ${esc(a.name)}"><p class="cap">${cap}</p>`;
+  if(a.id==="nube")return `<div class="shot">${drawn(`<b>${lastInf?fechaCorta(lastInf.fecha):""}</b> · último informe de la rutina de la nube (no tiene navegador: su pantalla es el informe)`)}<pre class="term"><span class="k">$ cat informes/${lastInf?lastInf.fecha:""}.md</span>\n${esc(resumen)||"Sin informes todavía."}</pre></div>`;
   if(a.id==="wa"){
     const line=(lbl,arr,cls)=>arr.length?`<span class="${cls}">${lbl}</span>\n  ${esc(arr.join(" · "))}\n\n`:"";
-    return `<div class="shot"><pre class="term"><span class="k">$ whatsapp --tiendas</span>\n\n${line("Respondieron",byState("respondió"),"g")}${line("Esperando respuesta",waiting.map(t=>t.tienda),"y")}${line("Cerradas",T.filter(t=>closedRe.test(t.estado)).map(t=>`${t.tienda} (${t.estado})`),"r")}${line("Sin WhatsApp",byState("número sin WhatsApp"),"")}${line("Por contactar",byState("por contactar"),"k")}</pre></div>`;
+    const lw=D.actividad.filter(x=>x.agente==="wa").slice(-1)[0];
+    return `<div class="shot">${drawn(`<b>${lw?fechaCorta(lw.fecha)+" "+(lw.hora||""):""}</b> · pantalla armada con tiendas-cochabamba.csv y actividad.csv (sin números ni chats: la página es pública)`)}<pre class="term"><span class="k">$ whatsapp --tiendas</span>\n\n${line("Respondieron",byState("respondió"),"g")}${line("Esperando respuesta",waiting.map(t=>t.tienda),"y")}${line("Cerradas",T.filter(t=>closedRe.test(t.estado)).map(t=>`${t.tienda} (${t.estado})`),"r")}${line("Sin WhatsApp",byState("número sin WhatsApp"),"")}${line("Por contactar",byState("por contactar"),"k")}</pre></div>`;
   }
   if(a.id==="ana"){
     const mlabel={new:"nuevo",used:"usado",min:"el más barato"}[S.mode];
-    return `<div class="shot"><pre class="term"><span class="k">$ analista --precio ${mlabel} --unidades ${S.qty}</span>\n${ranking.map(r=>`<span class="${r.c.margin>=.15?"g":r.c.margin>=.05?"y":"r"}">${esc(short(r.p.name).padEnd(20))} costo ${fmt(r.c.cost).padStart(6)}  local ${fmt(r.c.local).padStart(6)}  ${r.c.margin>=0?"+":""}${fmt(r.c.margin*100)} %</span>`).join("\n")}</pre></div>`;
+    return `<div class="shot">${drawn(`<b>en vivo</b> · se recalcula con los supuestos de la tabla de abajo`)}<pre class="term"><span class="k">$ analista --precio ${mlabel} --unidades ${S.qty}</span>\n${ranking.map(r=>`<span class="${r.c.margin>=.15?"g":r.c.margin>=.05?"y":"r"}">${esc(short(r.p.name).padEnd(20))} costo ${fmt(r.c.cost).padStart(6)}  local ${fmt(r.c.local).padStart(6)}  ${r.c.margin>=0?"+":""}${fmt(r.c.margin*100)} %</span>`).join("\n")}</pre></div>`;
   }
   return "";
 }
@@ -507,7 +565,7 @@ function updateAnalyst(all){
   ranking=all.filter(r=>r.c.margin!=null).sort((x,y)=>y.c.margin-x.c.margin);
   const mlabel={new:"nuevo",used:"usado",min:"el más barato"}[S.mode];
   a.info=[`Calcula con precio ${mlabel} de eBay, ${S.qty} unidades por pedido y ${$("tc").value} Bs/USD (se cambia en la tabla de abajo).`].concat(ranking.slice(0,4).map(r=>`${r.p.name}: ${r.c.gain>=0?"+":""}Bs ${fmt(r.c.gain)} por unidad (${fmt(r.c.margin*100)} %)`)).concat([`${all.filter(r=>r.c.status==="noLocal"||r.c.status==="none").length} productos todavía sin precio en Cochabamba.`]);
-  TEX.ana=termCanvas("analista · "+mlabel,ranking.slice(0,7).map(r=>[r.c.margin>=.15?"g":r.c.margin>=.05?"y":"r",`${short(r.p.name).padEnd(20)} ${(r.c.margin*100).toFixed(0).padStart(4)}%`]));
+  TEX.ana=anaShot(mlabel);
   if(open&&sel==="ana")drawDrawer();
   drawHud(all);
 }
