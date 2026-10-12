@@ -24,7 +24,7 @@ CONDICIONES = {"nuevo": "NEW", "usado": "USED", "todos": None}
 CATEGORIAS = {"cpu": "164", "ram": "170083", "ssd": "175669"}
 # Anuncios que no son el producto en sí
 EXCLUIR = ("box only", "empty box", "caja vacía", "for parts", "not working", "broken", "lot of",
-           "cooler only", "heatsink only", "bundle", "combo", "motherboard", "laptop", "sodimm", "so-dimm")
+           "cooler only", "heatsink only", "fan only", "replacement fan", "so dimm", "sodimm", "bundle", "combo", "motherboard", "laptop", "sodimm", "so-dimm")
 MIN_FEEDBACK_PCT = 98.0
 MIN_FEEDBACK_SCORE = 50
 
@@ -72,6 +72,11 @@ def coincide(consulta, titulo):
     if any(x in t for x in EXCLUIR):
         return False
     claves = [w for w in normalizar(consulta).split() if any(c.isdigit() for c in w)]
+    # Anuncios con varias capacidades (ej. "Netac 2TB 1TB 500GB") muestran el precio de la más barata
+    if any(re.fullmatch(r"\d+tb", w) for w in claves):
+        capacidades = set(re.findall(r"(?<![0-9a-z])(\d+(?:gb|tb))(?![0-9a-z])", t))
+        if capacidades - set(claves):
+            return False
     return all(re.search(rf"(?<![0-9a-z]){re.escape(w)}(?![0-9a-z])", t) for w in claves)
 
 
@@ -110,7 +115,8 @@ def buscar(tok, consulta, condicion="nuevo", limite=50):
             "vendedor": vend.get("username", ""), "feedback_pct": pct, "feedback_score": score,
             "link": it.get("itemWebUrl", ""),
         })
-    return sorted(out, key=lambda x: x["total_usd"])
+    unicos = {(x["vendedor"], x["titulo"], x["precio_usd"]): x for x in out}
+    return sorted(unicos.values(), key=lambda x: x["total_usd"])
 
 
 def main():
