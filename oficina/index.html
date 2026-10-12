@@ -427,18 +427,23 @@ function render(){
 }
 
 /* ================== Agentes ================== */
-const STATES={working:{t:"Trabajando",c:"#4FD1E8"},waiting:{t:"Esperando respuestas",c:"#F2A541"},done:{t:"Terminó",c:"#5CD69A"},sleep:{t:"En espera",c:"#7F9AAD"}};
+const STATES={working:{t:"Calculando en vivo",c:"#4FD1E8"},waiting:{t:"Trabajó hoy · esperando respuestas",c:"#F2A541"},done:{t:"Trabajó hoy",c:"#5CD69A"},sleep:{t:"En espera",c:"#7F9AAD"}};
 const AG=[
- {id:"nube",name:"Informe diario",where:"Nube · rutina diaria de GitHub",state:"sleep",x:1.2,y:1.4,shirt:"#6C8CF5",
-  info:["Cada día busca precios de eBay, calcula el costo puesto y escribe el informe en informes/.","El informe del 12/10 todavía usa precios de eBay estimados: a la rutina le faltan las claves de la API.","Para arreglarlo: cargar EBAY_CLIENT_ID y EBAY_CLIENT_SECRET en la configuración de la rutina."]},
- {id:"ebay",name:"Rastreador eBay",where:"API oficial de eBay (antes: Chrome)",state:"done",x:4.4,y:1.4,shirt:"#E8923E",img:"capturas/ebay.jpg",
-  info:["12/10 11:15: primera corrida con la API oficial (python3 ebay.py --vigilar --guardar).","Guarda el nuevo y el usado más baratos de cada producto en precios-eeuu.csv; “nuevo” no incluye open box.","Sin nuevos de vendedores de EE.UU.: 5700X3D. El i5-13400 nuevo queda con el anuncio visto con Chrome.","Antes de la API, la PC de la casa juntó los 14 productos a mano con Chrome."]},
- {id:"wa",name:"WhatsApp",where:"Sesión local · número del agente",state:"waiting",x:7.6,y:1.4,shirt:"#3FBF7F",
-  info:["Cyrex dio precios: 7800X3D Bs 5.664 (caja) e i5-14400F Bs 2.537 (OEM).","Computer Magic no tiene procesadores ni RAM.","Compucenter pidió empresa, NIT y correo para cotizar: no se dieron datos.","Límite del número nuevo: unos 10 chats nuevos por día, sumando la PC y la Mac."]},
- {id:"mkt",name:"Marketplace",where:"Sesión local · Facebook",state:"sleep",x:2.8,y:5.2,shirt:"#4F8DF0",img:"capturas/marketplace.jpg",
-  info:["Revisa Marketplace de Cochabamba para los productos de vigilar.csv y guarda precio, estado y link.","El 12/10 no aparecieron anuncios útiles nuevos del 5600, 5700X3D ni DDR5 32GB de escritorio.","Los anuncios de otras ciudades se guardan solo como referencia."]},
- {id:"ana",name:"Analista",where:"Calcula costo puesto y margen",state:"working",x:6.0,y:5.2,shirt:"#C46FD8",info:[]}
+ {id:"nube",name:"Informe diario",where:"Nube · rutina diaria (7:52), funciona con la PC apagada",x:1.2,y:1.4,shirt:"#6C8CF5",
+  info:["Cada mañana busca el dólar del día, corre eBay, regenera la comparación, el Excel y la copia del día, y escribe el informe en informes/.","Si le faltan las claves de eBay, usa los precios que dejó la ronda de la Mac."]},
+ {id:"ebay",name:"Rastreador eBay",where:"API oficial de eBay · nube y ronda diaria de la Mac",x:4.4,y:1.4,shirt:"#E8923E",img:"capturas/ebay.jpg",
+  info:["Busca el nuevo y el usado más baratos de cada producto de vigilar.csv: vendedor en EE.UU., ≥ 98 % de feedback, “nuevo” sin open box.","Guarda cada precio en precios-eeuu.csv; de ahí sale el historial."]},
+ {id:"wa",name:"WhatsApp",where:"Ronda diaria de la Mac · número del agente",x:7.6,y:1.4,shirt:"#3FBF7F",
+  info:["Pregunta precios a las tiendas de Cochabamba con mensajes cortos; como máximo unos 10 chats nuevos por día, sumando la PC y la Mac.","Anota respuestas en tiendas-cochabamba.csv y precios en precios-cochabamba.csv. Nunca compra, reserva ni da datos personales."]},
+ {id:"mkt",name:"Marketplace",where:"Ronda diaria de la Mac · Facebook con Chrome",x:2.8,y:5.2,shirt:"#4F8DF0",img:"capturas/marketplace.jpg",
+  info:["Busca en Marketplace de Cochabamba los productos de vigilar.csv, sobre todo los que todavía no tienen precio local.","Guarda precio, estado y link de cada anuncio útil; los de otras ciudades quedan solo como referencia."]},
+ {id:"ana",name:"Analista",where:"Calcula costo puesto y margen",x:6.0,y:5.2,shirt:"#C46FD8",info:[]}
 ];
+const HOY=(D.generado||"").split(" ")[0];
+const lastAct=id=>{const a=D.actividad.filter(x=>x.agente===id);return a[a.length-1]};
+AG.forEach(a=>{const l=lastAct(a.id);
+  a.state=a.id==="ana"?"working":!l?"sleep":l.fecha===HOY?(a.id==="wa"&&D.tiendas.some(t=>/esperando/.test(t.estado))?"waiting":"done"):"sleep";
+  a.last=l?`${fechaCorta(l.fecha)}${l.hora?" "+l.hora:""}`:"";});
 const CAB={id:"docs",name:"Documentos",x:8.15,y:4.6,mon:null};
 let cabSel=null;
 const short=n=>n.replace("Intel Core ","").replace("Corsair Vengeance RGB ","").replace(" (2x16)","").replace("Ryzen ","R");
@@ -459,7 +464,7 @@ const closedRe=/no vende|sin stock|no contactar/;
 const waiting=T.filter(t=>/esperando/.test(t.estado));
 const lastInf=D.documentos.find(d=>d.id.startsWith("inf-"));
 const resumen=lastInf?(lastInf.md.split("## Resumen")[1]||"").split("\n## ")[0].trim().replace(/\*\*/g,""):"";
-TEX.nube=termCanvas(lastInf?`informes/${lastInf.fecha}.md`:"informes/",[["k","# Informe diario"],["y","eBay: estimado (sin API)"],["",`TC ${lastFx?(+lastFx.usado).toFixed(2):"—"} Bs/USD`],["g","comparacion.md con API"],["k","próximo: rutina diaria"]]);
+TEX.nube=termCanvas(lastInf?`informes/${lastInf.fecha}.md`:"informes/",[["k","# Informe diario"],["",`último: ${lastInf?fechaCorta(lastInf.fecha):"—"}`],["",`dólar ${lastFx?(+lastFx.usado).toFixed(2):"—"} Bs/USD`],["g",`${D.movimientos.length} movimientos`],["k","próximo: mañana 7:52"]]);
 TEX.wa=termCanvas("whatsapp · tiendas",[["g",`respondieron: ${byState("respondió").length}`],["y",`esperando: ${waiting.length}`],["r",`cerradas: ${T.filter(t=>closedRe.test(t.estado)).length}`],["",`sin WhatsApp: ${byState("número sin WhatsApp").length}`],["k",`tiendas en la lista: ${T.length}`]]);
 function screenHtml(a){
   if(a.img)return `<div class="shot"><img src="${a.img}" alt="Última captura de ${esc(a.name)}"></div>`;
@@ -524,10 +529,10 @@ function drawDrawer(){
   if(sel==="docs"){drawCabinet();return}
   const a=AG.find(x=>x.id===sel),s=STATES[a.state];
   $("dDot").style.background=s.c;$("dName").textContent=a.name;$("dWhere").textContent=a.where;
-  $("dState").textContent=s.t;$("dState").style.color=s.c;
+  $("dState").textContent=s.t+(a.last&&a.id!=="ana"?` · último trabajo ${a.last}`:"");$("dState").style.color=s.c;
   const acts=D.actividad.filter(x=>x.agente===a.id).slice().reverse();
   $("dBody").innerHTML=`<div><h4>Su pantalla</h4>${screenHtml(a)}</div>
-    <div><h4>Qué hizo</h4><ul>${a.info.map(i=>`<li>${esc(i)}</li>`).join("")}</ul></div>
+    <div><h4>Qué hace</h4><ul>${a.info.map(i=>`<li>${esc(i)}</li>`).join("")}</ul></div>
     <div><h4>Actividad</h4><div class="acts">${acts.length?acts.map(x=>`<div><time>${fechaCorta(x.fecha)}${x.hora?" "+x.hora:""}</time>${esc(x.texto)}</div>`).join(""):'<div class="dash">Sin actividad registrada.</div>'}</div></div>`;
 }
 

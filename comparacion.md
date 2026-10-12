@@ -87,6 +87,7 @@ eBay nuevo: USD 75.00 con envío en EE.UU. (eBay API; vendedor juniorarredondo 1
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/959874386670350/) | no indicado (16GB 3200; configuración no indicada) | 900 | -155 (-17%) | 2026-10-11 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2347323546077904/) | no indicado (2x8 3200; Sacaba) | 1.500 | 445 (30%) | 2026-10-11 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2345958202816013/) | no indicado (Corsair Vengeance 2x8; Sacaba; rebajado de 1600) | 1.500 | 445 (30%) | 2026-10-11 |
+| Compucenter (WhatsApp) · [ver](https://compucenter.store/) | nuevo (Corsair Vengeance RGB DDR4 16GB 3600; no dice si es 2x8; Bs 2.560 con factura) | 2.150 | 1.095 (51%) | 2026-10-12 |
 
 ### SSD NVMe 1TB
 eBay nuevo: USD 114.99 con envío en EE.UU. (eBay API; vendedor gadgetworld03 99.0%; Derlar DN-850Q, marca poco conocida, 2026-10-12). Costo puesto: **Bs 1.529**/u en pedido de 2, **Bs 1.446**/u en pedido de 4.
