@@ -160,8 +160,14 @@ def main():
     if os.path.exists(ruta_cap):
         with open(ruta_cap, encoding="utf-8") as f:
             capturas = [c for c in csv.DictReader(f) if os.path.exists(os.path.join(OFI, c["archivo"]))]
+    # Pedidos (pedidos.csv): solo campos aptos para la página pública; nunca guía, número de pedido ni dirección
+    pedidos = []
+    if os.path.exists(os.path.join(RAIZ, "pedidos.csv")):
+        pedidos = [{k: f.get(k, "") for k in ("fecha_compra", "tienda", "producto", "cantidad", "courier", "estado", "eta", "actualizado")}
+                   for f in leer("pedidos.csv")]
     datos = {"generado": datetime.now().strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
-             "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas}
+             "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas,
+             "pedidos": pedidos}
     with open(os.path.join(OFI, "datos.js"), "w", encoding="utf-8") as f:
         f.write("window.DATOS = " + json.dumps(datos, ensure_ascii=False) + ";\n")
     print(f"oficina/datos.js: {len(productos)} productos, {len(mov)} movimientos, {len(docs)} documentos")

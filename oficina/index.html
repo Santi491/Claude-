@@ -347,7 +347,7 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script src="datos.js"></script>
 <script>
-const D=Object.assign({productos:[],movimientos:[],dolar:[],actividad:[],documentos:[],tiendas:[],capturas:[],generado:""},window.DATOS||{});
+const D=Object.assign({productos:[],movimientos:[],dolar:[],actividad:[],documentos:[],tiendas:[],capturas:[],pedidos:[],generado:""},window.DATOS||{});
 const $=id=>document.getElementById(id);
 // Estado en vivo (db del artefacto, colección "vivo"): lo escriben las sesiones mientras trabajan
 let LIVE={},LIVE_ON=false;
@@ -469,9 +469,11 @@ const AG=[
   info:["Busca el nuevo y el usado más baratos de cada producto de vigilar.csv: vendedor en EE.UU., ≥ 98 % de feedback, “nuevo” sin open box.","Guarda cada precio en precios-eeuu.csv; de ahí sale el historial."]},
  {id:"wa",name:"WhatsApp",where:"Ronda diaria de la Mac · número del agente",x:7.6,y:1.4,shirt:"#3FBF7F",
   info:["Pregunta precios a las tiendas de Cochabamba con mensajes cortos; como máximo unos 10 chats nuevos por día, sumando la PC y la Mac.","Anota respuestas en tiendas-cochabamba.csv y precios en precios-cochabamba.csv. Nunca compra, reserva ni da datos personales."]},
- {id:"mkt",name:"Marketplace",where:"Ronda diaria de la Mac · Facebook con Chrome",x:2.8,y:5.2,shirt:"#4F8DF0",img:"capturas/marketplace.jpg",
+ {id:"mkt",name:"Marketplace",where:"Ronda diaria de la Mac · Facebook con Chrome",x:1.6,y:5.2,shirt:"#4F8DF0",img:"capturas/marketplace.jpg",
   info:["Busca en Marketplace de Cochabamba los productos de vigilar.csv, sobre todo los que todavía no tienen precio local.","Guarda precio, estado y link de cada anuncio útil; los de otras ciudades quedan solo como referencia."]},
- {id:"ana",name:"Analista",where:"Calcula costo puesto y margen",x:6.0,y:5.2,shirt:"#C46FD8",info:[]}
+ {id:"ana",name:"Analista",where:"Calcula costo puesto y margen",x:4.2,y:5.2,shirt:"#C46FD8",info:[]},
+ {id:"pedidos",name:"Pedidos",where:"Compras de eBay y seguimiento del courier hasta Cochabamba",x:6.8,y:5.2,shirt:"#F07AA0",
+  info:["Revisa el estado de cada compra en eBay (comprado, enviado, en bodega del courier, en camino, en Cochabamba).","Sigue la guía del courier hasta que el paquete llega.","Anota todo en pedidos.csv; en esta página solo se muestran producto, estado y fecha estimada."]}
 ];
 // Última captura de pantalla de cada agente (oficina/capturas.csv); si no hay, queda la imagen por defecto
 AG.forEach(a=>{const cs=D.capturas.filter(c=>c.agente===a.id).sort((x,y)=>(x.fecha+x.hora).localeCompare(y.fecha+y.hora));const c=cs[cs.length-1];if(c){a.img=c.archivo;a.cap=c}});
@@ -489,7 +491,7 @@ function applyLive(){
 }
 (async()=>{try{if(!window.claude||!window.claude.use)return;const db=await window.claude.use("db");if(!db)return;
   db.collection("vivo").onSnapshot(snap=>{const n={};snap.docs.forEach(d=>{if(d.exists)n[d.id]=d.data()});LIVE=n;applyLive()},()=>{})}catch(e){}})();
-const CAB={id:"docs",name:"Documentos",x:8.15,y:4.6,mon:null};
+const CAB={id:"docs",name:"Documentos",x:8.3,y:2.6,mon:null};
 let cabSel=null;
 const short=n=>n.replace("Intel Core ","").replace("Corsair Vengeance RGB ","").replace(" (2x16)","").replace("Ryzen ","R");
 let ranking=[];let sel=null;let open=false;
@@ -565,8 +567,26 @@ function anaShot(mlabel){
   return c;
 }
 const shotUrl=id=>{try{return TEX[id]&&TEX[id].toDataURL?TEX[id].toDataURL("image/jpeg",.9):""}catch(e){return ""}};
-TEX.nube=nubeShot();TEX.wa=waShot();
-if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{TEX.nube=nubeShot();TEX.wa=waShot();render()});
+const PED_COL=e=>/entregado|cochabamba/i.test(e)?"#5CD69A":/camino|enviado|bodega|aduana/i.test(e)?"#F2A541":/comprado|pagado/i.test(e)?"#4FD1E8":/problema|retenido|devuel/i.test(e)?"#F07A7A":"#7F9AAD";
+function pedidosShot(){
+  const [c,g]=shotCanvas("#0B1219");
+  g.fillStyle="#141F2A";g.fillRect(0,0,1280,72);g.fillStyle="#E6EDF3";g.font=`700 28px ${SANS}`;g.fillText("Pedidos",28,46);
+  g.fillStyle="#8B9AA8";g.font=`500 17px ${MONO}`;g.textAlign="right";g.fillText("eBay → courier → Cochabamba",1252,44);g.textAlign="left";
+  const P2=D.pedidos||[];
+  if(!P2.length){g.fillStyle="#8B9AA8";g.font=`600 30px ${SANS}`;g.fillText("Todavía no hay pedidos cargados",40,170);
+    g.font=`500 22px ${SANS}`;wrap(g,"Cuando la sesión de eBay esté abierta en Chrome, este agente lee tus compras; con el número de guía sigue el paquete del courier hasta Cochabamba.",40,230,1180,34,4);return c}
+  const steps=["comprado","enviado","bodega","camino","cochabamba","entregado"];
+  P2.slice(-6).reverse().forEach((p,i)=>{const y=96+i*102,col=PED_COL(p.estado);
+    g.fillStyle="#131D27";g.beginPath();g.roundRect(24,y,1232,90,10);g.fill();
+    g.fillStyle="#E6EDF3";g.font=`700 24px ${SANS}`;let nm=`${p.cantidad||1}× ${p.producto}`;while(g.measureText(nm).width>640)nm=nm.slice(0,-1);g.fillText(nm,44,y+36);
+    g.fillStyle="#8B9AA8";g.font=`500 17px ${MONO}`;g.fillText(`${p.tienda||""} · ${p.courier||"courier"} · llega ${p.eta||"—"}`,44,y+68);
+    const k=steps.findIndex(s=>new RegExp(s,"i").test(p.estado||""));
+    steps.forEach((s,j)=>{const x=760+j*82;g.fillStyle=j<=k?col:"#26333F";g.beginPath();g.arc(x,y+34,11,0,7);g.fill();if(j<steps.length-1){g.fillRect(x+11,y+32,60,4)}});
+    g.fillStyle=col;g.font=`600 17px ${SANS}`;g.fillText(p.estado||"",760,y+74)});
+  return c;
+}
+TEX.nube=nubeShot();TEX.wa=waShot();TEX.pedidos=pedidosShot();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{TEX.nube=nubeShot();TEX.wa=waShot();TEX.pedidos=pedidosShot();render()});
 function screenHtml(a){
   if(a.img)return `<div class="shot"><img src="${esc(a.img)}" alt="Última captura de ${esc(a.name)}">${a.cap?`<p class="cap"><b>${fechaCorta(a.cap.fecha)} ${esc(a.cap.hora)}</b> · ${esc(a.cap.descripcion)}${a.state==="sleep"?" · ahora en espera":""}</p>`:""}</div>`;
   const drawn=(cap)=>`<img src="${shotUrl(a.id)}" alt="Pantalla de ${esc(a.name)}"><p class="cap">${cap}</p>`;
@@ -575,6 +595,10 @@ function screenHtml(a){
     const line=(lbl,arr,cls)=>arr.length?`<span class="${cls}">${lbl}</span>\n  ${esc(arr.join(" · "))}\n\n`:"";
     const lw=D.actividad.filter(x=>x.agente==="wa").slice(-1)[0];
     return `<div class="shot">${drawn(`<b>${lw?fechaCorta(lw.fecha)+" "+(lw.hora||""):""}</b> · pantalla armada con tiendas-cochabamba.csv y actividad.csv (sin números ni chats: la página es pública)`)}<pre class="term"><span class="k">$ whatsapp --tiendas</span>\n\n${line("Respondieron",byState("respondió"),"g")}${line("Esperando respuesta",waiting.map(t=>t.tienda),"y")}${line("Cerradas",T.filter(t=>closedRe.test(t.estado)).map(t=>`${t.tienda} (${t.estado})`),"r")}${line("Sin WhatsApp",byState("número sin WhatsApp"),"")}${line("Por contactar",byState("por contactar"),"k")}</pre></div>`;
+  }
+  if(a.id==="pedidos"){
+    const P2=D.pedidos||[];
+    return `<div class="shot">${drawn(`<b>${P2.length} pedido${P2.length===1?"":"s"}</b> · armado con pedidos.csv (sin guías ni direcciones: la página es pública)`)}<pre class="term"><span class="k">$ pedidos --estado</span>\n${P2.length?P2.slice().reverse().map(p=>`${esc(p.cantidad||1)}× ${esc(p.producto)} · ${esc(p.tienda)} · <span class="y">${esc(p.estado)}</span> · llega ${esc(p.eta||"—")}`).join("\n"):"Sin pedidos todavía. Falta iniciar sesión en eBay en Chrome o pasar las guías del courier."}</pre></div>`;
   }
   if(a.id==="ana"){
     const mlabel={new:"nuevo",used:"usado",min:"el más barato"}[S.mode];

@@ -162,7 +162,7 @@
   box(RW - 2, 0.01, 0.06, strip, 0, 0.005, 0.6);
 
   /* ---------- Puestos de trabajo ---------- */
-  const STATION = { nube: [-9, -4.6], ebay: [-2.5, -4.6], wa: [4, -4.6], mkt: [-6, 3.2], ana: [0.8, 3.2] };
+  const STATION = { nube: [-9, -4.6], ebay: [-2.5, -4.6], wa: [4, -4.6], pedidos: [10.5, -4.6], mkt: [-6, 3.2], ana: [0.8, 3.2] };
   const skin = M(0xe7b98f, { roughness: .6 }), hairM = M(0x2b2018), deskM = M(0x6b4a33, { roughness: .55 }),
     legM = M(0x1f2a33, { metalness: .5, roughness: .4 }), chairM = M(0x222d36, { roughness: .8 });
   const ST = {};
@@ -208,6 +208,115 @@
     ST[a.id] = { g, screen, stex, sc, ctx: sc.getContext("2d"), torso, headG, arms, ring, glow, src: null, st: null, ver: -1 };
   });
 
+
+  /* ---------- Decoración del jefe: escritorio con su avatar, rincón gym y zona gamer ---------- */
+  const rgbMats = [];
+  const rgb = () => { const m = new THREE.MeshStandardMaterial({ color: 0x111111, emissive: 0xff00ff, emissiveIntensity: 1.6 }); rgbMats.push(m); return m; };
+  function person(parent, x, z, shirtHex, scale) {
+    const p = new THREE.Group(); p.position.set(x, 0, z); p.scale.setScalar(scale || 1); parent.add(p);
+    const shirt = M(shirtHex, { roughness: .7 });
+    cyl(0.24, 0.28, 0.66, shirt, 0, 0.9, 0, p, 16);
+    const hg = new THREE.Group(); hg.position.set(0, 1.37, 0); p.add(hg);
+    const h = new THREE.Mesh(new THREE.SphereGeometry(0.2, 20, 16), skin); h.castShadow = true; hg.add(h);
+    const hr = new THREE.Mesh(new THREE.SphereGeometry(0.21, 20, 12, 0, Math.PI * 2, 0, Math.PI * 0.5), hairM); hr.rotation.x = 0.3; hr.position.set(0, 0.04, 0.02); hg.add(hr);
+    box(0.38, 0.14, 0.52, M(0x1c232b), 0, 0.6, -0.15, p);
+    [-1, 1].forEach(sx => { const sh = new THREE.Group(); sh.position.set(sx * 0.29, 1.1, 0); p.add(sh); const a = box(0.11, 0.11, 0.5, shirt, 0, -0.05, -0.25, sh); a.rotation.x = -0.3; });
+    p.userData.head = hg;
+    return p;
+  }
+  // Escritorio del jefe (centro, mirando a los agentes)
+  const boss = new THREE.Group(); boss.position.set(-1, 0, 7.4); scene.add(boss);
+  const darkWood = M(0x3d2a1e, { roughness: .45 });
+  box(3.4, 0.1, 1.5, darkWood, 0, 0.8, 0, boss); box(3.4, 0.7, 0.08, darkWood, 0, 0.4, -0.7, boss);
+  box(0.08, 0.75, 1.4, darkWood, -1.66, 0.38, 0, boss); box(0.08, 0.75, 1.4, darkWood, 1.66, 0.38, 0, boss);
+  const bossScreens = [];
+  [-0.82, 0.82].forEach((x, i) => {
+    box(1.5, 0.9, 0.06, M(0x10181f, { metalness: .3, roughness: .4 }), x, 1.5, -0.45, boss);
+    const c = document.createElement("canvas"); c.width = 768; c.height = 432;
+    const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding;
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(1.42, 0.8), new THREE.MeshBasicMaterial({ map: t, toneMapped: false }));
+    m.position.set(x, 1.5, -0.415); boss.add(m); bossScreens.push({ c, t, i });
+    box(0.08, 0.36, 0.08, legM, x, 1.0, -0.45, boss);
+  });
+  cyl(0.07, 0.06, 0.13, M(0x1b1b1b), 1.35, 0.92, 0.2, boss);
+  cyl(0.05, 0.12, 0.28, M(0xd4af37, { metalness: .9, roughness: .25 }), -1.4, 1.0, 0.25, boss);
+  const bossChair = new THREE.Group(); bossChair.position.set(0, 0, 0.95); boss.add(bossChair);
+  const leather = M(0x231a14, { roughness: .5 });
+  box(0.8, 0.14, 0.75, leather, 0, 0.52, 0, bossChair); box(0.8, 1.15, 0.14, leather, 0, 1.15, 0.36, bossChair);
+  cyl(0.05, 0.05, 0.42, legM, 0, 0.26, 0, bossChair, 8); cyl(0.38, 0.38, 0.04, legM, 0, 0.04, 0, bossChair, 5);
+  const bossP = person(boss, 0, 0.92, 0x111111, 1.08);
+  function paintBoss() {
+    bossScreens.forEach(({ c, t, i }) => {
+      const g = c.getContext("2d"); g.fillStyle = "#07111A"; g.fillRect(0, 0, 768, 432);
+      g.fillStyle = "#12293A"; g.fillRect(0, 0, 768, 50); g.fillStyle = "#D8E8F2"; g.font = "700 26px Archivo, sans-serif";
+      if (i === 0) {
+        g.fillText("Qué conviene traer", 18, 34);
+        (typeof ranking !== "undefined" ? ranking : []).slice(0, 6).forEach((r, k) => {
+          const m = r.c.margin; g.fillStyle = m >= .15 ? "#5CD69A" : m >= .05 ? "#F2A541" : "#F07A7A";
+          g.fillRect(250, 78 + k * 56, Math.max(4, Math.min(1, Math.abs(m) / .4) * 480), 30);
+          g.fillStyle = "#D8E8F2"; g.font = "600 21px Archivo, sans-serif"; g.fillText(short(r.p.name).slice(0, 18), 16, 100 + k * 56);
+          g.font = "600 19px 'IBM Plex Mono', monospace"; g.fillText(`${(m * 100).toFixed(0)}%`, 256, 100 + k * 56);
+        });
+      } else {
+        g.fillText("Agentes", 18, 34);
+        AG.forEach((a, k) => {
+          const st = STATES[a.state]; g.fillStyle = st.c; g.beginPath(); g.arc(30, 92 + k * 54, 11, 0, 7); g.fill();
+          g.fillStyle = "#D8E8F2"; g.font = "600 22px Archivo, sans-serif"; g.fillText(a.name, 52, 100 + k * 54);
+          g.fillStyle = "#7F9AAD"; g.font = "500 18px 'IBM Plex Mono', monospace"; g.fillText(String(a.liveText || st.t).slice(0, 38), 260, 100 + k * 54);
+        });
+      }
+      t.needsUpdate = true;
+    });
+  }
+
+  // Rincón gym (adelante a la izquierda)
+  const gym = new THREE.Group(); gym.position.set(-11.3, 0, 6.6); scene.add(gym);
+  const gmat = new THREE.Mesh(new THREE.BoxGeometry(5.6, 0.04, 5.2), M(0x16191d, { roughness: 1 })); gmat.position.y = 0.02; gmat.receiveShadow = true; gym.add(gmat);
+  const steel = M(0x9aa3ab, { metalness: .85, roughness: .3 }), black = M(0x141414, { roughness: .6 }), red = M(0xb3262d, { roughness: .6 });
+  box(2.4, 0.06, 0.5, black, -0.6, 0.45, -2.1, gym); box(2.4, 0.06, 0.5, black, -0.6, 0.85, -2.1, gym);
+  [-1.75, 0.55].forEach(x => box(0.06, 0.9, 0.5, black, x, 0.45, -2.1, gym));
+  for (let row = 0; row < 2; row++) for (let k = 0; k < 5; k++) {
+    const x = -1.5 + k * 0.45, y = 0.56 + row * 0.4, r = 0.06 + k * 0.012;
+    const hd = cyl(0.025, 0.025, 0.32, steel, x, y, -2.1, gym, 8); hd.rotation.x = Math.PI / 2;
+    [-0.16, 0.16].forEach(dz => { const w = cyl(r, r, 0.07, black, x, y, -2.1 + dz, gym, 12); w.rotation.x = Math.PI / 2; });
+  }
+  box(0.4, 0.1, 1.3, red, 1.3, 0.48, 0.4, gym); box(0.06, 0.44, 0.06, steel, 1.3, 0.22, -0.1, gym); box(0.06, 0.44, 0.06, steel, 1.3, 0.22, 0.9, gym);
+  [-0.75, 0.75].forEach(dx => box(0.08, 2.2, 0.08, black, 1.3 + dx, 1.1, -1.4, gym));
+  const bar = cyl(0.025, 0.025, 2.1, steel, 1.3, 1.45, -1.4, gym, 10); bar.rotation.z = Math.PI / 2;
+  [-0.9, 0.9].forEach(dx => { const pl = cyl(0.24, 0.24, 0.07, black, 1.3 + dx, 1.45, -1.4, gym, 24); pl.rotation.z = Math.PI / 2; });
+  [[-1.8, 1.4, 0.13], [-1.4, 1.5, 0.11], [-1.05, 1.45, 0.09]].forEach(([x, z, r]) => {
+    const b = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), black); b.position.set(x, r, z); b.castShadow = true; gym.add(b);
+    const hd = new THREE.Mesh(new THREE.TorusGeometry(r * 0.6, r * 0.14, 8, 16, Math.PI), black); hd.position.set(x, r * 1.75, z); gym.add(hd);
+  });
+  const mirror = new THREE.Mesh(new THREE.PlaneGeometry(3.4, 2.1), M(0x9db8cc, { metalness: .25, roughness: .12, emissive: 0x24384a, emissiveIntensity: .6 }));
+  mirror.rotation.y = Math.PI / 2; mirror.position.set(-RW / 2 + 0.06, 1.6, 6.8); scene.add(mirror);
+  const gymSign = canvasTex(512, 160, (g, w, h) => { g.fillStyle = "#0E1A24"; g.fillRect(0, 0, w, h); g.fillStyle = "#F2A541"; g.font = "900 96px Archivo, sans-serif"; g.textAlign = "center"; g.fillText("GYM", w / 2, 116); });
+  const gs = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.5), new THREE.MeshBasicMaterial({ map: gymSign })); gs.rotation.y = Math.PI / 2; gs.position.set(-RW / 2 + 0.07, 3.15, 6.8); scene.add(gs);
+
+  // Zona gamer (tele con consola en el rincón de descanso + escritorio gamer)
+  const tv = new THREE.Group(); tv.position.set(0, 0, -1.9); lounge.add(tv);
+  box(2.4, 0.45, 0.45, black, 0, 0.22, 0, tv);
+  const strip2 = new THREE.Mesh(new THREE.BoxGeometry(2.3, 0.03, 0.03), rgb()); strip2.position.set(0, 0.03, 0.24); tv.add(strip2);
+  box(2.2, 1.25, 0.08, M(0x0b0f14, { metalness: .4, roughness: .3 }), 0, 1.25, 0, tv);
+  const tvTex = canvasTex(768, 432, (g, w, h) => {
+    const gr = g.createLinearGradient(0, 0, w, h); gr.addColorStop(0, "#2b0b4f"); gr.addColorStop(1, "#0b3b5a"); g.fillStyle = gr; g.fillRect(0, 0, w, h);
+    g.fillStyle = "#4FD1E8"; g.font = "900 96px Archivo, sans-serif"; g.textAlign = "center"; g.fillText("PLAY", w / 2, h / 2 + 30);
+  });
+  const tvs = new THREE.Mesh(new THREE.PlaneGeometry(2.08, 1.15), new THREE.MeshBasicMaterial({ map: tvTex, toneMapped: false })); tvs.position.set(0, 1.25, 0.045); tv.add(tvs);
+  box(0.4, 0.08, 0.32, M(0xeeeeee, { roughness: .4 }), 0.6, 0.49, 0, tv);
+  const gamer = new THREE.Group(); gamer.position.set(12.9, 0, 1.6); scene.add(gamer);
+  box(1.9, 0.06, 0.85, black, 0, 0.78, 0, gamer);
+  [[-.9, -.38], [.9, -.38], [-.9, .38], [.9, .38]].forEach(([x, z]) => box(0.05, 0.75, 0.05, black, x, 0.38, z, gamer));
+  box(0.26, 0.55, 0.52, M(0x111111, { metalness: .3 }), 0.72, 1.09, -0.08, gamer);
+  const sidePanel = new THREE.Mesh(new THREE.PlaneGeometry(0.44, 0.45), rgb()); sidePanel.rotation.y = -Math.PI / 2; sidePanel.position.set(0.585, 1.09, -0.08); gamer.add(sidePanel);
+  box(1.3, 0.72, 0.05, M(0x0b0f14), -0.15, 1.38, -0.3, gamer);
+  const gmon = new THREE.Mesh(new THREE.PlaneGeometry(1.22, 0.64), new THREE.MeshBasicMaterial({ map: tvTex, toneMapped: false })); gmon.position.set(-0.15, 1.38, -0.272); gamer.add(gmon);
+  const kb = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.03, 0.2), rgb()); kb.position.set(-0.15, 0.825, 0.12); gamer.add(kb);
+  const gch = new THREE.Group(); gch.position.set(-0.15, 0, 0.9); gamer.add(gch);
+  box(0.62, 0.12, 0.6, black, 0, 0.5, 0, gch); box(0.62, 1.05, 0.12, red, 0, 1.05, 0.3, gch); box(0.36, 0.22, 0.12, black, 0, 1.68, 0.3, gch);
+  box(0.12, 0.85, 0.14, red, -0.26, 1.0, 0.32, gch); box(0.12, 0.85, 0.14, red, 0.26, 1.0, 0.32, gch);
+  cyl(0.04, 0.04, 0.42, legM, 0, 0.25, 0, gch, 8); cyl(0.32, 0.32, 0.04, legM, 0, 0.04, 0, gch, 5);
+
   // Archivero de documentos
   const cabG = new THREE.Group(); cabG.position.set(12.4, 0, -6.8); scene.add(cabG);
   box(1.1, 1.9, 0.8, M(0x6e7f8c, { metalness: .35, roughness: .5 }), 0, 0.95, 0, cabG);
@@ -216,6 +325,7 @@
     box(0.3, 0.05, 0.05, M(0xc9a35a, { metalness: .6, roughness: .3 }), 0, 0.45 + k * 0.6, 0.46, cabG);
   }
   ST.docs = { g: cabG };
+  ST.jefe = { g: boss };
 
   /* ---------- Pantallas: la captura del agente, atenuada si está en espera ---------- */
   function paintScreen(a, s, t) {
@@ -235,7 +345,7 @@
 
   /* ---------- Etiquetas HTML sobre cada agente ---------- */
   const tags = {};
-  [...AG, { id: "docs", name: "Documentos" }].forEach(a => {
+  [...AG, { id: "docs", name: "Documentos" }, { id: "jefe", name: "Santi" }].forEach(a => {
     const b = document.createElement("button"); b.type = "button"; b.className = "ag3d"; b.dataset.id = a.id;
     b.innerHTML = `<span class="dot"></span><span class="nm"></span><small></small>`;
     b.addEventListener("click", e => { e.stopPropagation(); focus3D(a.id); });
@@ -247,12 +357,16 @@
     Object.keys(tags).forEach(id => {
       const s = ST[id], b = tags[id]; if (!s) { b.hidden = true; return; }
       if (id === "docs") tmp.set(0, 2.4, 0).applyMatrix4(s.g.matrixWorld);
+      else if (id === "jefe") tmp.set(0, 2.55, 0.9).applyMatrix4(s.g.matrixWorld);
       else tmp.set(0, 2.25, 0.9).applyMatrix4(s.g.matrixWorld);
       tmp.project(camera);
       const vis = tmp.z < 1 && Math.abs(tmp.x) < 1.15 && Math.abs(tmp.y) < 1.15;
       b.hidden = !vis; if (!vis) return;
       b.style.transform = `translate(${((tmp.x + 1) / 2 * W).toFixed(1)}px,${((1 - tmp.y) / 2 * H).toFixed(1)}px) translate(-50%,-100%)`;
-      if (id === "docs") {
+      if (id === "jefe") {
+        b.querySelector(".nm").textContent = "Santi · jefe"; b.style.setProperty("--c", "#F2A541");
+        b.querySelector("small").textContent = LIVE_ON ? "viendo la ronda en vivo" : "supervisando";
+      } else if (id === "docs") {
         b.querySelector(".nm").textContent = `Documentos · ${D.documentos.length}`; b.style.setProperty("--c", "#C9A35A");
         b.querySelector("small").textContent = "";
       } else {
@@ -281,12 +395,25 @@
     sel = id; open = true; $("drawer").hidden = false; drawDrawer(); $("dBody").scrollTop = 0; viewOffset();
     const s = ST[id]; if (!s) return;
     s.g.updateMatrixWorld();
-    const tgt = id === "docs" ? new THREE.Vector3(0, 1.1, 0).applyMatrix4(s.g.matrixWorld) : new THREE.Vector3(0, 1.45, -0.4).applyMatrix4(s.g.matrixWorld);
+    const tgt = id === "jefe" ? new THREE.Vector3(0, 1.45, -0.45).applyMatrix4(s.g.matrixWorld) : id === "docs" ? new THREE.Vector3(0, 1.1, 0).applyMatrix4(s.g.matrixWorld) : new THREE.Vector3(0, 1.45, -0.4).applyMatrix4(s.g.matrixWorld);
     const pos = id === "docs" ? tgt.clone().add(new THREE.Vector3(-1.5, 1.2, 3.6)) : tgt.clone().add(new THREE.Vector3(1.2, 0.9, 3.4));
     flyTo(pos, tgt);
     if (narrow3()) requestAnimationFrame(() => $("drawer").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" }));
   }
   function close3D() { open = false; $("drawer").hidden = true; viewOffset(); flyTo(HOME.pos.clone(), HOME.target.clone()); }
+  // Panel del jefe: resumen del día
+  const _drawDrawer = drawDrawer;
+  drawDrawer = function () {
+    if (sel !== "jefe") { _drawDrawer(); return; }
+    $("dDot").style.background = "#F2A541"; $("dName").textContent = "Santi"; $("dWhere").textContent = "Jefe · supervisa a los agentes";
+    $("dState").textContent = LIVE_ON ? "Ronda en vivo" : "Resumen del día"; $("dState").style.color = "#F2A541";
+    const top = (typeof ranking !== "undefined" ? ranking : []).slice(0, 5);
+    const esp = D.tiendas.filter(t => /esperando/.test(t.estado)).map(t => t.tienda);
+    $("dBody").innerHTML = `<div><h4>Qué conviene traer</h4><ul>${top.map(r => `<li>${esc(r.p.name)}: ${r.c.gain >= 0 ? "+" : ""}Bs ${fmt(r.c.gain)} por unidad (${fmt(r.c.margin * 100)} %)</li>`).join("")}</ul></div>
+      <div><h4>Agentes</h4><ul>${AG.map(a => `<li>${esc(a.name)}: ${esc(a.liveText || STATES[a.state].t)}</li>`).join("")}</ul></div>
+      <div><h4>Tiendas esperando respuesta</h4><p style="margin:0">${esp.length ? esc(esp.join(" · ")) : "Ninguna."}</p></div>
+      <div><h4>Pedidos</h4><p style="margin:0">${(D.pedidos || []).length ? (D.pedidos || []).map(p => esc(`${p.producto}: ${p.estado}`)).join(" · ") : "Sin pedidos cargados todavía."}</p></div>`;
+  };
   // la página y el teclado usan estas funciones
   focusAgent = focus3D; closeAgent = close3D;
   $("dClose").onclick = close3D; $("zreset").onclick = close3D;
@@ -335,6 +462,9 @@
       if (k >= 1) anim = null;
     }
     controls.update();
+    rgbMats.forEach((m, i) => m.emissive.setHSL(((t * 0.08) + i * 0.13) % 1, 0.9, 0.5));
+    if (!reduce && bossP.userData.head) bossP.userData.head.rotation.y = Math.sin(t * 0.4) * 0.5;
+    const sec = Math.floor(t); if (sec % 3 === 0 && sec !== paintBoss.last) { paintBoss.last = sec; paintBoss(); }
     leds.forEach((l, i) => { l.material.color.setHex(((Math.floor(t * 2.5) + i) % 3) ? 0x4fd1e8 : 0x1f4a5a); });
     AG.forEach(a => {
       const s = ST[a.id]; if (!s) return;
