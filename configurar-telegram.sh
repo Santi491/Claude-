@@ -2,8 +2,16 @@
 # Guarda el token del bot de Telegram y tu chat_id en ~/.telegram (fuera del repo, solo legible por tu usuario).
 # Antes: crea el bot con @BotFather (/newbot), ábrelo en Telegram, toca Iniciar y escríbele "hola".
 cd "$(dirname "$0")"
-print -n "Token que te dio @BotFather (no se muestra; pégalo una sola vez): "; read -s token; print
-token="${token// /}"
+token=""
+while [[ -z "$token" ]]; do
+  print -n "Token que te dio @BotFather (no se ve al pegarlo: pega con Cmd+V y después Enter): "; read -s token; print
+  token="${token// /}"
+  [[ -z "$token" ]] && print "No llegó nada, prueba de nuevo."
+done
+if [[ "$token" != *:* ]]; then
+  print "Eso no parece un token (tiene que ser como 123456789:AAH...). Vuelve a correr el script."; exit 1
+fi
+print "Token recibido (${#token} caracteres)."
 chat=$(TELEGRAM_BOT_TOKEN="$token" python3 notificar.py --buscar-chat | head -1 | cut -f1)
 if [[ -z "$chat" ]]; then
   print "No encontré tu chat: abre tu bot en Telegram, toca Iniciar, escríbele \"hola\" y vuelve a correr este script."
