@@ -36,7 +36,7 @@ if [ ! -f "$HOME/.cargo-bot" ]; then
   echo "Ahora se abre el inicio de sesión de Claude: abre el link que aparece en tu celular, entra con tu cuenta Pro y pega el código."
   "$CLAUDE_BIN" setup-token
   read -r -p "Pega aquí el token que te mostró (empieza con sk-ant-oat): " oat
-  printf 'CLAUDE_CODE_OAUTH_TOKEN=%s\nCLAUDE_MODELO=haiku\nMAX_PREGUNTAS_DIA=15\n' "$oat" > "$HOME/.cargo-bot"
+  printf 'CLAUDE_CODE_OAUTH_TOKEN=%s\nCLAUDE_MODELO=haiku\nMAX_PREGUNTAS_DIA=20\nAVISOS=08:20,13:30\n' "$oat" > "$HOME/.cargo-bot"
   chmod 600 "$HOME/.cargo-bot"
 fi
 
