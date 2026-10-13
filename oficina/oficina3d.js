@@ -192,30 +192,93 @@
   // Pasillo marcado en el piso
   box(RW - 2, 0.01, 0.05, M(0xd9dde2, { roughness: .5 }), 0, 0.005, 0.6);
 
-  // Zona de almacén (adelante a la derecha): racks bajos con cajas de componentes
-  const WZ = new THREE.Group(); WZ.position.set(10.4, 0, 5.8); scene.add(WZ);
+  // Zona de almacén (adelante a la derecha): racks con cajas como llegan de verdad
+  // (cartón con cinta de eBay, USPS Priority Mail, cartón con etiqueta). Cada pedido real de pedidos.csv suma su caja al pallet de llegadas.
+  const WZ = new THREE.Group(); WZ.position.set(10.3, 0, 5.7); scene.add(WZ);
   const lineM = M(0xd9dde2, { roughness: .5 });
-  [[0, -3.2, 8.2, 0.05], [0, 3.2, 8.2, 0.05], [-4.1, 0, 0.05, 6.4], [4.1, 0, 0.05, 6.4]].forEach(([x, z, w, d]) => box(w, 0.01, d, lineM, x, 0.006, z, WZ));
-  const kraft = M(0xb08d5e, { roughness: .9 }), whiteBox = M(0xe6e6e3, { roughness: .8 }), blackSteel = M(0x18191b, { metalness: .6, roughness: .45 });
-  function shelf(x, z, rotY) {
-    const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = rotY || 0; WZ.add(g);
-    [[-1.9, -.4], [1.9, -.4], [-1.9, .4], [1.9, .4]].forEach(([sx, sz]) => box(0.06, 2.1, 0.06, blackSteel, sx, 1.05, sz, g));
-    [0.12, 0.8, 1.48].forEach((y, k) => {
-      box(3.9, 0.04, 0.86, blackSteel, 0, y, 0, g);
-      box(3.9, 0.012, 0.04, ledM, 0, y - 0.03, 0.42, g).castShadow = false;
-      for (let i = 0; i < 6; i++) { const big = (i + k) % 3 === 0, bw = big ? 0.55 : 0.42, bh = big ? 0.45 : 0.32; box(bw, bh, 0.5, (i + k) % 4 === 1 ? whiteBox : kraft, -1.55 + i * 0.62, y + 0.02 + bh / 2, 0, g); }
+  [[0, -3.6, 8.9, 0.05], [0, 4.1, 8.9, 0.05], [-4.45, 0.25, 0.05, 7.7], [4.45, 0.25, 0.05, 7.7]].forEach(([x, z, w, d]) => box(w, 0.01, d, lineM, x, 0.006, z, WZ));
+  const blackSteel = M(0x18191b, { metalness: .6, roughness: .45 });
+  const KR = "#b58e5c";
+  function kraftBase(g, w, h) { g.fillStyle = KR; g.fillRect(0, 0, w, h); g.globalAlpha = .08; for (let i = 0; i < 260; i++) { g.fillStyle = rnd() < .5 ? "#6b4a24" : "#e8c995"; g.fillRect(rnd() * w, rnd() * h, 1 + rnd() * 30, 1); } g.globalAlpha = 1; }
+  function ebayTape(g, w, h, vertical) {
+    g.save(); if (vertical) { g.translate(w / 2, 0); g.rotate(Math.PI / 2); g.translate(0, -w / 2); }
+    const L = vertical ? h : w, T = 46, y0 = (vertical ? w : h) / 2 - T / 2;
+    g.fillStyle = "#f4f4f2"; g.fillRect(0, y0, L, T);
+    g.font = "800 34px Archivo, Arial, sans-serif"; g.textBaseline = "middle";
+    for (let x = 10; x < L; x += 110) [["e", "#e53238"], ["b", "#0064d2"], ["a", "#f5af02"], ["y", "#86b817"]].forEach(([c, col], i) => { g.fillStyle = col; g.fillText(c, x + i * 18, y0 + T / 2 + 1); });
+    g.restore();
+  }
+  function plainTape(g, w, h) { g.fillStyle = "rgba(205,170,120,.75)"; g.fillRect(0, h / 2 - 22, w, 44); }
+  function shipLabel(g, x, y, kind) {
+    g.fillStyle = "#fbfbf9"; g.fillRect(x, y, 150, 104); g.strokeStyle = "#222"; g.lineWidth = 2; g.strokeRect(x, y, 150, 104);
+    g.fillStyle = "#111"; g.font = "800 22px Arial, sans-serif"; g.fillText(kind === "usps" ? "P" : "G", x + 8, y + 26);
+    g.font = "700 11px Arial, sans-serif"; g.fillText(kind === "usps" ? "USPS PRIORITY MAIL" : "USPS GROUND ADVANTAGE", x + 34, y + 20);
+    for (let i = 0; i < 46; i++) { const bw = 1 + (i * 7 % 3); g.fillRect(x + 10 + i * 2.8, y + 40, bw, 40); }
+    g.font = "600 9px 'IBM Plex Mono', monospace"; g.fillText("TRACKING #", x + 10, y + 96);
+  }
+  const boxFace = (draw) => canvasTex(256, 256, draw);
+  const TEXB = {
+    kraft: boxFace((g, w, h) => kraftBase(g, w, h)),
+    kraftTop: boxFace((g, w, h) => { kraftBase(g, w, h); plainTape(g, w, h); }),
+    kraftFront: boxFace((g, w, h) => { kraftBase(g, w, h); shipLabel(g, 60, 90, "ground"); }),
+    ebayTop: boxFace((g, w, h) => { kraftBase(g, w, h); ebayTape(g, w, h); }),
+    ebayFront: boxFace((g, w, h) => { kraftBase(g, w, h); ebayTape(g, w, h, true); shipLabel(g, 6, 140, "ground"); }),
+    uspsSide: boxFace((g, w, h) => { g.fillStyle = "#f6f7f8"; g.fillRect(0, 0, w, h); g.fillStyle = "#004b87"; g.fillRect(0, 0, w, 54); g.fillStyle = "#da291c"; g.fillRect(0, 54, w, 8); }),
+    uspsFront: boxFace((g, w, h) => {
+      g.fillStyle = "#f6f7f8"; g.fillRect(0, 0, w, h); g.fillStyle = "#004b87"; g.fillRect(0, 0, w, 70); g.fillStyle = "#da291c"; g.fillRect(0, 70, w, 9);
+      g.fillStyle = "#fff"; g.font = "900 30px Arial, sans-serif"; g.fillText("PRIORITY", 14, 34); g.font = "900 24px Arial, sans-serif"; g.fillText("MAIL", 14, 60);
+      g.fillStyle = "#004b87"; g.font = "800 20px Arial, sans-serif"; g.fillText("USPS.COM", 14, 108); shipLabel(g, 92, 136, "usps");
+    }),
+    uspsTop: boxFace((g, w, h) => { g.fillStyle = "#f6f7f8"; g.fillRect(0, 0, w, h); g.fillStyle = "#004b87"; for (let x = -h; x < w; x += 60) { g.save(); g.translate(x, 0); g.rotate(.5); g.fillRect(0, 0, 14, h * 2); g.restore(); } }),
+  };
+  const bm = t => M(0xffffff, { map: TEXB[t], roughness: .85 });
+  const BOXMAT = {
+    kraft: [bm("kraft"), bm("kraft"), bm("kraftTop"), bm("kraft"), bm("kraftFront"), bm("kraft")],
+    ebay: [bm("kraft"), bm("kraft"), bm("ebayTop"), bm("kraft"), bm("ebayFront"), bm("kraft")],
+    usps: [bm("uspsSide"), bm("uspsSide"), bm("uspsTop"), bm("uspsSide"), bm("uspsFront"), bm("uspsSide")],
+  };
+  function parcel(kind, w, h, d, x, y, z, parent) {
+    const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), BOXMAT[kind]); m.position.set(x, y, z); m.castShadow = true; m.receiveShadow = true; parent.add(m); return m;
+  }
+  const KINDS = ["ebay", "usps", "kraft", "ebay", "usps", "ebay", "kraft"];
+  function shelf(x, z) {
+    const g = new THREE.Group(); g.position.set(x, 0, z); WZ.add(g);
+    [[-2.1, -.42], [2.1, -.42], [-2.1, .42], [2.1, .42]].forEach(([sx, sz]) => box(0.06, 2.6, 0.06, blackSteel, sx, 1.3, sz, g));
+    [0.12, 0.85, 1.58, 2.31].forEach((y, k) => {
+      box(4.25, 0.04, 0.9, blackSteel, 0, y, 0, g);
+      box(4.2, 0.012, 0.04, ledM, 0, y - 0.03, 0.44, g).castShadow = false;
+      if (k === 3) return;
+      let cx = -2.0;
+      while (cx < 1.75) {
+        const kind = KINDS[Math.floor(rnd() * KINDS.length)];
+        const bw = kind === "usps" ? 0.42 + rnd() * .12 : 0.45 + rnd() * .2, bh = kind === "usps" ? 0.3 + rnd() * .1 : 0.3 + rnd() * .22;
+        if (cx + bw > 2.0) break;
+        parcel(kind, bw, bh, 0.5, cx + bw / 2, y + 0.02 + bh / 2, (rnd() - .5) * 0.06, g).rotation.y = (rnd() - .5) * 0.06;
+        cx += bw + 0.05;
+      }
+      // cajas chicas encima del último estante
+      if (k === 2) for (let i = 0; i < 4; i++) parcel(i % 2 ? "usps" : "ebay", 0.32, 0.18, 0.28, -1.6 + i * 1.05, 2.43, 0, g);
     });
     return g;
   }
-  shelf(0, -2.4); shelf(0, 0.2);
-  const pallet = new THREE.Group(); pallet.position.set(-2.2, 0, 2.3); WZ.add(pallet);
-  box(1.2, 0.14, 1.0, M(0x8a7a5e, { roughness: .9 }), 0, 0.07, 0, pallet);
-  for (let r = 0; r < 3; r++) for (let c = 0; c < 2; c++) for (let d = 0; d < 2; d++) box(0.52, 0.36, 0.44, (r + c + d) % 3 ? kraft : whiteBox, -0.28 + c * 0.56, 0.33 + r * 0.38, -0.23 + d * 0.47, pallet);
-  const wrap = new THREE.Mesh(new THREE.BoxGeometry(1.18, 1.18, 0.98), new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: .12, roughness: .1, depthWrite: false }));
-  wrap.position.set(0, 0.74, 0); pallet.add(wrap);
+  shelf(0.6, -2.6); shelf(0.6, -0.2); shelf(0.6, 2.2);
+  // pallet de llegadas: una caja por cada pedido real (los de prueba no se mezclan)
+  const reales = (D.pedidos || []).filter(p => !p.prueba);
+  const kindOf = p => /usps/i.test(p.courier || "") && !/ebay/i.test(p.tienda || "") ? "usps" : /ebay/i.test(p.tienda || "") ? "ebay" : /usps/i.test(p.courier || "") ? "usps" : "kraft";
+  [[-3.3, -1.4], [-3.3, 1.6]].forEach(([px, pz], pi) => {
+    const pallet = new THREE.Group(); pallet.position.set(px, 0, pz); WZ.add(pallet);
+    box(1.2, 0.14, 1.0, M(0x8a7a5e, { roughness: .9 }), 0, 0.07, 0, pallet);
+    for (let r = 0; r < 3; r++) for (let c = 0; c < 2; c++) for (let d = 0; d < 2; d++) {
+      const i = pi * 12 + r * 4 + c * 2 + d, p = reales[i];
+      const kind = p ? kindOf(p) : KINDS[(i * 5 + r) % KINDS.length];
+      parcel(kind, 0.52, 0.36, 0.44, -0.28 + c * 0.56, 0.33 + r * 0.38, -0.23 + d * 0.47, pallet);
+    }
+    const wrap = new THREE.Mesh(new THREE.BoxGeometry(1.18, 1.18, 0.98), new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: .12, roughness: .1, depthWrite: false }));
+    wrap.position.set(0, 0.74, 0); pallet.add(wrap);
+  });
   const zoneSign = canvasTex(512, 128, (g, w, h) => { g.fillStyle = "#1c1e21"; g.fillRect(0, 0, w, h); g.fillStyle = "#E9EBEE"; g.font = "700 52px 'IBM Plex Mono', monospace"; g.textAlign = "center"; g.fillText("ALMACÉN · A1", w / 2, 82); });
-  const zs = new THREE.Mesh(new THREE.PlaneGeometry(1.8, 0.45), new THREE.MeshBasicMaterial({ map: zoneSign })); zs.position.set(0, 2.45, -2.4); WZ.add(zs);
-  box(0.04, 0.5, 0.04, blackSteel, -0.7, 2.85, -2.4, WZ); box(0.04, 0.5, 0.04, blackSteel, 0.7, 2.85, -2.4, WZ);
+  const zs = new THREE.Mesh(new THREE.PlaneGeometry(1.8, 0.45), new THREE.MeshBasicMaterial({ map: zoneSign })); zs.position.set(0.6, 3.05, -2.6); WZ.add(zs);
+  box(0.04, 0.4, 0.04, blackSteel, -0.1, 3.4, -2.6, WZ); box(0.04, 0.4, 0.04, blackSteel, 1.3, 3.4, -2.6, WZ);
 
   /* ---------- Puestos de trabajo ---------- */
   const STATION = { nube: [-9, -4.6], ebay: [-2.5, -4.6], wa: [4, -4.6], pedidos: [10.5, -4.6], mkt: [-6, 3.2], ana: [0.8, 3.2] };
@@ -333,55 +396,67 @@
   box(0.6, 0.02, 2.6, ledM, -RW / 2 + 0.36, 0.88, 0.6).castShadow = false;
   [-0.3, 0.6, 1.5].forEach(z => { cyl(0.2, 0.2, 0.06, M(0x15161a), -13.8, 0.75, z, scene, 20); cyl(0.03, 0.03, 0.72, M(0x15161a, { metalness: .6 }), -13.8, 0.38, z, scene, 8); cyl(0.2, 0.2, 0.02, M(0x15161a, { metalness: .6 }), -13.8, 0.01, z, scene, 20); });
 
-  /* ---------- Exhibición: auto con postes y cordón (adelante al centro) ---------- */
-  const car = new THREE.Group(); car.position.set(-2.4, 0, 8.0); car.rotation.y = -0.25; scene.add(car);
-  const paint = M(0x1a0f24, { metalness: .8, roughness: .28 }), carb = M(0x0f0f12, { metalness: .4, roughness: .35 }), yel = M(0xf2c230, { roughness: .4 });
-  const prof = new THREE.Shape([[-2.2, 0.26], [-2.3, 0.6], [-2.0, 0.72], [-1.0, 0.78], [0.4, 0.8], [1.3, 0.7], [2.1, 0.5], [2.3, 0.34], [2.22, 0.26]].map(([x, y]) => new THREE.Vector2(x, y)));
-  const bodyG = new THREE.ExtrudeGeometry(prof, { depth: 1.84, bevelEnabled: true, bevelThickness: 0.1, bevelSize: 0.08, bevelSegments: 4 });
-  bodyG.translate(0, 0, -0.93);
-  const body = new THREE.Mesh(bodyG, paint); body.castShadow = true; body.receiveShadow = true; car.add(body);
-  const cab = new THREE.Shape([[-1.05, 0.74], [-0.45, 1.1], [0.3, 1.13], [1.15, 0.74]].map(([x, y]) => new THREE.Vector2(x, y)));
-  const cabinG = new THREE.ExtrudeGeometry(cab, { depth: 1.16, bevelEnabled: true, bevelThickness: 0.1, bevelSize: 0.08, bevelSegments: 4 }); cabinG.translate(0, 0, -0.58);
-  car.add(new THREE.Mesh(cabinG, M(0x08090b, { metalness: .9, roughness: .08 })));
-  [-0.98, 0.98].forEach(z => { box(3.4, 0.05, 0.02, yel, 0.1, 0.36, z, car); });
-  box(1.0, 0.03, 0.05, yel, 1.7, 0.81, 0, car);
-  box(0.5, 0.05, 1.9, carb, -2.05, 1.15, 0, car); [-0.6, 0.6].forEach(z => box(0.05, 0.3, 0.05, carb, -2.0, 0.98, z, car));
-  [[2.12, 0.62, 0.62], [2.12, 0.62, -0.62]].forEach(([x, y, z]) => { const l = box(0.06, 0.05, 0.36, ledM, x, y, z, car); l.castShadow = false; });
-  box(0.04, 0.04, 1.6, new THREE.MeshBasicMaterial({ color: 0xff2a3a, toneMapped: false }), -2.3, 0.62, 0, car);
-  [[1.35, 0.98], [1.35, -0.98], [-1.35, 0.98], [-1.35, -0.98]].forEach(([x, z]) => {
-    const t = cyl(0.37, 0.37, 0.3, M(0x0d0d0d, { roughness: .8 }), x, 0.37, z, car, 28); t.rotation.x = Math.PI / 2;
-    const r = cyl(0.27, 0.27, 0.31, M(0xb9bec4, { metalness: .9, roughness: .25 }), x, 0.37, z + Math.sign(z) * 0.01, car, 10); r.rotation.x = Math.PI / 2;
-    const c = cyl(0.12, 0.12, 0.32, yel, x, 0.37, z + Math.sign(z) * 0.02, car, 16); c.rotation.x = Math.PI / 2;
-  });
-  const spotC = new THREE.SpotLight(0xffffff, 0.9, 12, 0.45, 0.5, 1.5); spotC.position.set(-2.4, 6.5, 8.0); spotC.target = car; scene.add(spotC);
-  // postes con cordón negro alrededor del auto
-  const posts = [[-5.4, 6.0], [-2.4, 5.6], [0.6, 6.0], [1.2, 8.4], [0.6, 10.6 - 0.9], [-5.4, 9.7], [-6.0, 7.9]];
-  const postM = M(0x101113, { metalness: .7, roughness: .3 });
-  posts.forEach(([x, z]) => { cyl(0.2, 0.2, 0.04, postM, x, 0.02, z, scene, 20); cyl(0.03, 0.03, 0.95, postM, x, 0.5, z, scene, 8); const b = new THREE.Mesh(new THREE.SphereGeometry(0.06, 14, 10), postM); b.position.set(x, 1.0, z); scene.add(b); });
-  posts.forEach(([x, z], i) => {
-    const [x2, z2] = posts[(i + 1) % posts.length];
-    const curve = new THREE.QuadraticBezierCurve3(new THREE.Vector3(x, 0.9, z), new THREE.Vector3((x + x2) / 2, 0.6, (z + z2) / 2), new THREE.Vector3(x2, 0.9, z2));
-    const rope = new THREE.Mesh(new THREE.TubeGeometry(curve, 16, 0.02, 6, false), M(0x141416, { roughness: .9 })); scene.add(rope);
-  });
-
-  /* ---------- Gym compacto (entre el auto y el almacén) ---------- */
-  const gym = new THREE.Group(); gym.position.set(4.6, 0, 7.6); scene.add(gym);
-  const gmat = new THREE.Mesh(new THREE.BoxGeometry(2.8, 0.03, 4.2), M(0x1b1d20, { roughness: 1 })); gmat.position.y = 0.015; gmat.receiveShadow = true; gym.add(gmat);
-  const steel = M(0x9aa3ab, { metalness: .85, roughness: .3 }), black = M(0x141414, { roughness: .6 });
-  // saco de boxeo colgado de un pórtico negro
-  [-1.25, 1.25].forEach(dx => box(0.1, 3.0, 0.1, black, dx, 1.5, -1.3, gym)); box(2.6, 0.1, 0.1, black, 0, 3.0, -1.3, gym);
-  cyl(0.006, 0.006, 0.5, M(0x777777), 0, 2.72, -1.3, gym, 4);
-  cyl(0.24, 0.24, 1.2, M(0xe8e6e1, { roughness: .7 }), 0, 1.85, -1.3, gym, 24);
-  // rack de mancuernas y banco
-  box(0.5, 0.06, 1.8, black, 1.0, 0.45, 0.9, gym); box(0.5, 0.06, 1.8, black, 1.0, 0.8, 0.9, gym);
-  [0.05, 1.75].forEach(dz => box(0.5, 0.85, 0.06, black, 1.0, 0.42, dz, gym));
-  for (let row = 0; row < 2; row++) for (let k = 0; k < 4; k++) {
-    const z = 0.3 + k * 0.42, y = 0.55 + row * 0.35, r = 0.06 + k * 0.012;
-    const hd = cyl(0.022, 0.022, 0.3, steel, 1.0, y, z, gym, 8); hd.rotation.z = Math.PI / 2;
-    [-0.14, 0.14].forEach(dx => { const w = cyl(r, r, 0.06, black, 1.0 + dx, y, z, gym, 12); w.rotation.z = Math.PI / 2; });
+  /* ---------- Gym (adelante al centro) ---------- */
+  const gym = new THREE.Group(); gym.position.set(-1.6, 0, 7.85); scene.add(gym);
+  const gmat = new THREE.Mesh(new THREE.BoxGeometry(12.6, 0.035, 4.0), M(0x1b1d20, { roughness: 1 })); gmat.position.y = 0.018; gmat.receiveShadow = true; gym.add(gmat);
+  [[0, -2.0, 12.6, .04], [0, 2.0, 12.6, .04], [-6.3, 0, .04, 4.0], [6.3, 0, .04, 4.0]].forEach(([x, z, w, d]) => { const e = box(w, 0.012, d, ledM, x, 0.04, z, gym); e.castShadow = false; });
+  const steel = M(0xa7aeb5, { metalness: .85, roughness: .28 }), black = M(0x141414, { roughness: .6 }), rubber = M(0x101010, { roughness: .9 }), pad = M(0x2b2d31, { roughness: .6 });
+  const hcyl = (r, len, mat, x, y, z, axis) => { const c = cyl(r, r, len, mat, x, y, z, gym, 20); if (axis === "x") c.rotation.z = Math.PI / 2; else c.rotation.x = Math.PI / 2; return c; };
+  // jaula de sentadillas (power rack) sobre plataforma de madera, con barra cargada
+  const rx = -4.9;
+  box(2.4, 0.06, 2.4, M(0x8b6a48, { roughness: .7 }), rx, 0.05, -0.3, gym);
+  [[-0.65, -1.0], [0.65, -1.0], [-0.65, 0.3], [0.65, 0.3]].forEach(([dx, dz]) => box(0.08, 2.35, 0.08, black, rx + dx, 1.2, dz, gym));
+  [-1.0, 0.3].forEach(dz => box(1.38, 0.08, 0.08, black, rx, 2.36, dz, gym));
+  [-0.65, 0.65].forEach(dx => box(0.08, 0.08, 1.38, black, rx + dx, 2.36, -0.35, gym));
+  hcyl(0.018, 2.2, steel, rx, 1.35, 0.3, "x");
+  [-0.85, -0.95, 0.85, 0.95].forEach((dx, i) => hcyl(i % 2 ? 0.17 : 0.23, 0.05, rubber, rx + dx, 1.35, 0.3, "x"));
+  // banco de press plano frente a la jaula
+  box(0.32, 0.08, 1.2, pad, rx, 0.45, 1.3, gym); box(0.06, 0.4, 0.06, steel, rx, 0.22, 0.85, gym); box(0.06, 0.4, 0.06, steel, rx, 0.22, 1.75, gym);
+  // árbol de discos
+  const tx = -3.0;
+  cyl(0.3, 0.3, 0.04, black, tx, 0.04, -1.3, gym, 20); cyl(0.03, 0.03, 1.1, black, tx, 0.58, -1.3, gym, 8);
+  [[0.35, .23], [0.6, .2], [0.85, .16]].forEach(([y, r]) => { [-1, 1].forEach(s => { hcyl(0.015, 0.25, steel, tx + s * 0.12, y, -1.3, "x"); hcyl(r, 0.06, rubber, tx + s * 0.22, y, -1.3, "x"); }); });
+  // rack de mancuernas (2 niveles) con pares
+  const dx0 = -1.2;
+  box(2.6, 0.06, 0.55, black, dx0, 0.45, -1.55, gym); box(2.6, 0.06, 0.55, black, dx0, 0.85, -1.55, gym);
+  [-1.25, 1.25].forEach(e => box(0.06, 0.88, 0.55, black, dx0 + e, 0.44, -1.55, gym));
+  for (let row = 0; row < 2; row++) for (let k = 0; k < 5; k++) {
+    const x = dx0 - 1.0 + k * 0.5, y = 0.55 + row * 0.4, r = 0.055 + k * 0.012 + row * 0.01;
+    hcyl(0.02, 0.3, steel, x, y, -1.55, "z");
+    [-0.14, 0.14].forEach(dz => hcyl(r, 0.07, black, x, y, -1.55 + dz, "z"));
   }
-  box(0.38, 0.1, 1.3, M(0x2b2d31, { roughness: .6 }), -0.5, 0.48, 0.9, gym);
-  box(0.06, 0.44, 0.06, steel, -0.5, 0.22, 0.4, gym); box(0.06, 0.44, 0.06, steel, -0.5, 0.22, 1.4, gym);
+  // banco ajustable y pesas rusas
+  const ab = box(0.32, 0.08, 1.1, pad, -1.2, 0.5, 0.2, gym); ab.rotation.x = -0.25;
+  box(0.06, 0.42, 0.06, steel, -1.2, 0.22, -0.2, gym); box(0.06, 0.32, 0.06, steel, -1.2, 0.18, 0.6, gym);
+  [0.14, 0.17, 0.2].forEach((r, i) => { const x = 0.5 + i * 0.45; const b = new THREE.Mesh(new THREE.SphereGeometry(r, 18, 14), black); b.position.set(x, r, -1.6); b.castShadow = true; gym.add(b); const h = new THREE.Mesh(new THREE.TorusGeometry(r * 0.6, r * 0.13, 8, 16, Math.PI), black); h.position.set(x, r * 1.8, -1.6); gym.add(h); });
+  // cinta de correr con pantalla
+  const tm = new THREE.Group(); tm.position.set(1.4, 0, 0.6); gym.add(tm);
+  box(0.85, 0.2, 2.0, M(0x1d1f22, { metalness: .4, roughness: .5 }), 0, 0.12, 0, tm); box(0.62, 0.02, 1.8, rubber, 0, 0.23, 0.05, tm);
+  [-0.4, 0.4].forEach(dx => { const u = box(0.06, 1.25, 0.08, M(0x2a2c30, { metalness: .5 }), dx, 0.75, -0.85, tm); u.rotation.x = 0.18; });
+  box(0.8, 0.06, 0.2, M(0x2a2c30, { metalness: .5 }), 0, 1.32, -0.95, tm);
+  const tmScr = new THREE.Mesh(new THREE.PlaneGeometry(0.42, 0.26), new THREE.MeshBasicMaterial({ color: 0x3d7fbf, toneMapped: false })); tmScr.position.set(0, 1.48, -0.98); tmScr.rotation.x = -0.35; tm.add(tmScr);
+  box(0.46, 0.3, 0.04, M(0x111214), 0, 1.48, -1.0, tm).rotation.x = -0.35;
+  // bicicleta fija
+  const bk = new THREE.Group(); bk.position.set(2.9, 0, 0.6); gym.add(bk);
+  box(0.12, 0.06, 1.1, black, 0, 0.04, 0, bk); box(0.6, 0.05, 0.08, black, 0, 0.04, -0.5, bk); box(0.6, 0.05, 0.08, black, 0, 0.04, 0.5, bk);
+  const fw = hcyl(0.26, 0.08, M(0x2a2c30, { metalness: .6 }), 0, 0.42, -0.35, "x"); fw.parent.remove(fw); bk.add(fw);
+  const stem = box(0.08, 0.8, 0.08, black, 0, 0.55, 0.2, bk); stem.rotation.x = -0.25;
+  box(0.26, 0.06, 0.32, pad, 0, 0.98, 0.32, bk);
+  const hb = box(0.08, 0.7, 0.08, black, 0, 0.75, -0.35, bk); hb.rotation.x = 0.2;
+  box(0.5, 0.05, 0.06, black, 0, 1.12, -0.45, bk);
+  // saco de boxeo en su pórtico
+  const sx = 4.9;
+  [-0.8, 0.8].forEach(d => box(0.1, 3.0, 0.1, black, sx + d, 1.5, -0.6, gym)); box(1.7, 0.1, 0.1, black, sx, 3.0, -0.6, gym);
+  cyl(0.006, 0.006, 0.5, M(0x777777), sx, 2.72, -0.6, gym, 4);
+  cyl(0.24, 0.24, 1.2, M(0xe8e6e1, { roughness: .7 }), sx, 1.85, -0.6, gym, 24);
+  // colchoneta, balones medicinales y botella
+  box(0.6, 0.012, 1.7, M(0x5d6b78, { roughness: 1 }), 3.9, 0.04, 1.2, gym);
+  [[5.6, 1.2, 0.16], [5.6, 1.6, 0.14]].forEach(([x, z, r]) => { const b = new THREE.Mesh(new THREE.SphereGeometry(r, 18, 14), M(0x2c2f33, { roughness: .8 })); b.position.set(x, r + 0.03, z); b.castShadow = true; gym.add(b); });
+  cyl(0.035, 0.035, 0.22, M(0xd6dde3, { metalness: .6, roughness: .25 }), -4.3, 0.56, 1.75, gym, 12);
+  // letrero GYM colgado de la viga
+  const gymSign = canvasTex(512, 160, (g, w, h) => { g.fillStyle = "#1c1e21"; g.fillRect(0, 0, w, h); g.fillStyle = "#E9EBEE"; g.font = "900 96px Archivo, sans-serif"; g.textAlign = "center"; g.fillText("GYM", w / 2, 116); });
+  const gs = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.5), new THREE.MeshBasicMaterial({ map: gymSign, side: THREE.DoubleSide })); gs.position.set(0, 4.1, -0.4); gym.add(gs);
+  [-0.7, 0.7].forEach(d => cyl(0.005, 0.005, WH - 4.35, M(0x111111), d, 4.35 + (WH - 4.35) / 2, -0.4, gym, 4));
 
   /* ---------- Decoración del jefe: escritorio con su avatar, rincón gym ---------- */
   const rgbMats = [];
