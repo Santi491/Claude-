@@ -756,7 +756,7 @@
       return sh;
     });
     const paperM = M(0xf3f1ea, { roughness: .9 });
-    const carry = new THREE.Group(); carry.position.set(0, 1.02, -0.3); body.add(carry);   // hojas en las manos
+    const carry = new THREE.Group(); carry.position.set(0, 1.07, -0.47); body.add(carry);   // hojas en las manos
     const deskPile = new THREE.Group(); deskPile.position.set(-1.12, 0.83, 0.32); s.g.add(deskPile);  // hojas en el escritorio
     const sheet = (parent, k) => { const m = box(0.3, 0.012, 0.4, paperM, (k % 2) * 0.012, 0.008 + k * 0.014, 0, parent); m.rotation.y = (k % 3 - 1) * 0.08; m.castShadow = false; return m; };
 
@@ -842,7 +842,7 @@
         }
         if (p.pausa != null) {   // en el puesto de un agente: estira el brazo y recoge una hoja
           p.t = (p.t || 0) + dt; const k = Math.min(1, p.t / p.pausa);
-          arms[1].rotation.x = -Math.sin(k * Math.PI) * 1.1; legs.forEach(l => l.rotation.x = 0);
+          arms[1].rotation.x = Math.sin(k * Math.PI) * 1.1; arms[1].rotation.z = 0; legs.forEach(l => l.rotation.x = 0);   // estira el brazo hacia adelante
           const [ax, az] = STATION[p.id]; w.rotation.y = Math.atan2(ax - w.position.x, az + 0.92 - w.position.z) + Math.PI;
           if (p.t >= p.pausa) { sheet(carry, recogidas++); plan.shift(); }
           return;
@@ -853,8 +853,11 @@
         w.rotation.y = Math.atan2(dx, dz) + Math.PI;
         const ph = t * 7.5;
         legs[0].rotation.x = Math.sin(ph) * 0.5; legs[1].rotation.x = -Math.sin(ph) * 0.5;
-        arms[0].rotation.x = -Math.sin(ph) * 0.4; arms[1].rotation.x = recogidas ? -0.95 : Math.sin(ph) * 0.4;
-        arms[0].rotation.x = recogidas ? -0.95 : arms[0].rotation.x;
+        // con hojas: los dos brazos hacia adelante y hacia el centro, sosteniéndolas frente al cuerpo
+        arms.forEach((arm, i) => {
+          arm.rotation.x = recogidas ? 0.95 : (i ? 1 : -1) * Math.sin(ph) * 0.4;
+          arm.rotation.z = recogidas ? (i ? -0.32 : 0.32) : 0;
+        });
         body.position.y = Math.abs(Math.sin(ph)) * 0.04;
         return;
       }
