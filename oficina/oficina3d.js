@@ -147,14 +147,25 @@
   const slab = box(9, 3.8, 0.12, M(0xffffff, { map: marbleN, roughness: 0.18, metalness: 0.08 }), 0, 2.45, -RD / 2 + 0.08);
   slab.castShadow = false;
   box(9.1, 0.04, 0.16, ledM, 0, 4.37, -RD / 2 + 0.1).castShadow = false;
-  const logo = canvasTex(1024, 256, (g, w, h) => {
-    g.clearRect(0, 0, w, h); g.textAlign = "center";
-    g.shadowColor = "rgba(255,255,255,.55)"; g.shadowBlur = 18;
-    g.fillStyle = "#EDEEF0"; g.font = "800 112px Archivo, system-ui, sans-serif"; g.fillText("EE.UU. → CBBA", w / 2, 130);
-    g.shadowBlur = 0; g.fillStyle = "#A9AFB6"; g.font = "500 34px 'IBM Plex Mono', monospace"; g.fillText("IMPORTACIÓN DE COMPONENTES", w / 2, 200);
-  });
-  const lg = new THREE.Mesh(new THREE.PlaneGeometry(6.4, 1.6), new THREE.MeshBasicMaterial({ map: logo, transparent: true, toneMapped: false }));
-  lg.position.set(0, 3.1, -RD / 2 + 0.16); scene.add(lg);
+  // texto con letras espaciadas, centrado
+  function spaced(g, text, x, y, sp) {
+    const ws = [...text].map(ch => g.measureText(ch).width), tot = ws.reduce((a, b) => a + b, 0) + sp * (ws.length - 1);
+    let cx = x - tot / 2; g.textAlign = "left"; [...text].forEach((ch, i) => { g.fillText(ch, cx, y); cx += ws[i] + sp; });
+  }
+  // logo de Cargo Brothers (monolínea) con brillo de LED, nombre y eslogan
+  function brandArt(g, w, h, markSize, top, glow) {
+    const mk = typeof cbCanvas === "function" ? cbCanvas(markSize, "#EDEEF0") : null;
+    if (mk) { g.save(); g.shadowColor = "rgba(255,255,255,.6)"; g.shadowBlur = glow; g.drawImage(mk, (w - markSize) / 2, top); g.restore(); }
+    g.fillStyle = "#EDEEF0"; g.font = `500 ${Math.round(markSize * 0.15)}px Archivo, system-ui, sans-serif`;
+    spaced(g, "CARGO BROTHERS", w / 2, top + markSize + markSize * 0.3, markSize * 0.06);
+    g.fillStyle = "#A9AFB6"; g.font = `500 ${Math.round(markSize * 0.062)}px 'IBM Plex Mono', monospace`;
+    spaced(g, "IMPORTACIÓN DE COMPONENTES", w / 2, top + markSize + markSize * 0.47, markSize * 0.03);
+  }
+  const logo = canvasTex(1024, 768, (g, w, h) => { g.clearRect(0, 0, w, h); brandArt(g, w, h, 360, 70, 22); });
+  const lg = new THREE.Mesh(new THREE.PlaneGeometry(4.6, 3.45), new THREE.MeshBasicMaterial({ map: logo, transparent: true, toneMapped: false }));
+  lg.position.set(0, 2.5, -RD / 2 + 0.16); scene.add(lg);
+  // cuando cargan las fuentes de la página, se vuelve a dibujar el nombre con la tipografía correcta
+  if (document.fonts) document.fonts.ready.then(() => { const g = logo.image.getContext("2d"); g.clearRect(0, 0, 1024, 768); brandArt(g, 1024, 768, 360, 70, 22); logo.needsUpdate = true; });
 
   /* ---------- Muebles y decoración ---------- */
   const marbleWM = M(0xffffff, { map: marbleW, roughness: 0.22, metalness: 0.04 });
@@ -361,11 +372,10 @@
   box(0.04, MZH - 0.3, 6.2, M(0x1b1c1e), -RW / 2 + 0.03, (MZH - 0.3) / 2, 5.6);
   for (let z = 2.6; z <= 8.6; z += 0.11) box(0.06, MZH - 0.3, 0.06, slatM, -RW / 2 + 0.08, (MZH - 0.3) / 2, z).castShadow = false;
   const tvArt = canvasTex(1024, 576, (g, w, h) => {
-    const gr = g.createLinearGradient(0, 0, w, h); gr.addColorStop(0, "#2b5f9e"); gr.addColorStop(.5, "#6a8fc7"); gr.addColorStop(1, "#1d2c4a");
-    g.fillStyle = gr; g.fillRect(0, 0, w, h);
-    g.fillStyle = "rgba(255,255,255,.85)"; g.font = "800 72px Archivo, sans-serif"; g.fillText("EE.UU. → CBBA", 60, 300);
-    g.fillStyle = "rgba(255,255,255,.6)"; g.font = "500 30px 'IBM Plex Mono', monospace"; g.fillText("ronda de hoy · precios · envíos", 64, 350);
+    const gr = g.createLinearGradient(0, 0, w, h); gr.addColorStop(0, "#1d2024"); gr.addColorStop(1, "#0d0e10");
+    g.fillStyle = gr; g.fillRect(0, 0, w, h); brandArt(g, w, h, 250, 70, 14);
   });
+  if (document.fonts) document.fonts.ready.then(() => { const g = tvArt.image.getContext("2d"), gr = g.createLinearGradient(0, 0, 1024, 576); gr.addColorStop(0, "#1d2024"); gr.addColorStop(1, "#0d0e10"); g.fillStyle = gr; g.fillRect(0, 0, 1024, 576); brandArt(g, 1024, 576, 250, 70, 14); tvArt.needsUpdate = true; });
   box(0.08, 1.45, 2.5, M(0x0a0a0b, { metalness: .4, roughness: .3 }), -RW / 2 + 0.16, 1.5, 5.6);
   const tv = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 1.35), new THREE.MeshBasicMaterial({ map: tvArt, toneMapped: false }));
   tv.rotation.y = Math.PI / 2; tv.position.set(-RW / 2 + 0.21, 1.5, 5.6); scene.add(tv);

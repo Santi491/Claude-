@@ -1,4 +1,4 @@
-<title>Importación Cochabamba</title>
+<title>Cargo Brothers</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -41,7 +41,14 @@ a{color:var(--accent);text-underline-offset:2px}
 .office{background:var(--o-bg);color:var(--o-ink);border:1px solid var(--o-line);border-radius:14px;overflow:hidden;display:grid;color-scheme:dark}
 .hud{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--o-line);background:var(--o-panel);font-family:var(--f-mono);font-size:12px}
 .hud .brand{font:800 15px var(--f-display);font-stretch:80%;color:var(--o-ink);margin-right:auto}
-.hud .brand i{font-style:normal;color:var(--o-cyan)}
+.hud .brand{display:flex;align-items:center;gap:10px}
+.hud .brand .cbmark{color:#ECEDEF;flex:none}
+.hud .brand .cbmark+.cbmark{display:none}
+.hud .bw{display:grid;line-height:1.15}
+.hud .bw b{font:600 13px var(--f-body);letter-spacing:.3em;color:#ECEDEF}
+.hud .bw small{font:500 9.5px var(--f-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--o-muted)}
+.hud .brand em{font:500 11px var(--f-mono);font-style:normal;letter-spacing:.1em;text-transform:uppercase;color:var(--o-muted);border-left:1px solid var(--o-line);padding-left:10px;margin-left:2px}
+@media (max-width:560px){.hud .brand .cbmark{display:none}.hud .brand .cbmark+.cbmark{display:block}.hud .bw small,.hud .brand em{display:none}}
 .hud .kv{display:grid}
 .hud .kv span{color:var(--o-muted);font-size:10px;letter-spacing:.08em;text-transform:uppercase}
 .hud .kv b{font-weight:600;font-variant-numeric:tabular-nums}
@@ -290,7 +297,7 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 
 <div class="hero">
   <header>
-    <div class="eyebrow" id="eyebrow">EE.UU. → Cochabamba</div>
+    <div class="eyebrow" id="eyebrow">Cargo Brothers</div>
     <h1>Oficina de agentes</h1>
   </header>
 
@@ -422,6 +429,24 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 <script>
 const D=Object.assign({productos:[],movimientos:[],dolar:[],actividad:[],documentos:[],tiendas:[],capturas:[],pedidos:[],generado:""},window.DATOS||{});
 const $=id=>document.getElementById(id);
+/* ---------- Logo de Cargo Brothers: monograma C + B en círculo, monolínea (principal) o sólido (ícono chico) ---------- */
+const CB_PATHS={C:"M -2 -38 A 38 38 0 1 0 -2 38",B:"M 4 -38 L 18 -38 A 18 18 0 0 1 18 -2 L 6 -2 M 18 -2 L 22 -2 A 20 20 0 0 1 22 38 L -4 38",D:"M -26 56 L 26 -56"};
+let cbN=0;
+function cbSvg(size,solid,color){
+  const id="cbm"+(++cbN),c=color||"currentColor",P=CB_PATHS,st=(d,col,w)=>`<path d="${d}" fill="none" stroke="${col}" stroke-width="${w}"/>`;
+  const m=solid?`<circle r="80" fill="white"/>${st(P.C,"black",12)}${st(P.B,"black",12)}${st(P.D,"white",19)}${st(P.D,"black",10)}`
+    :`<circle r="80" fill="none" stroke="white" stroke-width="4.2"/>${st(P.C,"white",13.2)}${st(P.B,"white",13.2)}${st(P.C,"black",5.4)}${st(P.B,"black",5.4)}${st(P.D,"black",20.4)}${st(P.D,"white",13.2)}${st(P.D,"black",5.4)}`;
+  return `<svg class="cbmark" viewBox="-84 -84 168 168" width="${size}" height="${size}" aria-hidden="true"><defs><mask id="${id}" maskUnits="userSpaceOnUse" x="-84" y="-84" width="168" height="168"><rect x="-84" y="-84" width="168" height="168" fill="black"/>${m}</mask></defs><rect x="-84" y="-84" width="168" height="168" fill="${c}" mask="url(#${id})"/></svg>`;
+}
+// la misma marca dibujada en un canvas (la usa la oficina 3D en el muro de mármol y la TV)
+function cbCanvas(size,color){
+  const cv=document.createElement("canvas");cv.width=cv.height=size;const g=cv.getContext("2d"),k=size/168,P=CB_PATHS;
+  g.translate(size/2,size/2);g.scale(k,k);g.lineCap="butt";g.lineJoin="round";g.strokeStyle=color||"#EDEEF0";
+  const st=(d,w,cut)=>{g.globalCompositeOperation=cut?"destination-out":"source-over";g.lineWidth=w;g.stroke(new Path2D(d))};
+  g.lineWidth=4.2;g.beginPath();g.arc(0,0,80,0,Math.PI*2);g.stroke();
+  st(P.C,13.2);st(P.B,13.2);st(P.C,5.4,1);st(P.B,5.4,1);st(P.D,20.4,1);st(P.D,13.2);st(P.D,5.4,1);
+  g.globalCompositeOperation="source-over";return cv;
+}
 // Estado en vivo (db del artefacto, colección "vivo"): lo escriben las sesiones mientras trabajan
 let LIVE={},LIVE_ON=false;
 const fmt=(n,d=0)=>n==null||isNaN(n)?"—":n.toLocaleString("es-BO",{minimumFractionDigits:d,maximumFractionDigits:d});
@@ -433,7 +458,7 @@ const fechaCorta=f=>{const [y,m,d]=String(f).split("-");return `${d}/${m}`};
 const P=D.productos;
 const lastFx=[...D.dolar].reverse().find(f=>f.usado);
 if(lastFx)$("tc").value=(+lastFx.usado).toFixed(2);
-if(D.generado){const [f,h]=D.generado.split(" ");$("eyebrow").textContent=`EE.UU. → Cochabamba · datos al ${f.split("-").reverse().join("/")} ${h||""}`}
+if(D.generado){const [f,h]=D.generado.split(" ");$("eyebrow").textContent=`Cargo Brothers · datos al ${f.split("-").reverse().join("/")} ${h||""}`}
 $("srcNote").textContent=`Precios de eBay: compra inmediata, vendedor en EE.UU. con ≥ 98 % de feedback; “nuevo” no incluye open box. Datos generados el ${D.generado} desde los archivos del repo.`;
 
 const S={mode:"new",qty:2,cat:"",q:"",sort:{k:"rank",dir:1},open:new Set()};
@@ -691,7 +716,7 @@ function updateAnalyst(all){
 }
 function drawHud(all){
   const ok=all.filter(r=>r.c.status==="good").length;
-  $("hud").innerHTML=`<div class="brand">Oficina <i>EE.UU.→CBBA</i></div>
+  $("hud").innerHTML=`<div class="brand" aria-label="Cargo Brothers · oficina">${cbSvg(30,false)}${cbSvg(28,true)}<span class="bw"><b>CARGO BROTHERS</b><small>Importación de componentes</small></span><em>Oficina</em></div>
    ${LIVE_ON?`<div class="kv"><span>En vivo</span><b class="r">● ${esc(LIVE._ronda.quien||"ronda en curso")}</b></div>`:`<div class="kv"><span>Estado</span><b>sin ronda en curso</b></div>`}
    <div class="kv"><span>Agentes</span><b>${AG.length}</b></div>
    <div class="kv"><span>Dólar</span><b>${lastFx?(+lastFx.usado).toFixed(2):"—"} Bs</b></div>
