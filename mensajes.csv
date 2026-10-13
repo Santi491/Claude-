@@ -1,0 +1,15 @@
+fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
+2026-10-13,09:43,whatsapp,Compucenter,recibido,respuesta,no,importa directo desde Miami; no busca proveedores
+2026-10-13,10:16,whatsapp,OverCity,enviado,nuevo,,consulta de precios grupo A
+2026-10-13,10:17,whatsapp,OverCity,recibido,respuesta,no,tiene los 3 productos; pregunta si solo busca esos
+2026-10-13,10:18,whatsapp,Legion Emporium,enviado,nuevo,,consulta de precios grupo A
+2026-10-13,10:18,whatsapp,Legion Emporium,recibido,automatica,no,catálogo y sucursales
+2026-10-13,10:19,whatsapp,OverCity,enviado,seguimiento,,pide el precio de cada producto
+2026-10-13,10:20,whatsapp,PC Morgana,enviado,nuevo,,consulta de precios grupo A
+2026-10-13,10:21,whatsapp,Centro PC,enviado,nuevo,,consulta de precios grupo A
+2026-10-13,10:25,whatsapp,Computer World,enviado,nuevo,,consulta de precios grupo B
+2026-10-13,10:26,whatsapp,4 Gamers,enviado,nuevo,,consulta de precios grupo B
+2026-10-13,10:26,whatsapp,4 Gamers,recibido,automatica,no,
+2026-10-13,10:27,whatsapp,PortatiComps,enviado,nuevo,,consulta de precios grupo B
+2026-10-13,10:28,whatsapp,Distribuidora DyD,enviado,nuevo,,consulta de precios grupo B
+2026-10-13,10:32,whatsapp,Soft Computers,enviado,nuevo,,consulta de precios grupo A (aviso IA de Meta aceptado)
