@@ -26,10 +26,11 @@ Lo hace la sesión local con Claude in Chrome. Hay dos computadoras: la **PC de 
 8. **Avisar al usuario** solo con el resumen: qué conviene traer, cuánto se gana por unidad, y qué tiendas venden más caro.
 
 ## Mensajes modelo (cortos, naturales, uno por tienda)
+- Firma y nombre: **André Maldonado** (ver `CLAUDE.md`). Si preguntan el nombre: "André".
 1. "Hola, buenas. ¿Venden componentes de PC (procesadores, memorias RAM, SSD)?"
 2. "Hola, consulta: ¿qué precio tienen el [producto]? ¿Y si llevo 2 o 4? ¿Es nuevo sellado y con garantía? Gracias."
 - Si preguntan para qué es: "Estoy cotizando para armar unas PCs."
-- No inventar datos personales, no presentarse como empresa, no regatear ni prometer comprar.
+- Fuera del nombre André Maldonado, no inventar datos personales (dirección, carnet, NIT), no presentarse como empresa, no regatear ni prometer comprar.
 
 ## Límites para cuidar el número
 - Número nuevo: los primeros días, máximo ~10 chats nuevos por día, espaciados (unos minutos entre cada uno). Luego subir de a poco.
