@@ -33,13 +33,15 @@ TZ = ZoneInfo("America/La_Paz")
 ESTADO = os.path.expanduser("~/.cargo-bot-estado.json")  # fuera del repo
 MODELOS = ("haiku", "sonnet", "opus")
 AGENTES = ("nube", "ebay", "wa", "mkt", "ana", "pedidos", "gerente", "local")
-AYUDA = ("Comandos: apruebo 1 3 · rechazo 2 · sí a todo · no a todo · plan · "
-         "tarea: <texto> (o tarea wa: / tarea mkt:) · modelo haiku|sonnet|opus · uso.\n"
-         "Cualquier otra cosa es una pregunta y la contesto con Claude (solo lectura).")
+AYUDA = ("Háblame como a tu gerente: \"hola, ¿cómo vamos?\", \"¿qué conviene traer?\", \"dile a WhatsApp que...\". "
+         "Recuerdo la charla del día.\nAtajos al instante y sin gastar el plan: apruebo 1 3 · rechazo 2 · sí a todo · plan · "
+         "tarea: <texto> · modelo haiku|sonnet|opus · uso · nueva charla.")
 
-cargar("~/.cargo-bot", ("CLAUDE_CODE_OAUTH_TOKEN", "CLAUDE_MODELO", "MAX_PREGUNTAS_DIA"))
+cargar("~/.cargo-bot", ("CLAUDE_CODE_OAUTH_TOKEN", "CLAUDE_MODELO", "MAX_PREGUNTAS_DIA", "AVISOS"))
 TOKEN, CHAT = cargar("~/.telegram", ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"))
-MAX_DIA = int(os.environ.get("MAX_PREGUNTAS_DIA", "15"))
+MAX_DIA = int(os.environ.get("MAX_PREGUNTAS_DIA", "20"))
+# Horas en que el Gerente le escribe solo a Santi (el informe de las 20:00 ya lo manda la rutina de la nube). "" = nunca.
+AVISOS = [h.strip() for h in os.environ.get("AVISOS", "08:20,13:30").split(",") if h.strip()]
 
 
 def ahora():
@@ -196,42 +198,93 @@ def cmd_tarea(agente, texto):
     return f"Anotada la tarea {hoy}-{n} para {agente}, aprobada.{aviso}" + ("" if ok else " (no pude subirla a GitHub todavía)")
 
 
-PROMPT = """Eres el Gerente de Cargo Brothers (importación de componentes de PC de EE.UU. a Cochabamba).
-Santi te escribió por Telegram. Contéstale en español, claro y en máximo 8 líneas, sin formato markdown.
-Usa solo los datos de este repo y lee solo lo necesario: comparacion.md (precios y ganancia por producto), el último archivo de informes/,
-plan.csv, tiendas-cochabamba.csv, precios-cochabamba.csv, precios-eeuu.csv, tipo-cambio.csv, pedidos.csv, actividad.csv, mensajes.csv;
-las reglas están en CLAUDE.md. Nunca inventes cifras: si no está en los archivos, dilo. La ganancia de la tabla es potencial, no real.
-No modifiques archivos. Si Santi pide hacer algo (escribir a una tienda, buscar algo, comprar), no lo hagas: dile que lo mande como
-"tarea: ..." para que quede aprobado; comprar, pagar u ofertar nunca se hace por Telegram.
+PERSONA = """Eres el Gerente de Cargo Brothers, la empresa de Santi que importa componentes de PC (procesadores, RAM, SSD)
+de EE.UU. a Cochabamba. Diriges a un equipo de agentes: la Nube (revisión de las 7:52 con el dólar y eBay), el Rastreador eBay,
+WhatsApp (habla con las tiendas), Marketplace, el Analista (comparación y ganancia) y Pedidos (rastrea envíos).
+Hablas con Santi por chat como una persona: su gerente de confianza. Cálido, directo, con criterio propio, en español boliviano
+natural ("Hola Santi", "mira", "te cuento"), frases cortas, sin markdown ni listas largas: como un mensaje de chat de 2 a 8 líneas.
+Das tu opinión y recomiendas qué hacer, pero las decisiones son de Santi.
 
-Mensaje de Santi:
+Lo que sabes sale de este repo; lee solo lo que necesites: actividad.csv (qué hizo cada agente), informes/ (el último),
+comparacion.md (ganancia por producto), plan.csv (tareas), tiendas-cochabamba.csv y mensajes.csv (contacto con tiendas),
+precios-cochabamba.csv, precios-eeuu.csv, tipo-cambio.csv, pedidos.csv. Las reglas están en CLAUDE.md.
+Nunca inventes cifras ni hechos: si no está en los archivos, dilo. La ganancia de la tabla es potencial hasta que haya ventas.
+No modificas archivos tú mismo. Para que algo pase, al final de tu mensaje agrega UNA línea por acción, exactamente así:
+ACCION: aprobar 1 3          (tareas propuestas de plan.csv, por su número final)
+ACCION: rechazar 2
+ACCION: tarea <agente>: <qué hacer>   (agente: wa, mkt, ebay, pedidos, ana o local)
+Usa ACCION solo si Santi lo pidió o aceptó claramente en esta conversación; si dudas, pregúntale primero.
+Escribir a una tienda nueva siempre necesita que Santi apruebe el texto exacto. Comprar, pagar u ofertar nunca: eso
+se confirma en una sesión con Santi, no por chat.
 """
 
+INICIO = "Fecha y hora en Bolivia: {fecha}. "
 
-def cmd_pregunta(texto, estado):
+
+def claude(texto, estado, nueva=False):
+    """Una vuelta de conversación con Claude Code. La memoria dura el día: cada mañana empieza una charla nueva."""
     hoy = ahora().strftime("%Y-%m-%d")
     uso = estado.get("uso", {})
     if uso.get("dia") != hoy:
         uso = {"dia": hoy, "n": 0}
     if uso["n"] >= MAX_DIA:
-        return f"Ya van {uso['n']} preguntas hoy (límite {MAX_DIA}, para cuidar tu plan Pro). Mañana sigo, o sube MAX_PREGUNTAS_DIA en ~/.cargo-bot."
+        return f"Santi, por hoy ya hablamos {uso['n']} veces y llegué al tope que pusimos ({MAX_DIA}) para cuidar tu plan Pro. Las aprobaciones y 'plan' siguen funcionando; mañana seguimos."
     modelo = estado.get("modelo") or os.environ.get("CLAUDE_MODELO", "haiku")
+    sesion = estado.get("sesion", {})
+    seguir = not nueva and sesion.get("dia") == hoy and sesion.get("id")
     escribiendo()
     actualizar_repo()
+    mensaje = INICIO.format(fecha=ahora().strftime("%A %d/%m/%Y %H:%M")) + texto
+    cmd = ["claude", "-p", mensaje, "--model", modelo, "--allowedTools", "Read,Grep,Glob", "--output-format", "json"]
+    cmd += ["--resume", sesion["id"]] if seguir else ["--append-system-prompt", PERSONA]
     try:
-        r = subprocess.run(["claude", "-p", PROMPT + texto, "--model", modelo, "--allowedTools", "Read,Grep,Glob",
-                            "--output-format", "text"], cwd=REPO, capture_output=True, text=True, timeout=300)
+        r = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True, timeout=300)
     except subprocess.TimeoutExpired:
-        return "Claude tardó demasiado (más de 5 minutos). Prueba de nuevo o con una pregunta más corta."
+        return "Perdón Santi, me colgué pensando (más de 5 minutos). ¿Me lo repites más corto?"
     except FileNotFoundError:
         return "No encuentro Claude Code en la Raspberry. Revisa la instalación (raspberry/LEEME.md)."
+    try:
+        datos = json.loads(r.stdout)
+    except Exception:
+        datos = {}
+    salida = (datos.get("result") or "").strip()
+    if r.returncode != 0 or not salida or datos.get("is_error"):
+        if seguir:  # la charla del día se rompió: empieza una nueva
+            estado.pop("sesion", None)
+        error = salida or ((r.stderr or "").strip().splitlines()[-1:] or ["sin detalle"])[0]
+        return f"No pude responderte ({error[:200]}). Si dice que llegaste al límite del plan, espera unas horas."
     uso["n"] += 1
     estado["uso"] = uso
-    salida = (r.stdout or "").strip()
-    if r.returncode != 0 or not salida:
-        error = (r.stderr or "").strip().splitlines()[-1:] or ["sin detalle"]
-        return f"Claude no pudo responder ({error[0][:200]}). Si dice que llegaste al límite del plan, espera unas horas."
-    return salida + f"\n\n— {modelo} · pregunta {uso['n']}/{MAX_DIA} de hoy"
+    if datos.get("session_id"):
+        estado["sesion"] = {"dia": hoy, "id": datos["session_id"]}
+    return ejecutar_acciones(salida)
+
+
+def ejecutar_acciones(salida):
+    """Saca las líneas ACCION: del mensaje del Gerente y las hace."""
+    texto, hechos = [], []
+    for linea in salida.splitlines():
+        m = re.match(r"\s*ACCION:\s*(.+)", linea)
+        if not m:
+            texto.append(linea)
+            continue
+        orden = m.group(1).strip()
+        t = re.match(r"tarea\s+(\w+)\s*:\s*(.+)", orden, re.I)
+        a = re.match(r"(aprobar|rechazar)\s+([\d ,y]+)", simple(orden))
+        if t and t.group(1).lower() in AGENTES:
+            hechos.append(cmd_tarea(t.group(1).lower(), t.group(2)))
+        elif a:
+            nums = set(re.findall(r"\d+", a.group(2)))
+            hechos.append(cmd_decision((nums, set(), False, False) if a.group(1) == "aprobar" else (set(), nums, False, False)))
+    msg = "\n".join(texto).strip()
+    return msg + ("\n\n✔ " + "\n✔ ".join(hechos) if hechos else "")
+
+
+def resumen_programado(cuando, estado):
+    return claude(f"Es tu mensaje de {cuando} para Santi; él no te escribió. Revisa actividad.csv, el último informe y "
+                  "mensajes.csv y cuéntale en 3 a 6 líneas cómo va el equipo hoy, lo más importante que pasó y qué necesitas que decida. "
+                  "Si no hay nada nuevo desde tu último mensaje, dilo en una línea. No uses ACCION en este mensaje.",
+                  estado)
 
 
 def atender(texto, estado):
@@ -244,6 +297,9 @@ def atender(texto, estado):
         u = estado.get("uso", {})
         n = u.get("n", 0) if u.get("dia") == ahora().strftime("%Y-%m-%d") else 0
         return f"Hoy van {n} de {MAX_DIA} preguntas a Claude, con el modelo {estado.get('modelo') or os.environ.get('CLAUDE_MODELO', 'haiku')}."
+    if t in ("nueva charla", "/nueva", "olvida todo"):
+        estado.pop("sesion", None)
+        return "Listo, empezamos de cero. ¿En qué te ayudo?"
     m = re.fullmatch(r"/?modelo\s+(\w+)", t)
     if m:
         if m.group(1) not in MODELOS:
@@ -259,7 +315,7 @@ def atender(texto, estado):
     d = decidir(t)
     if d:
         return cmd_decision(d)
-    return cmd_pregunta(texto, estado)
+    return claude(texto, estado)
 
 
 def main():
@@ -275,6 +331,14 @@ def main():
             print(f"Telegram no respondió ({type(e).__name__}); reintento en 15 s", flush=True)
             time.sleep(15)
             continue
+        hora, hoy = ahora().strftime("%H:%M"), ahora().strftime("%Y-%m-%d")
+        hechos = estado.get("avisos", {}) if estado.get("avisos", {}).get("dia") == hoy else {"dia": hoy, "horas": []}
+        for h in AVISOS:
+            if h <= hora and h not in hechos["horas"] and hora < f"{int(h[:2]) + 2:02d}{h[2:]}":
+                hechos["horas"].append(h)
+                estado["avisos"] = hechos
+                guardar_estado(estado)
+                responder(resumen_programado("la mañana" if h < "12:00" else "la tarde", estado))
         for u in updates:
             estado["offset"] = u["update_id"] + 1
             m = u.get("message") or {}
