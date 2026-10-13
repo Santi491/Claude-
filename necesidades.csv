@@ -2,3 +2,5 @@ fecha,hora,agente,necesita,para_que,quien,estado,resuelto
 2026-10-12,,ana,saber en qué estado de EE.UU. está la casilla del courier A (la señora) y cuánto sales tax cobra eBay ahí,calcular bien el costo con el courier A (hoy se usa 7 % supuesto),Santi,abierta,
 2026-10-12,,ana,los costos reales de envío de los pedidos de prueba,pasar de costos estimados a reales antes de ofrecer ventas o llamar a tiendas,Santi,abierta,
 2026-10-12,19:20,pedidos,que Santi inicie sesión en eBay en el Chrome de la PC o la Mac,leer las compras y sus guías (solo lectura),Santi,abierta,
+2026-10-13,14:08,pedidos,configurar Telegram en la PC con ./configurar-telegram.sh (no existe ~/.telegram),que la ronda de la tarde de la PC pueda leer y contestar a Santi por Telegram,Santi,abierta,
+2026-10-13,14:08,mkt,crear las cuentas en las páginas de tiendas que pidan registro (el agente puede llenar los datos visibles pero no crea cuentas ni pone contraseñas),ver catálogos o precios que solo se muestran a usuarios registrados,Santi,abierta,
