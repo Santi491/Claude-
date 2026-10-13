@@ -1,33 +1,33 @@
-/* Pantalla del agente Pedidos: mapa de EE.UU. con el recorrido de cada envío.
-   Lee D.pedidos (generar.py: pedidos.csv + pedidos-prueba.csv + seguimiento.csv). Nunca muestra guías ni direcciones. */
+/* Pantalla del agente Pedidos: mapa con zoom (Leaflet) de EE.UU. hasta las calles, con el recorrido de cada envío.
+   Lee D.pedidos (generar.py: pedidos.csv + pedidos-prueba.csv + seguimiento.csv) y los datos de oficina/mapa/
+   (mapa_datos.py: Natural Earth + calles de OpenStreetMap). Nunca muestra guías ni direcciones. */
 (function () {
-  const US = [[-124.7, 48.4], [-124.1, 46.9], [-123.9, 45.5], [-124.1, 44.0], [-124.5, 42.8], [-124.2, 41.9], [-124.4, 40.4], [-123.8, 39.6], [-122.9, 38.0], [-122.4, 37.2], [-121.9, 36.3], [-120.6, 34.6], [-118.5, 34.0], [-117.1, 32.5],
-    [-114.7, 32.7], [-111.1, 31.3], [-108.2, 31.3], [-106.5, 31.8], [-104.9, 30.6], [-104.0, 29.3], [-103.1, 29.0], [-102.4, 29.8], [-101.4, 29.8], [-100.3, 28.3], [-99.5, 27.5], [-99.1, 26.4], [-97.4, 25.9],
-    [-97.2, 27.6], [-96.5, 28.6], [-95.0, 29.3], [-93.8, 29.7], [-92.0, 29.6], [-90.9, 29.1], [-89.4, 29.0], [-89.6, 30.2], [-88.0, 30.4], [-86.5, 30.4], [-85.3, 29.7], [-84.0, 30.1], [-83.0, 29.0], [-82.7, 27.6], [-81.8, 26.1], [-81.0, 25.2], [-80.4, 25.2], [-80.1, 26.6], [-80.6, 28.4], [-81.3, 30.0],
-    [-81.4, 31.4], [-80.0, 32.6], [-78.9, 33.6], [-77.0, 34.6], [-75.5, 35.3], [-76.0, 36.9], [-75.9, 37.9], [-75.0, 38.8], [-74.0, 39.8], [-74.0, 40.6], [-72.0, 41.0], [-70.6, 41.5], [-70.0, 41.9], [-70.6, 42.6], [-70.7, 43.1], [-69.0, 44.0], [-67.0, 44.8],
-    [-67.8, 47.1], [-69.2, 47.4], [-70.0, 46.4], [-71.5, 45.0], [-74.8, 45.0], [-76.4, 44.2], [-79.2, 43.4], [-79.0, 42.8], [-82.5, 42.6], [-82.1, 43.6], [-82.4, 45.3], [-84.6, 46.4], [-88.4, 48.3], [-89.6, 48.0], [-95.2, 49.0], [-123.0, 49.0], [-123.3, 48.3]];
-  const CITIES = [["Seattle", 47.6, -122.3], ["San Francisco", 37.8, -122.4], ["Los Ángeles", 34.05, -118.25], ["Phoenix", 33.45, -112.07], ["Denver", 39.74, -104.99], ["Dallas", 32.78, -96.8], ["Houston", 29.76, -95.37],
-    ["Chicago", 41.88, -87.63], ["Atlanta", 33.75, -84.39], ["Miami", 25.76, -80.19], ["Nueva York", 40.71, -74.0], ["Memphis", 35.15, -90.05], ["Louisville", 38.25, -85.76]];
-  const X = lon => 40 + (lon + 125.5) / 59 * 920, Y = lat => 30 + (49.8 - lat) / 25.5 * 540;
   const STEPS = [["Etiqueta creada", /etiqueta|comprado|pagado|esperando/i], ["Enviado", /enviado|recibido|aceptado|tr[aá]nsito|en ruta|departed|arrived/i],
     ["Bodega courier", /bodega|courier|miami|warehouse/i], ["Rumbo a Bolivia", /bolivia|vuelo|aduana|camino/i], ["Entregado", /entregado|cochabamba|delivered/i]];
   const stepOf = e => { let k = 0; STEPS.forEach(([, re], i) => { if (re.test(e || "")) k = i; }); return k; };
   const group = e => stepOf(e) === 0 ? "espera" : stepOf(e) >= 4 ? "entregado" : "camino";
   const GCOL = { espera: "#4FD1E8", camino: "#F2A541", entregado: "#5CD69A" };
-  let filt = "", showTest = true, selId = null;
+  const CBBA = [-17.39, -66.157];
+  const US_VIEW = [[24.2, -125], [49.5, -66.8]];
+  let filt = "", showTest = true, selId = null, map = null, base = null, layShip = null, ready = null;
 
   const box = document.createElement("div");
   box.className = "mapa"; box.id = "mapa"; box.hidden = true; box.setAttribute("role", "dialog"); box.setAttribute("aria-label", "Mapa de envíos");
   box.innerHTML = `<div class="mp-card">
-    <div class="mp-head"><div><b>Pantalla de Pedidos</b><span>Mapa de envíos en EE.UU.</span></div>
+    <div class="mp-head"><div><b>Pantalla de Pedidos</b><span>Mapa de envíos · rueda o pellizco para acercar</span></div>
       <div class="mp-tools"><div class="seg" id="mpF"><button type="button" data-f="" aria-pressed="true">Todos</button><button type="button" data-f="espera" aria-pressed="false">En espera</button><button type="button" data-f="camino" aria-pressed="false">En camino</button><button type="button" data-f="entregado" aria-pressed="false">Entregados</button></div>
       <label class="mp-chk"><input type="checkbox" id="mpT" checked> Pedidos de prueba</label><button type="button" class="mp-x" id="mpX">Cerrar</button></div></div>
-    <div class="mp-body"><div class="mp-list" id="mpL"></div><div class="mp-map"><svg id="mpS" viewBox="0 0 1000 600" role="img" aria-label="Mapa de Estados Unidos con los envíos"></svg><div class="mp-leg"><span><i style="background:#4FD1E8"></i>En espera</span><span><i style="background:#F2A541"></i>En camino</span><span><i style="background:#5CD69A"></i>Entregado</span><span><i class="dash"></i>Recorrido pendiente</span></div></div></div></div>`;
+    <div class="mp-body"><div class="mp-list" id="mpL"></div>
+      <div class="mp-map"><div class="mp-canvas"><div id="mpS" aria-label="Mapa de Estados Unidos con los envíos"></div>
+        <div class="mp-jump" id="mpJ"><button type="button" data-v="us">EE.UU.</button><button type="button" data-v="ruta">Ruta a Bolivia</button></div>
+        <div class="mp-zoom" id="mpZ"></div><div class="mp-wait" id="mpW">Cargando mapa…</div></div>
+        <div class="mp-leg"><span><i style="background:#4FD1E8"></i>En espera</span><span><i style="background:#F2A541"></i>En camino</span><span><i style="background:#5CD69A"></i>Entregado</span><span><i class="dash"></i>Falta recorrer</span><span class="mp-attr">Mapa: Natural Earth · calles © colaboradores de OpenStreetMap</span></div></div></div></div>`;
   document.body.appendChild(box);
   const $m = id => box.querySelector("#" + id);
 
   function pkgIcon(c) { return `<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 13 20 6l14 7v15l-14 7-14-7z" fill="${c}22" stroke="${c}" stroke-width="2"/><path d="M6 13l14 7 14-7M20 20v15" fill="none" stroke="${c}" stroke-width="2"/></svg>`; }
   function list() { return (D.pedidos || []).filter(p => (showTest || !p.prueba) && (!filt || group(p.estado) === filt)); }
+  const located = p => (p.eventos || []).filter(e => e.lat && e.lon);
   function renderList() {
     const L = list();
     $m("mpL").innerHTML = L.length ? L.map(p => {
@@ -38,48 +38,150 @@
         <span class="mp-tx"><b>${esc(p.cantidad || 1)}× ${esc(p.producto)}</b>${p.prueba ? '<em class="mp-test">PRUEBA</em>' : ""}
           <small>${esc(p.tienda || "")} · ${esc(p.courier || "")}${p.eta ? ` · llega ${esc(p.eta)}` : ""}</small>
           <span class="mp-steps">${STEPS.map((s, i) => `<i class="${i <= k ? "ok" : ""}" style="--c:${c}" title="${s[0]}"></i>`).join("")}</span>
-          <small style="color:${c}">${esc(p.estado)}${last ? ` · ${esc(last.lugar)} · ${fechaCorta(last.fecha)} ${esc(last.hora || "")}` : ""}</small></span></button>
-        ${selId === p.id ? `<div class="mp-tl">${(p.eventos || []).slice().reverse().map(e => `<div><time>${fechaCorta(e.fecha)} ${esc(e.hora || "")}</time><b>${esc(e.lugar)}</b><span>${esc(e.evento)}</span></div>`).join("") || "<div>Sin eventos todavía.</div>"}
+          <small style="color:${c}">${esc(p.estado)}${last ? ` · ${esc(cityOnly(last.lugar))} · ${fechaCorta(last.fecha)} ${esc(last.hora || "")}` : ""}</small></span></button>
+        ${selId === p.id ? `<div class="mp-tl">${(p.eventos || []).slice().reverse().map(e => `<div><time>${fechaCorta(e.fecha)} ${esc(e.hora || "")}</time><b>${esc(cityOnly(e.lugar))}</b><span>${esc(e.evento)}</span></div>`).join("") || "<div>Sin eventos todavía.</div>"}
           ${p.destino ? "" : '<div class="dash">El destino aparece cuando el transportista escanea el paquete.</div>'}</div>` : ""}`;
     }).join("") : `<p class="mp-empty">No hay pedidos con este filtro. Cuando haya compras de eBay o guías del courier, aparecen aquí.</p>`;
   }
+  // el código postal no se muestra: solo la ciudad
+  const cityOnly = s => String(s || "").replace(/\s*\d{5}(-\d{4})?$/, "");
+
+  /* ---------- Mapa base ---------- */
+  const getJSON = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + " " + r.status); return r.json(); });
+  const ll = c => [c[1], c[0]];
+  const lines = g => g.map(l => l.map(ll));
+  const polys = g => g.map(poly => poly.map(ring => ring.map(ll)));
+
+  function label(text, latlng, cls) { return L.marker(latlng, { interactive: false, keyboard: false, icon: L.divIcon({ className: "mp-tag " + cls, html: `<span>${esc(text)}</span>`, iconSize: null }) }); }
+
+  function setup() {
+    if (ready) return ready;
+    map = L.map($m("mpS"), { zoomControl: false, attributionControl: false, minZoom: 3, maxZoom: 18, worldCopyJump: false, preferCanvas: true, zoomSnap: 0.5 });
+    L.control.zoom({ position: "bottomright", zoomInTitle: "Acercar", zoomOutTitle: "Alejar" }).addTo(map);
+    map.fitBounds(US_VIEW);
+    // el contenedor cambia de tamaño al abrir la pantalla: Leaflet tiene que volver a medir y redibujar
+    if (window.ResizeObserver) new ResizeObserver(() => { if (!box.hidden) { map.invalidateSize({ pan: false }); map.fire("moveend"); } }).observe($m("mpS"));
+    map.createPane("calles").style.zIndex = 420;
+    map.createPane("envios").style.zIndex = 640;
+    const svgShip = L.svg({ pane: "envios" });
+    layShip = L.layerGroup().addTo(map);
+    layShip._svg = svgShip;
+    ready = Promise.all([getJSON("mapa/base.json"), getJSON("mapa/rutas.json"), getJSON("mapa/urbano.json"), getJSON("mapa/calles/indice.json").catch(() => [])]).then(([b, rutas, urb, zonas]) => {
+      base = b;
+      const cv = L.canvas({ padding: 0.3 });
+      L.polygon(b.paises.map(p => polys(p.g)).flat(), { renderer: cv, interactive: false, stroke: true, color: "#1E3A50", weight: 1, fillColor: "#0E1F2C", fillOpacity: 1 }).addTo(map);
+      const est = L.layerGroup().addTo(map);
+      b.estados.forEach(s => {
+        L.polygon(polys(s.g), { renderer: cv, color: "#2E5A78", weight: 1.2, fillColor: "#112A3B", fillOpacity: 1 })
+          .on("mouseover", e => e.target.setStyle({ fillColor: "#16364C" })).on("mouseout", e => e.target.setStyle({ fillColor: "#112A3B" }))
+          .on("click", e => { if (map.getZoom() < 6) map.flyToBounds(e.target.getBounds(), { duration: 0.8, padding: [20, 20] }); })
+          .addTo(est);
+      });
+      L.polygon(urb.map(u => polys(u.g)).flat(), { renderer: cv, interactive: false, stroke: false, fillColor: "#1C3A50", fillOpacity: 1 }).addTo(map);
+      const r1 = L.polyline(rutas.filter(r => r.k === 1).map(r => lines(r.g)).flat(), { renderer: cv, interactive: false, color: "#4A7590", weight: 1.4, opacity: .9 });
+      const r2 = L.polyline(rutas.filter(r => r.k === 2).map(r => lines(r.g)).flat(), { renderer: cv, interactive: false, color: "#35596F", weight: 1, opacity: .9 });
+      // etiquetas de estados y ciudades según el zoom
+      const tagsE = L.layerGroup(b.estados.filter(s => s.n !== "Alaska" && s.n !== "Hawaii").map(s => label(s.n, s.c, "mp-tag-st")));
+      const tagsC = b.ciudades.map(c => ({ c, m: L.layerGroup([L.circleMarker(c.c, { renderer: cv, interactive: false, radius: 2.5, stroke: false, fillColor: "#8FB0C6", fillOpacity: 1 }), label(c.n, c.c, "mp-tag-ci")]) }));
+      const calles = {};
+      const zLay = L.layerGroup().addTo(map);
+      const zTags = L.layerGroup(zonas.map(z => label("Calles de " + z.n, z.c, "mp-tag-z"))).addTo(map);
+      function sync() {
+        const z = map.getZoom(), bb = map.getBounds().pad(0.2);
+        z >= 5 ? r1.addTo(map) : r1.remove();
+        z >= 6.5 ? r2.addTo(map) : r2.remove();
+        z >= 4.5 && z < 8 ? tagsE.addTo(map) : tagsE.remove();
+        const minPop = z < 5 ? 3e6 : z < 6 ? 1e6 : z < 7 ? 4e5 : z < 8 ? 1.5e5 : z < 10 ? 5e4 : 0;
+        tagsC.forEach(({ c, m }) => (c.p >= minPop && z < 13.5 && bb.contains(c.c)) ? m.addTo(map) : m.remove());
+        z >= 9 && z < 12 ? zTags.addTo(map) : zTags.remove();
+        if (z >= 11) zonas.forEach(zn => {
+          if (calles[zn.f] || !bb.contains(zn.c) && map.distance(map.getCenter(), zn.c) > zn.r * 3) return;
+          calles[zn.f] = "cargando";
+          getJSON("mapa/calles/" + zn.f).then(d => { calles[zn.f] = drawStreets(d); calles[zn.f].addTo(zLay); }).catch(() => { delete calles[zn.f]; });
+        });
+        z >= 11 ? zLay.addTo(map) : zLay.remove();
+        $m("mpZ").textContent = z >= 14 ? "Nivel calle" : z >= 11 ? "Ciudad" : z >= 6 ? "Estado" : "País";
+      }
+      map.on("zoomend moveend", sync);
+      $m("mpW").hidden = true;
+      map.fitBounds(US_VIEW, { animate: false }); sync();
+    }).catch(e => { $m("mpW").textContent = "No se pudo cargar el mapa (" + e.message + ")"; });
+    return ready;
+  }
+  const SW = { 1: ["#E9B45E", 4.5], 2: ["#C6D6E2", 3.2], 3: ["#93AFC4", 2.4], 4: ["#5F7E95", 1.5] };
+  function drawStreets(d) {
+    const g = L.layerGroup(), cv = L.canvas({ pane: "calles", padding: 0.3, tolerance: 4 });
+    [4, 3, 2, 1].forEach(k => d.l.filter(s => s.k === k).forEach(s => {
+      const pl = L.polyline(s.g.map(ll), { renderer: cv, color: SW[k][0], weight: SW[k][1], opacity: k === 4 ? .8 : .95, lineCap: "round" });
+      if (s.n) pl.bindTooltip(s.n, { sticky: true, className: "mp-tip", direction: "top" });
+      g.addLayer(pl);
+    }));
+    return g;
+  }
+
+  /* ---------- Envíos ---------- */
+  function arc(a, b, n = 48) {
+    // curva suave entre dos puntos (lat, lon) para las rutas largas
+    const [la1, lo1] = a, [la2, lo2] = b, d = Math.hypot(la2 - la1, lo2 - lo1), mx = (la1 + la2) / 2, my = (lo1 + lo2) / 2;
+    const nx = -(lo2 - lo1) / (d || 1), ny = (la2 - la1) / (d || 1), h = d * 0.18;
+    const c = [mx + nx * h, my + ny * h], out = [];
+    for (let i = 0; i <= n; i++) { const t = i / n, u = 1 - t; out.push([u * u * la1 + 2 * u * t * c[0] + t * t * la2, u * u * lo1 + 2 * u * t * c[1] + t * t * lo2]); }
+    return out;
+  }
+  function pin(c, on) {
+    return L.divIcon({ className: "mp-pinwrap", iconSize: [44, 44], iconAnchor: [22, 22], html: `<span class="mp-pulse" style="background:${c}"></span><span class="mp-dot" style="background:${c};opacity:${on ? 1 : .45}"></span>` });
+  }
   function renderMap() {
-    const svg = $m("mpS"), L = list();
-    let h = `<defs><radialGradient id="mpG"><stop offset="0" stop-color="#4FD1E8" stop-opacity=".9"/><stop offset="1" stop-color="#4FD1E8" stop-opacity="0"/></radialGradient></defs>`;
-    for (let lon = -120; lon <= -70; lon += 10) h += `<line x1="${X(lon)}" y1="20" x2="${X(lon)}" y2="580" class="mp-grid"/>`;
-    for (let lat = 25; lat <= 50; lat += 5) h += `<line x1="20" y1="${Y(lat)}" x2="980" y2="${Y(lat)}" class="mp-grid"/>`;
-    h += `<path d="M${US.map(([lo, la]) => `${X(lo).toFixed(1)},${Y(la).toFixed(1)}`).join("L")}Z" class="mp-us"/>`;
-    CITIES.forEach(([n, la, lo]) => { h += `<circle cx="${X(lo)}" cy="${Y(la)}" r="3" class="mp-city"/><text x="${X(lo) + 6}" y="${Y(la) + 4}" class="mp-ctx">${n}</text>`; });
-    L.forEach(p => {
-      const ev = (p.eventos || []).filter(e => e.lat && e.lon), c = GCOL[group(p.estado)], on = !selId || selId === p.id;
-      const pts = ev.map(e => [X(+e.lon), Y(+e.lat)]);
-      if (p.destino_lat && p.destino_lon) {
-        const d = [X(+p.destino_lon), Y(+p.destino_lat)], cur = pts[pts.length - 1];
-        if (cur) h += `<path d="M${cur[0]},${cur[1]} Q${(cur[0] + d[0]) / 2},${Math.min(cur[1], d[1]) - 60} ${d[0]},${d[1]}" class="mp-todo" style="opacity:${on ? 1 : .25}"/>`;
-        h += `<g style="opacity:${on ? 1 : .3}"><rect x="${d[0] - 6}" y="${d[1] - 6}" width="12" height="12" rx="2" fill="#0B1620" stroke="${c}" stroke-width="2"/><text x="${d[0] + 10}" y="${d[1] - 8}" class="mp-lbl">${esc(p.destino)}</text></g>`;
+    if (!map) return;
+    layShip.clearLayers();
+    const svg = layShip._svg, L2 = list();
+    L2.forEach(p => {
+      const ev = located(p), c = GCOL[group(p.estado)], on = !selId || selId === p.id;
+      const pts = ev.map(e => [+e.lat, +e.lon]);
+      if (!pts.length) return;
+      const cur = pts[pts.length - 1];
+      let dest = p.destino_lat && p.destino_lon ? [+p.destino_lat, +p.destino_lon] : (!p.prueba && group(p.estado) !== "entregado" ? CBBA : null);
+      if (dest) layShip.addLayer(L.polyline(arc(cur, dest), { renderer: svg, color: "#9FB6C7", weight: 2, dashArray: "6 8", opacity: on ? .9 : .25, interactive: false }));
+      if (dest) layShip.addLayer(L.circleMarker(dest, { renderer: svg, radius: 6, color: c, weight: 2, fillColor: "#0B1620", fillOpacity: 1 }).bindTooltip(p.destino || "Cochabamba", { className: "mp-tip" }));
+      if (pts.length > 1) {
+        const path = pts.slice(1).reduce((acc, q, i) => acc.concat(arc(pts[i], q, 24).slice(1)), [pts[0]]);
+        layShip.addLayer(L.polyline(path, { renderer: svg, color: c, weight: 4, opacity: on ? 1 : .3, interactive: false }));
+        layShip.addLayer(L.polyline(path, { renderer: svg, color: "#ffffff", weight: 2, opacity: on ? .8 : 0, dashArray: "2 14", className: "mp-ant", interactive: false }));
       }
-      if (pts.length > 1) h += `<polyline points="${pts.map(q => q.join(",")).join(" ")}" fill="none" stroke="${c}" stroke-width="3" style="opacity:${on ? 1 : .25}"/>`;
-      if (pts.length) {
-        const o = pts[0], cur = pts[pts.length - 1];
-        h += `<circle cx="${o[0]}" cy="${o[1]}" r="5" fill="none" stroke="${c}" stroke-width="2" style="opacity:${on ? 1 : .3}"/>`;
-        h += `<g class="mp-pin" data-id="${esc(p.id)}" style="opacity:${on ? 1 : .35}"><circle cx="${cur[0]}" cy="${cur[1]}" r="22" fill="url(#mpG)" class="mp-pulse"/><circle cx="${cur[0]}" cy="${cur[1]}" r="8" fill="${c}" stroke="#0B1620" stroke-width="2"/>
-          <text x="${cur[0] + 12}" y="${cur[1] - 12}" class="mp-lbl">${esc(p.producto)}${p.prueba ? " (prueba)" : ""}</text><text x="${cur[0] + 12}" y="${cur[1] + 6}" class="mp-sub">${esc(p.estado)} · ${esc(ev[ev.length - 1].lugar)}</text></g>`;
-      }
+      ev.forEach((e, i) => layShip.addLayer(L.circleMarker(pts[i], { renderer: svg, radius: 4, color: c, weight: 2, fillColor: "#0B1620", fillOpacity: 1, opacity: on ? 1 : .35 })
+        .bindTooltip(`<b>${esc(cityOnly(e.lugar))}</b><br>${fechaCorta(e.fecha)} ${esc(e.hora || "")} · ${esc(e.evento)}`, { className: "mp-tip" })));
+      const last = ev[ev.length - 1];
+      layShip.addLayer(L.marker(cur, { icon: pin(c, on), zIndexOffset: on ? 1000 : 0, keyboard: true, title: p.producto })
+        .bindTooltip(`<b>${esc(p.producto)}${p.prueba ? " · PRUEBA" : ""}</b><br>${esc(p.estado)} · ${esc(cityOnly(last.lugar))}`, { permanent: on && !!selId || L2.length <= 3, direction: "right", offset: [16, 0], className: "mp-tip mp-tip-pin" })
+        .on("click", () => select(p.id, true)));
     });
-    if (!L.some(p => (p.eventos || []).some(e => e.lat))) h += `<text x="500" y="300" text-anchor="middle" class="mp-sub">Sin envíos con ubicación todavía</text>`;
-    svg.innerHTML = h;
+  }
+  function select(id, fly) {
+    selId = selId === id ? null : id; render();
+    const p = (D.pedidos || []).find(x => x.id === selId), ev = p ? located(p) : [];
+    if (fly && ev.length) map.flyTo([+ev[ev.length - 1].lat, +ev[ev.length - 1].lon], 14, { duration: 1.6 });
   }
   function render() { renderList(); renderMap(); }
+
   box.addEventListener("click", e => {
     if (e.target === box) { close(); return; }
-    const it = e.target.closest("[data-id]"); if (it) { selId = selId === it.dataset.id ? null : it.dataset.id; render(); }
+    const it = e.target.closest(".mp-item[data-id]"); if (it) select(it.dataset.id, true);
+  });
+  $m("mpJ").addEventListener("click", e => {
+    const v = e.target.closest("[data-v]"); if (!v || !map) return;
+    if (v.dataset.v === "us") map.flyToBounds(US_VIEW, { duration: 1.2 });
+    else map.flyToBounds([[CBBA[0] - 2, CBBA[1] - 4], [47, -122]], { duration: 1.4 });
   });
   $m("mpX").onclick = close;
   $m("mpT").onchange = e => { showTest = e.target.checked; render(); };
   box.querySelectorAll("#mpF button").forEach(b => b.onclick = () => { filt = b.dataset.f; box.querySelectorAll("#mpF button").forEach(x => x.setAttribute("aria-pressed", x === b)); render(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape" && !box.hidden) close(); });
   let lastFocus = null;
-  function open() { lastFocus = document.activeElement; render(); box.hidden = false; $m("mpX").focus(); }
+  function open() {
+    lastFocus = document.activeElement; box.hidden = false; renderList(); $m("mpX").focus();
+    if (!window.L) { $m("mpW").textContent = "No se pudo cargar la librería del mapa."; return; }
+    requestAnimationFrame(() => setup().then(() => { map.invalidateSize(); map.fire("moveend"); renderMap(); }));
+  }
   function close() { box.hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
   window.abrirMapa = open;
   document.addEventListener("click", e => { if (e.target.closest("[data-mapa]")) open(); });
