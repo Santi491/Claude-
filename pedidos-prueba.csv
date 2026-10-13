@@ -1,2 +1,4 @@
 id,fecha_compra,tienda,producto,cantidad,precio_usd,envio_usd,courier,guia,origen,destino,destino_lat,destino_lon,estado,eta,actualizado,foto,notas
 prueba-primo-1,2026-10-11,(pedido de un familiar),Paquete de prueba,1,,,USPS,9400108106245668781433,"Gray, LA",,,,etiqueta creada,,2026-10-12 21:00,,"prueba para ver cómo funciona el mapa; NO es dato del negocio"
+prueba-hermana-1,,(pedido de la hermana de Santi),Paquete de prueba,1,,,GOFO Express,GFUS01077294740994,,,,,por rastrear,,2026-10-13 18:30,,prueba para ver cómo funciona el mapa; NO es dato del negocio. Rastreo: https://www.gofoexpress.com/track (pegar la guía)
+prueba-hermana-2,,(pedido de la hermana de Santi),Paquete de prueba,1,,,SpeedX (por confirmar),SPXMIA013672610100002345,,,,,por rastrear,,2026-10-13 18:30,,"prueba para ver cómo funciona el mapa; NO es dato del negocio. Rastreo: https://www.speedx.io (Track My Package); si no la encuentra, probar en 17track.net"
