@@ -33,7 +33,11 @@ header{display:grid;gap:6px}
 .lede{color:var(--muted);max-width:70ch;margin:0}
 a{color:var(--accent);text-underline-offset:2px}
 
-/* ---------- Oficina ---------- */
+/* ---------- Oficina: ocupa todo el ancho y el alto de la pantalla al abrir ---------- */
+.hero{display:grid;gap:12px;padding-block:14px 0}
+.hero header{padding-inline:16px;max-width:1400px;width:100%;margin:0 auto}
+.hero .office{border-radius:0;border-inline:0}
+.hero h1{font-size:clamp(24px,3.6vw,36px)}
 .office{background:var(--o-bg);color:var(--o-ink);border:1px solid var(--o-line);border-radius:14px;overflow:hidden;display:grid;color-scheme:dark}
 .hud{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--o-line);background:var(--o-panel);font-family:var(--f-mono);font-size:12px}
 .hud .brand{font:800 15px var(--f-display);font-stretch:80%;color:var(--o-ink);margin-right:auto}
@@ -284,11 +288,10 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 @media (prefers-reduced-motion:no-preference){tr.row td{transition:background .15s}}
 </style>
 
-<div class="wrap">
+<div class="hero">
   <header>
     <div class="eyebrow" id="eyebrow">EE.UU. → Cochabamba</div>
     <h1>Oficina de agentes</h1>
-    <p class="lede">Toca un agente para acercarte y ver lo que hizo, o el gabinete para abrir los documentos. Tócalo otra vez para volver a la vista general.</p>
   </header>
 
   <section class="office" aria-label="Oficina de agentes">
@@ -307,6 +310,9 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
       </aside>
     </div>
   </section>
+</div>
+
+<div class="wrap">
 
   <header style="margin-top:10px">
     <div class="eyebrow">Los 14 productos de vigilar.csv</div>
@@ -743,7 +749,7 @@ function iso(x,y,z=0){return [ox+(x-y)*TW/2*scale, oy+(x+y)*TH/2*scale - z*scale
 function resize(){
   const w=$("stage").clientWidth;dpr=Math.min(2,window.devicePixelRatio||1);
   const natW=(COLS+ROWS)*TW/2+40,natH=(COLS+ROWS)*TH/2+130;
-  const maxH=Math.max(380,window.innerHeight*0.74);
+  const maxH=Math.max(380,window.innerHeight-$("stage").getBoundingClientRect().top-window.scrollY);
   scale=Math.min(2.6,w/natW,maxH/natH);W=w;H=Math.round(natH*scale);
   cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);cv.style.height=H+"px";
   ox=W/2+((ROWS-COLS)*TW/4)*scale;oy=70*scale;

@@ -31,7 +31,7 @@
   scene.background = new THREE.Color(0x121417);
   scene.fog = new THREE.Fog(0x121417, 42, 85);
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 200);
-  const HOME = { pos: new THREE.Vector3(12.5, 13, 18.5), target: new THREE.Vector3(-2.2, 0.8, 1.2) };
+  const HOME = { pos: new THREE.Vector3(14.5, 14.5, 20.5), target: new THREE.Vector3(-0.8, 0.6, 1.4) };
   camera.position.copy(HOME.pos);
   const controls = new THREE.OrbitControls(camera, el);
   controls.enableDamping = true; controls.dampingFactor = 0.08;
@@ -647,7 +647,9 @@
 
   /* ---------- Tamaño y bucle ---------- */
   function size() {
-    const W = stage.clientWidth, H = Math.round(Math.max(380, Math.min(window.innerHeight * 0.74, W * 0.6)));
+    // llena el alto que queda de la pantalla debajo del título y la barra de datos
+    const top = stage.getBoundingClientRect().top + window.scrollY;
+    const W = stage.clientWidth, H = Math.round(W < 700 ? Math.max(W * 1.1, Math.min(W * 1.4, window.innerHeight - top)) : Math.max(420, window.innerHeight - top));
     renderer.setSize(W, H); camera.aspect = W / H; camera.updateProjectionMatrix(); viewOffset();
   }
   let lastW3 = 0;
