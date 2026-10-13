@@ -11,9 +11,9 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | SSD NVMe 2TB | [209.99](https://www.ebay.com/itm/227402767941) | 2.659 (B 1 kg) | 2.576 (B 1 kg) | 4.060 | 1.401 (35%) | 1.484 (37%) | conviene |
 | Intel Core Ultra 7 265K | [234.99](https://www.ebay.com/itm/366718755179) | 2.956 (B 1 kg) | 2.914 (B 1.5 kg) | 3.950 | 994 (25%) | 1.036 (26%) | conviene |
 | Intel Core i5-12400F | [150.00](https://www.ebay.com/itm/800773514419) | 1.947 (B 1 kg) | 1.905 (B 1.5 kg) | 2.460 | 513 (21%) | 555 (23%) | conviene |
-| Intel Core i5-14400F | [164.49](https://www.ebay.com/itm/389945918228) | 2.119 (B 1 kg) | 2.077 (B 1.5 kg) | 2.520 | 401 (16%) | 443 (18%) | conviene |
 | SSD NVMe 1TB | [114.99](https://www.ebay.com/itm/800572518683) | 1.531 (B 1 kg) | 1.448 (B 1 kg) | 1.800 | 269 (15%) | 352 (20%) | justo |
 | Ryzen 7 7800X3D | [329.00](https://www.ebay.com/itm/187668752673) | 4.071 (B 1 kg) | 4.071 (B 2 kg) | 4.760 | 689 (14%) | 689 (14%) | justo |
+| Intel Core i5-14400F | [164.49](https://www.ebay.com/itm/389945918228) | 2.119 (B 1 kg) | 2.077 (B 1.5 kg) | 2.460 | 341 (14%) | 383 (16%) | justo |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [435.99](https://www.ebay.com/itm/960033835048) | 5.341 (B 1 kg) | 5.258 (B 1 kg) | 6.200 | 859 (14%) | 942 (15%) | justo |
 | Ryzen 9 9950X | [499.99](https://www.ebay.com/itm/267809260226) | 6.101 (B 1 kg) | 6.101 (B 2 kg) | 5.580 | -521 (-9%) | -521 (-9%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [493.00](https://www.ebay.com/itm/237072275336) | 6.018 (B 1 kg) | 5.935 (B 1 kg) | 4.500 | -1.518 (-34%) | -1.435 (-32%) | no conviene |
@@ -28,7 +28,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Intel Core i5-12400F | [99.00](https://www.ebay.com/itm/257796156461) | 1.341 (B 1 kg) | 1.300 (B 1.5 kg) | 2.460 | 1.119 (45%) | 1.160 (47%) | conviene |
 | Ryzen 5 7600 | [122.99](https://www.ebay.com/itm/307194675494) | 1.626 (B 1 kg) | 1.626 (B 2 kg) | 2.860 | 1.234 (43%) | 1.234 (43%) | conviene |
 | Intel Core Ultra 7 265K | [209.99](https://www.ebay.com/itm/128130997262) | 2.659 (B 1 kg) | 2.617 (B 1.5 kg) | 3.950 | 1.291 (33%) | 1.333 (34%) | conviene |
-| Intel Core i5-14400F | [134.00](https://www.ebay.com/itm/267812335424) | 1.757 (B 1 kg) | 1.715 (B 1.5 kg) | 2.520 | 763 (30%) | 805 (32%) | conviene |
+| Intel Core i5-14400F | [134.00](https://www.ebay.com/itm/267812335424) | 1.757 (B 1 kg) | 1.715 (B 1.5 kg) | 2.460 | 703 (29%) | 745 (30%) | conviene |
 | Ryzen 7 7800X3D | [283.99](https://www.ebay.com/itm/366706722500) | 3.537 (B 1 kg) | 3.537 (B 2 kg) | 4.760 | 1.223 (26%) | 1.223 (26%) | conviene |
 | SSD NVMe 1TB | [99.99](https://www.ebay.com/itm/960058916251) | 1.353 (B 1 kg) | 1.270 (B 1 kg) | 1.800 | 447 (25%) | 530 (29%) | conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [399.90](https://www.ebay.com/itm/298605370806) | 4.913 (B 1 kg) | 4.830 (B 1 kg) | 6.200 | 1.287 (21%) | 1.370 (22%) | conviene |
@@ -56,6 +56,7 @@ eBay nuevo: USD 329.00 con envío en EE.UU. (eBay API; vendedor aaawavecom 99.8%
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2669179450145313/) | no indicado | 5.190 | 1.119 (22%) | 2026-10-11 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1361869715871206/) | no indicado | 5.390 | 1.319 (24%) | 2026-10-11 |
 | Viadata Computadoras (WhatsApp) · [ver](https://www.facebook.com/computadorascochabamba/) | nuevo OEM (solo el chip) | 5.500 | 1.429 (26%) | 2026-10-12 |
+| OverCity (WhatsApp) | nuevo OEM (solo el chip) | 5.500 | 1.429 (26%) | 2026-10-13 |
 | Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | BOX (según foto de su web; USD 480) | 5.664 | 1.593 (28%) | 2026-10-12 |
 
 ### Ryzen 9 9950X
@@ -85,6 +86,8 @@ eBay nuevo: USD 164.49 con envío en EE.UU. (eBay API; vendedor newegg 99.6%; In
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
+| OverCity (WhatsApp) | nuevo OEM | 2.460 | 341 (14%) | 2026-10-13 |
+| Soft Computers (WhatsApp) | nuevo OEM | 2.500 | 381 (15%) | 2026-10-13 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | disponible (web) | 2.520 | 401 (16%) | 2026-10-12 |
 | Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | OEM (sin caja; según foto de su web; USD 215) | 2.537 | 418 (16%) | 2026-10-12 |
 

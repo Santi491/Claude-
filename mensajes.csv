@@ -13,3 +13,11 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-13,10:27,whatsapp,PortatiComps,enviado,nuevo,,consulta de precios grupo B
 2026-10-13,10:28,whatsapp,Distribuidora DyD,enviado,nuevo,,consulta de precios grupo B
 2026-10-13,10:32,whatsapp,Soft Computers,enviado,nuevo,,consulta de precios grupo A (aviso IA de Meta aceptado)
+2026-10-13,10:38,whatsapp,Soft Computers,recibido,respuesta,sí,i5-14400F Bs 2.500; memorias solo DDR4
+2026-10-13,15:43,whatsapp,OverCity,recibido,respuesta,sí,7800X3D OEM Bs 5.500
+2026-10-13,15:44,whatsapp,OverCity,recibido,respuesta,sí,"i5-14400F OEM Bs 2.460; Corsair DDR5 agotada, tiene Apacer y XPG"
+2026-10-13,16:17,whatsapp,OverCity,enviado,respuesta,,"pide precio XPG DDR5 32GB 6000, precio por 2 o 4 y garantía"
+2026-10-13,16:17,whatsapp,Soft Computers,enviado,respuesta,,"pregunta si el 14400F es caja u OEM, si tiene 7800X3D y precio DDR4 16GB 3200"
+2026-10-13,11:35,messenger,Vendedor Marketplace (7800X3D sellado),recibido,respuesta,no,ya vendió los serie 9000; solo le queda el 7800X3D
+2026-10-13,16:22,messenger,Vendedor Marketplace (7800X3D sellado),enviado,respuesta,,"pregunta si es nuevo sellado en caja, precio final y si cambia llevando 2"
+2026-10-13,16:17,whatsapp,Soft Computers,recibido,respuesta,no,el i5-14400F es OEM

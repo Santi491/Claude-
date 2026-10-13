@@ -1,2 +1,10 @@
 id,fecha,hora,lugar,lat,lon,evento
 prueba-primo-1,2026-10-11,17:32,"Gray, LA 70359",29.70,-90.78,"Etiqueta creada: USPS todavía no recibió el paquete (tools.usps.com, revisado el 12/10 21:00)"
+prueba-primo-1,2026-10-13,12:13,"Gray, LA",29.70,-90.78,"USPS recogió el paquete (tools.usps.com, revisado el 13/10 16:25); entrega estimada sábado 17/10"
+prueba-hermana-1,2026-10-10,19:44,"Carteret, NJ",40.58,-74.23,Llegó al centro regional de GOFO
+prueba-hermana-1,2026-10-11,03:31,"Carteret, NJ",40.58,-74.23,Salió del centro regional de GOFO
+prueba-hermana-1,2026-10-12,03:37,"Doral, FL",25.82,-80.36,Llegó al centro regional de GOFO
+prueba-hermana-1,2026-10-13,07:47,"Miami, FL",25.77,-80.19,Llegó a la estación de reparto
+prueba-hermana-1,2026-10-13,07:57,"Miami, FL",25.77,-80.19,Salió a reparto
+prueba-hermana-1,2026-10-13,11:57,"Miami, FL",25.77,-80.19,"Entregado en Miami (gofo.com, revisado el 13/10 16:27)"
+prueba-hermana-2,2026-10-09,22:02,"Miami, FL",25.77,-80.19,Etiqueta creada en Miami (SpeedX); sin movimientos todavía (revisado el 13/10 16:29)
