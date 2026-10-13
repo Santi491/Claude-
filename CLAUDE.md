@@ -1,6 +1,6 @@
 # Cargo Brothers · agente de importación EE.UU. → Cochabamba
 
-La empresa se llama **Cargo Brothers** (desde el 12/10/2026), eslogan "Importación de componentes". Logo: monograma C + B dentro de un círculo con una diagonal, en monolínea blanca (principal); versión horizontal (monograma + nombre) para barras; círculo sólido con la C y la B caladas solo como ícono chico. En la oficina están en `cbSvg` / `cbCanvas` de `oficina/index.html`. Todo lo nuevo (oficina, informes, documentos) usa el nombre Cargo Brothers.
+La empresa se llama **Cargo Brothers** (desde el 12/10/2026), eslogan "Importación de componentes". Logo: monograma C + B dentro de un círculo con una diagonal, en monolínea blanca (principal); versión horizontal (monograma + nombre) para barras; círculo sólido con la C y la B caladas solo como ícono chico. En la oficina están en `cbSvg` / `cbCanvas` de `oficina/index.html`. Los archivos de imagen (para Telegram, correo y documentos) están en `marca/`: logo principal, horizontal e ícono, en PNG con fondo oscuro, PNG transparente y SVG. Todo lo nuevo (oficina, informes, documentos) usa el nombre Cargo Brothers.
 
 Claude trabaja como agente del usuario para decidir si conviene traer productos de EE.UU. a Cochabamba (Bolivia) y revenderlos.
 
