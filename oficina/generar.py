@@ -161,10 +161,19 @@ def main():
         with open(ruta_cap, encoding="utf-8") as f:
             capturas = [c for c in csv.DictReader(f) if os.path.exists(os.path.join(OFI, c["archivo"]))]
     # Pedidos (pedidos.csv): solo campos aptos para la página pública; nunca guía, número de pedido ni dirección
-    pedidos = []
-    if os.path.exists(os.path.join(RAIZ, "pedidos.csv")):
-        pedidos = [{k: f.get(k, "") for k in ("fecha_compra", "tienda", "producto", "cantidad", "courier", "estado", "eta", "actualizado")}
-                   for f in leer("pedidos.csv")]
+    seg = leer("seguimiento.csv") if os.path.exists(os.path.join(RAIZ, "seguimiento.csv")) else []
+    def lista_pedidos(nombre, prueba):
+        if not os.path.exists(os.path.join(RAIZ, nombre)):
+            return []
+        out = []
+        for f in leer(nombre):
+            d = {k: f.get(k, "") for k in ("id", "fecha_compra", "tienda", "producto", "cantidad", "courier", "origen", "destino",
+                                            "destino_lat", "destino_lon", "estado", "eta", "actualizado", "foto")}
+            d["prueba"] = prueba
+            d["eventos"] = [{k: e[k] for k in ("fecha", "hora", "lugar", "lat", "lon", "evento")} for e in seg if e["id"] == f.get("id")]
+            out.append(d)
+        return out
+    pedidos = lista_pedidos("pedidos.csv", False) + lista_pedidos("pedidos-prueba.csv", True)
     datos = {"generado": datetime.now().strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
              "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas,
              "pedidos": pedidos}

@@ -1,1 +1,1 @@
-fecha_compra,tienda,producto,cantidad,precio_usd,envio_usd,courier,guia,estado,eta,actualizado,notas
+id,fecha_compra,tienda,producto,cantidad,precio_usd,envio_usd,courier,guia,origen,destino,destino_lat,destino_lon,estado,eta,actualizado,foto,notas

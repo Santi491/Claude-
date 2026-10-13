@@ -213,6 +213,55 @@ tr.row.open td{background:var(--accent-soft)}
   .mvhead{display:none}
   .docs{grid-template-columns:minmax(0,1fr)}
 }
+
+/* ---------- Mapa de envíos (pantalla de Pedidos) ---------- */
+.mapa{position:fixed;inset:0;z-index:50;background:rgba(4,10,16,.72);display:grid;place-items:center;padding:3vh 3vw;color-scheme:dark}
+.mp-card{width:min(1280px,100%);height:min(820px,94vh);background:var(--o-bg);color:var(--o-ink);border:1px solid var(--o-line);border-radius:14px;display:grid;grid-template-rows:auto minmax(0,1fr);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.mp-head{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--o-line);background:var(--o-panel)}
+.mp-head b{font:800 20px var(--f-display);font-stretch:82%;margin-right:10px}
+.mp-head span{font:500 12px var(--f-mono);color:var(--o-muted)}
+.mp-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.mp-tools .seg{border-color:var(--o-line)}
+.mp-tools .seg button{background:#0D1D2A;color:var(--o-ink);font-size:13px}
+.mp-tools .seg button+button{border-left-color:var(--o-line)}
+.mp-tools .seg button[aria-pressed="true"]{background:var(--o-cyan);color:var(--o-bg)}
+.mp-chk{font:500 13px var(--f-body);display:flex;gap:6px;align-items:center}
+.mp-x{font:600 12px var(--f-mono);color:var(--o-ink);background:transparent;border:1px solid var(--o-line);border-radius:6px;padding:6px 12px;cursor:pointer}
+.mp-body{display:grid;grid-template-columns:340px minmax(0,1fr);min-height:0}
+.mp-list{overflow:auto;border-right:1px solid var(--o-line);padding:10px;display:grid;gap:8px;align-content:start}
+.mp-item{display:grid;grid-template-columns:56px minmax(0,1fr);gap:10px;text-align:left;background:#0D1D2A;border:1px solid var(--o-line);border-radius:10px;padding:10px;color:var(--o-ink);cursor:pointer;font:inherit}
+.mp-item.on,.mp-item:hover{border-color:var(--o-amber)}
+.mp-ph{width:56px;height:56px;border-radius:8px;background:#07111A;display:grid;place-items:center;overflow:hidden}
+.mp-ph img{width:100%;height:100%;object-fit:cover}.mp-ph svg{width:40px;height:40px}
+.mp-tx{display:grid;gap:3px;min-width:0}
+.mp-tx b{font:700 14px var(--f-body)}
+.mp-tx small{font:500 11.5px var(--f-mono);color:var(--o-muted);overflow-wrap:anywhere}
+.mp-test{justify-self:start;width:max-content;font:700 10px var(--f-mono);font-style:normal;letter-spacing:.06em;color:#0B1620;background:var(--o-amber);border-radius:4px;padding:1px 5px;margin-left:6px}
+.mp-steps{display:flex;gap:4px;margin:2px 0}
+.mp-steps i{flex:1;height:5px;border-radius:3px;background:#22313D}
+.mp-steps i.ok{background:var(--c)}
+.mp-tl{margin:-2px 0 4px 66px;border-left:2px solid var(--o-line);padding:4px 0 4px 12px;display:grid;gap:8px;font-size:12.5px}
+.mp-tl div{display:grid;gap:1px}
+.mp-tl time{font:500 11px var(--f-mono);color:var(--o-muted)}
+.mp-tl span{color:var(--o-muted)}
+.mp-empty{color:var(--o-muted);font-size:14px;padding:8px}
+.mp-map{position:relative;min-width:0;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;padding:8px}
+.mp-map svg{width:100%;height:100%}
+.mp-grid{stroke:#14283A;stroke-width:1}
+.mp-us{fill:#102A3C;stroke:#2E5A78;stroke-width:2}
+.mp-city{fill:#5B7A90}
+.mp-ctx{font:500 12px var(--f-mono);fill:#6F8DA3}
+.mp-lbl{font:700 14px var(--f-body);fill:#D8E8F2;paint-order:stroke;stroke:#0B1620;stroke-width:4px}
+.mp-sub{font:500 12px var(--f-mono);fill:#9FB6C7;paint-order:stroke;stroke:#0B1620;stroke-width:4px}
+.mp-todo{fill:none;stroke:#7F9AAD;stroke-width:2;stroke-dasharray:6 6}
+.mp-pin{cursor:pointer}
+@media (prefers-reduced-motion:no-preference){.mp-pulse{animation:mpP 1.8s ease-out infinite;transform-box:fill-box;transform-origin:center}}
+@keyframes mpP{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.4);opacity:0}}
+.mp-leg{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 12px var(--f-mono);color:var(--o-muted);padding:4px 8px}
+.mp-leg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.mp-leg i.dash{width:18px;height:0;border-top:2px dashed #7F9AAD;border-radius:0}
+.openmap{justify-self:start;font:700 13px var(--f-mono);color:var(--o-bg);background:var(--o-amber);border:0;border-radius:6px;padding:8px 14px;cursor:pointer}
+@media (max-width:760px){.mp-body{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(260px,1fr)}.mp-list{max-height:40vh;border-right:0;border-bottom:1px solid var(--o-line)}}
 footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 @media (prefers-reduced-motion:no-preference){tr.row td{transition:background .15s}}
 </style>
@@ -573,12 +622,13 @@ function pedidosShot(){
   g.fillStyle="#141F2A";g.fillRect(0,0,1280,72);g.fillStyle="#E6EDF3";g.font=`700 28px ${SANS}`;g.fillText("Pedidos",28,46);
   g.fillStyle="#8B9AA8";g.font=`500 17px ${MONO}`;g.textAlign="right";g.fillText("eBay → courier → Cochabamba",1252,44);g.textAlign="left";
   const P2=D.pedidos||[];
+  g.fillStyle="#F2A541";g.font=`600 16px ${SANS}`;g.fillText("toca para abrir el mapa",1060,44);
   if(!P2.length){g.fillStyle="#8B9AA8";g.font=`600 30px ${SANS}`;g.fillText("Todavía no hay pedidos cargados",40,170);
     g.font=`500 22px ${SANS}`;wrap(g,"Cuando la sesión de eBay esté abierta en Chrome, este agente lee tus compras; con el número de guía sigue el paquete del courier hasta Cochabamba.",40,230,1180,34,4);return c}
   const steps=["comprado","enviado","bodega","camino","cochabamba","entregado"];
   P2.slice(-6).reverse().forEach((p,i)=>{const y=96+i*102,col=PED_COL(p.estado);
     g.fillStyle="#131D27";g.beginPath();g.roundRect(24,y,1232,90,10);g.fill();
-    g.fillStyle="#E6EDF3";g.font=`700 24px ${SANS}`;let nm=`${p.cantidad||1}× ${p.producto}`;while(g.measureText(nm).width>640)nm=nm.slice(0,-1);g.fillText(nm,44,y+36);
+    g.fillStyle="#E6EDF3";g.font=`700 24px ${SANS}`;let nm=`${p.cantidad||1}× ${p.producto}${p.prueba?" (prueba)":""}`;while(g.measureText(nm).width>640)nm=nm.slice(0,-1);g.fillText(nm,44,y+36);
     g.fillStyle="#8B9AA8";g.font=`500 17px ${MONO}`;g.fillText(`${p.tienda||""} · ${p.courier||"courier"} · llega ${p.eta||"—"}`,44,y+68);
     const k=steps.findIndex(s=>new RegExp(s,"i").test(p.estado||""));
     steps.forEach((s,j)=>{const x=760+j*82;g.fillStyle=j<=k?col:"#26333F";g.beginPath();g.arc(x,y+34,11,0,7);g.fill();if(j<steps.length-1){g.fillRect(x+11,y+32,60,4)}});
@@ -598,7 +648,7 @@ function screenHtml(a){
   }
   if(a.id==="pedidos"){
     const P2=D.pedidos||[];
-    return `<div class="shot">${drawn(`<b>${P2.length} pedido${P2.length===1?"":"s"}</b> · armado con pedidos.csv (sin guías ni direcciones: la página es pública)`)}<pre class="term"><span class="k">$ pedidos --estado</span>\n${P2.length?P2.slice().reverse().map(p=>`${esc(p.cantidad||1)}× ${esc(p.producto)} · ${esc(p.tienda)} · <span class="y">${esc(p.estado)}</span> · llega ${esc(p.eta||"—")}`).join("\n"):"Sin pedidos todavía. Falta iniciar sesión en eBay en Chrome o pasar las guías del courier."}</pre></div>`;
+    return `<button type="button" class="openmap" data-mapa>Abrir pantalla · mapa de envíos</button><div class="shot" data-mapa style="cursor:pointer">${drawn(`<b>${P2.length} pedido${P2.length===1?"":"s"}</b> · armado con pedidos.csv (sin guías ni direcciones: la página es pública)`)}<pre class="term"><span class="k">$ pedidos --estado</span>\n${P2.length?P2.slice().reverse().map(p=>`${esc(p.cantidad||1)}× ${esc(p.producto)} · ${esc(p.tienda)} · <span class="y">${esc(p.estado)}</span> · llega ${esc(p.eta||"—")}`).join("\n"):"Sin pedidos todavía. Falta iniciar sesión en eBay en Chrome o pasar las guías del courier."}</pre></div>`;
   }
   if(a.id==="ana"){
     const mlabel={new:"nuevo",used:"usado",min:"el más barato"}[S.mode];
@@ -912,4 +962,5 @@ document.querySelectorAll("#main th").forEach(th=>th.onclick=()=>{const k=th.dat
 
 resize();lastW=$("stage").clientWidth;render();renderStmt();renderDays();renderDocs();requestAnimationFrame(frame);
 </script>
+<script src="mapa.js"></script>
 <script src="oficina3d.js"></script>

@@ -136,7 +136,7 @@
       m.position.set(x + dx * s, dy * s, z + dz * s); m.castShadow = true; scene.add(m);
     });
   }
-  plant(-RW / 2 + 1, -RD / 2 + 1); plant(RW / 2 - 1.2, -RD / 2 + 1.2, 1.2); plant(-RW / 2 + 1, RD / 2 - 1.5, .9); plant(12.8, 8.6, 1.1);
+  plant(-RW / 2 + 1, -RD / 2 + 1); plant(RW / 2 - 1.2, -RD / 2 + 1.2, 1.2); plant(-RW / 2 + 1, RD / 2 - 1.5, .9);
 
   // Rack de servidores (la nube)
   const rackG = new THREE.Group(); rackG.position.set(-RW / 2 + 1.1, 0, -5.5); scene.add(rackG);
@@ -146,16 +146,6 @@
     const m = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.04, 0.02), new THREE.MeshBasicMaterial({ color: 0x4fd1e8 }));
     m.position.set(0.62, 0.4 + i * 0.24, -0.3 + (i % 3) * 0.25); m.rotation.y = Math.PI / 2; rackG.add(m); leds.push(m);
   }
-
-  // Rincón de descanso (zona libre para decorar)
-  const lounge = new THREE.Group(); lounge.position.set(10, 0, 6.2); scene.add(lounge);
-  const rug = new THREE.Mesh(new THREE.CircleGeometry(2.6, 40), M(0x2b3e4f, { roughness: 1 }));
-  rug.rotation.x = -Math.PI / 2; rug.position.y = 0.01; rug.receiveShadow = true; lounge.add(rug);
-  const sofaM = M(0x38506a, { roughness: .9 });
-  box(3.4, 0.45, 1.1, sofaM, 0, 0.35, 1.5, lounge); box(3.4, 0.8, 0.3, sofaM, 0, 0.75, 2.0, lounge);
-  box(0.3, 0.6, 1.1, sofaM, -1.75, 0.5, 1.5, lounge); box(0.3, 0.6, 1.1, sofaM, 1.75, 0.5, 1.5, lounge);
-  cyl(0.6, 0.6, 0.06, M(0x6b4a33), 0, 0.45, -0.1, lounge); cyl(0.08, 0.08, 0.42, M(0x222222), 0, 0.21, -0.1, lounge);
-  cyl(0.09, 0.08, 0.14, M(0xe8e2d2), 0.2, 0.55, -0.1, lounge);
 
   // Pasillo marcado en el piso
   const strip = M(0xf2a541, { emissive: 0x3a2610, roughness: .6 });
@@ -293,29 +283,112 @@
   const gymSign = canvasTex(512, 160, (g, w, h) => { g.fillStyle = "#0E1A24"; g.fillRect(0, 0, w, h); g.fillStyle = "#F2A541"; g.font = "900 96px Archivo, sans-serif"; g.textAlign = "center"; g.fillText("GYM", w / 2, 116); });
   const gs = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.5), new THREE.MeshBasicMaterial({ map: gymSign })); gs.rotation.y = Math.PI / 2; gs.position.set(-RW / 2 + 0.07, 3.15, 6.8); scene.add(gs);
 
-  // Zona gamer (tele con consola en el rincón de descanso + escritorio gamer)
-  const tv = new THREE.Group(); tv.position.set(0, 0, -1.9); lounge.add(tv);
-  box(2.4, 0.45, 0.45, black, 0, 0.22, 0, tv);
-  const strip2 = new THREE.Mesh(new THREE.BoxGeometry(2.3, 0.03, 0.03), rgb()); strip2.position.set(0, 0.03, 0.24); tv.add(strip2);
-  box(2.2, 1.25, 0.08, M(0x0b0f14, { metalness: .4, roughness: .3 }), 0, 1.25, 0, tv);
-  const tvTex = canvasTex(768, 432, (g, w, h) => {
-    const gr = g.createLinearGradient(0, 0, w, h); gr.addColorStop(0, "#2b0b4f"); gr.addColorStop(1, "#0b3b5a"); g.fillStyle = gr; g.fillRect(0, 0, w, h);
-    g.fillStyle = "#4FD1E8"; g.font = "900 96px Archivo, sans-serif"; g.textAlign = "center"; g.fillText("PLAY", w / 2, h / 2 + 30);
+
+  /* ---------- Oficina de vidrio del jefe ---------- */
+  const glassM = new THREE.MeshStandardMaterial({ color: 0x9fd8ff, transparent: true, opacity: 0.13, roughness: 0.05, metalness: 0.1, depthWrite: false, side: THREE.DoubleSide });
+  const frameM = M(0x1a2632, { metalness: .6, roughness: .35 });
+  function glassWall(x1, z1, x2, z2) {
+    const len = Math.hypot(x2 - x1, z2 - z1), cx = (x1 + x2) / 2, cz = (z1 + z2) / 2, ang = Math.atan2(z2 - z1, x2 - x1);
+    const g = new THREE.Mesh(new THREE.PlaneGeometry(len, 2.5), glassM); g.position.set(cx, 1.3, cz); g.rotation.y = -ang; scene.add(g);
+    [0.04, 2.56].forEach(y => { const f = box(len, 0.06, 0.06, frameM, cx, y, cz); f.rotation.y = -ang; });
+  }
+  glassWall(-3.7, 6.0, 1.7, 6.0); glassWall(-3.7, 6.0, -3.7, 9.8); glassWall(1.7, 6.0, 1.7, 8.0);
+  const plate = canvasTex(512, 128, (g, w, h) => { g.fillStyle = "rgba(10,20,30,.85)"; g.fillRect(0, 0, w, h); g.fillStyle = "#F2A541"; g.font = "800 64px Archivo, sans-serif"; g.textAlign = "center"; g.fillText("SANTI · CEO", w / 2, 86); });
+  const pl = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.4), new THREE.MeshBasicMaterial({ map: plate, transparent: true })); pl.position.set(-1, 2.15, 5.98); pl.rotation.y = Math.PI; scene.add(pl);
+  const pl2 = pl.clone(); pl2.rotation.y = 0; pl2.position.z = 6.02; scene.add(pl2);
+  const orug = new THREE.Mesh(new THREE.BoxGeometry(4.6, 0.02, 3.2), M(0x2c2236, { roughness: 1 })); orug.position.set(-1, 0.01, 7.9); orug.receiveShadow = true; scene.add(orug);
+  plant(-3.2, 9.3, 0.9);
+
+  /* ---------- Zona gamer ---------- */
+  const GZ = new THREE.Group(); GZ.position.set(10.6, 0, 6.0); scene.add(GZ);
+  const carpet = new THREE.Mesh(new THREE.BoxGeometry(8.4, 0.05, 7.6), M(0x0c0a13, { roughness: 1 })); carpet.position.y = 0.025; carpet.receiveShadow = true; GZ.add(carpet);
+  [[0, -3.8, 8.4, 0.06], [0, 3.8, 8.4, 0.06], [-4.2, 0, 0.06, 7.6], [4.2, 0, 0.06, 7.6]].forEach(([x, z, w, d]) => { const e = new THREE.Mesh(new THREE.BoxGeometry(w, 0.03, d), rgb()); e.position.set(x, 0.06, z); GZ.add(e); });
+  // pared de fondo con paneles hexagonales RGB y letrero de neón
+  const GW = new THREE.Group(); GW.position.set(0, 0, -3.6); GZ.add(GW);
+  box(8.4, 3.8, 0.22, M(0x120d1d, { roughness: .85 }), 0, 1.9, 0, GW);
+  const hexDark = M(0x221836, { roughness: .6 });
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 9; c++) {
+    if ((r + c) % 3 === 1 && r > 0) continue;
+    const lit = (r * 7 + c * 3) % 5 === 0;
+    const h = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.05, 6), lit ? rgb() : hexDark);
+    h.rotation.x = Math.PI / 2; h.position.set(-3.5 + c * 0.88 + (r % 2) * 0.44, 1.0 + r * 0.52, 0.14); GW.add(h);
+  }
+  const neon = canvasTex(1024, 256, (g, w, h) => {
+    g.clearRect(0, 0, w, h); g.textAlign = "center"; g.font = "900 150px Archivo, sans-serif";
+    g.shadowColor = "#ff2bd6"; g.shadowBlur = 40; g.fillStyle = "#ff7be6"; g.fillText("GAME ZONE", w / 2, 180);
+    g.shadowColor = "#4fd1e8"; g.shadowBlur = 20; g.lineWidth = 4; g.strokeStyle = "#bff7ff"; g.strokeText("GAME ZONE", w / 2, 180);
   });
-  const tvs = new THREE.Mesh(new THREE.PlaneGeometry(2.08, 1.15), new THREE.MeshBasicMaterial({ map: tvTex, toneMapped: false })); tvs.position.set(0, 1.25, 0.045); tv.add(tvs);
-  box(0.4, 0.08, 0.32, M(0xeeeeee, { roughness: .4 }), 0.6, 0.49, 0, tv);
-  const gamer = new THREE.Group(); gamer.position.set(12.9, 0, 1.6); scene.add(gamer);
-  box(1.9, 0.06, 0.85, black, 0, 0.78, 0, gamer);
-  [[-.9, -.38], [.9, -.38], [-.9, .38], [.9, .38]].forEach(([x, z]) => box(0.05, 0.75, 0.05, black, x, 0.38, z, gamer));
-  box(0.26, 0.55, 0.52, M(0x111111, { metalness: .3 }), 0.72, 1.09, -0.08, gamer);
-  const sidePanel = new THREE.Mesh(new THREE.PlaneGeometry(0.44, 0.45), rgb()); sidePanel.rotation.y = -Math.PI / 2; sidePanel.position.set(0.585, 1.09, -0.08); gamer.add(sidePanel);
-  box(1.3, 0.72, 0.05, M(0x0b0f14), -0.15, 1.38, -0.3, gamer);
-  const gmon = new THREE.Mesh(new THREE.PlaneGeometry(1.22, 0.64), new THREE.MeshBasicMaterial({ map: tvTex, toneMapped: false })); gmon.position.set(-0.15, 1.38, -0.272); gamer.add(gmon);
-  const kb = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.03, 0.2), rgb()); kb.position.set(-0.15, 0.825, 0.12); gamer.add(kb);
-  const gch = new THREE.Group(); gch.position.set(-0.15, 0, 0.9); gamer.add(gch);
-  box(0.62, 0.12, 0.6, black, 0, 0.5, 0, gch); box(0.62, 1.05, 0.12, red, 0, 1.05, 0.3, gch); box(0.36, 0.22, 0.12, black, 0, 1.68, 0.3, gch);
-  box(0.12, 0.85, 0.14, red, -0.26, 1.0, 0.32, gch); box(0.12, 0.85, 0.14, red, 0.26, 1.0, 0.32, gch);
-  cyl(0.04, 0.04, 0.42, legM, 0, 0.25, 0, gch, 8); cyl(0.32, 0.32, 0.04, legM, 0, 0.04, 0, gch, 5);
+  const sign = new THREE.Mesh(new THREE.PlaneGeometry(4.6, 1.15), new THREE.MeshBasicMaterial({ map: neon, transparent: true, toneMapped: false })); sign.position.set(0, 3.25, 0.16); GW.add(sign);
+  const signLight = new THREE.PointLight(0xff4fd8, 1.2, 9, 2); signLight.position.set(0, 3.1, 1.2); GW.add(signLight);
+  // pantalla de juego (synthwave)
+  const gameTex = canvasTex(1536, 512, (g, w, h) => {
+    const sky = g.createLinearGradient(0, 0, 0, h * .62); sky.addColorStop(0, "#12062b"); sky.addColorStop(1, "#5b1a7a"); g.fillStyle = sky; g.fillRect(0, 0, w, h);
+    const sun = g.createLinearGradient(0, h * .12, 0, h * .6); sun.addColorStop(0, "#ffd166"); sun.addColorStop(1, "#ff2bd6");
+    g.fillStyle = sun; g.beginPath(); g.arc(w / 2, h * .6, h * .34, Math.PI, 0); g.fill();
+    g.fillStyle = "#12062b"; for (let i = 0; i < 6; i++) g.fillRect(0, h * (.42 + i * .03), w, 4 + i);
+    g.fillStyle = "#1a0b33"; g.fillRect(0, h * .6, w, h * .4);
+    g.strokeStyle = "#4fd1e8"; g.lineWidth = 2;
+    for (let i = 0; i < 14; i++) { const y = h * .6 + Math.pow(i / 14, 2) * h * .4; g.beginPath(); g.moveTo(0, y); g.lineTo(w, y); g.stroke(); }
+    for (let i = -20; i <= 20; i++) { g.beginPath(); g.moveTo(w / 2 + i * 18, h * .6); g.lineTo(w / 2 + i * 140, h); g.stroke(); }
+    g.fillStyle = "#bff7ff"; g.font = "800 44px 'IBM Plex Mono', monospace"; g.fillText("LVL 99  ·  SCORE 128450", 40, 64);
+  });
+  gameTex.wrapS = THREE.RepeatWrapping; gameTex.repeat.x = -1;
+  function battlestation(x, accent) {
+    const g = new THREE.Group(); g.position.set(x, 0, -2.2); GZ.add(g);
+    box(2.7, 0.06, 1.05, M(0x0b0b0f, { roughness: .4, metalness: .3 }), 0, 0.78, 0, g);
+    const under = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.02, 0.02), rgb()); under.position.set(0, 0.74, 0.52); g.add(under);
+    [[-1.25, -.45], [1.25, -.45], [-1.25, .45], [1.25, .45]].forEach(([lx, lz]) => box(0.05, 0.75, 0.05, M(0x22262c, { metalness: .7, roughness: .3 }), lx, 0.38, lz, g));
+    // monitor curvo ultra ancho
+    const R = 2.3, L = 0.62, cz = -0.38 + R;
+    const back = new THREE.Mesh(new THREE.CylinderGeometry(R + 0.03, R + 0.03, 0.68, 40, 1, true, Math.PI - L / 2, L), M(0x0e1014, { metalness: .5, roughness: .4, side: THREE.FrontSide }));
+    back.position.set(0, 1.42, cz); g.add(back);
+    const scr = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 0.62, 40, 1, true, Math.PI - L / 2, L), new THREE.MeshBasicMaterial({ map: gameTex, side: THREE.BackSide, toneMapped: false }));
+    scr.position.set(0, 1.42, cz); g.add(scr);
+    const halo = new THREE.Mesh(new THREE.PlaneGeometry(1.7, 0.9), new THREE.MeshBasicMaterial({ color: accent, transparent: true, opacity: .35, toneMapped: false }));
+    halo.position.set(0, 1.42, -0.48); g.add(halo);
+    box(0.06, 0.4, 0.06, M(0x22262c, { metalness: .7 }), 0, 0.98, -0.42, g); box(0.5, 0.02, 0.22, M(0x22262c, { metalness: .7 }), 0, 0.82, -0.42, g);
+    // PC con vidrio y ventiladores RGB
+    const pc = new THREE.Group(); pc.position.set(1.05, 0.81, -0.15); g.add(pc);
+    box(0.32, 0.62, 0.58, M(0x0c0c10, { metalness: .4, roughness: .3 }), 0, 0.31, 0, pc);
+    const glassSide = new THREE.Mesh(new THREE.PlaneGeometry(0.56, 0.58), new THREE.MeshStandardMaterial({ color: 0x9fc7ff, transparent: true, opacity: .22, roughness: .05 }));
+    glassSide.rotation.y = -Math.PI / 2; glassSide.position.set(-0.165, 0.31, 0); pc.add(glassSide);
+    [0.16, 0.34, 0.52].forEach(y => { const f = new THREE.Mesh(new THREE.TorusGeometry(0.08, 0.012, 8, 24), rgb()); f.position.set(0, y, 0.295); pc.add(f); });
+    const inner = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.5, 0.48), rgb()); inner.position.set(0.12, 0.31, 0); pc.add(inner);
+    // teclado, mouse y mousepad
+    box(1.3, 0.01, 0.45, M(0x101015), -0.1, 0.815, 0.18, g);
+    const kb = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.03, 0.2), rgb()); kb.position.set(-0.25, 0.835, 0.15); g.add(kb);
+    const ms = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.03, 0.13), rgb()); ms.position.set(0.3, 0.835, 0.17); g.add(ms);
+    // auriculares en su soporte
+    cyl(0.02, 0.06, 0.32, M(0x22262c, { metalness: .6 }), -1.05, 0.98, -0.2, g, 10);
+    const hs = new THREE.Mesh(new THREE.TorusGeometry(0.11, 0.025, 8, 20, Math.PI), M(accent, { roughness: .5 })); hs.position.set(-1.05, 1.13, -0.2); g.add(hs);
+    // silla tipo carrera
+    const ch = new THREE.Group(); ch.position.set(-0.1, 0, 0.95); g.add(ch);
+    const acc = M(accent, { roughness: .55 }), blk = M(0x111114, { roughness: .6 });
+    box(0.64, 0.13, 0.6, blk, 0, 0.52, 0, ch); box(0.64, 1.15, 0.12, blk, 0, 1.12, 0.3, ch);
+    box(0.14, 1.0, 0.14, acc, -0.28, 1.08, 0.32, ch); box(0.14, 1.0, 0.14, acc, 0.28, 1.08, 0.32, ch);
+    box(0.4, 0.22, 0.13, acc, 0, 1.78, 0.31, ch);
+    box(0.06, 0.06, 0.4, blk, -0.36, 0.78, 0.02, ch); box(0.06, 0.06, 0.4, blk, 0.36, 0.78, 0.02, ch);
+    cyl(0.045, 0.045, 0.42, M(0x22262c, { metalness: .7 }), 0, 0.26, 0, ch, 8); cyl(0.34, 0.34, 0.04, M(0x22262c, { metalness: .7 }), 0, 0.04, 0, ch, 5);
+  }
+  battlestation(-2.0, 0xb3262d); battlestation(2.0, 0x2a62d8);
+  // máquina arcade
+  const arc = new THREE.Group(); arc.position.set(3.4, 0, 2.3); arc.rotation.y = -Math.PI / 2; GZ.add(arc);
+  box(0.85, 1.9, 0.75, M(0x2a0f45, { roughness: .6 }), 0, 0.95, 0, arc);
+  const arcScr = canvasTex(512, 400, (g, w, h) => { g.fillStyle = "#06020f"; g.fillRect(0, 0, w, h); g.fillStyle = "#ffd166"; g.font = "800 52px 'IBM Plex Mono', monospace"; g.textAlign = "center"; g.fillText("INSERT", w / 2, 170); g.fillText("COIN", w / 2, 240); g.fillStyle = "#4fd1e8"; for (let i = 0; i < 8; i++) g.fillRect(60 + i * 52, 300, 30, 30); });
+  const as = new THREE.Mesh(new THREE.PlaneGeometry(0.66, 0.52), new THREE.MeshBasicMaterial({ map: arcScr, toneMapped: false })); as.position.set(0, 1.42, 0.38); as.rotation.x = -0.12; arc.add(as);
+  const marquee = new THREE.Mesh(new THREE.BoxGeometry(0.85, 0.22, 0.08), rgb()); marquee.position.set(0, 1.86, 0.36); arc.add(marquee);
+  box(0.85, 0.08, 0.4, M(0x1a0a2e), 0, 1.02, 0.5, arc);
+  [[-0.2, 0xff3355], [-0.05, 0x33ddff], [0.1, 0xffdd33], [0.25, 0x66ff66]].forEach(([bx, c]) => cyl(0.03, 0.03, 0.03, new THREE.MeshBasicMaterial({ color: c }), bx, 1.075, 0.55, arc, 12));
+  // puffs y estante con figuras
+  [[-2.9, 2.6, 0x5b2a86], [-1.7, 3.0, 0x1f7f8c]].forEach(([x, z, c]) => {
+    const b = new THREE.Mesh(new THREE.SphereGeometry(0.55, 24, 16), M(c, { roughness: .95 })); b.scale.set(1, 0.55, 1); b.position.set(x, 0.3, z); b.castShadow = true; GZ.add(b);
+  });
+  const shelf = new THREE.Group(); shelf.position.set(-4.0, 0, 0.2); shelf.rotation.y = Math.PI / 2; GZ.add(shelf);
+  [0.6, 1.2, 1.8].forEach(y => { box(1.6, 0.04, 0.32, M(0x0b0b0f), 0, y, 0, shelf); const st = new THREE.Mesh(new THREE.BoxGeometry(1.55, 0.015, 0.02), rgb()); st.position.set(0, y - 0.03, 0.16); shelf.add(st); });
+  [[-0.55, 0.62, 0xff5577], [-0.15, 0.62, 0x55ccff], [0.3, 1.22, 0xffcc33], [-0.4, 1.22, 0x88ff88], [0.45, 1.82, 0xcc77ff], [0, 1.82, 0xff9933]].forEach(([fx, fy, c]) => {
+    cyl(0.07, 0.09, 0.22, M(c, { roughness: .5 }), fx, fy + 0.13, 0, shelf, 10);
+    const hd = new THREE.Mesh(new THREE.SphereGeometry(0.07, 12, 10), M(c, { roughness: .5 })); hd.position.set(fx, fy + 0.3, 0); shelf.add(hd);
+  });
 
   // Archivero de documentos
   const cabG = new THREE.Group(); cabG.position.set(12.4, 0, -6.8); scene.add(cabG);
@@ -390,7 +463,7 @@
     if (side) camera.setViewOffset(W + side, H, side, 0, W, H); else camera.clearViewOffset();
   }
   function focus3D(id) {
-    if (open && sel === id) { close3D(); return; }
+    if (open && sel === id) { if (id === "pedidos" && window.abrirMapa) { window.abrirMapa(); return; } close3D(); return; }
     if (id === "docs" && sel !== "docs") cabSel = null;
     sel = id; open = true; $("drawer").hidden = false; drawDrawer(); $("dBody").scrollTop = 0; viewOffset();
     const s = ST[id]; if (!s) return;

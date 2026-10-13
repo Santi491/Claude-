@@ -1,0 +1,2 @@
+id,fecha_compra,tienda,producto,cantidad,precio_usd,envio_usd,courier,guia,origen,destino,destino_lat,destino_lon,estado,eta,actualizado,foto,notas
+prueba-primo-1,2026-10-11,(pedido de un familiar),Paquete de prueba,1,,,USPS,9400108106245668781433,"Gray, LA",,,,etiqueta creada,,2026-10-12 21:00,,"prueba para ver cómo funciona el mapa; NO es dato del negocio"
