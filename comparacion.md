@@ -55,6 +55,7 @@ eBay nuevo: USD 329.00 con envío en EE.UU. (eBay API; vendedor aaawavecom 99.8%
 | Marketplace Cochabamba (particular/vendedor) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado (según anuncio) | 4.800 | 729 (15%) | 2026-10-11 |
 | Marketplace Cochabamba (particular/vendedor; Messenger) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado de fábrica, confirmado por el vendedor (último en stock; precio ya rebajado) | 4.800 | 729 (15%) | 2026-10-13 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2669179450145313/) | no indicado | 5.190 | 1.119 (22%) | 2026-10-11 |
+| OverCity (WhatsApp) | nuevo en caja sellada (box; el OEM está a Bs 5.500; el i5-14400F Bs 2.460 es su precio mínimo) | 5.350 | 1.279 (24%) | 2026-10-13 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1361869715871206/) | no indicado | 5.390 | 1.319 (24%) | 2026-10-11 |
 | Viadata Computadoras (WhatsApp) · [ver](https://www.facebook.com/computadorascochabamba/) | nuevo OEM (solo el chip) | 5.500 | 1.429 (26%) | 2026-10-12 |
 | OverCity (WhatsApp) | nuevo OEM (solo el chip) | 5.500 | 1.429 (26%) | 2026-10-13 |
