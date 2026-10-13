@@ -612,7 +612,7 @@
       tmp.project(camera);
       const vis = tmp.z < 1 && Math.abs(tmp.x) < 1.15 && Math.abs(tmp.y) < 1.15;
       b.hidden = !vis; if (!vis) return;
-      b.style.transform = `translate(${((tmp.x + 1) / 2 * W).toFixed(1)}px,${((1 - tmp.y) / 2 * H).toFixed(1)}px) translate(-50%,-100%)`;
+      const px = (tmp.x + 1) / 2 * W, py = (1 - tmp.y) / 2 * H;
       if (id === "jefe") {
         b.querySelector(".nm").textContent = "Santi · jefe"; b.style.setProperty("--c", "#F2A541");
         b.querySelector("small").textContent = LIVE_ON ? "viendo la ronda en vivo" : "supervisando";
@@ -626,6 +626,11 @@
         b.querySelector("small").textContent = extra;
       }
       b.classList.toggle("on", open && sel === id);
+      // En pantallas angostas la etiqueta no se sale por los costados ni por arriba: se corre hacia adentro
+      const m = 6, w = b.offsetWidth, h = b.offsetHeight;
+      const x = w + 2 * m < W ? Math.min(Math.max(px, w / 2 + m), W - w / 2 - m) : W / 2;
+      const y = Math.max(py, h + m);
+      b.style.transform = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`;
     });
   }
 
