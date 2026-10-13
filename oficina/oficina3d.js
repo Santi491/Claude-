@@ -485,44 +485,82 @@
   }
   // Escritorio del jefe arriba, en el entrepiso (Warehouse > Penthouse)
   const boss = new THREE.Group(); boss.position.set(-12.2, MZH, 4.6); boss.rotation.y = Math.PI / 2; scene.add(boss);
-  ledBar(-12.75, 4.6, 2.8, MZH + 1.9, Math.PI / 2);
+  ledBar(-12.75, 4.6, 3.6, MZH + 1.9, Math.PI / 2);
   const darkWood = M(0xffffff, { map: marbleN, roughness: .18, metalness: .06 });
-  box(3.4, 0.1, 1.5, darkWood, 0, 0.8, 0, boss); box(3.4, 0.7, 0.08, darkWood, 0, 0.4, -0.7, boss);
-  box(0.08, 0.75, 1.4, darkWood, -1.66, 0.38, 0, boss); box(0.08, 0.75, 1.4, darkWood, 1.66, 0.38, 0, boss);
-  const bossScreens = [];
-  [-0.82, 0.82].forEach((x, i) => {
-    box(1.5, 0.9, 0.06, M(0x10181f, { metalness: .3, roughness: .4 }), x, 1.5, -0.45, boss);
-    const c = document.createElement("canvas"); c.width = 768; c.height = 432;
-    const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding;
-    const m = new THREE.Mesh(new THREE.PlaneGeometry(1.42, 0.8), new THREE.MeshBasicMaterial({ map: t, toneMapped: false }));
-    m.position.set(x, 1.5, -0.415); boss.add(m); bossScreens.push({ c, t, i });
-    box(0.08, 0.36, 0.08, legM, x, 1.0, -0.45, boss);
+  box(4.4, 0.1, 1.5, darkWood, 0, 0.8, 0, boss); box(4.4, 0.7, 0.08, darkWood, 0, 0.4, -0.7, boss);
+  box(0.08, 0.75, 1.4, darkWood, -2.16, 0.38, 0, boss); box(0.08, 0.75, 1.4, darkWood, 2.16, 0.38, 0, boss);
+  // tres monitores: uno recto al centro y dos curvos a los costados, girados hacia el jefe
+  const bossScreens = [], bezelM = M(0x10181f, { metalness: .3, roughness: .4 });
+  function bossCanvas(w, h) { const c = document.createElement("canvas"); c.width = w; c.height = h; const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = 4; return { c, t }; }
+  {
+    const { c, t } = bossCanvas(768, 450);
+    box(1.5, 0.9, 0.06, bezelM, 0, 1.52, -0.45, boss);
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(1.42, 0.83), new THREE.MeshBasicMaterial({ map: t, toneMapped: false }));
+    m.position.set(0, 1.52, -0.415); boss.add(m); bossScreens.push({ c, t, i: 1 });
+    box(0.08, 0.36, 0.08, legM, 0, 1.0, -0.47, boss); box(0.45, 0.02, 0.25, legM, 0, 0.86, -0.45, boss);
+  }
+  [[-1.5, 0.42, 0], [1.5, -0.42, 2]].forEach(([x, rot, i]) => {
+    const g = new THREE.Group(); g.position.set(x, 0, -0.32); g.rotation.y = rot; boss.add(g);
+    const R = 1.9, L = 1.4 / R, cz = -0.06 + R;
+    const back = new THREE.Mesh(new THREE.CylinderGeometry(R + 0.035, R + 0.035, 0.9, 32, 1, true, Math.PI - (L + 0.04) / 2, L + 0.04), bezelM);
+    back.position.set(0, 1.52, cz); g.add(back);
+    const { c, t } = bossCanvas(768, 450); t.wrapS = THREE.RepeatWrapping; t.repeat.x = -1;
+    const scr = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 0.83, 32, 1, true, Math.PI - L / 2, L), new THREE.MeshBasicMaterial({ map: t, side: THREE.BackSide, toneMapped: false }));
+    scr.position.set(0, 1.52, cz); g.add(scr); bossScreens.push({ c, t, i });
+    box(0.08, 0.36, 0.08, legM, 0, 1.0, -0.12, g); box(0.4, 0.02, 0.24, legM, 0, 0.86, -0.1, g);
   });
-  cyl(0.07, 0.06, 0.13, M(0x1b1b1b), 1.35, 0.92, 0.2, boss);
-  cyl(0.05, 0.12, 0.28, M(0xd4af37, { metalness: .9, roughness: .25 }), -1.4, 1.0, 0.25, boss);
+  box(0.75, 0.025, 0.24, M(0x1b1d20), 0, 0.865, 0.15, boss); box(0.09, 0.03, 0.13, M(0x1b1d20), 0.55, 0.865, 0.18, boss);
+  cyl(0.07, 0.06, 0.13, M(0x1b1b1b), 1.75, 0.92, 0.35, boss);
+  cyl(0.05, 0.12, 0.28, M(0xd4af37, { metalness: .9, roughness: .25 }), -1.85, 1.0, 0.4, boss);
   const bossChair = new THREE.Group(); bossChair.position.set(0, 0, 0.95); boss.add(bossChair);
   const leather = M(0x231a14, { roughness: .5 });
   box(0.8, 0.14, 0.75, leather, 0, 0.52, 0, bossChair); box(0.8, 1.15, 0.14, leather, 0, 1.15, 0.36, bossChair);
   cyl(0.05, 0.05, 0.42, legM, 0, 0.26, 0, bossChair, 8); cyl(0.38, 0.38, 0.04, legM, 0, 0.04, 0, bossChair, 5);
   const bossP = person(boss, 0, 0.92, 0x111111, 1.08);
+  // izquierda: qué conviene traer · centro: el día de Cargo Brothers (dólar, oportunidades, pedidos, tiendas) · derecha: agentes
   function paintBoss() {
+    const rank = typeof ranking !== "undefined" ? ranking : [], fx = typeof lastFx !== "undefined" ? lastFx : null, wait = typeof waiting !== "undefined" ? waiting : [];
     bossScreens.forEach(({ c, t, i }) => {
-      const g = c.getContext("2d"); g.fillStyle = "#07111A"; g.fillRect(0, 0, 768, 432);
-      g.fillStyle = "#12293A"; g.fillRect(0, 0, 768, 50); g.fillStyle = "#D8E8F2"; g.font = "700 26px Archivo, sans-serif";
+      const g = c.getContext("2d"), W = c.width, H = c.height;
+      g.fillStyle = "#0b0d10"; g.fillRect(0, 0, W, H);
+      g.fillStyle = "#16191d"; g.fillRect(0, 0, W, 50); g.fillStyle = "#ECEDEF"; g.font = "700 25px Archivo, sans-serif"; g.textAlign = "left";
       if (i === 0) {
         g.fillText("Qué conviene traer", 18, 34);
-        (typeof ranking !== "undefined" ? ranking : []).slice(0, 6).forEach((r, k) => {
+        rank.slice(0, 6).forEach((r, k) => {
           const m = r.c.margin; g.fillStyle = m >= .15 ? "#5CD69A" : m >= .05 ? "#F2A541" : "#F07A7A";
-          g.fillRect(250, 78 + k * 56, Math.max(4, Math.min(1, Math.abs(m) / .4) * 480), 30);
-          g.fillStyle = "#D8E8F2"; g.font = "600 21px Archivo, sans-serif"; g.fillText(short(r.p.name).slice(0, 18), 16, 100 + k * 56);
-          g.font = "600 19px 'IBM Plex Mono', monospace"; g.fillText(`${(m * 100).toFixed(0)}%`, 256, 100 + k * 56);
+          g.fillRect(250, 78 + k * 60, Math.max(4, Math.min(1, Math.abs(m) / .4) * 480), 30);
+          g.fillStyle = "#ECEDEF"; g.font = "600 21px Archivo, sans-serif"; g.fillText(short(r.p.name).slice(0, 18), 16, 100 + k * 60);
+          g.font = "600 19px 'IBM Plex Mono', monospace"; g.fillStyle = "#0b0d10"; g.fillText(`${(m * 100).toFixed(0)}%`, 258, 101 + k * 60);
+        });
+      } else if (i === 1) {
+        if (typeof cbCanvas === "function") g.drawImage(cbCanvas(36, "#ECEDEF"), 14, 7);
+        g.fillStyle = "#ECEDEF"; g.fillText("Hoy en Cargo Brothers", 60, 34);
+        const ok = rank.filter(r => r.c.status === "good").length, ped = (D.pedidos || []).filter(p => !p.prueba);
+        const enCamino = ped.filter(p => !/entregado/i.test(p.estado || "")).length;
+        const kpis = [["Dólar", fx ? (+fx.usado).toFixed(2) + " Bs" : "—", "#ECEDEF"], ["Conviene", `${ok} de ${typeof P !== "undefined" ? P.length : rank.length}`, "#5CD69A"], ["Pedidos en camino", String(enCamino), "#4FD1E8"], ["Tiendas esperando", String(wait.length), "#F2A541"]];
+        kpis.forEach(([lab, val, col], k) => {
+          const x = 16 + k * 186; g.fillStyle = "#16191d"; g.fillRect(x, 64, 176, 92);
+          g.fillStyle = "#8D949C"; g.font = "500 15px 'IBM Plex Mono', monospace"; g.fillText(lab.toUpperCase(), x + 12, 90);
+          g.fillStyle = col; g.font = "700 34px Archivo, sans-serif"; g.fillText(val, x + 12, 136);
+        });
+        g.fillStyle = "#8D949C"; g.font = "500 15px 'IBM Plex Mono', monospace"; g.fillText("MEJOR OPORTUNIDAD", 16, 192);
+        const best = rank[0];
+        g.fillStyle = "#ECEDEF"; g.font = "700 24px Archivo, sans-serif";
+        g.fillText(best ? `${short(best.p.name)}  ·  +${(best.c.margin * 100).toFixed(0)}%  ·  Bs ${fmt(best.c.gain)} por unidad` : "—", 16, 224);
+        g.fillStyle = "#8D949C"; g.font = "500 15px 'IBM Plex Mono', monospace"; g.fillText("PEDIDOS", 16, 266);
+        if (!ped.length) { g.fillStyle = "#6F7780"; g.font = "500 20px Archivo, sans-serif"; g.fillText("Sin pedidos cargados todavía. El agente Pedidos los mostrará aquí.", 16, 298); }
+        ped.slice(0, 4).forEach((p, k) => {
+          const y = 300 + k * 36, done = /entregado/i.test(p.estado || "");
+          g.fillStyle = done ? "#5CD69A" : "#4FD1E8"; g.beginPath(); g.arc(24, y - 7, 7, 0, 7); g.fill();
+          g.fillStyle = "#ECEDEF"; g.font = "600 20px Archivo, sans-serif"; g.fillText(`${p.cantidad || 1}× ${String(p.producto).slice(0, 28)}`, 42, y);
+          g.fillStyle = "#8D949C"; g.font = "500 17px 'IBM Plex Mono', monospace"; g.fillText(String(p.estado || "").slice(0, 22) + (p.eta ? ` · llega ${p.eta}` : ""), 420, y);
         });
       } else {
         g.fillText("Agentes", 18, 34);
         AG.forEach((a, k) => {
-          const st = STATES[a.state]; g.fillStyle = st.c; g.beginPath(); g.arc(30, 92 + k * 54, 11, 0, 7); g.fill();
-          g.fillStyle = "#D8E8F2"; g.font = "600 22px Archivo, sans-serif"; g.fillText(a.name, 52, 100 + k * 54);
-          g.fillStyle = "#7F9AAD"; g.font = "500 18px 'IBM Plex Mono', monospace"; g.fillText(String(a.liveText || st.t).slice(0, 38), 260, 100 + k * 54);
+          const st = STATES[a.state]; g.fillStyle = st.c; g.beginPath(); g.arc(30, 92 + k * 56, 11, 0, 7); g.fill();
+          g.fillStyle = "#ECEDEF"; g.font = "600 22px Archivo, sans-serif"; g.fillText(a.name, 52, 100 + k * 56);
+          g.fillStyle = "#8D949C"; g.font = "500 18px 'IBM Plex Mono', monospace"; g.fillText(String(a.liveText || st.t).slice(0, 34), 270, 100 + k * 56);
         });
       }
       t.needsUpdate = true;
