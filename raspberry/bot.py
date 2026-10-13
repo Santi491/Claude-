@@ -197,7 +197,7 @@ def cmd_tarea(agente, texto):
     escribir_csv("plan.csv", campos, filas)
     anotar_actividad(f"Telegram (Raspberry): tarea nueva de Santi {hoy}-{n} para {agente}")
     ok = subir("Plan: tarea nueva de Santi por Telegram (Raspberry)")
-    aviso = " Si es un mensaje nuevo a una tienda, igual te muestran el texto antes de mandarlo." if agente in ("wa", "mkt", "local") else ""
+    aviso = " La hacen solos en la próxima ronda y te enteras por el resumen." if agente in ("wa", "mkt", "local") else ""
     return f"Anotada la tarea {hoy}-{n} para {agente}, aprobada.{aviso}" + ("" if ok else " (no pude subirla a GitHub todavía)")
 
 
@@ -277,7 +277,8 @@ ACCION: rechazar 2
 ACCION: tarea <agente>: <qué hacer>   (agente: wa, mkt, ebay, pedidos, ana o local)
 ACCION: resuelta 2           (Santi dice que ya resolvió la necesidad número 2 de los pedidos de los agentes)
 Usa ACCION solo si Santi lo pidió o aceptó claramente en esta conversación; si dudas, pregúntale primero.
-Escribir a una tienda nueva siempre necesita que Santi apruebe el texto exacto. Comprar, pagar u ofertar nunca: eso
+Desde el 13/10 WhatsApp y Marketplace escriben solos a las tiendas (Santi lo autorizó): no hace falta pedirle el texto.
+Comprar, pagar, ofertar o dar datos personales nunca: eso
 se confirma en una sesión con Santi, no por chat.
 """
 
