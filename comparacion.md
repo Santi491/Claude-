@@ -53,6 +53,7 @@ eBay nuevo: USD 329.00 con envío en EE.UU. (eBay API; vendedor aaawavecom 99.8%
 |---|---|---|---|---|
 | Tienda Supermall (WhatsApp) · [ver](https://www.facebook.com/marketplace/item/1292124363069503/) | no indicado (la tienda lo ofrece como "7700x3d"; foto de caja 7800X3D; stock bajo; garantía 6 meses; confirmar modelo) | 4.760 | 689 (14%) | 2026-10-12 |
 | Marketplace Cochabamba (particular/vendedor) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado (según anuncio) | 4.800 | 729 (15%) | 2026-10-11 |
+| Marketplace Cochabamba (particular/vendedor; Messenger) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado de fábrica, confirmado por el vendedor (último en stock; precio ya rebajado) | 4.800 | 729 (15%) | 2026-10-13 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2669179450145313/) | no indicado | 5.190 | 1.119 (22%) | 2026-10-11 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1361869715871206/) | no indicado | 5.390 | 1.319 (24%) | 2026-10-11 |
 | Viadata Computadoras (WhatsApp) · [ver](https://www.facebook.com/computadorascochabamba/) | nuevo OEM (solo el chip) | 5.500 | 1.429 (26%) | 2026-10-12 |
