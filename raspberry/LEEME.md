@@ -4,6 +4,7 @@ La Raspberry Pi 3 B+ queda prendida y contesta a Santi por Telegram al momento.
 
 - **Sin IA y sin gastar el plan Pro:** `apruebo 1 3`, `rechazo 2`, `sí a todo`, `no a todo`, `plan`, `tarea: ...` (o `tarea wa:` / `tarea mkt:`), `modelo haiku|sonnet|opus`, `uso`, `ayuda`. Las decisiones van a `plan.csv` y `actividad.csv` y se suben a GitHub.
 - **El Gerente como persona (Claude Code con el plan Pro):** Santi le escribe como a su gerente ("hola, ¿cómo vamos?", "dile a WhatsApp que...") y le contesta en tono de chat, con lo que hizo cada agente y su opinión. Recuerda la charla del día (cada mañana empieza una nueva; `nueva charla` la reinicia). Lee el repo en modo solo lectura; cuando Santi acepta algo, el bot lo anota en `plan.csv` (líneas `ACCION:` del Gerente). Nunca escribe a tiendas ni compra.
+- **Está atento a lo que le falta al equipo:** `necesidades` lista lo que piden los agentes y los huecos en los datos; `resuelta 2` marca algo como resuelto. Cuando un agente anota un pedido nuevo en `necesidades.csv`, el bot te avisa al momento (revisa cada 15 min, sin IA).
 - **Escribe solo** a las 08:20 y 13:30 con cómo va el equipo (`AVISOS` en `~/.cargo-bot`; vacío = nunca). El informe de las 20:00 sigue llegando desde la nube.
 - **Gasto:** modelo **haiku** por defecto (el que menos gasta del plan); `modelo sonnet` u `opus` para algo difícil. Tope de 20 mensajes con Claude por día (`MAX_PREGUNTAS_DIA`), contando los avisos.
 

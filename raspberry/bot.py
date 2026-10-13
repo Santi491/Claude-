@@ -33,9 +33,12 @@ TZ = ZoneInfo("America/La_Paz")
 ESTADO = os.path.expanduser("~/.cargo-bot-estado.json")  # fuera del repo
 MODELOS = ("haiku", "sonnet", "opus")
 AGENTES = ("nube", "ebay", "wa", "mkt", "ana", "pedidos", "gerente", "local")
+NOMBRES = {"nube": "la Nube", "ebay": "el Rastreador eBay", "wa": "WhatsApp", "mkt": "Marketplace", "ana": "el Analista",
+           "pedidos": "Pedidos", "gerente": "el Gerente", "local": "la ronda local"}
+DIAS = ("lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo")
 AYUDA = ("Háblame como a tu gerente: \"hola, ¿cómo vamos?\", \"¿qué conviene traer?\", \"dile a WhatsApp que...\". "
          "Recuerdo la charla del día.\nAtajos al instante y sin gastar el plan: apruebo 1 3 · rechazo 2 · sí a todo · plan · "
-         "tarea: <texto> · modelo haiku|sonnet|opus · uso · nueva charla.")
+         "necesidades · resuelta 2 · tarea: <texto> · modelo haiku|sonnet|opus · uso · nueva charla.")
 
 cargar("~/.cargo-bot", ("CLAUDE_CODE_OAUTH_TOKEN", "CLAUDE_MODELO", "MAX_PREGUNTAS_DIA", "AVISOS"))
 TOKEN, CHAT = cargar("~/.telegram", ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"))
@@ -83,7 +86,7 @@ def actualizar_repo():
 
 
 def subir(mensaje):
-    git("add", "plan.csv", "actividad.csv")
+    git("add", "plan.csv", "actividad.csv", "necesidades.csv")
     if git("diff", "--cached", "--quiet").returncode == 0:
         return True
     git("commit", "-q", "-m", mensaje)
@@ -198,6 +201,62 @@ def cmd_tarea(agente, texto):
     return f"Anotada la tarea {hoy}-{n} para {agente}, aprobada.{aviso}" + ("" if ok else " (no pude subirla a GitHub todavía)")
 
 
+def necesidades_abiertas():
+    try:
+        campos, filas = leer_csv("necesidades.csv")
+    except FileNotFoundError:
+        return None, [], []
+    return campos, filas, [f for f in filas if f.get("estado", "abierta") != "resuelta"]
+
+
+def informe_necesidades(breve=False):
+    r = subprocess.run([sys.executable, os.path.join(REPO, "necesidades.py")] + (["--breve"] if breve else []),
+                       capture_output=True, text=True, timeout=60)
+    return (r.stdout or "").strip() or "No pude revisar las necesidades del equipo."
+
+
+def cmd_necesidades():
+    actualizar_repo()
+    _, _, abiertas = necesidades_abiertas()
+    pedidas = "\n".join(f"{i}. {f['necesita']} ({f['agente']})" for i, f in enumerate(abiertas, 1))
+    resto = informe_necesidades()
+    msg = "Lo que el equipo necesita ahora:\n" + resto
+    if pedidas:
+        msg += "\n\nPedidos de los agentes, por número:\n" + pedidas + "\nCuando lo resuelvas escríbeme: resuelta 2"
+    return msg
+
+
+def cmd_resuelta(nums):
+    actualizar_repo()
+    campos, filas, abiertas = necesidades_abiertas()
+    hechas = []
+    for i, f in enumerate(abiertas, 1):
+        if str(i) in nums:
+            f["estado"], f["resuelto"] = "resuelta", ahora().strftime("%Y-%m-%d %H:%M")
+            hechas.append(f["necesita"])
+    if not hechas:
+        return "No encontré esa necesidad. Escribe 'necesidades' para ver los números."
+    escribir_csv("necesidades.csv", campos, filas)
+    anotar_actividad(f"Telegram (Raspberry): Santi resolvió {len(hechas)} necesidad(es) del equipo")
+    subir("Necesidades: resueltas por Santi (Raspberry)")
+    return "Genial, anotado como resuelto: " + "; ".join(hechas)
+
+
+def avisar_necesidades_nuevas(estado):
+    """Avisa a Santi (sin IA) cuando un agente anota algo que necesita."""
+    _, _, abiertas = necesidades_abiertas()
+    vistas = set(estado.get("necesidades_vistas", []))
+    nuevas = [f for f in abiertas if f"{f['fecha']}|{f['agente']}|{f['necesita']}" not in vistas]
+    if not nuevas:
+        return
+    if estado.get("necesidades_vistas") is not None:  # la primera vez solo las registra, para no avisar lo viejo
+        for f in nuevas:
+            quien = NOMBRES.get(f["agente"], f["agente"])
+            responder(f"Santi, {quien} necesita algo: {f['necesita']}" + (f", para {f['para_que']}." if f.get("para_que") else ".")
+                      + " Escribe 'necesidades' para ver todo.")
+    estado["necesidades_vistas"] = sorted(vistas | {f"{f['fecha']}|{f['agente']}|{f['necesita']}" for f in abiertas})
+
+
 PERSONA = """Eres el Gerente de Cargo Brothers, la empresa de Santi que importa componentes de PC (procesadores, RAM, SSD)
 de EE.UU. a Cochabamba. Diriges a un equipo de agentes: la Nube (revisión de las 7:52 con el dólar y eBay), el Rastreador eBay,
 WhatsApp (habla con las tiendas), Marketplace, el Analista (comparación y ganancia) y Pedidos (rastrea envíos).
@@ -209,10 +268,14 @@ Lo que sabes sale de este repo; lee solo lo que necesites: actividad.csv (qué h
 comparacion.md (ganancia por producto), plan.csv (tareas), tiendas-cochabamba.csv y mensajes.csv (contacto con tiendas),
 precios-cochabamba.csv, precios-eeuu.csv, tipo-cambio.csv, pedidos.csv. Las reglas están en CLAUDE.md.
 Nunca inventes cifras ni hechos: si no está en los archivos, dilo. La ganancia de la tabla es potencial hasta que haya ventas.
+Como buen gerente, estás atento a lo que le falta al equipo para trabajar (información, decisiones o acciones de Santi):
+al inicio de cada mensaje te paso la lista actual de necesidades. Cuéntaselas a Santi cuando vengan al caso o sean
+importantes, explicando qué se destraba si las resuelve, sin repetir la lista entera en cada mensaje.
 No modificas archivos tú mismo. Para que algo pase, al final de tu mensaje agrega UNA línea por acción, exactamente así:
 ACCION: aprobar 1 3          (tareas propuestas de plan.csv, por su número final)
 ACCION: rechazar 2
 ACCION: tarea <agente>: <qué hacer>   (agente: wa, mkt, ebay, pedidos, ana o local)
+ACCION: resuelta 2           (Santi dice que ya resolvió la necesidad número 2 de los pedidos de los agentes)
 Usa ACCION solo si Santi lo pidió o aceptó claramente en esta conversación; si dudas, pregúntale primero.
 Escribir a una tienda nueva siempre necesita que Santi apruebe el texto exacto. Comprar, pagar u ofertar nunca: eso
 se confirma en una sesión con Santi, no por chat.
@@ -234,7 +297,11 @@ def claude(texto, estado, nueva=False):
     seguir = not nueva and sesion.get("dia") == hoy and sesion.get("id")
     escribiendo()
     actualizar_repo()
-    mensaje = INICIO.format(fecha=ahora().strftime("%A %d/%m/%Y %H:%M")) + texto
+    _, _, abiertas = necesidades_abiertas()
+    pedidas = "; ".join(f"{i}. {f['necesita']} ({f['agente']})" for i, f in enumerate(abiertas, 1)) or "ninguno"
+    mensaje = (INICIO.format(fecha=DIAS[ahora().weekday()] + ahora().strftime(" %d/%m/%Y %H:%M"))
+               + f"Pedidos abiertos de los agentes: {pedidas}.\nNecesidades del equipo:\n{informe_necesidades(breve=True)}\n\n"
+               + "Mensaje: " + texto)
     cmd = ["claude", "-p", mensaje, "--model", modelo, "--allowedTools", "Read,Grep,Glob", "--output-format", "json"]
     cmd += ["--resume", sesion["id"]] if seguir else ["--append-system-prompt", PERSONA]
     try:
@@ -271,7 +338,10 @@ def ejecutar_acciones(salida):
         orden = m.group(1).strip()
         t = re.match(r"tarea\s+(\w+)\s*:\s*(.+)", orden, re.I)
         a = re.match(r"(aprobar|rechazar)\s+([\d ,y]+)", simple(orden))
-        if t and t.group(1).lower() in AGENTES:
+        res = re.match(r"resuelta\s+([\d ,y]+)", simple(orden))
+        if res:
+            hechos.append(cmd_resuelta(set(re.findall(r"\d+", res.group(1)))))
+        elif t and t.group(1).lower() in AGENTES:
             hechos.append(cmd_tarea(t.group(1).lower(), t.group(2)))
         elif a:
             nums = set(re.findall(r"\d+", a.group(2)))
@@ -282,7 +352,7 @@ def ejecutar_acciones(salida):
 
 def resumen_programado(cuando, estado):
     return claude(f"Es tu mensaje de {cuando} para Santi; él no te escribió. Revisa actividad.csv, el último informe y "
-                  "mensajes.csv y cuéntale en 3 a 6 líneas cómo va el equipo hoy, lo más importante que pasó y qué necesitas que decida. "
+                  "mensajes.csv y cuéntale en 3 a 6 líneas cómo va el equipo hoy, lo más importante que pasó y qué le falta al equipo para avanzar. "
                   "Si no hay nada nuevo desde tu último mensaje, dilo en una línea. No uses ACCION en este mensaje.",
                   estado)
 
@@ -291,6 +361,11 @@ def atender(texto, estado):
     t = simple(texto)
     if t in ("ayuda", "/start", "/ayuda", "help", "?"):
         return AYUDA
+    if t in ("necesidades", "/necesidades", "que necesitan", "que falta", "que le falta al equipo"):
+        return cmd_necesidades()
+    m = re.fullmatch(r"resuelta\s+([\d ,y]+)", t)
+    if m:
+        return cmd_resuelta(set(re.findall(r"\d+", m.group(1))))
     if t in ("plan", "/plan", "tareas"):
         return cmd_plan()
     if t in ("uso", "/uso"):
@@ -331,6 +406,14 @@ def main():
             print(f"Telegram no respondió ({type(e).__name__}); reintento en 15 s", flush=True)
             time.sleep(15)
             continue
+        if time.time() - estado.get("ultima_revision", 0) > 900:  # cada 15 min
+            estado["ultima_revision"] = time.time()
+            try:
+                actualizar_repo()
+                avisar_necesidades_nuevas(estado)
+            except Exception as e:
+                print(f"revisión de necesidades: {e!r}", flush=True)
+            guardar_estado(estado)
         hora, hoy = ahora().strftime("%H:%M"), ahora().strftime("%Y-%m-%d")
         hechos = estado.get("avisos", {}) if estado.get("avisos", {}).get("dia") == hoy else {"dia": hoy, "horas": []}
         for h in AVISOS:
