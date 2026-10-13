@@ -117,7 +117,7 @@ def main():
         f"# Comparación EE.UU. → Cochabamba ({date.today().isoformat()})", "",
         f"Tipo de cambio **{a.tc:.2f} Bs/USD** · Courier B: USD {B_USD_KG}/kg, mínimo {B_MIN_KG:g} kg, saltos de {B_PASO_KG:g} kg, "
         f"+ {CAJA_EXTERIOR_G} g de caja exterior · Courier A: USD {A_USD_UNIDAD}/u + {a.tax:.0%} tax · "
-        f"Aduana: {a.aduana:.0%}{' (sin confirmar: no incluida)' if not a.aduana else ''}.",
+        f"Aduana: {a.aduana:.0%}{' (incluida en los dos couriers)' if not a.aduana else ' extra'}.",
         f"Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ {CONVIENE:.0%}, justo {JUSTO:.0%}–{CONVIENE:.0%}, "
         f"no conviene < {JUSTO:.0%}. Los precios de Marketplace son lo que piden los vendedores.", "",
         "## eBay nuevo", "", enc, *nuevo, "",

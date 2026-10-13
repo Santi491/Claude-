@@ -145,7 +145,7 @@ def escribir_pdf(ruta, filas, hoy, tc, bcb, par):
     t.setStyle(TableStyle(estilo))
     nota = (f"Dólar BCB {f2(bcb)} · paralelo {f2(par)} · cálculos con {f2(tc)} Bs/USD. Pedido de {UNIDADES} unidades, "
             "courier más barato (B: USD 28/kg, mín. 1 kg, saltos de 0,5 kg + 300 g de caja; A: USD 10/u + 7 % tax). "
-            "Aduana no incluida. Estado: conviene ≥ 15 %, justo 5–15 %, no conviene < 5 % sobre el mejor precio local.")
+            "Aduana: incluida en los dos couriers (no se suma). Estado: conviene ≥ 15 %, justo 5–15 %, no conviene < 5 % sobre el mejor precio local.")
     doc.build([Paragraph(f"Importación EE.UU. → Cochabamba · {hoy}", st["Title"]), Paragraph(nota, st["BodyText"]),
                Spacer(1, 4 * mm), t])
 
@@ -180,7 +180,7 @@ def escribir_excel(ruta, vigilar, eeuu, cbba, fx, hoy_filas, hist):
     sup = [("Unidades por pedido", UNIDADES, "0"), ("Courier B: USD por kg", B_USD_KG, "0.00"),
            ("Courier B: mínimo kg", B_MIN_KG, "0.0"), ("Courier B: salto kg", B_PASO_KG, "0.0"),
            ("Caja exterior + relleno, g", CAJA_EXTERIOR_G, "0"), ("Courier A: USD por producto", A_USD_UNIDAD, "0.00"),
-           ("Courier A: sales tax", A_TAX_DEF, "0.0%"), ("Aduana boliviana (sin confirmar)", 0, "0.0%"),
+           ("Courier A: sales tax", A_TAX_DEF, "0.0%"), ("Aduana boliviana extra (incluida en los couriers)", 0, "0.0%"),
            ("Dólar para cálculos, Bs/USD", "=INDEX(Dólar!$F:$F,MATCH(MAX(Dólar!$A:$A),Dólar!$A:$A,0))", "0.00"),
            ("Umbral 'Conviene'", CONVIENE, "0%"), ("Umbral 'Justo'", JUSTO, "0%")]
     for i, (k, v, fmtn) in enumerate(sup, 3):
@@ -189,7 +189,7 @@ def escribir_excel(ruta, vigilar, eeuu, cbba, fx, hoy_filas, hist):
         c.font = negro if isinstance(v, str) else azul
         c.number_format = fmtn
     su["B10"].fill = amarillo
-    su["B10"].comment = Comment("Aduana sin confirmar con los couriers: probar aquí, por ejemplo 0,1 = 10 %.", "Agente")
+    su["B10"].comment = Comment("Los dos couriers ya incluyen la aduana (Santi, 13/10): queda en 0. Probar aquí solo si algún envío la cobra aparte, por ejemplo 0,1 = 10 %.", "Agente")
     su["B11"].comment = Comment("Último 'usado en cálculos' de la hoja Dólar.", "Agente")
     su["A15"] = "Fuente de los supuestos: CLAUDE.md (couriers del usuario). Dólar: hoja Dólar (BCB y paralelo P2P)."
     su["A15"].font = Font(name=F, italic=True, color="5B6873")

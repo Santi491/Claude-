@@ -1,6 +1,6 @@
 # Comparación EE.UU. → Cochabamba (2026-10-13)
 
-Tipo de cambio **11.87 Bs/USD** · Courier B: USD 28/kg, mínimo 1 kg, saltos de 0.5 kg, + 300 g de caja exterior · Courier A: USD 10/u + 7% tax · Aduana: 0% (sin confirmar: no incluida).
+Tipo de cambio **11.87 Bs/USD** · Courier B: USD 28/kg, mínimo 1 kg, saltos de 0.5 kg, + 300 g de caja exterior · Courier A: USD 10/u + 7% tax · Aduana: 0% (incluida en los dos couriers).
 Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%–15%, no conviene < 5%. Los precios de Marketplace son lo que piden los vendedores.
 
 ## eBay nuevo
