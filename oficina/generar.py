@@ -185,7 +185,10 @@ def main():
                         for f in (leer("informes/gerente/indice.csv") if existe("informes/gerente/indice.csv") else [])]
     datos = {"generado": datetime.now().strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
              "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas,
-             "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente}
+             "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente,
+             # lo que los agentes le piden a Santi (sin datos privados): lo usa la animación del Gerente
+             "necesidades": [{"agente": f.get("agente", ""), "necesita": f.get("necesita", "")}
+                             for f in leer("necesidades.csv") if f.get("estado", "abierta") != "resuelta"]}
     with open(os.path.join(OFI, "datos.js"), "w", encoding="utf-8") as f:
         f.write("window.DATOS = " + json.dumps(datos, ensure_ascii=False) + ";\n")
     print(f"oficina/datos.js: {len(productos)} productos, {len(mov)} movimientos, {len(docs)} documentos")

@@ -635,6 +635,7 @@
       const s = ST[id], b = tags[id]; if (!s) { b.hidden = true; return; }
       if (id === "docs") tmp.set(0, 2.4, 0).applyMatrix4(s.g.matrixWorld);
       else if (id === "jefe") tmp.set(0, 2.55, 0.9).applyMatrix4(s.g.matrixWorld);
+      else if (id === "gerente" && GER && GER.caminando()) tmp.set(0, 2.25, 0).applyMatrix4(GER.walker.matrixWorld);
       else tmp.set(0, 2.25, 0.9).applyMatrix4(s.g.matrixWorld);
       tmp.project(camera);
       const vis = tmp.z < 1 && Math.abs(tmp.x) < 1.15 && Math.abs(tmp.y) < 1.15;
@@ -649,7 +650,7 @@
       } else {
         const a = AG.find(x => x.id === id), st = STATES[a.state];
         b.style.setProperty("--c", st.c); b.querySelector(".nm").textContent = a.name;
-        const extra = a.liveText ? a.liveText : a.state === "sleep" ? "zZ · en espera" : a.state === "done" ? "✓ trabajó hoy" : a.state === "waiting" ? "… esperando respuestas" : a.state === "working" ? "trabajando" : "";
+        const extra = id === "gerente" && GER && GER.texto() ? GER.texto() : a.liveText ? a.liveText : a.state === "sleep" ? "zZ · en espera" : a.state === "done" ? "✓ trabajó hoy" : a.state === "waiting" ? "… esperando respuestas" : a.state === "working" ? "trabajando" : "";
         b.querySelector("small").textContent = extra;
       }
       b.classList.toggle("on", open && sel === id);
@@ -725,6 +726,147 @@
     if (e.key === "Escape") close3D();
   });
 
+
+  /* ---------- Gerente animado: único personaje que camina ----------
+     Cada tanto (y la primera vez a los pocos segundos de abrir la página) se levanta, pasa por los puestos de los
+     agentes que tienen algo para él (pedidos en necesidades.csv o trabajo de hoy), recoge una hoja de cada uno,
+     vuelve, deja las hojas a un costado del escritorio y en su segunda pantalla se ve Telegram mientras le escribe
+     a Santi. Su primera pantalla y el botón "Abrir pantalla" no cambian. Los mensajes se arman con los datos públicos
+     de la oficina: nunca muestran lo que escribió Santi. */
+  const GER = (() => {
+    const s = ST.gerente; if (!s) return null;
+    const seated = s.torso.parent;                              // la persona sentada del puesto
+    const shirtG = s.torso.material, legsM = M(0x2a3540), shoeM = M(0x16191c);
+    const w = new THREE.Group(); w.visible = false; scene.add(w);
+    const body = new THREE.Group(); w.add(body);
+    const legs = [-1, 1].map(sx => {
+      const hip = new THREE.Group(); hip.position.set(sx * 0.11, 0.86, 0); body.add(hip);
+      cyl(0.075, 0.07, 0.8, legsM, 0, -0.4, 0, hip, 10); box(0.12, 0.07, 0.24, shoeM, 0, -0.82, -0.05, hip);
+      return hip;
+    });
+    cyl(0.22, 0.25, 0.62, shirtG, 0, 1.18, 0, body, 16);
+    const head = new THREE.Group(); head.position.set(0, 1.66, 0); body.add(head);
+    const hm = new THREE.Mesh(new THREE.SphereGeometry(0.19, 20, 16), skin); hm.castShadow = true; head.add(hm);
+    const hr = new THREE.Mesh(new THREE.SphereGeometry(0.2, 20, 12, 0, Math.PI * 2, 0, Math.PI * 0.55), hairM);
+    hr.rotation.x = 0.35; hr.position.set(0, 0.03, 0.02); head.add(hr);
+    const arms = [-1, 1].map(sx => {
+      const sh = new THREE.Group(); sh.position.set(sx * 0.28, 1.44, 0); body.add(sh);
+      cyl(0.055, 0.05, 0.58, shirtG, 0, -0.29, 0, sh, 8);
+      const hand = new THREE.Mesh(new THREE.SphereGeometry(0.06, 10, 8), skin); hand.position.set(0, -0.6, 0); sh.add(hand);
+      return sh;
+    });
+    const paperM = M(0xf3f1ea, { roughness: .9 });
+    const carry = new THREE.Group(); carry.position.set(0, 1.02, -0.3); body.add(carry);   // hojas en las manos
+    const deskPile = new THREE.Group(); deskPile.position.set(-1.12, 0.83, 0.32); s.g.add(deskPile);  // hojas en el escritorio
+    const sheet = (parent, k) => { const m = box(0.3, 0.012, 0.4, paperM, (k % 2) * 0.012, 0.008 + k * 0.014, 0, parent); m.rotation.y = (k % 3 - 1) * 0.08; m.castShadow = false; return m; };
+
+    // puntos donde se para: al costado de la silla de cada agente, entrando desde el pasillo (z = 0,6)
+    const AIS = 0.6;
+    const standAt = id => { const [x, z] = STATION[id]; return { x: x + 1.25, z: z + 0.95 }; };
+    const sideX = id => STATION[id][0] + 2.35;
+    function route(from, to) {   // del puesto "from" al puesto "to" sin atravesar escritorios
+      const a = standAt(from), b = standAt(to), pts = [a, { x: sideX(from), z: a.z }, { x: sideX(from), z: AIS }];
+      pts.push({ x: sideX(to), z: AIS }, { x: sideX(to), z: b.z }, b);
+      return pts;
+    }
+
+    let plan = [], fase = "sentado", t0 = 0, recogidas = 0, chat = null, proxima = 7;
+    const nombre = id => (AG.find(a => a.id === id) || {}).name || id;
+    function encargos() {
+      const pide = [...new Set((D.necesidades || []).map(n => n.agente).filter(id => STATION[id] && id !== "gerente"))];
+      const hoy = AG.filter(a => a.id !== "gerente" && STATION[a.id] && (a.state === "done" || a.state === "working" || a.state === "waiting")).map(a => a.id);
+      const ids = [...new Set([...pide, ...hoy])];
+      return (ids.length ? ids : ["ana", "wa"]).slice(0, 3);
+    }
+    function mensajes() {
+      const r = (typeof ranking !== "undefined" ? ranking : []).filter(x => x.c && x.c.margin >= 0.15).slice(0, 2);
+      const nec = (D.necesidades || []).slice(0, 2), prop = (D.plan || []).filter(p => p.estado === "propuesto").length;
+      const out = ["Hola Santi, te cuento cómo vamos."];
+      if (r.length) out.push("Hoy conviene: " + r.map(x => `${x.p.name.replace(/\s*\(.*\)/, "")} (+${Math.round(x.c.margin * 100)} %)`).join(" y ") + ".");
+      if (nec.length) out.push("El equipo necesita de ti: " + nec.map(n => `${nombre(n.agente)}, ${n.necesita}`).join("; ") + ".");
+      if (prop) out.push(`Te dejé ${prop} tareas para aprobar. Responde: apruebo 1 3.`);
+      out.push("Pasé por los puestos y ya tengo los informes del día en mi escritorio.");
+      return out;
+    }
+    function empezar(now) {
+      plan = []; let desde = "gerente";
+      encargos().forEach(id => { plan.push(...route(desde, id).map(p => ({ ...p }))); plan.push({ pausa: 1.3, id }); desde = id; });
+      plan.push(...route(desde, "gerente"));
+      while (deskPile.children.length) deskPile.remove(deskPile.children[0]);
+      while (carry.children.length) carry.remove(carry.children[0]);
+      recogidas = 0; fase = "caminando"; t0 = now;
+      const a = standAt("gerente"); w.position.set(a.x, 0, a.z); w.visible = true; seated.visible = false;
+    }
+    // pantalla de Telegram (segundo monitor del Gerente)
+    function pintarChat(now) {
+      const m = s.mons[1], g = m.ctx, W = 1024, H = 576, el = (now - chat.t0) / 1000;
+      g.fillStyle = "#0e1621"; g.fillRect(0, 0, W, H);
+      g.fillStyle = "#17212b"; g.fillRect(0, 0, W, 74);
+      g.fillStyle = "#4f8bc9"; g.beginPath(); g.arc(44, 37, 22, 0, 7); g.fill();
+      g.fillStyle = "#fff"; g.font = "700 22px Archivo, sans-serif"; g.textAlign = "center"; g.fillText("S", 44, 45); g.textAlign = "left";
+      g.font = "700 24px Archivo, sans-serif"; g.fillText("Santi", 80, 34);
+      const n = Math.min(chat.msgs.length, Math.floor(el / 3.2) + 1), escribiendo = n < chat.msgs.length || el % 3.2 < 1.4 && n <= chat.msgs.length && el < chat.msgs.length * 3.2;
+      g.fillStyle = "#6c8aa8"; g.font = "500 17px 'IBM Plex Mono', monospace"; g.fillText(escribiendo ? "Gerente está escribiendo…" : "en línea", 80, 60);
+      let y = H - 24; g.font = "500 21px Archivo, sans-serif";
+      const lineas = (t, mw) => { const ws = t.split(" "), L = []; let l = ""; ws.forEach(wd => { if (g.measureText(l + " " + wd).width > mw && l) { L.push(l); l = wd; } else l = l ? l + " " + wd : wd; }); L.push(l); return L; };
+      const vis = chat.msgs.slice(0, n - (escribiendo && n > 1 ? 1 : 0)).reverse();
+      for (const msg of vis) {
+        const L = lineas(msg, 560), bh = L.length * 28 + 22;
+        y -= bh; if (y < 84) break;
+        g.fillStyle = "#2b5278"; g.beginPath(); g.roundRect ? g.roundRect(W - 640, y, 616, bh, 14) : g.rect(W - 640, y, 616, bh); g.fill();
+        g.fillStyle = "#eef3f7"; L.forEach((l, k) => g.fillText(l, W - 624, y + 32 + k * 28));
+        y -= 12;
+      }
+      if (escribiendo && y > 120) { g.fillStyle = "#182533"; g.beginPath(); g.arc(W - 70, y - 30, 26, 0, 7); g.fill(); for (let k = 0; k < 3; k++) { g.fillStyle = (Math.floor(el * 3) % 3) === k ? "#9fc3e6" : "#4d6a86"; g.beginPath(); g.arc(W - 86 + k * 16, y - 30, 5, 0, 7); g.fill(); } }
+      m.stex.needsUpdate = true;
+    }
+    function texto() {
+      return fase === "caminando" ? (recogidas ? `llevando ${recogidas} ${recogidas > 1 ? "informes" : "informe"}` : "recogiendo informes")
+        : fase === "chat" ? "escribiéndole a Santi por Telegram" : "";
+    }
+    const VEL = /[?&]rapido/.test(location.search) ? 8 : 1;   // solo para pruebas
+    function update(now, dt) {
+      dt *= VEL;
+      const t = now / 1000;
+      if (fase === "sentado") {
+        if (!reduce && t > proxima) empezar(now);
+        else if (reduce && t > proxima) { fase = "chat"; chat = { t0: now, msgs: mensajes() }; }
+        return;
+      }
+      if (fase === "caminando") {
+        const p = plan[0];
+        if (!p) {   // llegó a su silla: deja las hojas y se sienta
+          while (carry.children.length) carry.remove(carry.children[0]);
+          for (let k = 0; k < recogidas; k++) sheet(deskPile, k);
+          w.visible = false; seated.visible = true; fase = "chat"; chat = { t0: now, msgs: mensajes() }; return;
+        }
+        if (p.pausa != null) {   // en el puesto de un agente: estira el brazo y recoge una hoja
+          p.t = (p.t || 0) + dt; const k = Math.min(1, p.t / p.pausa);
+          arms[1].rotation.x = -Math.sin(k * Math.PI) * 1.1; legs.forEach(l => l.rotation.x = 0);
+          const [ax, az] = STATION[p.id]; w.rotation.y = Math.atan2(ax - w.position.x, az + 0.92 - w.position.z) + Math.PI;
+          if (p.t >= p.pausa) { sheet(carry, recogidas++); plan.shift(); }
+          return;
+        }
+        const dx = p.x - w.position.x, dz = p.z - w.position.z, d = Math.hypot(dx, dz), v = 1.35 * dt;
+        if (d <= v) { w.position.set(p.x, 0, p.z); plan.shift(); return; }
+        w.position.x += dx / d * v; w.position.z += dz / d * v;
+        w.rotation.y = Math.atan2(dx, dz) + Math.PI;
+        const ph = t * 7.5;
+        legs[0].rotation.x = Math.sin(ph) * 0.5; legs[1].rotation.x = -Math.sin(ph) * 0.5;
+        arms[0].rotation.x = -Math.sin(ph) * 0.4; arms[1].rotation.x = recogidas ? -0.95 : Math.sin(ph) * 0.4;
+        arms[0].rotation.x = recogidas ? -0.95 : arms[0].rotation.x;
+        body.position.y = Math.abs(Math.sin(ph)) * 0.04;
+        return;
+      }
+      if (fase === "chat") {
+        pintarChat(now);
+        s.arms.forEach((arm, i) => { arm.rotation.x = Math.sin(t * 14 + i * 2.4) * 0.12; });
+        if ((now - chat.t0) / 1000 > chat.msgs.length * 3.2 + 8) { fase = "sentado"; proxima = t + 180; s.src2 = null; }   // vuelve a las métricas
+      }
+    }
+    return { update, texto, activo: () => fase !== "sentado", caminando: () => fase === "caminando", walker: w };
+  })();
+
   /* ---------- Tamaño y bucle ---------- */
   function size() {
     // llena el alto que queda de la pantalla debajo del título y la barra de datos
@@ -738,8 +880,10 @@
 
   const ease = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
   const col = new THREE.Color();
+  let lastNow = 0;
   function loop(now) {
-    const t = now / 1000;
+    const t = now / 1000, dt = Math.min(0.05, (now - (lastNow || now)) / 1000); lastNow = now;
+    if (GER) GER.update(now, dt);
     if (anim) {
       const k = Math.min(1, (now - anim.s) / anim.d), e = ease(k);
       camera.position.lerpVectors(anim.p0, anim.p1, e); controls.target.lerpVectors(anim.t0, anim.t1, e);
@@ -753,7 +897,7 @@
     AG.forEach(a => {
       const s = ST[a.id]; if (!s) return;
       const src = TEX[a.id];
-      if (src !== s.src || TEX[a.id + "2"] !== s.src2 || a.state !== s.st || (src && !s.loaded && (src.naturalWidth || src.width))) {
+      if (a.id === "gerente" && GER && GER.activo()) { /* la anima GER */ } else if (src !== s.src || TEX[a.id + "2"] !== s.src2 || a.state !== s.st || (src && !s.loaded && (src.naturalWidth || src.width))) {
         s.src = src; s.src2 = TEX[a.id + "2"]; s.st = a.state; s.loaded = !!(src && (src.naturalWidth || src.width)); paintScreen(a, s, t);
       }
       const st = STATES[a.state]; col.set(st.c);
@@ -761,7 +905,7 @@
       s.ring.material.opacity = a.state === "working" && !reduce ? 0.35 + 0.2 * Math.sin(t * 4) : (open && sel === a.id ? 0.6 : 0.32);
       s.glow.color.copy(col); s.glow.intensity = a.state === "sleep" ? 0.15 : a.state === "alert" && Math.floor(t * 2) % 2 ? 1.2 : 0.6;
       const work = a.state === "working" && !reduce, sleep = a.state === "sleep";
-      s.arms.forEach((arm, i) => { arm.rotation.x = work ? Math.sin(t * 14 + i * 2.4) * 0.12 : sleep ? 0.35 : 0; });
+      if (!(a.id === "gerente" && GER && GER.activo())) s.arms.forEach((arm, i) => { arm.rotation.x = work ? Math.sin(t * 14 + i * 2.4) * 0.12 : sleep ? 0.35 : 0; });
       s.headG.rotation.x = sleep ? 0.45 : work ? Math.sin(t * 3) * 0.04 : 0;
       s.headG.rotation.y = a.state === "waiting" && !reduce ? Math.sin(t * 0.9) * 0.35 : 0;
       s.torso.rotation.x = sleep ? 0.12 : 0;
