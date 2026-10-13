@@ -75,7 +75,10 @@ def buscar_chat():
     token, _ = cargar("~/.telegram", ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"))
     if not token:
         sys.exit("Falta TELEGRAM_BOT_TOKEN.")
-    _, cuerpo = pedir(f"https://api.telegram.org/bot{token}/getUpdates")
+    try:
+        _, cuerpo = pedir(f"https://api.telegram.org/bot{token}/getUpdates")
+    except Exception as e:  # sin traceback: la URL lleva el token
+        sys.exit("Telegram rechazó el token (revisa que esté completo, como 123456789:AAH...)." if "404" in str(e) or "401" in str(e) else f"No se pudo hablar con Telegram ({type(e).__name__}).")
     chats = {}
     for u in json.loads(cuerpo).get("result", []):
         m = u.get("message") or u.get("edited_message") or {}
