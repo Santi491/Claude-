@@ -198,7 +198,7 @@
     box(len - 0.06, 0.012, 0.08, ledM, 0, y - 0.04, 0, g).castShadow = false;
     const l = new THREE.PointLight(0xf4f7ff, 0.55, 7.5, 2); l.position.set(0, y - 0.3, 0); g.add(l);
   }
-  [[-9, -4.4], [-2.5, -4.4], [4, -4.4], [10.5, -4.4], [-6, 3.4], [0.8, 3.4]].forEach(([x, z]) => ledBar(x, z, 2.6));
+  [[-9, -4.4], [-2.5, -4.4], [4, -4.4], [10.5, -4.4], [-6, 3.4], [0.8, 3.4], [4.7, 3.4]].forEach(([x, z]) => ledBar(x, z, 2.6));
 
   // Pasillo marcado en el piso
   box(RW - 2, 0.01, 0.05, M(0xd9dde2, { roughness: .5 }), 0, 0.005, 0.6);
@@ -292,7 +292,7 @@
   box(0.04, 0.4, 0.04, blackSteel, -0.1, 3.4, -2.6, WZ); box(0.04, 0.4, 0.04, blackSteel, 1.3, 3.4, -2.6, WZ);
 
   /* ---------- Puestos de trabajo ---------- */
-  const STATION = { nube: [-9, -4.6], ebay: [-2.5, -4.6], wa: [4, -4.6], pedidos: [10.5, -4.6], mkt: [-6, 3.2], ana: [0.8, 3.2] };
+  const STATION = { nube: [-9, -4.6], ebay: [-2.5, -4.6], wa: [4, -4.6], pedidos: [10.5, -4.6], mkt: [-6, 3.2], ana: [0.8, 3.2], gerente: [4.7, 3.2] };
   const skin = M(0xe7b98f, { roughness: .6 }), hairM = M(0x2b2018), deskM = marbleWM,
     legM = M(0x1f2a33, { metalness: .5, roughness: .4 }), chairM = M(0x2a2d31, { roughness: .8 });
   const ST = {};
@@ -301,13 +301,20 @@
     const g = new THREE.Group(); g.position.set(pos[0], 0, pos[1]); scene.add(g);
     box(2.6, 0.08, 1.25, deskM, 0, 0.78, 0, g);
     [[-1.2, -.5], [1.2, -.5], [-1.2, .5], [1.2, .5]].forEach(([x, z]) => box(0.06, 0.74, 0.06, legM, x, 0.37, z, g));
-    // monitor
-    box(0.1, 0.38, 0.08, legM, 0, 1.0, -0.38, g); box(0.4, 0.03, 0.25, legM, 0, 0.83, -0.38, g);
-    box(1.62, 0.96, 0.06, M(0x10181f, { metalness: .3, roughness: .4 }), 0, 1.5, -0.42, g);
-    const sc = document.createElement("canvas"); sc.width = 1024; sc.height = 576;
-    const stex = new THREE.CanvasTexture(sc); stex.encoding = THREE.sRGBEncoding; stex.anisotropy = 4;
-    const screen = new THREE.Mesh(new THREE.PlaneGeometry(1.52, 0.86), new THREE.MeshBasicMaterial({ map: stex, toneMapped: false }));
-    screen.position.set(0, 1.5, -0.385); g.add(screen);
+    // monitor (el Gerente tiene dos, un poco girados hacia él)
+    const dual = a.id === "gerente";
+    const mons = (dual ? [[-0.64, 0.2], [0.64, -0.2]] : [[0, 0]]).map(([mx, rot]) => {
+      const mg = new THREE.Group(); mg.position.set(mx, 0, 0); mg.rotation.y = rot; g.add(mg);
+      const w = dual ? 1.24 : 1.62, h = dual ? 0.74 : 0.96, y = dual ? 1.42 : 1.5;
+      box(0.1, 0.38, 0.08, legM, 0, 1.0, -0.38, mg); box(0.4, 0.03, 0.25, legM, 0, 0.83, -0.38, mg);
+      box(w, h, 0.06, M(0x10181f, { metalness: .3, roughness: .4 }), 0, y, -0.42, mg);
+      const sc = document.createElement("canvas"); sc.width = 1024; sc.height = 576;
+      const stex = new THREE.CanvasTexture(sc); stex.encoding = THREE.sRGBEncoding; stex.anisotropy = 4;
+      const screen = new THREE.Mesh(new THREE.PlaneGeometry(w - 0.1, h - 0.1), new THREE.MeshBasicMaterial({ map: stex, toneMapped: false }));
+      screen.position.set(0, y, -0.385); mg.add(screen);
+      return { screen, stex, sc, ctx: sc.getContext("2d") };
+    });
+    const { screen, stex, sc } = mons[0];
     // teclado, taza, lámpara de escritorio
     box(0.7, 0.03, 0.22, M(0x1b252d), 0, 0.835, 0.12, g);
     cyl(0.07, 0.06, 0.13, M(0xe8e2d2), 0.85, 0.89, 0.1, g);
@@ -335,7 +342,7 @@
     const ring = new THREE.Mesh(new THREE.RingGeometry(0.9, 1.15, 48), new THREE.MeshBasicMaterial({ color: 0x7f9aad, transparent: true, opacity: .35, side: THREE.DoubleSide }));
     ring.rotation.x = -Math.PI / 2; ring.position.set(0, 0.012, 0.9); g.add(ring);
     const glow = new THREE.PointLight(0x4fd1e8, 0.45, 3.2, 2); glow.position.set(0, 1.5, 0.2); g.add(glow);
-    ST[a.id] = { g, screen, stex, sc, ctx: sc.getContext("2d"), torso, headG, arms, ring, glow, src: null, st: null, ver: -1 };
+    ST[a.id] = { g, screen, stex, sc, ctx: sc.getContext("2d"), mons, torso, headG, arms, ring, glow, src: null, st: null, ver: -1 };
   });
 
 
@@ -579,6 +586,14 @@
 
   /* ---------- Pantallas: la captura del agente, atenuada si está en espera ---------- */
   function paintScreen(a, s, t) {
+    if (s.mons.length > 1) {   // Gerente: sus dos pantallas de métricas, siempre visibles
+      s.mons.forEach((m, k) => {
+        const src = TEX[a.id + (k ? "2" : "")]; m.ctx.fillStyle = "#07111A"; m.ctx.fillRect(0, 0, 1024, 576);
+        if (src && src.width) m.ctx.drawImage(src, 0, 0, 1024, 576);
+        m.stex.needsUpdate = true;
+      });
+      return;
+    }
     const g = s.ctx, W = 1024, H = 576, src = TEX[a.id];
     g.fillStyle = "#07111A"; g.fillRect(0, 0, W, H);
     if (src && (src.naturalWidth || src.width)) {
@@ -645,7 +660,7 @@
     if (side) camera.setViewOffset(W + side, H, side, 0, W, H); else camera.clearViewOffset();
   }
   function focus3D(id) {
-    if (open && sel === id) { if (id === "pedidos" && window.abrirMapa) { window.abrirMapa(); return; } close3D(); return; }
+    if (open && sel === id) { if (id === "pedidos" && window.abrirMapa) { window.abrirMapa(); return; } if (id === "gerente" && window.abrirPanel) { window.abrirPanel(); return; } close3D(); return; }
     if (id === "docs" && sel !== "docs") cabSel = null;
     sel = id; open = true; $("drawer").hidden = false; drawDrawer(); $("dBody").scrollTop = 0; viewOffset();
     const s = ST[id]; if (!s) return;
@@ -726,8 +741,8 @@
     AG.forEach(a => {
       const s = ST[a.id]; if (!s) return;
       const src = TEX[a.id];
-      if (src !== s.src || a.state !== s.st || (src && !s.loaded && (src.naturalWidth || src.width))) {
-        s.src = src; s.st = a.state; s.loaded = !!(src && (src.naturalWidth || src.width)); paintScreen(a, s, t);
+      if (src !== s.src || TEX[a.id + "2"] !== s.src2 || a.state !== s.st || (src && !s.loaded && (src.naturalWidth || src.width))) {
+        s.src = src; s.src2 = TEX[a.id + "2"]; s.st = a.state; s.loaded = !!(src && (src.naturalWidth || src.width)); paintScreen(a, s, t);
       }
       const st = STATES[a.state]; col.set(st.c);
       s.ring.material.color.copy(col);

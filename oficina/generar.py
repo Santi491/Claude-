@@ -174,9 +174,18 @@ def main():
             out.append(d)
         return out
     pedidos = lista_pedidos("pedidos.csv", False) + lista_pedidos("pedidos-prueba.csv", True)
+    # Gerente: métricas por día, plan con decisiones, mensajes (sin notas; en Messenger son personas: sin nombre) e informes
+    existe = lambda n: os.path.exists(os.path.join(RAIZ, n))
+    metricas = leer("metricas.csv") if existe("metricas.csv") else []
+    plan = leer("plan.csv") if existe("plan.csv") else []
+    mensajes = [{"fecha": m["fecha"], "hora": m["hora"], "canal": m["canal"], "direccion": m["direccion"], "tipo": m["tipo"],
+                 "con_precio": m["con_precio"], "tienda": m["tienda"] if m["canal"] == "whatsapp" else "Vendedor de Marketplace"}
+                for m in (leer("mensajes.csv") if existe("mensajes.csv") else [])]
+    informes_gerente = [{k: f[k] for k in ("fecha", "tipo", "url")}
+                        for f in (leer("informes/gerente/indice.csv") if existe("informes/gerente/indice.csv") else [])]
     datos = {"generado": datetime.now().strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
              "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas,
-             "pedidos": pedidos}
+             "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente}
     with open(os.path.join(OFI, "datos.js"), "w", encoding="utf-8") as f:
         f.write("window.DATOS = " + json.dumps(datos, ensure_ascii=False) + ";\n")
     print(f"oficina/datos.js: {len(productos)} productos, {len(mov)} movimientos, {len(docs)} documentos")

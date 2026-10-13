@@ -84,6 +84,7 @@ canvas.zoomed{touch-action:none;cursor:grab}
 .shot img{display:block;width:100%;height:auto}
 .shot .cap{margin:0;padding:8px 12px;font:500 12px/1.45 var(--f-mono);color:var(--o-muted);border-top:1px solid var(--o-line)}
 .shot .cap b{color:var(--o-ink);font-weight:600}
+.shot.dual{display:grid;grid-template-columns:1fr 1fr;gap:2px}.shot.dual .cap{grid-column:1/-1}
 .term{font:12.5px/1.6 var(--f-mono);color:var(--o-ink);padding:10px 12px;white-space:pre-wrap;margin:0}
 .term .k{color:var(--o-cyan)} .term .g{color:#5CD69A} .term .y{color:var(--o-amber)} .term .r{color:#F07A7A}
 .acts{display:grid;gap:7px}
@@ -571,7 +572,9 @@ const AG=[
   info:["Busca en Marketplace de Cochabamba los productos de vigilar.csv, sobre todo los que todavía no tienen precio local.","Guarda precio, estado y link de cada anuncio útil; los de otras ciudades quedan solo como referencia."]},
  {id:"ana",name:"Analista",where:"Calcula costo puesto y margen",x:4.2,y:5.2,shirt:"#C46FD8",info:[]},
  {id:"pedidos",name:"Pedidos",where:"Compras de eBay y seguimiento del courier hasta Cochabamba",x:6.8,y:5.2,shirt:"#F07AA0",
-  info:["Revisa el estado de cada compra en eBay (comprado, enviado, en bodega del courier, en camino, en Cochabamba).","Sigue la guía del courier hasta que el paquete llega.","Anota todo en pedidos.csv; en esta página solo se muestran producto, estado y fecha estimada."]}
+  info:["Revisa el estado de cada compra en eBay (comprado, enviado, en bodega del courier, en camino, en Cochabamba).","Sigue la guía del courier hasta que el paquete llega.","Anota todo en pedidos.csv; en esta página solo se muestran producto, estado y fecha estimada."]},
+ {id:"gerente",name:"Gerente",where:"Nube · informe 20:00 (lunes a sábado diario, domingo semanal)",x:5.9,y:3.3,shirt:"#D9A441",
+  info:["Controla al equipo: calcula las métricas del día (chats, respuestas, precios nuevos, embudo de tiendas, oportunidades, dólar, pedidos) y revisa que cada agente haya trabajado y respetado las reglas.","Propone el plan del día siguiente en plan.csv; los agentes solo hacen lo que Santi aprueba.","Sube el informe como Google Doc a la carpeta INFORME DIARIO y avisa por WhatsApp y correo. Nunca escribe a tiendas ni inventa cifras."]}
 ];
 // Última captura de pantalla de cada agente (oficina/capturas.csv); si no hay, queda la imagen por defecto
 AG.forEach(a=>{const cs=D.capturas.filter(c=>c.agente===a.id).sort((x,y)=>(x.fecha+x.hora).localeCompare(y.fecha+y.hora));const c=cs[cs.length-1];if(c){a.img=c.archivo;a.cap=c}});
@@ -698,6 +701,10 @@ function screenHtml(a){
   if(a.id==="pedidos"){
     const P2=D.pedidos||[];
     return `<button type="button" class="openmap" data-mapa>Abrir pantalla · mapa de envíos</button><div class="shot" data-mapa style="cursor:pointer">${drawn(`<b>${P2.length} pedido${P2.length===1?"":"s"}</b> · armado con pedidos.csv (sin guías ni direcciones: la página es pública)`)}<pre class="term"><span class="k">$ pedidos --estado</span>\n${P2.length?P2.slice().reverse().map(p=>`${esc(p.cantidad||1)}× ${esc(p.producto)} · ${esc(p.tienda)} · <span class="y">${esc(p.estado)}</span> · llega ${esc(p.eta||"—")}`).join("\n"):"Sin pedidos todavía. Falta iniciar sesión en eBay en Chrome o pasar las guías del courier."}</pre></div>`;
+  }
+  if(a.id==="gerente"){
+    const M2=D.metricas||[],u=M2[M2.length-1];
+    return `<button type="button" class="openmap" data-panel>Abrir pantalla · panel de datos</button><div class="shot dual" data-panel style="cursor:pointer"><img src="${shotUrl("gerente")}" alt="Monitor izquierdo del Gerente: métricas"><img src="${shotUrl("gerente2")}" alt="Monitor derecho del Gerente: embudo y plan"><p class="cap"><b>${u?fechaCorta(u.fecha):"sin métricas"}</b> · armado con metricas.csv, mensajes.csv y plan.csv · toca para abrir el panel completo</p></div>`;
   }
   if(a.id==="ana"){
     const mlabel={new:"nuevo",used:"usado",min:"el más barato"}[S.mode];
@@ -1013,4 +1020,5 @@ resize();lastW=$("stage").clientWidth;render();renderStmt();renderDays();renderD
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="mapa.js"></script>
+<script src="gerente.js"></script>
 <script src="oficina3d.js"></script>
