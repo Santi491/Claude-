@@ -72,3 +72,4 @@ fecha,hora,agente,texto
 2026-10-13,18:21,gerente,aviso del informe del 13/10 reenviado por Telegram desde la nube (a las 20:00 faltaban las claves en el entorno; ya funcionan)
 2026-10-13,18:23,gerente,regla nueva en CLAUDE.md: los mensajes del Gerente a Santi por Telegram van con su personalidad (chat cálido y directo), no como reporte
 2026-10-13,18:26,gerente,mensaje de prueba por Telegram con el tono nuevo del Gerente (pedido de Santi); sin tareas nuevas
+2026-10-13,20:10,gerente,"Rutina 20:00: sin cambios desde el informe del 13/10 (mismo Doc); 0 mensajes de Telegram; 0 tareas nuevas (siguen propuestas 6-11); aviso a Santi por Telegram"
