@@ -84,3 +84,4 @@ fecha,hora,agente,texto
 2026-10-14,11:39,gerente,"oficina publicada desde la nube por pedido de Santi: botón Necesidades e ideas en cada agente con aprobación (solo Santi), tablero del equipo en la pared, simulador de pedido y gráficos de precios"
 2026-10-14,11:39,fin,"agente nuevo: Finanzas e inventario (finanzas.py, ventas.csv); sin compras del negocio todavía"
 2026-10-14,11:39,dem,"agente nuevo: Analista de demanda (demanda.py, demanda.csv); empieza a contar anuncios en la próxima ronda de Marketplace"
+2026-10-14,13:41,gerente,oficina más ancha hacia la derecha (52 m): 9 m entre escritorios, Finanzas y Demanda con más espacio, tablero y archivero al fondo a la derecha; etiquetas más compactas

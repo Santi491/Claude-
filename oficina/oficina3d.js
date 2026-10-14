@@ -29,22 +29,22 @@
   /* ---------- Escena, cámara, luces: hangar grafito ---------- */
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x121417);
-  scene.fog = new THREE.Fog(0x121417, 50, 100);
-  const XC0 = 5;   // centro del hangar (x), igual a XC más abajo
+  scene.fog = new THREE.Fog(0x121417, 60, 120);
+  const XC0 = 11;   // centro del hangar (x), igual a XC más abajo
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 200);
-  const HOME = { pos: new THREE.Vector3(28, 25, 32), target: new THREE.Vector3(8.5, 0, 0) };
+  const HOME = { pos: new THREE.Vector3(32, 38, 36), target: new THREE.Vector3(11, 0, 0.5) };
   camera.position.copy(HOME.pos);
   const controls = new THREE.OrbitControls(camera, el);
   controls.enableDamping = true; controls.dampingFactor = 0.08;
   controls.target.copy(HOME.target);
-  controls.maxPolarAngle = Math.PI * 0.46; controls.minDistance = 3; controls.maxDistance = 58;
+  controls.maxPolarAngle = Math.PI * 0.46; controls.minDistance = 3; controls.maxDistance = 72;
   controls.screenSpacePanning = true;
 
   scene.add(new THREE.HemisphereLight(0xe9eef4, 0x2a2c30, 0.75));
   const sun = new THREE.DirectionalLight(0xffffff, 0.6);
-  sun.position.set(17, 20, 10); sun.target.position.set(XC0, 0, 0); scene.add(sun.target); sun.castShadow = true;
+  sun.position.set(25, 22, 10); sun.target.position.set(XC0, 0, 0); scene.add(sun.target); sun.castShadow = true;
   sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.0004;
-  Object.assign(sun.shadow.camera, { left: -26, right: 26, top: 16, bottom: -16, near: 1, far: 70 });
+  Object.assign(sun.shadow.camera, { left: -32, right: 32, top: 18, bottom: -18, near: 1, far: 80 });
   scene.add(sun);
   const fill = new THREE.DirectionalLight(0xdfe8f2, 0.2); fill.position.set(-14, 8, 14); scene.add(fill);
 
@@ -94,7 +94,7 @@
   const ledM = new THREE.MeshBasicMaterial({ color: 0xffffff, toneMapped: false });
 
   /* ---------- Hangar ---------- */
-  const RW = 40, RD = 20, WH = 7.2; // ancho (x), fondo (z), alto de muros
+  const RW = 52, RD = 20, WH = 7.2; // ancho (x), fondo (z), alto de muros
   const XL = -15, XR = XL + RW, XC = (XL + XR) / 2;   // el hangar crece hacia la derecha: el muro izquierdo no se mueve
   // piso de epoxi claro con vetas de mármol, pulido
   const conc = marble("#e6e1d7", "#b3a791", .7, 16);
@@ -117,7 +117,7 @@
 
   // columnas de acero del hangar
   const steelDk = M(0x1d2023, { metalness: .6, roughness: .4 });
-  [-14, -3, 13, 24].forEach(x => box(0.35, WH, 0.3, steelDk, x === -14 ? -14.6 : x, WH / 2, -RD / 2 + 0.16));
+  [-14, -3, 13, 24, 35].forEach(x => box(0.35, WH, 0.3, steelDk, x === -14 ? -14.6 : x, WH / 2, -RD / 2 + 0.16));
   [-5].forEach(z => box(0.3, WH, 0.35, steelDk, XL + 0.16, WH / 2, z));
 
   // LED blanco en los bordes de arriba y en las esquinas
@@ -126,7 +126,7 @@
   [[XL + 0.05, -RD / 2 + 0.05], [XR - 0.04, -RD / 2 + 0.05], [XL + 0.05, RD / 2 - 0.04]].forEach(([x, z]) => { box(0.06, WH, 0.06, ledM, x, WH / 2, z).castShadow = false; });
   box(RW, 0.03, 0.05, ledM, XC, 0.16, -RD / 2 + 0.05).castShadow = false;   // línea fina a ras del piso
   box(0.05, 0.03, RD, ledM, XL + 0.05, 0.16, 0).castShadow = false;
-  [[-9, -RD / 2 + 1], [XC, -RD / 2 + 1], [19, -RD / 2 + 1]].forEach(([x, z]) => { const l = new THREE.PointLight(0xffffff, 0.35, 9, 2); l.position.set(x, WH - 0.4, z); scene.add(l); });
+  [[-9, -RD / 2 + 1], [XC, -RD / 2 + 1], [22, -RD / 2 + 1], [31, -RD / 2 + 1]].forEach(([x, z]) => { const l = new THREE.PointLight(0xffffff, 0.35, 9, 2); l.position.set(x, WH - 0.4, z); scene.add(l); });
   [-6, 4].forEach(z => { const l = new THREE.PointLight(0xffffff, 0.3, 9, 2); l.position.set(XL + 1, WH - 0.4, z); scene.add(l); });
 
   // ventanas altas del hangar con el cielo de noche
@@ -191,9 +191,9 @@
     m.position.set(0.62, 0.4 + i * 0.24, -0.3 + (i % 3) * 0.25); m.rotation.y = Math.PI / 2; rackG.add(m); leds.push(m);
   }
 
-  // puestos de trabajo: fila del fondo (6 puestos, 6,2 m entre escritorios) y fila de adelante (7,8 m)
-  const STATION = { nube: [-10, -4.8], ebay: [-3.8, -4.8], wa: [2.4, -4.8], pedidos: [8.6, -4.8], fin: [14.8, -4.8], dem: [21, -4.8],
-    mkt: [-5.2, 3.2], ana: [2.6, 3.2], gerente: [10.4, 3.2] };
+  // puestos de trabajo: fila del fondo (5 puestos) y fila de adelante (4), con 9 m entre escritorios
+  const STATION = { nube: [-10, -4.8], ebay: [-1, -4.8], wa: [8, -4.8], pedidos: [17, -4.8], fin: [26, -4.8],
+    mkt: [-5, 3.2], ana: [4, 3.2], gerente: [13, 3.2], dem: [22, 3.2] };
   // lámparas LED lineales colgantes sobre los escritorios
   function ledBar(x, z, len, y, rotY) {
     y = y || 3.72;
@@ -210,7 +210,7 @@
 
   // Zona de almacén (adelante a la derecha): racks con cajas como llegan de verdad
   // (cartón con cinta de eBay, USPS Priority Mail, cartón con etiqueta). Cada pedido real de pedidos.csv suma su caja al pallet de llegadas.
-  const WZ = new THREE.Group(); WZ.position.set(19.8, 0, 5.7); scene.add(WZ);
+  const WZ = new THREE.Group(); WZ.position.set(31.5, 0, 5.7); scene.add(WZ);
   const lineM = M(0xd9dde2, { roughness: .5 });
   [[0, -3.6, 8.9, 0.05], [0, 4.1, 8.9, 0.05], [-4.45, 0.25, 0.05, 7.7], [4.45, 0.25, 0.05, 7.7]].forEach(([x, z, w, d]) => box(w, 0.01, d, lineM, x, 0.006, z, WZ));
   const blackSteel = M(0x18191b, { metalness: .6, roughness: .45 });
@@ -588,7 +588,7 @@
   }
 
   // Tablero del equipo: pantalla grande en la pared del fondo con las necesidades e ideas de cada agente (toca para abrir)
-  const tabG = new THREE.Group(); tabG.position.set(18.5, 3.75, -RD / 2 + 0.12); scene.add(tabG);
+  const tabG = new THREE.Group(); tabG.position.set(29.5, 3.75, -RD / 2 + 0.12); scene.add(tabG);
   box(6.3, 3.6, 0.1, M(0x0c0f12, { metalness: .4, roughness: .35 }), 0, 0, 0, tabG);
   const tabTex = new THREE.CanvasTexture(TEX.tablero || document.createElement("canvas")); tabTex.encoding = THREE.sRGBEncoding; tabTex.anisotropy = 4;
   const tabScr = new THREE.Mesh(new THREE.PlaneGeometry(6.1, 3.43), new THREE.MeshBasicMaterial({ map: tabTex, toneMapped: false }));
@@ -597,7 +597,7 @@
   ST.tablero = { g: tabG };
 
   // Archivero de documentos
-  const cabG = new THREE.Group(); cabG.position.set(19.5, 0, -7.2); scene.add(cabG);
+  const cabG = new THREE.Group(); cabG.position.set(35.3, 0, -7.6); scene.add(cabG);
   box(1.1, 1.9, 0.8, M(0x3a3e43, { metalness: .4, roughness: .45 }), 0, 0.95, 0, cabG);
   for (let k = 0; k < 3; k++) {
     box(0.98, 0.52, 0.04, M(0x2c2f33, { metalness: .35 }), 0, 0.35 + k * 0.6, 0.42, cabG);
