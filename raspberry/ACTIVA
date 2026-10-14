@@ -1,0 +1,4 @@
+La Raspberry Pi de Santi está instalada y prendida desde el 14/10/2026: ella lee Telegram (raspberry/bot.py).
+Mientras exista este archivo, telegram_leer.py no lee mensajes en la nube, la Mac ni la PC (no le quita mensajes al bot).
+Si la Raspberry se apaga por varios días, borrar este archivo (o usar telegram_leer.py --forzar).
+Enviar avisos con notificar.py sigue funcionando en todas las sesiones.

@@ -21,7 +21,7 @@ import urllib.request
 def cargar(archivo, nombres):
     ruta = os.path.expanduser(archivo)
     if os.path.exists(ruta):
-        for linea in open(ruta, encoding="utf-8"):
+        for linea in open(ruta, encoding="utf-8-sig"):   # -sig: el Bloc de notas de Windows puede guardar con BOM
             k, _, v = linea.strip().partition("=")
             if k in nombres and v:
                 os.environ.setdefault(k, v)

@@ -25,7 +25,12 @@ ESTADO = os.path.join(DIR, "telegram-estado.json")
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ver", action="store_true")
+    ap.add_argument("--forzar", action="store_true", help="leer aunque la Raspberry esté activa")
     a = ap.parse_args()
+    # Con la Raspberry prendida, ella lee Telegram al momento: si otra sesión lee, le quita los mensajes al bot
+    if os.path.exists(os.path.join(DIR, "raspberry", "ACTIVA")) and not a.forzar:
+        print("La Raspberry está activa y lee Telegram: no se leen mensajes acá. Lo que decidió Santi está en plan.csv y actividad.csv (\"Telegram (Raspberry)\").")
+        return
     token, chat = cargar("~/.telegram", ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"))
     if not token or not chat:
         sys.exit("Faltan TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID: no se pudo leer Telegram.")

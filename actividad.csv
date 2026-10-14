@@ -85,3 +85,4 @@ fecha,hora,agente,texto
 2026-10-14,11:39,fin,"agente nuevo: Finanzas e inventario (finanzas.py, ventas.csv); sin compras del negocio todavía"
 2026-10-14,11:39,dem,"agente nuevo: Analista de demanda (demanda.py, demanda.csv); empieza a contar anuncios en la próxima ronda de Marketplace"
 2026-10-14,13:41,gerente,oficina más ancha hacia la derecha (52 m): 9 m entre escritorios, Finanzas y Demanda con más espacio, tablero y archivero al fondo a la derecha; etiquetas más compactas
+2026-10-14,14:48,gerente,"Raspberry instalada y prendida (bot de Telegram del Gerente); desde ahora solo ella lee Telegram (raspberry/ACTIVA) y las demás sesiones solo mandan avisos"
