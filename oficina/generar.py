@@ -9,10 +9,14 @@ import csv
 import glob
 import json
 import os
+import sys
 from datetime import datetime
 
 OFI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.dirname(OFI)
+sys.path.insert(0, RAIZ)
+import demanda  # noqa: E402
+import finanzas  # noqa: E402
 
 
 def leer(nombre):
@@ -187,8 +191,13 @@ def main():
              "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas,
              "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente,
              # lo que los agentes le piden a Santi (sin datos privados): lo usa la animación del Gerente
-             "necesidades": [{"agente": f.get("agente", ""), "necesita": f.get("necesita", "")}
-                             for f in leer("necesidades.csv") if f.get("estado", "abierta") != "resuelta"]}
+             # id = número de fila del CSV (las filas nunca se borran): con eso la oficina aprueba o da por resuelto
+             "necesidades": [{"id": i, "fecha": f.get("fecha", ""), "agente": f.get("agente", ""), "necesita": f.get("necesita", ""),
+                              "para_que": f.get("para_que", ""), "quien": f.get("quien", "")}
+                             for i, f in enumerate(leer("necesidades.csv"), 1) if f.get("estado", "abierta") != "resuelta"],
+             "ideas": [{"id": i, **{k: f.get(k, "") for k in ("fecha", "agente", "idea", "por_que", "estado", "decision")}}
+                       for i, f in enumerate(leer("ideas.csv") if existe("ideas.csv") else [], 1)],
+             "finanzas": finanzas.calcular(), "demanda": demanda.calcular()}
     with open(os.path.join(OFI, "datos.js"), "w", encoding="utf-8") as f:
         f.write("window.DATOS = " + json.dumps(datos, ensure_ascii=False) + ";\n")
     print(f"oficina/datos.js: {len(productos)} productos, {len(mov)} movimientos, {len(docs)} documentos")

@@ -18,7 +18,7 @@ from zoneinfo import ZoneInfo
 DIR = os.path.dirname(os.path.abspath(__file__))
 HOY = datetime.now(ZoneInfo("America/La_Paz")).date()
 NOMBRE = {"nube": "la Nube", "ebay": "el Rastreador eBay", "wa": "WhatsApp", "mkt": "Marketplace", "ana": "el Analista",
-          "pedidos": "Pedidos", "gerente": "el Gerente", "local": "la ronda local", "todos": "todo el equipo"}
+          "pedidos": "Pedidos", "gerente": "el Gerente", "fin": "Finanzas", "dem": "el Analista de demanda", "local": "la ronda local", "todos": "todo el equipo"}
 
 
 def leer(nombre):
@@ -65,8 +65,11 @@ def calcular():
     pedidos_quietos = [r for r in leer("pedidos.csv") if r.get("estado") not in ("entregado", "")
                        and (fecha(r.get("actualizado")) or HOY) < HOY - timedelta(days=2)]
 
+    ideas = [{"id": i, "agente": r.get("agente"), "idea": r.get("idea")}
+             for i, r in enumerate(leer("ideas.csv"), 1) if r.get("estado") == "propuesta"]
     return {
         "fecha": HOY.isoformat(),
+        "ideas_pendientes": ideas,
         "pedidos_agentes": [{"fecha": r.get("fecha"), "agente": r.get("agente"), "necesita": r.get("necesita"),
                              "para_que": r.get("para_que"), "quien": r.get("quien", "Santi")} for r in pedidos_agentes],
         "decisiones_pendientes": [{"id": r["id"], "agente": r["agente"], "tarea": r["tarea"]} for r in sin_decidir],
@@ -87,6 +90,8 @@ def texto(n, breve=False):
         lineas.append(linea[0].upper() + linea[1:])
     if n["decisiones_pendientes"]:
         lineas.append(f"El equipo espera tu decisión en {len(n['decisiones_pendientes'])} tareas del plan (escribe 'plan').")
+    if n.get("ideas_pendientes"):
+        lineas.append(f"Hay {len(n['ideas_pendientes'])} ideas de los agentes esperando tu OK (se aprueban en la oficina, botón Necesidades e ideas).")
     if n["tareas_trabadas"]:
         lineas.append(f"{len(n['tareas_trabadas'])} tareas aprobadas se pasaron de fecha sin hacerse: " +
                       ", ".join(f"{t['id']} ({NOMBRE.get(t['agente'], t['agente'])})" for t in n["tareas_trabadas"][:4]))

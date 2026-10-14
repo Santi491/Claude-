@@ -32,7 +32,7 @@
   scene.fog = new THREE.Fog(0x121417, 50, 100);
   const XC0 = 5;   // centro del hangar (x), igual a XC más abajo
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 200);
-  const HOME = { pos: new THREE.Vector3(22, 22, 29), target: new THREE.Vector3(5.5, 0, 2) };
+  const HOME = { pos: new THREE.Vector3(28, 25, 32), target: new THREE.Vector3(8.5, 0, 0) };
   camera.position.copy(HOME.pos);
   const controls = new THREE.OrbitControls(camera, el);
   controls.enableDamping = true; controls.dampingFactor = 0.08;
@@ -191,8 +191,9 @@
     m.position.set(0.62, 0.4 + i * 0.24, -0.3 + (i % 3) * 0.25); m.rotation.y = Math.PI / 2; rackG.add(m); leds.push(m);
   }
 
-  // puestos de trabajo: fila del fondo y fila de adelante, con 7,5 m entre escritorios
-  const STATION = { nube: [-8.5, -4.8], ebay: [-1, -4.8], wa: [6.5, -4.8], pedidos: [14, -4.8], mkt: [-5.2, 3.2], ana: [2.6, 3.2], gerente: [10.4, 3.2] };
+  // puestos de trabajo: fila del fondo (6 puestos, 6,2 m entre escritorios) y fila de adelante (7,8 m)
+  const STATION = { nube: [-10, -4.8], ebay: [-3.8, -4.8], wa: [2.4, -4.8], pedidos: [8.6, -4.8], fin: [14.8, -4.8], dem: [21, -4.8],
+    mkt: [-5.2, 3.2], ana: [2.6, 3.2], gerente: [10.4, 3.2] };
   // lámparas LED lineales colgantes sobre los escritorios
   function ledBar(x, z, len, y, rotY) {
     y = y || 3.72;
@@ -586,6 +587,15 @@
     });
   }
 
+  // Tablero del equipo: pantalla grande en la pared del fondo con las necesidades e ideas de cada agente (toca para abrir)
+  const tabG = new THREE.Group(); tabG.position.set(18.5, 3.75, -RD / 2 + 0.12); scene.add(tabG);
+  box(6.3, 3.6, 0.1, M(0x0c0f12, { metalness: .4, roughness: .35 }), 0, 0, 0, tabG);
+  const tabTex = new THREE.CanvasTexture(TEX.tablero || document.createElement("canvas")); tabTex.encoding = THREE.sRGBEncoding; tabTex.anisotropy = 4;
+  const tabScr = new THREE.Mesh(new THREE.PlaneGeometry(6.1, 3.43), new THREE.MeshBasicMaterial({ map: tabTex, toneMapped: false }));
+  tabScr.position.z = 0.056; tabG.add(tabScr);
+  let tabVer = -1;
+  ST.tablero = { g: tabG };
+
   // Archivero de documentos
   const cabG = new THREE.Group(); cabG.position.set(19.5, 0, -7.2); scene.add(cabG);
   box(1.1, 1.9, 0.8, M(0x3a3e43, { metalness: .4, roughness: .45 }), 0, 0.95, 0, cabG);
@@ -622,7 +632,7 @@
 
   /* ---------- Etiquetas HTML sobre cada agente ---------- */
   const tags = {};
-  [...AG, { id: "docs", name: "Documentos" }, { id: "jefe", name: "Santi" }].forEach(a => {
+  [...AG, { id: "docs", name: "Documentos" }, { id: "jefe", name: "Santi" }, { id: "tablero", name: "Tablero" }].forEach(a => {
     const b = document.createElement("button"); b.type = "button"; b.className = "ag3d"; b.dataset.id = a.id;
     b.innerHTML = `<span class="dot"></span><span class="nm"></span><small></small>`;
     b.addEventListener("click", e => { e.stopPropagation(); focus3D(a.id); });
@@ -634,6 +644,7 @@
     Object.keys(tags).forEach(id => {
       const s = ST[id], b = tags[id]; if (!s) { b.hidden = true; return; }
       if (id === "docs") tmp.set(0, 2.4, 0).applyMatrix4(s.g.matrixWorld);
+      else if (id === "tablero") tmp.set(0, 2.15, 0).applyMatrix4(s.g.matrixWorld);
       else if (id === "jefe") tmp.set(0, 2.55, 0.9).applyMatrix4(s.g.matrixWorld);
       else if (id === "gerente" && GER && GER.caminando()) tmp.set(0, 2.25, 0).applyMatrix4(GER.walker.matrixWorld);
       else tmp.set(0, 2.25, 0.9).applyMatrix4(s.g.matrixWorld);
@@ -644,6 +655,10 @@
       if (id === "jefe") {
         b.querySelector(".nm").textContent = "Santi · jefe"; b.style.setProperty("--c", "#F2A541");
         b.querySelector("small").textContent = LIVE_ON ? "viendo la ronda en vivo" : "supervisando";
+      } else if (id === "tablero") {
+        const n = window.pendientesDe ? window.pendientesDe() : 0;
+        b.querySelector(".nm").textContent = "Tablero del equipo"; b.style.setProperty("--c", n ? "#F2A541" : "#5CD69A");
+        b.querySelector("small").textContent = n ? `${n} por decidir · toca para abrir` : "nada pendiente";
       } else if (id === "docs") {
         b.querySelector(".nm").textContent = `Documentos · ${D.documentos.length}`; b.style.setProperty("--c", "#C9A35A");
         b.querySelector("small").textContent = "";
@@ -651,7 +666,8 @@
         const a = AG.find(x => x.id === id), st = STATES[a.state];
         b.style.setProperty("--c", st.c); b.querySelector(".nm").textContent = a.name;
         const extra = id === "gerente" && GER && GER.texto() ? GER.texto() : a.liveText ? a.liveText : a.state === "sleep" ? "zZ · en espera" : a.state === "done" ? "✓ trabajó hoy" : a.state === "waiting" ? "… esperando respuestas" : a.state === "working" ? "trabajando" : "";
-        b.querySelector("small").textContent = extra;
+        const pend = window.pendientesDe ? window.pendientesDe(id) : 0;
+        b.querySelector("small").textContent = extra + (pend ? ` · ${pend} por decidir` : "");
       }
       b.classList.toggle("on", open && sel === id);
       // En pantallas angostas la etiqueta no se sale por los costados ni por arriba: se corre hacia adentro
@@ -673,6 +689,7 @@
     if (side) camera.setViewOffset(W + side, H, side, 0, W, H); else camera.clearViewOffset();
   }
   function focus3D(id) {
+    if (id === "tablero") { if (window.abrirTablero) window.abrirTablero(); return; }
     if (open && sel === id) { if (id === "pedidos" && window.abrirMapa) { window.abrirMapa(); return; } if (id === "gerente" && window.abrirPanel) { window.abrirPanel(); return; } close3D(); return; }
     if (id === "docs" && sel !== "docs") cabSel = null;
     sel = id; open = true; $("drawer").hidden = false; drawDrawer(); $("dBody").scrollTop = 0; viewOffset();
@@ -913,6 +930,7 @@
       s.headG.rotation.y = a.state === "waiting" && !reduce ? Math.sin(t * 0.9) * 0.35 : 0;
       s.torso.rotation.x = sleep ? 0.12 : 0;
     });
+    if (window.tableroVersion !== tabVer && TEX.tablero) { tabVer = window.tableroVersion; tabTex.image = TEX.tablero; tabTex.needsUpdate = true; }
     renderer.render(scene, camera);
     placeTags(el.clientWidth, el.clientHeight);
     requestAnimationFrame(loop);

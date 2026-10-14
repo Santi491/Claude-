@@ -69,6 +69,7 @@ canvas.zoomed{touch-action:none;cursor:grab}
 .zoom{z-index:2;position:absolute;left:14px;top:12px;display:flex;gap:6px}
 .zoom button{font:600 14px var(--f-mono);color:var(--o-ink);background:rgba(16,34,48,.9);border:1px solid var(--o-line);border-radius:6px;min-width:36px;height:34px;padding:0 10px;cursor:pointer}
 .zoom button:hover{border-color:var(--o-cyan)}
+.drawer[hidden]{display:none}
 .drawer{z-index:3;position:absolute;top:0;right:0;bottom:0;width:min(420px,46%);background:var(--o-panel);border-left:1px solid var(--o-line);display:grid;grid-template-rows:auto minmax(0,1fr);box-shadow:-18px 0 40px rgba(0,0,0,.35)}
 .dhead{display:grid;gap:4px;padding:14px 16px 12px;border-bottom:1px solid var(--o-line)}
 .dhead .who{display:flex;gap:10px;align-items:center}
@@ -573,6 +574,10 @@ const AG=[
  {id:"ana",name:"Analista",where:"Calcula costo puesto y margen",x:4.2,y:5.2,shirt:"#C46FD8",info:[]},
  {id:"pedidos",name:"Pedidos",where:"Compras de eBay y seguimiento del courier hasta Cochabamba",x:6.8,y:5.2,shirt:"#F07AA0",
   info:["Revisa el estado de cada compra en eBay (comprado, enviado, en bodega del courier, en camino, en Cochabamba).","Sigue la guía del courier hasta que el paquete llega.","Anota todo en pedidos.csv; en esta página solo se muestran producto, estado y fecha estimada."]},
+ {id:"fin",name:"Finanzas e inventario",where:"Ronda local y Gerente · pedidos.csv y ventas.csv",x:1.7,y:3.3,shirt:"#2FB8A6",
+  info:["Lleva la plata del negocio: cuánto se invirtió en cada compra (eBay + envío del courier, al dólar del día), qué está en camino, qué hay en stock y qué se vendió.","Calcula la ganancia real con ventas.csv (no la potencial de la tabla). Los pedidos de prueba no cuentan.","En la página solo se ven totales; nunca clientes, guías ni números de pedido."]},
+ {id:"dem",name:"Analista de demanda",where:"Ronda de Marketplace · demanda.csv",x:3.7,y:3.3,shirt:"#E86F5C",
+  info:["En cada ronda cuenta cuántos anuncios hay en Cochabamba de cada producto y cuáles desaparecieron desde la vez anterior (se vendieron o los quitaron).","Con eso arma qué se mueve rápido y qué no, y propone agregar o sacar productos de vigilar.csv.","Solo mira: no escribe a nadie."]},
  {id:"gerente",name:"Gerente",where:"Nube · informe 20:00 (lunes a sábado diario, domingo semanal)",x:5.9,y:3.3,shirt:"#D9A441",
   info:["Controla al equipo: calcula las métricas del día (chats, respuestas, precios nuevos, embudo de tiendas, oportunidades, dólar, pedidos) y revisa que cada agente haya trabajado y respetado las reglas.","Propone el plan del día siguiente en plan.csv; los agentes solo hacen lo que Santi aprueba.","Sube el informe como Google Doc a la carpeta INFORME DIARIO y avisa por WhatsApp y correo. Nunca escribe a tiendas ni inventa cifras."]}
 ];
@@ -706,6 +711,7 @@ function screenHtml(a){
     const M2=D.metricas||[],u=M2[M2.length-1];
     return `<button type="button" class="openmap" data-panel>Abrir pantalla · panel de datos</button><div class="shot dual" data-panel style="cursor:pointer"><img src="${shotUrl("gerente")}" alt="Monitor izquierdo del Gerente: métricas"><img src="${shotUrl("gerente2")}" alt="Monitor derecho del Gerente: embudo y plan"><p class="cap"><b>${u?fechaCorta(u.fecha):"sin métricas"}</b> · armado con metricas.csv, mensajes.csv y plan.csv · toca para abrir el panel completo</p></div>`;
   }
+  if(a.id==="fin"||a.id==="dem")return window.pantallaEquipo?window.pantallaEquipo(a):"";
   if(a.id==="ana"){
     const mlabel={new:"nuevo",used:"usado",min:"el más barato"}[S.mode];
     return `<div class="shot">${drawn(`<b>en vivo</b> · se recalcula con los supuestos de la tabla de abajo`)}<pre class="term"><span class="k">$ analista --precio ${mlabel} --unidades ${S.qty}</span>\n${ranking.map(r=>`<span class="${r.c.margin>=.15?"g":r.c.margin>=.05?"y":"r"}">${esc(short(r.p.name).padEnd(20))} costo ${fmt(r.c.cost).padStart(6)}  local ${fmt(r.c.local).padStart(6)}  ${r.c.margin>=0?"+":""}${fmt(r.c.margin*100)} %</span>`).join("\n")}</pre></div>`;
@@ -729,7 +735,8 @@ function drawHud(all){
    <div class="kv"><span>Dólar</span><b>${lastFx?(+lastFx.usado).toFixed(2):"—"} Bs</b></div>
    <div class="kv"><span>Tiendas esperando</span><b class="a">${waiting.length}</b></div>
    <div class="kv"><span>Movimientos</span><b>${D.movimientos.length}</b></div>
-   <div class="kv"><span>Conviene</span><b class="c">${ok} de ${P.length}</b></div>`;
+   <div class="kv"><span>Conviene</span><b class="c">${ok} de ${P.length}</b></div>
+   <div class="hudbtns"><button type="button" data-abrir="tablero">Necesidades e ideas${window.pendientesDe&&window.pendientesDe()?`<span class="n">${window.pendientesDe()}</span>`:""}</button><button type="button" data-abrir="sim">Simulador de pedido</button><button type="button" data-abrir="graf">Gráficos de precios</button></div>`;
 }
 function parseCSV(t){const rows=[];let row=[],f="",q=false;for(let i=0;i<t.length;i++){const c=t[i];if(q){if(c==='"'){if(t[i+1]==='"'){f+='"';i++}else q=false}else f+=c}else if(c==='"')q=true;else if(c===","){row.push(f);f=""}else if(c==="\n"){row.push(f);rows.push(row);row=[];f=""}else if(c!=="\r")f+=c}if(f||row.length){row.push(f);rows.push(row)}return rows.filter(r=>r.some(x=>x!==""))}
 function csvTable(t){
@@ -1021,4 +1028,5 @@ resize();lastW=$("stage").clientWidth;render();renderStmt();renderDays();renderD
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="mapa.js"></script>
 <script src="gerente.js"></script>
+<script src="equipo.js"></script>
 <script src="oficina3d.js"></script>
