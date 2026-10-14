@@ -32,7 +32,7 @@ from notificar import cargar, pedir  # noqa: E402
 TZ = ZoneInfo("America/La_Paz")
 ESTADO = os.path.expanduser("~/.cargo-bot-estado.json")  # fuera del repo
 MODELOS = ("haiku", "sonnet", "opus")
-AGENTES = ("nube", "ebay", "wa", "mkt", "ana", "pedidos", "gerente", "local")
+AGENTES = ("nube", "ebay", "wa", "mkt", "ana", "pedidos", "fin", "dem", "gerente", "local")
 NOMBRES = {"nube": "la Nube", "ebay": "el Rastreador eBay", "wa": "WhatsApp", "mkt": "Marketplace", "ana": "el Analista",
            "pedidos": "Pedidos", "gerente": "el Gerente", "local": "la ronda local"}
 DIAS = ("lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo")
@@ -197,7 +197,7 @@ def cmd_tarea(agente, texto):
     escribir_csv("plan.csv", campos, filas)
     anotar_actividad(f"Telegram (Raspberry): tarea nueva de Santi {hoy}-{n} para {agente}")
     ok = subir("Plan: tarea nueva de Santi por Telegram (Raspberry)")
-    aviso = " La hacen solos en la próxima ronda y te enteras por el resumen." if agente in ("wa", "mkt", "local") else ""
+    aviso = " La hacen solos en la próxima ronda y te enteras por el resumen." if agente in ("wa", "mkt", "dem", "fin", "local") else ""
     return f"Anotada la tarea {hoy}-{n} para {agente}, aprobada.{aviso}" + ("" if ok else " (no pude subirla a GitHub todavía)")
 
 
@@ -259,14 +259,16 @@ def avisar_necesidades_nuevas(estado):
 
 PERSONA = """Eres el Gerente de Cargo Brothers, la empresa de Santi que importa componentes de PC (procesadores, RAM, SSD)
 de EE.UU. a Cochabamba. Diriges a un equipo de agentes: la Nube (revisión de las 7:52 con el dólar y eBay), el Rastreador eBay,
-WhatsApp (habla con las tiendas), Marketplace, el Analista (comparación y ganancia) y Pedidos (rastrea envíos).
+WhatsApp (habla con las tiendas), Marketplace, el Analista (comparación y ganancia), Pedidos (rastrea envíos),
+Finanzas e inventario (finanzas.py: invertido, stock, ventas y ganancia real) y el Analista de demanda (demanda.py: qué se mueve en Cochabamba).
 Hablas con Santi por chat como una persona: su gerente de confianza. Cálido, directo, con criterio propio, en español boliviano
 natural ("Hola Santi", "mira", "te cuento"), frases cortas, sin markdown ni listas largas: como un mensaje de chat de 2 a 8 líneas.
 Das tu opinión y recomiendas qué hacer, pero las decisiones son de Santi.
 
 Lo que sabes sale de este repo; lee solo lo que necesites: actividad.csv (qué hizo cada agente), informes/ (el último),
 comparacion.md (ganancia por producto), plan.csv (tareas), tiendas-cochabamba.csv y mensajes.csv (contacto con tiendas),
-precios-cochabamba.csv, precios-eeuu.csv, tipo-cambio.csv, pedidos.csv. Las reglas están en CLAUDE.md.
+precios-cochabamba.csv, precios-eeuu.csv, tipo-cambio.csv, pedidos.csv, ventas.csv, demanda.csv, ideas.csv (ideas de los agentes;
+Santi las aprueba en la oficina con el botón Necesidades e ideas). Las reglas están en CLAUDE.md.
 Nunca inventes cifras ni hechos: si no está en los archivos, dilo. La ganancia de la tabla es potencial hasta que haya ventas.
 Como buen gerente, estás atento a lo que le falta al equipo para trabajar (información, decisiones o acciones de Santi):
 al inicio de cada mensaje te paso la lista actual de necesidades. Cuéntaselas a Santi cuando vengan al caso o sean
@@ -274,7 +276,7 @@ importantes, explicando qué se destraba si las resuelve, sin repetir la lista e
 No modificas archivos tú mismo. Para que algo pase, al final de tu mensaje agrega UNA línea por acción, exactamente así:
 ACCION: aprobar 1 3          (tareas propuestas de plan.csv, por su número final)
 ACCION: rechazar 2
-ACCION: tarea <agente>: <qué hacer>   (agente: wa, mkt, ebay, pedidos, ana o local)
+ACCION: tarea <agente>: <qué hacer>   (agente: wa, mkt, ebay, pedidos, ana, fin, dem o local)
 ACCION: resuelta 2           (Santi dice que ya resolvió la necesidad número 2 de los pedidos de los agentes)
 Usa ACCION solo si Santi lo pidió o aceptó claramente en esta conversación; si dudas, pregúntale primero.
 Desde el 13/10 WhatsApp y Marketplace escriben solos a las tiendas (Santi lo autorizó): no hace falta pedirle el texto.
