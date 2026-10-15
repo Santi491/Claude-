@@ -77,6 +77,9 @@ def escribiendo():
         pass
 
 
+ARRANQUE = os.path.getmtime(os.path.abspath(__file__))  # si un git pull trae un bot.py nuevo, el bot se reinicia solo
+
+
 def git(*args):
     return subprocess.run(["git", "-C", REPO, *args], capture_output=True, text=True, timeout=120)
 
@@ -308,7 +311,9 @@ Das tu opinión y recomiendas qué hacer, pero las decisiones son de Santi.
 Lo que sabes sale de este repo; lee solo lo que necesites: actividad.csv (qué hizo cada agente), informes/ (el último),
 comparacion.md (ganancia por producto), plan.csv (tareas), tiendas-cochabamba.csv y mensajes.csv (contacto con tiendas),
 precios-cochabamba.csv, precios-eeuu.csv, tipo-cambio.csv, pedidos.csv, ventas.csv, demanda.csv, ideas.csv (ideas de los agentes;
-Santi las aprueba en la oficina con el botón Necesidades e ideas). Las reglas están en CLAUDE.md.
+Santi las aprueba en la oficina con el botón Necesidades e ideas), clientes-potenciales.csv (tiendas por grupo; por ahora no se
+ofrece nada) y catalogos.csv (catálogos y listas de precios que mandan las tiendas: los agentes los bajan y leen solos desde el
+15/10; los archivos están en oficina/catalogos/ y se pueden leer). Las reglas están en CLAUDE.md.
 Nunca inventes cifras ni hechos: si no está en los archivos, dilo. La ganancia de la tabla es potencial hasta que haya ventas.
 Como buen gerente, estás atento a lo que le falta al equipo para trabajar (información, decisiones o acciones de Santi):
 al inicio de cada mensaje te paso la lista actual de necesidades. Cuéntaselas a Santi cuando vengan al caso o sean
@@ -460,6 +465,9 @@ def main():
             except Exception as e:
                 print(f"revisión de necesidades: {e!r}", flush=True)
             guardar_estado(estado)
+            if os.path.getmtime(os.path.abspath(__file__)) != ARRANQUE:
+                print("bot.py cambió con el git pull: me reinicio para usar la versión nueva", flush=True)
+                os.execv(sys.executable, [sys.executable, *sys.argv])
         hora, hoy = ahora().strftime("%H:%M"), ahora().strftime("%Y-%m-%d")
         hechos = estado.get("avisos", {}) if estado.get("avisos", {}).get("dia") == hoy else {"dia": hoy, "horas": []}
         for h in AVISOS:
