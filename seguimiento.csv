@@ -8,3 +8,12 @@ prueba-hermana-1,2026-10-13,07:47,"Miami, FL",25.77,-80.19,Llegó a la estación
 prueba-hermana-1,2026-10-13,07:57,"Miami, FL",25.77,-80.19,Salió a reparto
 prueba-hermana-1,2026-10-13,11:57,"Miami, FL",25.77,-80.19,"Entregado en Miami (gofo.com, revisado el 13/10 16:27)"
 prueba-hermana-2,2026-10-09,22:02,"Miami, FL",25.77,-80.19,Etiqueta creada en Miami (SpeedX); sin movimientos todavía (revisado el 13/10 16:29)
+prueba-primo-1,2026-10-14,13:42,"Baton Rouge, LA",30.45,-91.15,Llegó al centro de procesamiento de USPS
+prueba-primo-1,2026-10-14,21:52,"Baton Rouge, LA",30.45,-91.15,Salió del centro de procesamiento de USPS
+prueba-primo-1,2026-10-15,02:38,"Shreveport, LA",32.53,-93.75,Llegó a una instalación de USPS
+prueba-primo-1,2026-10-15,03:09,"Shreveport, LA",32.53,-93.75,Salió de la instalación de USPS
+prueba-primo-1,2026-10-15,09:05,"Memphis, TN",35.15,-90.05,"Llegó a una instalación de USPS; en tránsito, entrega estimada sábado 17/10 (tools.usps.com, revisado el 15/10 11:00)"
+prueba-hermana-2,2026-10-14,14:17,"Miami, FL",25.77,-80.19,Llegó a la instalación de destino (SpeedX)
+prueba-hermana-2,2026-10-14,21:59,"Miami, FL",25.77,-80.19,En proceso en la instalación asignada
+prueba-hermana-2,2026-10-15,06:47,"Miami, FL",25.77,-80.19,Salió a reparto
+prueba-hermana-2,2026-10-15,09:28,"Miami, FL",25.77,-80.19,"Entregado en Miami (17track.net, revisado el 15/10 11:02)"

@@ -7,12 +7,12 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 
 | Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs | Ganancia 2 u | Ganancia 4 u | Estado |
 |---|---|---|---|---|---|---|---|
-| Ryzen 5 7600 | [142.24](https://www.ebay.com/itm/158132772011) | 1.851 (B 1 kg) | 1.851 (B 2 kg) | 2.860 | 1.009 (35%) | 1.009 (35%) | conviene |
 | SSD NVMe 2TB | [209.99](https://www.ebay.com/itm/227402767941) | 2.654 (B 1 kg) | 2.571 (B 1 kg) | 4.060 | 1.406 (35%) | 1.489 (37%) | conviene |
+| Ryzen 5 7600 | [142.24](https://www.ebay.com/itm/158132772011) | 1.851 (B 1 kg) | 1.851 (B 2 kg) | 2.800 | 949 (34%) | 949 (34%) | conviene |
 | Intel Core Ultra 7 265K | [234.99](https://www.ebay.com/itm/366718755179) | 2.951 (B 1 kg) | 2.909 (B 1.5 kg) | 3.950 | 999 (25%) | 1.041 (26%) | conviene |
-| Intel Core i5-12400F | [150.00](https://www.ebay.com/itm/800773514419) | 1.943 (B 1 kg) | 1.902 (B 1.5 kg) | 2.460 | 517 (21%) | 558 (23%) | conviene |
 | Ryzen 7 7800X3D | [320.00](https://www.ebay.com/itm/920041309011) | 3.958 (B 1 kg) | 3.958 (B 2 kg) | 4.760 | 802 (17%) | 802 (17%) | conviene |
 | Intel Core i5-14400F | [164.49](https://www.ebay.com/itm/389945918228) | 2.115 (B 1 kg) | 2.074 (B 1.5 kg) | 2.460 | 345 (14%) | 386 (16%) | justo |
+| Intel Core i5-12400F | [150.00](https://www.ebay.com/itm/800773514419) | 1.943 (B 1 kg) | 1.902 (B 1.5 kg) | 2.260 | 317 (14%) | 358 (16%) | justo |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [435.99](https://www.ebay.com/itm/960033835048) | 5.332 (B 1 kg) | 5.249 (B 1 kg) | 6.200 | 868 (14%) | 951 (15%) | justo |
 | SSD NVMe 1TB | [128.99](https://www.ebay.com/itm/314675451357) | 1.694 (B 1 kg) | 1.611 (B 1 kg) | 1.800 | 106 (6%) | 189 (10%) | justo |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [429.97](https://www.ebay.com/itm/128104115525) | 5.261 (B 1 kg) | 5.178 (B 1 kg) | 4.500 | -761 (-17%) | -678 (-15%) | no conviene |
@@ -25,9 +25,9 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs | Ganancia 2 u | Ganancia 4 u | Estado |
 |---|---|---|---|---|---|---|---|
 | SSD NVMe 2TB | [175.00](https://www.ebay.com/itm/327405616465) | 2.240 (B 1 kg) | 2.157 (B 1 kg) | 4.060 | 1.820 (45%) | 1.903 (47%) | conviene |
-| Ryzen 5 7600 | [120.00](https://www.ebay.com/itm/377526242250) | 1.588 (B 1 kg) | 1.588 (B 2 kg) | 2.860 | 1.272 (44%) | 1.272 (44%) | conviene |
+| Ryzen 5 7600 | [120.00](https://www.ebay.com/itm/377526242250) | 1.588 (B 1 kg) | 1.588 (B 2 kg) | 2.800 | 1.212 (43%) | 1.212 (43%) | conviene |
 | SSD NVMe 1TB | [80.00](https://www.ebay.com/itm/287648085856) | 1.114 (B 1 kg) | 1.031 (B 1 kg) | 1.800 | 686 (38%) | 769 (43%) | conviene |
-| Intel Core i5-12400F | [114.99](https://www.ebay.com/itm/257798619841) | 1.529 (B 1 kg) | 1.487 (B 1.5 kg) | 2.460 | 931 (38%) | 973 (40%) | conviene |
+| Intel Core i5-12400F | [114.99](https://www.ebay.com/itm/257798619841) | 1.529 (B 1 kg) | 1.487 (B 1.5 kg) | 2.260 | 731 (32%) | 773 (34%) | conviene |
 | Intel Core i5-14400F | [134.99](https://www.ebay.com/itm/960067352638) | 1.766 (B 1 kg) | 1.724 (B 1.5 kg) | 2.460 | 694 (28%) | 736 (30%) | conviene |
 | Intel Core Ultra 7 265K | [229.00](https://www.ebay.com/itm/278426444361) | 2.880 (B 1 kg) | 2.838 (B 1.5 kg) | 3.950 | 1.070 (27%) | 1.112 (28%) | conviene |
 | Ryzen 7 7800X3D | [279.99](https://www.ebay.com/itm/407266245650) | 3.484 (B 1 kg) | 3.484 (B 2 kg) | 4.760 | 1.276 (27%) | 1.276 (27%) | conviene |
@@ -44,6 +44,7 @@ eBay nuevo: USD 142.24 con envío en EE.UU. (eBay API; vendedor silaxon 99.6%; A
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
+| OverCity (WhatsApp) | OEM | 2.800 | 949 (34%) | 2026-10-15 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | stock bajo (web) | 2.860 | 1.009 (35%) | 2026-10-12 |
 
 ### Ryzen 7 7800X3D
@@ -60,6 +61,7 @@ eBay nuevo: USD 320.00 con envío en EE.UU. (eBay API; vendedor am-834577 100.0%
 | Viadata Computadoras (WhatsApp) · [ver](https://www.facebook.com/computadorascochabamba/) | nuevo OEM (solo el chip) | 5.500 | 1.542 (28%) | 2026-10-12 |
 | OverCity (WhatsApp) | nuevo OEM (solo el chip) | 5.500 | 1.542 (28%) | 2026-10-13 |
 | Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | BOX (según foto de su web; USD 480) | 5.664 | 1.706 (30%) | 2026-10-12 |
+| SMART CUBE (WhatsApp) | nuevo sellado, facturado; llevando 2 rebajan Bs 50 c/u (Bs 5.840) | 5.890 | 1.932 (33%) | 2026-10-15 |
 
 ### Ryzen 9 9950X
 eBay nuevo: USD 689.34 con envío en EE.UU. (eBay API; vendedor tech-r-us-store 99.9%; AMD 100-100001277WOF Ryzen 9 9950X CPU 16 Cores 32 Threads u; envío no indicado, 2026-10-15). Costo puesto: **Bs 8.335**/u en pedido de 2, **Bs 8.335**/u en pedido de 4.
@@ -74,6 +76,7 @@ eBay nuevo: USD 150.00 con envío en EE.UU. (eBay API; vendedor algonz1137 100.0
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
+| T&T Todo en Tecnología (WhatsApp) | OEM con cooler Intel; Bs 20 menos c/u llevando 2 | 2.260 | 317 (14%) | 2026-10-15 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | disponible (web) | 2.460 | 517 (21%) | 2026-10-12 |
 
 ### Intel Core i5-13400
@@ -92,6 +95,8 @@ eBay nuevo: USD 164.49 con envío en EE.UU. (eBay API; vendedor newegg 99.6%; In
 | Soft Computers (WhatsApp) | nuevo OEM | 2.500 | 385 (15%) | 2026-10-13 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | disponible (web) | 2.520 | 405 (16%) | 2026-10-12 |
 | Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | OEM (sin caja; según foto de su web; USD 215) | 2.537 | 422 (17%) | 2026-10-12 |
+| T&T Todo en Tecnología (WhatsApp) | OEM con cooler Intel; Bs 20 menos c/u llevando 2 | 2.750 | 635 (23%) | 2026-10-15 |
+| SMART CUBE (WhatsApp) | nuevo sellado; llevando 2 rebajan Bs 50 c/u (Bs 3.030) | 3.080 | 965 (31%) | 2026-10-15 |
 
 ### Intel Core Ultra 7 265K
 eBay nuevo: USD 234.99 con envío en EE.UU. (eBay API; vendedor good_neighbor_mercantile 99.4%; Intel Core Ultra 7 265K CPU Desktop Processor LGA 1851 20-Co, 2026-10-15). Costo puesto: **Bs 2.951**/u en pedido de 2, **Bs 2.909**/u en pedido de 4.

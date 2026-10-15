@@ -45,3 +45,53 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-14,10:59,whatsapp,Crazy Store,recibido,respuesta,sí,"Intel Core i9-14900K nuevo Bs 6.013 o USD 499 (no está en la lista)"
 2026-10-14,10:59,whatsapp,Crazy Store,recibido,respuesta,sí,"el i9-14900K ""hasta en 5.700"" (rebaja ofrecida por ellos; no se negocia)"
 2026-10-14,11:00,whatsapp,Crazy Store,enviado,respuesta,,agradece sin compromiso (está cotizando otros modelos)
+2026-10-14,13:07,whatsapp,PC Factor,recibido,respuesta,no,pregunta si solo busca esas piezas; enviará cotización
+2026-10-14,15:00,whatsapp,PC Factor,recibido,respuesta,sí,"solo tienen RAM DDR5 16GB a USD 320 c/u"
+2026-10-14,12:07,whatsapp,Geek Store Bolivia,recibido,respuesta,no,"solo tienen Ryzen 7 7700X; DDR5 Corsair no, sí otras marcas"
+2026-10-14,11:01,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,pasan el contacto de su número corporativo (Esteban Arce)
+2026-10-14,11:18,whatsapp,Crazy Store,recibido,respuesta,no,cortesía
+2026-10-14,11:32,whatsapp,SMART CUBE,recibido,respuesta,sí,"7800X3D Bs 5.890 facturado; i5-14400F Bs 3.080; DDR5 16GB Apacer 6000 Bs 3.650"
+2026-10-15,10:37,whatsapp,PC Factor,enviado,respuesta,,pregunta marca y velocidad de la DDR5 16GB y garantía
+2026-10-15,10:37,whatsapp,Geek Store Bolivia,enviado,respuesta,,pregunta precio del 7700X y marca/precio de DDR5 32GB
+2026-10-15,10:37,whatsapp,SMART CUBE,enviado,respuesta,,pregunta precio por 2 y garantía
+2026-10-15,10:37,whatsapp,SMART CUBE,recibido,automatica,no,mensaje automático de atención
+2026-10-15,10:38,whatsapp,SMART CUBE,recibido,respuesta,sí,"nuevos, caja sellada; rebajan Bs 50 c/u llevando 2"
+2026-10-15,10:38,whatsapp,T&T Todo en Tecnología,enviado,nuevo,,"número corporativo que pasó T&T: consulta i5-14400F, i5-12400F y Corsair DDR5 32GB 6000, precio por 2"
+2026-10-15,10:38,whatsapp,OverCity,enviado,seguimiento,,consulta Ryzen 5 7600 e i5-12400F (tarea 2026-10-14-9)
+2026-10-15,10:39,whatsapp,SMART CUBE,enviado,respuesta,,agradece sin compromiso
+2026-10-15,10:39,whatsapp,SMART CUBE,recibido,respuesta,no,cortesía
+2026-10-15,10:39,whatsapp,Display Importadora,enviado,seguimiento,,un solo recordatorio (7800X3D y 7600)
+2026-10-15,10:39,whatsapp,Distribuidora DyD,enviado,seguimiento,,"un solo recordatorio (7600, 265K, SSD 2TB)"
+2026-10-15,10:40,whatsapp,PC Morgana,enviado,seguimiento,,"un solo recordatorio (7800X3D, 14400F, DDR5)"
+2026-10-15,10:40,whatsapp,Centro PC,enviado,seguimiento,,un solo recordatorio (7800X3D o 14400F)
+2026-10-15,10:40,whatsapp,Computer World,enviado,seguimiento,,un solo recordatorio (7600 o SSD 2TB)
+2026-10-15,10:41,whatsapp,PortatiComps,enviado,seguimiento,,un solo recordatorio (Ryzen o SSD 2TB)
+2026-10-15,10:41,whatsapp,Hardware Technology,enviado,seguimiento,,un solo recordatorio (5600 o 5700X3D)
+2026-10-15,10:43,whatsapp,PC Factor,recibido,respuesta,no,audio (no se pudo escuchar)
+2026-10-15,10:44,whatsapp,OverCity,recibido,respuesta,sí,Ryzen 5 7600 OEM Bs 2.800
+2026-10-15,10:45,whatsapp,ECOM,enviado,nuevo,,"consulta Ryzen 5 7600, i5-12400F y DDR5 32GB, precio por 2"
+2026-10-15,10:46,whatsapp,OverCity,enviado,respuesta,,pregunta si tienen el i5-12400F
+2026-10-15,10:46,whatsapp,PC Factor,enviado,respuesta,,pide el audio por escrito
+2026-10-15,10:47,whatsapp,NF Evolution,enviado,nuevo,,"consulta 7800X3D, i5-14400F y Corsair DDR5 32GB 6000, precio por 2"
+2026-10-15,10:46,whatsapp,NF Evolution,recibido,respuesta,no,solo venden tarjetas de video
+2026-10-15,10:46,whatsapp,Shopping PC,enviado,nuevo,,"consulta 7600, 7800X3D y 14400F, precio por 2"
+2026-10-15,10:46,whatsapp,Shopping PC,recibido,automatica,no,bienvenida
+2026-10-15,10:46,whatsapp,PC Factor,recibido,respuesta,no,no hay más memorias; le queda 1
+2026-10-15,10:47,whatsapp,PC Factor,enviado,respuesta,,agradece
+2026-10-15,10:50,whatsapp,Hardware Technology,recibido,respuesta,no,no tienen 5600 ni 5700X3D
+2026-10-15,10:52,whatsapp,Hardware Technology,enviado,respuesta,,agradece
+2026-10-15,10:52,whatsapp,NF Evolution,enviado,respuesta,,agradece
+2026-10-15,10:52,whatsapp,PCBOX,enviado,nuevo,,"consulta SSD NVMe 1TB/2TB y Ryzen 5 7600"
+2026-10-15,10:52,whatsapp,PCBOX,recibido,automatica,no,bienvenida
+2026-10-15,10:52,whatsapp,PCBOX,recibido,respuesta,no,no tienen stock disponible
+2026-10-15,10:52,whatsapp,PC Morgana,recibido,respuesta,no,no les está llegando
+2026-10-15,10:53,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,"Corsair DDR5 agotada; ofrecen solo el procesador"
+2026-10-15,10:53,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,pregunta precio de 14400F y 12400F y por 2
+2026-10-15,10:53,whatsapp,Shopping PC,recibido,respuesta,no,"dicen que tienen; preguntan de dónde escribo"
+2026-10-15,10:54,whatsapp,Shopping PC,enviado,respuesta,,"responde Cochabamba (cotizando para armar PCs) y pide precios"
+2026-10-15,10:54,whatsapp,PCBOX,enviado,respuesta,,agradece
+2026-10-15,10:54,whatsapp,PC Morgana,enviado,respuesta,,agradece
+2026-10-15,10:55,whatsapp,T&T Todo en Tecnología,recibido,respuesta,sí,"i5-12400F OEM + cooler Bs 2.260; i5-14400F OEM + cooler Bs 2.750; Bs 20 menos llevando 2"
+2026-10-15,10:56,whatsapp,Distribuidora DyD,recibido,respuesta,no,número equivocado
+2026-10-15,11:05,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,pregunta garantía
+2026-10-15,11:05,whatsapp,Distribuidora DyD,enviado,respuesta,,se disculpa; no se le escribe más

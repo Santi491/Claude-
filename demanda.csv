@@ -1,1 +1,15 @@
 fecha,producto,fuente,ciudad,anuncios,nuevos,desaparecidos,precio_min_bs,precio_med_bs,nota
+2026-10-15,Ryzen 5 5600,marketplace,Cochabamba,0,0,0,,,primera cuenta; sin anuncios sueltos en Cochabamba
+2026-10-15,Ryzen 7 5700X3D,marketplace,Cochabamba,0,0,0,,,primera cuenta
+2026-10-15,Ryzen 5 7600,marketplace,Cochabamba,0,0,0,,,primera cuenta
+2026-10-15,Ryzen 7 7800X3D,marketplace,Cochabamba,0,0,1,,,primera cuenta; el sellado de Bs 4.800 (visto 13/10) ya figura como no disponible y el de Tienda Supermall no aparece
+2026-10-15,Ryzen 9 9950X,marketplace,Cochabamba,0,0,0,,,primera cuenta
+2026-10-15,Intel Core i5-12400F,marketplace,Cochabamba,0,0,0,,,primera cuenta
+2026-10-15,Intel Core i5-13400,marketplace,Cochabamba,0,0,0,,,primera cuenta
+2026-10-15,Intel Core i5-14400F,marketplace,Cochabamba,0,0,0,,,primera cuenta
+2026-10-15,Intel Core Ultra 7 265K,marketplace,Cochabamba,0,0,0,,,primera cuenta
+2026-10-15,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,marketplace,Cochabamba,0,0,0,,,primera cuenta; ningún DDR5 de escritorio en Cochabamba
+2026-10-15,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,marketplace,Cochabamba,0,0,0,,,primera cuenta; la de Maritza (Bs 6.200) no aparece en la búsqueda
+2026-10-15,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,1,0,0,1950,1950,primera cuenta; GeIL Orion 16GB 3200 (también hay DDR4 8GB y de laptop que no cuentan)
+2026-10-15,SSD NVMe 1TB,marketplace,Cochabamba,1,0,0,,,primera cuenta; Kingston NV3 1TB sin precio publicado
+2026-10-15,SSD NVMe 2TB,marketplace,Cochabamba,0,0,0,,,primera cuenta

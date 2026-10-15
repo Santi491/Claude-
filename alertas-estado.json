@@ -27,7 +27,7 @@
   "Ryzen 7 7800X3D|usado": true,
   "Ryzen 9 9950X|nuevo": false,
   "Ryzen 9 9950X|usado": true,
-  "Intel Core i5-12400F|nuevo": true,
+  "Intel Core i5-12400F|nuevo": false,
   "Intel Core i5-12400F|usado": true,
   "Intel Core i5-13400|nuevo": false,
   "Intel Core i5-13400|usado": true,
@@ -52,5 +52,5 @@
   "✅ Ahora conviene Ryzen 9 9950X (usado): +17% · costo puesto Bs 4.610 vs Bs 5.580 en Cochabamba",
   "⬇ SSD NVMe 1TB (usado) bajó 14% en eBay: USD 92.99 → 80.00"
  ],
- "revisado": "2026-10-15 11:53"
+ "revisado": "2026-10-15 11:00"
 }
