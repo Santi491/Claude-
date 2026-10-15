@@ -8,9 +8,15 @@
   window.OFICINA_3D = true;
 
   const stage = $("stage"), cv2d = $("cv");
-  renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+  // Resolución automática: arranca media y sube o baja según cuántos cuadros por segundo aguanta el equipo
+  const COARSE = matchMedia("(pointer:coarse)").matches;
+  const PR_MAX = Math.min(2, window.devicePixelRatio || 1), PR_MIN = Math.min(PR_MAX, COARSE ? 0.75 : 0.9);
+  let pr = Math.min(PR_MAX, COARSE ? 1 : 1.25);
+  renderer.setPixelRatio(pr);
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.autoUpdate = false;   // las sombras se recalculan unas veces por segundo, no en cada cuadro (ver loop)
+  renderer.shadowMap.needsUpdate = true;
   renderer.outputEncoding = THREE.sRGBEncoding;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.0;
@@ -28,6 +34,7 @@
 
   /* ---------- Escena, cámara, luces: hangar grafito ---------- */
   const scene = new THREE.Scene();
+  if (/[?&]debug3d/.test(location.search)) window.__o3d = { renderer, scene };   // solo para medir rendimiento
   scene.background = new THREE.Color(0x121417);
   scene.fog = new THREE.Fog(0x121417, 80, 170);
   const XC0 = 11;   // centro del hangar (x), igual a XC más abajo
@@ -40,7 +47,7 @@
   controls.maxPolarAngle = Math.PI * 0.46; controls.minDistance = 3; controls.maxDistance = 100;
   controls.screenSpacePanning = true;
 
-  scene.add(new THREE.HemisphereLight(0xe9eef4, 0x2a2c30, 0.75));
+  scene.add(new THREE.HemisphereLight(0xe9eef4, 0x2a2c30, 0.86));
   const sun = new THREE.DirectionalLight(0xffffff, 0.6);
   sun.position.set(25, 22, 16); sun.target.position.set(XC0, 0, 6); scene.add(sun.target); sun.castShadow = true;
   sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.0004;
@@ -127,8 +134,8 @@
   [[XL + 0.05, -RD / 2 + 0.05], [XR - 0.04, -RD / 2 + 0.05], [XL + 0.05, ZF - 0.04]].forEach(([x, z]) => { box(0.06, WH, 0.06, ledM, x, WH / 2, z).castShadow = false; });
   box(RW, 0.03, 0.05, ledM, XC, 0.16, -RD / 2 + 0.05).castShadow = false;   // línea fina a ras del piso
   box(0.05, 0.03, DEP, ledM, XL + 0.05, 0.16, ZM).castShadow = false;
-  [[-9, -RD / 2 + 1], [XC, -RD / 2 + 1], [22, -RD / 2 + 1], [31, -RD / 2 + 1]].forEach(([x, z]) => { const l = new THREE.PointLight(0xffffff, 0.35, 9, 2); l.position.set(x, WH - 0.4, z); scene.add(l); });
-  [-6, 4, 13, 19].forEach(z => { const l = new THREE.PointLight(0xffffff, 0.3, 9, 2); l.position.set(XL + 1, WH - 0.4, z); scene.add(l); });
+  // (las luces puntuales altas de las paredes se sacaron por rendimiento: con más de ~30 luces la placa de video se traba;
+  //  esa luz pareja la dan ahora el hemisferio y la luz de relleno, un poco más fuertes)
 
   // ventanas altas del hangar con el cielo de noche
   const sky = canvasTex(1024, 128, (g, w, h) => {
@@ -927,8 +934,8 @@
   function pointL(x, y, z, i, d) { const l = new THREE.PointLight(0xf4f7ff, i, d, 2); l.position.set(x, y, z); scene.add(l); return l; }
   // bandejas de cables pegadas a las vigas (no cruzan la vista desde arriba)
   [-6.5, 8.5].forEach(z => box(RW - 2, 0.06, 0.34, M(0x2b2f34, { metalness: .6, roughness: .4 }), XC, WH - 0.36, z + 0.26).castShadow = false);
-  [[XC, 15], [-6, 15], [25, 16.5], [31, 16.5], [XC + 2, 21]].forEach(([x, z]) => pointL(x, WH - 0.6, z, 0.4, 13));
-  pointL(31.1, WH - 0.8, 16.5, 0.5, 11); pointL(DX, WH - 0.6, ZB + 2, 0.4, 9);
+  // la luz pareja del frente (antes 7 luces puntuales altas) la dan el hemisferio y una luz de relleno desde adelante
+  const front = new THREE.DirectionalLight(0xf4f7ff, 0.22); front.position.set(XC, 14, 40); front.target.position.set(XC, 0, 14); scene.add(front, front.target);
 
   /* ---------- Pantallas: la captura del agente, atenuada si está en espera ---------- */
   function paintScreen(a, s, t) {
@@ -963,6 +970,12 @@
     layer.appendChild(b); tags[a.id] = b;
   });
   const headPos = new THREE.Vector3();
+  // cambia texto y color de una etiqueta solo si son distintos (y entonces hay que volver a medirla)
+  function setTag(b, nombre, color, extra) {
+    if (b._c !== color) { b._c = color; b.style.setProperty("--c", color); }
+    if (b._n !== nombre) { b._n = nombre; b.querySelector(".nm").textContent = nombre; b._w = 0; }
+    if (b._x !== extra) { b._x = extra; b.querySelector("small").textContent = extra; b._w = 0; }
+  }
   function placeTags(W, H) {
     const tmp = new THREE.Vector3();
     Object.keys(tags).forEach(id => {
@@ -974,32 +987,31 @@
       else tmp.set(0, 2.25, 0.9).applyMatrix4(s.g.matrixWorld);
       tmp.project(camera);
       const vis = tmp.z < 1 && Math.abs(tmp.x) < 1.15 && Math.abs(tmp.y) < 1.15;
-      b.hidden = !vis; if (!vis) return;
+      if (b.hidden !== !vis) b.hidden = !vis; if (!vis) return;
       const px = (tmp.x + 1) / 2 * W, py = (1 - tmp.y) / 2 * H;
       if (id === "jefe") {
-        b.querySelector(".nm").textContent = "Santi · jefe"; b.style.setProperty("--c", "#F2A541");
-        b.querySelector("small").textContent = LIVE_ON ? "viendo la ronda en vivo" : "supervisando";
+        setTag(b, "Santi · jefe", "#F2A541", LIVE_ON ? "viendo la ronda en vivo" : "supervisando");
       } else if (id === "tablero") {
         const n = window.pendientesDe ? window.pendientesDe() : 0;
-        b.querySelector(".nm").textContent = "Tablero del equipo"; b.style.setProperty("--c", n ? "#F2A541" : "#5CD69A");
-        b.querySelector("small").textContent = n ? `${n} por decidir · toca para abrir` : "nada pendiente";
+        setTag(b, "Tablero del equipo", n ? "#F2A541" : "#5CD69A", n ? `${n} por decidir · toca para abrir` : "nada pendiente");
       } else if (id === "docs") {
         const nArch = (window.ARCHIVO_CAJONES || []).reduce((t, c) => t + c.n, 0) || D.documentos.length;
-        b.querySelector(".nm").textContent = `Archivo · ${nArch} documentos`; b.style.setProperty("--c", "#C9A35A");
-        b.querySelector("small").textContent = open && sel === "docs" ? "toca otra vez para abrir" : "";
+        setTag(b, `Archivo · ${nArch} documentos`, "#C9A35A", open && sel === "docs" ? "toca otra vez para abrir" : "");
       } else {
         const a = AG.find(x => x.id === id), st = STATES[a.state];
-        b.style.setProperty("--c", st.c); b.querySelector(".nm").textContent = a.name;
+        const nm = a.name, cc = st.c;
         const extra = id === "gerente" && GER && GER.texto() ? GER.texto() : a.liveText ? a.liveText : a.state === "sleep" ? "zZ · en espera" : a.state === "done" ? "✓ trabajó hoy" : a.state === "waiting" ? "… esperando respuestas" : a.state === "working" ? "trabajando" : "";
         const pend = window.pendientesDe ? window.pendientesDe(id) : 0;
-        b.querySelector("small").textContent = extra + (pend ? ` · ${pend} por decidir` : "");
+        setTag(b, nm, cc, extra + (pend ? ` · ${pend} por decidir` : ""));
       }
-      b.classList.toggle("on", open && sel === id);
+      const on = open && sel === id; if (b._on !== on) { b._on = on; b.classList.toggle("on", on); b._w = 0; }
       // En pantallas angostas la etiqueta no se sale por los costados ni por arriba: se corre hacia adentro
-      const m = 6, w = b.offsetWidth, h = b.offsetHeight;
+      if (!b._w) { b._w = b.offsetWidth; b._h = b.offsetHeight; }
+      const m = 6, w = b._w, h = b._h;
       const x = w + 2 * m < W ? Math.min(Math.max(px, w / 2 + m), W - w / 2 - m) : W / 2;
       const y = Math.max(py, h + m);
-      b.style.transform = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`;
+      const tr = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`;
+      if (b._tr !== tr) { b._tr = tr; b.style.transform = tr; }
     });
   }
 
@@ -1213,11 +1225,12 @@
   })();
 
   /* ---------- Tamaño y bucle ---------- */
+  let cvW = 0, cvH = 0;
   function size() {
     // llena el alto que queda de la pantalla debajo del título y la barra de datos
     const top = stage.getBoundingClientRect().top + window.scrollY;
     const W = stage.clientWidth, H = Math.round(W < 700 ? Math.max(W * 1.1, Math.min(W * 1.4, window.innerHeight - top)) : Math.max(420, window.innerHeight - top));
-    renderer.setSize(W, H); camera.aspect = W / H; camera.updateProjectionMatrix(); viewOffset();
+    renderer.setSize(W, H); camera.aspect = W / H; camera.updateProjectionMatrix(); viewOffset(); cvW = W; cvH = H;
   }
   let lastW3 = 0;
   window.addEventListener("resize", () => { if (stage.clientWidth !== lastW3) { lastW3 = stage.clientWidth; size(); } });
@@ -1226,8 +1239,36 @@
   const ease = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
   const col = new THREE.Color();
   let lastNow = 0;
+  /* Rendimiento: no dibuja si la oficina no se ve (página bajada o pestaña oculta), va a 5 cuadros por segundo detrás de
+     una pantalla abierta (gráficos, mapa, archivo...), a 30 cuando nadie la toca y a ritmo completo al moverla. */
+  let onScreen = true, lastInput = performance.now(), lastDraw = 0, lastShadow = 0, dlgOpen = false, dlgCheck = 0;
+  if (window.IntersectionObserver) new IntersectionObserver(es => { onScreen = es[0].isIntersecting; }).observe(el);
+  ["pointerdown", "pointermove", "wheel", "touchstart", "keydown"].forEach(ev => el.addEventListener(ev, () => { lastInput = performance.now(); }, { passive: true }));
+  controls.addEventListener("change", () => { lastInput = performance.now(); });
+  const perf = { n: 0, sum: 0, cool: 0 };
+  function adaptar(now, gap, full) {
+    // promedio del tiempo entre cuadros dibujados; si no llega al ritmo pedido baja la resolución, si sobra la sube
+    perf.n++; perf.sum += gap; if (perf.n < 45) return;
+    const avg = perf.sum / perf.n; perf.n = 0; perf.sum = 0;
+    const meta = full ? 1000 / 55 : 1000 / 28;
+    let np = pr;
+    if (avg > meta * 1.3 && pr > PR_MIN) { np = Math.max(PR_MIN, pr * 0.8); perf.cool = now + 15000; }
+    else if (full && avg < 1000 / 57 && pr < PR_MAX && now > perf.cool) np = Math.min(PR_MAX, pr * 1.15);
+    if (Math.abs(np - pr) > 0.01) { pr = np; renderer.setPixelRatio(pr); }
+  }
   function loop(now) {
+    requestAnimationFrame(loop);
+    if (document.hidden || !onScreen) { lastNow = now; return; }
+    if (now > dlgCheck) { dlgCheck = now + 300; dlgOpen = !!document.querySelector('[role="dialog"]:not([hidden])'); }
+    const full = !dlgOpen && (anim || now - lastInput < 2500);   // el Gerente caminando se ve bien a 30 cuadros
+    const gap = now - lastDraw, minGap = dlgOpen ? 190 : full ? 0 : 30;
+    if (window.__o3d) Object.assign(window.__o3d, { full: !!full, anim: !!anim, inp: Math.round(now - lastInput), ger: !!(GER && GER.caminando()), pr });
+    if (gap < minGap) return;
+    if (lastDraw && gap < 200) adaptar(now, gap, full);
+    lastDraw = now;
     const t = now / 1000, dt = Math.min(0.05, (now - (lastNow || now)) / 1000); lastNow = now;
+    // sombras: se recalculan 4 veces por segundo (8 si el Gerente camina), casi no se nota y ahorra la mitad del trabajo
+    if (now - lastShadow > (GER && GER.caminando() ? 125 : 250)) { lastShadow = now; renderer.shadowMap.needsUpdate = true; }
     if (GER) GER.update(now, dt);
     if (anim) {
       const k = Math.min(1, (now - anim.s) / anim.d), e = ease(k);
@@ -1258,8 +1299,7 @@
     if (window.tableroVersion !== tabVer && TEX.tablero) { tabVer = window.tableroVersion; tabTex.image = TEX.tablero; tabTex.needsUpdate = true; }
     cabDrawers.forEach((d, k) => { const zt = 0.375 + cabTarget[k]; d.position.z += (zt - d.position.z) * (reduce ? 1 : 0.12); });
     renderer.render(scene, camera);
-    placeTags(el.clientWidth, el.clientHeight);
-    requestAnimationFrame(loop);
+    placeTags(cvW, cvH);
   }
   requestAnimationFrame(loop);
 })();
