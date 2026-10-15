@@ -188,9 +188,20 @@ def main():
                 for m in (leer("mensajes.csv") if existe("mensajes.csv") else [])]
     informes_gerente = [{k: f[k] for k in ("fecha", "tipo", "url")}
                         for f in (leer("informes/gerente/indice.csv") if existe("informes/gerente/indice.csv") else [])]
+    # Catálogos y listas de precios que mandan las tiendas (catalogos.csv + oficina/catalogos/): cajón propio del Archivo,
+    # con los precios que se pasaron a precios-cochabamba.csv desde ese catálogo (misma tienda y día)
+    catalogos = []
+    if existe("catalogos.csv"):
+        pcb = leer("precios-cochabamba.csv")
+        for c in leer("catalogos.csv"):
+            ruta = c.get("archivo", "")
+            c["hay_archivo"] = bool(ruta) and os.path.exists(os.path.join(OFI, ruta))
+            c["precios"] = [{k: r[k] for k in ("producto", "precio_bs", "estado")} for r in pcb
+                            if r["fecha"] == c["fecha"] and c["tienda"].lower() in r["fuente"].lower()]
+            catalogos.append(c)
     datos = {"generado": datetime.now().strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
              "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas,
-             "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente,
+             "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente, "catalogos": catalogos,
              # lo que los agentes le piden a Santi (sin datos privados): lo usa la animación del Gerente
              # id = número de fila del CSV (las filas nunca se borran): con eso la oficina aprueba o da por resuelto
              "necesidades": [{"id": i, "fecha": f.get("fecha", ""), "agente": f.get("agente", ""), "necesita": f.get("necesita", ""),

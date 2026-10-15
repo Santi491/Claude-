@@ -109,3 +109,4 @@ fecha,hora,agente,texto
 2026-10-15,18:05,local,"Tarea 2026-10-15-17 hecha: calles de Baton Rouge, Shreveport y Memphis para el mapa de Pedidos (Overpass daba error 500; mapa_datos.py ahora guarda el avance ciudad por ciudad)"
 2026-10-15,18:06,fin,"sin compras del negocio todavía (los pedidos de prueba no cuentan)"
 2026-10-15,18:06,ana,"Comparación recalculada con los precios de la tarde: 4 productos convienen (≥15 %)"
+2026-10-15,18:35,local,Santi da permiso permanente para bajar y leer catálogos de tiendas; nuevo cajón Catálogos de tiendas en el Archivo (catalogos.csv + oficina/catalogos/); el PDF de Shopping PC queda para la próxima ronda (Chrome sin conexión)

@@ -1,6 +1,6 @@
 /* Archivo de documentos: explorador a pantalla completa con un archivero animado (un cajón por tipo de archivo).
    Al cambiar de cajón, el anterior se cierra, el nuevo se abre y las carpetas van saliendo una por una.
-   Lee D.documentos (Excel, tablas CSV y PDF, informes, comparación), D.informes_gerente (Google Docs) y D.capturas.
+   Lee D.documentos (Excel, tablas CSV y PDF, informes, comparación), D.informes_gerente (Google Docs), D.capturas y D.catalogos (catálogos y listas de precios de las tiendas).
    Se abre con el segundo toque en el archivero 3D, con el botón "Abrir archivo" del panel o con window.abrirArchivo(). */
 (function () {
   const DOCS = D.documentos || [];
@@ -19,6 +19,8 @@
       items: () => (D.informes_gerente || []).slice().sort(byDate).map((g, k) => ({ id: "ger:" + k, titulo: `Informe del Gerente · ${g.tipo}`, fecha: g.fecha, ext: "DOC", ger: g })) },
     { id: "comp", nombre: "Comparación", sub: "EE.UU. contra Cochabamba", col: "#C46FD8", ext: "MD",
       items: () => DOCS.filter(d => d.tipo === "Tabla de comparación").map(docItem) },
+    { id: "cat", nombre: "Catálogos de tiendas", sub: "Listas de precios que mandan", col: "#E5C07B", ext: "PDF",
+      items: () => (D.catalogos || []).slice().sort((a, b) => (b.fecha + b.hora).localeCompare(a.fecha + a.hora)).map((c, k) => ({ id: "cat:" + k, titulo: `${c.tienda} · ${c.descripcion || "catálogo"}`, fecha: c.fecha, ext: (c.formato || "PDF").toUpperCase(), cat: c })) },
     { id: "cap", nombre: "Capturas", sub: "Lo que vio cada agente", col: "#F2A541", ext: "JPG",
       items: () => (D.capturas || []).slice().sort((a, b) => (b.fecha + b.hora).localeCompare(a.fecha + a.hora)).map((c, k) => ({ id: "cap:" + k, titulo: c.descripcion || c.archivo, fecha: c.fecha, ext: "JPG", cap: c })) },
   ];
@@ -214,6 +216,13 @@
     } else if (it.ger) {
       head = `<a href="${esc(it.ger.url)}" target="_blank" rel="noopener">Abrir en Google Docs</a>`;
       body = `<div class="pc"><div class="big" style="--c:${c.col}"><span class="ico">DOC</span><p class="ar-note">Informe ${esc(it.ger.tipo)} del Gerente del ${fecha(it.fecha)}. Está en la carpeta INFORME DIARIO de Google Drive y se abre solo con la cuenta de Santi.</p></div></div>`;
+    } else if (it.cat) {
+      const k = it.cat, img = /^(JPG|JPEG|PNG|WEBP)$/.test(it.ext), CAN = { whatsapp: "WhatsApp", messenger: "Messenger", web: "su página web", correo: "correo" };
+      const pr = (k.precios || []).map(p => `<tr><td>${esc(p.producto)}</td><td>${esc(p.estado || "")}</td><td style="text-align:right">Bs ${Number(p.precio_bs).toLocaleString("es-BO")}</td></tr>`).join("");
+      head = k.hay_archivo ? `<a href="${esc(k.archivo)}" target="_blank" rel="noopener">Abrir ${esc(it.ext)}</a>` : "";
+      body = `<div class="pc">${k.hay_archivo ? (img ? `<img src="${esc(k.archivo)}" alt="${esc(it.titulo)}">` : `<iframe src="${esc(k.archivo)}" title="${esc(it.titulo)}" style="width:100%;height:52vh;border:0;border-radius:8px;background:#fff"></iframe>`) : ""}
+        <p class="ar-note"><b>${esc(k.tienda)}</b> · ${fecha(it.fecha)} ${esc(k.hora || "")} · llegó por ${esc(CAN[k.canal] || k.canal || "")}${k.productos ? ` · ${esc(k.productos)} productos` : ""}<br>${esc(k.descripcion || "")}${k.notas ? "<br>" + esc(k.notas) : ""}</p>
+        ${pr ? `<p class="ar-note"><b>Precios de la lista que vigilamos</b> (ya están en precios-cochabamba.csv)</p><table style="width:100%;font-size:13px">${pr}</table>` : `<p class="ar-note">Ningún producto de la lista que vigilamos tenía precio en este catálogo.</p>`}</div>`;
     } else if (it.cap) {
       head = `<a href="${esc(it.cap.archivo)}" target="_blank" rel="noopener">Ver en grande</a>`;
       body = `<div class="pc"><img src="${esc(it.cap.archivo)}" alt="${esc(it.titulo)}"><p class="ar-note"><b>${esc(AGN[it.cap.agente] || it.cap.agente)}</b> · ${fecha(it.fecha)} ${esc(it.cap.hora || "")}<br>${esc(it.titulo)}</p></div>`;
