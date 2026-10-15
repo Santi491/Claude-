@@ -90,3 +90,6 @@ fecha,hora,agente,texto
 2026-10-14,14:55,gerente,regla aclarada: Santi puede subir el límite de chats nuevos de un día con una tarea aprobada (máximo 20, repartidos entre Mac y PC)
 2026-10-14,20:10,gerente,"Informe diario 14/10 subido a Drive; 5 tareas propuestas para el 15/10 (ids 12-16); 0 mensajes de Telegram (los lee la Raspberry); sin alertas; aviso: sin filas de la ronda de la PC ni de demanda"
 2026-10-14,23:56,gerente,Telegram (Raspberry): tarea nueva de Santi 2026-10-14-12 para wa
+2026-10-15,11:55,ebay,"API: 12 precios nuevos y 12 usados (todos reales, verificados contra el título)"
+2026-10-15,11:56,ana,"Comparación recalculada con dólar 11,85: 5 productos nuevos y 10 usados convienen (≥15 %)"
+2026-10-15,11:57,nube,"Revisión diaria hecha: dólar, eBay, comparación, alertas (Telegram enviado), Excel, copia del día e informe"

@@ -14,15 +14,19 @@
   "baja|RAM DDR4 16GB (2x8) 3200|nuevo|2026-10-14": "2026-10-15 00:34",
   "conviene|SSD NVMe 1TB|usado|2026-10-15": "2026-10-15 00:34",
   "conviene|SSD NVMe 2TB|nuevo|2026-10-15": "2026-10-15 00:34",
-  "conviene|SSD NVMe 2TB|usado|2026-10-15": "2026-10-15 00:34"
+  "conviene|SSD NVMe 2TB|usado|2026-10-15": "2026-10-15 00:34",
+  "conviene|Ryzen 7 7800X3D|nuevo|2026-10-15": "2026-10-15 11:53",
+  "baja|Ryzen 9 9950X|usado|2026-10-15": "2026-10-15 11:53",
+  "conviene|Ryzen 9 9950X|usado|2026-10-15": "2026-10-15 11:53",
+  "baja|SSD NVMe 1TB|usado|2026-10-15": "2026-10-15 11:53"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": true,
   "Ryzen 5 7600|usado": true,
-  "Ryzen 7 7800X3D|nuevo": false,
+  "Ryzen 7 7800X3D|nuevo": true,
   "Ryzen 7 7800X3D|usado": true,
   "Ryzen 9 9950X|nuevo": false,
-  "Ryzen 9 9950X|usado": false,
+  "Ryzen 9 9950X|usado": true,
   "Intel Core i5-12400F|nuevo": true,
   "Intel Core i5-12400F|usado": true,
   "Intel Core i5-13400|nuevo": false,
@@ -42,6 +46,11 @@
   "SSD NVMe 2TB|nuevo": true,
   "SSD NVMe 2TB|usado": true
  },
- "ultimas": [],
- "revisado": "2026-10-15 00:34"
+ "ultimas": [
+  "✅ Ahora conviene Ryzen 7 7800X3D (nuevo): +17% · costo puesto Bs 3.958 vs Bs 4.760 en Cochabamba",
+  "⬇ Ryzen 9 9950X (usado) bajó 18% en eBay: USD 454.99 → 375.00",
+  "✅ Ahora conviene Ryzen 9 9950X (usado): +17% · costo puesto Bs 4.610 vs Bs 5.580 en Cochabamba",
+  "⬇ SSD NVMe 1TB (usado) bajó 14% en eBay: USD 92.99 → 80.00"
+ ],
+ "revisado": "2026-10-15 11:53"
 }
