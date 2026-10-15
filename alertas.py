@@ -85,6 +85,9 @@ def main():
         if not probar and not inicial:
             r = subprocess.run([sys.executable, os.path.join(DIR, "notificar.py"), texto], capture_output=True, text=True)
             print(r.stdout.strip() or r.stderr.strip())
+            if r.returncode != 0:   # sin canal o falló: no se marca como avisado, la próxima ronda lo intenta de nuevo
+                print("No se pudo avisar: las alertas quedan pendientes para la próxima ronda.")
+                return
     if not probar:
         av = est.get("avisados", {})
         for k, t in nuevas:
