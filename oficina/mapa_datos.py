@@ -156,6 +156,7 @@ def zonas():
         guardar("calles/" + f, z)
         idx.append({"n": nombre, "f": f, "c": [lat, lon], "r": radio})
         hechos.add(f)
+        guardar("calles/indice.json", idx)  # si falla la ciudad siguiente, esta no se vuelve a bajar
         time.sleep(2)
     guardar("calles/indice.json", idx)
 

@@ -95,3 +95,14 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-15,10:56,whatsapp,Distribuidora DyD,recibido,respuesta,no,número equivocado
 2026-10-15,11:05,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,pregunta garantía
 2026-10-15,11:05,whatsapp,Distribuidora DyD,enviado,respuesta,,se disculpa; no se le escribe más
+2026-10-15,11:03,whatsapp,Computer World,recibido,respuesta,no,pregunta si es de Cochabamba y si es uso personal o tienda
+2026-10-15,11:17,whatsapp,Shopping PC,recibido,respuesta,sí,"mandó lista de precios en PDF (componentes para armado); sin factura y al por mayor"
+2026-10-15,11:25,whatsapp,Geek Store Bolivia,recibido,respuesta,sí,"Ryzen 7 7700X Bs 3.480; DDR5 16GB Kingston Fury Bs 2.900 c/u"
+2026-10-15,13:00,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,garantía de 6 meses en los procesadores
+2026-10-15,17:50,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,agradece el dato de la garantía
+2026-10-15,17:50,whatsapp,Geek Store Bolivia,enviado,respuesta,,pregunta velocidad de la Fury DDR5 y si el 7700X es sellado con garantía
+2026-10-15,17:50,whatsapp,Geek Store Bolivia,recibido,automatica,no,bienvenida
+2026-10-15,17:50,whatsapp,Shopping PC,enviado,respuesta,,agradece la lista y pregunta si son nuevos con garantía
+2026-10-15,17:51,whatsapp,Computer World,enviado,respuesta,,"responde Cochabamba, cotizando para armar PCs; pide precio de 7600 o SSD 2TB"
+2026-10-15,17:51,whatsapp,Compucenter,enviado,respuesta,,cierre cordial (no busca proveedores)
+2026-10-15,17:52,whatsapp,Soft Computers,enviado,seguimiento,,"pregunta precio de Ryzen 5 7600 e i5-12400F (tarea 2026-10-15-14)"
