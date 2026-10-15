@@ -120,6 +120,8 @@ canvas.zoomed{touch-action:none;cursor:grab}
 }
 
 /* ---------- Tablas ---------- */
+/* en el celular nada se sale de la pantalla: los hijos de las grillas pueden achicarse */
+.wrap>*,.pane>*{min-width:0}.ctl{min-width:0;max-width:100%;grid-template-columns:minmax(0,1fr)}.ctl select{max-width:100%;min-width:0}
 .controls{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:flex-end;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
 .ctl{display:grid;gap:4px;min-width:0}
 .ctl label,.ctl .lbl{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
@@ -757,10 +759,16 @@ function fileList(btnAttr){
     return `<div class="fold"><h4>${c}</h4>${ds.map(d=>`<button type="button" class="file" ${btnAttr}="${esc(d.id)}"><span class="ext">${extOf(d)}</span><span>${esc(d.titulo)}</span><span class="fd">${fechaCorta(d.fecha)}</span></button>`).join("")}</div>`}).join("");
 }
 function drawCabinet(){
-  $("dDot").style.background="#C9A35A";$("dName").textContent="Gabinete de documentos";$("dWhere").textContent="Archivos del repo en GitHub · se actualizan en cada ronda";
+  $("dDot").style.background="#C9A35A";$("dName").textContent="Archivo de documentos";$("dWhere").textContent="Archivos del repo en GitHub · se actualizan en cada ronda";
   $("dState").textContent=`${D.documentos.length} archivos`;$("dState").style.color="#C9A35A";
   const d=D.documentos.find(x=>x.id===cabSel);
-  $("dBody").innerHTML=d?docView(d,true):`<div class="files">${fileList("data-file")}</div>`;
+  if(d){$("dBody").innerHTML=docView(d,true);return}
+  // resumen del archivo: un botón por cajón (abre el explorador en ese cajón) y los últimos archivos
+  const caj=window.ARCHIVO_CAJONES||[],n=caj.reduce((t,c)=>t+c.n,0);
+  $("dState").textContent=`${n} archivos en ${caj.length} cajones`;
+  $("dBody").innerHTML=`<button type="button" class="openmap" data-archivo>Abrir archivo · explorador de documentos</button>
+    <div><h4>Cajones</h4><div class="files">${caj.map(c=>`<button type="button" class="file" data-archivo="${c.id}"><span class="ext" style="color:${c.col}">${c.n}</span><span>${esc(c.nombre)}</span><span class="fd">abrir ›</span></button>`).join("")}</div></div>
+    <div><h4>Lo último</h4><div class="files">${D.documentos.slice().sort((a,b)=>String(b.fecha).localeCompare(String(a.fecha))).slice(0,4).map(x=>`<button type="button" class="file" data-file="${esc(x.id)}"><span class="ext">${extOf(x)}</span><span>${esc(x.titulo)}</span><span class="fd">${fechaCorta(x.fecha)}</span></button>`).join("")}</div></div>`;
 }
 $("dBody").addEventListener("click",e=>{
   const f=e.target.closest("[data-file]");if(f){cabSel=f.dataset.file;drawCabinet();$("dBody").scrollTop=0;return}
@@ -1030,4 +1038,5 @@ resize();lastW=$("stage").clientWidth;render();renderStmt();renderDays();renderD
 <script src="gerente.js"></script>
 <script src="equipo.js"></script>
 <script src="pantallas.js"></script>
+<script src="archivo.js"></script>
 <script src="oficina3d.js"></script>

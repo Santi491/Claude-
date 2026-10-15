@@ -603,13 +603,8 @@
   let tabVer = -1;
   ST.tablero = { g: tabG };
 
-  // Archivero de documentos
-  const cabG = new THREE.Group(); cabG.position.set(25.6, 0, -9.3); scene.add(cabG);
-  box(1.1, 1.9, 0.8, M(0x3a3e43, { metalness: .4, roughness: .45 }), 0, 0.95, 0, cabG);
-  for (let k = 0; k < 3; k++) {
-    box(0.98, 0.52, 0.04, M(0x2c2f33, { metalness: .35 }), 0, 0.35 + k * 0.6, 0.42, cabG);
-    box(0.3, 0.05, 0.05, M(0xc9a35a, { metalness: .6, roughness: .3 }), 0, 0.45 + k * 0.6, 0.46, cabG);
-  }
+  // Archivo de documentos (15/10): pared de archiveros en el muro del fondo, entre las columnas; se arma más abajo
+  const cabG = new THREE.Group(); cabG.position.set(21.3, 0, ZB + 0.55); scene.add(cabG);
   ST.docs = { g: cabG };
   ST.jefe = { g: boss };
 
@@ -640,6 +635,47 @@
     m.rotation.x = -Math.PI / 2; m.rotation.z = rotY || 0; m.position.set(x, 0.021, z); scene.add(m);
   }
   const lineF = (x, z, w, d) => box(w, 0.01, d, M(0xe9ecef, { roughness: .5 }), x, 0.006, z).castShadow = false;
+
+  // ---- Archivo de documentos: 4 archiveros altos con 4 cajones cada uno; los 7 cajones rotulados son los del
+  //      explorador (archivo.js) y el que se abre ahí sale también acá (window.archivo3D.abrir) ----
+  const cabDrawers = [], cabTarget = [];
+  {
+    const steelC = M(0x3a3f45, { metalness: .45, roughness: .4 }), frontC = M(0x464c53, { metalness: .4, roughness: .38 });
+    const brass = M(0xc9a35a, { metalness: .7, roughness: .3 }), CWc = 1.15, CHc = 2.3, CDc = 0.75, NC = 4;
+    box(NC * CWc + 0.5, 0.012, 1.9, M(0x23262a, { roughness: 1 }), 0, 0.008, 0.55, cabG).castShadow = false;   // alfombra del archivo
+    const cajones = window.ARCHIVO_CAJONES || [];
+    // orden de los rótulos: fila a la altura del pecho primero, de izquierda a derecha
+    const slots = []; [2, 1, 3, 0].forEach(r => { for (let c = 0; c < NC; c++) slots.push([c, r]); });
+    for (let c = 0; c < NC; c++) {
+      const x = (c - (NC - 1) / 2) * (CWc + 0.04);
+      box(CWc, CHc, CDc, steelC, x, CHc / 2, 0, cabG);
+      box(CWc + 0.02, 0.03, CDc + 0.02, M(0x1f2226, { metalness: .5 }), x, CHc + 0.015, 0, cabG);
+    }
+    slots.forEach(([c, r], k) => {
+      const x = (c - (NC - 1) / 2) * (CWc + 0.04), y = 0.08 + r * 0.55 + 0.26;
+      const dg = new THREE.Group(); dg.position.set(x, y, CDc / 2); cabG.add(dg);
+      box(CWc - 0.08, 0.5, 0.04, frontC, 0, 0, 0.02, dg);
+      box(CWc - 0.14, 0.46, 0.5, M(0x2a2e33, { metalness: .3 }), 0, -0.01, -0.25, dg);           // cuerpo del cajón (se ve al abrirlo)
+      box(0.32, 0.045, 0.05, brass, 0, -0.14, 0.06, dg);
+      const cj = cajones[k];
+      if (cj) {
+        const lab = textPlane(0.78, 0.2, 384, 98, (g, w, h) => { g.fillStyle = "#EDE8DC"; g.fillRect(0, 0, w, h); g.fillStyle = cj.col; g.fillRect(0, 0, 10, h);
+          g.fillStyle = "#2a2620"; let fs = 44; do { g.font = `700 ${fs}px Archivo, sans-serif`; fs -= 1; } while (g.measureText(cj.nombre).width > w - 26 && fs > 14);
+          g.textBaseline = "middle"; g.fillText(cj.nombre, 18, h / 2 + 1); }, { transparent: false });
+        lab.position.set(0, 0.1, 0.043); dg.add(lab);
+        // carpetas colgantes con el color del cajón (se ven cuando sale)
+        for (let f = 0; f < Math.min(6, Math.max(2, cj.n)); f++) box(CWc - 0.24, 0.3, 0.012, M(new THREE.Color(cj.col), { roughness: .8 }), 0, 0.12, -0.08 - f * 0.07, dg).castShadow = false;
+      }
+      cabDrawers.push(dg); cabTarget.push(0);
+    });
+    // letrero, LED y lámpara del archivo
+    hangSign("ARCHIVO", 0 + 21.3, ZB + 2.1, 0, 4.4, 2.4);
+    box(NC * (CWc + 0.04), 0.03, 0.06, ledM, 0, CHc + 0.05, CDc / 2 - 0.05, cabG).castShadow = false;
+    const al = new THREE.PointLight(0xfff3dc, 0.45, 6, 2); al.position.set(0, 2.9, 1.4); cabG.add(al);
+    floorText("ARCHIVO DE DOCUMENTOS", 21.3, ZB + 2.6, 4.4);
+  }
+  // el explorador avisa qué cajón abrió (-1 = cerrar todos)
+  window.archivo3D = { abrir(i) { cabTarget.forEach((_, k) => { cabTarget[k] = k === i ? 0.48 : 0; }); } };
 
   // ---- borde de la nave en el piso y pasillo principal hacia el frente ----
   box(RW, 0.012, 0.06, ledM, XC, 0.01, ZF - 0.03).castShadow = false;
@@ -931,7 +967,7 @@
     const tmp = new THREE.Vector3();
     Object.keys(tags).forEach(id => {
       const s = ST[id], b = tags[id]; if (!s) { b.hidden = true; return; }
-      if (id === "docs") tmp.set(0, 2.4, 0).applyMatrix4(s.g.matrixWorld);
+      if (id === "docs") tmp.set(0, 2.75, 0.4).applyMatrix4(s.g.matrixWorld);
       else if (id === "tablero") tmp.set(0, 2.15, 0).applyMatrix4(s.g.matrixWorld);
       else if (id === "jefe") tmp.set(0, 2.55, 0.9).applyMatrix4(s.g.matrixWorld);
       else if (id === "gerente" && GER && GER.caminando()) tmp.set(0, 2.25, 0).applyMatrix4(GER.walker.matrixWorld);
@@ -948,8 +984,9 @@
         b.querySelector(".nm").textContent = "Tablero del equipo"; b.style.setProperty("--c", n ? "#F2A541" : "#5CD69A");
         b.querySelector("small").textContent = n ? `${n} por decidir · toca para abrir` : "nada pendiente";
       } else if (id === "docs") {
-        b.querySelector(".nm").textContent = `Documentos · ${D.documentos.length}`; b.style.setProperty("--c", "#C9A35A");
-        b.querySelector("small").textContent = "";
+        const nArch = (window.ARCHIVO_CAJONES || []).reduce((t, c) => t + c.n, 0) || D.documentos.length;
+        b.querySelector(".nm").textContent = `Archivo · ${nArch} documentos`; b.style.setProperty("--c", "#C9A35A");
+        b.querySelector("small").textContent = open && sel === "docs" ? "toca otra vez para abrir" : "";
       } else {
         const a = AG.find(x => x.id === id), st = STATES[a.state];
         b.style.setProperty("--c", st.c); b.querySelector(".nm").textContent = a.name;
@@ -978,13 +1015,13 @@
   }
   function focus3D(id) {
     if (id === "tablero") { if (window.abrirTablero) window.abrirTablero(); return; }
-    if (open && sel === id) { if (window.tienePantalla && window.tienePantalla(id)) { window.abrirPantalla(id); return; } if (id === "pedidos" && window.abrirMapa) { window.abrirMapa(); return; } if (id === "gerente" && window.abrirPanel) { window.abrirPanel(); return; } close3D(); return; }
+    if (open && sel === id) { if (id === "docs" && window.abrirArchivo) { window.abrirArchivo(); return; } if (window.tienePantalla && window.tienePantalla(id)) { window.abrirPantalla(id); return; } if (id === "pedidos" && window.abrirMapa) { window.abrirMapa(); return; } if (id === "gerente" && window.abrirPanel) { window.abrirPanel(); return; } close3D(); return; }
     if (id === "docs" && sel !== "docs") cabSel = null;
     sel = id; open = true; $("drawer").hidden = false; drawDrawer(); $("dBody").scrollTop = 0; viewOffset();
     const s = ST[id]; if (!s) return;
     s.g.updateMatrixWorld();
-    const tgt = id === "jefe" ? new THREE.Vector3(0, 1.45, -0.45).applyMatrix4(s.g.matrixWorld) : id === "docs" ? new THREE.Vector3(0, 1.1, 0).applyMatrix4(s.g.matrixWorld) : new THREE.Vector3(0, 1.45, -0.4).applyMatrix4(s.g.matrixWorld);
-    const pos = id === "jefe" ? tgt.clone().add(new THREE.Vector3(4.2, 1.6, 1.6)) : id === "docs" ? tgt.clone().add(new THREE.Vector3(-1.5, 1.2, 3.6)) : tgt.clone().add(new THREE.Vector3(1.2, 0.9, 3.4));
+    const tgt = id === "jefe" ? new THREE.Vector3(0, 1.45, -0.45).applyMatrix4(s.g.matrixWorld) : id === "docs" ? new THREE.Vector3(0, 1.2, 0.4).applyMatrix4(s.g.matrixWorld) : new THREE.Vector3(0, 1.45, -0.4).applyMatrix4(s.g.matrixWorld);
+    const pos = id === "jefe" ? tgt.clone().add(new THREE.Vector3(4.2, 1.6, 1.6)) : id === "docs" ? tgt.clone().add(new THREE.Vector3(-1.2, 1.4, 5.6)) : tgt.clone().add(new THREE.Vector3(1.2, 0.9, 3.4));
     flyTo(pos, tgt);
     if (narrow3()) requestAnimationFrame(() => $("drawer").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" }));
   }
@@ -1219,6 +1256,7 @@
       s.torso.rotation.x = sleep ? 0.12 : 0;
     });
     if (window.tableroVersion !== tabVer && TEX.tablero) { tabVer = window.tableroVersion; tabTex.image = TEX.tablero; tabTex.needsUpdate = true; }
+    cabDrawers.forEach((d, k) => { const zt = 0.375 + cabTarget[k]; d.position.z += (zt - d.position.z) * (reduce ? 1 : 0.12); });
     renderer.render(scene, camera);
     placeTags(el.clientWidth, el.clientHeight);
     requestAnimationFrame(loop);
