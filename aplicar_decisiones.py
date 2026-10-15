@@ -4,6 +4,8 @@
 La oficina guarda cada decisión en la colección `decisiones` de su base de datos (doc id = <tipo>-<ref>):
     {tipo: "plan" | "idea" | "necesidad", ref: <id de plan.csv | número de fila de ideas.csv o necesidades.csv>,
      decision: "aprobado" | "rechazado" | "resuelta", fecha: "AAAA-MM-DD", hora: "HH:MM", aplicado: false}
+Las ventas que Santi anota en la pantalla de Finanzas llegan igual (doc id = venta-<código>):
+    {tipo: "venta", producto, cantidad, precio_bs (por unidad), fecha, hora, aplicado: false}  → una fila en ventas.csv
 
 Uso en cada ronda (local o Gerente), con la herramienta ArtifactData sobre la URL de la oficina:
     1. list de `decisiones` → guardar las que tengan aplicado false en un JSON (lista de {id, ...data})
@@ -40,14 +42,24 @@ def main():
         decs = json.load(f)
     if isinstance(decs, dict):
         decs = decs.get("docs") or decs.get("documents") or list(decs.values())
-    archivos = {"plan": "plan.csv", "idea": "ideas.csv", "necesidad": "necesidades.csv"}
-    datos = {t: leer(n) for t, n in archivos.items() if os.path.exists(os.path.join(DIR, n))}
+    archivos = {"plan": "plan.csv", "idea": "ideas.csv", "necesidad": "necesidades.csv", "venta": "ventas.csv"}
+    datos = {t: leer(n) for t, n in archivos.items() if t != "venta" and os.path.exists(os.path.join(DIR, n))}
     tocados, aplicados, actividad = set(), [], []
     for d in sorted(decs, key=lambda d: (d.get("fecha", ""), d.get("hora", ""))):
         d = {**(d.get("data") or {}), **{k: v for k, v in d.items() if k != "data"}}
         if d.get("aplicado"):
             continue
         tipo, ref, dec = d.get("tipo"), str(d.get("ref", "")), d.get("decision")
+        if tipo == "venta":
+            campos_v, filas_v = datos.setdefault("venta", leer("ventas.csv"))
+            marca = f"oficina {d.get('id', '')}"
+            if not any(r.get("notas") == marca for r in filas_v) and d.get("producto") and d.get("cantidad") and d.get("precio_bs"):
+                filas_v.append({c: "" for c in campos_v} | {"fecha": d.get("fecha", ""), "producto": d["producto"], "cantidad": str(d["cantidad"]),
+                                                            "precio_bs": str(d["precio_bs"]), "canal": "oficina", "notas": marca})
+                tocados.add("venta")
+                actividad.append(f"venta anotada desde la oficina: {d['cantidad']} × {d['producto']} a Bs {d['precio_bs']}")
+            aplicados.append(d.get("id"))
+            continue
         if tipo not in datos:
             continue
         cuando = f"oficina {d.get('fecha', '')[8:10]}/{d.get('fecha', '')[5:7]} {d.get('hora', '')}".strip()

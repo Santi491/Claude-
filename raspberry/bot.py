@@ -38,7 +38,7 @@ NOMBRES = {"nube": "la Nube", "ebay": "el Rastreador eBay", "wa": "WhatsApp", "m
 DIAS = ("lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo")
 AYUDA = ("Háblame como a tu gerente: \"hola, ¿cómo vamos?\", \"¿qué conviene traer?\", \"dile a WhatsApp que...\". "
          "Recuerdo la charla del día.\nAtajos al instante y sin gastar el plan: apruebo 1 3 · rechazo 2 · sí a todo · plan · "
-         "necesidades · resuelta 2 · tarea: <texto> · modelo haiku|sonnet|opus · uso · nueva charla.")
+         "necesidades · resuelta 2 · tarea: <texto> · venta: 2 Ryzen 5 7600 a 2800 · modelo haiku|sonnet|opus · uso · nueva charla.")
 
 cargar("~/.cargo-bot", ("CLAUDE_CODE_OAUTH_TOKEN", "CLAUDE_MODELO", "MAX_PREGUNTAS_DIA", "AVISOS"))
 TOKEN, CHAT = cargar("~/.telegram", ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"))
@@ -199,6 +199,46 @@ def cmd_tarea(agente, texto):
     ok = subir("Plan: tarea nueva de Santi por Telegram (Raspberry)")
     aviso = " La hacen solos en la próxima ronda y te enteras por el resumen." if agente in ("wa", "mkt", "dem", "fin", "local") else ""
     return f"Anotada la tarea {hoy}-{n} para {agente}, aprobada.{aviso}" + ("" if ok else " (no pude subirla a GitHub todavía)")
+
+
+def producto_de(texto):
+    """El producto de vigilar.csv que coincide con lo que escribió Santi: deben estar todos sus números de modelo
+    (7600, 2tb, 12400f, ddr5, 6000...) y gana el que comparte más palabras."""
+    _, vig = leer_csv("vigilar.csv")
+    tok = lambda x: set(re.findall(r"[a-z0-9]+", simple(x).replace("-", " ")))
+    u = tok(texto)
+    modelo = {w for w in u if re.search(r"\d", w) and len(w) >= 3}
+    mejor = None
+    for v in vig:
+        pt = tok(v["producto"])
+        if not modelo or not modelo <= pt:
+            continue
+        clave = (len(u & pt), -len(pt))
+        if mejor is None or clave > mejor[0]:
+            mejor = (clave, v["producto"])
+    return mejor[1] if mejor else None
+
+def cmd_venta(texto):
+    """venta: 2 Ryzen 5 7600 a 2800  (precio por unidad; 'total' divide por la cantidad)."""
+    m = re.match(r"\s*(\d+)?\s*(?:x|u|unidades?)?\s*(.+?)\s+(?:a|por|en)\s+(?:bs\.?\s*)?([\d.,]+)\s*(bs)?\s*(total)?\s*$", texto, re.I)
+    if not m:
+        return "No entendí la venta. Escríbela así: venta: 2 Ryzen 5 7600 a 2800 (precio por unidad en Bs; agrega 'total' si es el total)."
+    cant = int(m.group(1) or 1)
+    precio = float(m.group(3).replace(".", "").replace(",", ".")) if re.search(r"\.\d{3}$", m.group(3)) else float(m.group(3).replace(",", "."))
+    if m.group(5):
+        precio = precio / cant
+    prod = producto_de(m.group(2))
+    if not prod:
+        return f"No encontré '{m.group(2).strip()}' en vigilar.csv. Escribe el modelo como en la tabla (ej.: Ryzen 5 7600, SSD NVMe 2TB)."
+    actualizar_repo()
+    campos, filas = leer_csv("ventas.csv")
+    hoy = ahora().strftime("%Y-%m-%d")
+    filas.append({c: "" for c in campos} | {"fecha": hoy, "producto": prod, "cantidad": str(cant), "precio_bs": f"{precio:.2f}", "canal": "telegram"})
+    escribir_csv("ventas.csv", campos, filas)
+    anotar_actividad(f"Telegram (Raspberry): venta anotada: {cant} × {prod} a Bs {precio:,.0f}")
+    ok = subir("Ventas: venta anotada por Santi en Telegram (Raspberry)")
+    return (f"Anotada la venta: {cant} × {prod} a Bs {precio:,.0f} c/u (total Bs {precio * cant:,.0f}). Finanzas calcula la ganancia real en la próxima ronda."
+            + ("" if ok else " (no pude subirla a GitHub todavía)"))
 
 
 def necesidades_abiertas():
@@ -384,6 +424,9 @@ def atender(texto, estado):
             return "Modelos: haiku (gasta muy poco), sonnet (intermedio) u opus (el mejor, gasta más)."
         estado["modelo"] = m.group(1)
         return f"Listo: las preguntas van con {m.group(1)}."
+    m = re.match(r"(?:venta|vend[ií])\s*:?\s*(.+)", texto.strip(), re.I | re.S)
+    if m:
+        return cmd_venta(m.group(1))
     m = re.match(r"tarea\s*(\w+)?\s*:\s*(.+)", texto.strip(), re.I | re.S)
     if m:
         agente = (m.group(1) or "local").lower()

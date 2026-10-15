@@ -978,7 +978,7 @@
   }
   function focus3D(id) {
     if (id === "tablero") { if (window.abrirTablero) window.abrirTablero(); return; }
-    if (open && sel === id) { if (id === "pedidos" && window.abrirMapa) { window.abrirMapa(); return; } if (id === "gerente" && window.abrirPanel) { window.abrirPanel(); return; } close3D(); return; }
+    if (open && sel === id) { if (window.tienePantalla && window.tienePantalla(id)) { window.abrirPantalla(id); return; } if (id === "pedidos" && window.abrirMapa) { window.abrirMapa(); return; } if (id === "gerente" && window.abrirPanel) { window.abrirPanel(); return; } close3D(); return; }
     if (id === "docs" && sel !== "docs") cabSel = null;
     sel = id; open = true; $("drawer").hidden = false; drawDrawer(); $("dBody").scrollTop = 0; viewOffset();
     const s = ST[id]; if (!s) return;

@@ -17,6 +17,7 @@ RAIZ = os.path.dirname(OFI)
 sys.path.insert(0, RAIZ)
 import demanda  # noqa: E402
 import finanzas  # noqa: E402
+import agenda  # noqa: E402
 
 
 def leer(nombre):
@@ -197,7 +198,13 @@ def main():
                              for i, f in enumerate(leer("necesidades.csv"), 1) if f.get("estado", "abierta") != "resuelta"],
              "ideas": [{"id": i, **{k: f.get(k, "") for k in ("fecha", "agente", "idea", "por_que", "estado", "decision")}}
                        for i, f in enumerate(leer("ideas.csv") if existe("ideas.csv") else [], 1)],
-             "finanzas": finanzas.calcular(), "demanda": demanda.calcular()}
+             "finanzas": finanzas.calcular(), "demanda": demanda.calcular(),
+             # agenda de seguimientos de WhatsApp (agenda.py), ventas sin notas (pueden tener nombres) y las últimas alertas
+             "agenda": agenda.calcular(),
+             "ventas": [{k: f.get(k, "") for k in ("fecha", "producto", "cantidad", "precio_bs", "canal")}
+                        for f in (leer("ventas.csv") if existe("ventas.csv") else [])],
+             "alertas": (lambda e: {"ultimas": e.get("ultimas", []), "revisado": e.get("revisado", "")})(
+                 json.load(open(os.path.join(RAIZ, "alertas-estado.json"), encoding="utf-8")) if existe("alertas-estado.json") else {})}
     with open(os.path.join(OFI, "datos.js"), "w", encoding="utf-8") as f:
         f.write("window.DATOS = " + json.dumps(datos, ensure_ascii=False) + ";\n")
     print(f"oficina/datos.js: {len(productos)} productos, {len(mov)} movimientos, {len(docs)} documentos")
