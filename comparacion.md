@@ -14,7 +14,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Intel Core i5-14400F | [164.49](https://www.ebay.com/itm/389945918228) | 2.115 (B 1 kg) | 2.074 (B 1.5 kg) | 2.460 | 345 (14%) | 386 (16%) | justo |
 | Intel Core i5-12400F | [150.00](https://www.ebay.com/itm/800773514419) | 1.943 (B 1 kg) | 1.902 (B 1.5 kg) | 2.260 | 317 (14%) | 358 (16%) | justo |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [435.99](https://www.ebay.com/itm/960033835048) | 5.332 (B 1 kg) | 5.249 (B 1 kg) | 6.200 | 868 (14%) | 951 (15%) | justo |
-| SSD NVMe 1TB | [128.99](https://www.ebay.com/itm/314675451357) | 1.694 (B 1 kg) | 1.611 (B 1 kg) | 1.800 | 106 (6%) | 189 (10%) | justo |
+| SSD NVMe 1TB | [128.99](https://www.ebay.com/itm/314675451357) | 1.694 (B 1 kg) | 1.611 (B 1 kg) | 1.754 | 60 (3%) | 143 (8%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [429.97](https://www.ebay.com/itm/128104115525) | 5.261 (B 1 kg) | 5.178 (B 1 kg) | 4.500 | -761 (-17%) | -678 (-15%) | no conviene |
 | RAM DDR4 16GB (2x8) 3200 | [75.00](https://www.ebay.com/itm/198709471618) | 1.055 (B 1 kg) | 972 (B 1 kg) | 900 | -155 (-17%) | -72 (-8%) | no conviene |
 | Intel Core i5-13400 | [259.78](https://www.ebay.com/itm/278289521729) | 3.244 (B 1 kg) | 3.203 (B 1.5 kg) | 2.300 | -944 (-41%) | -903 (-39%) | no conviene |
@@ -26,7 +26,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 |---|---|---|---|---|---|---|---|
 | SSD NVMe 2TB | [175.00](https://www.ebay.com/itm/327405616465) | 2.240 (B 1 kg) | 2.157 (B 1 kg) | 4.060 | 1.820 (45%) | 1.903 (47%) | conviene |
 | Ryzen 5 7600 | [120.00](https://www.ebay.com/itm/377526242250) | 1.588 (B 1 kg) | 1.588 (B 2 kg) | 2.800 | 1.212 (43%) | 1.212 (43%) | conviene |
-| SSD NVMe 1TB | [80.00](https://www.ebay.com/itm/287648085856) | 1.114 (B 1 kg) | 1.031 (B 1 kg) | 1.800 | 686 (38%) | 769 (43%) | conviene |
+| SSD NVMe 1TB | [80.00](https://www.ebay.com/itm/287648085856) | 1.114 (B 1 kg) | 1.031 (B 1 kg) | 1.754 | 640 (36%) | 723 (41%) | conviene |
 | Intel Core i5-12400F | [114.99](https://www.ebay.com/itm/257798619841) | 1.529 (B 1 kg) | 1.487 (B 1.5 kg) | 2.260 | 731 (32%) | 773 (34%) | conviene |
 | Intel Core i5-14400F | [134.99](https://www.ebay.com/itm/960067352638) | 1.766 (B 1 kg) | 1.724 (B 1.5 kg) | 2.460 | 694 (28%) | 736 (30%) | conviene |
 | Intel Core Ultra 7 265K | [229.00](https://www.ebay.com/itm/278426444361) | 2.880 (B 1 kg) | 2.838 (B 1.5 kg) | 3.950 | 1.070 (27%) | 1.112 (28%) | conviene |
@@ -136,6 +136,7 @@ eBay nuevo: USD 128.99 con envío en EE.UU. (eBay API; vendedor netac-official-s
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
+| Shopping PC (catálogo PDF) | nuevo (Kingston NV3 1TB; lista mayorista USD 148 del 12/10, sin factura; 146 en stock) | 1.754 | 60 (3%) | 2026-10-15 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2078197563584097/) | no indicado (M.2 1TB; marca no indicada) | 1.800 | 106 (6%) | 2026-10-11 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | no indicado (Kingston NV3 1TB) | 1.850 | 156 (8%) | 2026-10-11 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Hiksemi Wave M.2 1TB) | 1.860 | 166 (9%) | 2026-10-12 |
