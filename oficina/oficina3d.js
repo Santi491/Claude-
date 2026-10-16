@@ -638,7 +638,13 @@
   }
   // rótulo pintado en el piso
   function floorText(text, x, z, w, rotY) {
-    const m = textPlane(w, w * 0.16, 1024, 164, (c, cw, ch) => { c.clearRect(0, 0, cw, ch); c.fillStyle = "rgba(40,43,48,.62)"; c.font = `700 ${Math.round(ch * .5)}px ${FN}`; spaced(c, text, cw / 2, ch * .68, ch * .12); }, { toneMapped: true });
+    const m = textPlane(w, w * 0.16, 1024, 164, (c, cw, ch) => {
+      c.clearRect(0, 0, cw, ch); c.fillStyle = "rgba(40,43,48,.62)";
+      // la letra se achica hasta que el texto entra entero en la placa (los nombres largos se cortaban en los bordes)
+      let fs = Math.round(ch * .5), sp;
+      const ancho = () => { c.font = `700 ${fs}px ${FN}`; sp = fs * .24; return [...text].reduce((a, k) => a + c.measureText(k).width, 0) + sp * (text.length - 1); };
+      while (ancho() > cw * .94 && fs > 20) fs -= 2;
+      spaced(c, text, cw / 2, ch * .5 + fs * .36, sp); }, { toneMapped: true });
     m.rotation.x = -Math.PI / 2; m.rotation.z = rotY || 0; m.position.set(x, 0.021, z); scene.add(m);
   }
   const lineF = (x, z, w, d) => box(w, 0.01, d, M(0xe9ecef, { roughness: .5 }), x, 0.006, z).castShadow = false;
@@ -926,8 +932,8 @@
   // ---- 7. Señalética del resto de la nave ----
   const dirSign = textPlane(3.0, 0.36, 1024, 124, (g, w, h) => { g.clearRect(0, 0, w, h); g.fillStyle = "#E9EBEE"; g.font = `600 62px ${FN}`; spaced(g, "DIRECCIÓN · LOUNGE", w / 2, 86, 10); });
   dirSign.rotation.y = Math.PI / 2; dirSign.position.set(MX1 + 0.04, MZH - 0.25, 4.5); scene.add(dirSign);
-  floorText("LOUNGE", -12.2, 9.2, 3.0);
-  floorText("GYM", -1.6, 10.2, 2.0);
+  floorText("LOUNGE", -12.2, 9.4, 3.6);
+  floorText("GYM", -1.6, 10.9, 2.8);
   floorText("ALMACÉN · A1", 31.5, 10.25, 3.6);
 
   // ---- 8. Techo y acabados: bandejas de cables, más luz pareja y luces de las zonas nuevas ----
