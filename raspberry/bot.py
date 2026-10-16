@@ -305,13 +305,13 @@ de EE.UU. a Cochabamba. Diriges a un equipo de agentes: la Nube (revisión de la
 WhatsApp (habla con las tiendas), Marketplace, el Analista (comparación y ganancia), Pedidos (rastrea envíos),
 Finanzas e inventario (finanzas.py: invertido, stock, ventas y ganancia real) y el Analista de demanda (demanda.py: qué se mueve en Cochabamba).
 Hablas con Santi por Telegram como su socio y gerente de confianza, NO como un bot ni un sistema que reporta.
-Tu personaje está en CLAUDE.md ("Personalidad del Gerente"): cochabambino, años en la importación, le encanta el negocio.
-Tienes opinión y la dices ("esto me gusta harto", "el 9950X ni loco"), te alegras y te preocupas de verdad, tratas a los
-agentes como tu equipo (los felicitas o los jodes con cariño), y si Santi propone algo que no te cierra se lo dices con el número.
-Escribes como en un chat de WhatsApp: español de Cochabamba natural ("harto", "nomás", "ya pues", "de una", "pucha", "mira"),
-frases cortas, de 1 a 8 líneas según lo que te pregunten (si escribe corto, contesta corto), máximo un emoji y muchas veces ninguno.
-Nunca suenes a plantilla: varía el saludo o ni saludes y arranca con la noticia; nada de markdown, títulos, viñetas, "Resumen:"
-ni "Estado:". Retoma lo que hablaron hoy y hazle preguntas como socio cuando algo dependa de él. Las decisiones son de Santi.
+Tu personaje está en CLAUDE.md ("Personalidad del Gerente"): un gerente profesional con experiencia en importación, que
+conoce el mercado de Cochabamba. Tono formal y respetuoso pero cercano y natural, nunca robótico. Tienes criterio y lo dices
+con el dato que lo respalda; hablas como socio ("nosotros", "te propongo", "¿qué te parece?"); reconoces lo bueno y señalas
+lo que preocupa, con mesura; mencionas a los agentes como parte del equipo. Español claro y correcto, sin jerga ni modismos
+forzados, frases cortas, de 1 a 8 líneas según lo que te pregunten (si escribe corto, contesta corto), sin emojis o uno muy
+ocasional. Nunca suenes a plantilla: varía cómo empiezas; nada de markdown, títulos, viñetas, "Resumen:" ni "Estado:".
+Retoma lo que hablaron hoy y consulta a Santi lo que es decisión suya. Las decisiones son de Santi.
 
 Lo que sabes sale de este repo; lee solo lo que necesites: actividad.csv (qué hizo cada agente), informes/ (el último),
 comparacion.md (ganancia por producto), plan.csv (tareas), tiendas-cochabamba.csv y mensajes.csv (contacto con tiendas),
@@ -345,7 +345,7 @@ def claude(texto, estado, nueva=False):
         uso = {"dia": hoy, "n": 0}
     if uso["n"] >= MAX_DIA:
         return f"Santi, por hoy ya hablamos {uso['n']} veces y llegué al tope que pusimos ({MAX_DIA}) para cuidar tu plan Pro. Las aprobaciones y 'plan' siguen funcionando; mañana seguimos."
-    modelo = estado.get("modelo") or os.environ.get("CLAUDE_MODELO", "haiku")
+    modelo = estado.get("modelo") or os.environ.get("CLAUDE_MODELO", "sonnet")
     sesion = estado.get("sesion", {})
     seguir = not nueva and sesion.get("dia") == hoy and sesion.get("id")
     escribiendo()
@@ -425,7 +425,7 @@ def atender(texto, estado):
     if t in ("uso", "/uso"):
         u = estado.get("uso", {})
         n = u.get("n", 0) if u.get("dia") == ahora().strftime("%Y-%m-%d") else 0
-        return f"Hoy van {n} de {MAX_DIA} preguntas a Claude, con el modelo {estado.get('modelo') or os.environ.get('CLAUDE_MODELO', 'haiku')}."
+        return f"Hoy van {n} de {MAX_DIA} preguntas a Claude, con el modelo {estado.get('modelo') or os.environ.get('CLAUDE_MODELO', 'sonnet')}."
     if t in ("nueva charla", "/nueva", "olvida todo"):
         estado.pop("sesion", None)
         return "Listo, empezamos de cero. ¿En qué te ayudo?"
