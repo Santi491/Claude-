@@ -13,3 +13,17 @@ fecha,producto,fuente,ciudad,anuncios,nuevos,desaparecidos,precio_min_bs,precio_
 2026-10-15,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,1,0,0,1950,1950,primera cuenta; GeIL Orion 16GB 3200 (también hay DDR4 8GB y de laptop que no cuentan)
 2026-10-15,SSD NVMe 1TB,marketplace,Cochabamba,1,0,0,,,primera cuenta; Kingston NV3 1TB sin precio publicado
 2026-10-15,SSD NVMe 2TB,marketplace,Cochabamba,0,0,0,,,primera cuenta
+2026-10-16,Ryzen 5 5600,marketplace,Cochabamba,0,0,0,,,"búsqueda más amplia que el 15/10 (por modelo y por categoría); solo un 5600X suelto a Bs 2.150 (otro modelo, no cuenta)"
+2026-10-16,Ryzen 7 5700X3D,marketplace,Cochabamba,0,0,0,,,"hay un 5700X OEM a Bs 2.450 (sin X3D, no cuenta)"
+2026-10-16,Ryzen 5 7600,marketplace,Cochabamba,0,0,0,,,sin anuncios sueltos (solo PCs armadas)
+2026-10-16,Ryzen 7 7800X3D,marketplace,Cochabamba,0,0,0,,,sin anuncios sueltos
+2026-10-16,Ryzen 9 9950X,marketplace,Cochabamba,0,0,0,,,"hay 2 anuncios del 9950X3D sin precio publicado (otro modelo, no cuenta)"
+2026-10-16,Intel Core i5-12400F,marketplace,Cochabamba,0,0,0,,,solo dentro de PCs armadas
+2026-10-16,Intel Core i5-13400,marketplace,Cochabamba,0,0,0,,,
+2026-10-16,Intel Core i5-14400F,marketplace,Cochabamba,1,0,0,2700,2700,"el i5-14400 (con gráficos, no F) nuevo, publicado hace 14 semanas; ya visto el 11/10; el 15/10 no se contó"
+2026-10-16,Intel Core Ultra 7 265K,marketplace,Cochabamba,0,0,0,,,
+2026-10-16,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,marketplace,Cochabamba,1,0,0,4500,4500,"usada como nueva, publicada hace 8 semanas (ya vista el 12/10; el 15/10 no se contó). Otras DDR5 32GB: Kingston Fury Beast 5600 Bs 7.400 y Vortex 2x16 sin precio"
+2026-10-16,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,marketplace,Cochabamba,1,0,0,6200,6200,"la RS de Bs 6.200 (vista el 11/10) sigue activa; el 15/10 figuró como no encontrada"
+2026-10-16,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,3,0,0,1400,1500,"Corsair Vengeance 2x8 Bs 1.500, Corsair Vengeance Pro 2x8 3200 Bs 1.600 y un 2x8 sin velocidad a Bs 1.400; la GeIL del 15/10 no se volvió a buscar"
+2026-10-16,SSD NVMe 1TB,marketplace,Cochabamba,3,1,0,1730,2390,"nuevo: M.2 1TB nuevo Bs 1.730 (hace 2 días); Samsung 9100 PRO 1TB Bs 3.050; Kingston NV3 1TB sin precio. Un Kingspec 1TB Bs 900 no dice si es NVMe (no cuenta)"
+2026-10-16,SSD NVMe 2TB,marketplace,Cochabamba,0,0,0,,,

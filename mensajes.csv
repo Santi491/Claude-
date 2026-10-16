@@ -109,3 +109,14 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-15,18:10,whatsapp,Shopping PC,recibido,respuesta,no,garantía solo de prueba
 2026-10-15,17:54,whatsapp,Soft Computers,recibido,respuesta,no,"solo tienen el i5-14400F (no 7600 ni 12400F)"
 2026-10-15,17:57,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,cierre cordial (otro número de la tienda)
+2026-10-16,09:25,whatsapp,MSR Computers,recibido,respuesta,no,"responde ""No"" a la consulta del lunes; no se le escribe más"
+2026-10-16,13:37,whatsapp,Shopping PC,enviado,respuesta,,"pregunta si manejan Ryzen 5 7600 / 7 7800X3D y SSD 2TB (no están en la lista)"
+2026-10-16,13:38,whatsapp,Soft Computers,enviado,respuesta,,pregunta precio del i5-14400F llevando 2
+2026-10-16,13:41,whatsapp,Gamer Store Cbba,enviado,seguimiento,,segundo y último seguimiento (7600 o Corsair DDR5)
+2026-10-16,13:40,whatsapp,Soft Computers,recibido,respuesta,sí,i5-14400F OEM Bs 2.500 c/u también llevando 2
+2026-10-16,13:43,whatsapp,Shopping PC,recibido,respuesta,no,"solo tienen lo de la lista (sin Ryzen ni SSD 2TB)"
+2026-10-16,13:45,whatsapp,Soft Computers,enviado,respuesta,,agradece
+2026-10-16,13:46,whatsapp,Shopping PC,enviado,respuesta,,agradece
+2026-10-16,13:49,whatsapp,Punto Tecnológico,enviado,nuevo,,"chat nuevo: Ryzen 5 7600, 7800X3D y Corsair DDR5 32GB, precio por 2 o 4"
+2026-10-16,13:49,whatsapp,Punto Tecnológico,recibido,automatica,no,bienvenida
+2026-10-16,13:50,whatsapp,Punto Tecnológico,recibido,respuesta,no,"saluda y dice que en un momento envía los precios"

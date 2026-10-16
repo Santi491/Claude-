@@ -21,7 +21,8 @@
   "baja|SSD NVMe 1TB|usado|2026-10-15": "2026-10-15 11:53",
   "baja|Ryzen 9 9950X|nuevo|2026-10-16": "2026-10-16 11:54",
   "baja|SSD NVMe 1TB|nuevo|2026-10-16": "2026-10-16 11:54",
-  "conviene|SSD NVMe 1TB|nuevo|2026-10-16": "2026-10-16 11:54"
+  "conviene|SSD NVMe 1TB|nuevo|2026-10-16": "2026-10-16 11:54",
+  "conviene|Intel Core i5-13400|usado|2026-10-16": "2026-10-16 14:01"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": true,
@@ -50,9 +51,7 @@
   "SSD NVMe 2TB|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 9 9950X (nuevo) bajó 20% en eBay: USD 689.34 → 549.99",
-  "⬇ SSD NVMe 1TB (nuevo) bajó 15% en eBay: USD 128.99 → 110.00",
-  "✅ Ahora conviene SSD NVMe 1TB (nuevo): +17% · costo puesto Bs 1.464 vs Bs 1.754 en Cochabamba"
+  "✅ Ahora conviene Intel Core i5-13400 (usado): +16% · costo puesto Bs 1.937 vs Bs 2.300 en Cochabamba"
  ],
- "revisado": "2026-10-16 11:54"
+ "revisado": "2026-10-16 14:01"
 }
