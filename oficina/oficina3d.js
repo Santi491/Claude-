@@ -28,13 +28,6 @@
   const layer = document.createElement("div");
   layer.className = "labels3d";
   stage.appendChild(layer);
-  // etiqueta corrida para no taparse con otra: una línea fina la une con su puesto
-  const tagCss = document.createElement("style");
-  tagCss.textContent = ".ag3d.lift::after{content:'';position:absolute;left:50%;top:100%;width:1px;height:var(--lift,0);background:var(--c);opacity:.55;pointer-events:none}" +
-    // celular: solo el nombre; si no hay lugar, la etiqueta queda como un punto (se toca igual)
-    ".labels3d.compact .ag3d{padding:3px 8px;font-size:11px}.labels3d.compact .ag3d small{display:none}" +
-    ".ag3d.mini{padding:0;width:16px;height:16px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px rgba(11,22,32,.7)}.ag3d.mini>*{display:none}";
-  document.head.appendChild(tagCss);
   $("hint").textContent = matchMedia("(pointer:coarse)").matches
     ? "Arrastra para girar · pellizca para zoom · toca un agente"
     : "Arrastra para girar · clic derecho para mover · rueda para zoom · clic en un agente";
@@ -983,7 +976,6 @@
     layer.appendChild(b); tags[a.id] = b;
   });
   const headPos = new THREE.Vector3();
-  const TOP = 50;   // las etiquetas no suben hasta los botones de zoom
   // cambia texto y color de una etiqueta solo si son distintos (y entonces hay que volver a medirla)
   function setTag(b, nombre, color, extra) {
     if (b._c !== color) { b._c = color; b.style.setProperty("--c", color); }
@@ -991,8 +983,7 @@
     if (b._x !== extra) { b._x = extra; b.querySelector("small").textContent = extra; b._w = 0; }
   }
   function placeTags(W, H) {
-    const tmp = new THREE.Vector3(), lista = [], compact = W < 560;
-    if (layer._compact !== compact) { layer._compact = compact; layer.classList.toggle("compact", compact); Object.values(tags).forEach(b => { b._w = 0; }); }
+    const tmp = new THREE.Vector3();
     Object.keys(tags).forEach(id => {
       const s = ST[id], b = tags[id]; if (!s) { b.hidden = true; return; }
       if (id === "docs") tmp.set(0, 2.75, 0.4).applyMatrix4(s.g.matrixWorld);
@@ -1021,36 +1012,11 @@
       }
       const on = open && sel === id; if (b._on !== on) { b._on = on; b.classList.toggle("on", on); b._w = 0; }
       // En pantallas angostas la etiqueta no se sale por los costados ni por arriba: se corre hacia adentro
-      if (!b._w) { const mi = b.classList.contains("mini"); if (mi) b.classList.remove("mini"); b._w = b.offsetWidth; b._h = b.offsetHeight; if (mi) b.classList.add("mini"); }
+      if (!b._w) { b._w = b.offsetWidth; b._h = b.offsetHeight; }
       const m = 6, w = b._w, h = b._h;
       const x = w + 2 * m < W ? Math.min(Math.max(px, w / 2 + m), W - w / 2 - m) : W / 2;
-      const y = Math.max(py, h + TOP);
-      lista.push({ b, x, y, w, h, z: tmp.z, on });
-    });
-    // Que no se encimen: la etiqueta del puesto más cercano (o la elegida) queda en su lugar y las demás se corren
-    // hacia arriba (o hacia abajo si arriba no hay lugar) hasta encontrar un hueco; una línea fina las une con su puesto
-    lista.sort((a, c) => (c.on - a.on) || (a.z - c.z));
-    const puestas = [], gap = 4, mini = (b, v) => { if (b._mini !== v) { b._mini = v; b.classList.toggle("mini", v); } };
-    const choca = (x, y, it) => puestas.find(p => Math.abs(x - p.x) < (it.w + p.w) / 2 + gap && y - it.h < p.y + gap && y + gap > p.y - p.h);
-    lista.forEach(it => {
-      let y = it.y;
-      for (let k = 0, p; k < 12 && (p = choca(it.x, y, it)); k++) y = p.y - p.h - gap;   // subir sobre la que tapa
-      if (y - it.h < TOP || choca(it.x, y, it)) {   // arriba no entra: probar hacia abajo
-        y = it.y;
-        for (let k = 0, p; k < 12 && (p = choca(it.x, y, it)); k++) y = p.y + it.h + gap;
-        if (y > H - 4 || choca(it.x, y, it)) y = null;
-      }
-      if (y === null) {   // no hay hueco: queda como punto sobre su puesto
-        mini(it.b, true); const b = it.b; b.classList.remove("lift"); b._lift = 0;
-        const tr = `translate(${it.x.toFixed(1)}px,${(it.y - 4).toFixed(1)}px) translate(-50%,-100%)`;
-        if (b._tr !== tr) { b._tr = tr; b.style.transform = tr; }
-        return;
-      }
-      mini(it.b, false);
-      puestas.push({ x: it.x, y, w: it.w, h: it.h });
-      const lift = Math.max(0, Math.round(it.y - y)), b = it.b;
-      if (b._lift !== lift) { b._lift = lift; b.classList.toggle("lift", lift > 2); b.style.setProperty("--lift", lift + "px"); }
-      const tr = `translate(${it.x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`;
+      const y = Math.max(py, h + m);
+      const tr = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`;
       if (b._tr !== tr) { b._tr = tr; b.style.transform = tr; }
     });
   }
