@@ -206,7 +206,20 @@ def main():
     salud_equipo = {"hoy": _salud.estado_dia(), "semana": _salud.semana(14),
                     "horario": {k: {"nombre": h["nombre"], "hora": h["hora"], "dias": list(h["dias"]), "ligera": h.get("ligera", [])} for k, h in _salud.HORARIO.items()},
                     "sesiones": _salud.sesiones()[-80:]}
+    # Frescura (Oficina, 17/10): fecha del último dato de cada fuente, para que cada pantalla avise si está vencido
+    def ultima(nombre, col="fecha"):
+        if not existe(nombre):
+            return ""
+        return max((f.get(col) or "")[:16] for f in leer(nombre)) if leer(nombre) else ""
+    frescura = {"ebay": ultima("precios-eeuu.csv"), "cochabamba": ultima("precios-cochabamba.csv"), "dolar": ultima("tipo-cambio.csv"),
+                "mensajes": ultima("mensajes.csv"), "pedidos": max([ultima("pedidos.csv", "actualizado"), ultima("pedidos-prueba.csv", "actualizado")]),
+                "demanda": ultima("demanda.csv"), "catalogos": ultima("catalogos.csv"), "plan": ultima("plan.csv", "fecha_propuesta"),
+                "actividad": ultima("actividad.csv")}
+    # Chat interno del equipo (chat.py): solo trabajo; los agentes no ponen datos privados (reglas-cargo-brothers)
+    chat_eq = [{k: f.get(k, "") for k in ("id", "fecha", "hora", "de", "para", "texto", "ref", "estado", "respuesta_a")}
+               for f in (leer("chat.csv") if existe("chat.csv") else [])][-300:]
     datos = {"generado": datetime.now().strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
+             "frescura": frescura, "chat": chat_eq,
              "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas,
              "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente, "catalogos": catalogos, "salud": salud_equipo,
              # lo que los agentes le piden a Santi (sin datos privados): lo usa la animación del Gerente
@@ -223,7 +236,7 @@ def main():
              "finanzas": finanzas.calcular(), "demanda": demanda.calcular(),
              # agenda de seguimientos de WhatsApp (agenda.py), ventas sin notas (pueden tener nombres) y las últimas alertas
              "agenda": agenda.calcular(),
-             "ventas": [{k: f.get(k, "") for k in ("fecha", "producto", "cantidad", "precio_bs", "canal")}
+             "ventas": [{k: f.get(k, "") for k in ("fecha", "producto", "cantidad", "precio_bs", "canal", "estado")}
                         for f in (leer("ventas.csv") if existe("ventas.csv") else [])],
              "alertas": (lambda e: {"ultimas": e.get("ultimas", []), "revisado": e.get("revisado", "")})(
                  json.load(open(os.path.join(RAIZ, "alertas-estado.json"), encoding="utf-8")) if existe("alertas-estado.json") else {})}

@@ -46,7 +46,8 @@ def bs(n):
 
 def oferta(filas, producto, condicion):
     """La oferta real más reciente de eBay; 'min' elige la más barata entre nuevo y usado."""
-    cand = [f for f in filas if f["producto"] == producto and f["precio_usd"]]
+    # solo anuncios activos (real o estimado); los "vendido" (ventas completadas, Rastreador eBay) son referencia aparte
+    cand = [f for f in filas if f["producto"] == producto and f["precio_usd"] and f.get("tipo") in ("real", "estimado")]
     ult = {}
     for f in sorted(cand, key=lambda f: (f["fecha"], f["tipo"] == "real")):
         ult[f["condicion"]] = f

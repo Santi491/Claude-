@@ -29,7 +29,10 @@ CATEGORIAS = {"cpu": "164", "ram": "170083", "ssd": "175669"}
 # Anuncios que no son el producto en sí
 EXCLUIR = ("box only", "empty box", "caja vacía", "for parts", "not working", "broken", "lot of",
            "cooler only", "heatsink only", "fan only", "replacement fan", "so dimm", "sodimm", "bundle", "combo", "motherboard", "laptop", "sodimm", "so-dimm",
-           "macbook", "imac", "mac mini", "mac pro")
+           "macbook", "imac", "mac mini", "mac pro",
+           # para repuestos o con defectos (Rastreador eBay, 17/10): nunca cuentan como precio
+           "for parts", "parts only", "as is", "as-is", "untested", "not tested", "damaged", "bent pin", "missing pin",
+           "read description", "no post", "does not post", "defective", "faulty", "repair")
 MIN_FEEDBACK_PCT = 98.0
 MIN_FEEDBACK_SCORE = 50
 

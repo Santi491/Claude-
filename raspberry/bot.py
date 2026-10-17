@@ -10,6 +10,9 @@ Responde al momento a Santi. Lo simple lo resuelve solo, sin IA y sin gastar el 
     estado pc · prender pc · apagar pc                 -> ve si la PC está prendida / la prende / la apaga
     ronda ahora  ·  pc: <encargo>                      -> la PC hace una ronda completa o solo ese encargo ya
     salud                                              -> cómo está el equipo hoy (nube, Mac, PC, Gerente, Raspberry)
+    meta wa: 10 tiendas nuevas hoy                     -> tarea OBLIGATORIA de hoy para ese agente (no termina sin cumplirla)
+    chat pedidos: <texto>                              -> le contesta a un agente en el chat interno (chat.csv)
+    chat                                               -> los mensajes de los agentes que esperan respuesta
     ayuda
 Cualquier otro mensaje es una pregunta: solo ahí llama a Claude Code (plan Pro), en modo solo lectura.
 
@@ -37,12 +40,13 @@ ESTADO = os.path.expanduser("~/.cargo-bot-estado.json")  # fuera del repo
 MODELOS = ("haiku", "sonnet", "opus")
 AGENTES = ("nube", "ebay", "wa", "mkt", "ana", "pedidos", "fin", "dem", "gerente", "local")
 NOMBRES = {"nube": "la Nube", "ebay": "el Rastreador eBay", "wa": "WhatsApp", "mkt": "Marketplace", "ana": "el Analista",
-           "pedidos": "Pedidos", "gerente": "el Gerente", "local": "la ronda local"}
+           "pedidos": "Pedidos", "fin": "Finanzas", "dem": "el Analista de demanda", "gerente": "el Gerente", "local": "la ronda local"}
 DIAS = ("lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo")
 AYUDA = ("Háblame como a tu gerente: \"hola, ¿cómo vamos?\", \"¿qué conviene traer?\", \"dile a WhatsApp que...\". "
          "Recuerdo la charla del día.\nAtajos al instante y sin gastar el plan: apruebo 1 3 · rechazo 2 · sí a todo · plan · "
          "necesidades · resuelta 2 · tarea: <texto> · venta: 2 Ryzen 5 7600 a 2800 · modelo haiku|sonnet|opus · uso · nueva charla.\n"
-         "La PC: estado pc · prender pc · apagar pc · ronda ahora · pc: <encargo puntual, por ejemplo pc: pregúntale a Shopping PC por la 5600> · salud.")
+         "La PC: estado pc · prender pc · apagar pc · ronda ahora · pc: <encargo puntual, por ejemplo pc: pregúntale a Shopping PC por la 5600> · salud.\n"
+         "El equipo: meta wa: 10 tiendas nuevas hoy (obligatoria) · chat (lo que te preguntan los agentes) · chat pedidos: <respuesta>.")
 
 cargar("~/.cargo-bot", ("CLAUDE_CODE_OAUTH_TOKEN", "CLAUDE_MODELO", "MAX_PREGUNTAS_DIA", "AVISOS", "PC_MAC", "PC_IP"))
 TOKEN, CHAT = cargar("~/.telegram", ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"))
@@ -208,6 +212,71 @@ def cmd_tarea(agente, texto):
     return f"Anotada la tarea {hoy}-{n} para {agente}, aprobada.{aviso}" + ("" if ok else " (no pude subirla a GitHub todavía)")
 
 
+def cmd_meta(agente, texto):
+    """Meta obligatoria de Santi para hoy: el agente no termina su turno sin cumplirla (salvo lo prohibido o lo que no
+    dependa de él). Queda en plan.csv aprobada, prioridad alta y obligatoria."""
+    actualizar_repo()
+    campos, filas = leer_csv("plan.csv")
+    hoy = ahora().strftime("%Y-%m-%d")
+    n = 1 + max([int(f["id"].rsplit("-", 1)[-1]) for f in filas if f["id"].startswith(hoy)] or [0])
+    num = re.search(r"\d+", texto)
+    filas.append({c: "" for c in campos} | {
+        "id": f"{hoy}-{n}", "fecha_para": hoy, "agente": agente, "tarea": texto.strip(),
+        "motivo": "meta obligatoria de Santi por Telegram", "estado": "aprobado", "propuesto_por": "santi",
+        "fecha_propuesta": hoy, "decision": "Telegram " + ahora().strftime("%d/%m %H:%M"),
+        "prioridad": "alta", "plazo": hoy, "meta": num.group(0) if num else "", "obligatoria": "sí"})
+    escribir_csv("plan.csv", campos, filas)
+    anotar_actividad(f"Telegram (Raspberry): meta obligatoria de Santi {hoy}-{n} para {agente}")
+    try:
+        import chat
+        chat.escribir("gerente", agente, f"Meta de Santi para hoy (obligatoria, tarea {hoy}-{n}): {texto.strip()}", ref=f"{hoy}-{n}")
+    except Exception as e:
+        print(f"chat: {e!r}", flush=True)
+    ok = subir("Plan: meta obligatoria de Santi por Telegram (Raspberry)", extra=("chat.csv",))
+    return (f"Anotada la meta {hoy}-{n} para {NOMBRES.get(agente, agente)}: es obligatoria para hoy y se la pasé en el chat. "
+            "Si algo no depende de él (una tienda que no contesta), te explica qué faltó." + ("" if ok else " (no pude subirla a GitHub todavía)"))
+
+
+def cmd_chat(agente, texto):
+    """Santi le contesta (o le escribe) a un agente por el chat interno."""
+    actualizar_repo()
+    import chat
+    pend = [f for f in chat.pendientes() if f["de"] == agente]
+    f = chat.escribir("santi", agente, texto, respuesta_a=pend[-1]["id"] if pend else "")
+    anotar_actividad(f"Telegram (Raspberry): Santi le escribió a {agente} por el chat interno")
+    ok = subir("Chat: mensaje de Santi a un agente (Raspberry)", extra=("chat.csv",))
+    quien = NOMBRES.get(agente, agente)
+    return (f"Listo, se lo pasé {'al ' + quien[3:] if quien.startswith('el ') else 'a ' + quien} (mensaje {f['id']}). Lo lee al empezar su próximo turno."
+            + ("" if ok else " (no pude subirlo a GitHub todavía)"))
+
+
+def cmd_chat_pendientes():
+    actualizar_repo()
+    import chat
+    p = chat.pendientes()
+    if not p:
+        return "Nadie del equipo está esperando respuesta en el chat."
+    return "Te están esperando en el chat:\n" + "\n".join(
+        f"- {NOMBRES.get(f['de'], f['de'])} ({f['fecha'][8:10]}/{f['fecha'][5:7]} {f['hora']}): {f['texto']}" for f in p[-8:]) + \
+        "\nContesta así: chat pedidos: <tu respuesta>"
+
+
+def avisar_chat_nuevo(estado):
+    """Pasa a Santi (sin IA) lo que los agentes le escriben a él o al Gerente en el chat interno."""
+    try:
+        import chat
+    except Exception:
+        return
+    vistos = set(estado.get("chat_vistos", []))
+    pend = chat.pendientes()
+    nuevos = [f for f in pend if f["id"] not in vistos and f["de"] not in ("santi", "gerente")]
+    if estado.get("chat_vistos") is not None:  # la primera vez solo registra
+        for f in nuevos:
+            responder(f"Santi, {NOMBRES.get(f['de'], f['de'])} pregunta en el chat del equipo: {f['texto']}\n"
+                      f"Si quieres contestarle: chat {f['de']}: <tu respuesta>")
+    estado["chat_vistos"] = sorted(vistos | {f["id"] for f in pend})[-300:]
+
+
 def producto_de(texto):
     """El producto de vigilar.csv que coincide con lo que escribió Santi: deben estar todos sus números de modelo
     (7600, 2tb, 12400f, ddr5, 6000...) y gana el que comparte más palabras."""
@@ -326,7 +395,8 @@ ofrece nada) y catalogos.csv (catálogos y listas de precios que mandan las tien
 responder o seguimiento hoy, cuáles esperar y cuáles están frías) y alertas-estado.json (las alertas de precio y dólar que ya le
 llegaron a Santi por Telegram), verificar.py (`python3 verificar.py todo`: si cada agente dejó bien sus archivos; ERROR =
 algo mal, AVISO = demoras, plazos de reclamo, revisiones viejas) y .claude/skills/ (el manual de cada puesto, desde el 17/10;
-reglas-cargo-brothers es la común). Las ventas las anota Santi con `venta: 2 Ryzen 5 7600 a 2800`. Las reglas están en CLAUDE.md.
+reglas-cargo-brothers es la común), chat.csv (`python3 chat.py ver`: el chat interno; los agentes te escriben ahí y tú les
+contestas con ACCION: chat) y en plan.csv las columnas prioridad, plazo, meta y obligatoria (las metas de Santi). Las ventas las anota Santi con `venta: 2 Ryzen 5 7600 a 2800`. Las reglas están en CLAUDE.md.
 Nunca inventes cifras ni hechos: si no está en los archivos, dilo. La ganancia de la tabla es potencial hasta que haya ventas.
 Como buen gerente, estás atento a lo que le falta al equipo para trabajar (información, decisiones o acciones de Santi):
 al inicio de cada mensaje te paso la lista actual de necesidades. Cuéntaselas a Santi cuando vengan al caso o sean
@@ -336,6 +406,8 @@ ACCION: aprobar 1 3          (tareas propuestas de plan.csv, por su número fina
 ACCION: rechazar 2
 ACCION: tarea <agente>: <qué hacer>   (agente: wa, mkt, ebay, pedidos, ana, fin, dem o local)
 ACCION: resuelta 2           (Santi dice que ya resolvió la necesidad número 2 de los pedidos de los agentes)
+ACCION: meta <agente>: <meta de hoy>   (obligatoria: "hoy WhatsApp 10 tiendas sí o sí"; el agente no termina sin cumplirla)
+ACCION: chat <agente>: <texto>         (le pasas a un agente la respuesta o la instrucción de Santi por el chat interno)
 ACCION: pc prender            (solo prende la PC de la casa)
 ACCION: pc apagar             (apaga la PC en unos minutos, con 2 minutos de aviso en pantalla)
 ACCION: pc ronda              (prende la PC y hace una ronda completa ya)
@@ -408,7 +480,13 @@ def ejecutar_acciones(salida):
         a = re.match(r"(aprobar|rechazar)\s+([\d ,y]+)", simple(orden))
         res = re.match(r"resuelta\s+([\d ,y]+)", simple(orden))
         pc = re.match(r"pc\s+(ronda|prender|apagar|encargo)\s*:?\s*(.*)", orden, re.I | re.S)
-        if pc:
+        me = re.match(r"meta\s+(\w+)\s*:\s*(.+)", orden, re.I)
+        ch = re.match(r"chat\s+(\w+)\s*:\s*(.+)", orden, re.I)
+        if me and me.group(1).lower() in AGENTES:
+            hechos.append(cmd_meta(me.group(1).lower(), me.group(2)))
+        elif ch and ch.group(1).lower() in AGENTES:
+            hechos.append(cmd_chat(ch.group(1).lower(), ch.group(2)))
+        elif pc:
             k = pc.group(1).lower()
             hechos.append(cmd_prender_pc() if k == "prender" else cmd_apagar_pc() if k == "apagar" else cmd_pedido_pc(k, pc.group(2)))
         elif res:
@@ -551,6 +629,20 @@ def atender(texto, estado):
             return "Modelos: haiku (gasta muy poco), sonnet (intermedio) u opus (el mejor, gasta más)."
         estado["modelo"] = m.group(1)
         return f"Listo: las preguntas van con {m.group(1)}."
+    if t in ("chat", "/chat", "chat del equipo"):
+        return cmd_chat_pendientes()
+    m = re.match(r"meta\s+(\w+)\s*:\s*(.+)", texto.strip(), re.I | re.S)
+    if m:
+        agente = m.group(1).lower()
+        if agente not in AGENTES:
+            return f"No conozco al agente '{agente}'. Usa: {', '.join(AGENTES)}."
+        return cmd_meta(agente, m.group(2))
+    m = re.match(r"chat\s+(\w+)\s*:\s*(.+)", texto.strip(), re.I | re.S)
+    if m:
+        agente = m.group(1).lower()
+        if agente not in AGENTES:
+            return f"No conozco al agente '{agente}'. Usa: {', '.join(AGENTES)}."
+        return cmd_chat(agente, m.group(2))
     m = re.match(r"(?:venta|vend[ií])\s*:?\s*(.+)", texto.strip(), re.I | re.S)
     if m:
         return cmd_venta(m.group(1))
@@ -584,8 +676,9 @@ def main():
             try:
                 actualizar_repo()
                 avisar_necesidades_nuevas(estado)
+                avisar_chat_nuevo(estado)
             except Exception as e:
-                print(f"revisión de necesidades: {e!r}", flush=True)
+                print(f"revisión de necesidades y chat: {e!r}", flush=True)
             guardar_estado(estado)
             if os.path.getmtime(os.path.abspath(__file__)) != ARRANQUE:
                 print("bot.py cambió con el git pull: me reinicio para usar la versión nueva", flush=True)

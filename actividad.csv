@@ -24,23 +24,23 @@ fecha,hora,agente,texto
 2026-10-12,11:54,mkt,"búsqueda de 7600, 12400F, 9950X y 265K: sin precios útiles (solo PCs armadas o anuncios a Bs 1); tienda nueva encontrada en el C.C. Supermall"
 2026-10-12,11:55,wa,"consulta a la tienda del C.C. Supermall (7800X3D, 9950X, 265K); 4 chats nuevos hoy"
 2026-10-12,12:00,nube,"informe diario reescrito con precios reales de eBay; dólar del día 11,85 (BCB 11,73 · paralelo 11,86/11,83)"
-2026-10-12,12:00,ebay,"sin corrida nueva: ya había 26 precios de la API hoy (12 nuevos y 14 usados)"
-2026-10-12,12:00,ana,"5 productos nuevos y 7 usados convienen (≥ 15 %)"
+2026-10-12,12:00,ebay,sin corrida nueva: ya había 26 precios de la API hoy (12 nuevos y 14 usados)
+2026-10-12,12:00,ana,5 productos nuevos y 7 usados convienen (≥ 15 %)
 2026-10-12,12:08,wa,"Supermall: 9950X OEM Bs 6.140 · ofrece ""7700x3d"" Bs 4.760 (confirmar modelo) · 265K solo en Santa Cruz · PC Components (SCZ): Corsair DDR5 32GB 6000 Bs 6.800, NVMe 1TB Bs 1.800–2.100; se repreguntó por 2/4; sin chats nuevos"
 2026-10-12,12:08,mkt,"Corsair DDR5 32GB 5600 usada Bs 4.500; 12400F, 5600 y 5700X3D sin anuncios sueltos"
-2026-10-12,12:08,ebay,"sin corrida nueva: ya había precios de la API hoy"
+2026-10-12,12:08,ebay,sin corrida nueva: ya había precios de la API hoy
 2026-10-12,16:35,wa,"PC de la casa: PC Components (SCZ) Corsair DDR5 32GB 6000 Bs 6.700 c/u llevando 2 · Supermall: 9950X precio final, sin descuento por cantidad · Electro-TTS: ""No case"" (dudoso) · Gamer Store, Smart Cube, TecnoGamer y Geek Store sin respuesta; sin chats nuevos"
 2026-10-12,17:00,mkt,"catálogo web de Punto Tecnológico (tienda del Supermall): 10 precios de CPU, RAM y SSD que cuentan y 6 que no (agotados con precio viejo u otra marca); primeros precios locales de 7600 y 12400F"
 2026-10-12,17:07,wa,"PC de la casa: 5 consultas nuevas (Click Importadora, Display Importadora, T&T Todo en Tecnología, Viadata, SpartanComputer); Importadora Fusión sin WhatsApp; 9 chats nuevos hoy en total"
-2026-10-12,17:20,wa,"respuestas: Click Importadora sin stock · SpartanComputer no tiene esos componentes · Viadata “verifico” · Display Importadora y T&T sin respuesta"
+2026-10-12,17:20,wa,respuestas: Click Importadora sin stock · SpartanComputer no tiene esos componentes · Viadata “verifico” · Display Importadora y T&T sin respuesta
 2026-10-12,17:10,ebay,"captura de eBay: Ryzen 5 7600 nuevo a USD 143,24 con envío gratis (PC de la casa)"
 2026-10-12,17:42,wa,"Viadata: 7800X3D OEM Bs 5.500 · 5600X OEM Bs 2.500 (referencia) · 265KF en caja Bs 5.200 (referencia); TecnoGamer solo mensaje automático; Display Importadora, T&T, Smart Cube y Geek Store sin respuesta"
-2026-10-12,17:44,ana,"recalculado con los precios de Viadata: el 7800X3D sigue en 14 % (el mejor local es Bs 4.760); 6 productos convienen"
+2026-10-12,17:44,ana,recalculado con los precios de Viadata: el 7800X3D sigue en 14 % (el mejor local es Bs 4.760); 6 productos convienen
 2026-10-12,18:19,mkt,"Messenger: 3 vendedores consultados (7800X3D, i5 14400, Corsair DDR5 6000) · i5 14400 confirmado: es el de gráficos, nuevo en blíster, final Bs 2.700 (no es el 14400F) · chat archivado"
-2026-10-12,18:21,mkt,"SanDisk 2TB de Bs 3.550 es un SSD externo (no NVMe): ya no cuenta · el anuncio Bs 1 del 7800X3D es de Punto Tecnológico (ya cotizado): no hizo falta escribir · esperando a Nicolas (7800X3D) y Maritza (Corsair DDR5)"
-2026-10-12,18:37,mkt,"Messenger: sin respuesta todavía de Nicolas (7800X3D) ni de Maritza (Corsair DDR5); revisar en la próxima ronda y archivar al tener la información"
+2026-10-12,18:21,mkt,SanDisk 2TB de Bs 3.550 es un SSD externo (no NVMe): ya no cuenta · el anuncio Bs 1 del 7800X3D es de Punto Tecnológico (ya cotizado): no hizo falta escribir · esperando a Nicolas (7800X3D) y Maritza (Corsair DDR5)
+2026-10-12,18:37,mkt,Messenger: sin respuesta todavía de Nicolas (7800X3D) ni de Maritza (Corsair DDR5); revisar en la próxima ronda y archivar al tener la información
 2026-10-12,18:51,wa,"mensajes para conocer a 5 tiendas sin stock (Click Importadora, SpartanComputer, Ovni Express, Compucenter y MSR): qué se les agota y si compran a particulares; sin ofrecer precios"
-2026-10-12,19:20,pedidos,"agente nuevo: rastrea compras de eBay y el courier; esperando que se inicie sesión en eBay en Chrome y las guías del courier"
+2026-10-12,19:20,pedidos,agente nuevo: rastrea compras de eBay y el courier; esperando que se inicie sesión en eBay en Chrome y las guías del courier
 2026-10-12,21:00,pedidos,"pedido de prueba (familiar) USPS: etiqueta creada el 11/10 en Gray, LA; USPS todavía no recibió el paquete"
 2026-10-13,08:00,nube,"revisión diaria: dólar 11,87 (oficial 11,73; paralelo 11,85/11,88); eBay API nuevo y usado (24 precios reales); comparación, Excel, historial e informe 2026-10-13. Mejores: Ryzen 5 7600 y SSD 2TB nuevos (~35 %)"
 2026-10-13,10:15,wa,"revisión: solo respondió Compucenter (importa directo desde Miami, no busca proveedores); el resto sin novedades desde ayer"
@@ -50,7 +50,7 @@ fecha,hora,agente,texto
 2026-10-13,10:40,mkt,Messenger: sin respuesta todavía del 7800X3D sellado (Bs 4.800) ni de la Corsair DDR5 RS (Bs 6.200); se revisa en la próxima ronda
 2026-10-13,10:55,gerente,"agente nuevo: métricas diarias, supervisión del equipo y plan con aprobación de Santi; informe de prueba en Drive (INFORME DIARIO); primera corrida real hoy 20:00"
 2026-10-13,11:07,gerente,"puesto nuevo en la oficina: escritorio con dos monitores de métricas y pantalla con el panel de datos completo (contacto, precios, oportunidades, equipo, plan)"
-2026-10-13,14:08,pedidos,"PC al día: tarea 'Ronda local de la tarde' (lun-sáb 16:00) creada; correo del agente probado (solo lectura)"
+2026-10-13,14:08,pedidos,PC al día: tarea 'Ronda local de la tarde' (lun-sáb 16:00) creada; correo del agente probado (solo lectura)
 2026-10-13,18:30,pedidos,2 pedidos de prueba nuevos (hermana de Santi): GOFO Express y SpeedX; quedan por rastrear con Chrome en la próxima ronda local
 2026-10-13,16:18,wa,"PC de la casa: OverCity 7800X3D OEM Bs 5.500 · i5-14400F OEM Bs 2.460 (Corsair DDR5 agotada, tiene Apacer y XPG) · Soft Computers i5-14400F Bs 2.500 (RAM solo DDR4) · repreguntas enviadas a las dos; sin chats nuevos (9/10 hoy); seguimientos a Gamer Store y Geek Store quedan para mañana"
 2026-10-13,16:20,mkt,"catálogo web de Legion Gamer Store: sin precios (solo Cotizar); tienen 265K, i5-14400 y 12400F, ningún Ryzen de la lista"
@@ -61,19 +61,19 @@ fecha,hora,agente,texto
 2026-10-13,17:21,gerente,"Santi aprobó las 5 tareas del plan del 14/10 (la 3 sin aprobación de texto; la 4 verificando antes) · courier A confirmado en Florida, Miami-Dade: 7 % de sales tax (6 % estatal + 1 % del condado), igual al que ya se usaba"
 2026-10-13,17:23,gerente,courier A confirmado por Santi: no cobra aduana aparte (0 % fijo para A); el costo con A queda USD 10/u + 7 % de tax
 2026-10-13,17:24,ana,"aduana confirmada por Santi: incluida en los dos couriers (B dentro de los USD 28/kg; A no la cobra); comparación, Excel y oficina con el texto actualizado (los números no cambian)"
-2026-10-13,17:27,wa,"Ronda manual Mac (tarde): OverCity dio la XPG DDR5 32GB 6000 a Bs 6.840 y garantía de 3 meses (Corsair agotada); repregunta por descuento llevando 2. 17:31 chat nuevo con Hardware Technology (Ryzen 5 5600 y 5700X3D): 10/10 chats nuevos del día"
+2026-10-13,17:27,wa,Ronda manual Mac (tarde): OverCity dio la XPG DDR5 32GB 6000 a Bs 6.840 y garantía de 3 meses (Corsair agotada); repregunta por descuento llevando 2. 17:31 chat nuevo con Hardware Technology (Ryzen 5 5600 y 5700X3D): 10/10 chats nuevos del día
 2026-10-13,17:35,mkt,"Messenger: el vendedor del 7800X3D confirmó sellado de fábrica, Bs 4.800 ya rebajado (acepta ofertas: no se oferta); Maritza sin respuesta, recordatorio el 14/10 por la regla de 2 días. Marketplace: sin 5600, 5700X3D, 7600, 12400F ni 13400 sueltos. Legion: catálogo web sin precios. PC Factor (Quillacollo) anotada para mañana"
 2026-10-13,17:36,pedidos,"USPS de prueba sin cambios (recogido en Gray, LA; llega el 17/10). Sesión de eBay abierta por Santi en Chrome: falta su OK para leer las compras"
-2026-10-13,17:45,pedidos,"Sesión de eBay abierta por Santi (sant_6880): Compras sin pedidos todavía (solo lectura). Necesidad de la sesión de eBay marcada resuelta"
+2026-10-13,17:45,pedidos,Sesión de eBay abierta por Santi (sant_6880): Compras sin pedidos todavía (solo lectura). Necesidad de la sesión de eBay marcada resuelta
 2026-10-13,17:50,ana,"Selección de posibles clientes a futuro en clientes-potenciales.csv (33 tiendas en 6 grupos): alta prioridad Ovni Express, Click Importadora, SpartanComputer (sin stock) y Gamer Store (arma PCs). No se ofrece nada todavía"
-2026-10-13,17:39,wa,"OverCity: 7800X3D en caja sellada Bs 5.350 e i5-14400F Bs 2.460 como precio mínimo; se agradeció sin compromiso"
+2026-10-13,17:39,wa,OverCity: 7800X3D en caja sellada Bs 5.350 e i5-14400F Bs 2.460 como precio mínimo; se agradeció sin compromiso
 2026-10-13,17:55,wa,"Listas de WhatsApp creadas según clientes-potenciales.csv: A Sin stock (4), B Arman PCs (5), C Revenden (4), D No apuntar (2), E Por calificar (12). Las del grupo F no tienen WhatsApp"
-2026-10-13,18:25,gerente,"Informe diario 13/10 subido a Drive; 6 tareas propuestas para el 14/10 (ids 6-11); 0 mensajes de Telegram procesados (la nube no tiene claves de Telegram); sin alertas"
+2026-10-13,18:25,gerente,Informe diario 13/10 subido a Drive; 6 tareas propuestas para el 14/10 (ids 6-11); 0 mensajes de Telegram procesados (la nube no tiene claves de Telegram); sin alertas
 2026-10-13,18:21,gerente,aviso del informe del 13/10 reenviado por Telegram desde la nube (a las 20:00 faltaban las claves en el entorno; ya funcionan)
-2026-10-13,18:23,gerente,regla nueva en CLAUDE.md: los mensajes del Gerente a Santi por Telegram van con su personalidad (chat cálido y directo), no como reporte
+2026-10-13,18:23,gerente,"regla nueva en CLAUDE.md: los mensajes del Gerente a Santi por Telegram van con su personalidad (chat cálido y directo), no como reporte"
 2026-10-13,18:26,gerente,mensaje de prueba por Telegram con el tono nuevo del Gerente (pedido de Santi); sin tareas nuevas
-2026-10-13,20:10,gerente,"Rutina 20:00: sin cambios desde el informe del 13/10 (mismo Doc); 0 mensajes de Telegram; 0 tareas nuevas (siguen propuestas 6-11); aviso a Santi por Telegram"
-2026-10-14,07:55,ebay,"API: 12 precios nuevos y 14 usados (26 filas reales); un reintento por error SSL en usados"
+2026-10-13,20:10,gerente,Rutina 20:00: sin cambios desde el informe del 13/10 (mismo Doc); 0 mensajes de Telegram; 0 tareas nuevas (siguen propuestas 6-11); aviso a Santi por Telegram
+2026-10-14,07:55,ebay,API: 12 precios nuevos y 14 usados (26 filas reales); un reintento por error SSL en usados
 2026-10-14,07:58,ana,"Comparación recalculada con dólar 11,86: nuevo conviene Ryzen 5 7600, SSD 2TB, Core Ultra 7 265K, i5-12400F (4 productos); usado conviene 9"
 2026-10-14,08:00,nube,"Revisión diaria hecha: dólar, eBay API, Excel, copia del día, informe 14/10; 0 mensajes de Telegram"
 2026-10-14,10:47,wa,"Ronda Mac (mañana): sin respuestas nuevas desde anoche; un solo seguimiento a Gamer Store, Geek Store, Smart Cube, TecnoGamer y T&T. Display Importadora: el mensaje del 12/10 nunca se entregó (número probablemente inactivo). TecnoGamer respondió que no vende componentes internos → grupo D"
@@ -84,11 +84,11 @@ fecha,hora,agente,texto
 2026-10-14,11:39,gerente,"oficina publicada desde la nube por pedido de Santi: botón Necesidades e ideas en cada agente con aprobación (solo Santi), tablero del equipo en la pared, simulador de pedido y gráficos de precios"
 2026-10-14,11:39,fin,"agente nuevo: Finanzas e inventario (finanzas.py, ventas.csv); sin compras del negocio todavía"
 2026-10-14,11:39,dem,"agente nuevo: Analista de demanda (demanda.py, demanda.csv); empieza a contar anuncios en la próxima ronda de Marketplace"
-2026-10-14,13:41,gerente,oficina más ancha hacia la derecha (52 m): 9 m entre escritorios, Finanzas y Demanda con más espacio, tablero y archivero al fondo a la derecha; etiquetas más compactas
-2026-10-14,14:48,gerente,"Raspberry instalada y prendida (bot de Telegram del Gerente); desde ahora solo ella lee Telegram (raspberry/ACTIVA) y las demás sesiones solo mandan avisos"
-2026-10-14,14:50,pedidos,"Telegram configurado en la PC: aviso de prueba enviado con notificar.py (la Raspberry es la única que lee Telegram)"
-2026-10-14,14:55,gerente,regla aclarada: Santi puede subir el límite de chats nuevos de un día con una tarea aprobada (máximo 20, repartidos entre Mac y PC)
-2026-10-14,20:10,gerente,"Informe diario 14/10 subido a Drive; 5 tareas propuestas para el 15/10 (ids 12-16); 0 mensajes de Telegram (los lee la Raspberry); sin alertas; aviso: sin filas de la ronda de la PC ni de demanda"
+2026-10-14,13:41,gerente,"oficina más ancha hacia la derecha (52 m): 9 m entre escritorios, Finanzas y Demanda con más espacio, tablero y archivero al fondo a la derecha; etiquetas más compactas"
+2026-10-14,14:48,gerente,Raspberry instalada y prendida (bot de Telegram del Gerente); desde ahora solo ella lee Telegram (raspberry/ACTIVA) y las demás sesiones solo mandan avisos
+2026-10-14,14:50,pedidos,Telegram configurado en la PC: aviso de prueba enviado con notificar.py (la Raspberry es la única que lee Telegram)
+2026-10-14,14:55,gerente,"regla aclarada: Santi puede subir el límite de chats nuevos de un día con una tarea aprobada (máximo 20, repartidos entre Mac y PC)"
+2026-10-14,20:10,gerente,Informe diario 14/10 subido a Drive; 5 tareas propuestas para el 15/10 (ids 12-16); 0 mensajes de Telegram (los lee la Raspberry); sin alertas; aviso: sin filas de la ronda de la PC ni de demanda
 2026-10-14,23:56,gerente,Telegram (Raspberry): tarea nueva de Santi 2026-10-14-12 para wa
 2026-10-15,11:55,ebay,"API: 12 precios nuevos y 12 usados (todos reales, verificados contra el título)"
 2026-10-15,11:56,ana,"Comparación recalculada con dólar 11,85: 5 productos nuevos y 10 usados convienen (≥15 %)"
@@ -98,42 +98,42 @@ fecha,hora,agente,texto
 2026-10-15,10:37,local,"Ronda de la mañana (Mac): 4 decisiones de la oficina aplicadas (tareas 14-6, 14-7, 14-8 y 14-9 aprobadas); dólar y eBay de hoy ya estaban (nube)"
 2026-10-15,11:06,wa,"6 respuestas con precio: Smart Cube 7800X3D Bs 5.890 y 14400F Bs 3.080; OverCity 7600 OEM Bs 2.800; T&T 12400F Bs 2.260 y 14400F Bs 2.750 (con cooler); 7 seguimientos; 5 chats nuevos (5/10 del día); PC Morgana, Hardware Technology y PCBOX sin stock; DyD era número equivocado"
 2026-10-15,11:06,mkt,"Google Maps: 6 tiendas nuevas (ECOM, NF Evolution, Shopping PC, PCBOX, MI PC sin WhatsApp; web de Shopping PC sin precios); Marketplace sin productos de la lista sueltos; el 7800X3D sellado de Bs 4.800 ya no está disponible"
-2026-10-15,11:06,dem,"primera cuenta de demanda en Marketplace Cochabamba: 0 anuncios de los procesadores y de la Corsair DDR5; 1 DDR4 16GB 3200 (Bs 1.950) y 1 SSD 1TB"
-2026-10-15,11:06,pedidos,"3 guías revisadas: USPS en Memphis (llega el 17/10); SpeedX entregado en Miami hoy 9:28 (falta confirmación del courier); GOFO sin cambios (entregado 13/10)"
+2026-10-15,11:06,dem,primera cuenta de demanda en Marketplace Cochabamba: 0 anuncios de los procesadores y de la Corsair DDR5; 1 DDR4 16GB 3200 (Bs 1.950) y 1 SSD 1TB
+2026-10-15,11:06,pedidos,3 guías revisadas: USPS en Memphis (llega el 17/10); SpeedX entregado en Miami hoy 9:28 (falta confirmación del courier); GOFO sin cambios (entregado 13/10)
 2026-10-15,11:13,gerente,Telegram (Raspberry): tarea nueva de Santi 2026-10-15-17 para local
 2026-10-15,17:49,gerente,Decisiones de Santi en la oficina: tarea 2026-10-14-10 rechazado desde la oficina; tarea 2026-10-15-12 aprobado desde la oficina; tarea 2026-10-15-14 aprobado desde la oficina
 2026-10-15,17:53,wa,"Ronda de repaso (Mac, la PC no corrió a las 16:00): 4 respuestas leídas (Geek Store: 7700X Bs 3.480 y DDR5 16GB Fury Bs 2.900; Shopping PC mandó lista en PDF; T&T garantía 6 meses; Computer World preguntó para qué es); 6 mensajes enviados; Soft Computers consultado por 7600 y 12400F (tarea 15-14); sin chats nuevos (5/10 del día)"
 2026-10-15,17:55,pedidos,"1 guía revisada: USPS sigue en Memphis, llega el 17/10; sin cambios"
-2026-10-15,17:55,mkt,"sin ronda de Marketplace en el repaso de la tarde (la cuenta del día ya se hizo a las 11:06)"
-2026-10-15,17:55,dem,"sin cuenta nueva: la de hoy se hizo a las 11:06"
+2026-10-15,17:55,mkt,sin ronda de Marketplace en el repaso de la tarde (la cuenta del día ya se hizo a las 11:06)
+2026-10-15,17:55,dem,sin cuenta nueva: la de hoy se hizo a las 11:06
 2026-10-15,18:05,local,"Tarea 2026-10-15-17 hecha: calles de Baton Rouge, Shreveport y Memphis para el mapa de Pedidos (Overpass daba error 500; mapa_datos.py ahora guarda el avance ciudad por ciudad)"
-2026-10-15,18:06,fin,"sin compras del negocio todavía (los pedidos de prueba no cuentan)"
-2026-10-15,18:06,ana,"Comparación recalculada con los precios de la tarde: 4 productos convienen (≥15 %)"
+2026-10-15,18:06,fin,sin compras del negocio todavía (los pedidos de prueba no cuentan)
+2026-10-15,18:06,ana,Comparación recalculada con los precios de la tarde: 4 productos convienen (≥15 %)
 2026-10-15,18:35,local,Santi da permiso permanente para bajar y leer catálogos de tiendas; nuevo cajón Catálogos de tiendas en el Archivo (catalogos.csv + oficina/catalogos/); el PDF de Shopping PC queda para la próxima ronda (Chrome sin conexión)
 2026-10-15,18:40,wa,Catálogo de Shopping PC bajado y leído (permiso de Santi): lista mayorista en USD con 100+ productos; de lo vigilado cuenta el SSD Kingston NV3 1TB Bs 1.754; i5-14400 BOX USD 235 y RAM DDR4 16GB como referencia; garantía solo de prueba. Guardado en el cajón Catálogos de tiendas (tarea 2026-10-16-1 adelantada)
 2026-10-15,18:50,gerente,"Puesta al día del Gerente: catálogos de tiendas (permiso permanente, catalogos.csv, cajón en el Archivo) y clientes-potenciales.csv agregados a la rutina de las 20:00 y al bot de la Raspberry; el bot ahora se reinicia solo cuando cambia su código"
-2026-10-15,20:10,gerente,"Informe diario 15/10 subido al Doc; 5 tareas propuestas (2026-10-16-2 a 6); 3 tareas marcadas hecho y 2 necesidades resueltas; 0 mensajes de Telegram (la Raspberry los lee)"
+2026-10-15,20:10,gerente,Informe diario 15/10 subido al Doc; 5 tareas propuestas (2026-10-16-2 a 6); 3 tareas marcadas hecho y 2 necesidades resueltas; 0 mensajes de Telegram (la Raspberry los lee)
 2026-10-15,22:10,wa,"Ronda de la noche (PC, arrancó 22:02 en vez de 16:00): 2 respuestas leídas sin precio (Soft Computers solo tiene el i5-14400F; T&T cerró cordial); no se mandó nada por la hora (tiendas cerradas); sin chats nuevos (5/10 del día)"
 2026-10-15,22:14,pedidos,"1 guía revisada: USPS sigue en Memphis, llega el 17/10; sin cambios. GOFO y SpeedX siguen esperando que el courier confirme"
-2026-10-15,22:16,mkt,"Messenger: sin respuesta nueva de la vendedora de la Corsair DDR5 RS; correo del agente sin mensajes de tiendas; sin ronda de Marketplace (la cuenta del día se hizo 11:06)"
-2026-10-15,22:16,dem,"sin cuenta nueva: la de hoy se hizo a las 11:06"
-2026-10-15,22:17,fin,"sin compras del negocio todavía (los pedidos de prueba no cuentan)"
+2026-10-15,22:16,mkt,Messenger: sin respuesta nueva de la vendedora de la Corsair DDR5 RS; correo del agente sin mensajes de tiendas; sin ronda de Marketplace (la cuenta del día se hizo 11:06)
+2026-10-15,22:16,dem,sin cuenta nueva: la de hoy se hizo a las 11:06
+2026-10-15,22:17,fin,sin compras del negocio todavía (los pedidos de prueba no cuentan)
 2026-10-15,22:19,ana,"Comparación recalculada en la ronda de la noche: sin precios nuevos, 4 productos convienen (≥15 %)"
 2026-10-15,19:20,gerente,"Más personalidad (pedido de Santi): personaje del Gerente en CLAUDE.md (opina, se alegra y se preocupa, trata a los agentes como equipo, habla como en chat y nunca suena a plantilla); el bot de la Raspberry y los avisos de las 8:20 y 13:30 lo usan desde ahora"
 2026-10-15,22:39,local,"PC: leídas las dos puestas al día de la Mac (15/10 18:50 y 22:40): catálogos con permiso permanente, Raspberry por nombre (cargobrothers.local) con reinicio automático y modelo sonnet, personalidad del Gerente, textos del piso, regla de avisar al Gerente de todo cambio."
 2026-10-15,22:39,local,"Por qué no corrió la ronda de las 16:00 del 15/10: la PC estuvo apagada desde las 00:56 (apagado normal) hasta las 21:57; la tarea programada corre solo con la PC prendida y la app de Claude abierta, así que se disparó apenas se abrió la app (22:01) y esa fue la ""ronda de la noche"". El 14/10 la de las 16:07 se cortó a los 10 s esperando un permiso (todavía no estaba aprobado). Para que corra a las 16:00 la PC tiene que quedar prendida con la app abierta (la suspensión ya está desactivada con corriente)."
 2026-10-15,22:39,gerente,"Novedades del equipo para el Gerente (15/10): agenda.py (seguimientos de WhatsApp: responder, seguir hoy, esperar, frías), alertas.py → alertas-estado.json (eBay baja ≥ 10 %, algo pasa a convenir, dólar ≥ 1 %, por Telegram una sola vez), ventas por Telegram (venta: …) o desde la pantalla de Finanzas, y pantallas propias de eBay, WhatsApp, Analista, Informe diario, Finanzas y Demanda. Ya están en CLAUDE.md, en la rutina de las 20:00 y en el bot de la Raspberry."
-2026-10-16,08:00,ebay,"API: 12 precios nuevos y 12 usados (revisados: modelos y capacidades correctos)"
+2026-10-16,08:00,ebay,API: 12 precios nuevos y 12 usados (revisados: modelos y capacidades correctos)
 2026-10-16,08:00,ana,"Comparación recalculada con dólar 11,81: 5 productos nuevos convienen (SSD 2TB, Ryzen 5 7600, 265K, 7800X3D, SSD 1TB); 9 usados"
 2026-10-16,08:00,nube,"Revisión diaria hecha: dólar (oficial 11,68, paralelo 11,81), Excel, copia del día e informe. Telegram: la Raspberry lo lee, no se leyeron mensajes."
 2026-10-16,13:47,wa,"Ronda de la Mac (13:35): 3 respuestas leídas y 1 con precio (Soft Computers: i5-14400F OEM Bs 2.500 también por 2); MSR contestó ""No"" y pasó a D No apuntar; Shopping PC solo tiene lo de su lista; segundo y último seguimiento a Gamer Store"
 2026-10-16,13:50,wa,"1 chat nuevo (Punto Tecnológico, mayorista en la Esteban Arce, lista E Por calificar; dice que ya manda precios); PC Calderon no tiene WhatsApp. Chats nuevos del día: 1/10"
-2026-10-16,14:05,mkt,"Google Maps: 2 tiendas nuevas (Punto Tecnológico y PC Calderon); web de Cyrex: i5-14400F OEM USD 202 (Bs 2.384) y 7800X3D USD 480; Marketplace: SSD M.2 1TB nuevo Bs 1.730; Messenger sin respuestas nuevas de vendedores; correo del agente sin correos de tiendas"
+2026-10-16,14:05,mkt,Google Maps: 2 tiendas nuevas (Punto Tecnológico y PC Calderon); web de Cyrex: i5-14400F OEM USD 202 (Bs 2.384) y 7800X3D USD 480; Marketplace: SSD M.2 1TB nuevo Bs 1.730; Messenger sin respuestas nuevas de vendedores; correo del agente sin correos de tiendas
 2026-10-16,14:05,dem,"Cuenta de Marketplace Cochabamba más amplia que la del 15/10: Corsair DDR5 5600 (Bs 4.500) y 6000 RS (Bs 6.200) siguen activas, 3 kits DDR4 2x8 (desde Bs 1.400), 3 SSD NVMe 1TB (1 nuevo); ningún Ryzen de la lista suelto"
 2026-10-16,14:06,pedidos,"USPS de prueba salió de Memphis hoy 05:57, entrega estimada sábado 17/10; SpeedX y GOFO de prueba siguen esperando confirmación del courier"
-2026-10-16,14:07,fin,"sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)"
+2026-10-16,14:07,fin,sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)
 2026-10-16,14:15,ana,"Comparación recalculada (dólar 11,81) con los precios nuevos de la ronda: 5 nuevos convienen (SSD 2TB, Ryzen 5 7600, 265K, 7800X3D, SSD 1TB); el i5-14400F queda justo (12 %) con Cyrex a Bs 2.384; alerta: el i5-13400 usado pasa a convenir (16 %)"
-2026-10-16,20:08,gerente,"Informe diario 16/10 subido al Doc; 4 tareas propuestas (2026-10-17-1 a 4); 0 mensajes de Telegram (la Raspberry los lee); alerta: la ronda de la PC de las 16:00 no corrió"
+2026-10-16,20:08,gerente,Informe diario 16/10 subido al Doc; 4 tareas propuestas (2026-10-17-1 a 4); 0 mensajes de Telegram (la Raspberry los lee); alerta: la ronda de la PC de las 16:00 no corrió
 2026-10-17,08:00,ebay,"API: 12 precios nuevos y 12 usados (todos reales, revisados); el SSD 1TB nuevo de 110 USD ya no está, vuelve a 128,99"
 2026-10-17,08:02,ana,"Comparación recalculada (dólar 11,81): 4 nuevos convienen (Ryzen 5 7600, SSD 2TB, 265K, 7800X3D); alerta enviada: i5-13400 usado bajó 17 %"
 2026-10-17,08:05,nube,"Revisión diaria hecha: dólar, Excel, copia del día, informe 17/10; Telegram no se leyó (lo lee la Raspberry)"
@@ -141,29 +141,29 @@ fecha,hora,agente,texto
 2026-10-17,11:59,pedidos,"USPS de prueba volvió a salir de Memphis hoy 06:06; la entrega estimada pasó del sábado 17/10 al lunes 19/10. GOFO y SpeedX de prueba siguen en bodega del courier, sin cambios. Sin pedidos reales activos"
 2026-10-17,12:04,mkt,"Google Maps: 1 tienda nueva (PC Armagedon, arma PCs; El Chasqui resultó ser Gamer Store). Marketplace: el M.2 1TB nuevo bajó de Bs 1.730 a Bs 1.230 y aparecieron un M2 1TB a Bs 1.500 y Kingston NV3 a Bs 1.850; ningún procesador de la lista suelto. Messenger: sin respuestas nuevas de vendedores"
 2026-10-17,12:05,dem,"Cuenta de Marketplace Cochabamba: SSD NVMe 1TB es lo que más se mueve (6 anuncios, 3 nuevos, 1 desaparecido); las Corsair DDR5 5600 (Bs 4.500) y 6000 RS (Bs 6.200) siguen sin venderse; ningún Ryzen ni Intel de la lista suelto"
-2026-10-17,12:05,fin,"sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)"
+2026-10-17,12:05,fin,sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)
 2026-10-17,12:07,ana,"Comparación recalculada (dólar 11,81) con los precios de la ronda: 4 nuevos convienen (Ryzen 5 7600, SSD 2TB, 265K, 7800X3D); el 7600 ya tiene 3 precios locales (OverCity 2.800, Punto Tecnológico 2.850 por WhatsApp y 2.860 web), 35-36 %; el SSD 1TB pasa a no conviene con el anuncio de Bs 1.230"
 2026-10-17,13:50,wa,"Ronda de la PC (13:43): 1 respuesta (Punto Tecnológico: sus precios ya son los mínimos, sin rebaja por 2; 7800X3D sin stock, 9800X3D sí; se le preguntó el precio del 9800X3D); T&T solo había cerrado cordial. 2 chats nuevos (TECH COCHA y ADN Gamer Store, lista E Por calificar). Chats nuevos del día: 3/10. Frías: Display, Centro PC y PortatiComps"
 2026-10-17,13:51,pedidos,"USPS de prueba sin cambios: salió de Memphis el 17/10 06:06, entrega estimada lunes 19/10. GOFO y SpeedX de prueba siguen en bodega del courier. Sin pedidos reales activos"
-2026-10-17,13:53,mkt,"Google Maps: 3 tiendas nuevas (TECH COCHA y ADN Gamer Store con WhatsApp; Gamer Factory Bolivia sin teléfono). Marketplace: ningún Ryzen 5 7600 suelto. Messenger: sin mensajes nuevos de vendedores; archivado el chat del 7800X3D (ya dio precio). Correo del agente: sin correos de tiendas"
-2026-10-17,13:54,fin,"sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)"
+2026-10-17,13:53,mkt,Google Maps: 3 tiendas nuevas (TECH COCHA y ADN Gamer Store con WhatsApp; Gamer Factory Bolivia sin teléfono). Marketplace: ningún Ryzen 5 7600 suelto. Messenger: sin mensajes nuevos de vendedores; archivado el chat del 7800X3D (ya dio precio). Correo del agente: sin correos de tiendas
+2026-10-17,13:54,fin,sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)
 2026-10-17,13:56,ana,"Comparación recalculada en la ronda de la PC (dólar 11,81): sin precios nuevos de productos vigilados; siguen 4 nuevos que convienen (Ryzen 5 7600, SSD 2TB, 265K, 7800X3D)"
-2026-10-17,13:59,gerente,"aviso de fin de ronda enviado (ronda de la PC 13:43)"
+2026-10-17,13:59,gerente,aviso de fin de ronda enviado (ronda de la PC 13:43)
 2026-10-17,14:00,local,"apagar_pc.ps1: la PC queda prendida (arrancó 13:39, no la prendió la Raspberry para la ronda)"
 2026-10-17,15:55,local,"PC al día con la puesta al día 4 (17/10): tarea nueva ""Pedidos del Gerente"" cada hora de 8 a 21 lun-sáb (tareas/pedidos-pc.md; sin pedido-pc.json termina al instante); Ronda de la tarde 16:00 lun-sáb con sábado ligera, mira vivo/_ronda antes de empezar y anota sesiones.csv (paso 8d)."
 2026-10-17,16:11,gerente,Decisiones de Santi en la oficina: tarea 2026-10-17-2 aprobado desde la oficina; tarea 2026-10-17-4 aprobado desde la oficina; tarea 2026-10-17-1 aprobado desde la oficina
 2026-10-17,16:18,wa,"Ronda ligera de la PC (16:08): 2 respuestas con precio (PC Armagedon: combo Ryzen 5 7600 + 16GB DDR5 Bs 6.050, se le pidió el 7600 suelto; Punto Tecnológico: 9800X3D Bs 6.000 nuevo sellado). Seguimientos de la tarea aprobada: Legion Emporium y 4 Gamers (primero cada una; agenda.py no las listaba). Sin chats nuevos (sábado). Chats nuevos del día: 3/10"
-2026-10-17,16:18,mkt,"Ronda ligera: Messenger sin respuestas nuevas de vendedores; correo del agente sin correos de tiendas; sin catálogos nuevos"
+2026-10-17,16:18,mkt,Ronda ligera: Messenger sin respuestas nuevas de vendedores; correo del agente sin correos de tiendas; sin catálogos nuevos
 2026-10-17,16:18,pedidos,"USPS de prueba sin cambios (Memphis, entrega estimada lunes 19/10); GOFO y SpeedX de prueba siguen en bodega del courier. Sin pedidos reales activos"
 2026-10-17,16:18,gerente,"Decisiones de la oficina aplicadas: tareas 2026-10-17-1, 2 y 4 aprobadas y marcadas hecho (la 4 ya la cumplieron las rondas de hoy con 4 tiendas nuevas)"
-2026-10-17,16:21,fin,"sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)"
+2026-10-17,16:21,fin,sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)
 2026-10-17,16:21,ana,"Comparación recalculada en la ronda ligera (dólar 11,81): sin precios nuevos de productos vigilados (el combo de PC Armagedon y el 9800X3D no entran); siguen 4 nuevos que convienen (Ryzen 5 7600, SSD 2TB, 265K, 7800X3D)"
-2026-10-17,16:24,gerente,"aviso de fin de ronda enviado (ronda ligera de la PC 16:08)"
+2026-10-17,16:24,gerente,aviso de fin de ronda enviado (ronda ligera de la PC 16:08)
 2026-10-17,16:27,local,"apagar_pc.ps1: la PC queda prendida (arrancó 14:51, no la prendió la Raspberry para la ronda)"
 2026-10-17,16:35,gerente,"Limpieza del tablero (pedido de Santi): tareas 17-1, 17-2 y 17-4 marcadas hecho por rutina y la idea de contar anuncios marcada hecha (la hace el Analista de demanda); Vencidas muestra todas las tareas pasadas; búsqueda de tiendas en Instagram, Facebook y TikTok con rotación diaria desde el lunes"
 2026-10-17,16:32,gerente,Telegram (Raspberry): tarea nueva de Santi 2026-10-17-5 para local
 2026-10-17,16:32,gerente,Telegram (Raspberry): pedido a la PC (encargo) · tarea 2026-10-17-5
-2026-10-17,17:12,wa,"Encargo de Santi (17-5): agenda revisada y WhatsApp sin respuestas nuevas desde las 16:15; Punto Tecnológico y Gamer Store no escribieron de nuevo; nada que contestar"
+2026-10-17,17:12,wa,Encargo de Santi (17-5): agenda revisada y WhatsApp sin respuestas nuevas desde las 16:15; Punto Tecnológico y Gamer Store no escribieron de nuevo; nada que contestar
 2026-10-17,17:13,gerente,"aviso de fin de encargo enviado (encargo 17-5, PC)"
 2026-10-17,17:14,local,"apagar_pc.ps1: la PC queda prendida (arrancó 16:32 para el pedido, pero alguien la usó)"
 2026-10-17,17:19,local,"Tarea ""Pedidos del Gerente"" de la PC ahora cada 15 minutos de 8 a 21, lunes a sábado (cron */15 8-21 * * 1-6); sin pedido-pc.json termina al instante. CLAUDE.md actualizado."
