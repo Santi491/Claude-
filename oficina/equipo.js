@@ -39,6 +39,13 @@
 .eq-filter{display:flex;flex-wrap:wrap;gap:6px}
 .eq-filter button{font:600 12px var(--f-mono);background:#0D1D2A;color:var(--o-ink);border:1px solid var(--o-line);border-radius:999px;padding:6px 10px;min-height:32px;cursor:pointer}
 .eq-filter button[aria-pressed="true"]{background:var(--o-amber);color:#0B1620;border-color:var(--o-amber)}
+.eq-views{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--o-line);border-radius:8px;justify-self:start}
+.eq-views button:first-child{border-radius:7px 0 0 7px}.eq-views button:last-child{border-radius:0 7px 7px 0}
+.eq-views button{font:600 13px var(--f-body);background:#0D1D2A;color:var(--o-ink);border:0;padding:8px 14px;min-height:38px;cursor:pointer}
+.eq-views button+button{border-left:1px solid var(--o-line)}
+.eq-views button[aria-pressed="true"]{background:var(--o-amber);color:#0B1620}
+.eq-it.dec p{color:var(--o-muted)}
+.eq-st{font:600 12px var(--f-mono)}.eq-st.ok{color:#8FE3B5}.eq-st.no{color:#F3A3A3}.eq-st.venc{color:#F2A541}
 .eq-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;background:#102230;border:1px solid var(--o-line);color:var(--o-ink);padding:10px 14px;border-radius:8px;font-size:14px}
 .sim table{width:100%;border-collapse:collapse;font-size:13px}
 .sim th,.gr-table th{background:transparent;color:var(--o-muted)}
@@ -91,6 +98,23 @@
     return agente ? out.filter(x => x.agente === agente) : out;
   }
   const sinDecidir = agente => pendientes(agente).filter(x => !DEC[x.key]).length;
+  // Vistas del tablero: por decidir (lo de hoy en adelante), vencidas (tareas del plan cuya fecha ya pasó y nadie decidió)
+  // y decididas (lo que Santi aprobó, rechazó o dio por resuelto, en la oficina o por Telegram/Doc/ronda)
+  let vista = "pend";
+  const esVencida = it => it.tipo === "plan" && it.fecha && it.fecha < hoyHora().fecha;
+  const porDecidir = agente => pendientes(agente).filter(x => !DEC[x.key] && !esVencida(x));
+  const vencidas = agente => pendientes(agente).filter(x => !DEC[x.key] && esVencida(x));
+  function decididas(agente) {
+    const out = pendientes().filter(x => DEC[x.key]).map(x => Object.assign({}, x, { dec: DEC[x.key].decision, cuando: `${fechaCorta(DEC[x.key].fecha)} ${DEC[x.key].hora || ""}`, oficina: true }));
+    const vistos = new Set(out.map(x => x.key));
+    const ST2 = { aprobada: "aprobado", rechazada: "rechazado", hecha: "hecho", aprobado: "aprobado", rechazado: "rechazado", hecho: "hecho" };
+    (D.ideas || []).filter(i => i.estado && i.estado !== "propuesta").forEach(i => { const k = `idea-${i.id}`; if (!vistos.has(k)) out.push({ key: k, tipo: "idea", ref: i.id, agente: i.agente, texto: i.idea, por: i.por_que, fecha: i.fecha, dec: ST2[i.estado] || i.estado, cuando: i.decision || "" }); });
+    (D.plan || []).filter(t => ST2[t.estado]).forEach(t => { const k = `plan-${t.id}`; if (!vistos.has(k)) out.push({ key: k, tipo: "plan", ref: t.id, agente: t.agente, texto: t.tarea, por: t.motivo, fecha: t.fecha_para, n: t.id.split("-").pop(), dec: ST2[t.estado], cuando: t.decision || "" }); });
+    (D.necesidades_resueltas || []).forEach(n => { const k = `necesidad-${n.id}`; if (!vistos.has(k)) out.push({ key: k, tipo: "necesidad", ref: n.id, agente: n.agente, texto: n.necesita, fecha: n.fecha, dec: "resuelta", cuando: n.resuelto || "" }); });
+    out.sort((a, b) => String(b.fecha).localeCompare(String(a.fecha)));
+    return agente ? out.filter(x => x.agente === agente) : out;
+  }
+  const listaVista = agente => vista === "venc" ? vencidas(agente) : vista === "dec" ? decididas(agente) : porDecidir(agente);
   window.pendientesDe = sinDecidir;
 
   function toast(t) { const e = document.createElement("div"); e.className = "eq-toast"; e.setAttribute("role", "status"); e.textContent = t; document.body.appendChild(e); setTimeout(() => e.remove(), 3200); }
@@ -129,38 +153,49 @@
   let filtro = "";
   function itemHtml(it) {
     const d = DEC[it.key];
-    const tipo = { necesidad: ["Necesita", "k-nec"], idea: ["Idea", "k-idea"], plan: [`Plan · tarea ${it.n}`, "k-plan"] }[it.tipo];
+    const tipo = [...{ necesidad: ["Necesita", "k-nec"], idea: ["Idea", "k-idea"], plan: [`Plan · tarea ${it.n}`, "k-plan"] }[it.tipo]];
     let acts;
+    if (it.dec && !it.oficina) {
+      const L = { aprobado: ["✓ Aprobado", "ok"], hecho: ["✓ Hecho", "ok"], resuelta: ["✓ Resuelto", "ok"], rechazado: ["✕ Rechazado", "no"] }[it.dec] || [it.dec, ""];
+      return `<div class="eq-it dec"><span class="k ${tipo[1]}">${tipo[0]}</span><p>${esc(it.texto)}</p><div class="eq-acts"><span class="eq-st ${L[1]}">${L[0]}</span>${it.cuando ? `<small>${esc(String(it.cuando).slice(0, 140))}</small>` : ""}</div></div>`;
+    }
+    if (!d && esVencida(it)) tipo[0] += ` · vencida (era para el ${fechaCorta(it.fecha)})`;
     if (d) acts = `<span class="eq-done">✓ ${d.decision === "resuelta" ? "Resuelto" : d.decision === "aprobado" ? "Aprobado" : "Rechazado"} en la oficina ${esc(fechaCorta(d.fecha))} ${esc(d.hora)}${d.aplicado ? " · ya anotado" : " · se anota en la próxima ronda"}</span>${owner && !d.aplicado ? `<button type="button" data-deshacer="${esc(it.key)}">Deshacer</button>` : ""}`;
     else if (it.tipo === "necesidad") acts = `<button type="button" class="ok" data-dec="resuelta" data-key="${esc(it.key)}" ${owner ? "" : "disabled"}>Ya está resuelto</button>`;
     else acts = `<button type="button" class="ok" data-dec="aprobado" data-key="${esc(it.key)}" ${owner ? "" : "disabled"}>Aprobar</button><button type="button" class="no" data-dec="rechazado" data-key="${esc(it.key)}" ${owner ? "" : "disabled"}>Rechazar</button>`;
-    return `<div class="eq-it"><span class="k ${tipo[1]}">${tipo[0]}</span><p>${esc(it.texto)}</p>${it.por ? `<small>${esc(it.por)}</small>` : ""}<div class="eq-acts">${acts}</div></div>`;
+    return `<div class="eq-it${d ? " dec" : ""}"><span class="k ${tipo[1]}">${tipo[0]}</span><p>${esc(it.texto)}</p>${it.por ? `<small>${esc(it.por)}</small>` : ""}<div class="eq-acts">${acts}</div></div>`;
   }
   function cardHtml(id) {
-    const a = AG.find(x => x.id === id), its = pendientes(id);
+    const a = AG.find(x => x.id === id), its = listaVista(id);
     const st = a ? STATES[a.state] : { t: "", c: C.muted };
     const ult = D.actividad.filter(x => x.agente === id).slice(-1)[0];
     const grupos = [["necesidad", "Lo que necesita"], ["idea", "Sus ideas"], ["plan", "Tareas propuestas para aprobar"]];
     return `<section class="eq-card" aria-label="${esc(NOMBRE(id))}"><h4><span class="dot" style="background:${st.c}"></span>${esc(NOMBRE(id))}</h4>
       <div class="st">${esc(a ? (a.liveText || st.t) : "")}${ult ? ` · ${fechaCorta(ult.fecha)} ${esc(ult.hora || "")}` : ""}</div>
       ${ult ? `<p class="eq-note">${esc(String(ult.texto).slice(0, 180))}${String(ult.texto).length > 180 ? "…" : ""}</p>` : ""}
-      ${its.length ? grupos.map(([t, lbl]) => { const g = its.filter(x => x.tipo === t); return g.length ? `<div class="eq-sec">${lbl} · ${g.length}</div>${g.map(itemHtml).join("")}` : ""; }).join("") : `<div class="eq-empty">Nada pendiente: tiene lo que necesita.</div>`}</section>`;
+      ${its.length ? grupos.map(([t, lbl]) => { const g = its.filter(x => x.tipo === t); return g.length ? `<div class="eq-sec">${vista === "dec" ? lbl.replace("para aprobar", "") : lbl} · ${g.length}</div>${g.map(itemHtml).join("")}` : ""; }).join("") : `<div class="eq-empty">${vista === "dec" ? "Todavía no hay nada decidido." : vista === "venc" ? "Nada vencido." : "Nada por decidir."}</div>`}</section>`;
   }
   function renderTablero() {
     const el = panel("pTablero", "Necesidades e ideas del equipo", "lo que cada agente necesita, sus ideas y el plan · solo Santi aprueba");
     const ids = [...new Set([...AG.map(a => a.id), ...pendientes().map(x => x.agente)])];
-    const total = pendientes().length, falta = sinDecidir();
-    const nota = !listo ? "Conectando con la oficina…" : owner ? `Tienes ${falta} de ${total} cosas por decidir. Lo que apruebes aquí lo anota el equipo en su próxima ronda (Mac 10:30, PC 16:00 o el Gerente 20:00).`
+    const total = pendientes().length, falta = sinDecidir(), nP = porDecidir().length, nV = vencidas().length, nD = decididas().length;
+    const cnt = id => listaVista(id || undefined).length;
+    const nota = !listo ? "Conectando con la oficina…" : owner ? `Tienes ${falta} cosas por decidir${nV ? ` (${nV} vencidas)` : ""}. Lo que apruebes aquí lo anota el equipo en su próxima ronda (Mac 10:30, PC 16:00 o el Gerente 20:00).`
       : "Solo Santi puede aprobar desde aquí (abre la oficina con su cuenta de Claude). Los demás ven el tablero en modo lectura.";
-    const ver = filtro ? [filtro] : ids.filter(id => pendientes(id).length || AG.some(a => a.id === id));
+    const ver = filtro ? [filtro] : ids.filter(id => vista === "pend" ? (listaVista(id).length || AG.some(a => a.id === id)) : listaVista(id).length);
+    const sub = vista === "venc" ? "Tareas del plan cuya fecha ya pasó sin que nadie las decidiera: apruébalas si todavía sirven o recházalas para limpiar."
+      : vista === "dec" ? "Lo que ya decidiste (en la oficina, por Telegram o en el Doc) y lo que el equipo ya hizo. Solo para consultar." : "";
     el.querySelector(".eq-body").innerHTML = `<p class="eq-note">${esc(nota)}</p>
-      <div class="eq-filter" role="group" aria-label="Agente">${["", ...ids].map(id => `<button type="button" data-filtro="${id}" aria-pressed="${filtro === id}">${id ? esc(NOMBRE(id)) : "Todos"}${(id ? sinDecidir(id) : falta) ? ` · ${id ? sinDecidir(id) : falta}` : ""}</button>`).join("")}</div>
+      <div class="eq-views" role="group" aria-label="Vista"><button type="button" data-vista="pend" aria-pressed="${vista === "pend"}">Por decidir · ${nP}</button><button type="button" data-vista="venc" aria-pressed="${vista === "venc"}">Vencidas · ${nV}</button><button type="button" data-vista="dec" aria-pressed="${vista === "dec"}">Decididas · ${nD}</button></div>
+      ${sub ? `<p class="eq-note">${esc(sub)}</p>` : ""}
+      <div class="eq-filter" role="group" aria-label="Agente">${["", ...ids].map(id => `<button type="button" data-filtro="${id}" aria-pressed="${filtro === id}">${id ? esc(NOMBRE(id)) : "Todos"}${cnt(id) ? ` · ${cnt(id)}` : ""}</button>`).join("")}</div>
       <div class="eq-grid">${ver.map(cardHtml).join("")}</div>`;
     return el;
   }
   window.abrirTablero = function (agente) { filtro = agente || ""; abrir(renderTablero()); };
   document.addEventListener("click", e => {
-    const t = e.target.closest("[data-dec],[data-deshacer],[data-filtro],[data-abrir]"); if (!t) return;
+    const t = e.target.closest("[data-dec],[data-deshacer],[data-filtro],[data-abrir],[data-vista]"); if (!t) return;
+    if (t.dataset.vista) { vista = t.dataset.vista; renderTablero(); return; }
     if (t.dataset.abrir) { e.preventDefault(); const w = t.dataset.abrir; if (w === "tablero") window.abrirTablero(t.dataset.agente || ""); if (w === "sim") window.abrirSimulador(); if (w === "graf") window.abrirGraficos(t.dataset.prod); return; }
     if (t.dataset.filtro != null) { filtro = t.dataset.filtro; renderTablero(); return; }
     const it = pendientes().find(x => x.key === (t.dataset.key || t.dataset.deshacer)); if (!it) return;

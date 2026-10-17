@@ -207,6 +207,10 @@ def main():
              "necesidades": [{"id": i, "fecha": f.get("fecha", ""), "agente": f.get("agente", ""), "necesita": f.get("necesita", ""),
                               "para_que": f.get("para_que", ""), "quien": f.get("quien", "")}
                              for i, f in enumerate(leer("necesidades.csv"), 1) if f.get("estado", "abierta") != "resuelta"],
+             # las ya resueltas, para la vista "Decididas" del tablero
+             "necesidades_resueltas": [{"id": i, "fecha": f.get("fecha", ""), "agente": f.get("agente", ""), "necesita": f.get("necesita", ""),
+                                        "resuelto": f.get("resuelto", "")}
+                                       for i, f in enumerate(leer("necesidades.csv"), 1) if f.get("estado") == "resuelta"],
              "ideas": [{"id": i, **{k: f.get(k, "") for k in ("fecha", "agente", "idea", "por_que", "estado", "decision")}}
                        for i, f in enumerate(leer("ideas.csv") if existe("ideas.csv") else [], 1)],
              "finanzas": finanzas.calcular(), "demanda": demanda.calcular(),
