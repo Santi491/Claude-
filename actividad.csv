@@ -151,3 +151,11 @@ fecha,hora,agente,texto
 2026-10-17,13:59,gerente,"aviso de fin de ronda enviado (ronda de la PC 13:43)"
 2026-10-17,14:00,local,"apagar_pc.ps1: la PC queda prendida (arrancó 13:39, no la prendió la Raspberry para la ronda)"
 2026-10-17,15:55,local,"PC al día con la puesta al día 4 (17/10): tarea nueva ""Pedidos del Gerente"" cada hora de 8 a 21 lun-sáb (tareas/pedidos-pc.md; sin pedido-pc.json termina al instante); Ronda de la tarde 16:00 lun-sáb con sábado ligera, mira vivo/_ronda antes de empezar y anota sesiones.csv (paso 8d)."
+2026-10-17,16:11,gerente,Decisiones de Santi en la oficina: tarea 2026-10-17-2 aprobado desde la oficina; tarea 2026-10-17-4 aprobado desde la oficina; tarea 2026-10-17-1 aprobado desde la oficina
+2026-10-17,16:18,wa,"Ronda ligera de la PC (16:08): 2 respuestas con precio (PC Armagedon: combo Ryzen 5 7600 + 16GB DDR5 Bs 6.050, se le pidió el 7600 suelto; Punto Tecnológico: 9800X3D Bs 6.000 nuevo sellado). Seguimientos de la tarea aprobada: Legion Emporium y 4 Gamers (primero cada una; agenda.py no las listaba). Sin chats nuevos (sábado). Chats nuevos del día: 3/10"
+2026-10-17,16:18,mkt,"Ronda ligera: Messenger sin respuestas nuevas de vendedores; correo del agente sin correos de tiendas; sin catálogos nuevos"
+2026-10-17,16:18,pedidos,"USPS de prueba sin cambios (Memphis, entrega estimada lunes 19/10); GOFO y SpeedX de prueba siguen en bodega del courier. Sin pedidos reales activos"
+2026-10-17,16:18,gerente,"Decisiones de la oficina aplicadas: tareas 2026-10-17-1, 2 y 4 aprobadas y marcadas hecho (la 4 ya la cumplieron las rondas de hoy con 4 tiendas nuevas)"
+2026-10-17,16:21,fin,"sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)"
+2026-10-17,16:21,ana,"Comparación recalculada en la ronda ligera (dólar 11,81): sin precios nuevos de productos vigilados (el combo de PC Armagedon y el 9800X3D no entran); siguen 4 nuevos que convienen (Ryzen 5 7600, SSD 2TB, 265K, 7800X3D)"
+2026-10-17,16:24,gerente,"aviso de fin de ronda enviado (ronda ligera de la PC 16:08)"
