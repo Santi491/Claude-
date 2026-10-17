@@ -150,3 +150,4 @@ fecha,hora,agente,texto
 2026-10-17,13:56,ana,"Comparación recalculada en la ronda de la PC (dólar 11,81): sin precios nuevos de productos vigilados; siguen 4 nuevos que convienen (Ryzen 5 7600, SSD 2TB, 265K, 7800X3D)"
 2026-10-17,13:59,gerente,"aviso de fin de ronda enviado (ronda de la PC 13:43)"
 2026-10-17,14:00,local,"apagar_pc.ps1: la PC queda prendida (arrancó 13:39, no la prendió la Raspberry para la ronda)"
+2026-10-17,15:55,local,"PC al día con la puesta al día 4 (17/10): tarea nueva ""Pedidos del Gerente"" cada hora de 8 a 21 lun-sáb (tareas/pedidos-pc.md; sin pedido-pc.json termina al instante); Ronda de la tarde 16:00 lun-sáb con sábado ligera, mira vivo/_ronda antes de empezar y anota sesiones.csv (paso 8d)."
