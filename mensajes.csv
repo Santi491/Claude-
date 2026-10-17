@@ -120,3 +120,13 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-16,13:49,whatsapp,Punto Tecnológico,enviado,nuevo,,"chat nuevo: Ryzen 5 7600, 7800X3D y Corsair DDR5 32GB, precio por 2 o 4"
 2026-10-16,13:49,whatsapp,Punto Tecnológico,recibido,automatica,no,bienvenida
 2026-10-16,13:50,whatsapp,Punto Tecnológico,recibido,respuesta,no,"saluda y dice que en un momento envía los precios"
+2026-10-16,14:12,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"cotización en imagen: Ryzen 5 7600 OEM Bs 2.850; DDR5 32GB 2x16 Nox Tuf Bs 5.960; nuevos, garantía 6 meses"
+2026-10-16,17:24,whatsapp,Gamer Store Cbba,recibido,respuesta,sí,"solo tiene Ryzen 5 7600X; combo B650M + 7600X + Samsung DDR5 16GB a Bs 5.900; sueltos: 7600X USD 175, placa USD 145, RAM 16GB USD 210"
+2026-10-17,11:50,whatsapp,Gamer Store Cbba,enviado,respuesta,,"repregunta: 7600X en Bs, precio por 2, si es sellado con garantía"
+2026-10-17,11:50,whatsapp,Punto Tecnológico,enviado,respuesta,,agradece cotización; pregunta 7800X3D y precio del 7600 por 2
+2026-10-17,11:51,whatsapp,ECOM (Economic Computers),enviado,seguimiento,,primer seguimiento (7600 o DDR5)
+2026-10-17,11:51,whatsapp,Display Importadora,enviado,seguimiento,,segundo y último seguimiento (SSD 2TB o Ryzen 7000)
+2026-10-17,11:52,whatsapp,Centro PC,enviado,seguimiento,,segundo y último seguimiento (procesadores sueltos)
+2026-10-17,11:53,whatsapp,PortatiComps,enviado,seguimiento,,segundo y último seguimiento (7600 o 265K)
+2026-10-17,11:54,whatsapp,PC Armagedon,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y DDR5 32GB, precio por 2"
+2026-10-17,11:54,whatsapp,PC Armagedon,recibido,automatica,no,"bienvenida (PC, portátiles y accesorios; lunes a sábado 8:30)"
