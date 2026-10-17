@@ -44,6 +44,12 @@ Fila en `ventas.csv`: `fecha`, `producto` exacto de `vigilar.csv`, `cantidad`, `
 4. Fila `fin` en `actividad.csv`: "sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)" o el resumen con números.
 5. `python verificar.py fin --ronda` y entregar.
 
+## Sin compras ni ventas todavía
+
+Mientras `pedidos.csv` no tenga compras reales, tu turno es corto: `finanzas.py`, una fila "sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)" y listo. No inventes propuestas sin datos.
+
+**Dólar raro**: si la fuente del paralelo da compra mayor que venta u otra cosa inconsistente, no lo corrijas tú: dilo en tu informe y en una necesidad para la Nube (quien = nube) si se repite 2 días.
+
 ## Lista de control
 
 - [ ] Pedidos de prueba fuera de las cuentas.

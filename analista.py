@@ -69,7 +69,16 @@ def analizar():
                     loc = usados
                 else:
                     faltan.append("precio local de usados (se comparó con nuevos)")
+            # atípicos: con 3 o más precios, fuera los que están por debajo del 60 % de la mediana (particular sin marca, otro modelo)
+            if len(loc) >= 3:
+                vals = sorted(num(f["precio_bs"]) for f in loc)
+                med = vals[len(vals) // 2]
+                atip = [f for f in loc if num(f["precio_bs"]) < 0.6 * med]
+                if atip:
+                    loc = [f for f in loc if f not in atip]
+                    faltan.append(f"{len(atip)} precio(s) local(es) atípico(s) descartado(s)")
             recientes = [f for f in loc if dias(f["fecha"]) is not None and dias(f["fecha"]) <= 14]
+            tiendas = {(f.get("fuente") or "").split("(")[0].strip().lower() for f in recientes}
             if not tc:
                 faltan.append("dólar del día")
             if not of:
@@ -78,8 +87,8 @@ def analizar():
                 faltan.append(f"eBay {cond} viejo ({of['fecha']})")
             if not loc:
                 faltan.append("precio local")
-            elif len(recientes) < 2:
-                faltan.append("al menos 2 precios locales de los últimos 14 días")
+            elif len(tiendas) < 2:
+                faltan.append("precios recientes (14 días) de al menos 2 tiendas distintas")
             fila = {"producto": prod, "condicion": cond, "faltan": faltan}
             if of and tc and loc:
                 costo, via, partes = costo_completo(of, peso, 2, tc)
@@ -96,7 +105,7 @@ def analizar():
                 margen = g / venta
                 if g / costo < 0.10 or margen < C.JUSTO:
                     rec, por = "no traer", f"margen {margen:.0%} con el precio sugerido"
-                elif (esc["peor caso"] or -1) >= 5 and len(recientes) >= 2 and not any("viejo" in x or "usados" in x for x in faltan):
+                elif (esc["peor caso"] or -1) >= 5 and len(tiendas) >= 2 and not any("viejo" in x or "usados" in x for x in faltan):
                     rec, por = "traer", f"aguanta el peor caso ({esc['peor caso']} %)"
                 else:
                     rec, por = "esperar", ("el peor caso lo deja en " + f"{esc['peor caso']} %" if (esc["peor caso"] or -1) < 5

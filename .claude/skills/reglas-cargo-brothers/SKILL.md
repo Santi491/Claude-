@@ -66,6 +66,8 @@ Los créditos del plan de Claude son limitados. Cada agente trabaja con un presu
 - Una misma cosa se intenta como máximo **2 veces**; después se anota y se sigue.
 - Si tu skill da un tope de pasos o de tiempo, respétalo. Si se acaba el presupuesto y quedó algo, termina con lo hecho y dilo en el informe ("quedó pendiente X").
 - Prefiere texto a capturas: `get_page_text` / `read_page` antes que `screenshot`.
+- Sin novedades = una línea ("sin cambios desde la ronda anterior") y terminas: no repitas revisiones que no cambian nada.
+- Una tarea `propuesto` que no hiciste porque no está aprobada va en PENDIENTE de tu informe ("17-3 propuesta, sin aprobar"); no la marques.
 
 ## 8. Coordinación
 
@@ -73,12 +75,13 @@ Los créditos del plan de Claude son limitados. Cada agente trabaja con un presu
 - **Una sola ronda a la vez.** La sesión principal (ronda de la Mac, de la PC o pedido de la PC) es la **coordinadora**: reparte el trabajo a cada agente con su skill, junta los informes, regenera, publica y hace push. Los agentes no publican la oficina ni hacen push por su cuenta salvo que su skill lo diga.
 - **Orden de una ronda**: primero los que recolectan (Rastreador eBay, WhatsApp, Marketplace, Catálogos, Pedidos), después el Analista, después Finanzas, al final Oficina y el mensaje del Gerente.
 - **Cada agente escribe solo sus archivos** (su skill dice cuáles). Si necesitas algo de otro puesto, no lo haces tú: lo pides (sección 10).
-- Al terminar: commit y push enseguida (si el remoto cambió, `git pull --no-rebase` y push de nuevo).
+- **Commit y push**: los hace **quien coordina** (la ronda, el pedido de la PC, la nube o el Gerente de las 20:00) al final. Un sub-agente llamado por una coordinadora **no** hace commit ni push; si trabajas solo (nadie te llamó), haz commit y push al terminar (si el remoto cambió, `git pull --no-rebase` y push de nuevo).
+- **Sin `ArtifactData`** (la nube, una prueba o una sesión sin esa herramienta): no puedes mirar ni escribir `vivo`; dilo en tu informe ("sin vivo: no hay ArtifactData") y sigue. La coordinación igual se cuida con `sesiones.csv` y `actividad.csv` (si otra máquina anotó algo hace menos de 20 minutos, espera).
 - Horario y detalles: "Horario y coordinación" de `PROCESO-LOCAL.md`.
 
 ## 9. Cómo reportar
 
-- **`actividad.csv`**: una fila con **tu propio agente** (nube | ebay | wa | mkt | ana | pedidos | fin | dem | gerente | local) en cada turno, aunque no haya novedades ("sin cambios"). Texto corto, sin datos privados.
+- **`actividad.csv`**: una fila corta con **tu propio agente** (nube | ebay | wa | mkt | ana | pedidos | fin | dem | gerente | local) en cada turno, aunque no haya novedades ("sin cambios"). Texto corto, sin datos privados.
 - **`vivo/<agente>`** en la oficina, si la sesión tiene `ArtifactData`: `{estado: "trabajando" | "terminó", texto, hora}`, pasando `if_version`.
 - **Informe al coordinador** (lo que devuelves al terminar), siempre con este formato:
   ```

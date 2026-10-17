@@ -236,14 +236,19 @@ def gerente(R, ronda=False):
              and (fecha(p.get("plazo")) or fecha(p.get("fecha_para")) or HOY) <= HOY]
     (R.aviso if oblig else R.ok)(f"metas obligatorias sin cumplir (hoy o antes): {', '.join(oblig) if oblig else 'ninguna'}")
     _, nec = leer("necesidades.csv")
-    vistas_n, dup = set(), 0
-    for n in nec:
+    vistas_n, dup = {}, []
+    for i, n in enumerate(nec, 1):
         if n.get("estado", "abierta") == "resuelta":
             continue
-        k = (n.get("agente"), (n.get("necesita") or "").lower()[:50])
-        dup += k in vistas_n
-        vistas_n.add(k)
-    (R.aviso if dup else R.ok)(f"necesidades abiertas repetidas: {dup}")
+        k = (n.get("agente"), re.sub(r"\W+", " ", (n.get("necesita") or "").lower())[:40])
+        if k in vistas_n:
+            dup.append(f"{vistas_n[k]} y {i}")
+        vistas_n[k] = i
+    (R.aviso if dup else R.ok)(f"necesidades abiertas repetidas (fila del CSV): {', '.join(dup) if dup else 'ninguna'}")
+    venc_p = [p["id"] for p in plan if p.get("estado") == "propuesto" and (fecha(p.get("plazo")) or fecha(p.get("fecha_para")) or HOY) < HOY]
+    (R.aviso if venc_p else R.ok)(f"tareas propuestas vencidas (cerrar o reprogramar): {', '.join(venc_p[-10:]) if venc_p else 'ninguna'}")
+    sin_pp = [p["id"] for p in plan if (fecha(p.get("fecha_propuesta")) or date(2000, 1, 1)) >= date(2026, 10, 18) and (not p.get("prioridad") or not p.get("plazo"))]
+    (R.aviso if sin_pp else R.ok)(f"tareas nuevas sin prioridad o plazo: {', '.join(sin_pp) if sin_pp else 'ninguna'}")
     _, chat = leer("chat.csv")
     sin_resp = [c for c in chat if c.get("para") in ("gerente", "santi") and c.get("estado") != "respondido"
                 and fecha(c.get("fecha")) and (HOY - fecha(c["fecha"])).days >= 1]
@@ -301,7 +306,8 @@ def wa(R, ronda=False):
             if len(segs) >= 2:
                 mal.append(t)
         (R.error if mal else R.ok)(f"mensajes a tiendas frías hoy: {', '.join(mal) if mal else 'ninguno'}")
-        (R.aviso if a["responder"] else R.ok)(f"tiendas que escribieron y esperan respuesta: {len(a['responder'])}")
+        (R.aviso if a["responder"] else R.ok)(f"tiendas que escribieron y esperan respuesta: {len(a['responder'])}"
+                                              + (f" ({', '.join(f['tienda'] for f in a['responder'][:5])})" if a["responder"] else ""))
     except Exception as e:
         R.aviso(f"agenda.py no corrió: {e}")
     fila_actividad(R, "wa", ronda)
@@ -350,6 +356,8 @@ def catalogos(R, ronda=False):
             R.error(f"catalogos.csv línea {i}: el archivo {arch} no está en oficina/")
         if arch and re.search(r"\.(exe|apk|dmg|zip|rar|bat|js|docm|xlsm)$", arch, re.I):
             R.error(f"catalogos.csv línea {i}: tipo de archivo prohibido")
+        if c.get("productos") and not str(c["productos"]).isdigit():
+            R.aviso(f"catalogos.csv línea {i}: productos tiene que ser un número entero ('{c['productos']}')")
         if c.get("formato") not in ("PDF", "JPG", "PNG", "WEBP", "XLSX", "CSV", "WEB"):
             R.aviso(f"catalogos.csv línea {i}: formato '{c.get('formato')}'")
         try:
@@ -365,8 +373,8 @@ def catalogos(R, ronda=False):
     carpeta = os.path.join(DIR, "oficina", "catalogos")
     if os.path.isdir(carpeta):
         registrados = {os.path.basename(c.get("archivo", "")) for c in cats}
-        sueltos = [f for f in os.listdir(carpeta) if f not in registrados]
-        (R.aviso if sueltos else R.ok)(f"archivos de catálogo sin fila en catalogos.csv: {len(sueltos)}")
+        sueltos = [f for f in os.listdir(carpeta) if f not in registrados and not f.startswith(".")]
+        (R.aviso if sueltos else R.ok)(f"archivos de catálogo sin fila en catalogos.csv: {len(sueltos)}" + (f" ({', '.join(sueltos[:3])})" if sueltos else ""))
     R.ok(f"catálogos registrados: {len(cats)}")
 
 

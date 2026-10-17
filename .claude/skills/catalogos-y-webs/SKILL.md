@@ -37,6 +37,19 @@ Para cada producto de `vigilar.csv` que aparezca:
 
 `fuente`: "<Tienda> (catálogo PDF)", "<Tienda> (lista de precios imagen)", "<Tienda> (web)". `tipo`: publicado. `fecha`: día del catálogo (o de la visita a la web).
 
+## Cómo leer los archivos
+
+- **PDF**: si `Read` no puede abrirlo (en la PC falta `pdftoppm`), usa `pdftotext -raw archivo.pdf -` (Git Bash). Si la tabla sale en columnas mezcladas, compara cada precio con `pdftotext -layout`: un precio solo vale si los dos modos lo ponen en la misma fila que el producto.
+- **Imágenes**: con `Read` (las ves). **Excel / CSV**: con Python (`openpyxl` o `csv`).
+- **Ya procesado** por otro agente (la fila existe y tiene `precios_anotados`): solo verifica que los precios coincidan con el archivo y deja constancia; no dupliques filas.
+
+## Formatos fijos
+
+- `estado`: la condición (nuevo / sellado / usado / OEM / caja abierta / agotado). Si no cuenta para comparar, empieza con **"no cuenta: "** y el motivo ("no cuenta: otro modelo (SATA, no NVMe)").
+- **Dólar**: el `usado` de `tipo-cambio.csv` del **día en que llegó** el catálogo (o de la visita a la web), dicho en `condiciones` ("USD 230 × 11,85 del 15/10").
+- `productos` en `catalogos.csv`: un **número entero** (cuántos productos con precio trae). `precios_anotados`: todas las filas que pasaste, incluidas las de referencia "no cuenta". `agente`: `mkt`.
+- **Última visita a una web**: la fila más reciente con `formato` WEB de esa tienda en `catalogos.csv`.
+
 ## Pasos
 
 1. `python chat.py leer mkt` (los mensajes a Catálogos llegan con "Catálogos" en el texto) y tareas de `plan.csv`.
