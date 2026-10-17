@@ -46,6 +46,7 @@
 .eq-views button[aria-pressed="true"]{background:var(--o-amber);color:#0B1620}
 .eq-it.dec p{color:var(--o-muted)}
 .eq-st{font:600 12px var(--f-mono)}.eq-st.ok{color:#8FE3B5}.eq-st.no{color:#F3A3A3}.eq-st.venc{color:#F2A541}
+.eq-pend{background:#10303A;border:1px solid #1F5C6B;color:#BFEFF7;border-radius:8px;padding:10px 12px;font-size:14px;margin:0}
 .eq-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;background:#102230;border:1px solid var(--o-line);color:var(--o-ink);padding:10px 14px;border-radius:8px;font-size:14px}
 .sim table{width:100%;border-collapse:collapse;font-size:13px}
 .sim th,.gr-table th{background:transparent;color:var(--o-muted)}
@@ -120,14 +121,14 @@
   const listaVista = agente => vista === "venc" ? vencidas(agente) : vista === "dec" ? decididas(agente) : porDecidir(agente);
   window.pendientesDe = sinDecidir;
 
-  function toast(t) { const e = document.createElement("div"); e.className = "eq-toast"; e.setAttribute("role", "status"); e.textContent = t; document.body.appendChild(e); setTimeout(() => e.remove(), 3200); }
+  function toast(t) { const e = document.createElement("div"); e.className = "eq-toast"; e.setAttribute("role", "status"); e.textContent = t; document.body.appendChild(e); setTimeout(() => e.remove(), 6000); }
 
   async function decidir(it, decision) {
     if (!db || !owner) return;
     const { fecha, hora } = hoyHora();
     try {
       await db.collection("decisiones").doc(it.key).set({ tipo: it.tipo, ref: String(it.ref), agente: it.agente, decision, fecha, hora, aplicado: false });
-      toast(decision === "resuelta" ? "Anotado como resuelto. El equipo lo ve en su próxima ronda." : `Tarea ${decision === "aprobado" ? "aprobada" : "rechazada"}. Se anota en la próxima ronda.`);
+      toast(`✓ Guardado: ${decision === "resuelta" ? "resuelto" : decision === "aprobado" ? "aprobado" : "rechazado"}. El equipo lo lee en la próxima ronda y el Gerente te confirma por Telegram.`);
     } catch (e) { toast("No se pudo guardar. Prueba de nuevo en un rato."); }
   }
   async function deshacer(it) {
@@ -188,7 +189,9 @@
     const ver = filtro ? [filtro] : ids.filter(id => vista === "pend" ? (listaVista(id).length || AG.some(a => a.id === id)) : listaVista(id).length);
     const sub = vista === "venc" ? "Tareas del plan cuya fecha ya pasó: arriba las que nadie decidió (apruébalas si todavía sirven o recházalas para limpiar) y después cómo quedaron las demás."
       : vista === "dec" ? "Lo que ya decidiste (en la oficina, por Telegram o en el Doc) y lo que el equipo ya hizo. Solo para consultar." : "";
-    el.querySelector(".eq-body").innerHTML = `<p class="eq-note">${esc(nota)}</p>
+    const sinLeer = Object.values(DEC).filter(d => !d.aplicado).length;
+    const aviso = owner && sinLeer ? `<p class="eq-pend">Tienes ${sinLeer} decisi${sinLeer === 1 ? "ón guardada" : "ones guardadas"} que el equipo todavía no leyó. Las lee en la próxima ronda (Mac 10:30 de lunes a viernes, PC 16:00 de lunes a sábado) y el Gerente te confirma por Telegram qué recibió. Las ves en "Decididas".</p>` : "";
+    el.querySelector(".eq-body").innerHTML = `<p class="eq-note">${esc(nota)}</p>${aviso}
       <div class="eq-views" role="group" aria-label="Vista"><button type="button" data-vista="pend" aria-pressed="${vista === "pend"}">Por decidir · ${nP}</button><button type="button" data-vista="venc" aria-pressed="${vista === "venc"}">Vencidas · ${nV}</button><button type="button" data-vista="dec" aria-pressed="${vista === "dec"}">Decididas · ${nD}</button></div>
       ${sub ? `<p class="eq-note">${esc(sub)}</p>` : ""}
       <div class="eq-filter" role="group" aria-label="Agente">${["", ...ids].map(id => `<button type="button" data-filtro="${id}" aria-pressed="${filtro === id}">${id ? esc(NOMBRE(id)) : "Todos"}${cnt(id) ? ` · ${cnt(id)}` : ""}</button>`).join("")}</div>
