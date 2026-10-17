@@ -34,16 +34,27 @@ def mandar(p):
     destinos = ["255.255.255.255"]
     if ip and ip.count(".") == 3:
         destinos.append(ip.rsplit(".", 1)[0] + ".255")   # la red de la casa, por si el router no deja pasar el otro
-    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-        s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-        for d in destinos:
-            for puerto in (9, 7):
-                s.sendto(p, (d, puerto))
+    # la Raspberry está en la red por cable (eth0) y por wifi (wlan0): se manda por las dos
+    for dev in (b"eth0", b"wlan0", None):
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+            s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+            try:
+                if dev:
+                    s.setsockopt(socket.SOL_SOCKET, socket.SO_BINDTODEVICE, dev)
+                for d in destinos:
+                    for puerto in (9, 7):
+                        s.sendto(p, (d, puerto))
+            except OSError:
+                pass
     return destinos
 
 
 def contesta(ip):
-    return subprocess.run(["ping", "-c", "1", "-W", "2", ip], capture_output=True).returncode == 0
+    """La PC está prendida si su placa de red responde en la red local (ARP). No se usa la respuesta del ping:
+    el firewall de Windows no contesta pings, así que la PC parecía apagada aunque estuviera prendida."""
+    subprocess.run(["ping", "-c", "1", "-W", "1", ip], capture_output=True)   # solo para que se pregunte su MAC
+    vecino = subprocess.run(["ip", "neigh", "show", ip], capture_output=True, text=True).stdout
+    return any(e in vecino for e in ("REACHABLE", "DELAY", "PROBE"))
 
 
 def main():
@@ -56,7 +67,7 @@ def main():
     if ip and contesta(ip):
         print("La PC ya estaba prendida.")
         return
-    print("Paquete enviado a", ", ".join(mandar(p)))
+    print("Paquete enviado a", ", ".join(mandar(p)), flush=True)
     if not ip:
         return
     for _ in range(24):          # hasta 4 minutos
