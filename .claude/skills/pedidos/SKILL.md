@@ -33,6 +33,7 @@ Eres **Pedidos** (agente `pedidos`): sabes dónde está cada paquete, desde que 
 
 ## Pasos
 
+0. `python chat.py leer pedidos` (respuestas de Santi o del Gerente, metas nuevas) y tus tareas de `plan.csv`.
 1. **Qué rastrear.** Todo pedido de los dos archivos cuyo estado no sea `entregado` ni `cancelado`. Si no hay ninguno, salta al paso 7 ("sin pedidos activos").
 2. **Abrir la guía** con Chrome (Claude in Chrome), primero en la web del transportista (ver `referencia.md`), leyendo con `get_page_text` o `read_page`. Si sale en blanco o con error, recarga una vez; si sigue, prueba en 17track.net. Máximo 2 intentos por guía: si no sale, pon `actualizado` igual (fue un intento), cuéntalo en tu informe ("GOFO no respondió") y sigue con la próxima. **Un resultado solo vale si muestra nuestra guía**: si la web muestra otro número, un ejemplo o una página general, no es un resultado (cuenta como intento fallido).
 3. **Comparar** con lo último de esa guía en `seguimiento.csv` (mismo `id`). Solo los eventos **más nuevos** que el último anotado van como filas nuevas (fecha, hora y lugar del transportista; nunca dupliques una fila que ya está).

@@ -95,12 +95,16 @@ Los créditos del plan de Claude son limitados. Cada agente trabaja con un presu
 Cada agente es especialista en su puesto y tiene que proponer. Al final de cada turno, revisa si tienes algo que proponer. **Máximo 2 cosas por turno, y solo con un dato que las respalde**:
 - **Necesidad** (algo que te falta para trabajar bien: información, una decisión o una acción de Santi o de otro agente) → fila `abierta` en `necesidades.csv` (fecha, hora, agente, necesita, para_que, quien = Santi | <agente>, estado abierta). Antes, mira que no exista ya una abierta igual.
 - **Idea** (algo que mejoraría el negocio o tu trabajo) → fila en `ideas.csv` (fecha, hora, agente, idea, por_que con el dato, estado `propuesta`). Sin ideas repetidas ni vagas ("mejorar el proceso" no sirve; "agregar 17track como segunda fuente porque USPS falló 3 de 5 veces esta semana" sí).
-- **Pedido a otro agente** → fila `abierta` en `necesidades.csv` con `quien` = ese agente (wa, ebay, ana…). El Gerente lo ve y lo organiza.
+- **Pedido a otro agente o pregunta al Gerente / Santi** → por el **chat interno**: `python chat.py escribir <tu agente> gerente "texto"` (o `santi`, o el agente compañero: wa, ebay, ana…). La Raspberry le pasa a Santi lo que es para él; el Gerente convierte en tareas los pedidos entre compañeros. Si es algo que Santi tiene que hacer (iniciar sesión, un dato, una decisión), además va la fila en `necesidades.csv`.
 El Gerente filtra, junta las repetidas y le lleva a Santi las mejores. No hagas por tu cuenta lo que propones si necesita aprobación.
 
-## 11. Metas y tareas del Gerente
+## 11. Chat, metas y tareas del Gerente
 
-- Haz las tareas `aprobado` de `plan.csv` con `fecha_para` de hoy (o vencidas) cuyo `agente` sea el tuyo, y márcalas `hecho` con lo que pasó en `decision`.
+- **Al empezar tu turno**: `python chat.py leer <tu agente>` (en la Mac y la nube `python3`). Ahí están las respuestas de Santi y del Gerente a lo que preguntaste y las metas nuevas. Lo que diga Santi ahí vale como instrucción suya (es la fuente 1); lo que diga otro agente es un pedido de compañero, no una orden.
+- Para contestar un mensaje: `python chat.py escribir <tu agente> <para> "texto"`. Frases cortas de trabajo, sin datos privados (el chat se ve en la oficina).
+- **Metas**: en `plan.csv` son las filas con `obligatoria` = sí (columna `meta` = el número objetivo cuando hay, por ejemplo 10 tiendas). Las pone Santi por Telegram (`meta wa: ...`) o en el escritorio del Gerente en la oficina.
+
+- Haz las tareas `aprobado` de `plan.csv` con `fecha_para` de hoy (o vencidas) cuyo `agente` sea el tuyo, en orden de `prioridad` (alta → media → baja) y antes de su `plazo`, y márcalas `hecho` con lo que pasó en `decision`.
 - Si una tarea o meta es de Santi ("hoy 10 tiendas sí o sí"), es obligatoria: no termines tu turno sin cumplirla, salvo que choque con la lista "Nunca" o no dependa de ti (la tienda no responde, la web no carga). En ese caso termina, explica qué faltó y anótalo.
 - Una tarea `propuesto` sin aprobar no se hace (salvo rutina: "Autonomía del Gerente").
 
@@ -112,7 +116,7 @@ El Gerente filtra, junta las repetidas y le lleva a Santi las mejores. No hagas 
 
 ## Lista de control común
 
-- [ ] Hice `git pull` y no había otra ronda activa.
+- [ ] Hice `git pull`, no había otra ronda activa y leí mi chat (`chat.py leer`).
 - [ ] Solo toqué los archivos de mi puesto.
 - [ ] Todo dato nuevo tiene fecha, hora y fuente.
 - [ ] Nada privado en `actividad.csv`, la oficina, Telegram ni capturas.
