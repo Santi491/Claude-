@@ -22,7 +22,8 @@
   "baja|Ryzen 9 9950X|nuevo|2026-10-16": "2026-10-16 11:54",
   "baja|SSD NVMe 1TB|nuevo|2026-10-16": "2026-10-16 11:54",
   "conviene|SSD NVMe 1TB|nuevo|2026-10-16": "2026-10-16 11:54",
-  "conviene|Intel Core i5-13400|usado|2026-10-16": "2026-10-16 14:01"
+  "conviene|Intel Core i5-13400|usado|2026-10-16": "2026-10-16 14:01",
+  "baja|Intel Core i5-13400|usado|2026-10-17": "2026-10-17 11:54"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": true,
@@ -45,13 +46,13 @@
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": true,
   "RAM DDR4 16GB (2x8) 3200|nuevo": false,
   "RAM DDR4 16GB (2x8) 3200|usado": false,
-  "SSD NVMe 1TB|nuevo": true,
+  "SSD NVMe 1TB|nuevo": false,
   "SSD NVMe 1TB|usado": true,
   "SSD NVMe 2TB|nuevo": true,
   "SSD NVMe 2TB|usado": true
  },
  "ultimas": [
-  "✅ Ahora conviene Intel Core i5-13400 (usado): +16% · costo puesto Bs 1.937 vs Bs 2.300 en Cochabamba"
+  "⬇ Intel Core i5-13400 (usado) bajó 17% en eBay: USD 149.99 → 125.00"
  ],
- "revisado": "2026-10-16 14:01"
+ "revisado": "2026-10-17 11:54"
 }
