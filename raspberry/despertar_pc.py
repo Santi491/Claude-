@@ -54,7 +54,7 @@ def contesta(ip):
     el firewall de Windows no contesta pings, así que la PC parecía apagada aunque estuviera prendida."""
     subprocess.run(["ping", "-c", "1", "-W", "1", ip], capture_output=True)   # solo para que se pregunte su MAC
     vecino = subprocess.run(["ip", "neigh", "show", ip], capture_output=True, text=True).stdout
-    return any(e in vecino for e in ("REACHABLE", "DELAY", "PROBE"))
+    return "REACHABLE" in vecino
 
 
 def main():
