@@ -7,7 +7,7 @@ Responde al momento a Santi. Lo simple lo resuelve solo, sin IA y sin gastar el 
     tarea: <texto>  /  tarea wa: <texto>              -> agrega una tarea aprobada por Santi
     modelo haiku | sonnet | opus                       -> cambia el modelo de las preguntas
     uso                                                -> cuántas preguntas a Claude van hoy
-    estado pc · prender pc                             -> ve si la PC está prendida / la prende (Wake-on-LAN)
+    estado pc · prender pc · apagar pc                 -> ve si la PC está prendida / la prende / la apaga
     ronda ahora  ·  pc: <encargo>                      -> la PC hace una ronda completa o solo ese encargo ya
     salud                                              -> cómo está el equipo hoy (nube, Mac, PC, Gerente, Raspberry)
     ayuda
@@ -42,7 +42,7 @@ DIAS = ("lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "doming
 AYUDA = ("Háblame como a tu gerente: \"hola, ¿cómo vamos?\", \"¿qué conviene traer?\", \"dile a WhatsApp que...\". "
          "Recuerdo la charla del día.\nAtajos al instante y sin gastar el plan: apruebo 1 3 · rechazo 2 · sí a todo · plan · "
          "necesidades · resuelta 2 · tarea: <texto> · venta: 2 Ryzen 5 7600 a 2800 · modelo haiku|sonnet|opus · uso · nueva charla.\n"
-         "La PC: estado pc · prender pc · ronda ahora · pc: <encargo puntual, por ejemplo pc: pregúntale a Shopping PC por la 5600> · salud.")
+         "La PC: estado pc · prender pc · apagar pc · ronda ahora · pc: <encargo puntual, por ejemplo pc: pregúntale a Shopping PC por la 5600> · salud.")
 
 cargar("~/.cargo-bot", ("CLAUDE_CODE_OAUTH_TOKEN", "CLAUDE_MODELO", "MAX_PREGUNTAS_DIA", "AVISOS", "PC_MAC", "PC_IP"))
 TOKEN, CHAT = cargar("~/.telegram", ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"))
@@ -335,6 +335,7 @@ ACCION: rechazar 2
 ACCION: tarea <agente>: <qué hacer>   (agente: wa, mkt, ebay, pedidos, ana, fin, dem o local)
 ACCION: resuelta 2           (Santi dice que ya resolvió la necesidad número 2 de los pedidos de los agentes)
 ACCION: pc prender            (solo prende la PC de la casa)
+ACCION: pc apagar             (apaga la PC en unos minutos, con 2 minutos de aviso en pantalla)
 ACCION: pc ronda              (prende la PC y hace una ronda completa ya)
 ACCION: pc encargo: <qué hacer>  (prende la PC y hace solo ese encargo puntual con Chrome: preguntar a una tienda, revisar
                               el correo del agente, mirar un anuncio, rastrear un paquete...; nunca comprar, pagar ni ofertar)
@@ -404,10 +405,10 @@ def ejecutar_acciones(salida):
         t = re.match(r"tarea\s+(\w+)\s*:\s*(.+)", orden, re.I)
         a = re.match(r"(aprobar|rechazar)\s+([\d ,y]+)", simple(orden))
         res = re.match(r"resuelta\s+([\d ,y]+)", simple(orden))
-        pc = re.match(r"pc\s+(ronda|prender|encargo)\s*:?\s*(.*)", orden, re.I | re.S)
+        pc = re.match(r"pc\s+(ronda|prender|apagar|encargo)\s*:?\s*(.*)", orden, re.I | re.S)
         if pc:
             k = pc.group(1).lower()
-            hechos.append(cmd_prender_pc() if k == "prender" else cmd_pedido_pc(k, pc.group(2)))
+            hechos.append(cmd_prender_pc() if k == "prender" else cmd_apagar_pc() if k == "apagar" else cmd_pedido_pc(k, pc.group(2)))
         elif res:
             hechos.append(cmd_resuelta(set(re.findall(r"\d+", res.group(1)))))
         elif t and t.group(1).lower() in AGENTES:
@@ -485,6 +486,23 @@ def cmd_pedido_pc(tipo, texto=""):
     return f"Listo, le pasé {que} a la PC{'' if ya else ' y la estoy prendiendo'}. Te aviso con el resultado {cuando}."
 
 
+def cmd_apagar_pc():
+    """Deja la orden en orden-pc.json; la PC la lee cada 5 minutos (orden_pc.ps1) y se apaga con 2 minutos de aviso."""
+    if pc_prendida() is False:
+        return "La PC ya está apagada."
+    actualizar_repo()
+    aviso = ""
+    if os.path.exists(PEDIDO):
+        aviso = " Ojo: tenía un pedido sin terminar; si lo estaba haciendo, se corta."
+    t = ahora()
+    json.dump({"id": t.strftime("%Y-%m-%d-%H%M%S"), "orden": "apagar", "pedido": t.strftime("%Y-%m-%d %H:%M"), "por": "santi"},
+              open(os.path.join(REPO, "orden-pc.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    anotar_actividad("Telegram (Raspberry): orden de apagar la PC")
+    subir("Orden a la PC por Telegram: apagar", ("orden-pc.json",))
+    return ("Listo, la PC se apaga en unos minutos: la revisa cada 5 y avisa en pantalla 2 minutos antes "
+            "(si alguien la está usando, lo cancela con shutdown /a)." + aviso)
+
+
 def cmd_salud():
     actualizar_repo()
     sys.path.insert(0, REPO)
@@ -509,6 +527,8 @@ def atender(texto, estado):
         return cmd_estado_pc()
     if t in ("prender pc", "prende la pc", "encender pc", "enciende la pc", "/prender"):
         return cmd_prender_pc()
+    if t in ("apagar pc", "apaga la pc", "apagar la pc", "/apagar"):
+        return cmd_apagar_pc()
     if t in ("ronda ahora", "ronda ya", "haz una ronda", "/ronda"):
         return cmd_pedido_pc("ronda")
     if t in ("salud", "/salud", "como esta el equipo"):
