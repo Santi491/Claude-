@@ -31,6 +31,9 @@ Lo hace la sesión local con Claude in Chrome. Hay dos computadoras: la **PC de 
 7. **Comparar:** con el último informe de `informes/` y la regla de couriers de `CLAUDE.md`, calcular costo puesto en Bs y ganancia. Tipo de cambio del día.
 8. **Avisar al usuario** solo con el resumen: qué conviene traer, cuánto se gana por unidad, y qué tiendas venden más caro.
 
+## Publicar la oficina
+Se publica en la misma URL (https://claude.ai/artifact/7B7QhWLBKLVZD1kB197TxJ) con `file_path` = `oficina/index.html` y `files` con `datos.js` más los .js, capturas y catálogos que cambiaron. Como la Mac, la PC y el Gerente publican la misma oficina, **es normal que el primer publish se rechace** con un aviso como "You hadn't viewed the live version… that version's page has the same author content… it now counts as viewed: publish again": no es un error, solo quiere decir que otra sesión publicó antes. Se vuelve a mandar el mismo publish y pasa; no hace falta leer la página entera (cuesta mucho). Solo si el aviso dice que se perdería contenido o nombra un archivo que cambió ("Changed since you last saw them"), se lee ese archivo con `read` + `path`, se compara con el del repo (`diff --strip-trailing-cr`, la PC usa CRLF) y se fusiona. En el resumen de la ronda no se cuenta como problema.
+
 ## Mensajes modelo (cortos, naturales, uno por tienda)
 - Firma y nombre: **André Maldonado** (ver `CLAUDE.md`). Si preguntan el nombre: "André".
 1. "Hola, buenas. ¿Venden componentes de PC (procesadores, memorias RAM, SSD)?"
