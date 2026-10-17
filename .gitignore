@@ -1,4 +1,6 @@
-.claude/
+.claude/*
+!.claude/skills/
+!.claude/agents/
 .encendida-para-trabajo
 .prueba-ronda
 __pycache__/
