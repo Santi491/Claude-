@@ -8,7 +8,11 @@ $ahora = Get-Date
 $esDiaDeRonda = $ahora.DayOfWeek -ne [DayOfWeek]::Sunday
 $desde = $ahora.Date.AddHours(15).AddMinutes(40)
 $hasta = $ahora.Date.AddHours(16).AddMinutes(10)
-if ($esDiaDeRonda -and $ahora -ge $desde -and $ahora -le $hasta) {
+# Modo prueba (una sola vez): si existe .prueba-ronda con la fecha de hoy, se porta como en la hora de la ronda y lo borra
+$prueba = Join-Path $PSScriptRoot ".prueba-ronda"
+$esPrueba = (Test-Path $prueba) -and ((Get-Content $prueba -ErrorAction SilentlyContinue | Select-Object -First 1) -eq $ahora.ToString("yyyy-MM-dd"))
+if (Test-Path $prueba) { Remove-Item $prueba -Force -ErrorAction SilentlyContinue }
+if ($esPrueba -or ($esDiaDeRonda -and $ahora -ge $desde -and $ahora -le $hasta)) {
   # el acceso directo de Claude del menu Inicio (sirve para cualquier forma de instalacion)
   $menus = @("$env:APPDATA\Microsoft\Windows\Start Menu\Programs", "$env:ProgramData\Microsoft\Windows\Start Menu\Programs")
   $acceso = Get-ChildItem $menus -Recurse -Filter "Claude*.lnk" -ErrorAction SilentlyContinue | Select-Object -First 1
