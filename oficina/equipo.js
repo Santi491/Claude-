@@ -103,7 +103,10 @@
   let vista = "pend";
   const esVencida = it => it.tipo === "plan" && it.fecha && it.fecha < hoyHora().fecha;
   const porDecidir = agente => pendientes(agente).filter(x => !DEC[x.key] && !esVencida(x));
-  const vencidas = agente => pendientes(agente).filter(x => !DEC[x.key] && esVencida(x));
+  // Vencidas (Santi, 17/10): todas las tareas del plan cuya fecha ya pasó, decididas o no; las que siguen sin decidir
+  // tienen sus botones, las demás muestran cómo quedaron
+  const vencidas = agente => pendientes(agente).filter(x => !DEC[x.key] && esVencida(x))
+    .concat(decididas(agente).filter(x => x.tipo === "plan" && x.fecha && x.fecha < hoyHora().fecha));
   function decididas(agente) {
     const out = pendientes().filter(x => DEC[x.key]).map(x => Object.assign({}, x, { dec: DEC[x.key].decision, cuando: `${fechaCorta(DEC[x.key].fecha)} ${DEC[x.key].hora || ""}`, oficina: true }));
     const vistos = new Set(out.map(x => x.key));
@@ -178,12 +181,12 @@
   function renderTablero() {
     const el = panel("pTablero", "Necesidades e ideas del equipo", "lo que cada agente necesita, sus ideas y el plan · solo Santi aprueba");
     const ids = [...new Set([...AG.map(a => a.id), ...pendientes().map(x => x.agente)])];
-    const total = pendientes().length, falta = sinDecidir(), nP = porDecidir().length, nV = vencidas().length, nD = decididas().length;
+    const total = pendientes().length, falta = sinDecidir(), nP = porDecidir().length, nV = vencidas().length, nD = decididas().length, nVs = pendientes().filter(x => !DEC[x.key] && esVencida(x)).length;
     const cnt = id => listaVista(id || undefined).length;
-    const nota = !listo ? "Conectando con la oficina…" : owner ? `Tienes ${falta} cosas por decidir${nV ? ` (${nV} vencidas)` : ""}. Lo que apruebes aquí lo anota el equipo en su próxima ronda (Mac 10:30, PC 16:00 o el Gerente 20:00).`
+    const nota = !listo ? "Conectando con la oficina…" : owner ? `Tienes ${falta} cosas por decidir${nVs ? ` (${nVs} vencidas sin decidir)` : ""}. Lo que apruebes aquí lo anota el equipo en su próxima ronda (Mac 10:30, PC 16:00 o el Gerente 20:00).`
       : "Solo Santi puede aprobar desde aquí (abre la oficina con su cuenta de Claude). Los demás ven el tablero en modo lectura.";
     const ver = filtro ? [filtro] : ids.filter(id => vista === "pend" ? (listaVista(id).length || AG.some(a => a.id === id)) : listaVista(id).length);
-    const sub = vista === "venc" ? "Tareas del plan cuya fecha ya pasó sin que nadie las decidiera: apruébalas si todavía sirven o recházalas para limpiar."
+    const sub = vista === "venc" ? "Tareas del plan cuya fecha ya pasó: arriba las que nadie decidió (apruébalas si todavía sirven o recházalas para limpiar) y después cómo quedaron las demás."
       : vista === "dec" ? "Lo que ya decidiste (en la oficina, por Telegram o en el Doc) y lo que el equipo ya hizo. Solo para consultar." : "";
     el.querySelector(".eq-body").innerHTML = `<p class="eq-note">${esc(nota)}</p>
       <div class="eq-views" role="group" aria-label="Vista"><button type="button" data-vista="pend" aria-pressed="${vista === "pend"}">Por decidir · ${nP}</button><button type="button" data-vista="venc" aria-pressed="${vista === "venc"}">Vencidas · ${nV}</button><button type="button" data-vista="dec" aria-pressed="${vista === "dec"}">Decididas · ${nD}</button></div>
