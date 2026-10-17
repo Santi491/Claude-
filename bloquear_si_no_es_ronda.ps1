@@ -21,6 +21,13 @@ if ($esPrueba -or ($esDiaDeRonda -and $ahora -ge $desde -and $ahora -le $hasta))
   if ($app) { Start-Process "shell:AppsFolder\$($app.AppID)" }
   elseif ($acceso) { Start-Process $acceso.FullName }
   elseif (Test-Path "$env:LOCALAPPDATA\AnthropicClaude\claude.exe") { Start-Process "$env:LOCALAPPDATA\AnthropicClaude\claude.exe" }
+  # Chrome directo en el perfil que tiene la extension Claude in Chrome (si no, se queda en "Que perfil de Chrome quieres usar?"
+  # y la extension no se conecta). El perfil se busca solo: el que tenga la carpeta de la extension.
+  $datos = "$env:LOCALAPPDATA\Google\Chrome\User Data"
+  $perfil = Get-ChildItem $datos -Directory -ErrorAction SilentlyContinue | Where-Object { Test-Path (Join-Path $_.FullName "Extensions\fcoeoabgfenejglbffodgkkbkcdhcgfn") } | Select-Object -First 1
+  $chrome = @("$env:ProgramFiles\Google\Chrome\Application\chrome.exe", "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe", "$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe") | Where-Object { Test-Path $_ } | Select-Object -First 1
+  if ($perfil -and $chrome) { Start-Sleep -Seconds 5; Start-Process $chrome -ArgumentList "--profile-directory=`"$($perfil.Name)`"" }
+  "$($ahora.ToString('yyyy-MM-dd HH:mm')) abre Chrome (perfil: $($perfil.Name))" | Add-Content (Join-Path $env:TEMP "cargo-inicio.log")
   "$($ahora.ToString('yyyy-MM-dd HH:mm')) abre Claude (prueba: $esPrueba, app: $($app.AppID), acceso: $($acceso.FullName))" | Add-Content (Join-Path $env:TEMP "cargo-inicio.log")
 } else {
   "$($ahora.ToString('yyyy-MM-dd HH:mm')) bloquea (fuera del horario de la ronda)" | Add-Content (Join-Path $env:TEMP "cargo-inicio.log")
