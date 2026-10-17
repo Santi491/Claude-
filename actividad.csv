@@ -164,3 +164,5 @@ fecha,hora,agente,texto
 2026-10-17,16:32,gerente,Telegram (Raspberry): tarea nueva de Santi 2026-10-17-5 para local
 2026-10-17,16:32,gerente,Telegram (Raspberry): pedido a la PC (encargo) · tarea 2026-10-17-5
 2026-10-17,17:12,wa,"Encargo de Santi (17-5): agenda revisada y WhatsApp sin respuestas nuevas desde las 16:15; Punto Tecnológico y Gamer Store no escribieron de nuevo; nada que contestar"
+2026-10-17,17:13,gerente,"aviso de fin de encargo enviado (encargo 17-5, PC)"
+2026-10-17,17:14,local,"apagar_pc.ps1: la PC queda prendida (arrancó 16:32 para el pedido, pero alguien la usó)"
