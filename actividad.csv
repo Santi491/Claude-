@@ -166,3 +166,4 @@ fecha,hora,agente,texto
 2026-10-17,17:12,wa,"Encargo de Santi (17-5): agenda revisada y WhatsApp sin respuestas nuevas desde las 16:15; Punto Tecnológico y Gamer Store no escribieron de nuevo; nada que contestar"
 2026-10-17,17:13,gerente,"aviso de fin de encargo enviado (encargo 17-5, PC)"
 2026-10-17,17:14,local,"apagar_pc.ps1: la PC queda prendida (arrancó 16:32 para el pedido, pero alguien la usó)"
+2026-10-17,17:19,local,"Tarea ""Pedidos del Gerente"" de la PC ahora cada 15 minutos de 8 a 21, lunes a sábado (cron */15 8-21 * * 1-6); sin pedido-pc.json termina al instante. CLAUDE.md actualizado."
