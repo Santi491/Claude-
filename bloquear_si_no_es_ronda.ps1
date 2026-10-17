@@ -16,8 +16,13 @@ if ($esPrueba -or ($esDiaDeRonda -and $ahora -ge $desde -and $ahora -le $hasta))
   # el acceso directo de Claude del menu Inicio (sirve para cualquier forma de instalacion)
   $menus = @("$env:APPDATA\Microsoft\Windows\Start Menu\Programs", "$env:ProgramData\Microsoft\Windows\Start Menu\Programs")
   $acceso = Get-ChildItem $menus -Recurse -Filter "Claude*.lnk" -ErrorAction SilentlyContinue | Select-Object -First 1
-  if ($acceso) { Start-Process $acceso.FullName }
+  # Get-StartApps sirve para cualquier instalacion (tambien la de la tienda o el instalador nuevo, que no dejan .lnk)
+  $app = Get-StartApps -ErrorAction SilentlyContinue | Where-Object { $_.Name -eq "Claude" -or $_.Name -like "Claude *" } | Select-Object -First 1
+  if ($app) { Start-Process "shell:AppsFolder\$($app.AppID)" }
+  elseif ($acceso) { Start-Process $acceso.FullName }
   elseif (Test-Path "$env:LOCALAPPDATA\AnthropicClaude\claude.exe") { Start-Process "$env:LOCALAPPDATA\AnthropicClaude\claude.exe" }
+  "$($ahora.ToString('yyyy-MM-dd HH:mm')) abre Claude (prueba: $esPrueba, app: $($app.AppID), acceso: $($acceso.FullName))" | Add-Content (Join-Path $env:TEMP "cargo-inicio.log")
 } else {
+  "$($ahora.ToString('yyyy-MM-dd HH:mm')) bloquea (fuera del horario de la ronda)" | Add-Content (Join-Path $env:TEMP "cargo-inicio.log")
   rundll32.exe user32.dll,LockWorkStation
 }
