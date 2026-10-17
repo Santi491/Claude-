@@ -9,6 +9,7 @@
   const LIMITE = 10;
   const MSJ_DESDE = MSJ.length ? MSJ.map(m => m.fecha).sort()[0] : null;   // antes de esta fecha no había registro de mensajes
   const AGN = { nube: "Informe diario", ebay: "Rastreador eBay", wa: "WhatsApp", mkt: "Marketplace", ana: "Analista", pedidos: "Pedidos", fin: "Finanzas", dem: "Demanda", gerente: "Gerente" };
+  const QN = Object.assign({}, AGN, { santi: "Santi", local: "Ronda local / Oficina", gerente: "Gerente" });
   const C = { cyan: "#4FD1E8", green: "#5CD69A", amber: "#F2A541", red: "#F07A7A", blue: "#6C8CF5", violet: "#C46FD8", gold: "#D9A441", muted: "#7F9AAD", ink: "#D8E8F2", line: "#1E3A4C" };
   const EST_COL = { propuesto: C.amber, aprobado: C.cyan, hecho: C.green, rechazado: C.red };
 
@@ -171,16 +172,50 @@
 .gp-cov{display:grid;gap:4px}.gp-cov .cr{display:grid;grid-template-columns:minmax(0,1fr) repeat(3,64px);gap:8px;align-items:center;font-size:13px;padding:4px 0;border-bottom:1px solid #15293A}
 .gp-cov .cr.h{font:600 11px var(--f-mono);color:var(--o-muted);text-transform:uppercase}.gp-cov .cr>span:not(:first-child){text-align:center;font-family:var(--f-mono)}
 .gp-links a{color:${C.cyan}}
-@media (max-width:860px){.gp-box,.gp-box.w4,.gp-box.w8{grid-column:1/-1}.gp-hb .hr{grid-template-columns:110px 1fr 92px}.gp-funnel .fr{grid-template-columns:96px 1fr 34px 40px}.gpanel{padding:0}.gp-card{height:100vh;border-radius:0}}
+.gd-desk{grid-column:1/-1;min-height:520px;border-radius:12px;border:1px solid var(--o-line);padding:22px;display:grid;grid-template-rows:1fr auto;gap:16px;
+  background:radial-gradient(1200px 500px at 70% 0%,rgba(79,209,232,.10),transparent 60%),linear-gradient(160deg,#0B1822,#0E2230 55%,#0A141C)}
+.gd-icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:18px;align-content:start}
+.gd-ic{display:grid;justify-items:center;gap:8px;background:transparent;border:1px solid transparent;border-radius:12px;padding:12px 6px;color:var(--o-ink);cursor:pointer;font:600 13px var(--f-body);position:relative}
+.gd-ic:hover,.gd-ic:focus-visible{background:rgba(216,232,242,.06);border-color:var(--o-line)}
+.gd-ic i{width:58px;height:58px;border-radius:14px;display:grid;place-items:center;font:800 24px var(--f-display);color:#06121b;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.gd-ic em{position:absolute;top:6px;right:22px;min-width:20px;height:20px;border-radius:10px;background:${C.red};color:#fff;font:700 11px/20px var(--f-mono);font-style:normal;padding:0 5px}
+.gd-bar{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;background:rgba(6,14,20,.75);border:1px solid var(--o-line);border-radius:10px;padding:8px 14px;font:500 12.5px var(--f-mono);color:var(--o-muted)}
+.gd-bar b{color:var(--o-ink)}
+.gd-widgets{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:6px}
+.gd-w{background:rgba(13,29,42,.85);border:1px solid var(--o-line);border-radius:12px;padding:12px;display:grid;gap:6px;font-size:13.5px}
+.gd-w h5{margin:0;font:700 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--o-muted)}
+.gd-back{justify-self:start;background:#0D1D2A;color:var(--o-ink);border:1px solid var(--o-line);border-radius:8px;padding:6px 12px;font:600 12.5px var(--f-mono);cursor:pointer}
+.gc{grid-column:1/-1;display:grid;grid-template-columns:240px minmax(0,1fr);min-height:520px;border:1px solid var(--o-line);border-radius:12px;overflow:hidden}
+.gc-list{background:#0B1822;border-right:1px solid var(--o-line);overflow:auto}
+.gc-list button{display:grid;grid-template-columns:1fr auto;gap:2px 8px;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid #15293A;color:var(--o-ink);padding:10px 12px;cursor:pointer;font:600 14px var(--f-body)}
+.gc-list button small{grid-column:1/-1;font:500 12px var(--f-mono);color:var(--o-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gc-list button[aria-pressed="true"]{background:#13283A}
+.gc-list em{font-style:normal;background:${C.red};color:#fff;border-radius:9px;font:700 11px/18px var(--f-mono);padding:0 6px;align-self:center}
+.gc-th{display:grid;grid-template-rows:minmax(0,1fr) auto;background:#0D1D2A;min-height:0}
+.gc-msgs{overflow:auto;padding:14px;display:flex;flex-direction:column;gap:8px}
+.gc-m{max-width:78%;border-radius:12px;padding:8px 11px;font-size:14px;line-height:1.4;background:#15293A;align-self:flex-start}
+.gc-m.yo{align-self:flex-end;background:#1F4A3A}
+.gc-m.ger{background:#2A2440}
+.gc-m small{display:block;font:500 11px var(--f-mono);color:var(--o-muted);margin-bottom:2px}
+.gc-form{display:flex;gap:8px;padding:10px;border-top:1px solid var(--o-line);background:#0B1822}
+.gc-form input{flex:1;min-width:0;font:500 14px var(--f-body);background:#0D1D2A;color:var(--o-ink);border:1px solid var(--o-line);border-radius:8px;padding:8px 10px}
+.gc-form button,.gt-form button{background:var(--o-amber);color:#06121b;border:0;border-radius:8px;font:700 13px var(--f-mono);padding:8px 14px;cursor:pointer}
+.gc-form button:disabled,.gt-form button:disabled{opacity:.45;cursor:not-allowed}
+.gt-form{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.gt-form select,.gt-form input{font:500 14px var(--f-body);background:#0D1D2A;color:var(--o-ink);border:1px solid var(--o-line);border-radius:8px;padding:8px 10px}
+.gt-form input{flex:1;min-width:220px}
+.gp-ok{margin:0;font:500 12.5px var(--f-mono);color:${C.green}}
+@media (max-width:860px){.gc{grid-template-columns:1fr}.gc-list{max-height:180px}
+.gp-box,.gp-box.w4,.gp-box.w8{grid-column:1/-1}.gp-hb .hr{grid-template-columns:110px 1fr 92px}.gp-funnel .fr{grid-template-columns:96px 1fr 34px 40px}.gpanel{padding:0}.gp-card{height:100vh;border-radius:0}}
 `;
   document.head.appendChild(st);
 
-  const TABS = [["resumen", "Resumen"], ["contacto", "Contacto con tiendas"], ["precios", "Precios y dólar"], ["oport", "Oportunidades"], ["equipo", "Equipo"], ["salud", "Salud del equipo"], ["plan", "Plan e informes"]];
-  let tab = "resumen", rango = "7", dia = MET.length ? MET[MET.length - 1].fecha : "";
+  const TABS = [["escritorio", "Escritorio"], ["chat", "Chat del equipo"], ["tareas", "Tareas y metas"], ["propuestas", "Propuestas"], ["resumen", "Resumen"], ["contacto", "Contacto con tiendas"], ["precios", "Precios y dólar"], ["oport", "Oportunidades"], ["equipo", "Equipo"], ["salud", "Salud del equipo"], ["plan", "Plan e informes"]];
+  let tab = "escritorio", rango = "7", dia = MET.length ? MET[MET.length - 1].fecha : "";
   const box = document.createElement("div");
   box.className = "gpanel"; box.hidden = true; box.setAttribute("role", "dialog"); box.setAttribute("aria-label", "Panel de datos del Gerente");
   box.innerHTML = `<div class="gp-card">
-    <div class="gp-head"><div><b>Pantalla del Gerente</b><span>Panel de datos de Cargo Brothers · métricas reales, sin cifras inventadas</span></div>
+    <div class="gp-head"><div><b>Escritorio del Gerente</b><span>Chat del equipo, tareas y metas, propuestas y el panel de datos · todo con datos reales</span></div>
       <div class="gp-tools"><label class="gp-note" for="gpD">Día</label><select id="gpD"></select>
         <div class="seg" id="gpR"><button type="button" data-r="7" aria-pressed="true">7 días</button><button type="button" data-r="30" aria-pressed="false">30 días</button><button type="button" data-r="todo" aria-pressed="false">Todo</button></div>
         <button type="button" class="mp-x" id="gpX">Cerrar</button></div></div>
@@ -337,19 +372,92 @@
       ${ses.map(x => `<tr><td>${dm(x.fecha)}</td><td>${esc(QUIEN[x.quien] || x.quien)}</td><td>${esc(x.tipo)}</td><td>${esc(x.inicio || "")}${x.fin && x.fin !== x.inicio ? "–" + esc(x.fin) : ""}</td><td><span class="gp-tag" style="background:${SCOL[x.estado] || C.muted}">${esc(x.estado)}</span></td><td style="color:var(--o-muted)">${esc(x.nota || "")}</td></tr>`).join("")}</tbody></table></div>` : `<p class="gp-empty">Todavía no hay sesiones registradas.</p>`}</div>`;
   }
 
-  const VIEWS = { resumen: vResumen, contacto: vContacto, precios: vPrecios, oport: vOport, equipo: vEquipo, salud: vSalud, plan: vPlan };
+  /* ---------- Escritorio del Gerente (Santi, 17/10): apps como en una computadora ---------- */
+  const CHAT = D.chat || [], HOY = (D.generado || "").slice(0, 10);
+  let db = null, owner = false, chatCon = "", aviso = "";
+  (async () => { try { if (!window.claude || !window.claude.use) return; const [d, u] = await Promise.all([window.claude.use("db"), window.claude.use("user")]); db = d; owner = u ? !!(await u.isOwner()) : false; if (!box.hidden) render(); } catch (e) { } })();
+  const pendChat = () => CHAT.filter(c => (c.para === "gerente" || c.para === "santi") && c.estado !== "respondido");
+  const metasHoy = () => PLAN.filter(p => /^s/i.test(p.obligatoria || "") && (p.plazo || p.fecha_para) >= HOY);
+  const abiertas = () => PLAN.filter(p => p.estado === "aprobado");
+  const atrasadas = () => abiertas().filter(p => (p.plazo || p.fecha_para) < HOY);
+  const propuestasAb = () => (D.ideas || []).filter(i => i.estado === "propuesta").length + (D.necesidades || []).length;
+  const APPS = [["chat", "Chat del equipo", "💬", C.cyan, () => pendChat().length], ["tareas", "Tareas y metas", "✓", C.amber, () => metasHoy().filter(p => p.estado === "aprobado").length],
+    ["propuestas", "Propuestas", "★", C.violet, () => propuestasAb()], ["salud", "Salud del equipo", "♥", C.green, () => 0], ["plan", "Informes", "▤", C.blue, () => 0],
+    ["resumen", "Panel de datos", "▦", C.gold, () => 0], ["oport", "Oportunidades", "$", C.green, () => 0], ["equipo", "Equipo", "◉", C.muted, () => 0]];
+  const back = () => `<button type="button" class="gd-back" data-t="escritorio">← Escritorio</button>`;
+  function vEscritorio() {
+    const fr = D.frescura || {}, viejo = Object.entries(fr).filter(([k, v]) => v && k !== "catalogos" && (new Date(HOY) - new Date(v.slice(0, 10))) / 864e5 >= 3).map(([k]) => k);
+    const ult = CHAT.slice(-3).reverse(), mh = metasHoy();
+    return `<div class="gd-desk"><div><div class="gd-icons">${APPS.map(([k, t, ic, col, badge]) => { const b = badge(); return `<button type="button" class="gd-ic" data-t="${k}"><i style="background:${col}">${ic}</i>${esc(t)}${b ? `<em>${b}</em>` : ""}</button>`; }).join("")}</div>
+      <div class="gd-widgets">
+        <div class="gd-w"><h5>Metas de hoy</h5>${mh.length ? mh.map(p => `<span>${p.estado === "hecho" ? "✓" : "•"} ${esc(QN[p.agente] || p.agente)}: ${esc(p.tarea)}</span>`).join("") : `<span style="color:var(--o-muted)">Sin metas. Ponlas por Telegram (meta wa: 10 tiendas nuevas hoy) o en Tareas y metas.</span>`}</div>
+        <div class="gd-w"><h5>Últimos mensajes del equipo</h5>${owner ? (ult.length ? ult.map(c => `<span><b>${esc(QN[c.de] || c.de)}</b> → ${esc(QN[c.para] || c.para)}: ${esc(c.texto.length > 90 ? c.texto.slice(0, 89) + "…" : c.texto)}</span>`).join("") : `<span style="color:var(--o-muted)">Todavía nadie escribió.</span>`) : `<span style="color:var(--o-muted)">El chat del equipo lo ve solo Santi.</span>`}</div>
+        <div class="gd-w"><h5>Cola de tareas</h5><span>${abiertas().length} aprobadas por hacer · ${atrasadas().length} atrasadas · ${PLAN.filter(p => p.estado === "propuesto").length} esperan tu OK</span></div>
+        <div class="gd-w"><h5>Datos al día</h5><span>${viejo.length ? `Ojo: ${esc(viejo.join(", "))} con 3 días o más` : "Todo con datos de los últimos días"}</span><span style="color:var(--o-muted)">Datos al ${esc((D.generado || "").replace(" ", " · "))}</span></div>
+      </div></div>
+      <div class="gd-bar"><span><b>Cargo Brothers</b> · escritorio del Gerente</span><span>${pendChat().length} mensajes esperan respuesta · ${propuestasAb()} propuestas abiertas</span></div></div>`;
+  }
+  function hilos() {
+    const ks = new Set(["gerente", "santi"]); const map = {};
+    CHAT.forEach(c => { const otro = [c.de, c.para].find(x => x !== "santi" && x !== "gerente") || (c.de === "santi" ? c.para : c.de); (map[otro] = map[otro] || []).push(c); });
+    Object.keys(AGN).forEach(a => { if (a !== "nube" && !map[a]) map[a] = []; });
+    return Object.entries(map).sort((a, b) => ((b[1].slice(-1)[0] || {}).id || "").localeCompare((a[1].slice(-1)[0] || {}).id || ""));
+  }
+  function vChat() {
+    if (!owner) return `${back()}<div class="gp-box w12"><h4>Chat del equipo</h4><p class="gp-empty">El chat entre los agentes, el Gerente y Santi lo ve solo Santi (abre la oficina con su cuenta). Por Telegram: escribe "chat" para ver lo que te preguntan.</p></div>`;
+    const H = hilos(); if (!chatCon && H.length) chatCon = H[0][0];
+    const msgs = (H.find(h => h[0] === chatCon) || [, []])[1];
+    return `${back()}<div class="gc"><div class="gc-list">${H.map(([k, l]) => { const u = l[l.length - 1], p = l.filter(c => (c.para === "santi" || c.para === "gerente") && c.estado !== "respondido" && c.de === k).length;
+        return `<button type="button" data-chat="${esc(k)}" aria-pressed="${k === chatCon}"><span>${esc(QN[k] || k)}</span>${p ? `<em>${p}</em>` : "<span></span>"}<small>${u ? esc(u.texto) : "sin mensajes"}</small></button>`; }).join("")}</div>
+      <div class="gc-th"><div class="gc-msgs" id="gcM">${msgs.length ? msgs.map(c => `<div class="gc-m ${c.de === "santi" ? "yo" : c.de === "gerente" ? "ger" : ""}"><small>${esc(QN[c.de] || c.de)} → ${esc(QN[c.para] || c.para)} · ${dm(c.fecha)} ${esc(c.hora)}${c.estado === "respondido" ? " · respondido" : ""}</small>${esc(c.texto)}</div>`).join("")
+        : `<p class="gp-empty">Sin mensajes con ${esc(QN[chatCon] || chatCon)} todavía. Los agentes escriben aquí cuando necesitan algo; el Gerente de la Raspberry te lo pasa por Telegram.</p>`}</div>
+      <form class="gc-form" id="gcF"><input id="gcT" maxlength="400" placeholder="Escríbele a ${esc(QN[chatCon] || chatCon)} (lo lee en su próximo turno)" aria-label="Mensaje" ${db ? "" : "disabled"}><button type="submit" ${db ? "" : "disabled"}>Enviar</button></form></div></div>
+      <p class="gp-note">${aviso ? `<span class="gp-ok">${esc(aviso)}</span> ` : ""}Solo cosas de trabajo: nada de guías, teléfonos, direcciones ni nombres de personas. Lo que escribes aquí lo pasa la próxima ronda al chat del agente (para que sea al instante, usa Telegram: chat ${esc(chatCon)}: …).</p>`;
+  }
+  const PRI = { alta: 0, media: 1, baja: 2 };
+  function vTareas() {
+    const ab = abiertas().slice().sort((a, b) => (PRI[a.prioridad] ?? 1) - (PRI[b.prioridad] ?? 1) || (a.plazo || a.fecha_para).localeCompare(b.plazo || b.fecha_para));
+    const fila = p => `<tr><td><span class="gp-tag" style="background:${p.prioridad === "alta" ? C.red : p.prioridad === "baja" ? C.muted : C.amber}">${esc(p.prioridad || "media")}</span>${/^s/i.test(p.obligatoria || "") ? ` <span class="gp-tag" style="background:${C.violet}">meta</span>` : ""}</td><td>${esc(QN[p.agente] || p.agente)}</td><td>${esc(p.tarea)}${p.meta ? ` <b>(${esc(p.meta)})</b>` : ""}</td><td>${dm(p.plazo || p.fecha_para)}${(p.plazo || p.fecha_para) < HOY ? ` <span class="gp-tag" style="background:${C.red}">atrasada</span>` : ""}</td><td style="color:var(--o-muted)">${esc(p.motivo)}</td></tr>`;
+    const agentes = Object.keys(AGN).filter(a => a !== "nube" && a !== "gerente");
+    return `${back()}<div class="gp-kpis">${kpi("Metas de hoy", metasHoy().length, `${metasHoy().filter(p => p.estado === "hecho").length} cumplidas`)}${kpi("Por hacer", ab.length, "aprobadas, en orden de prioridad")}${kpi("Atrasadas", atrasadas().length, "pasó el plazo")}${kpi("Esperan tu OK", PLAN.filter(p => p.estado === "propuesto").length, "apruébalas en el tablero o por Telegram")}</div>
+      <div class="gp-box w12"><h4>Ponerle una meta a un agente (obligatoria para hoy)</h4>
+        <form class="gt-form" id="gtF"><select id="gtA" aria-label="Agente">${agentes.map(a => `<option value="${a}">${esc(AGN[a])}</option>`).join("")}</select><input id="gtT" maxlength="200" placeholder="Ej.: 10 tiendas nuevas hoy sí o sí" aria-label="Meta" ${owner && db ? "" : "disabled"}><button type="submit" ${owner && db ? "" : "disabled"}>Poner meta</button></form>
+        <p class="gp-note">${aviso && tab === "tareas" ? `<span class="gp-ok">${esc(aviso)}</span> ` : ""}${owner ? "Queda como tarea aprobada, prioridad alta y obligatoria; la anota la próxima ronda. Para que sea al instante: por Telegram, meta wa: …" : "Solo Santi puede poner metas desde aquí. Por Telegram: meta wa: 10 tiendas nuevas hoy."}</p></div>
+      <div class="gp-box w12"><h4>Cola de tareas (aprobadas)</h4>${ab.length ? `<div class="gp-tbl"><table><thead><tr><th>Prioridad</th><th>Responsable</th><th>Tarea</th><th>Plazo</th><th>Por qué</th></tr></thead><tbody>${ab.map(fila).join("")}</tbody></table></div>` : `<p class="gp-empty">No hay tareas aprobadas pendientes.</p>`}</div>`;
+  }
+  function vPropuestas() {
+    const ideas = (D.ideas || []).filter(i => i.estado === "propuesta"), nec = D.necesidades || [];
+    const porAg = {}; ideas.forEach(i => (porAg[i.agente] = porAg[i.agente] || { i: [], n: [] }).i.push(i)); nec.forEach(x => (porAg[x.agente] = porAg[x.agente] || { i: [], n: [] }).n.push(x));
+    return `${back()}<div class="gp-box w12"><h4>Lo que propone y necesita cada agente</h4><p class="gp-note">Cada agente propone desde su puesto (máximo 2 por turno y con un dato). El Gerente las filtra y te trae las mejores. Para aprobar o dar por resuelto: <button type="button" class="gd-back" data-abrir="tablero">Abrir el tablero</button></p></div>
+      ${Object.keys(porAg).length ? Object.entries(porAg).map(([a, v]) => `<div class="gp-box w6"><h4>${esc(QN[a] || a)}</h4>${v.n.map(x => `<span>🔧 <b>Necesita:</b> ${esc(x.necesita)}${x.para_que ? ` <span style="color:var(--o-muted)">· para ${esc(x.para_que)}</span>` : ""}</span>`).join("")}${v.i.map(x => `<span>💡 <b>Idea:</b> ${esc(x.idea)}${x.por_que ? ` <span style="color:var(--o-muted)">· ${esc(x.por_que)}</span>` : ""}</span>`).join("")}</div>`).join("") : `<div class="gp-box w12"><p class="gp-empty">No hay propuestas ni necesidades abiertas.</p></div>`}`;
+  }
+  async function guardar(tipo, datos) {
+    const d = new Date(), p2 = x => String(x).padStart(2, "0"), id = `${tipo}-${d.getTime().toString(36)}`;
+    await db.collection("decisiones").doc(id).set(Object.assign({ tipo, fecha: `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())}`, hora: `${p2(d.getHours())}:${p2(d.getMinutes())}`, aplicado: false }, datos));
+  }
+  box.addEventListener("click", e => { const c = e.target.closest("[data-chat]"); if (c) { chatCon = c.dataset.chat; aviso = ""; render(); const m = $g("gcM"); if (m) m.scrollTop = m.scrollHeight; } if (e.target.closest("[data-abrir]")) close(); });
+  box.addEventListener("submit", async e => {
+    e.preventDefault(); if (!db || !owner) return;
+    try {
+      if (e.target.id === "gcF") { const t = $g("gcT").value.trim(); if (!t) return; await guardar("chat", { para: chatCon, texto: t }); aviso = `Guardado para ${QN[chatCon] || chatCon}: lo recibe en la próxima ronda.`; }
+      if (e.target.id === "gtF") { const t = $g("gtT").value.trim(); if (!t) return; await guardar("meta", { agente: $g("gtA").value, texto: t, meta: (t.match(/\d+/) || [""])[0] }); aviso = `Meta guardada para ${AGN[$g("gtA").value]}: la anota la próxima ronda.`; }
+      render();
+    } catch (err) { aviso = "No se pudo guardar. Por Telegram funciona siempre."; render(); }
+  });
+
+  const VIEWS = { escritorio: vEscritorio, chat: vChat, tareas: vTareas, propuestas: vPropuestas, resumen: vResumen, contacto: vContacto, precios: vPrecios, oport: vOport, equipo: vEquipo, salud: vSalud, plan: vPlan };
   function render() {
     box.querySelectorAll(".gp-tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.t === tab)));
     box.querySelectorAll("#gpR button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.r === rango)));
-    $g("gpB").innerHTML = MET.length || tab === "plan" || tab === "salud" ? VIEWS[tab]() : `<div class="gp-box w12"><p class="gp-empty">Todavía no hay métricas: corre python3 metricas.py.</p></div>`;
+    $g("gpB").innerHTML = MET.length || ["plan", "salud", "escritorio", "chat", "tareas", "propuestas"].includes(tab) ? VIEWS[tab]() : `<div class="gp-box w12"><p class="gp-empty">Todavía no hay métricas: corre python3 metricas.py.</p></div>`;
   }
-  box.querySelector(".gp-tabs").addEventListener("click", e => { const b = e.target.closest("[data-t]"); if (b) { tab = b.dataset.t; render(); $g("gpB").scrollTop = 0; } });
+  box.addEventListener("click", e => { const b = e.target.closest("[data-t]"); if (b && box.contains(b)) { tab = b.dataset.t; aviso = ""; render(); $g("gpB").scrollTop = 0; const m = $g("gcM"); if (m) m.scrollTop = m.scrollHeight; } });
   $g("gpR").addEventListener("click", e => { const b = e.target.closest("[data-r]"); if (b) { rango = b.dataset.r; render(); } });
   $g("gpD").addEventListener("change", e => { dia = e.target.value; render(); });
   box.addEventListener("click", e => { if (e.target === box) close(); });
   $g("gpX").onclick = () => close();
   let lastFocus = null;
-  function open() { lastFocus = document.activeElement; box.hidden = false; render(); $g("gpX").focus(); }
+  function open() { lastFocus = document.activeElement; box.hidden = false; tab = "escritorio"; render(); $g("gpX").focus(); }
   function close() { box.hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
   document.addEventListener("keydown", e => { if (e.key === "Escape" && !box.hidden) { e.stopImmediatePropagation(); close(); } }, true);
   document.addEventListener("click", e => { if (e.target.closest("[data-panel]")) open(); });

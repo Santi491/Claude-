@@ -8,6 +8,21 @@ Lo hace la sesión local con Claude in Chrome. Hay dos computadoras: la **PC de 
 - El límite de ~10 chats nuevos por día es **por número**, no por computadora: sumar lo que ya hizo la otra.
 - No trabajar en las dos computadoras al mismo tiempo.
 
+## La ronda con sub-agentes (desde el 17/10, pedido de Santi)
+Cada puesto tiene su skill en `.claude/skills/` y su sub-agente en `.claude/agents/` (ver "Skills y sub-agentes" en `CLAUDE.md`). La sesión de la ronda (PC, Mac o pedido de la PC) es la **coordinadora**: no hace el trabajo de los puestos, los lanza y controla.
+- **Cómo se lanza un sub-agente:** herramienta Agent con `subagent_type` = el nombre del puesto (`pedidos`, `whatsapp`, `marketplace`, `catalogos`, `rastreador-ebay`, `analista`, `finanzas`, `oficina`, `gerente`), en primer plano (`run_in_background: false`) para respetar el orden. Si el tipo no aparece (la sesión no cargó `.claude/agents/`), `general-purpose` con el `model` del archivo del agente y el prompt "Eres el sub-agente <puesto> de Cargo Brothers: lee `.claude/agents/<puesto>.md`, `.claude/skills/reglas-cargo-brothers/SKILL.md` y `.claude/skills/<skill>/SKILL.md` y haz tu turno" + lo que le toque hoy (tareas, metas, "ronda ligera").
+- **Los que usan Chrome van de a uno** (comparten el navegador): WhatsApp, Marketplace, Catálogos, Rastreador eBay (si usa Chrome) y Pedidos. Los que no usan Chrome (Analista, Finanzas) pueden ir juntos.
+- **Orden:**
+  1. Coordinadora: `git pull`, `vivo/_ronda` activa, decisiones de la oficina (paso 0b), `python chat.py pendientes` y tareas/metas de hoy para repartir.
+  2. Recolectan: **rastreador-ebay** (solo si la nube no trajo los precios de hoy o toca vendidos) → **whatsapp** → **marketplace** (no en la ligera, salvo Messenger) → **catalogos** (si hay catálogos pendientes o webs que tocan) → **pedidos**.
+  3. Procesan: **analista** y **finanzas**.
+  4. **oficina**: regenera, verifica y publica.
+  5. **gerente**: controla (`verificar.py todo`, chat, tareas, propuestas) y manda el mensaje de fin de ronda a Santi (paso 8b).
+  6. Coordinadora: sesión en `sesiones.csv` (8d), commit y push, `vivo/_ronda` en false, apagar la PC si corresponde (8c).
+- **Cada informe** (AGENTE / HECHO / ARCHIVOS / VERIFICACIÓN / PENDIENTE / PROPUESTAS) lo lee la coordinadora: si un agente dejó un ERROR de `verificar.py`, se lo devuelve una vez para que lo corrija; si sigue, sigue la ronda y queda como alerta para el Gerente.
+- **Presupuesto:** si la ronda se está alargando (más de ~90 minutos), la coordinadora salta lo que no es de hoy (redes, vendidos de eBay) y lo deja como tarea.
+- Los pasos de abajo siguen valiendo como resumen de qué hace cada puesto; el detalle y las reglas finas están en cada skill.
+
 ## Cuentas
 - **WhatsApp:** número exclusivo para el agente (no es el personal del usuario). Sesión en WhatsApp Web en el Chrome del usuario.
 - **Facebook:** cuenta del usuario, sesión abierta en el mismo Chrome.
