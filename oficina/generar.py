@@ -199,9 +199,16 @@ def main():
             c["precios"] = [{k: r[k] for k in ("producto", "precio_bs", "estado")} for r in pcb
                             if r["fecha"] == c["fecha"] and c["tienda"].lower() in r["fuente"].lower()]
             catalogos.append(c)
+    # Salud del equipo (salud.py): estado de hoy, últimos 14 días e historial de sesiones (sesiones.csv)
+    import sys as _sys
+    _sys.path.insert(0, RAIZ)
+    import salud as _salud
+    salud_equipo = {"hoy": _salud.estado_dia(), "semana": _salud.semana(14),
+                    "horario": {k: {"nombre": h["nombre"], "hora": h["hora"], "dias": list(h["dias"]), "ligera": h.get("ligera", [])} for k, h in _salud.HORARIO.items()},
+                    "sesiones": _salud.sesiones()[-80:]}
     datos = {"generado": datetime.now().strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
              "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas,
-             "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente, "catalogos": catalogos,
+             "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente, "catalogos": catalogos, "salud": salud_equipo,
              # lo que los agentes le piden a Santi (sin datos privados): lo usa la animación del Gerente
              # id = número de fila del CSV (las filas nunca se borran): con eso la oficina aprueba o da por resuelto
              "necesidades": [{"id": i, "fecha": f.get("fecha", ""), "agente": f.get("agente", ""), "necesita": f.get("necesita", ""),

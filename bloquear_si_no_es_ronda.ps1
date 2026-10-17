@@ -12,7 +12,16 @@ $hasta = $ahora.Date.AddHours(16).AddMinutes(10)
 $prueba = Join-Path $PSScriptRoot ".prueba-ronda"
 $esPrueba = (Test-Path $prueba) -and ((Get-Content $prueba -ErrorAction SilentlyContinue | Select-Object -First 1) -eq $ahora.ToString("yyyy-MM-dd"))
 if (Test-Path $prueba) { Remove-Item $prueba -Force -ErrorAction SilentlyContinue }
-if ($esPrueba -or ($esDiaDeRonda -and $ahora -ge $desde -and $ahora -le $hasta)) {
+# Pedido del Gerente (Telegram o vigilante de la Raspberry): pedido-pc.json de las ultimas 3 horas -> se abre igual
+git -C $PSScriptRoot pull -q 2>$null
+$archPedido = Join-Path $PSScriptRoot "pedido-pc.json"
+$hayPedido = $false
+if (Test-Path $archPedido) {
+  try { $ped = Get-Content $archPedido -Raw | ConvertFrom-Json; $hayPedido = ((Get-Date) - [datetime]::ParseExact($ped.pedido, "yyyy-MM-dd HH:mm", $null)).TotalHours -lt 3 } catch { }
+}
+if ($esPrueba -or $hayPedido -or ($esDiaDeRonda -and $ahora -ge $desde -and $ahora -le $hasta)) {
+  # marca para apagar_pc.ps1: la PC se abrio para trabajar sola (si nadie la usa, se apaga al terminar)
+  Set-Content (Join-Path $PSScriptRoot ".encendida-para-trabajo") $ahora.ToString("yyyy-MM-dd")
   # el acceso directo de Claude del menu Inicio (sirve para cualquier forma de instalacion)
   $menus = @("$env:APPDATA\Microsoft\Windows\Start Menu\Programs", "$env:ProgramData\Microsoft\Windows\Start Menu\Programs")
   $acceso = Get-ChildItem $menus -Recurse -Filter "Claude*.lnk" -ErrorAction SilentlyContinue | Select-Object -First 1
@@ -28,7 +37,7 @@ if ($esPrueba -or ($esDiaDeRonda -and $ahora -ge $desde -and $ahora -le $hasta))
   $chrome = @("$env:ProgramFiles\Google\Chrome\Application\chrome.exe", "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe", "$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe") | Where-Object { Test-Path $_ } | Select-Object -First 1
   if ($perfil -and $chrome) { Start-Sleep -Seconds 5; Start-Process $chrome -ArgumentList "--profile-directory=`"$($perfil.Name)`"" }
   "$($ahora.ToString('yyyy-MM-dd HH:mm')) abre Chrome (perfil: $($perfil.Name))" | Add-Content (Join-Path $env:TEMP "cargo-inicio.log")
-  "$($ahora.ToString('yyyy-MM-dd HH:mm')) abre Claude (prueba: $esPrueba, app: $($app.AppID), acceso: $($acceso.FullName))" | Add-Content (Join-Path $env:TEMP "cargo-inicio.log")
+  "$($ahora.ToString('yyyy-MM-dd HH:mm')) abre Claude (prueba: $esPrueba, pedido: $hayPedido, app: $($app.AppID), acceso: $($acceso.FullName))" | Add-Content (Join-Path $env:TEMP "cargo-inicio.log")
 } else {
   "$($ahora.ToString('yyyy-MM-dd HH:mm')) bloquea (fuera del horario de la ronda)" | Add-Content (Join-Path $env:TEMP "cargo-inicio.log")
   rundll32.exe user32.dll,LockWorkStation

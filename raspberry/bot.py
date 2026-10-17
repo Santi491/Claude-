@@ -7,6 +7,9 @@ Responde al momento a Santi. Lo simple lo resuelve solo, sin IA y sin gastar el 
     tarea: <texto>  /  tarea wa: <texto>              -> agrega una tarea aprobada por Santi
     modelo haiku | sonnet | opus                       -> cambia el modelo de las preguntas
     uso                                                -> cuántas preguntas a Claude van hoy
+    estado pc · prender pc                             -> ve si la PC está prendida / la prende (Wake-on-LAN)
+    ronda ahora  ·  pc: <encargo>                      -> la PC hace una ronda completa o solo ese encargo ya
+    salud                                              -> cómo está el equipo hoy (nube, Mac, PC, Gerente, Raspberry)
     ayuda
 Cualquier otro mensaje es una pregunta: solo ahí llama a Claude Code (plan Pro), en modo solo lectura.
 
@@ -38,13 +41,14 @@ NOMBRES = {"nube": "la Nube", "ebay": "el Rastreador eBay", "wa": "WhatsApp", "m
 DIAS = ("lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo")
 AYUDA = ("Háblame como a tu gerente: \"hola, ¿cómo vamos?\", \"¿qué conviene traer?\", \"dile a WhatsApp que...\". "
          "Recuerdo la charla del día.\nAtajos al instante y sin gastar el plan: apruebo 1 3 · rechazo 2 · sí a todo · plan · "
-         "necesidades · resuelta 2 · tarea: <texto> · venta: 2 Ryzen 5 7600 a 2800 · modelo haiku|sonnet|opus · uso · nueva charla.")
+         "necesidades · resuelta 2 · tarea: <texto> · venta: 2 Ryzen 5 7600 a 2800 · modelo haiku|sonnet|opus · uso · nueva charla.\n"
+         "La PC: estado pc · prender pc · ronda ahora · pc: <encargo puntual, por ejemplo pc: pregúntale a Shopping PC por la 5600> · salud.")
 
-cargar("~/.cargo-bot", ("CLAUDE_CODE_OAUTH_TOKEN", "CLAUDE_MODELO", "MAX_PREGUNTAS_DIA", "AVISOS"))
+cargar("~/.cargo-bot", ("CLAUDE_CODE_OAUTH_TOKEN", "CLAUDE_MODELO", "MAX_PREGUNTAS_DIA", "AVISOS", "PC_MAC", "PC_IP"))
 TOKEN, CHAT = cargar("~/.telegram", ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"))
 MAX_DIA = int(os.environ.get("MAX_PREGUNTAS_DIA", "20"))
 # Horas en que el Gerente le escribe solo a Santi (el informe de las 20:00 ya lo manda la rutina de la nube). "" = nunca.
-AVISOS = [h.strip() for h in os.environ.get("AVISOS", "08:20,13:30").split(",") if h.strip()]
+AVISOS = [h.strip() for h in os.environ.get("AVISOS", "08:20").split(",") if h.strip()]
 
 
 def ahora():
@@ -88,8 +92,8 @@ def actualizar_repo():
     git("pull", "--no-rebase", "--no-edit", "-q")
 
 
-def subir(mensaje):
-    git("add", "plan.csv", "actividad.csv", "necesidades.csv")
+def subir(mensaje, extra=()):
+    git("add", "plan.csv", "actividad.csv", "necesidades.csv", *extra)
     if git("diff", "--cached", "--quiet").returncode == 0:
         return True
     git("commit", "-q", "-m", mensaje)
@@ -330,6 +334,12 @@ ACCION: aprobar 1 3          (tareas propuestas de plan.csv, por su número fina
 ACCION: rechazar 2
 ACCION: tarea <agente>: <qué hacer>   (agente: wa, mkt, ebay, pedidos, ana, fin, dem o local)
 ACCION: resuelta 2           (Santi dice que ya resolvió la necesidad número 2 de los pedidos de los agentes)
+ACCION: pc prender            (solo prende la PC de la casa)
+ACCION: pc ronda              (prende la PC y hace una ronda completa ya)
+ACCION: pc encargo: <qué hacer>  (prende la PC y hace solo ese encargo puntual con Chrome: preguntar a una tienda, revisar
+                              el correo del agente, mirar un anuncio, rastrear un paquete...; nunca comprar, pagar ni ofertar)
+Si Santi pide algo que se resuelve leyendo los archivos, contéstalo tú sin prender la PC. Usa pc encargo solo cuando haga
+falta Chrome o escribir a alguien, y avísale que el resultado llega en 10 a 15 minutos.
 Usa ACCION solo si Santi lo pidió o aceptó claramente en esta conversación; si dudas, pregúntale primero.
 Desde el 13/10 WhatsApp y Marketplace escriben solos a las tiendas (Santi lo autorizó): no hace falta pedirle el texto.
 Comprar, pagar, ofertar o dar datos personales nunca: eso
@@ -394,7 +404,11 @@ def ejecutar_acciones(salida):
         t = re.match(r"tarea\s+(\w+)\s*:\s*(.+)", orden, re.I)
         a = re.match(r"(aprobar|rechazar)\s+([\d ,y]+)", simple(orden))
         res = re.match(r"resuelta\s+([\d ,y]+)", simple(orden))
-        if res:
+        pc = re.match(r"pc\s+(ronda|prender|encargo)\s*:?\s*(.*)", orden, re.I | re.S)
+        if pc:
+            k = pc.group(1).lower()
+            hechos.append(cmd_prender_pc() if k == "prender" else cmd_pedido_pc(k, pc.group(2)))
+        elif res:
             hechos.append(cmd_resuelta(set(re.findall(r"\d+", res.group(1)))))
         elif t and t.group(1).lower() in AGENTES:
             hechos.append(cmd_tarea(t.group(1).lower(), t.group(2)))
@@ -413,6 +427,73 @@ def resumen_programado(cuando, estado):
                   estado)
 
 
+# ---------- Manos del Gerente sobre la PC (Santi, 17/10) ----------
+PEDIDO = os.path.join(REPO, "pedido-pc.json")
+
+
+def pc_prendida():
+    ip = os.environ.get("PC_IP")
+    if not ip:
+        return None
+    subprocess.run(["ping", "-c", "1", "-W", "1", ip], capture_output=True)
+    return "REACHABLE" in subprocess.run(["ip", "neigh", "show", ip], capture_output=True, text=True).stdout
+
+
+def prender_pc():
+    subprocess.Popen([sys.executable, os.path.join(REPO, "raspberry", "despertar_pc.py")], cwd=REPO,
+                     stdout=open(os.path.expanduser("~/despertar.log"), "a"), stderr=subprocess.STDOUT)
+
+
+def cmd_estado_pc():
+    p = pc_prendida()
+    extra = ""
+    if os.path.exists(PEDIDO):
+        d = json.load(open(PEDIDO, encoding="utf-8"))
+        extra = f" Tiene un pedido pendiente desde las {d.get('pedido', '')[-5:]}: {d.get('tipo')}."
+    return {True: "La PC está prendida.", False: "La PC está apagada.", None: "No sé: falta PC_IP en ~/.cargo-bot."}[p] + extra
+
+
+def cmd_prender_pc():
+    if pc_prendida():
+        return "La PC ya está prendida."
+    prender_pc()
+    return "Listo, estoy prendiendo la PC. En un par de minutos está lista; si no responde, te aviso."
+
+
+def cmd_pedido_pc(tipo, texto=""):
+    actualizar_repo()
+    if os.path.exists(PEDIDO):
+        d = json.load(open(PEDIDO, encoding="utf-8"))
+        return f"La PC ya tiene un pedido en curso desde las {d.get('pedido', '')[-5:]} ({d.get('tipo')}). Cuando termine te aviso y le paso el siguiente."
+    t = ahora()
+    p = {"id": t.strftime("%Y-%m-%d-%H%M"), "tipo": tipo, "ligera": False, "pedido": t.strftime("%Y-%m-%d %H:%M"), "por": "santi"}
+    if tipo == "encargo":
+        cmd_tarea("local", "URGENTE (encargo para la PC ahora): " + texto.strip())
+        _, filas = leer_csv("plan.csv")
+        p["plan_id"] = filas[-1]["id"]
+        p["motivo"] = texto.strip()[:300]
+    else:
+        p["motivo"] = "ronda completa pedida por Santi"
+    json.dump(p, open(PEDIDO, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    anotar_actividad(f"Telegram (Raspberry): pedido a la PC ({tipo}){' · tarea ' + p['plan_id'] if tipo == 'encargo' else ''}")
+    subir(f"Pedido a la PC por Telegram: {tipo}", ("pedido-pc.json",))
+    ya = pc_prendida()
+    if not ya:
+        prender_pc()
+    cuando = "en la próxima media hora (la PC ya estaba prendida)" if ya else "en unos 10 a 15 minutos"
+    que = "la ronda completa" if tipo == "ronda" else "el encargo"
+    return f"Listo, le pasé {que} a la PC{'' if ya else ' y la estoy prendiendo'}. Te aviso con el resultado {cuando}."
+
+
+def cmd_salud():
+    actualizar_repo()
+    sys.path.insert(0, REPO)
+    import salud
+    e = salud.estado_dia()
+    icono = {"ok": "✓", "cubierta": "✓ (cubierta)", "pendiente": "…", "no corrió": "✕", "no toca": "–", "sin datos": "?", "sin señal": "✕"}
+    return "Salud del equipo hoy:\n" + "\n".join(f"{icono.get(v['estado'], v['estado'])} {v.get('nombre', k)}: {v['estado']}" for k, v in e.items())
+
+
 def atender(texto, estado):
     t = simple(texto)
     if t in ("ayuda", "/start", "/ayuda", "help", "?"):
@@ -424,6 +505,17 @@ def atender(texto, estado):
         return cmd_resuelta(set(re.findall(r"\d+", m.group(1))))
     if t in ("plan", "/plan", "tareas"):
         return cmd_plan()
+    if t in ("estado pc", "pc", "esta prendida la pc", "/pc"):
+        return cmd_estado_pc()
+    if t in ("prender pc", "prende la pc", "encender pc", "enciende la pc", "/prender"):
+        return cmd_prender_pc()
+    if t in ("ronda ahora", "ronda ya", "haz una ronda", "/ronda"):
+        return cmd_pedido_pc("ronda")
+    if t in ("salud", "/salud", "como esta el equipo"):
+        return cmd_salud()
+    m = re.match(r"(?:pc|encargo)\s*:\s*(.+)", texto.strip(), re.I | re.S)
+    if m:
+        return cmd_pedido_pc("encargo", m.group(1))
     if t in ("uso", "/uso"):
         u = estado.get("uso", {})
         n = u.get("n", 0) if u.get("dia") == ahora().strftime("%Y-%m-%d") else 0
