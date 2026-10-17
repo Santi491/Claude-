@@ -1,0 +1,9 @@
+{
+ "id": "2026-10-17-1632",
+ "tipo": "encargo",
+ "ligera": false,
+ "pedido": "2026-10-17 16:32",
+ "por": "santi",
+ "plan_id": "2026-10-17-5",
+ "motivo": "ronda de WhatsApp ahora: correr python3 agenda.py, responder a las tiendas que escribieron (repreguntas de Punto Tecnológico y Gamer Store primero), anotar cada mensaje en mensajes.csv y avisar a Santi por Telegram al terminar"
+}
