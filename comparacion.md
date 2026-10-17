@@ -14,9 +14,9 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Intel Core i5-12400F | [150.00](https://www.ebay.com/itm/800773514419) | 1.937 (B 1 kg) | 1.896 (B 1.5 kg) | 2.260 | 323 (14%) | 364 (16%) | justo |
 | Intel Core i5-14400F | [164.49](https://www.ebay.com/itm/389945918228) | 2.108 (B 1 kg) | 2.067 (B 1.5 kg) | 2.384 | 276 (12%) | 317 (13%) | justo |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [474.49](https://www.ebay.com/itm/277814335680) | 5.769 (B 1 kg) | 5.686 (B 1 kg) | 6.200 | 431 (7%) | 514 (8%) | justo |
-| SSD NVMe 1TB | [128.99](https://www.ebay.com/itm/314675451357) | 1.689 (B 1 kg) | 1.606 (B 1 kg) | 1.730 | 41 (2%) | 124 (7%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [429.97](https://www.ebay.com/itm/128104115525) | 5.243 (B 1 kg) | 5.161 (B 1 kg) | 4.500 | -743 (-17%) | -661 (-15%) | no conviene |
 | Ryzen 9 9950X | [549.99](https://www.ebay.com/itm/305729926018) | 6.661 (B 1 kg) | 6.661 (B 2 kg) | 5.580 | -1.081 (-19%) | -1.081 (-19%) | no conviene |
+| SSD NVMe 1TB | [128.99](https://www.ebay.com/itm/314675451357) | 1.689 (B 1 kg) | 1.606 (B 1 kg) | 1.230 | -459 (-37%) | -376 (-31%) | no conviene |
 | Intel Core i5-13400 | [259.78](https://www.ebay.com/itm/278289521729) | 3.233 (B 1 kg) | 3.192 (B 1.5 kg) | 2.300 | -933 (-41%) | -892 (-39%) | no conviene |
 | RAM DDR4 16GB (2x8) 3200 | [118.96](https://www.ebay.com/itm/237116946397) | 1.570 (B 1 kg) | 1.488 (B 1 kg) | 900 | -670 (-74%) | -588 (-65%) | no conviene |
 
@@ -31,10 +31,10 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Ryzen 7 7800X3D | [275.00](https://www.ebay.com/itm/147633357807) | 3.413 (B 1 kg) | 3.413 (B 2 kg) | 4.760 | 1.347 (28%) | 1.347 (28%) | conviene |
 | Intel Core Ultra 7 265K | [229.00](https://www.ebay.com/itm/278426444361) | 2.870 (B 1 kg) | 2.828 (B 1.5 kg) | 3.950 | 1.080 (27%) | 1.122 (28%) | conviene |
 | Intel Core i5-14400F | [139.99](https://www.ebay.com/itm/880017129216) | 1.819 (B 1 kg) | 1.777 (B 1.5 kg) | 2.384 | 565 (24%) | 607 (25%) | conviene |
-| SSD NVMe 1TB | [98.59](https://www.ebay.com/itm/206583857191) | 1.330 (B 1 kg) | 1.247 (B 1 kg) | 1.730 | 400 (23%) | 483 (28%) | conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [399.99](https://www.ebay.com/itm/237079366010) | 4.889 (B 1 kg) | 4.807 (B 1 kg) | 6.200 | 1.311 (21%) | 1.393 (22%) | conviene |
 | Ryzen 9 9950X | [454.99](https://www.ebay.com/itm/257573828939) | 5.539 (B 1 kg) | 5.539 (B 2 kg) | 5.580 | 41 (1%) | 41 (1%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [375.00](https://www.ebay.com/itm/198721415062) | 4.594 (B 1 kg) | 4.511 (B 1 kg) | 4.500 | -94 (-2%) | -11 (-0%) | no conviene |
+| SSD NVMe 1TB | [98.59](https://www.ebay.com/itm/206583857191) | 1.330 (B 1 kg) | 1.247 (B 1 kg) | 1.230 | -100 (-8%) | -17 (-1%) | no conviene |
 | RAM DDR4 16GB (2x8) 3200 | [71.95](https://www.ebay.com/itm/940018837962) | 1.015 (B 1 kg) | 932 (B 1 kg) | 900 | -115 (-13%) | -32 (-4%) | no conviene |
 
 ## Detalle por vendedor (eBay nuevo)
@@ -45,6 +45,7 @@ eBay nuevo: USD 140.26 con envío en EE.UU. (eBay API; vendedor silaxon 99.6%; A
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | OverCity (WhatsApp) | OEM | 2.800 | 978 (35%) | 2026-10-15 |
+| Punto Tecnológico (WhatsApp) | nuevo OEM, garantía 6 meses (cotización por WhatsApp) | 2.850 | 1.028 (36%) | 2026-10-16 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | stock bajo (web) | 2.860 | 1.038 (36%) | 2026-10-12 |
 
 ### Ryzen 7 7800X3D
@@ -139,10 +140,13 @@ eBay nuevo: USD 128.99 con envío en EE.UU. (eBay API; vendedor netac-official-s
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (antes Bs 1.730; marca sin dato) | 1.230 | -459 (-37%) | 2026-10-17 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1098289102810322/) | sin dato de estado ni marca (recién publicado) | 1.500 | -189 (-13%) | 2026-10-17 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (M.2 1TB, marca no indicada; publicado hace 2 días) | 1.730 | 41 (2%) | 2026-10-16 |
 | Shopping PC (catálogo PDF) | nuevo (Kingston NV3 1TB; lista mayorista USD 148 del 12/10, sin factura; 146 en stock) | 1.754 | 65 (4%) | 2026-10-15 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2078197563584097/) | no indicado (M.2 1TB; marca no indicada) | 1.800 | 111 (6%) | 2026-10-11 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | no indicado (Kingston NV3 1TB) | 1.850 | 161 (9%) | 2026-10-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | Kingston NV3 1TB (estado sin dato) | 1.850 | 161 (9%) | 2026-10-17 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Hiksemi Wave M.2 1TB) | 1.860 | 171 (9%) | 2026-10-12 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2817371738643128/) | no indicado (Crucial P310 1TB) | 2.000 | 311 (16%) | 2026-10-11 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; WD SN3000 M.2 1TB) | 2.060 | 371 (18%) | 2026-10-12 |

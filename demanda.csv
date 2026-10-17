@@ -27,3 +27,17 @@ fecha,producto,fuente,ciudad,anuncios,nuevos,desaparecidos,precio_min_bs,precio_
 2026-10-16,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,3,0,0,1400,1500,"Corsair Vengeance 2x8 Bs 1.500, Corsair Vengeance Pro 2x8 3200 Bs 1.600 y un 2x8 sin velocidad a Bs 1.400; la GeIL del 15/10 no se volvió a buscar"
 2026-10-16,SSD NVMe 1TB,marketplace,Cochabamba,3,1,0,1730,2390,"nuevo: M.2 1TB nuevo Bs 1.730 (hace 2 días); Samsung 9100 PRO 1TB Bs 3.050; Kingston NV3 1TB sin precio. Un Kingspec 1TB Bs 900 no dice si es NVMe (no cuenta)"
 2026-10-16,SSD NVMe 2TB,marketplace,Cochabamba,0,0,0,,,
+2026-10-17,Ryzen 5 5600,marketplace,Cochabamba,0,0,0,,,"solo otros modelos sueltos (5700G Bs 2.600, 8600G Bs 2.275, 8700G Bs 3.450, 3700X Bs 2.000); no cuentan"
+2026-10-17,Ryzen 7 5700X3D,marketplace,Cochabamba,0,0,0,,,"el 5700X OEM de Bs 2.450 sigue activo (sin X3D, no cuenta)"
+2026-10-17,Ryzen 5 7600,marketplace,Cochabamba,0,0,0,,,sin anuncios sueltos (solo PCs y laptops)
+2026-10-17,Ryzen 7 7800X3D,marketplace,Cochabamba,0,0,0,,,sin anuncios sueltos
+2026-10-17,Ryzen 9 9950X,marketplace,Cochabamba,0,0,0,,,sin anuncios sueltos
+2026-10-17,Intel Core i5-12400F,marketplace,Cochabamba,0,0,0,,,sin anuncios sueltos
+2026-10-17,Intel Core i5-13400,marketplace,Cochabamba,0,0,0,,,sin anuncios sueltos
+2026-10-17,Intel Core i5-14400F,marketplace,Cochabamba,1,0,0,2700,2700,"sigue el i5-14400 (con gráficos, no F) a Bs 2.700"
+2026-10-17,Intel Core Ultra 7 265K,marketplace,Cochabamba,0,0,0,,,"sin anuncios sueltos (hay un 12900KF a Bs 3.990, no cuenta)"
+2026-10-17,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,marketplace,Cochabamba,1,0,0,4500,4500,"sigue activa la de Bs 4.500; otras DDR5 32GB: Fury Beast 5600 Bs 7.400, Vortex 2x16 Bs 10.150, Vulcan 6000 2x16 sin precio"
+2026-10-17,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,marketplace,Cochabamba,1,0,0,6200,6200,"la RS de Bs 6.200 sigue activa (""última unidad""); hay una RS 16GB suelta a Bs 3.300"
+2026-10-17,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,1,0,0,1400,1400,"sigue el 2x8 de Bs 1.400; otros 2x8 de otra velocidad (3000 a Bs 1.200, Hiksemi 3600 a Bs 1.770) y una Corsair Vengeance DDR4 recién publicada a Bs 1.400 sin capacidad; las otras 3 de la lista no salieron en esta búsqueda"
+2026-10-17,SSD NVMe 1TB,marketplace,Cochabamba,6,3,1,1230,1850,el M.2 1TB nuevo bajó de Bs 1.730 a 1.230; nuevos: M2 1TB Bs 1.500 (recién) y dos Kingston NV3 a Bs 1.850 (pueden ser del mismo vendedor); siguen Samsung 9100 PRO Bs 3.050 y NV3 sin precio; 1 de la lista ya no aparece
+2026-10-17,SSD NVMe 2TB,marketplace,Cochabamba,0,0,0,,,"sin anuncios de 2TB NVMe (solo un WD SN850X 8TB a Bs 1.500, precio dudoso)"

@@ -47,12 +47,12 @@
   "RAM DDR4 16GB (2x8) 3200|nuevo": false,
   "RAM DDR4 16GB (2x8) 3200|usado": false,
   "SSD NVMe 1TB|nuevo": false,
-  "SSD NVMe 1TB|usado": true,
+  "SSD NVMe 1TB|usado": false,
   "SSD NVMe 2TB|nuevo": true,
   "SSD NVMe 2TB|usado": true
  },
  "ultimas": [
   "⬇ Intel Core i5-13400 (usado) bajó 17% en eBay: USD 149.99 → 125.00"
  ],
- "revisado": "2026-10-17 11:54"
+ "revisado": "2026-10-17 12:00"
 }
