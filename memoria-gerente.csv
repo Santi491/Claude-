@@ -2,3 +2,4 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 1,2026-10-19,10:30,santi,preferencia,"Santi también juega en la PC de la casa: nada pesado en segundo plano fuera de las rondas, y si la está usando no se apaga sola",,abierta,
 2,2026-10-19,10:30,santi,compromiso,"Ofrecerle a Santi un modo juego por Telegram (pausar el vigilante y los pedidos a la PC unas horas mientras juega, y correr la ronda después)",,abierta,
 3,2026-10-19,10:30,santi,dato,La Fase 2 (esta libreta compartida) quedó armada el 19/10; antes estaba prevista para el martes 20/10,,cumplida,19/10 10:30: armada con Santi en la Mac
+4,2026-10-19,11:28,telegram,compromiso,"recordarle a Santi las tareas del Analista que esperan su OK (2026-10-17-3, 2026-10-15-16 y la idea de la mediana)",2026-10-21,abierta,
