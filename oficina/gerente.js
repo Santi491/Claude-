@@ -210,7 +210,7 @@
 `;
   document.head.appendChild(st);
 
-  const TABS = [["escritorio", "Escritorio"], ["chat", "Chat del equipo"], ["tareas", "Tareas y metas"], ["propuestas", "Propuestas"], ["resumen", "Resumen"], ["contacto", "Contacto con tiendas"], ["precios", "Precios y dólar"], ["oport", "Oportunidades"], ["equipo", "Equipo"], ["salud", "Salud del equipo"], ["plan", "Plan e informes"]];
+  const TABS = [["escritorio", "Escritorio"], ["chat", "Chat del equipo"], ["tareas", "Tareas y metas"], ["propuestas", "Propuestas"], ["memoria", "Libreta"], ["resumen", "Resumen"], ["contacto", "Contacto con tiendas"], ["precios", "Precios y dólar"], ["oport", "Oportunidades"], ["equipo", "Equipo"], ["salud", "Salud del equipo"], ["plan", "Plan e informes"]];
   let tab = "escritorio", rango = "7", dia = MET.length ? MET[MET.length - 1].fecha : "";
   const box = document.createElement("div");
   box.className = "gpanel"; box.hidden = true; box.setAttribute("role", "dialog"); box.setAttribute("aria-label", "Panel de datos del Gerente");
@@ -380,9 +380,10 @@
   const metasHoy = () => PLAN.filter(p => /^s/i.test(p.obligatoria || "") && (p.plazo || p.fecha_para) >= HOY);
   const abiertas = () => PLAN.filter(p => p.estado === "aprobado");
   const atrasadas = () => abiertas().filter(p => (p.plazo || p.fecha_para) < HOY);
+  const MEM = D.memoria || [], memAb = () => MEM.filter(m => m.estado === "abierta"), memVence = () => memAb().filter(m => m.vence && m.vence <= HOY);
   const propuestasAb = () => (D.ideas || []).filter(i => i.estado === "propuesta").length + (D.necesidades || []).length;
   const APPS = [["chat", "Chat del equipo", "💬", C.cyan, () => pendChat().length], ["tareas", "Tareas y metas", "✓", C.amber, () => metasHoy().filter(p => p.estado === "aprobado").length],
-    ["propuestas", "Propuestas", "★", C.violet, () => propuestasAb()], ["salud", "Salud del equipo", "♥", C.green, () => 0], ["plan", "Informes", "▤", C.blue, () => 0],
+    ["propuestas", "Propuestas", "★", C.violet, () => propuestasAb()], ["memoria", "Libreta", "✎", C.gold, () => owner ? memVence().length : 0], ["salud", "Salud del equipo", "♥", C.green, () => 0], ["plan", "Informes", "▤", C.blue, () => 0],
     ["resumen", "Panel de datos", "▦", C.gold, () => 0], ["oport", "Oportunidades", "$", C.green, () => 0], ["equipo", "Equipo", "◉", C.muted, () => 0]];
   const back = () => `<button type="button" class="gd-back" data-t="escritorio">← Escritorio</button>`;
   function vEscritorio() {
@@ -392,6 +393,7 @@
       <div class="gd-widgets">
         <div class="gd-w"><h5>Metas de hoy</h5>${mh.length ? mh.map(p => `<span>${p.estado === "hecho" ? "✓" : "•"} ${esc(QN[p.agente] || p.agente)}: ${esc(p.tarea)}</span>`).join("") : `<span style="color:var(--o-muted)">Sin metas. Ponlas por Telegram (meta wa: 10 tiendas nuevas hoy) o en Tareas y metas.</span>`}</div>
         <div class="gd-w"><h5>Últimos mensajes del equipo</h5>${owner ? (ult.length ? ult.map(c => `<span><b>${esc(QN[c.de] || c.de)}</b> → ${esc(QN[c.para] || c.para)}: ${esc(c.texto.length > 90 ? c.texto.slice(0, 89) + "…" : c.texto)}</span>`).join("") : `<span style="color:var(--o-muted)">Todavía nadie escribió.</span>`) : `<span style="color:var(--o-muted)">El chat del equipo lo ve solo Santi.</span>`}</div>
+        <div class="gd-w"><h5>Libreta del Gerente</h5>${owner ? (memAb().length ? memAb().slice().sort((a, b) => (a.vence || "9").localeCompare(b.vence || "9")).slice(0, 3).map(m => `<span>${m.vence && m.vence <= HOY ? "⚠" : "•"} ${esc(m.resumen.length > 80 ? m.resumen.slice(0, 79) + "…" : m.resumen)}${m.vence ? ` <span style="color:var(--o-muted)">· ${dm(m.vence)}</span>` : ""}</span>`).join("") : `<span style="color:var(--o-muted)">Nada anotado. Por Telegram: anota: …</span>`) : `<span style="color:var(--o-muted)">La libreta la ve solo Santi.</span>`}</div>
         <div class="gd-w"><h5>Cola de tareas</h5><span>${abiertas().length} aprobadas por hacer · ${atrasadas().length} atrasadas · ${PLAN.filter(p => p.estado === "propuesto").length} esperan tu OK</span></div>
         <div class="gd-w"><h5>Datos al día</h5><span>${viejo.length ? `Ojo: ${esc(viejo.join(", "))} con 3 días o más` : "Todo con datos de los últimos días"}</span><span style="color:var(--o-muted)">Datos al ${esc((D.generado || "").replace(" ", " · "))}</span></div>
       </div></div>
@@ -413,6 +415,17 @@
         : `<p class="gp-empty">Sin mensajes con ${esc(QN[chatCon] || chatCon)} todavía. Los agentes escriben aquí cuando necesitan algo; el Gerente de la Raspberry te lo pasa por Telegram.</p>`}</div>
       <form class="gc-form" id="gcF"><input id="gcT" maxlength="400" placeholder="Escríbele a ${esc(QN[chatCon] || chatCon)} (lo lee en su próximo turno)" aria-label="Mensaje" ${db ? "" : "disabled"}><button type="submit" ${db ? "" : "disabled"}>Enviar</button></form></div></div>
       <p class="gp-note">${aviso ? `<span class="gp-ok">${esc(aviso)}</span> ` : ""}Solo cosas de trabajo: nada de guías, teléfonos, direcciones ni nombres de personas. Lo que escribes aquí lo pasa la próxima ronda al chat del agente (para que sea al instante, usa Telegram: chat ${esc(chatCon)}: …).</p>`;
+  }
+  const MTIPO = { compromiso: ["Compromisos", "lo que el Gerente te prometió", C.amber], pedido: ["Pedidos tuyos", "lo que quieres saber o que se haga", C.cyan], preferencia: ["Preferencias", "cómo te gusta trabajar", C.violet], dato: ["Datos", "lo que contaste y no está en otro archivo", C.blue] };
+  const MFUENTE = { telegram: "Telegram", ronda: "fin de ronda", "2000": "informe 20:00", santi: "Santi" };
+  function vMemoria() {
+    if (!owner) return `${back()}<div class="gp-box w12"><h4>Libreta del Gerente</h4><p class="gp-empty">La libreta del Gerente la ve solo Santi (abre la oficina con su cuenta). Por Telegram: escribe "memoria".</p></div>`;
+    const ab = memAb(), cerr = MEM.filter(m => m.estado !== "abierta").slice(-15).reverse();
+    const item = m => `<span>${m.vence && m.vence <= HOY && m.estado === "abierta" ? `<span class="gp-tag" style="background:${C.red}">vence</span> ` : ""}<b>${esc(m.id)}.</b> ${esc(m.resumen)} <span style="color:var(--o-muted)">· ${dm(m.fecha)} por ${esc(MFUENTE[m.fuente] || m.fuente)}${m.vence ? ` · vence ${dm(m.vence)}` : ""}${m.estado !== "abierta" ? ` · ${esc(m.estado)} ${esc(m.cerrado)}` : ""}</span></span>`;
+    return `${back()}<div class="gp-kpis">${kpi("Abiertas", ab.length, "lo que el Gerente tiene presente")}${kpi("Vencen hoy", memVence().length, "o ya vencieron")}${kpi("Compromisos", ab.filter(m => m.tipo === "compromiso").length, "promesas del Gerente")}${kpi("Cerradas", MEM.length - ab.length, "cumplidas o descartadas")}</div>
+      <div class="gp-box w12"><p class="gp-note">Es la memoria de largo plazo del Gerente: la comparten el de Telegram (Raspberry), el de fin de ronda y el de las 20:00. Por Telegram: <b>memoria</b> (ver) · <b>anota: …</b> · <b>cumplida 3</b> · <b>borra 3</b>. Solo resúmenes de negocio, sin datos personales.</p></div>
+      ${Object.entries(MTIPO).map(([k, [t, sub, col]]) => { const l = ab.filter(m => m.tipo === k); return `<div class="gp-box w6"><h4 style="border-left:3px solid ${col};padding-left:8px">${t} <small style="color:var(--o-muted);font-weight:400">· ${sub}</small></h4>${l.length ? l.map(item).join("") : `<p class="gp-empty">Nada por ahora.</p>`}</div>`; }).join("")}
+      <div class="gp-box w12"><h4>Cerradas hace poco</h4>${cerr.length ? cerr.map(item).join("") : `<p class="gp-empty">Todavía no se cerró ninguna.</p>`}</div>`;
   }
   const PRI = { alta: 0, media: 1, baja: 2 };
   function vTareas() {
@@ -445,11 +458,11 @@
     } catch (err) { aviso = "No se pudo guardar. Por Telegram funciona siempre."; render(); }
   });
 
-  const VIEWS = { escritorio: vEscritorio, chat: vChat, tareas: vTareas, propuestas: vPropuestas, resumen: vResumen, contacto: vContacto, precios: vPrecios, oport: vOport, equipo: vEquipo, salud: vSalud, plan: vPlan };
+  const VIEWS = { escritorio: vEscritorio, chat: vChat, tareas: vTareas, propuestas: vPropuestas, memoria: vMemoria, resumen: vResumen, contacto: vContacto, precios: vPrecios, oport: vOport, equipo: vEquipo, salud: vSalud, plan: vPlan };
   function render() {
     box.querySelectorAll(".gp-tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.t === tab)));
     box.querySelectorAll("#gpR button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.r === rango)));
-    $g("gpB").innerHTML = MET.length || ["plan", "salud", "escritorio", "chat", "tareas", "propuestas"].includes(tab) ? VIEWS[tab]() : `<div class="gp-box w12"><p class="gp-empty">Todavía no hay métricas: corre python3 metricas.py.</p></div>`;
+    $g("gpB").innerHTML = MET.length || ["plan", "salud", "escritorio", "chat", "tareas", "propuestas", "memoria"].includes(tab) ? VIEWS[tab]() : `<div class="gp-box w12"><p class="gp-empty">Todavía no hay métricas: corre python3 metricas.py.</p></div>`;
   }
   box.addEventListener("click", e => { const b = e.target.closest("[data-t]"); if (b && box.contains(b)) { tab = b.dataset.t; aviso = ""; render(); $g("gpB").scrollTop = 0; const m = $g("gcM"); if (m) m.scrollTop = m.scrollHeight; } });
   $g("gpR").addEventListener("click", e => { const b = e.target.closest("[data-r]"); if (b) { rango = b.dataset.r; render(); } });

@@ -183,3 +183,5 @@ fecha,hora,agente,texto
 2026-10-19,07:58,ebay,"API: 12 precios nuevos y 12 usados; 0 corregidos por variante o repuestos"
 2026-10-19,07:58,ana,"Conviene traer solo el Intel Core Ultra 7 265K nuevo (margen 21 %, peor caso 9 %). SSD 2TB y usados esperan precio local; 7600 nuevo, 9950X y SSD 1TB nuevo no se traen."
 2026-10-19,07:59,nube,"Revisión diaria hecha: dólar (oficial 11,69; paralelo 11,82 usado), eBay API, comparación, análisis, Excel, copia del día e informe."
+2026-10-19,10:30,local,"Fase 2: memoria única del Gerente. memoria.py + memoria-gerente.csv (compromisos, pedidos, preferencias y datos de Santi, en resumen); el bot la lee en cada mensaje y anota con ACCION: memoria; atajos memoria, anota:, cumplida N, borra N; la ronda (paso 8b) y la rutina de las 20:00 la leen y cierran; ícono Libreta en el escritorio del Gerente; verificar.py gerente la revisa."
+2026-10-19,10:30,gerente,"Desde hoy tengo libreta: me acuerdo de lo que le prometo a Santi, lo que pide, cómo le gusta trabajar y lo que cuenta, en Telegram, en las rondas y a las 20:00. Enterado en CLAUDE.md, mi skill, PROCESO-LOCAL.md (8b), la rutina de las 20:00 y el bot."

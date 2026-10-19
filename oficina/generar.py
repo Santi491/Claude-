@@ -218,8 +218,11 @@ def main():
     # Chat interno del equipo (chat.py): solo trabajo; los agentes no ponen datos privados (reglas-cargo-brothers)
     chat_eq = [{k: f.get(k, "") for k in ("id", "fecha", "hora", "de", "para", "texto", "ref", "estado", "respuesta_a")}
                for f in (leer("chat.csv") if existe("chat.csv") else [])][-300:]
+    # Libreta del Gerente (memoria.py, Fase 2 del 19/10): compromisos, pedidos, preferencias y datos de Santi, en resumen
+    memoria_ger = [{k: f.get(k, "") for k in ("id", "fecha", "hora", "fuente", "tipo", "resumen", "vence", "estado", "cerrado")}
+                   for f in (leer("memoria-gerente.csv") if existe("memoria-gerente.csv") else [])][-200:]
     datos = {"generado": datetime.now().strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
-             "frescura": frescura, "chat": chat_eq,
+             "frescura": frescura, "chat": chat_eq, "memoria": memoria_ger,
              "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas,
              "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente, "catalogos": catalogos, "salud": salud_equipo,
              # lo que los agentes le piden a Santi (sin datos privados): lo usa la animación del Gerente

@@ -46,7 +46,8 @@ AYUDA = ("Háblame como a tu gerente: \"hola, ¿cómo vamos?\", \"¿qué convien
          "Recuerdo la charla del día.\nAtajos al instante y sin gastar el plan: apruebo 1 3 · rechazo 2 · sí a todo · plan · "
          "necesidades · resuelta 2 · tarea: <texto> · venta: 2 Ryzen 5 7600 a 2800 · modelo haiku|sonnet|opus · uso · nueva charla.\n"
          "La PC: estado pc · prender pc · apagar pc · ronda ahora · pc: <encargo puntual, por ejemplo pc: pregúntale a Shopping PC por la 5600> · salud.\n"
-         "El equipo: meta wa: 10 tiendas nuevas hoy (obligatoria) · chat (lo que te preguntan los agentes) · chat pedidos: <respuesta>.")
+         "El equipo: meta wa: 10 tiendas nuevas hoy (obligatoria) · chat (lo que te preguntan los agentes) · chat pedidos: <respuesta>.\n"
+         "Mi libreta: memoria (lo que tengo anotado) · anota: <algo para acordarme> · cumplida 3 · borra 3.")
 
 cargar("~/.cargo-bot", ("CLAUDE_CODE_OAUTH_TOKEN", "CLAUDE_MODELO", "MAX_PREGUNTAS_DIA", "AVISOS", "PC_MAC", "PC_IP"))
 TOKEN, CHAT = cargar("~/.telegram", ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"))
@@ -415,7 +416,19 @@ ACCION: pc encargo: <qué hacer>  (prende la PC y hace solo ese encargo puntual 
                               el correo del agente, mirar un anuncio, rastrear un paquete...; nunca comprar, pagar ni ofertar)
 Si Santi pide algo que se resuelve leyendo los archivos, contéstalo tú sin prender la PC. Usa pc encargo solo cuando haga
 falta Chrome o escribir a alguien, y avísale que el resultado llega en 10 a 15 minutos.
-Usa ACCION solo si Santi lo pidió o aceptó claramente en esta conversación; si dudas, pregúntale primero.
+ACCION: memoria <tipo> [vence AAAA-MM-DD]: <resumen>   (anotas en tu libreta; tipo: compromiso | pedido | preferencia | dato)
+ACCION: cumplida 3            (cierras la nota 3 de tu libreta porque ya se cumplió)
+ACCION: descartar 3           (la nota 3 ya no sirve)
+Tu libreta (memoria-gerente.csv, Fase 2 del 19/10) es tu memoria de largo plazo, la misma que leen el Gerente de fin de
+ronda y el de las 20:00: tu charla de Telegram se borra cada mañana, la libreta no. Al inicio de cada mensaje te paso lo que
+tiene abierto: úsalo con naturalidad ("como quedamos el jueves..."), sin recitarlo. Anota con ACCION: memoria (sin pedir
+permiso) cuando: prometes algo a Santi para más adelante (compromiso, con vence), Santi quiere algo que no es una tarea de un
+agente (pedido), Santi dice cómo le gusta trabajar (preferencia, sin vence) o cuenta algo útil que no está en ningún archivo
+(dato). Lo que es trabajo de un agente va con ACCION: tarea, no a la libreta. Cierra con ACCION: cumplida lo que ya se dio.
+El repo es público: el resumen va en tus palabras y de negocio, nunca el texto de Santi tal cual, nombres de personas,
+teléfonos, direcciones, guías ni números de pedido.
+Usa ACCION solo si Santi lo pidió o aceptó claramente en esta conversación (salvo memoria, cumplida y descartar, que son
+tu libreta); si dudas, pregúntale primero.
 Desde el 13/10 WhatsApp y Marketplace escriben solos a las tiendas (Santi lo autorizó): no hace falta pedirle el texto.
 Comprar, pagar, ofertar o dar datos personales nunca: eso
 se confirma en una sesión con Santi, no por chat.
@@ -440,6 +453,7 @@ def claude(texto, estado, nueva=False):
     _, _, abiertas = necesidades_abiertas()
     pedidas = "; ".join(f"{i}. {f['necesita']} ({f['agente']})" for i, f in enumerate(abiertas, 1)) or "ninguno"
     mensaje = (INICIO.format(fecha=DIAS[ahora().weekday()] + ahora().strftime(" %d/%m/%Y %H:%M"))
+               + f"Tu libreta (memoria-gerente.csv, lo abierto):\n{libreta_breve()}\n"
                + f"Pedidos abiertos de los agentes: {pedidas}.\nNecesidades del equipo:\n{informe_necesidades(breve=True)}\n\n"
                + "Mensaje: " + texto)
     cmd = ["claude", "-p", mensaje, "--model", modelo, "--allowedTools", "Read,Grep,Glob", "--output-format", "json"]
@@ -482,6 +496,14 @@ def ejecutar_acciones(salida):
         pc = re.match(r"pc\s+(ronda|prender|apagar|encargo)\s*:?\s*(.*)", orden, re.I | re.S)
         me = re.match(r"meta\s+(\w+)\s*:\s*(.+)", orden, re.I)
         ch = re.match(r"chat\s+(\w+)\s*:\s*(.+)", orden, re.I)
+        mem = re.match(r"memoria\s+(compromiso|pedido|preferencia|dato)\s*(?:vence\s+(\d{4}-\d{2}-\d{2}))?\s*:\s*(.+)", orden, re.I)
+        cer = re.match(r"(cumplida|descartar)\s+(\d+)\s*:?\s*(.*)", simple(orden))
+        if mem:
+            hechos.append(cmd_memoria_anotar(mem.group(1).lower(), mem.group(3), mem.group(2) or "", "telegram", aviso=False))
+            continue
+        if cer:
+            hechos.append(cmd_memoria_cerrar(cer.group(2), cer.group(1) == "cumplida", cer.group(3)))
+            continue
         if me and me.group(1).lower() in AGENTES:
             hechos.append(cmd_meta(me.group(1).lower(), me.group(2)))
         elif ch and ch.group(1).lower() in AGENTES:
@@ -500,10 +522,52 @@ def ejecutar_acciones(salida):
     return msg + ("\n\n✔ " + "\n✔ ".join(hechos) if hechos else "")
 
 
+# ---------- Libreta del Gerente (Fase 2, 19/10): memoria compartida con el fin de ronda y las 20:00 ----------
+def libreta_breve():
+    import memoria
+    filas = memoria.abiertas()
+    if not filas:
+        return "vacía"
+    hoy = ahora().strftime("%Y-%m-%d")
+    return "\n".join(f"{f['id']}. [{f['tipo']}] {f['resumen']} (anotado {f['fecha'][8:]}/{f['fecha'][5:7]}"
+                     + (f", vence {f['vence'][8:]}/{f['vence'][5:7]}{' — VENCE HOY O YA VENCIÓ' if f['vence'] <= hoy else ''}" if f["vence"] else "")
+                     + ")" for f in filas[-30:])
+
+
+def cmd_memoria_ver():
+    actualizar_repo()
+    import memoria
+    filas = memoria.abiertas()
+    if not filas:
+        return "Mi libreta está vacía por ahora. Si quieres que me acuerde de algo, dime \"anota: ...\"."
+    return "Esto tengo anotado:\n" + memoria.texto(filas) + "\n\nPara cerrar una: cumplida 3 (o borra 3 si ya no sirve)."
+
+
+def cmd_memoria_anotar(tipo, texto, vence="", fuente="santi", aviso=True):
+    actualizar_repo()
+    import memoria
+    f = memoria.anotar(fuente, tipo, texto, vence)
+    ok = subir("Memoria del Gerente: nota nueva", extra=("memoria-gerente.csv",))
+    if not aviso:
+        return f"Anoté en mi libreta (nota {f['id']})."
+    return f"Anotado en mi libreta (nota {f['id']}). Me acuerdo de esto en Telegram, en las rondas y en el informe de las 20:00." + ("" if ok else " (no pude subirlo a GitHub todavía)")
+
+
+def cmd_memoria_cerrar(id_, cumplida=True, nota=""):
+    actualizar_repo()
+    import memoria
+    f = memoria.cerrar(id_, "cumplida" if cumplida else "descartada", nota)
+    if not f:
+        return f"No tengo abierta la nota {id_}."
+    subir(f"Memoria del Gerente: nota {id_} {f['estado']}", extra=("memoria-gerente.csv",))
+    return f"Listo, la nota {id_} quedó {f['estado']}."
+
+
 def resumen_programado(cuando, estado):
     return claude(f"Es tu mensaje de {cuando} para Santi; él no te escribió. Revisa actividad.csv, el último informe y "
                   "mensajes.csv y cuéntale en 2 a 6 líneas, con tu personalidad, cómo va el equipo hoy: arranca con lo que más te llamó la atención "
                   "(bueno o malo), da tu opinión y dile qué le falta al equipo para avanzar. No empieces igual que tu mensaje anterior. "
+                  "Si en tu libreta hay algo que vence hoy o ya venció, recuérdaselo (o dile qué pasó con eso). "
                   "Si no hay nada nuevo desde tu último mensaje, dilo en una línea, a tu manera. No uses ACCION en este mensaje.",
                   estado)
 
@@ -613,6 +677,17 @@ def atender(texto, estado):
         return cmd_pedido_pc("ronda")
     if t in ("salud", "/salud", "como esta el equipo"):
         return cmd_salud()
+    if t in ("memoria", "/memoria", "libreta", "que tienes anotado", "de que te acuerdas"):
+        return cmd_memoria_ver()
+    m = re.fullmatch(r"(cumplida|borra|descarta)\s+(\d+)", t)
+    if m:
+        return cmd_memoria_cerrar(m.group(2), m.group(1) == "cumplida")
+    m = re.match(r"(?:anota|acuerdate|recuerda)\s*(?:que)?\s*:\s*(.+)", texto.strip(), re.I | re.S)
+    if m:
+        # pasa por el Gerente: el repo es público, así que anota un resumen suyo, nunca el texto de Santi tal cual
+        return claude("Santi te pide que anotes esto en tu libreta: " + m.group(1).strip() + "\nAnótalo con UNA línea "
+                      "ACCION: memoria (elige el tipo; si tiene fecha, pon vence AAAA-MM-DD; resumen tuyo y de negocio, sin "
+                      "nombres de personas, teléfonos ni direcciones) y confírmale en una línea qué anotaste.", estado)
     m = re.match(r"(?:pc|encargo)\s*:\s*(.+)", texto.strip(), re.I | re.S)
     if m:
         return cmd_pedido_pc("encargo", m.group(1))

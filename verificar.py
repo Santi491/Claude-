@@ -175,7 +175,8 @@ def pedidos(R, ronda=False):
 # ---------- Chequeos del resto de los puestos (17/10) ----------
 CSVS = ["actividad.csv", "plan.csv", "mensajes.csv", "tiendas-cochabamba.csv", "precios-cochabamba.csv", "precios-eeuu.csv",
         "tipo-cambio.csv", "vigilar.csv", "demanda.csv", "catalogos.csv", "clientes-potenciales.csv", "necesidades.csv",
-        "ideas.csv", "ventas.csv", "pedidos.csv", "pedidos-prueba.csv", "seguimiento.csv", "chat.csv", "sesiones.csv"]
+        "ideas.csv", "ventas.csv", "pedidos.csv", "pedidos-prueba.csv", "seguimiento.csv", "chat.csv", "sesiones.csv",
+        "memoria-gerente.csv"]
 AGENTES = ("nube", "ebay", "wa", "mkt", "ana", "pedidos", "fin", "dem", "gerente", "local", "santi")
 
 
@@ -253,6 +254,15 @@ def gerente(R, ronda=False):
     sin_resp = [c for c in chat if c.get("para") in ("gerente", "santi") and c.get("estado") != "respondido"
                 and fecha(c.get("fecha")) and (HOY - fecha(c["fecha"])).days >= 1]
     (R.aviso if sin_resp else R.ok)(f"mensajes del chat sin respuesta hace 1 día o más: {len(sin_resp)}")
+    # libreta del Gerente (memoria.py, Fase 2 del 19/10)
+    _, mem = leer("memoria-gerente.csv")
+    malos = [m.get("id") for m in mem if m.get("tipo") not in ("compromiso", "pedido", "preferencia", "dato")
+             or m.get("estado") not in ("abierta", "cumplida", "descartada")]
+    (R.error if malos else R.ok)(f"memoria-gerente.csv: filas con tipo o estado inválido: {', '.join(malos) if malos else 'ninguna'}")
+    privados = [m.get("id") for m in mem if re.search(r"\+?\d[\d .-]{7,}\d|\b(9\d{3}|LP|GFUS|SPX)\w{8,}", m.get("resumen", ""))]
+    (R.error if privados else R.ok)(f"memoria-gerente.csv: posibles teléfonos o guías en el resumen: {', '.join(privados) if privados else 'ninguno'}")
+    vencidas = [f"{m['id']} ({m['resumen'][:50]})" for m in mem if m.get("estado") == "abierta" and fecha(m.get("vence")) and fecha(m["vence"]) < HOY]
+    (R.aviso if vencidas else R.ok)(f"notas de la libreta vencidas sin cerrar: {'; '.join(vencidas) if vencidas else 'ninguna'}")
 
 
 def wa(R, ronda=False):
