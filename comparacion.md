@@ -45,6 +45,7 @@ eBay nuevo: USD 140.26 con envío en EE.UU. (eBay Chrome 19/10 10:40: anuncio ac
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | OverCity (WhatsApp) | OEM | 2.800 | 977 (35%) | 2026-10-15 |
+| OverCity (WhatsApp) | nuevo OEM (reconfirmado 16:09) | 2.800 | 977 (35%) | 2026-10-19 |
 | Punto Tecnológico (WhatsApp) | nuevo OEM, garantía 6 meses (cotización por WhatsApp) | 2.850 | 1.027 (36%) | 2026-10-16 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | stock bajo (web) | 2.860 | 1.037 (36%) | 2026-10-12 |
 
@@ -108,6 +109,7 @@ eBay nuevo: USD 235.27 con envío en EE.UU. (eBay API; vendedor jos-980836 100.0
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | MSR Computers (web; fecha de actualización desconocida) · [ver](https://msrcomputers.framer.website/) | nuevo | 3.950 | 1.004 (25%) | 2026-10-11 |
+| OverCity (WhatsApp) | nuevo OEM | 4.100 | 1.154 (28%) | 2026-10-19 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | stock bajo (web; por WhatsApp dijeron que el 265K solo está en Santa Cruz) | 4.290 | 1.344 (31%) | 2026-10-12 |
 
 ### Corsair Vengeance RGB DDR5 32GB (2x16) 5600

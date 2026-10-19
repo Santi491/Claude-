@@ -8,8 +8,8 @@
 Usa los mismos supuestos que comparar.py (pedido de 2 unidades, courier más barato, aduana 0 %, sales tax 7 % del courier A).
 - Costo completo por unidad = (precio eBay + envío en EE.UU. + sales tax si va por el courier A + courier) × dólar.
 - Margen = (precio de venta − costo) / precio de venta   ·   Recargo = (precio de venta − costo) / costo.
-  El precio de venta de referencia es 5 % debajo del local más barato (redondeado a 10 hacia abajo): con eso tenemos que
-  ser los más baratos de Cochabamba. Si a ese precio no queda al menos 10 % sobre el costo, no se trae.
+  El precio de venta de referencia es 5 % debajo de la MEDIANA de los precios locales válidos (redondeado a 10 hacia
+  abajo; antes era el más barato). Se descartan particulares de Marketplace sin marca/configuración y los 30 % bajo la mediana. Si a ese precio no queda al menos 10 % sobre el costo, no se trae.
 - Escenarios: dólar +3 %, courier +20 %, precio local −10 % y los tres juntos (el peor caso).
 - Recomendación: "traer" solo si el margen aguanta el peor caso (≥ 5 %) y hay al menos 2 precios locales recientes;
   "esperar" si conviene hoy pero el peor caso lo borra o faltan datos; "no traer" si hoy no conviene.
@@ -18,6 +18,7 @@ Nunca inventa: si falta un dato, lo dice en `faltan`.
 import json
 import math
 import os
+import statistics
 import sys
 from datetime import date, datetime
 
@@ -25,6 +26,8 @@ import comparar as C
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 HOY = date.today()
+SIN_DATO = ("marca sin dato", "marca no indicada", "config no indicada", "configuración no indicada", "ni marca",
+            "probablemente", "no dice si")  # anuncio sin marca o sin configuración clara (un estado sin dato pero con marca sí cuenta)
 
 
 def num(v):
@@ -69,14 +72,19 @@ def analizar():
                     loc = usados
                 else:
                     faltan.append("precio local de usados (se comparó con nuevos)")
-            # atípicos: con 3 o más precios, fuera los que están por debajo del 60 % de la mediana (particular sin marca, otro modelo)
+            # particulares sin marca/configuración (Marketplace): fuera, si quedan al menos 2 precios; luego, atípicos: con 3 o más
+            # precios, fuera los que están 30 % o más debajo de la mediana. La referencia local es la MEDIANA, no el más barato.
+            sin_dato = [f for f in loc if "marketplace" in (f.get("fuente") or "").lower()
+                        and any(k in (f.get("estado") or "").lower() for k in SIN_DATO)]
+            if sin_dato and len(loc) - len(sin_dato) >= 2:
+                loc = [f for f in loc if f not in sin_dato]
+                faltan.append(f"{len(sin_dato)} anuncio(s) de particular sin marca o configuración descartado(s)")
             if len(loc) >= 3:
-                vals = sorted(num(f["precio_bs"]) for f in loc)
-                med = vals[len(vals) // 2]
-                atip = [f for f in loc if num(f["precio_bs"]) < 0.6 * med]
+                med = statistics.median(num(f["precio_bs"]) for f in loc)
+                atip = [f for f in loc if num(f["precio_bs"]) < 0.7 * med]
                 if atip:
                     loc = [f for f in loc if f not in atip]
-                    faltan.append(f"{len(atip)} precio(s) local(es) atípico(s) descartado(s)")
+                    faltan.append(f"{len(atip)} precio(s) local(es) atípico(s) (30 % bajo la mediana) descartado(s)")
             recientes = [f for f in loc if dias(f["fecha"]) is not None and dias(f["fecha"]) <= 14]
             tiendas = {(f.get("fuente") or "").split("(")[0].strip().lower() for f in recientes}
             if not tc:
@@ -92,8 +100,8 @@ def analizar():
             fila = {"producto": prod, "condicion": cond, "faltan": faltan}
             if of and tc and loc:
                 costo, via, partes = costo_completo(of, peso, 2, tc)
-                mejor = min(num(f["precio_bs"]) for f in loc)
-                # precio de mercado: 5 % debajo del local más barato; si no deja ni 10 % sobre el costo, no se trae
+                mejor = statistics.median(num(f["precio_bs"]) for f in loc)  # referencia local = mediana de los válidos
+                # precio de mercado: 5 % debajo de la mediana local; si no deja ni 10 % sobre el costo, no se trae
                 venta = math.floor(mejor * 0.95 / 10) * 10
                 g = venta - costo
                 esc = {}
@@ -121,7 +129,7 @@ def analizar():
     orden = {"traer": 0, "esperar": 1, "no traer": 2, "sin datos": 3}
     out.sort(key=lambda f: (orden[f["recomendacion"]], -(f.get("margen_pct") or -999)))
     return {"fecha": HOY.isoformat(), "tc": tc, "supuestos": "pedido de 2 u, courier más barato, aduana 0 %, tax A 7 %, "
-            "precio de venta = 5 % debajo del local más barato (si no deja 10 % sobre el costo: no traer)", "productos": out}
+            "precio de venta = 5 % debajo de la mediana local (si no deja 10 % sobre el costo: no traer)", "productos": out}
 
 
 def texto(a):

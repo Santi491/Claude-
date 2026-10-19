@@ -157,3 +157,19 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-19,11:12,whatsapp,Importadora Ardunel - Quillacollo,enviado,nuevo,,"chat nuevo: CPU y DDR5 sueltos, 7600 y 32GB; pregunta envío a Cochabamba"
 2026-10-19,11:05,whatsapp,Tienda de Computadoras Quillacollo,recibido,automatica,no,saludo automático (DJ COMPUTER)
 2026-10-19,11:08,whatsapp,Cocotech - Sucursal América,recibido,automatica,no,saludo automático
+2026-10-19,16:08,whatsapp,OverCity,enviado,respuesta,,tarea 2026-10-19-1: pide precio del Core Ultra 7 265K (no KF) y si el Ryzen 5 7600 de Bs 2.800 sigue vigente
+2026-10-19,16:09,whatsapp,OverCity,recibido,respuesta,sí,confirma Ryzen 5 7600 aún a Bs 2.800 (OEM)
+2026-10-19,16:10,whatsapp,OverCity,recibido,respuesta,sí,Core Ultra 7 265K OEM Bs 4.100
+2026-10-19,16:10,whatsapp,OverCity,enviado,respuesta,,pregunta garantía del 265K
+2026-10-19,16:10,whatsapp,OverCity,recibido,respuesta,sí,todos los componentes tienen garantía de 3 meses
+2026-10-19,16:14,whatsapp,OverCity,enviado,respuesta,,agradece; solo cotizando
+2026-10-19,16:08,whatsapp,Viadata Computadoras,enviado,respuesta,,tarea 2026-10-19-1: pide precio del Core Ultra 7 265K (no KF) y del Ryzen 5 7600 con garantía
+2026-10-19,16:09,whatsapp,Viadata Computadoras,recibido,respuesta,no,saludo (buenas tardes); todavía sin precios
+2026-10-19,11:29,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,recibido,respuesta,no,no tienen Ryzen 5 7600 ni DDR5 32GB
+2026-10-19,11:41,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,recibido,respuesta,sí,a pedido ofrece solo el procesador Ryzen 5 7500F (sin cooler) Bs 2.190
+2026-10-19,16:08,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,enviado,respuesta,,pregunta si el 7500F es nuevo con garantía y pide aviso si llega el 265K
+2026-10-19,11:24,whatsapp,Cocotech - Sucursal América,recibido,respuesta,no,no tienen el Ryzen 5 7600 ni el i5-14400F
+2026-10-19,11:32,whatsapp,Geek Store Bolivia,recibido,respuesta,no,no tienen Ryzen 5 5600 ni 5700X3D
+2026-10-19,11:13,whatsapp,Importadora Ardunel - Quillacollo,recibido,respuesta,no,no tienen esos productos
+2026-10-19,12:24,whatsapp,Pc Soluciones Importaciones,recibido,respuesta,no,"responde ""Se. Lo veo"" (sin precio)"
+2026-10-19,12:41,whatsapp,ADN Gamer Store,recibido,respuesta,no,"dice ""si ahora le respondo"" (aviso que contestará; sin precio)"
