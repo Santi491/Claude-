@@ -191,3 +191,8 @@ fecha,hora,agente,texto
 2026-10-19,11:00,mkt,"Marketplace Cochabamba: 14 productos buscados, 6 precios nuevos; Messenger sin chats de componentes por contestar; Instagram pide iniciar sesión: Google Maps como respaldo, 5 tiendas nuevas (T046-T050); tarea 18-2 hecha"
 2026-10-19,11:00,dem,"demanda: 14 filas del día; 7800X3D 4 anuncios (1 nuevo); SSD 1TB 5 anuncios (2 nuevos, 3 desaparecidos); DDR5 6000 un nuevo a Bs 5.800"
 2026-10-19,11:12,wa,Chats nuevos: 5 tiendas de Marketplace (T046-T050) en lista E Por calificar; 2 respuestas automáticas; total hoy 5 de 10
+2026-10-19,11:13,mkt,"Catálogos: revisadas webs de Shopping PC, ECOM y PCBOX; ninguna publica precios de 7600 ni SSD 2TB; sin precios nuevos"
+2026-10-19,11:15,pedidos,"Pedidos de prueba: USPS con movimiento nuevo (llegó a Miami 18/10, entrega estimada 19/10); GOFO y SpeedX sin cambios, en bodega del courier. Sin pedidos reales activos"
+2026-10-19,11:16,fin,"sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan); ronda de la mañana, sin cambios"
+2026-10-19,11:18,ana,"Dólar 11,82. Conviene el Ryzen 5 7600 nuevo (eBay USD 140,26): costo Bs 1.823, venta sugerida 2.660, margen 31,5 %, peor caso 20 %; el Core Ultra 7 265K entra justo (margen 21 %, peor caso 8,9 %). Shopping PC mayorista (Kingston NV3 1TB Bs 1.754 sin factura) no deja margen frente a eBay + courier. DDR5 6000, i5-14400F, 9950X y SSD 1TB: no traer. Plan 17-8 hecho."
+2026-10-19,11:19,local,"Oficina: publicada versión 68 en la misma URL con datos.js (generado 11:17) y 3 capturas de hoy (eBay 10:40, Marketplace 11:00 y 11:13); verificar.py comun y oficina sin ERROR"

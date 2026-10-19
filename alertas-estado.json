@@ -25,10 +25,12 @@
   "conviene|Intel Core i5-13400|usado|2026-10-16": "2026-10-16 14:01",
   "baja|Intel Core i5-13400|usado|2026-10-17": "2026-10-17 11:54",
   "baja|SSD NVMe 1TB|nuevo|2026-10-18": "2026-10-18 11:53",
-  "baja|Ryzen 5 5600|usado|2026-10-19": "2026-10-19 11:55"
+  "baja|Ryzen 5 5600|usado|2026-10-19": "2026-10-19 11:55",
+  "baja|Ryzen 5 7600|nuevo|2026-10-19": "2026-10-19 11:16",
+  "conviene|Ryzen 5 7600|nuevo|2026-10-19": "2026-10-19 11:16"
  },
  "conviene": {
-  "Ryzen 5 7600|nuevo": false,
+  "Ryzen 5 7600|nuevo": true,
   "Ryzen 5 7600|usado": true,
   "Ryzen 7 7800X3D|nuevo": true,
   "Ryzen 7 7800X3D|usado": true,
@@ -45,7 +47,7 @@
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|nuevo": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|usado": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo": false,
-  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": true,
+  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": false,
   "RAM DDR4 16GB (2x8) 3200|nuevo": false,
   "RAM DDR4 16GB (2x8) 3200|usado": false,
   "SSD NVMe 1TB|nuevo": false,
@@ -54,7 +56,8 @@
   "SSD NVMe 2TB|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 5 5600 (usado) bajó 17% en eBay: USD 129.99 → 107.99"
+  "⬇ Ryzen 5 7600 (nuevo) bajó 34% en eBay: USD 213.95 → 140.26",
+  "✅ Ahora conviene Ryzen 5 7600 (nuevo): +35% · costo puesto Bs 1.823 vs Bs 2.800 en Cochabamba"
  ],
- "revisado": "2026-10-19 11:55"
+ "revisado": "2026-10-19 11:16"
 }
