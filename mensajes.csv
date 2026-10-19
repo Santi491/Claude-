@@ -69,7 +69,7 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-15,10:41,whatsapp,Hardware Technology,enviado,seguimiento,,un solo recordatorio (5600 o 5700X3D)
 2026-10-15,10:43,whatsapp,PC Factor,recibido,respuesta,no,audio (no se pudo escuchar)
 2026-10-15,10:44,whatsapp,OverCity,recibido,respuesta,sí,Ryzen 5 7600 OEM Bs 2.800
-2026-10-15,10:45,whatsapp,ECOM,enviado,nuevo,,"consulta Ryzen 5 7600, i5-12400F y DDR5 32GB, precio por 2"
+2026-10-15,10:45,whatsapp,ECOM (Economic Computers),enviado,nuevo,,"consulta Ryzen 5 7600, i5-12400F y DDR5 32GB, precio por 2"
 2026-10-15,10:46,whatsapp,OverCity,enviado,respuesta,,pregunta si tienen el i5-12400F
 2026-10-15,10:46,whatsapp,PC Factor,enviado,respuesta,,pide el audio por escrito
 2026-10-15,10:47,whatsapp,NF Evolution,enviado,nuevo,,"consulta 7800X3D, i5-14400F y Corsair DDR5 32GB 6000, precio por 2"
@@ -142,3 +142,11 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-17,16:13,whatsapp,Punto Tecnológico,enviado,respuesta,,"agradece el precio del 9800X3D"
 2026-10-17,16:12,whatsapp,Legion Emporium,enviado,seguimiento,,"primer seguimiento (7800X3D o i5-14400F; su catálogo es todo a cotizar)"
 2026-10-17,16:15,whatsapp,4 Gamers,enviado,seguimiento,,"primer seguimiento (Ryzen 5 7600, precio de uno)"
+2026-10-19,10:40,whatsapp,Gamer Store Cbba,recibido,respuesta,no,"solo les queda un 7600X y lo venden en combo; sin precio nuevo"
+2026-10-19,10:40,whatsapp,Gamer Store Cbba,enviado,respuesta,,agradece y cierra cordial
+2026-10-19,10:40,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,agradece el contacto de su línea corporativa
+2026-10-19,10:41,whatsapp,ADN Gamer Store,enviado,seguimiento,,primer seguimiento (7800X3D o 7600)
+2026-10-19,10:44,whatsapp,ECOM (Economic Computers),enviado,seguimiento,,segundo y último seguimiento (7600 o DDR5 32GB)
+2026-10-19,10:47,whatsapp,4 Gamers,enviado,seguimiento,,segundo y último seguimiento (7600 o SSD NVMe 1TB)
+2026-10-19,10:51,whatsapp,Legion Emporium,enviado,seguimiento,,segundo y último seguimiento (7600 o DDR5 32GB)
+2026-10-19,10:52,whatsapp,Geek Store Bolivia,enviado,respuesta,,pregunta precio Ryzen 5 5600 y Ryzen 7 5700X3D (tarea 17-10)
