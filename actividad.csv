@@ -180,6 +180,6 @@ fecha,hora,agente,texto
 2026-10-18,11:56,ana,"Conviene traer solo el Intel Core Ultra 7 265K nuevo (margen 21 %, peor caso 9 %). El 7600 nuevo pasó a no traer (margen -1 %) tras la suba de eBay; el SSD 2TB y los usados quedan en espera por falta de precios locales (2 tiendas, usados). No traer: 9950X, DDR5 5600, DDR4 y SSD 1TB."
 2026-10-18,11:58,nube,"Revisión diaria hecha: dólar (oficial 11,69; paralelo 11,83 usado), eBay API, comparación, análisis, Excel, copia del día e informe. Alerta pendiente: SSD 1TB nuevo bajó 28 % (el aviso de Telegram se envió)."
 2026-10-18,20:30,gerente,"Resumen semanal 12-18/10: 21 chats nuevos, 44 respuestas (17 con precio), 67 % de respuesta; sin ERRORES de verificar.py. Propuse 2 tareas, ambas aprobadas auto (rutina); 0 mensajes del chat; 0 de Telegram (la Raspberry lo lee)."
-2026-10-19,11:58,ebay,"API: 12 precios nuevos y 12 usados; 0 corregidos por variante o repuestos",
-2026-10-19,11:58,ana,"Conviene traer solo el Intel Core Ultra 7 265K nuevo (margen 21 %, peor caso 9 %). SSD 2TB y usados esperan precio local; 7600 nuevo, 9950X y SSD 1TB nuevo no se traen.",
-2026-10-19,11:59,nube,"Revisión diaria hecha: dólar (oficial 11,69; paralelo 11,82 usado), eBay API, comparación, análisis, Excel, copia del día e informe.",
+2026-10-19,11:58,ebay,"API: 12 precios nuevos y 12 usados; 0 corregidos por variante o repuestos"
+2026-10-19,11:58,ana,"Conviene traer solo el Intel Core Ultra 7 265K nuevo (margen 21 %, peor caso 9 %). SSD 2TB y usados esperan precio local; 7600 nuevo, 9950X y SSD 1TB nuevo no se traen."
+2026-10-19,11:59,nube,"Revisión diaria hecha: dólar (oficial 11,69; paralelo 11,82 usado), eBay API, comparación, análisis, Excel, copia del día e informe."
