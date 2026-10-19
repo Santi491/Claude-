@@ -24,7 +24,8 @@
   "conviene|SSD NVMe 1TB|nuevo|2026-10-16": "2026-10-16 11:54",
   "conviene|Intel Core i5-13400|usado|2026-10-16": "2026-10-16 14:01",
   "baja|Intel Core i5-13400|usado|2026-10-17": "2026-10-17 11:54",
-  "baja|SSD NVMe 1TB|nuevo|2026-10-18": "2026-10-18 11:53"
+  "baja|SSD NVMe 1TB|nuevo|2026-10-18": "2026-10-18 11:53",
+  "baja|Ryzen 5 5600|usado|2026-10-19": "2026-10-19 11:55"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -53,7 +54,7 @@
   "SSD NVMe 2TB|usado": true
  },
  "ultimas": [
-  "⬇ SSD NVMe 1TB (nuevo) bajó 28% en eBay: USD 128.99 → 93.50"
+  "⬇ Ryzen 5 5600 (usado) bajó 17% en eBay: USD 129.99 → 107.99"
  ],
- "revisado": "2026-10-18 11:53"
+ "revisado": "2026-10-19 11:55"
 }
