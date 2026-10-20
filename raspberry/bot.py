@@ -47,7 +47,8 @@ AYUDA = ("Háblame como a tu gerente: \"hola, ¿cómo vamos?\", \"¿qué convien
          "necesidades · resuelta 2 · tarea: <texto> · venta: 2 Ryzen 5 7600 a 2800 · modelo haiku|sonnet|opus · uso · nueva charla.\n"
          "La PC: estado pc · prender pc · apagar pc · ronda ahora · pc: <encargo puntual, por ejemplo pc: pregúntale a Shopping PC por la 5600> · salud.\n"
          "El equipo: meta wa: 10 tiendas nuevas hoy (obligatoria) · chat (lo que te preguntan los agentes) · chat pedidos: <respuesta>.\n"
-         "Mi libreta: memoria (lo que tengo anotado) · anota: <algo para acordarme> · cumplida 3 · borra 3.")
+         "Mi libreta: memoria (lo que tengo anotado) · anota: <algo para acordarme> · cumplida 3 · borra 3.\n"
+         "Puedo cambiar los datos (productos, plan, tiendas, pedidos...): pídemelo charlando. deshacer vuelve atrás mi último cambio.")
 
 cargar("~/.cargo-bot", ("CLAUDE_CODE_OAUTH_TOKEN", "CLAUDE_MODELO", "MAX_PREGUNTAS_DIA", "AVISOS", "PC_MAC", "PC_IP"))
 TOKEN, CHAT = cargar("~/.telegram", ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"))
@@ -107,6 +108,68 @@ def subir(mensaje, extra=()):
             return True
         git("pull", "--no-rebase", "--no-edit", "-q")
     return False
+
+
+# ---------- Manos del Gerente sobre los datos (Santi, 20/10: "Datos + encargar lo grande", "según el cambio") ----------
+# El Gerente de Telegram puede editar SOLO estos archivos de datos. Todo lo demás (código, oficina, CLAUDE.md, skills)
+# se deshace solo si lo toca, y lo grande se lo encarga a la PC (ACCION: pc encargo).
+EDITABLES = ("vigilar.csv", "plan.csv", "tiendas-cochabamba.csv", "clientes-potenciales.csv", "necesidades.csv", "ideas.csv",
+             "memoria-gerente.csv", "chat.csv", "precios-cochabamba.csv", "pedidos.csv", "pedidos-prueba.csv", "ventas.csv")
+
+
+DEL_VIGILANTE = ("sesiones.csv", "salud-raspberry.json", "pedido-pc.json", "orden-pc.json", "actividad.csv")
+
+
+def errores_verificar():
+    r = subprocess.run([sys.executable, os.path.join(REPO, "verificar.py"), "todo"], cwd=REPO, capture_output=True, text=True, timeout=120)
+    return {l.strip() for l in r.stdout.splitlines() if l.strip().startswith("ERROR")}
+
+
+def revisar_cambios():
+    """Después de una vuelta con Claude: si cambió algún archivo de datos permitido, corre verificar.py (si el cambio agrega
+    un ERROR, lo deshace) y si queda bien lo sube. Devuelve el texto para Santi ('' si no hubo cambios) o (texto, commit)."""
+    # segunda red: si algún otro archivo del repo quedó cambiado (código, oficina, reglas), se deshace; los del vigilante
+    # (que escribe en paralelo por cron) no se tocan
+    sucios = [l[3:].strip().strip('"') for l in git("status", "--porcelain", "--untracked-files=no").stdout.splitlines() if l.strip()]
+    fuera = [c for c in sucios if c not in EDITABLES and c not in DEL_VIGILANTE]
+    if fuera:
+        git("checkout", "--", *fuera)
+    aviso_fuera = (f" No toqué {', '.join(fuera)}: no es un archivo de datos; si hace falta, se lo encargo a la PC." if fuera else "")
+    dentro = [c for c in EDITABLES if git("diff", "--quiet", "--", c).returncode != 0]
+    if not dentro:
+        return aviso_fuera.strip()
+    nuevos = errores_verificar()
+    git("stash", "push", "-q", "--", *dentro)
+    antes = errores_verificar()
+    git("stash", "pop", "-q")
+    rotos = nuevos - antes
+    if rotos:
+        git("checkout", "--", *dentro)
+        return ("Intenté cambiar " + ", ".join(dentro) + " pero quedaba un error (" + "; ".join(sorted(rotos))[:200]
+                + "), así que lo deshice y no subí nada." + aviso_fuera)
+    stat = git("diff", "--numstat", "--", *dentro).stdout.split("\n")
+    detalle = ", ".join(f"{c} (+{a} −{b})" for a, b, c in (l.split("\t") for l in stat if l.count("\t") == 2))
+    anotar_actividad(f"Telegram (Raspberry): el Gerente cambió {', '.join(dentro)}")
+    ok = subir("Gerente (Telegram): cambio en " + ", ".join(dentro), extra=tuple(dentro))
+    hash_ = git("rev-parse", "HEAD").stdout.strip()
+    return (f"Cambié: {detalle or ', '.join(dentro)}. Si no te gusta, escribe deshacer." + ("" if ok else " (no pude subirlo a GitHub todavía)")
+            + aviso_fuera), hash_
+
+
+def cmd_deshacer(estado):
+    actualizar_repo()
+    h = estado.get("ultimo_cambio")
+    if not h:
+        return "No tengo ningún cambio mío reciente para deshacer."
+    if git("revert", "--no-edit", h).returncode != 0:
+        git("revert", "--abort")
+        return "No pude deshacerlo solo: después de mi cambio alguien más tocó esos archivos. Lo vemos en una sesión con Claude en la Mac."
+    for _ in range(3):
+        if git("push", "-q").returncode == 0:
+            break
+        git("pull", "--no-rebase", "--no-edit", "-q")
+    estado.pop("ultimo_cambio", None)
+    return "Listo, deshice mi último cambio y quedó como estaba."
 
 
 def leer_csv(nombre):
@@ -402,7 +465,27 @@ Nunca inventes cifras ni hechos: si no está en los archivos, dilo. La ganancia 
 Como buen gerente, estás atento a lo que le falta al equipo para trabajar (información, decisiones o acciones de Santi):
 al inicio de cada mensaje te paso la lista actual de necesidades. Cuéntaselas a Santi cuando vengan al caso o sean
 importantes, explicando qué se destraba si las resuelve, sin repetir la lista entera en cada mensaje.
-No modificas archivos tú mismo. Para que algo pase, al final de tu mensaje agrega UNA línea por acción, exactamente así:
+MANOS SOBRE LOS DATOS (Santi, 20/10). Puedes editar con la herramienta Edit SOLO estos archivos de datos: vigilar.csv,
+plan.csv, tiendas-cochabamba.csv, clientes-potenciales.csv, necesidades.csv, ideas.csv, memoria-gerente.csv, chat.csv,
+precios-cochabamba.csv, pedidos.csv, pedidos-prueba.csv y ventas.csv. Lee el archivo antes, respeta sus columnas y su formato
+CSV (comillas si el texto lleva coma), agrega filas al final y nunca borres filas (para anular algo se cambia el estado).
+Después de tu mensaje el bot revisa el cambio con verificar.py, lo deshace solo si queda un error, le dice a Santi qué
+cambió y lo sube; Santi puede escribir "deshacer". actividad.csv la anota el bot: no la toques.
+Según el cambio (Santi, 20/10):
+- Si Santi te lo pide claramente ("agrega el 7700X a la lista", "la guía es ...", "T&T cerró, márcala"), hazlo y cuéntale.
+- Lo de rutina que se te ocurra a ti (anotar una tarea, marcar una necesidad resuelta, corregir un dato mal escrito) hazlo y cuéntaselo.
+- Lo delicado que salga de ti y no de un pedido claro de Santi, PREGÚNTALE antes y hazlo solo cuando diga que sí: agregar o
+  sacar productos de vigilar.csv, cambiar montos de pedidos o ventas, marcar una tienda como "no apuntar" o fría, y cualquier
+  cosa que cambie cómo trabaja el equipo.
+- Producto nuevo en vigilar.csv: producto, busqueda_ebay ("AMD Ryzen 7 7700X CPU"), peso_g_con_caja (procesador 350, RAM 150,
+  SSD 80) y, en plan.csv, una tarea aprobada de prioridad alta y plazo de 2 días para ebay, wa, mkt y ana con el motivo.
+- Tareas nuevas en plan.csv: id AAAA-MM-DD-N (el N siguiente de ese día), con prioridad (alta|media|baja) y plazo.
+- Nunca pongas en los archivos el texto de Santi tal cual ni nombres de personas, teléfonos o direcciones (el repo es
+  público); las guías solo en la columna guia de pedidos.csv.
+- No puedes tocar código (.py), la oficina, CLAUDE.md, los skills ni otros archivos: si Santi pide un cambio así, propónselo
+  y, si acepta, encárgaselo a la PC con ACCION: pc encargo: <el cambio, bien explicado> (la PC tiene a Claude con manos
+  completas; tarda 10 a 20 minutos) o dile que es para una sesión con Claude en la Mac si es grande.
+Para las órdenes de abajo (aprobar, tareas rápidas, la PC, la libreta) sigue usando las líneas ACCION, exactamente así:
 ACCION: aprobar 1 3          (tareas propuestas de plan.csv, por su número final)
 ACCION: rechazar 2
 ACCION: tarea <agente>: <qué hacer>   (agente: wa, mkt, ebay, pedidos, ana, fin, dem o local)
@@ -456,7 +539,9 @@ def claude(texto, estado, nueva=False):
                + f"Tu libreta (memoria-gerente.csv, lo abierto):\n{libreta_breve()}\n"
                + f"Pedidos abiertos de los agentes: {pedidas}.\nNecesidades del equipo:\n{informe_necesidades(breve=True)}\n\n"
                + "Mensaje: " + texto)
-    cmd = ["claude", "-p", mensaje, "--model", modelo, "--allowedTools", "Read,Grep,Glob", "--output-format", "json"]
+    permitidos = "Read,Grep,Glob," + ",".join(f"Edit(./{a})" for a in EDITABLES)
+    cmd = ["claude", "-p", mensaje, "--model", modelo, "--allowedTools", permitidos,
+           "--disallowedTools", "Bash,Write,NotebookEdit,WebFetch,WebSearch", "--output-format", "json"]
     cmd += ["--resume", sesion["id"]] if seguir else ["--append-system-prompt", PERSONA]
     try:
         r = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True, timeout=300)
@@ -478,7 +563,16 @@ def claude(texto, estado, nueva=False):
     estado["uso"] = uso
     if datos.get("session_id"):
         estado["sesion"] = {"dia": hoy, "id": datos["session_id"]}
-    return ejecutar_acciones(salida)
+    # primero se revisa y sube lo que editó Claude (las ACCION hacen git pull y commits que, si no, se lo llevarían sin revisar)
+    try:
+        cambio = revisar_cambios()
+    except Exception as e:
+        git("checkout", "--", *EDITABLES)
+        cambio = f"Algo falló al guardar un cambio ({type(e).__name__}); lo deshice para no dejar nada a medias."
+    if isinstance(cambio, tuple):
+        cambio, estado["ultimo_cambio"] = cambio
+    respuesta = ejecutar_acciones(salida)
+    return respuesta + ("\n\n✎ " + cambio if cambio else "")
 
 
 def ejecutar_acciones(salida):
@@ -677,6 +771,8 @@ def atender(texto, estado):
         return cmd_pedido_pc("ronda")
     if t in ("salud", "/salud", "como esta el equipo"):
         return cmd_salud()
+    if t in ("deshacer", "/deshacer", "deshace", "deshaz eso", "volver atras"):
+        return cmd_deshacer(estado)
     if t in ("memoria", "/memoria", "libreta", "que tienes anotado", "de que te acuerdas"):
         return cmd_memoria_ver()
     m = re.fullmatch(r"(cumplida|borra|descarta)\s+(\d+)", t)
