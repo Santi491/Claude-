@@ -213,3 +213,6 @@ fecha,hora,agente,texto
 2026-10-19,19:07,gerente,Telegram (Raspberry): tarea nueva de Santi 2026-10-19-3 para pedidos
 2026-10-19,19:07,gerente,Telegram (Raspberry): tarea nueva de Santi 2026-10-19-4 para ana
 2026-10-19,20:16,gerente,Informe diario 19/10 subido al Doc; 5 tareas auto (20-2 a 20-6) y 0 propuestas nuevas para Santi (7500F e idea ya en ideas.csv); 2 mensajes de chat contestados; libreta: 1 nota cerrada; 0 mensajes de Telegram (los lee la Raspberry)
+2026-10-20,07:58,ebay,"API: 12 precios nuevos y 13 usados; 0 filas corregidas (7600 nuevo subió a USD 213,95: el de 140,26 de ayer ya no aparece en la API)"
+2026-10-20,07:58,ana,"Traer (margen, 2 u): DDR4 16GB nuevo 37 %, 7800X3D nuevo 22 %, Ultra 7 265K nuevo 21 %, SSD 1TB nuevo 20 % (peor caso 6-26 %). Esperar: SSD 2TB (faltan tiendas) y los usados sin precio local. No traer: 7600 nuevo (-1 %), 9950X, i5-13400 y DDR5 nuevo."
+2026-10-20,07:59,nube,"Revisión diaria hecha: dólar 11,83 (paralelo; BCB 11,70), eBay, comparación, análisis, Excel, copia del día e informe; alertas enviadas por Telegram"

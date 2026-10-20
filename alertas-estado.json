@@ -27,10 +27,13 @@
   "baja|SSD NVMe 1TB|nuevo|2026-10-18": "2026-10-18 11:53",
   "baja|Ryzen 5 5600|usado|2026-10-19": "2026-10-19 11:55",
   "baja|Ryzen 5 7600|nuevo|2026-10-19": "2026-10-19 11:16",
-  "conviene|Ryzen 5 7600|nuevo|2026-10-19": "2026-10-19 11:16"
+  "conviene|Ryzen 5 7600|nuevo|2026-10-19": "2026-10-19 11:16",
+  "conviene|Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado|2026-10-20": "2026-10-20 11:56",
+  "baja|RAM DDR4 16GB (2x8) 3200|nuevo|2026-10-20": "2026-10-20 11:56",
+  "baja|SSD NVMe 2TB|nuevo|2026-10-20": "2026-10-20 11:56"
  },
  "conviene": {
-  "Ryzen 5 7600|nuevo": true,
+  "Ryzen 5 7600|nuevo": false,
   "Ryzen 5 7600|usado": true,
   "Ryzen 7 7800X3D|nuevo": true,
   "Ryzen 7 7800X3D|usado": true,
@@ -47,7 +50,7 @@
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|nuevo": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|usado": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo": false,
-  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": false,
+  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": true,
   "RAM DDR4 16GB (2x8) 3200|nuevo": false,
   "RAM DDR4 16GB (2x8) 3200|usado": false,
   "SSD NVMe 1TB|nuevo": false,
@@ -56,8 +59,9 @@
   "SSD NVMe 2TB|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 5 7600 (nuevo) bajó 34% en eBay: USD 213.95 → 140.26",
-  "✅ Ahora conviene Ryzen 5 7600 (nuevo): +35% · costo puesto Bs 1.823 vs Bs 2.800 en Cochabamba"
+  "✅ Ahora conviene Corsair Vengeance RGB DDR5 32GB (2x16) 6000 (usado): +16% · costo puesto Bs 4.898 vs Bs 5.800 en Cochabamba",
+  "⬇ RAM DDR4 16GB (2x8) 3200 (nuevo) bajó 34% en eBay: USD 118.96 → 77.99",
+  "⬇ SSD NVMe 2TB (nuevo) bajó 22% en eBay: USD 209.99 → 163.11"
  ],
- "revisado": "2026-10-19 16:20"
+ "revisado": "2026-10-20 11:56"
 }
