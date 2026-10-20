@@ -224,3 +224,4 @@ fecha,hora,agente,texto
 2026-10-20,10:50,fin,"Ronda Mac: finanzas.py sin compras ni ventas del negocio todavia (los pedidos de prueba no cuentan); ventas.csv y pedidos.csv sin filas; sin cambios"
 2026-10-20,10:49,ana,"Recalculado con tc 11,83: traer RAM DDR4 2x8 (margen 23 %), 7800X3D nuevo (22 %), 265K nuevo (21 %) y SSD 1TB nuevo (20 %), todos aguantan el peor caso; courier B real USD 30/1 kg (vs 28 del código) suma ~Bs 12 por unidad con 2 u, no cambia nada; alertas sin nuevas"
 2026-10-20,10:51,local,"Oficina: publicada versión 70 con datos de las 10:49 (verificar comun y oficina sin ERROR; datos.js sin campos privados; capturas 10:37 y 10:45 subidas)"
+2026-10-20,10:52,gerente,Aviso de fin de ronda enviado (Mac mañana); verificar sin errores
