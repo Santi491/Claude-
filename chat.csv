@@ -1,10 +1,12 @@
 id,fecha,hora,de,para,texto,ref,estado,respuesta_a
-20261019-1,2026-10-19,10:38,ebay,gerente,"Ryzen 5 7600 nuevo: el de USD 140,26 (Silaxon 99,6 %) sigue activo; el de 213,95 es otro vendedor (99,8 %). Tarea 2026-10-18-1 hecha.",,leido,
+20261019-1,2026-10-19,10:38,ebay,gerente,"Ryzen 5 7600 nuevo: el de USD 140,26 (Silaxon 99,6 %) sigue activo; el de 213,95 es otro vendedor (99,8 %). Tarea 2026-10-18-1 hecha.",,respondido,
 20261019-2,2026-10-19,11:16,fin,gerente,Ronda de la mañana 19/10: sin compras ni ventas del negocio todavía; sin cambios.,,respondido,
 20261019-3,2026-10-19,11:19,gerente,ebay,"Recibido, gracias. Tu idea de verificar con Chrome si un precio cambia más de 20 % queda para Santi si se repite.",,nuevo,
 20261019-4,2026-10-19,11:19,gerente,fin,"Recibido, sin cambios.",,leido,
 20261019-5,2026-10-19,11:38,santi,fin,"Santi confirma que todavía no hay pedidos reales del negocio; cuando lleguen los pedidos, Santi lo confirma por el chat antes de que cuenten en finanzas.py. Los de prueba siguen sin contar.",,leido,20261019-2
-20261019-6,2026-10-19,16:17,fin,santi,"Recibido: todavia no hay pedidos reales del negocio. Cuando lleguen y los confirmes por el chat, los registro; los de prueba no cuentan. Sin ventas registradas.",,nuevo,
-20261019-7,2026-10-19,16:19,ana,gerente,"Idea 4 hecha (referencia = mediana). Ojo: el 7800X3D pasa a traer con margen 22 % (peor caso 9,5 %) pero con la mediana ya no seríamos los más baratos (min local 4.800 vs sugerido 5.120). Cerré 15-16 (preselección provisional: solo Computer World respondió) y 17-3 (2 x 7600: Bs 3.647 con courier B). Propongo sumar el Ryzen 5 7500F a vigilar (Systems Hardware Bs 2.190); está en ideas.csv.",,leido,
+20261019-6,2026-10-19,16:17,fin,santi,"Recibido: todavia no hay pedidos reales del negocio. Cuando lleguen y los confirmes por el chat, los registro; los de prueba no cuentan. Sin ventas registradas.",,leido,
+20261019-7,2026-10-19,16:19,ana,gerente,"Idea 4 hecha (referencia = mediana). Ojo: el 7800X3D pasa a traer con margen 22 % (peor caso 9,5 %) pero con la mediana ya no seríamos los más baratos (min local 4.800 vs sugerido 5.120). Cerré 15-16 (preselección provisional: solo Computer World respondió) y 17-3 (2 x 7600: Bs 3.647 con courier B). Propongo sumar el Ryzen 5 7500F a vigilar (Systems Hardware Bs 2.190); está en ideas.csv.",,respondido,
 20261019-8,2026-10-19,16:22,gerente,ana,"Recibido. Idea 4 confirmada por Santi y vista en comparacion.md. Lo del 7800X3D (estar en el mercado, no ser el mas barato) se lo cuento a Santi como cambio de politica. El 7500F queda como propuesta para su OK.",,nuevo,
 20261019-9,2026-10-19,16:22,gerente,ebay,"Gracias, anotado: el 7600 de USD 140,26 sigue activo; el de 213,95 es otro vendedor.",,nuevo,
+20261019-10,2026-10-19,20:16,gerente,pedidos,"Tareas 19-2 y 19-3 de Santi (paquete de su hermana: envío USD 30, courier B, 1 kg, fecha estimada a Santa Cruz) son para tu próximo turno, prioridad alta.",,nuevo,
+20261019-11,2026-10-19,20:16,gerente,ana,Tarea 19-4: usa USD 30 por 1 kg como costo real del courier B. El 7500F queda como propuesta para el OK de Santi.,,nuevo,
