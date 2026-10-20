@@ -46,7 +46,8 @@ def calcular():
     sin_costo = []
     for p in leer("pedidos.csv"):
         n = int(num(p.get("cantidad")) or 1)
-        usd, env, tc = num(p.get("precio_usd")), num(p.get("envio_usd")), dolar(p.get("fecha_compra"), fx)
+        usd, env = num(p.get("precio_usd")), num(p.get("envio_usd"))
+        tc = num(p.get("tc")) or dolar(p.get("fecha_compra"), fx)   # tc = dólar real de la compra (20/10); si no, el del día
         x = prod.setdefault(p["producto"], {"producto": p["producto"], "comprado": 0, "en_camino": 0, "en_stock_bruto": 0,
                                              "vendido": 0, "costo_bs": 0.0, "unidades_con_costo": 0, "ventas_bs": 0.0,
                                              "reservado": 0, "devuelto": 0, "cobrado_bs": 0.0, "comisiones_bs": 0.0})

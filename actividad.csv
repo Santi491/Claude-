@@ -236,3 +236,7 @@ fecha,hora,agente,texto
 2026-10-20,16:19,fin,sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)
 2026-10-20,16:21,local,Oficina: publicada versión 71 con el Ryzen 7 7700X (datos de la ronda de la tarde y 2 capturas de Marketplace); verificar comun y oficina sin ERROR
 2026-10-20,16:21,gerente,"Aviso de fin de ronda enviado (PC tarde, foco 7700X): conviene traer 2 nuevos por courier B (costo Bs 2.532, venta Bs 3.480, margen 27 %, peor caso 16 %); demanda baja; faltan Punto Tecnológico, Geek y T&T (tarea 20-11 para mañana)"
+2026-10-20,17:20,pedidos,"Primer pedido real cargado: 4 Ryzen 7 7700X por courier B (real-1: 3 u, real-2: 1 u), estado comprado; guía pendiente de Santi"
+2026-10-20,17:20,fin,"Primer pedido real: invertidos Bs 10.620 en 4 Ryzen 7 7700X (Bs 2.655 c/u con todo, dólar 11,88); 4 en camino, 0 en stock, sin ventas. Santi tenía USD 205 + Bs 8.177 (USD 688,30 a 11,88) = USD 893,30; gastó USD 893,94: faltaron Bs 7,60"
+2026-10-20,17:20,ana,"7700X nuevo pasa a 'traer' (margen 27 %, peor caso 15,6 %; tiendas a Bs 3.480–3.667, OverCity y Shopping PC sin stock). Para nuestro stock a Bs 2.655: venta rápida Bs 3.000 (13 %), sugerido Bs 3.300 (24 %, Bs 645 por unidad), tienda Bs 3.450 (30 %)"
+2026-10-20,17:20,gerente,Tenemos nuestro primer pedido real: 4 Ryzen 7 7700X en camino por el courier B. Anoté el costo real en la libreta y quedó una tarea para Pedidos cuando Santi pase la guía.
