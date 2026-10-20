@@ -60,6 +60,7 @@ eBay nuevo: USD 324.99 con envío en EE.UU. (eBay API; vendedor geoelectronics7 
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2669179450145313/) | no indicado | 5.190 | 1.180 (23%) | 2026-10-11 |
 | OverCity (WhatsApp) | nuevo en caja sellada (box; el OEM está a Bs 5.500; el i5-14400F Bs 2.460 es su precio mínimo) | 5.350 | 1.340 (25%) | 2026-10-13 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1361869715871206/) | no indicado | 5.390 | 1.380 (26%) | 2026-10-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1361869715871206/) | nuevo (anuncio 'El mejor para Gaming'; disponible) | 5.390 | 1.380 (26%) | 2026-10-20 |
 | Viadata Computadoras (WhatsApp) · [ver](https://www.facebook.com/computadorascochabamba/) | nuevo OEM (solo el chip) | 5.500 | 1.490 (27%) | 2026-10-12 |
 | OverCity (WhatsApp) | nuevo OEM (solo el chip) | 5.500 | 1.490 (27%) | 2026-10-13 |
 | Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | BOX (según foto de su web; USD 480) | 5.664 | 1.654 (29%) | 2026-10-12 |
@@ -133,6 +134,7 @@ eBay nuevo: USD 77.99 con envío en EE.UU. (eBay API; vendedor supnahllc 99.8%; 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/959874386670350/) | no indicado (16GB 3200; configuración no indicada) | 900 | -188 (-21%) | 2026-10-11 |
+| Marketplace Cochabamba (particular) | 2x8 = 16GB (marca y frecuencia sin dato; antes Bs 1.600; vuelve a aparecer) | 1.400 | 312 (22%) | 2026-10-20 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2347323546077904/) | no indicado (2x8 3200; Sacaba) | 1.500 | 412 (27%) | 2026-10-11 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2345958202816013/) | no indicado (Corsair Vengeance 2x8; Sacaba; rebajado de 1600) | 1.500 | 412 (27%) | 2026-10-11 |
 | Compucenter (WhatsApp) · [ver](https://compucenter.store/) | nuevo (Corsair Vengeance RGB DDR4 16GB 3600; no dice si es 2x8; Bs 2.560 con factura) | 2.150 | 1.062 (49%) | 2026-10-12 |
