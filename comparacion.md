@@ -8,6 +8,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs | Ganancia 2 u | Ganancia 4 u | Estado |
 |---|---|---|---|---|---|---|---|
 | SSD NVMe 2TB | [163.11](https://www.ebay.com/itm/147643723246) | 2.095 (B 1 kg) | 2.012 (B 1 kg) | 4.060 | 1.965 (48%) | 2.048 (50%) | conviene |
+| Ryzen 7 7700X | [199.99](https://www.ebay.com/itm/880031658199) | 2.532 (B 1 kg) | 2.532 (B 2 kg) | 3.480 | 948 (27%) | 948 (27%) | conviene |
 | Intel Core Ultra 7 265K | [244.88](https://www.ebay.com/itm/189020669164) | 3.063 (B 1 kg) | 3.021 (B 1.5 kg) | 3.950 | 887 (22%) | 929 (24%) | conviene |
 | Ryzen 7 7800X3D | [324.99](https://www.ebay.com/itm/168798006867) | 4.010 (B 1 kg) | 4.010 (B 2 kg) | 4.760 | 750 (16%) | 750 (16%) | conviene |
 | Intel Core i5-12400F | [150.00](https://www.ebay.com/itm/800773514419) | 1.940 (B 1 kg) | 1.899 (B 1.5 kg) | 2.260 | 320 (14%) | 361 (16%) | justo |
@@ -26,6 +27,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 |---|---|---|---|---|---|---|---|
 | Ryzen 5 7600 | [120.00](https://www.ebay.com/itm/377526242250) | 1.585 (B 1 kg) | 1.585 (B 2 kg) | 2.800 | 1.215 (43%) | 1.215 (43%) | conviene |
 | SSD NVMe 2TB | [184.99](https://www.ebay.com/itm/307236693052) | 2.354 (B 1 kg) | 2.271 (B 1 kg) | 4.060 | 1.706 (42%) | 1.789 (44%) | conviene |
+| Ryzen 7 7700X | [169.99](https://www.ebay.com/itm/227510711720) | 2.177 (B 1 kg) | 2.177 (B 2 kg) | 3.480 | 1.303 (37%) | 1.303 (37%) | conviene |
 | Intel Core i5-12400F | [124.99](https://www.ebay.com/itm/840012219180) | 1.644 (B 1 kg) | 1.603 (B 1.5 kg) | 2.260 | 616 (27%) | 657 (29%) | conviene |
 | Intel Core i5-14400F | [134.99](https://www.ebay.com/itm/366745827965) | 1.763 (B 1 kg) | 1.721 (B 1.5 kg) | 2.384 | 621 (26%) | 663 (28%) | conviene |
 | Ryzen 7 7800X3D | [289.99](https://www.ebay.com/itm/168796327027) | 3.596 (B 1 kg) | 3.596 (B 2 kg) | 4.760 | 1.164 (24%) | 1.164 (24%) | conviene |
@@ -166,6 +168,15 @@ eBay nuevo: USD 163.11 con envío en EE.UU. (eBay API; vendedor tratg 99.3%; SSD
 |---|---|---|---|---|
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Apacer M.2 2TB 7400 MB/s) | 4.060 | 1.965 (48%) | 2026-10-12 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; Hiksemi Futurex M.2 2TB) | 4.560 | 2.465 (54%) | 2026-10-12 |
+
+### Ryzen 7 7700X
+eBay nuevo: USD 199.99 con envío en EE.UU. (eBay (Chrome, API sin claves); paymore_cary 99,7 %; nuevo, Buy It Now, envio gratis, 2026-10-20). Costo puesto: **Bs 2.532**/u en pedido de 2, **Bs 2.532**/u en pedido de 4.
+
+| Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
+|---|---|---|---|---|
+| Geek Store Bolivia (WhatsApp) | sin confirmar si es sellado (se preguntó) | 3.480 | 948 (27%) | 2026-10-15 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/producto/procesador-amd-ryzen-7-7700x-box) | nuevo BOX sellado (sin cooler) | 3.667 | 1.135 (31%) | 2026-10-20 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/887277370696710/) | sellado | 4.000 | 1.468 (37%) | 2026-10-20 |
 
 ## Sin comparación todavía (eBay nuevo)
 

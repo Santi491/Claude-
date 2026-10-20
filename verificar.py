@@ -336,6 +336,8 @@ def mkt(R, ronda=False):
             R.error(f"precios-cochabamba.csv línea {i}: falta el tipo")
         if p.get("producto") not in prods:
             R.aviso(f"precios-cochabamba.csv línea {i}: '{p.get('producto')}' no está en vigilar.csv")
+        if not str(p.get("precio_bs") or "").strip() and (p.get("estado") or "").startswith("no cuenta"):
+            continue   # "agotado" o referencia sin precio: no se compara
         try:
             v = float(str(p.get("precio_bs")).replace(",", "."))
             if not 50 <= v <= 60000:

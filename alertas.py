@@ -35,6 +35,7 @@ def num(v):
 
 def revisar():
     vig, eeuu, cbba = C.leer("vigilar.csv"), C.leer("precios-eeuu.csv"), C.leer("precios-cochabamba.csv")
+    cbba = [f for f in cbba if (f.get("precio_bs") or "").strip()]   # "agotado" sin precio: no entra en los cálculos
     fx = [f for f in C.leer("tipo-cambio.csv") if num(f.get("usado"))]
     tc = num(fx[-1]["usado"]) if fx else 11.9
     est = json.load(open(ESTADO, encoding="utf-8")) if os.path.exists(ESTADO) else {}

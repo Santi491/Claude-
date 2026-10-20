@@ -319,6 +319,7 @@ def escribir_excel(ruta, vigilar, eeuu, cbba, fx, hoy_filas, hist):
 
 def main():
     vigilar, eeuu, cbba, fx = leer("vigilar.csv"), leer("precios-eeuu.csv"), leer("precios-cochabamba.csv"), leer("tipo-cambio.csv")
+    cbba = [f for f in cbba if (f.get("precio_bs") or "").strip()]   # "agotado" sin precio: no entra en los cálculos
     hoy = date.today().isoformat()
     ultimo = max(fx, key=lambda f: f["fecha"])
     bcb, par, tc = dolar_del_dia(fx, ultimo["fecha"])

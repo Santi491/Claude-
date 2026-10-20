@@ -175,3 +175,16 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-19,12:41,whatsapp,ADN Gamer Store,recibido,respuesta,no,"dice ""si ahora le respondo"" (aviso que contestará; sin precio)"
 2026-10-20,10:52,whatsapp,Viadata Computadoras,recibido,respuesta,sí,Core Ultra 7 265 (no K) BOX Bs 6.160 y Ryzen 5 7600X BOX Bs 3.300 (no son de vigilar)
 2026-10-20,10:55,whatsapp,Viadata Computadoras,enviado,respuesta,,pregunta 7600 sin X 265K y 5600 o 5700X3D (tarea 20-3) y garantía de los BOX
+2026-10-20,10:45,whatsapp,Viadata Computadoras,recibido,respuesta,sí,"Ryzen 7 5700 BOX pocas unidades en tránsito a Bs 2.400 en preventa, garantía 3 meses (no es de vigilar); no tienen 7600 sin X ni 265K"
+2026-10-20,16:05,whatsapp,Geek Store Bolivia,enviado,seguimiento,,"tarea 2026-10-20-8: confirma si el Ryzen 7 7700X (Bs 3.480 del 15/10) es nuevo sellado con garantía, stock, precio por 2 y 4 y si hay usado"
+2026-10-20,16:05,whatsapp,Geek Store Bolivia,recibido,automatica,no,saludo automático (atiende lun–sáb 9:00–19:00); sin respuesta real todavía
+2026-10-20,16:05,whatsapp,Punto Tecnológico,enviado,seguimiento,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (precio por 1, 2 y 4, sellado, garantía, usado)"
+2026-10-20,16:05,whatsapp,T&T Todo en Tecnología,enviado,seguimiento,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (precio por 1, 2 y 4, sellado, garantía); antes solo habían pasado su línea corporativa"
+2026-10-20,16:05,whatsapp,Shopping PC,enviado,seguimiento,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (disponible, precio por 1, 2 y 4, sellado)"
+2026-10-20,16:06,whatsapp,OverCity,enviado,respuesta,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (precio por 1, 2 y 4, caja u OEM, garantía)"
+2026-10-20,16:06,whatsapp,OverCity,recibido,respuesta,no,Ryzen 7 7700X AGOTADO
+2026-10-20,16:06,whatsapp,OverCity,recibido,respuesta,sí,"escribe ""Ryzen 7 7700X3D a 4700 Bs"" (modelo dudoso, probablemente 7800X3D; sin confirmar)"
+2026-10-20,16:07,whatsapp,OverCity,enviado,respuesta,,"pregunta si el de Bs 4.700 es el 7800X3D, OEM o caja, garantía, y si el 7700X llega pronto"
+2026-10-20,16:12,whatsapp,Shopping PC,recibido,respuesta,no,"Ryzen 7 7700X: ""no tenemos"" (sin precio)"
+2026-10-20,16:13,whatsapp,Punto Tecnológico,recibido,respuesta,no,"""Buenas tardes"" y ""Ahora reviso"" (consulta 7700X; sin precio todavía)"
+2026-10-20,16:13,whatsapp,OverCity,recibido,respuesta,no,"repite ""RYZEN 7 7700X3D BOX A 4700BS"" con foto de la caja (V-Cache); no aclara si es 7800X3D ni la garantía; modelo sin confirmar, no se anota precio"

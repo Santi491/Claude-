@@ -109,6 +109,7 @@ def main():
         a.tc = float(max(tcs, key=lambda f: f["fecha"])["usado"]) if tcs else 11.90
 
     vigilar, eeuu, cbba = leer("vigilar.csv"), leer("precios-eeuu.csv"), leer("precios-cochabamba.csv")
+    cbba = [f for f in cbba if (f.get("precio_bs") or "").strip()]   # "agotado" sin precio: no entra en los cálculos
     enc = ("| Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs "
            "| Ganancia 2 u | Ganancia 4 u | Estado |\n|---|---|---|---|---|---|---|---|")
     nuevo, detalle, sin = tabla(vigilar, eeuu, cbba, "nuevo", a)

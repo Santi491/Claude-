@@ -46,6 +46,7 @@ def es_referencia(f):
 
 def main():
     vigilar, eeuu, cbba = leer("vigilar.csv"), leer("precios-eeuu.csv"), leer("precios-cochabamba.csv")
+    cbba = [f for f in cbba if (f.get("precio_bs") or "").strip()]   # "agotado" sin precio: no entra en los cálculos
     tiendas, fx, act = leer("tiendas-cochabamba.csv"), leer("tipo-cambio.csv"), leer("actividad.csv")
 
     def estado_tienda(fuente):

@@ -30,7 +30,9 @@
   "conviene|Ryzen 5 7600|nuevo|2026-10-19": "2026-10-19 11:16",
   "conviene|Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado|2026-10-20": "2026-10-20 11:56",
   "baja|RAM DDR4 16GB (2x8) 3200|nuevo|2026-10-20": "2026-10-20 11:56",
-  "baja|SSD NVMe 2TB|nuevo|2026-10-20": "2026-10-20 11:56"
+  "baja|SSD NVMe 2TB|nuevo|2026-10-20": "2026-10-20 11:56",
+  "conviene|Ryzen 7 7700X|nuevo|2026-10-20": "2026-10-20 16:16",
+  "conviene|Ryzen 7 7700X|usado|2026-10-20": "2026-10-20 16:16"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -56,12 +58,13 @@
   "SSD NVMe 1TB|nuevo": false,
   "SSD NVMe 1TB|usado": false,
   "SSD NVMe 2TB|nuevo": true,
-  "SSD NVMe 2TB|usado": true
+  "SSD NVMe 2TB|usado": true,
+  "Ryzen 7 7700X|nuevo": true,
+  "Ryzen 7 7700X|usado": true
  },
  "ultimas": [
-  "✅ Ahora conviene Corsair Vengeance RGB DDR5 32GB (2x16) 6000 (usado): +16% · costo puesto Bs 4.898 vs Bs 5.800 en Cochabamba",
-  "⬇ RAM DDR4 16GB (2x8) 3200 (nuevo) bajó 34% en eBay: USD 118.96 → 77.99",
-  "⬇ SSD NVMe 2TB (nuevo) bajó 22% en eBay: USD 209.99 → 163.11"
+  "✅ Ahora conviene Ryzen 7 7700X (nuevo): +16% · costo puesto Bs 2.532 vs Bs 3.000 en Cochabamba",
+  "✅ Ahora conviene Ryzen 7 7700X (usado): +27% · costo puesto Bs 2.177 vs Bs 3.000 en Cochabamba"
  ],
- "revisado": "2026-10-20 10:49"
+ "revisado": "2026-10-20 16:16"
 }
