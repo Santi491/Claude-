@@ -89,3 +89,7 @@ fecha,producto,precio_bs,estado,fuente,link,tipo,condiciones,vigencia
 2026-10-19,SSD NVMe 1TB,2050,WD Green SN3000 1TB (estado sin dato),Marketplace Cochabamba (particular),https://www.facebook.com/marketplace/item/3707244856102112/,publicado,,
 2026-10-19,Ryzen 5 7600,2800,nuevo OEM (reconfirmado 16:09),OverCity (WhatsApp),,cotizado,garantía 3 meses,vigente hoy
 2026-10-19,Intel Core Ultra 7 265K,4100,nuevo OEM,OverCity (WhatsApp),,cotizado,garantía 3 meses,vigente hoy
+2026-10-20,Ryzen 7 7800X3D,5190,"no cuenta: anuncio viejo (nuevo; publicado hace 13 semanas)",Marketplace Cochabamba (particular),https://www.facebook.com/marketplace/item/2669179450145313/,publicado,,2026-07-20
+2026-10-20,Ryzen 7 7800X3D,5390,"nuevo (anuncio 'El mejor para Gaming'; disponible)",Marketplace Cochabamba (particular),https://www.facebook.com/marketplace/item/1361869715871206/,publicado,,
+2026-10-20,Intel Core Ultra 7 265K,3950,"no cuenta: otra ciudad (La Paz; nuevo)",Marketplace La Paz (particular),,publicado,referencia; no hay 265K en Cochabamba,
+2026-10-20,RAM DDR4 16GB (2x8) 3200,1400,"2x8 = 16GB (marca y frecuencia sin dato; antes Bs 1.600; vuelve a aparecer)",Marketplace Cochabamba (particular),,publicado,rebajado de 1600,
