@@ -234,3 +234,5 @@ fecha,hora,agente,texto
 2026-10-20,16:18,pedidos,"Prueba: 3 guías rastreadas (USPS, GOFO, SpeedX) sin movimientos nuevos; GOFO y SpeedX siguen en bodega del courier en Miami; USPS entregado en Miami 19/10. Paquete de la hermana (courier B, USD 30) sin guía todavía, no se pudo rastrear. Sin pedidos reales activos"
 2026-10-20,16:20,wa,"Pase corto 7700X: Shopping PC no tiene; OverCity agotado (repite 7700X3D BOX Bs 4.700, modelo sin aclarar); Punto Tecnológico ""ahora reviso""; Geek Store y T&T sin respuesta real. Sin mensajes enviados."
 2026-10-20,16:19,fin,sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)
+2026-10-20,16:21,local,Oficina: publicada versión 71 con el Ryzen 7 7700X (datos de la ronda de la tarde y 2 capturas de Marketplace); verificar comun y oficina sin ERROR
+2026-10-20,16:21,gerente,"Aviso de fin de ronda enviado (PC tarde, foco 7700X): conviene traer 2 nuevos por courier B (costo Bs 2.532, venta Bs 3.480, margen 27 %, peor caso 16 %); demanda baja; faltan Punto Tecnológico, Geek y T&T (tarea 20-11 para mañana)"
