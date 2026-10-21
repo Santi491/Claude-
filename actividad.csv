@@ -246,3 +246,6 @@ fecha,hora,agente,texto
 2026-10-20,20:20,gerente,"Informe diario 20/10 subido al Doc: primer pedido real de 7700X, 4 tareas propuestas (todas auto por rutina), 0 mensajes del chat contestados (el pendiente es para Santi), 1 nota de libreta anotada, Telegram lo lee la Raspberry"
 2026-10-21,00:22,gerente,"Telegram (Raspberry): el Gerente cambió vigilar.csv, plan.csv"
 2026-10-21,00:22,gerente,Telegram (Raspberry): meta obligatoria de Santi 2026-10-21-5 para wa
+2026-10-21,07:58,ebay,"API: 14 precios nuevos y 14 usados; 0 corregidos (variante y vendedor revisados)"
+2026-10-21,07:58,ana,"Con margen: conviene traer el Ryzen 7 7700X (22,7 %, peor caso 10,3 %), el Ultra 7 265K (21,1 %), el 7800X3D (20,2 %) y el SSD 1TB nuevo (19,1 %); esperar usados y SSD 2TB (faltan precios locales); no traer Ryzen 5 7600, 9950X, DDR5 ni DDR4 nuevo (6 %)."
+2026-10-21,07:59,nube,"Revisión diaria hecha: dólar paralelo 11,91 / oficial 11,70, eBay API, comparación, análisis, Excel, copia del día e informe."

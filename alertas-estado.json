@@ -37,7 +37,7 @@
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
   "Ryzen 5 7600|usado": true,
-  "Ryzen 7 7800X3D|nuevo": true,
+  "Ryzen 7 7800X3D|nuevo": false,
   "Ryzen 7 7800X3D|usado": true,
   "Ryzen 9 9950X|nuevo": false,
   "Ryzen 9 9950X|usado": false,
@@ -52,7 +52,7 @@
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|nuevo": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|usado": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo": false,
-  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": true,
+  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": false,
   "RAM DDR4 16GB (2x8) 3200|nuevo": false,
   "RAM DDR4 16GB (2x8) 3200|usado": false,
   "SSD NVMe 1TB|nuevo": false,
@@ -66,5 +66,5 @@
   "✅ Ahora conviene Ryzen 7 7700X (nuevo): +16% · costo puesto Bs 2.532 vs Bs 3.000 en Cochabamba",
   "✅ Ahora conviene Ryzen 7 7700X (usado): +27% · costo puesto Bs 2.177 vs Bs 3.000 en Cochabamba"
  ],
- "revisado": "2026-10-20 16:16"
+ "revisado": "2026-10-21 11:55"
 }
