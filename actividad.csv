@@ -257,3 +257,4 @@ fecha,hora,agente,texto
 2026-10-21,10:53,fin,"Finanzas 21/10: invertido Bs 10.620 (4 Ryzen 7 7700X, real-1 y real-2, tc 11,88), en camino 4, en stock 0, vendidas 0, ventas 0; sin ventas del negocio, ganancia pendiente; dólar usado 11,91 (dolarbolivia.net 21/10)"
 2026-10-21,10:53,ana,"Analista: 7700X stock a 2.655: venta sugerida 3.306 (margen 19,7 %), rápido 2.921, tienda 3.450 con Geek Store 3.480. 7500F: costo puesto Bs 1.786 nuevo / 1.536 usado (B), sin precio local: esperar. Traer: 7700X, 7800X3D, 265K y SSD 1TB; 5600/5700X3D sin datos"
 2026-10-21,10:55,local,"Oficina: publicada v73 (oficina/index.html + datos.js + 2 capturas de Marketplace de hoy); generar.py y verificar comun/oficina sin ERROR"
+2026-10-21,10:57,gerente,aviso de fin de ronda enviado (Mac)
