@@ -1,4 +1,4 @@
-# Análisis del Analista (2026-10-20)
+# Análisis del Analista (2026-10-21)
 
 Dólar 11.83 · pedido de 2 u, courier más barato, aduana 0 %, tax A 7 %, precio de venta = 5 % debajo de la mediana local (si no deja 10 % sobre el costo: no traer).
 Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: margen si el dólar sube 3 %, el courier cobra 20 % más, el precio local baja 10 % o todo junto.
