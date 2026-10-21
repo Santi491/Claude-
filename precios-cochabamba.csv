@@ -104,3 +104,8 @@ fecha,producto,precio_bs,estado,fuente,link,tipo,condiciones,vigencia
 2026-10-21,Ryzen 5 7500F,,"no cuenta: agotado, sin precio",OverCity (WhatsApp),,cotizado,"21/10 10:38: ""7500f agotado""",
 2026-10-21,Ryzen 5 7600,,"no cuenta: sin stock, sin precio",COMPUTING (WhatsApp),,cotizado,"21/10 10:41: ""no tenemos stock"" (respuesta a pregunta por 7600 o 7500F)",
 2026-10-21,Ryzen 5 7500F,,"no cuenta: sin stock, sin precio",COMPUTING (WhatsApp),,cotizado,"21/10 10:41: ""no tenemos stock"" (respuesta a pregunta por 7600 o 7500F)",
+2026-10-21,Intel Core i5-12400F,2350,"OEM (anuncio ""Procesador CPU i5 12400f OEM""; estado sin dato)",Marketplace Cochabamba (particular),,publicado,"OEM, sin caja; primer precio local del 12400F",sin dato
+2026-10-21,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,6200,"Corsair Vengeance RGB RS 2x16 6000 MHz (""última unidad""; estado sin dato)",Marketplace Cochabamba (particular),,publicado,"""última unidad""; RS, no la serie RGB exacta",sin dato
+2026-10-21,Ryzen 7 7800X3D,4860,"nuevo (anuncio multi-modelo ""9800X3D, 7800X3D, 8700G""; precio desde)",Marketplace Cochabamba (tienda sin confirmar),,publicado,"precio de lista ""desde""; varios modelos",sin dato
+2026-10-21,SSD NVMe 1TB,1700,Kingston NV2 NVMe 1TB (estado sin dato; recién publicado),Marketplace Cochabamba (particular),,publicado,,recién publicado
+2026-10-21,SSD NVMe 1TB,3050,Samsung 9100 PRO 1TB PCIe 5.0 (gama alta; estado sin dato),Marketplace Cochabamba (particular),,publicado,"PCIe 5.0, no comparable directo con NVMe estándar",sin dato

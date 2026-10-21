@@ -70,3 +70,19 @@ fecha,producto,fuente,ciudad,anuncios,nuevos,desaparecidos,precio_min_bs,precio_
 2026-10-20,SSD NVMe 1TB,marketplace,Cochabamba,5,0,0,1500,1850,"siguen Kingston NV3 Bs 1.850 (2 anuncios), M2 1TB Bs 1.500, Lexar NM790 Bs 2.500; sin nuevos; el de Bs 1.230 no se ve hoy"
 2026-10-20,SSD NVMe 2TB,marketplace,Cochabamba,0,0,0,,,"sin precio visible (un M.2 2TB con disipador y un Corsair MP600 Mini 2TB con precio oculto)"
 2026-10-20,Ryzen 7 7700X,marketplace,Cochabamba,2,0,0,3000,3500,"primera cuenta (nuevos y desaparecidos 0): 2 anuncios del 7700X, 0 tiendas y 2 particulares (uno nuevo a 3.000 de hace 7 semanas, otro sellado a 4.000 sin fecha); no hay usados; un anuncio de Supermall ""5700G, 7700"" es otro modelo y no cuenta; en La Paz hay al menos 6 anuncios (2.800-3.900). Señal de interés baja: ningún anuncio reciente, sin ""vendido"" visible. Cyrex Store lo tiene en su web a Bs 3.667"
+2026-10-21,Ryzen 5 7500F,marketplace,Cochabamba,0,0,0,,,"primera cuenta: 0 anuncios del 7500F en Cochabamba (solo PCs, 8600G, 5700X); WhatsApp ya supo agotado en OverCity y COMPUTING: señal de escasez local, sin demanda medible"
+2026-10-21,Ryzen 5 5600,marketplace,Cochabamba,0,0,0,,,ninguno del 5600 exacto (5600X Bs 1.800 y 5600G son otro modelo)
+2026-10-21,Ryzen 7 5700X3D,marketplace,Cochabamba,0,0,0,,,ninguno (salen 5700X OEM Bs 2.450-2.500 y 5700G; otro modelo)
+2026-10-21,Ryzen 5 7600,marketplace,Cochabamba,0,0,0,,,"ninguno suelto; solo PCs, 8600G y 9600X"
+2026-10-21,Ryzen 7 7800X3D,marketplace,Cochabamba,3,0,1,4800,4860,"Bs 4.800 sellado, 4.860 (lista multi-modelo) y 5.390; el de 5.190 (viejo) no se ve hoy: desaparecido sin comprobar venta; señal de interés baja"
+2026-10-21,Ryzen 9 9950X,marketplace,Cochabamba,2,1,0,,,2 anuncios de tienda con precio oculto (9950X/9950X3D); sin precio visible
+2026-10-21,Intel Core i5-12400F,marketplace,Cochabamba,1,1,0,2350,2350,aparece un OEM a Bs 2.350 (nuevo en la cuenta)
+2026-10-21,Intel Core i5-13400,marketplace,Cochabamba,0,0,0,,,ninguno en Cochabamba (hay en Oruro y La Paz)
+2026-10-21,Intel Core i5-14400F,marketplace,Cochabamba,0,0,0,,,ninguno con F; i5-14400 sin F a Bs 2.600-2.700 (otro modelo)
+2026-10-21,Intel Core Ultra 7 265K,marketplace,Cochabamba,0,0,0,,,ninguno con precio en Cochabamba (combo 256K/265KF con precio oculto); en La Paz Bs 3.750-4.500
+2026-10-21,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,marketplace,Cochabamba,0,0,0,,,ninguno; Kingston Fury 32GB 5600 a Bs 7.400 es otra marca
+2026-10-21,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,marketplace,Cochabamba,2,1,0,5800,6000,"Bs 5.800 y nuevo ""última unidad"" RS a Bs 6.200; un solo vendedor probable repite; señal de interés baja"
+2026-10-21,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,1,0,1,,,un 2x8 3200 sin precio visible; el de Bs 1.400 de ayer no aparece (sin venta comprobada); otros 2x8 a 3000 MHz Bs 1.200
+2026-10-21,SSD NVMe 1TB,marketplace,Cochabamba,5,2,0,1500,1850,"NV2 Bs 1.700 (nuevo), NV3 1.850, M2 1.500, Lexar 2.500, Samsung 9100 PRO 3.050 (nuevo); sin ventas comprobadas"
+2026-10-21,SSD NVMe 2TB,marketplace,Cochabamba,0,0,0,,,sin precio visible (un M.2 2TB con disipador sin precio)
+2026-10-21,Ryzen 7 7700X,marketplace,Cochabamba,1,0,1,3000,3000,queda el de Bs 3.000 (viejo ~7 semanas); el sellado de 4.000 no se ve hoy (sin venta comprobada); señal de interés baja
