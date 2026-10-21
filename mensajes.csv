@@ -188,3 +188,20 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-20,16:12,whatsapp,Shopping PC,recibido,respuesta,no,"Ryzen 7 7700X: ""no tenemos"" (sin precio)"
 2026-10-20,16:13,whatsapp,Punto Tecnológico,recibido,respuesta,no,"""Buenas tardes"" y ""Ahora reviso"" (consulta 7700X; sin precio todavía)"
 2026-10-20,16:13,whatsapp,OverCity,recibido,respuesta,no,"repite ""RYZEN 7 7700X3D BOX A 4700BS"" con foto de la caja (V-Cache); no aclara si es 7800X3D ni la garantía; modelo sin confirmar, no se anota precio"
+2026-10-21,10:37,whatsapp,OverCity,enviado,respuesta,,pregunta si el de Bs 4.700 es el 7800X3D y si tienen Ryzen 5 7500F (tarea 21-2)
+2026-10-21,10:37,whatsapp,OverCity,recibido,respuesta,no,"aclara que no es el 7800X3D, es el 7700X3D (Bs 4.700 en caja, modelo fuera de vigilar)"
+2026-10-21,10:38,whatsapp,OverCity,recibido,respuesta,no,Ryzen 5 7500F agotado
+2026-10-20,17:53,whatsapp,Geek Store Bolivia,recibido,respuesta,sí,"Ryzen 7 7700X es nuevo caja sellada, unas 10 unidades, solo nuevos en caja (leído 21/10, llegó la tarde del 20/10)"
+2026-10-20,17:55,whatsapp,Geek Store Bolivia,recibido,respuesta,sí,llevando 4 unidades rebajan el 7700X a Bs 3.450 (leído 21/10)
+2026-10-21,10:37,whatsapp,Geek Store Bolivia,enviado,respuesta,,agradece; pregunta por Ryzen 5 7500F y garantía de procesadores
+2026-10-21,10:38,whatsapp,Shopping PC,enviado,respuesta,,pregunta por el Ryzen 5 7500F (ya habían dicho que no tienen 7700X)
+2026-10-21,10:38,whatsapp,ADN Gamer Store,enviado,respuesta,,"responde a su ""si ahora le respondo""; pide confirmar 7600 o 7500F y precio"
+2026-10-21,10:39,whatsapp,Pc Soluciones Importaciones,enviado,respuesta,,"responde a su ""Se. Lo veo""; suma pregunta por 7500F"
+2026-10-21,10:40,whatsapp,COMPUTING,enviado,nuevo,,"chat nuevo: pregunta Ryzen 5 7600 o 7500F, precio por 1 y 2, nuevo con garantía"
+2026-10-21,10:40,whatsapp,COMPUTING,recibido,automatica,no,saludo automático
+2026-10-21,10:41,whatsapp,COMPUTING,recibido,respuesta,no,no tienen stock
+2026-10-21,10:40,whatsapp,ENIGMA TECH,enviado,nuevo,,chat nuevo: pregunta Ryzen 7 7700X o 7500F
+2026-10-21,10:40,whatsapp,ENIGMA TECH,recibido,automatica,no,respuesta automática de otro negocio (restaurante de ramen): número de Google Maps no es de la tienda
+2026-10-21,10:41,whatsapp,Esteban Arce,enviado,nuevo,,"chat nuevo: pregunta DDR5 32GB, SSD NVMe 1TB y Ryzen sueltos"
+2026-10-21,10:41,whatsapp,Accesorios Master Pc,enviado,nuevo,,"chat nuevo: pregunta procesadores Ryzen/Intel y DDR5, precio y garantía"
+2026-10-21,10:42,whatsapp,Nerd Tecnologias,enviado,nuevo,,chat nuevo: pregunta si venden componentes; Ryzen 5 7600 y SSD NVMe 1TB
