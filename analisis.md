@@ -5,26 +5,26 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 
 | Producto | Cond. | Costo Bs/u | Venta sugerida | Margen | Recargo | Dólar +3 % | Courier +20 % | Local −10 % | Peor caso | Recomendación | Falta |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Ryzen 7 7700X | nuevo | 2.692 | 3.480 | 22.7 % | 29.3 % | 20.3 % | 21.7 % | 14.0 % | 10.3 % | **traer** (aguanta el peor caso (10.3 %)) | — |
 | Intel Core Ultra 7 265K | nuevo | 3.068 | 3.890 | 21.1 % | 26.8 % | 18.8 % | 20.3 % | 12.3 % | 8.7 % | **traer** (aguanta el peor caso (8.7 %)) | — |
+| Ryzen 7 7700X | nuevo | 2.692 | 3.390 | 20.6 % | 25.9 % | 18.2 % | 19.6 % | 11.7 % | 8.0 % | **traer** (aguanta el peor caso (8.0 %)) | — |
 | Ryzen 7 7800X3D | nuevo | 4.085 | 5.120 | 20.2 % | 25.3 % | 17.8 % | 19.6 % | 11.2 % | 7.8 % | **traer** (aguanta el peor caso (7.8 %)) | — |
 | SSD NVMe 1TB | nuevo | 1.536 | 1.900 | 19.1 % | 23.7 % | 16.7 % | 17.4 % | 10.2 % | 5.5 % | **traer** (aguanta el peor caso (5.5 %)) | 4 anuncio(s) de particular sin marca o configuración descartado(s) |
 | SSD NVMe 2TB | usado | 2.251 | 4.090 | 45.0 % | 81.7 % | 43.3 % | 44.2 % | 38.8 % | 36.1 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas) | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 5 7600 | usado | 1.667 | 2.680 | 37.8 % | 60.7 % | 35.9 % | 36.5 % | 30.8 % | 27.3 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
 | SSD NVMe 2TB | nuevo | 2.644 | 4.090 | 35.4 % | 54.7 % | 33.4 % | 34.5 % | 28.2 % | 25.1 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | SSD NVMe 1TB | usado | 1.239 | 1.900 | 34.8 % | 53.4 % | 32.9 % | 33.1 % | 27.6 % | 23.4 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos), 4 anuncio(s) de particular sin marca o configuración descartado(s)) | precio local de usados (se comparó con nuevos), 4 anuncio(s) de particular sin marca o configuración descartado(s) |
-| Ryzen 7 7700X | usado | 2.430 | 3.480 | 30.2 % | 43.2 % | 28.1 % | 29.2 % | 22.4 % | 19.0 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
 | RAM DDR4 16GB (2x8) 3200 | usado | 1.000 | 1.420 | 29.6 % | 42.0 % | 27.5 % | 27.2 % | 21.9 % | 16.9 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos), 1 anuncio(s) de particular sin marca o configuración descartado(s)) | precio local de usados (se comparó con nuevos), 1 anuncio(s) de particular sin marca o configuración descartado(s) |
 | Ryzen 7 7800X3D | usado | 3.621 | 5.120 | 29.3 % | 41.4 % | 27.2 % | 28.6 % | 21.3 % | 18.2 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
-| Intel Core i5-12400F | usado | 1.644 | 2.240 | 26.6 % | 36.3 % | 24.4 % | 25.1 % | 18.2 % | 14.1 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
+| Ryzen 7 7700X | usado | 2.430 | 3.390 | 28.3 % | 39.5 % | 26.2 % | 27.3 % | 20.3 % | 16.8 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
+| Intel Core i5-12400F | usado | 1.644 | 2.230 | 26.3 % | 35.7 % | 24.1 % | 24.8 % | 17.8 % | 13.6 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
 | Intel Core Ultra 7 265K | usado | 2.906 | 3.890 | 25.3 % | 33.9 % | 23.1 % | 24.4 % | 17.0 % | 13.5 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
 | Intel Core i5-14400F | usado | 1.834 | 2.380 | 22.9 % | 29.8 % | 20.6 % | 21.5 % | 14.3 % | 10.1 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
-| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | usado | 4.931 | 5.700 | 13.5 % | 15.6 % | 10.9 % | 12.9 % | 3.9 % | 0.3 % | **esperar** (el peor caso lo deja en 0.3 %) | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
-| Intel Core i5-12400F | nuevo | 1.953 | 2.240 | 12.8 % | 14.7 % | 10.2 % | 11.3 % | 2.8 % | -1.8 % | **esperar** (el peor caso lo deja en -1.8 %) | — |
+| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | usado | 4.931 | 5.890 | 16.3 % | 19.5 % | 13.8 % | 15.7 % | 7.0 % | 3.5 % | **esperar** (el peor caso lo deja en 3.5 %) | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
+| Intel Core i5-12400F | nuevo | 1.953 | 2.230 | 12.4 % | 14.2 % | 9.8 % | 10.9 % | 2.3 % | -2.3 % | **esperar** (el peor caso lo deja en -2.3 %) | — |
 | Intel Core i5-14400F | nuevo | 2.126 | 2.380 | 10.7 % | 12.0 % | 8.0 % | 9.3 % | 0.7 % | -3.9 % | **esperar** (el peor caso lo deja en -3.9 %) | — |
 | Intel Core i5-13400 | usado | 1.953 | 2.180 | 10.4 % | 11.6 % | 7.7 % | 8.9 % | 0.3 % | -4.4 % | **esperar** (el peor caso lo deja en -4.4 %) | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
+| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | nuevo | 5.526 | 5.890 | 6.2 % | 6.6 % | 3.4 % | 5.6 % | -4.3 % | -8.0 % | **no traer** (margen 6% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | RAM DDR4 16GB (2x8) 3200 | nuevo | 1.334 | 1.420 | 6.1 % | 6.5 % | 3.3 % | 3.7 % | -4.2 % | -10.0 % | **no traer** (margen 6% con el precio sugerido) | 1 anuncio(s) de particular sin marca o configuración descartado(s) |
-| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | nuevo | 5.526 | 5.700 | 3.0 % | 3.1 % | 0.1 % | 2.5 % | -7.7 % | -11.6 % | **no traer** (margen 3% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 9 9950X | usado | 5.586 | 5.560 | -0.5 % | -0.5 % | -3.5 % | -1.1 % | -11.5 % | -15.5 % | **no traer** (margen -0% con el precio sugerido) | precio local de usados (se comparó con nuevos) |
 | Ryzen 5 7600 | nuevo | 2.714 | 2.680 | -1.3 % | -1.2 % | -4.3 % | -2.5 % | -12.6 % | -17.4 % | **no traer** (margen -1% con el precio sugerido) | — |
 | Ryzen 9 9950X | nuevo | 6.110 | 5.560 | -9.9 % | -9.0 % | -13.2 % | -10.5 % | -22.0 % | -26.3 % | **no traer** (margen -10% con el precio sugerido) | — |
@@ -37,3 +37,24 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Ryzen 7 5700X3D | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precio local |
 | Ryzen 5 7500F | nuevo | — | — | — | — | — | — | — | — | sin datos | precio local |
 | Ryzen 5 7500F | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precio local |
+
+## Stock real: 4 Ryzen 7 7700X (costo Bs 2.655 c/u, todo incluido) · 21/10
+
+Precio local de referencia: Geek Store Bs 3.480 (Bs 3.450 llevando 4 u; WhatsApp 20/10, caja sellada, ~10 u); Cyrex Store web Bs 3.667. Nada se ofrece a nadie.
+
+| Precio | Bs/u | Margen | Ganancia por 4 u |
+|---|---|---|---|
+| Rápido (piso: 10 % de recargo sobre el costo) | 2.921 | 9,1 % | Bs 1.064 |
+| Sugerido (5 % debajo de Geek Store, 3.480) | 3.306 | 19,7 % | Bs 2.604 |
+| De tienda (igualar a Geek Store, 4 u) | 3.450 | 23,0 % | Bs 3.180 |
+
+Lectura: el sugerido sigue siendo válido con el precio nuevo de Geek Store (antes la venta de referencia era Bs 3.390). Hay un solo precio local de tienda con stock; Shopping PC agotado.
+
+## Ryzen 5 7500F: costo puesto (eBay API 21/10, dólar 11,91), sin precio local
+
+| Condición | eBay USD | Courier A, Bs/u | Courier B 2 u, Bs/u | Courier B 4 u, Bs/u |
+|---|---|---|---|---|
+| Nuevo | 135,99 | 1.852 | 1.786 (1 kg) | 1.786 (2 kg) |
+| Usado | 115,00 | 1.585 | 1.536 (1 kg) | 1.536 (2 kg) |
+
+Peor caso de costo (nuevo, 4 u, dólar +3 %, courier +20 %): ~Bs 1.874. Margen, precio de venta y veredicto: no se calculan, falta el precio local (0 anuncios, agotado en OverCity y COMPUTING, ninguna web lo tiene). Recomendación: esperar; no se puede decir "traer" sin precio de venta.
