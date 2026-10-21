@@ -205,3 +205,11 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-21,10:41,whatsapp,Esteban Arce,enviado,nuevo,,"chat nuevo: pregunta DDR5 32GB, SSD NVMe 1TB y Ryzen sueltos"
 2026-10-21,10:41,whatsapp,Accesorios Master Pc,enviado,nuevo,,"chat nuevo: pregunta procesadores Ryzen/Intel y DDR5, precio y garantía"
 2026-10-21,10:42,whatsapp,Nerd Tecnologias,enviado,nuevo,,chat nuevo: pregunta si venden componentes; Ryzen 5 7600 y SSD NVMe 1TB
+2026-10-21,10:43,whatsapp,Pc Soluciones Importaciones,recibido,respuesta,no,"""Ok"" (acusa recibo; sin precio todavía)"
+2026-10-21,10:46,whatsapp,Shopping PC,recibido,respuesta,no,"Ryzen 5 7500F: no tienen; solo ofrecen Ryzen 5 3600 (USD 90) y Ryzen 7 8700G (USD 350), ninguno de vigilar"
+2026-10-21,10:47,whatsapp,Geek Store Bolivia,recibido,respuesta,no,sin 7500F: ofrece directamente el Ryzen 5 8400F (link de su tienda web; no es de vigilar); no contestó la garantía
+2026-10-21,11:11,whatsapp,Accesorios Master Pc,recibido,respuesta,no,no tienen componentes para armar PC (no vende CPU/RAM)
+2026-10-21,11:37,whatsapp,ADN Gamer Store,recibido,respuesta,sí,Ryzen 7 7800X3D USD 520; en Ryzen 5 solo tiene 7600X USD 245 y 8400F USD 220 (OEM USD 190)
+2026-10-21,16:09,whatsapp,OverCity,enviado,respuesta,,agradece por avisar del 7500F agotado y aclarar el modelo
+2026-10-21,16:10,whatsapp,Punto Tecnológico,enviado,respuesta,,"recordatorio amable: pide aviso del Ryzen 7 7700X (llevaba ""Ahora reviso"" desde el 20/10)"
+2026-10-21,16:11,whatsapp,ADN Gamer Store,enviado,respuesta,,"pregunta si el 7800X3D de USD 520 es nuevo en caja, meses de garantía y rebaja por 2"

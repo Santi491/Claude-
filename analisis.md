@@ -50,11 +50,13 @@ Precio local de referencia: Geek Store Bs 3.480 (Bs 3.450 llevando 4 u; WhatsApp
 
 Lectura: el sugerido sigue siendo válido con el precio nuevo de Geek Store (antes la venta de referencia era Bs 3.390). Hay un solo precio local de tienda con stock; Shopping PC agotado.
 
-## Ryzen 5 7500F: costo puesto (eBay API 21/10, dólar 11,91), sin precio local
+## Ryzen 5 7500F: costo puesto (eBay API 21/10, dólar 11,91), sin precio local (actualizado tarde 21/10)
 
 | Condición | eBay USD | Courier A, Bs/u | Courier B 2 u, Bs/u | Courier B 4 u, Bs/u |
 |---|---|---|---|---|
 | Nuevo | 135,99 | 1.852 | 1.786 (1 kg) | 1.786 (2 kg) |
 | Usado | 115,00 | 1.585 | 1.536 (1 kg) | 1.536 (2 kg) |
 
-Peor caso de costo (nuevo, 4 u, dólar +3 %, courier +20 %): ~Bs 1.874. Margen, precio de venta y veredicto: no se calculan, falta el precio local (0 anuncios, agotado en OverCity y COMPUTING, ninguna web lo tiene). Recomendación: esperar; no se puede decir "traer" sin precio de venta.
+Peor caso de costo (nuevo, 4 u, dólar +3 %, courier +20 %): ~Bs 1.874. Margen, precio de venta y veredicto: no se calculan, falta el precio local (0 anuncios; agotado en OverCity, COMPUTING, Shopping PC y Geek Store por WhatsApp del 21/10, ninguna web lo tiene). Recomendación: esperar; no se puede decir "traer" sin precio de venta.
+
+Nota 7800X3D: el precio nuevo de ADN Gamer Store (Bs 6.193, USD 520, sin confirmar estado ni garantía) es más caro que la referencia actual y no cambia la venta sugerida de Bs 5.120 ni el veredicto.
