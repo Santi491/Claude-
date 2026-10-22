@@ -69,6 +69,7 @@ eBay nuevo: USD 329.00 con envío en EE.UU. (eBay API; vendedor aaawavecom 99.8%
 | Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | BOX (según foto de su web; USD 480) | 5.664 | 1.582 (28%) | 2026-10-12 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo BOX (web: USD 480 a 11,80) | 5.664 | 1.582 (28%) | 2026-10-16 |
 | SMART CUBE (WhatsApp) | nuevo sellado, facturado; llevando 2 rebajan Bs 50 c/u (Bs 5.840) | 5.890 | 1.808 (31%) | 2026-10-15 |
+| ADN Gamer Store (WhatsApp) | nuevo en caja (box); garantía sin dato (se preguntó) | 6.162 | 2.080 (34%) | 2026-10-22 |
 | ADN Gamer Store (WhatsApp) | nuevo (estado y garantía sin confirmar; se preguntó) | 6.193 | 2.111 (34%) | 2026-10-21 |
 
 ### Ryzen 9 9950X

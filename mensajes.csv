@@ -220,3 +220,12 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-22,13:05,whatsapp,T&T Todo en Tecnología,enviado,seguimiento,,seguimiento corto por el Ryzen 7 7700X (consulta del martes 20/10 sin respuesta)
 2026-10-22,13:16,whatsapp,TechMax Computers Cbba,enviado,nuevo,,"chat nuevo: consulta componentes (7600, SSD 1TB); número de su bio de Instagram"
 2026-10-22,13:18,whatsapp,"PC Com (distribuidora, Huyustus)",enviado,nuevo,,chat nuevo: confirma que es la tienda y consulta 7600/DDR5 32GB; número de post de tercero
+2026-10-21,16:36,whatsapp,ADN Gamer Store,recibido,respuesta,sí,"7800X3D USD 520 ""es el precio"" (sin rebaja por 2) a TC 11,85; ""si es box"" (nuevo en caja); garantía sin dato (leído 22/10)"
+2026-10-21,16:11,whatsapp,Punto Tecnológico,recibido,respuesta,no,"sobre el 7700X: ""solo tuviese el 9700x"" y ""7700x3d"" (sin precio; leído 22/10)"
+2026-10-22,13:36,whatsapp,"PC Com (distribuidora, Huyustus)",recibido,respuesta,no,"""No solo laptops"" (ambiguo: no queda claro si vende procesadores/RAM de escritorio)"
+2026-10-22,13:50,whatsapp,TechMax Computers Cbba,recibido,respuesta,no,se les acabaron los componentes; solo tienen Intel i9 14900K y un Core Ultra 7 (sin precio)
+2026-10-22,14:13,whatsapp,Shopping PC,recibido,respuesta,no,"""esta bien"" (respuesta al agradecimiento; sin datos)"
+2026-10-22,16:11,whatsapp,ADN Gamer Store,enviado,respuesta,,agradece y pregunta meses de garantía del 7800X3D
+2026-10-22,16:12,whatsapp,TechMax Computers Cbba,enviado,respuesta,,pregunta precio del Core Ultra 7 que tienen y si es nuevo con garantía
+2026-10-22,16:13,whatsapp,"PC Com (distribuidora, Huyustus)",enviado,respuesta,,pide aclarar si venden procesadores/RAM de escritorio o solo laptops
+2026-10-22,16:25,whatsapp,Punto Tecnológico,enviado,respuesta,,"pregunta precio del 9700X, nuevo y garantía"
