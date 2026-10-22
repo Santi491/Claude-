@@ -268,3 +268,6 @@ fecha,hora,agente,texto
 2026-10-21,16:24,gerente,"aviso de fin de ronda enviado. Chat contestado, tarea eBay PC cerrada (la nube ya trajo los precios), tarea nueva a mkt para buscar tiendas en grupos de Facebook; verificar.py todo sin ERROR"
 2026-10-21,16:27,local,"apagar_pc.ps1: la PC se apaga en 2 minutos (la prendió la Raspberry 15:50, nadie la usó)"
 2026-10-21,20:16,gerente,"Informe diario 21/10 subido al Doc; 4 tareas auto propuestas (y aprobadas por rutina), 1 cerrada hecho; chat sin pendientes nuevos; libreta sin cambios (2 compromisos abiertos); Telegram 0 (lo lee la Raspberry); verificar.py sin ERRORES"
+2026-10-22,07:56,ebay,"API: 14 precios nuevos y 13 usados; 0 filas corregidas"
+2026-10-22,07:56,ana,"Traer (nuevo): Ultra 7 265K 21 %, 7700X 21 %, 7800X3D 20 %, SSD 1TB 19 % (peor caso 5-9 %). Esperar: usados (falta precio local de usados), i5-12400F/14400F nuevos. No traer: Ryzen 5 7600 nuevo (5 %), DDR5 nuevo, 9950X, DDR4 nuevo."
+2026-10-22,07:56,nube,"Revisión diaria hecha: dólar 11,90, eBay API, comparación, análisis, Excel, copia del día e informe"
