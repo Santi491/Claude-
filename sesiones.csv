@@ -33,3 +33,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-21,gerente,informe,20:15,20:16,ok,Informe diario 21/10 subido al Doc; 4 tareas auto
 2026-10-22,raspberry,vigilante,13:00,13:00,arreglado,la Mac no hizo la ronda de la mañana: la cubre la PC
 2026-10-22,pc,cubre mac,13:02,13:27,ok,"Cubre la ronda de la mañana de la Mac (pedido del vigilante): WhatsApp 4 respuestas, seguimiento T&T y 2 chats nuevos (T056, T057); Instagram y grupos de Facebook 2 candidatas; Marketplace 5 precios; pedidos sin guía del real; análisis 7700X 18,5 %; oficina v75"
+2026-10-22,mac,ronda,13:38,13:39,ok,"Ronda Mac de la mañana arrancó tarde (13:38); la PC ya la había cubierto 13:02-13:27 (oficina v76, aviso del Gerente enviado). No se repitió para no duplicar mensajes; sin decisiones de la oficina pendientes"
