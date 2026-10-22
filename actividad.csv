@@ -281,3 +281,4 @@ fecha,hora,agente,texto
 2026-10-22,13:26,local,"Oficina: publicada versión 75 (datos 22/10 13:24, captura 2026-10-22-1314-mkt.jpg); verificar comun y oficina sin errores; datos.js leído en la versión publicada"
 2026-10-22,13:30,gerente,"Ronda PC (cubre Mac): aviso de fin de ronda enviado a Santi; 5 tareas nuevas (3 auto, 2 propuestas 22-4 y 22-5); chat contestado; verificar.py: 3 ERROR de pedidos sin sello de hoy, tarea de corrección 22-2"
 2026-10-22,13:28,local,"Oficina: republicada versión 76 con el plan y el chat del Gerente de esta ronda (cubre Mac)"
+2026-10-22,13:30,local,"apagar_pc.ps1: la PC se apaga en 2 minutos (la prendió la Raspberry 13:00 para cubrir la Mac, nadie la usó)"
