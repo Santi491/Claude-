@@ -180,7 +180,7 @@ fecha,hora,agente,texto
 2026-10-18,07:56,ana,"Conviene traer solo el Intel Core Ultra 7 265K nuevo (margen 21 %, peor caso 9 %). El 7600 nuevo pasó a no traer (margen -1 %) tras la suba de eBay; el SSD 2TB y los usados quedan en espera por falta de precios locales (2 tiendas, usados). No traer: 9950X, DDR5 5600, DDR4 y SSD 1TB."
 2026-10-18,07:58,nube,"Revisión diaria hecha: dólar (oficial 11,69; paralelo 11,83 usado), eBay API, comparación, análisis, Excel, copia del día e informe. Alerta pendiente: SSD 1TB nuevo bajó 28 % (el aviso de Telegram se envió)."
 2026-10-18,20:30,gerente,"Resumen semanal 12-18/10: 21 chats nuevos, 44 respuestas (17 con precio), 67 % de respuesta; sin ERRORES de verificar.py. Propuse 2 tareas, ambas aprobadas auto (rutina); 0 mensajes del chat; 0 de Telegram (la Raspberry lo lee)."
-2026-10-19,07:58,ebay,"API: 12 precios nuevos y 12 usados; 0 corregidos por variante o repuestos"
+2026-10-19,07:58,ebay,API: 12 precios nuevos y 12 usados; 0 corregidos por variante o repuestos
 2026-10-19,07:58,ana,"Conviene traer solo el Intel Core Ultra 7 265K nuevo (margen 21 %, peor caso 9 %). SSD 2TB y usados esperan precio local; 7600 nuevo, 9950X y SSD 1TB nuevo no se traen."
 2026-10-19,07:59,nube,"Revisión diaria hecha: dólar (oficial 11,69; paralelo 11,82 usado), eBay API, comparación, análisis, Excel, copia del día e informe."
 2026-10-19,10:30,local,"Fase 2: memoria única del Gerente. memoria.py + memoria-gerente.csv (compromisos, pedidos, preferencias y datos de Santi, en resumen); el bot la lee en cada mensaje y anota con ACCION: memoria; atajos memoria, anota:, cumplida N, borra N; la ronda (paso 8b) y la rutina de las 20:00 la leen y cierran; ícono Libreta en el escritorio del Gerente; verificar.py gerente la revisa."
@@ -196,15 +196,15 @@ fecha,hora,agente,texto
 2026-10-19,11:16,fin,"sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan); ronda de la mañana, sin cambios"
 2026-10-19,11:18,ana,"Dólar 11,82. Conviene el Ryzen 5 7600 nuevo (eBay USD 140,26): costo Bs 1.823, venta sugerida 2.660, margen 31,5 %, peor caso 20 %; el Core Ultra 7 265K entra justo (margen 21 %, peor caso 8,9 %). Shopping PC mayorista (Kingston NV3 1TB Bs 1.754 sin factura) no deja margen frente a eBay + courier. DDR5 6000, i5-14400F, 9950X y SSD 1TB: no traer. Plan 17-8 hecho."
 2026-10-19,11:19,local,"Oficina: publicada versión 68 en la misma URL con datos.js (generado 11:17) y 3 capturas de hoy (eBay 10:40, Marketplace 11:00 y 11:13); verificar.py comun y oficina sin ERROR"
-2026-10-19,11:19,gerente,"aviso de fin de ronda enviado (Mac mañana): decisiones de la oficina confirmadas; tarea 19-1 auto para WhatsApp (segundo precio 7600 y 265K)"
+2026-10-19,11:19,gerente,aviso de fin de ronda enviado (Mac mañana): decisiones de la oficina confirmadas; tarea 19-1 auto para WhatsApp (segundo precio 7600 y 265K)
 2026-10-19,11:38,gerente,Telegram (Raspberry): Santi le escribió a fin por el chat interno
 2026-10-19,11:49,gerente,"Telegram (Raspberry): 16 aprobado, 3 aprobado"
 2026-10-19,16:04,gerente,Decisiones de Santi en la oficina: idea de ana aprobada desde la oficina
-2026-10-19,16:16,wa,"Ronda PC: respondí y repregunté a 3 tiendas; 2º precio firme 7600 (OverCity 2.800) y 265K OEM 4.100; 4 tiendas sin stock; 0 chats nuevos"
+2026-10-19,16:16,wa,Ronda PC: respondí y repregunté a 3 tiendas; 2º precio firme 7600 (OverCity 2.800) y 265K OEM 4.100; 4 tiendas sin stock; 0 chats nuevos
 2026-10-19,16:13,mkt,"Ronda PC tarde: Messenger sin respuestas de vendedores (solo 5 mensajes de compradores de oro y plata a anuncios de Santi, no tocados); Instagram sin resultados en 3 búsquedas; 0 tiendas nuevas; precios y demanda ya hechos en la mañana"
-2026-10-19,16:13,dem,"sin cambios desde la ronda de la mañana (demanda de 14 productos ya anotada hoy)"
-2026-10-19,16:16,pedidos,"Ronda PC tarde: USPS de prueba entregado en Miami 19/10 13:38 (nuevo); GOFO y SpeedX sin movimientos nuevos (siguen en bodega del courier). Sin pedidos reales activos"
-2026-10-19,16:17,fin,"ronda de la tarde (PC): Santi confirmo por chat que aun no hay pedidos reales del negocio; los de prueba no cuentan; sin ventas registradas; tipo de cambio del 19/10 (usado 11.82) sin cambios; respondi a santi por chat"
+2026-10-19,16:13,dem,sin cambios desde la ronda de la mañana (demanda de 14 productos ya anotada hoy)
+2026-10-19,16:16,pedidos,Ronda PC tarde: USPS de prueba entregado en Miami 19/10 13:38 (nuevo); GOFO y SpeedX sin movimientos nuevos (siguen en bodega del courier). Sin pedidos reales activos
+2026-10-19,16:17,fin,ronda de la tarde (PC): Santi confirmo por chat que aun no hay pedidos reales del negocio; los de prueba no cuentan; sin ventas registradas; tipo de cambio del 19/10 (usado 11.82) sin cambios; respondi a santi por chat
 2026-10-19,16:19,ana,"ronda tarde (PC): ahora el precio de referencia local es la mediana (idea 4, probada) y descarta particulares sin marca/configuración y precios 30 % bajo la mediana. Traer: Ryzen 5 7600 (margen 32 %, peor caso 21 %) y Core Ultra 7 265K (24 %, peor 12 %); el 7800X3D pasa a traer solo por la mediana (21,7 %, peor 9,5 %) pero ya no sería el más barato. Pedido de 2 u del 7600: Bs 3.647 con courier B, Bs 3.785 con A. Cerradas 15-16 y 17-3"
 2026-10-19,16:25,local,"ronda tarde (PC): oficina regenerada (16:20) y publicada en la misma URL, version 69; datos.js y captura 1613 mkt; verificar comun y oficina sin ERROR; datos de hoy comprobados en la version publicada"
 2026-10-19,16:33,gerente,"ronda tarde (PC): aviso de fin de ronda enviado; confirmada la idea de la mediana; chat contestado (ana, ebay); libreta: cerrada una nota y anotado un compromiso nuevo; verificar todo sin errores"
@@ -221,9 +221,9 @@ fecha,hora,agente,texto
 2026-10-20,10:48,mkt,"Ronda Mac: Messenger sin respuestas de vendedores; 14 productos buscados en Marketplace Cochabamba, 4 filas de precio nuevas; Facebook (páginas y grupos públicos): 0 tiendas nuevas; usados 7800X3D y 265K: ninguno en Cochabamba"
 2026-10-20,10:49,dem,"Demanda 20/10: 14 filas; casi sin cambios (13400 -1, DDR4 2x8 reaparece); 7800X3D 4 anuncios sin movimiento: señal de interés bajo, sin demanda confirmada"
 2026-10-20,10:48,pedidos,"Ronda Mac: 3 guías de prueba sin rastreo (Chrome no conectado tras 3 intentos; sin cambios). Paquete de la hermana (courier B, Miami a Santa Cruz) anotado: USD 30, 1 kg, ETA estimada 28/10. Tareas 19-2 y 19-3 hechas"
-2026-10-20,10:50,fin,"Ronda Mac: finanzas.py sin compras ni ventas del negocio todavia (los pedidos de prueba no cuentan); ventas.csv y pedidos.csv sin filas; sin cambios"
+2026-10-20,10:50,fin,Ronda Mac: finanzas.py sin compras ni ventas del negocio todavia (los pedidos de prueba no cuentan); ventas.csv y pedidos.csv sin filas; sin cambios
 2026-10-20,10:49,ana,"Recalculado con tc 11,83: traer RAM DDR4 2x8 (margen 23 %), 7800X3D nuevo (22 %), 265K nuevo (21 %) y SSD 1TB nuevo (20 %), todos aguantan el peor caso; courier B real USD 30/1 kg (vs 28 del código) suma ~Bs 12 por unidad con 2 u, no cambia nada; alertas sin nuevas"
-2026-10-20,10:51,local,"Oficina: publicada versión 70 con datos de las 10:49 (verificar comun y oficina sin ERROR; datos.js sin campos privados; capturas 10:37 y 10:45 subidas)"
+2026-10-20,10:51,local,Oficina: publicada versión 70 con datos de las 10:49 (verificar comun y oficina sin ERROR; datos.js sin campos privados; capturas 10:37 y 10:45 subidas)
 2026-10-20,10:52,gerente,Aviso de fin de ronda enviado (Mac mañana); verificar sin errores
 2026-10-20,15:59,local,"Santi agregó el Ryzen 7 7700X a vigilar.csv (urgente: un socio lo consigue barato en eBay y se vende bien en Cochabamba). Tareas aprobadas y de prioridad alta para eBay, WhatsApp, Marketplace y el Analista."
 2026-10-20,16:03,ebay,"Ryzen 7 7700X: API sin claves en esta PC; Chrome: 3 nuevos (199,99 a 219 USD, envio gratis) y 3 usados (169,99 a 173,05 con envio); vendidos no hechos (eBay pidio iniciar sesion)"
@@ -246,7 +246,7 @@ fecha,hora,agente,texto
 2026-10-20,20:20,gerente,"Informe diario 20/10 subido al Doc: primer pedido real de 7700X, 4 tareas propuestas (todas auto por rutina), 0 mensajes del chat contestados (el pendiente es para Santi), 1 nota de libreta anotada, Telegram lo lee la Raspberry"
 2026-10-21,00:22,gerente,"Telegram (Raspberry): el Gerente cambió vigilar.csv, plan.csv"
 2026-10-21,00:22,gerente,Telegram (Raspberry): meta obligatoria de Santi 2026-10-21-5 para wa
-2026-10-21,07:58,ebay,"API: 14 precios nuevos y 14 usados; 0 corregidos (variante y vendedor revisados)"
+2026-10-21,07:58,ebay,API: 14 precios nuevos y 14 usados; 0 corregidos (variante y vendedor revisados)
 2026-10-21,07:58,ana,"Con margen: conviene traer el Ryzen 7 7700X (22,7 %, peor caso 10,3 %), el Ultra 7 265K (21,1 %), el 7800X3D (20,2 %) y el SSD 1TB nuevo (19,1 %); esperar usados y SSD 2TB (faltan precios locales); no traer Ryzen 5 7600, 9950X, DDR5 ni DDR4 nuevo (6 %)."
 2026-10-21,07:59,nube,"Revisión diaria hecha: dólar paralelo 11,91 / oficial 11,70, eBay API, comparación, análisis, Excel, copia del día e informe."
 2026-10-21,10:46,wa,"Ronda Mac: 5 chats nuevos (4 tiendas + 1 número equivocado), 4 respuestas a tiendas que esperaban, 1 seguimiento-respuesta a Geek Store; 1 precio nuevo (Geek Store 7700X Bs 3.480 sellado, 3.450 por 4 u); 7500F agotado en OverCity y sin stock en COMPUTING"
@@ -256,18 +256,21 @@ fecha,hora,agente,texto
 2026-10-21,10:51,pedidos,"Rastreo de prueba (USPS, GOFO, SpeedX): sin movimientos nuevos, los tres siguen en bodega del courier en Miami; compras reales sin guía todavía (la pasa Santi); tarea de rastreo hecha"
 2026-10-21,10:53,fin,"Finanzas 21/10: invertido Bs 10.620 (4 Ryzen 7 7700X, real-1 y real-2, tc 11,88), en camino 4, en stock 0, vendidas 0, ventas 0; sin ventas del negocio, ganancia pendiente; dólar usado 11,91 (dolarbolivia.net 21/10)"
 2026-10-21,10:53,ana,"Analista: 7700X stock a 2.655: venta sugerida 3.306 (margen 19,7 %), rápido 2.921, tienda 3.450 con Geek Store 3.480. 7500F: costo puesto Bs 1.786 nuevo / 1.536 usado (B), sin precio local: esperar. Traer: 7700X, 7800X3D, 265K y SSD 1TB; 5600/5700X3D sin datos"
-2026-10-21,10:55,local,"Oficina: publicada v73 (oficina/index.html + datos.js + 2 capturas de Marketplace de hoy); generar.py y verificar comun/oficina sin ERROR"
+2026-10-21,10:55,local,Oficina: publicada v73 (oficina/index.html + datos.js + 2 capturas de Marketplace de hoy); generar.py y verificar comun/oficina sin ERROR
 2026-10-21,10:57,gerente,aviso de fin de ronda enviado (Mac)
 2026-10-21,16:12,wa,"Ronda tarde PC: contesté OverCity y ADN Gamer (7800X3D USD 520), recordatorio a Punto Tecnológico por el 7700X; 0 chats nuevos (no quedan tiendas sin contactar); 7500F: ninguna tienda lo tiene (OverCity, Shopping PC, Geek Store); 1 precio vigilado nuevo; sin catálogos"
 2026-10-21,16:14,mkt,"Ronda tarde PC: Marketplace revisado solo en 7500F, 7700X, 5600 y 5700X3D: sin anuncios nuevos desde la mañana (solo PCs, 5700X OEM Bs 2.450-2.500 y 5700G; otros modelos); Messenger sin respuestas de vendedores de procesadores; Facebook páginas: 0 tiendas con componentes (solo servicio técnico); TikTok no se reintenta (necesidad abierta)"
 2026-10-21,16:14,dem,"Demanda: sin cambios desde la mañana (filas de hoy ya cargadas, 7500F/7700X/5600/5700X3D igual); sin filas nuevas"
-2026-10-21,16:16,pedidos,"Ronda tarde PC: USPS de prueba sin movimientos nuevos (ya estaba anotada la entrega en Miami del 19/10); GOFO y SpeedX de prueba: la web no muestra resultado (2 intentos cada una; 17track devuelve un número de demostración). Sin pedidos reales con guía: real-1 y real-2 siguen sin guía"
+2026-10-21,16:16,pedidos,Ronda tarde PC: USPS de prueba sin movimientos nuevos (ya estaba anotada la entrega en Miami del 19/10); GOFO y SpeedX de prueba: la web no muestra resultado (2 intentos cada una; 17track devuelve un número de demostración). Sin pedidos reales con guía: real-1 y real-2 siguen sin guía
 2026-10-21,16:16,fin,"Finanzas ronda tarde PC: sin cambios desde la ronda de las 10:53 (invertido Bs 10.620 en 4 unidades, en camino 4, en stock 0, 0 ventas y 0 reservas); dólar usado 11,91 con compra mayor que venta de nuevo: necesidad abierta para la nube"
 2026-10-21,16:20,ana,"Ronda tarde PC: recalculado con eBay de hoy y WhatsApp de la tarde. 7500F sigue sin precio local (agotado en OverCity, COMPUTING, Shopping PC y Geek Store): costo puesto nuevo Bs 1.786-1.852 y usado Bs 1.536-1.585 por unidad, peor caso ~Bs 1.874; margen y precio sugerido no se pueden calcular, recomendación esperar. 7800X3D: el precio nuevo de ADN Gamer (Bs 6.193) no cambia nada, sigue traer (peor caso 7,8 %). Tarea 2026-10-21-4 queda a medias."
 2026-10-21,16:19,local,"Oficina: ronda tarde PC publicada en la misma URL, versión 74 (datos.js generado 16:17, verificado igual al repo). verificar.py comun y oficina sin ERROR. El publish de la Mac era de 10:54: se tomaron los datos de hoy, nada privado"
 2026-10-21,16:24,gerente,"aviso de fin de ronda enviado. Chat contestado, tarea eBay PC cerrada (la nube ya trajo los precios), tarea nueva a mkt para buscar tiendas en grupos de Facebook; verificar.py todo sin ERROR"
 2026-10-21,16:27,local,"apagar_pc.ps1: la PC se apaga en 2 minutos (la prendió la Raspberry 15:50, nadie la usó)"
 2026-10-21,20:16,gerente,"Informe diario 21/10 subido al Doc; 4 tareas auto propuestas (y aprobadas por rutina), 1 cerrada hecho; chat sin pendientes nuevos; libreta sin cambios (2 compromisos abiertos); Telegram 0 (lo lee la Raspberry); verificar.py sin ERRORES"
-2026-10-22,07:56,ebay,"API: 14 precios nuevos y 13 usados; 0 filas corregidas"
+2026-10-22,07:56,ebay,API: 14 precios nuevos y 13 usados; 0 filas corregidas
 2026-10-22,07:56,ana,"Traer (nuevo): Ultra 7 265K 21 %, 7700X 21 %, 7800X3D 20 %, SSD 1TB 19 % (peor caso 5-9 %). Esperar: usados (falta precio local de usados), i5-12400F/14400F nuevos. No traer: Ryzen 5 7600 nuevo (5 %), DDR5 nuevo, 9950X, DDR4 nuevo."
 2026-10-22,07:56,nube,"Revisión diaria hecha: dólar 11,90, eBay API, comparación, análisis, Excel, copia del día e informe"
+2026-10-22,13:05,wa,"Ronda completa PC (cubre Mac): 4 respuestas + 1 seguimiento a T&T; sin respuestas nuevas con precio; 0 chats nuevos; frías sin tocar; 2 chats nuevos (TechMax T056, PC Com T057)"
+2026-10-22,13:50,mkt,"Ronda PC jueves: Instagram (23 búsquedas, sesión abierta en la PC; 1 tienda nueva con WhatsApp: TechMax T056) y grupos de Facebook (1 candidata: PC Com T057, sin escribirles); Messenger: sin respuestas de vendedores; 5 precios nuevos"
+2026-10-22,13:51,dem,"Demanda 22/10: 16 productos contados; SSD 1TB 2 nuevos y 2 desaparecidos, DDR4 16GB 3 anuncios (2 nuevos), 9950X y 265K solo precios señuelo; sin ventas comprobadas; demanda.py corrido"
