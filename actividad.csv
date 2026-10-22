@@ -267,3 +267,4 @@ fecha,hora,agente,texto
 2026-10-21,16:19,local,"Oficina: ronda tarde PC publicada en la misma URL, versión 74 (datos.js generado 16:17, verificado igual al repo). verificar.py comun y oficina sin ERROR. El publish de la Mac era de 10:54: se tomaron los datos de hoy, nada privado"
 2026-10-21,16:24,gerente,"aviso de fin de ronda enviado. Chat contestado, tarea eBay PC cerrada (la nube ya trajo los precios), tarea nueva a mkt para buscar tiendas en grupos de Facebook; verificar.py todo sin ERROR"
 2026-10-21,16:27,local,"apagar_pc.ps1: la PC se apaga en 2 minutos (la prendió la Raspberry 15:50, nadie la usó)"
+2026-10-21,20:16,gerente,"Informe diario 21/10 subido al Doc; 4 tareas auto propuestas (y aprobadas por rutina), 1 cerrada hecho; chat sin pendientes nuevos; libreta sin cambios (2 compromisos abiertos); Telegram 0 (lo lee la Raspberry); verificar.py sin ERRORES"

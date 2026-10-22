@@ -1,4 +1,4 @@
-# Análisis del Analista (2026-10-21)
+# Análisis del Analista (2026-10-22)
 
 Dólar 11.91 · pedido de 2 u, courier más barato, aduana 0 %, tax A 7 %, precio de venta = 5 % debajo de la mediana local (si no deja 10 % sobre el costo: no traer).
 Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: margen si el dólar sube 3 %, el courier cobra 20 % más, el precio local baja 10 % o todo junto.
@@ -37,26 +37,3 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Ryzen 7 5700X3D | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precio local |
 | Ryzen 5 7500F | nuevo | — | — | — | — | — | — | — | — | sin datos | precio local |
 | Ryzen 5 7500F | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precio local |
-
-## Stock real: 4 Ryzen 7 7700X (costo Bs 2.655 c/u, todo incluido) · 21/10
-
-Precio local de referencia: Geek Store Bs 3.480 (Bs 3.450 llevando 4 u; WhatsApp 20/10, caja sellada, ~10 u); Cyrex Store web Bs 3.667. Nada se ofrece a nadie.
-
-| Precio | Bs/u | Margen | Ganancia por 4 u |
-|---|---|---|---|
-| Rápido (piso: 10 % de recargo sobre el costo) | 2.921 | 9,1 % | Bs 1.064 |
-| Sugerido (5 % debajo de Geek Store, 3.480) | 3.306 | 19,7 % | Bs 2.604 |
-| De tienda (igualar a Geek Store, 4 u) | 3.450 | 23,0 % | Bs 3.180 |
-
-Lectura: el sugerido sigue siendo válido con el precio nuevo de Geek Store (antes la venta de referencia era Bs 3.390). Hay un solo precio local de tienda con stock; Shopping PC agotado.
-
-## Ryzen 5 7500F: costo puesto (eBay API 21/10, dólar 11,91), sin precio local (actualizado tarde 21/10)
-
-| Condición | eBay USD | Courier A, Bs/u | Courier B 2 u, Bs/u | Courier B 4 u, Bs/u |
-|---|---|---|---|---|
-| Nuevo | 135,99 | 1.852 | 1.786 (1 kg) | 1.786 (2 kg) |
-| Usado | 115,00 | 1.585 | 1.536 (1 kg) | 1.536 (2 kg) |
-
-Peor caso de costo (nuevo, 4 u, dólar +3 %, courier +20 %): ~Bs 1.874. Margen, precio de venta y veredicto: no se calculan, falta el precio local (0 anuncios; agotado en OverCity, COMPUTING, Shopping PC y Geek Store por WhatsApp del 21/10, ninguna web lo tiene). Recomendación: esperar; no se puede decir "traer" sin precio de venta.
-
-Nota 7800X3D: el precio nuevo de ADN Gamer Store (Bs 6.193, USD 520, sin confirmar estado ni garantía) es más caro que la referencia actual y no cambia la venta sugerida de Bs 5.120 ni el veredicto.
