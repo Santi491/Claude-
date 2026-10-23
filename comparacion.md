@@ -190,6 +190,7 @@ eBay nuevo: USD 212.00 con envío en EE.UU. (eBay API; vendedor irepaircellphone
 | Geek Store Bolivia (WhatsApp) | sin confirmar si es sellado (se preguntó) | 3.480 | 784 (23%) | 2026-10-15 |
 | Geek Store Bolivia (WhatsApp) | nuevo sellado (caja) | 3.480 | 784 (23%) | 2026-10-21 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/producto/procesador-amd-ryzen-7-7700x-box) | nuevo BOX sellado (sin cooler) | 3.667 | 971 (26%) | 2026-10-20 |
+| Cyrex Store (WhatsApp) | nuevo BOX (según foto de su chat; solo queda 1 unidad) | 3.674 | 977 (27%) | 2026-10-23 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/887277370696710/) | sellado | 4.000 | 1.304 (33%) | 2026-10-20 |
 
 ## Sin comparación todavía (eBay nuevo)
