@@ -310,3 +310,4 @@ fecha,hora,agente,texto
 2026-10-23,13:17,ana,"Recalculado con dólar 11,93 y el Corsair 2x8 de Marketplace (Bs 1.600): la RAM DDR4 2x8 nueva sube de margen 5 % a 9 % con el precio sugerido y sigue en no traer (peor caso -7,5 %); nada más cambia, sin alertas nuevas"
 2026-10-23,13:18,local,"Oficina: publicada versión 79 (misma URL) con datos generados 13:17 y captura mkt 13:13; verificar comun y oficina sin ERROR; datos.js publicado verificado por hash"
 2026-10-23,13:21,gerente,aviso de fin de ronda enviado (PC cubrió la ronda de la mañana; respuestas de tiendas para el turno de las 16:00)
+2026-10-23,13:21,local,"apagar_pc.ps1: PC se apaga en 2 minutos (prendida para la ronda, nadie la usó)"
