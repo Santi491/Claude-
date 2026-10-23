@@ -37,3 +37,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-22,pc,ronda,16:08,16:22,ok,Ronda tarde: WhatsApp 4 respuestas enviadas y 7800X3D ADN Bs 6.162; Messenger y Marketplace sin novedades; pedidos al día sin guía del real; análisis 7800X3D traer 20 %; oficina v77; aviso del Gerente enviado
 2026-10-22,gerente,informe,20:15,20:17,ok,Informe diario 22/10 subido al Doc; 4 tareas auto
 2026-10-23,mac,ronda,10:38,10:58,alerta,"Sin Chrome conectado: WhatsApp, Marketplace y Pedidos no corrieron; analista (3 alertas), finanzas, oficina v78 y aviso del Gerente hechos"
+2026-10-23,raspberry,vigilante,13:00,13:00,arreglado,la Mac no hizo la ronda de la mañana: la cubre la PC
