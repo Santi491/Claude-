@@ -7,4 +7,4 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 6,2026-10-20,17:10,santi,dato,"Primer pedido real: 4 Ryzen 7 7700X nuevos por courier B (compra conjunta con un socio), Bs 10.620 en total, Bs 2.655 por unidad con todo incluido, dólar 11,88. Precio de venta sugerido Bs 3.300 (24 % de margen)",,abierta,
 7,2026-10-20,17:10,santi,compromiso,"Cargar y rastrear la guía del courier B del pedido de los 7700X apenas Santi la pase, y avisarle cuando llegue a Cochabamba",,abierta,
 8,2026-10-20,17:10,santi,preferencia,"En las compras conjuntas con el socio, Santi quiere ver su costo por unidad contra el promedio del pedido (esta vez: Bs 2.655 contra Bs 2.331)",,abierta,
-9,2026-10-20,20:16,2000,compromiso,Contarle a Santi apenas el Ryzen 7 7700X de la compra conjunta tenga guía cargada y esté en camino a Cochabamba,2026-10-31,abierta,
+9,2026-10-20,20:16,2000,compromiso,Contarle a Santi apenas el Ryzen 7 7700X de la compra conjunta tenga guía cargada y esté en camino a Cochabamba,2026-10-31,descartada,23/10 17:45: repetida de la 7 (Claude Mac 23/10)
