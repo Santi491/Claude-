@@ -38,3 +38,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-22,gerente,informe,20:15,20:17,ok,Informe diario 22/10 subido al Doc; 4 tareas auto
 2026-10-23,mac,ronda,10:38,10:58,alerta,"Sin Chrome conectado: WhatsApp, Marketplace y Pedidos no corrieron; analista (3 alertas), finanzas, oficina v78 y aviso del Gerente hechos"
 2026-10-23,raspberry,vigilante,13:00,13:00,arreglado,la Mac no hizo la ronda de la mañana: la cubre la PC
+2026-10-23,pc,cubre mac,13:02,13:20,ok,"Cubrió la ronda de la mañana (Mac sin Chrome): WhatsApp 22-6 y 22-3 hechas, 4 segundas cotizaciones sin respuesta aún; Marketplace 22-7 sin precio local de 5600/5700X3D/7500F, RAM DDR4 Bs 1.600; pedidos sin guía; análisis sin cambio de veredicto; oficina v79; aviso del Gerente enviado"

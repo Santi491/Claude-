@@ -146,6 +146,7 @@ eBay nuevo: USD 98.66 con envío en EE.UU. (eBay API; vendedor derkaraj0 99.2%; 
 | Marketplace Cochabamba (particular) | 2x8 = 16GB (marca y frecuencia sin dato; antes Bs 1.600; vuelve a aparecer) | 1.400 | 56 (4%) | 2026-10-20 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2347323546077904/) | no indicado (2x8 3200; Sacaba) | 1.500 | 156 (10%) | 2026-10-11 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2345958202816013/) | no indicado (Corsair Vengeance 2x8; Sacaba; rebajado de 1600) | 1.500 | 156 (10%) | 2026-10-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1726943245105041/) | sin dato de estado (Corsair Vengeance Pro 2x8GB 3200 MHz) | 1.600 | 256 (16%) | 2026-10-23 |
 | Compucenter (WhatsApp) · [ver](https://compucenter.store/) | nuevo (Corsair Vengeance RGB DDR4 16GB 3600; no dice si es 2x8; Bs 2.560 con factura) | 2.150 | 806 (37%) | 2026-10-12 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/memoria-ram) | disponible (web; Corsair Vengeance RGB Pro TUF Gaming 2x8 3200) | 2.160 | 816 (38%) | 2026-10-12 |
 
