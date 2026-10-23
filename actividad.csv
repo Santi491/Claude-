@@ -293,3 +293,6 @@ fecha,hora,agente,texto
 2026-10-22,16:32,gerente,"Ronda tarde PC: aviso de fin de ronda enviado a Santi; chat contestado (wa, fin, local, pedidos); verificar.py todo --ronda sin ERROR; tarea 22-3 sigue para el 23/10; recordadas 22-4 y 22-5; falta la guia del courier B"
 2026-10-22,16:36,local,"apagar_pc.ps1: la PC queda prendida (arrancó 15:35, fuera de la ventana de la ronda y con uso)"
 2026-10-22,20:17,gerente,"Informe diario 22/10 subido al Doc; 4 tareas nuevas auto (22-6 a 22-9) y 2 propuestas pendientes (22-4, 22-5); 4 mensajes del chat contestados; 0 notas de libreta cerradas o anotadas; 0 mensajes de Telegram (los lee la Raspberry); verificar.py sin ERROR"
+2026-10-23,07:58,ebay,"API: 14 precios nuevos y 13 usados; 0 corregidos por variante o repuestos (se quitaron 14 filas duplicadas de hoy por una doble corrida)"
+2026-10-23,07:58,ana,"Traer (nuevo): 7800X3D 26,8 % (peor caso 15,4 %), SSD 1TB 20,7 %, 7700X 18,3 % (peor caso 5,3 %). Esperar: usados (falta precio local de usados), 265K, i5-12400F y i5-14400F. No traer: DDR4 nuevo, 7600 nuevo, 9950X y DDR5."
+2026-10-23,07:58,nube,"Revisión diaria hecha: dólar 11,93, comparación, análisis, Excel/CSV del día e informe; el PDF del día no salió (reportlab/Pillow rotos en la nube); alertas por Telegram pendientes para la ronda local"
