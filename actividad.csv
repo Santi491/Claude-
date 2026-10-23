@@ -292,3 +292,4 @@ fecha,hora,agente,texto
 2026-10-22,16:25,local,"Oficina: publicada versión 77 (datos.js generado 16:19, verificado byte a byte con el repo); verificar comun y oficina sin ERROR; vivo/_ronda en false"
 2026-10-22,16:32,gerente,"Ronda tarde PC: aviso de fin de ronda enviado a Santi; chat contestado (wa, fin, local, pedidos); verificar.py todo --ronda sin ERROR; tarea 22-3 sigue para el 23/10; recordadas 22-4 y 22-5; falta la guia del courier B"
 2026-10-22,16:36,local,"apagar_pc.ps1: la PC queda prendida (arrancó 15:35, fuera de la ventana de la ronda y con uso)"
+2026-10-22,20:17,gerente,"Informe diario 22/10 subido al Doc; 4 tareas nuevas auto (22-6 a 22-9) y 2 propuestas pendientes (22-4, 22-5); 4 mensajes del chat contestados; 0 notas de libreta cerradas o anotadas; 0 mensajes de Telegram (los lee la Raspberry); verificar.py sin ERROR"
