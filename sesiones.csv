@@ -36,3 +36,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-22,mac,ronda,13:38,13:39,ok,"Ronda Mac de la mañana arrancó tarde (13:38); la PC ya la había cubierto 13:02-13:27 (oficina v76, aviso del Gerente enviado). No se repitió para no duplicar mensajes; sin decisiones de la oficina pendientes"
 2026-10-22,pc,ronda,16:08,16:22,ok,Ronda tarde: WhatsApp 4 respuestas enviadas y 7800X3D ADN Bs 6.162; Messenger y Marketplace sin novedades; pedidos al día sin guía del real; análisis 7800X3D traer 20 %; oficina v77; aviso del Gerente enviado
 2026-10-22,gerente,informe,20:15,20:17,ok,Informe diario 22/10 subido al Doc; 4 tareas auto
+2026-10-23,mac,ronda,10:38,10:58,alerta,"Sin Chrome conectado: WhatsApp, Marketplace y Pedidos no corrieron; analista (3 alertas), finanzas, oficina v78 y aviso del Gerente hechos"

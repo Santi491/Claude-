@@ -32,16 +32,19 @@
   "baja|RAM DDR4 16GB (2x8) 3200|nuevo|2026-10-20": "2026-10-20 11:56",
   "baja|SSD NVMe 2TB|nuevo|2026-10-20": "2026-10-20 11:56",
   "conviene|Ryzen 7 7700X|nuevo|2026-10-20": "2026-10-20 16:16",
-  "conviene|Ryzen 7 7700X|usado|2026-10-20": "2026-10-20 16:16"
+  "conviene|Ryzen 7 7700X|usado|2026-10-20": "2026-10-20 16:16",
+  "conviene|Ryzen 7 7800X3D|nuevo|2026-10-23": "2026-10-23 10:39",
+  "conviene|Intel Core i5-12400F|nuevo|2026-10-23": "2026-10-23 10:39",
+  "conviene|Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado|2026-10-23": "2026-10-23 10:39"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
   "Ryzen 5 7600|usado": true,
-  "Ryzen 7 7800X3D|nuevo": false,
+  "Ryzen 7 7800X3D|nuevo": true,
   "Ryzen 7 7800X3D|usado": true,
   "Ryzen 9 9950X|nuevo": false,
   "Ryzen 9 9950X|usado": false,
-  "Intel Core i5-12400F|nuevo": false,
+  "Intel Core i5-12400F|nuevo": true,
   "Intel Core i5-12400F|usado": true,
   "Intel Core i5-13400|nuevo": false,
   "Intel Core i5-13400|usado": true,
@@ -52,7 +55,7 @@
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|nuevo": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|usado": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo": false,
-  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": false,
+  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": true,
   "RAM DDR4 16GB (2x8) 3200|nuevo": false,
   "RAM DDR4 16GB (2x8) 3200|usado": false,
   "SSD NVMe 1TB|nuevo": false,
@@ -63,8 +66,9 @@
   "Ryzen 7 7700X|usado": true
  },
  "ultimas": [
-  "✅ Ahora conviene Ryzen 7 7700X (nuevo): +16% · costo puesto Bs 2.532 vs Bs 3.000 en Cochabamba",
-  "✅ Ahora conviene Ryzen 7 7700X (usado): +27% · costo puesto Bs 2.177 vs Bs 3.000 en Cochabamba"
+  "✅ Ahora conviene Ryzen 7 7800X3D (nuevo): +21% · costo puesto Bs 3.746 vs Bs 4.760 en Cochabamba",
+  "✅ Ahora conviene Intel Core i5-12400F (nuevo): +16% · costo puesto Bs 1.897 vs Bs 2.260 en Cochabamba",
+  "✅ Ahora conviene Corsair Vengeance RGB DDR5 32GB (2x16) 6000 (usado): +17% · costo puesto Bs 4.820 vs Bs 5.800 en Cochabamba"
  ],
- "revisado": "2026-10-22 16:18"
+ "revisado": "2026-10-23 10:39"
 }
