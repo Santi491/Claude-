@@ -1,0 +1,9 @@
+{
+ "id": "2026-10-23-1754",
+ "tipo": "encargo",
+ "ligera": false,
+ "pedido": "2026-10-23 17:54",
+ "por": "santi",
+ "plan_id": "2026-10-23-3",
+ "motivo": "WhatsApp (agente wa): leer los chats de las tiendas a las que ya escribimos (las de mensajes.csv y tiendas-cochabamba.csv), sin escribir a nadie. Para cada tienda que diga no tener stock de los productos de vigilar.csv (procesadores, RAM o SSD), ponerla en el grupo A \"Sin stock\" de clientes-potencia"
+}
