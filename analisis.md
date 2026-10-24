@@ -1,4 +1,4 @@
-# Análisis del Analista (2026-10-23)
+# Análisis del Analista (2026-10-24)
 
 Dólar 11.93 · pedido de 2 u, courier más barato, aduana 0 %, tax A 7 %, precio de venta = 5 % debajo de la mediana local (si no deja 10 % sobre el costo: no traer).
 Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: margen si el dólar sube 3 %, el courier cobra 20 % más, el precio local baja 10 % o todo junto.
@@ -17,7 +17,7 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Intel Core i5-12400F | usado | 1.599 | 2.230 | 28.3 % | 39.5 % | 26.2 % | 26.8 % | 20.1 % | 16.0 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
 | Ryzen 7 7700X | usado | 2.434 | 3.390 | 28.2 % | 39.3 % | 26.1 % | 27.2 % | 20.2 % | 16.7 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
 | Intel Core i5-14400F | usado | 1.718 | 2.380 | 27.8 % | 38.5 % | 25.7 % | 26.4 % | 19.7 % | 15.7 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
-| Intel Core Ultra 7 265K | usado | 2.911 | 3.890 | 25.2 % | 33.6 % | 22.9 % | 24.3 % | 16.8 % | 13.4 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
+| Intel Core Ultra 7 265K | usado | 2.911 | 3.890 | 25.2 % | 33.6 % | 22.9 % | 24.3 % | 16.8 % | 13.4 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos), eBay usado viejo (2026-10-21)) | precio local de usados (se comparó con nuevos), eBay usado viejo (2026-10-21) |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | usado | 4.820 | 5.890 | 18.2 % | 22.2 % | 15.7 % | 17.6 % | 9.1 % | 5.7 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas) | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
 | Intel Core Ultra 7 265K | nuevo | 3.269 | 3.890 | 16.0 % | 19.0 % | 13.5 % | 15.1 % | 6.6 % | 2.8 % | **esperar** (el peor caso lo deja en 2.8 %) | — |
 | Intel Core i5-12400F | nuevo | 1.897 | 2.230 | 14.9 % | 17.6 % | 12.4 % | 13.4 % | 5.2 % | 0.6 % | **esperar** (el peor caso lo deja en 0.6 %) | — |
