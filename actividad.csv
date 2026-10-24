@@ -326,3 +326,6 @@ fecha,hora,agente,texto
 2026-10-23,17:54,gerente,Telegram (Raspberry): pedido a la PC (encargo) · tarea 2026-10-23-3
 2026-10-23,18:35,wa,"Encargo PC 23-3: leí los chats sin escribir a nadie. 13 tiendas en el grupo A Sin stock (nuevas: TechMax, Cocotech, Ardunel, COMPUTING, Esteban Arce); lista A de WhatsApp al día (3 que estaban en E pasaron a A)."
 2026-10-23,20:17,gerente,"Informe diario 23/10 subido al Doc; 2 tareas auto (rutina) y 2 propuestas del 22 siguen esperando a Santi; 0 mensajes del chat contestados (el pendiente es de fin a santi); libreta sin cambios (0 cerradas, 0 anotadas); Telegram 0 (lo lee la Raspberry)"
+2026-10-24,07:54,ebay,"API: 14 precios nuevos y 13 usados; 0 filas corregidas (variante y vendedor revisados)"
+2026-10-24,07:54,ana,"Conviene el Ryzen 7 7800X3D nuevo (margen 19,7 %, peor caso 7,2 %) y el SSD 1TB nuevo (20,3 %, peor caso 7,0 %). El 7800X3D bajó de 26,8 % porque el eBay más barato subió de USD 300 a 329; el Ryzen 7 7700X nuevo pasa a esperar (peor caso 4,5 %). Resto en espera o no traer."
+2026-10-24,07:54,nube,"Revisión diaria hecha: dólar 11,99, eBay API, comparación, análisis, Excel e informe; el PDF del día no se generó (falta reportlab en la nube)"
