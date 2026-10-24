@@ -162,10 +162,42 @@ def md(a):
     return "\n".join(L) + "\n"
 
 
+def stock_real(a):
+    """Sección de stock real: lo comprado en pedidos.csv (costo por unidad todo incluido) contra el precio local de hoy."""
+    EXCL = ("vendido", "cancelad", "devuelto", "perdido")
+    grupos = {}
+    for r in C.leer("pedidos.csv"):
+        cant, usd, tcp = num(r.get("cantidad")), num(r.get("precio_usd")), num(r.get("tc")) or a["tc"]
+        if not cant or usd is None or not tcp or any(x in (r.get("estado") or "").lower() for x in EXCL):
+            continue
+        g = grupos.setdefault(r["producto"], {"u": 0, "bs": 0.0, "ids": []})
+        g["u"] += cant
+        g["bs"] += cant * (usd + (num(r.get("envio_usd")) or 0)) * tcp
+        g["ids"].append(r["id"])
+    if not grupos:
+        return ""
+    L = ["", "## Stock real (pedidos.csv)", "",
+         "Costo = lo pagado por unidad con todo incluido (precio + envío × dólar de la compra). Rápido = 10 % de recargo sobre el costo; "
+         "sugerido = 5 % bajo la mediana local; de tienda = la mediana local. Nada se ofrece a nadie sin que Santi lo diga.", ""]
+    for prod, g in grupos.items():
+        costo = g["bs"] / g["u"]
+        ref = next((f for f in a["productos"] if f["producto"] == prod and f["condicion"] == "nuevo" and f.get("mejor_local_bs")), None)
+        L.append(f"**{prod}: {g['u']:g} u, costo Bs {C.bs(round(costo))} c/u** ({', '.join(g['ids'])}) · "
+                 + (f"mediana local Bs {C.bs(ref['mejor_local_bs'])} ({ref['precios_locales']} precios, dólar {a['tc']})" if ref
+                    else "sin precio local válido: no se calcula precio de venta"))
+        if ref:
+            L += ["", "| Precio | Bs/u | Margen | Ganancia por lote |", "|---|---|---|---|"]
+            for nom, pv in (("Rápido (piso: 10 % de recargo)", math.ceil(costo * 1.10)),
+                            ("Sugerido (5 % bajo la mediana)", ref["precio_sugerido_bs"]), ("De tienda (la mediana)", ref["mejor_local_bs"])):
+                L.append(f"| {nom} | {C.bs(pv)} | {(pv - costo) / pv * 100:.1f} % | Bs {C.bs(round((pv - costo) * g['u']))} |")
+        L.append("")
+    return "\n".join(L)
+
+
 def main():
     a = analizar()
     if "--md" in sys.argv:
-        open(os.path.join(DIR, "analisis.md"), "w", encoding="utf-8").write(md(a))
+        open(os.path.join(DIR, "analisis.md"), "w", encoding="utf-8").write(md(a) + stock_real(a))
         print("analisis.md escrito")
     print(json.dumps(a, ensure_ascii=False, indent=1) if "--json" in sys.argv else texto(a))
 

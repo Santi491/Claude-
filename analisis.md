@@ -37,3 +37,15 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Ryzen 7 5700X3D | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precio local |
 | Ryzen 5 7500F | nuevo | — | — | — | — | — | — | — | — | sin datos | precio local |
 | Ryzen 5 7500F | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precio local |
+
+## Stock real (pedidos.csv)
+
+Costo = lo pagado por unidad con todo incluido (precio + envío × dólar de la compra). Rápido = 10 % de recargo sobre el costo; sugerido = 5 % bajo la mediana local; de tienda = la mediana local. Nada se ofrece a nadie sin que Santi lo diga.
+
+**Ryzen 7 7700X: 4 u, costo Bs 2.655 c/u** (real-1, real-2) · mediana local Bs 3.574 (6 precios, dólar 11.99)
+
+| Precio | Bs/u | Margen | Ganancia por lote |
+|---|---|---|---|
+| Rápido (piso: 10 % de recargo) | 2.921 | 9.1 % | Bs 1.064 |
+| Sugerido (5 % bajo la mediana) | 3.390 | 21.7 % | Bs 2.940 |
+| De tienda (la mediana) | 3.574 | 25.7 % | Bs 3.676 |
