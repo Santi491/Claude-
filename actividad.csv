@@ -347,3 +347,6 @@ fecha,hora,agente,texto
 2026-10-24,23:24,local,"Oficina: regenerada (datos 23:23, sin ERROR en verificar comun y oficina; 0 datos vencidos); publicada versión 83 en la misma URL con datos.js; comprobada la versión publicada (generado 23:23). Ronda ligera sin cambios de datos de precios. Pendiente: vivo/_ronda sigue activa (la cierra la coordinadora)"
 2026-10-24,23:25,gerente,"aviso de fin de ronda enviado (ronda de recuperación de la PC: Chrome volvió, solo lectura; verificar sin ERROR; tarea 2026-10-24-5 anotada en parte resuelta, sin cerrar)"
 2026-10-24,23:26,local,"apagar_pc.ps1: la PC queda prendida (arrancó 23:11, no la prendió la Raspberry y alguien la usó)"
+2026-10-25,07:55,ebay,API: 14 precios nuevos y 14 usados; 0 filas corregidas por variante o repuestos
+2026-10-25,07:56,ana,"Traer: SSD NVMe 1TB nuevo (margen 20,3 %) y Ryzen 7 7800X3D nuevo (19,7 %); esperar 7700X, SSD 2TB y usados (falta precio local de usados); no traer 7600, DDR4, 9950X ni DDR5 nuevos."
+2026-10-25,07:58,nube,"Revisión diaria hecha (dólar 11,98, Excel, copia del día, informe 2026-10-25)"

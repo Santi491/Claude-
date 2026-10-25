@@ -35,7 +35,10 @@
   "conviene|Ryzen 7 7700X|usado|2026-10-20": "2026-10-20 16:16",
   "conviene|Ryzen 7 7800X3D|nuevo|2026-10-23": "2026-10-23 10:39",
   "conviene|Intel Core i5-12400F|nuevo|2026-10-23": "2026-10-23 10:39",
-  "conviene|Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado|2026-10-23": "2026-10-23 10:39"
+  "conviene|Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado|2026-10-23": "2026-10-23 10:39",
+  "baja|Ryzen 5 5600|usado|2026-10-25": "2026-10-25 11:53",
+  "baja|RAM DDR4 16GB (2x8) 3200|usado|2026-10-25": "2026-10-25 11:53",
+  "baja|Ryzen 7 7700X|usado|2026-10-25": "2026-10-25 11:53"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -66,9 +69,9 @@
   "Ryzen 7 7700X|usado": true
  },
  "ultimas": [
-  "✅ Ahora conviene Ryzen 7 7800X3D (nuevo): +21% · costo puesto Bs 3.746 vs Bs 4.760 en Cochabamba",
-  "✅ Ahora conviene Intel Core i5-12400F (nuevo): +16% · costo puesto Bs 1.897 vs Bs 2.260 en Cochabamba",
-  "✅ Ahora conviene Corsair Vengeance RGB DDR5 32GB (2x16) 6000 (usado): +17% · costo puesto Bs 4.820 vs Bs 5.800 en Cochabamba"
+  "⬇ Ryzen 5 5600 (usado) bajó 12% en eBay: USD 135.99 → 120.00",
+  "⬇ RAM DDR4 16GB (2x8) 3200 (usado) bajó 14% en eBay: USD 69.99 → 59.99",
+  "⬇ Ryzen 7 7700X (usado) bajó 22% en eBay: USD 189.99 → 149.00"
  ],
- "revisado": "2026-10-24 11:53"
+ "revisado": "2026-10-25 11:53"
 }
