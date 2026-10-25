@@ -340,3 +340,4 @@ fecha,hora,agente,texto
 2026-10-24,16:29,local,"apagar_pc.ps1: PC se apaga en 2 minutos (la prendió la Raspberry a las 15:50, nadie la usó)"
 2026-10-24,18:02,local,"Pedido del vigilante (ronda ligera relanzada 18:00): Claude in Chrome sigue sin conectarse en la PC (solo aparece el Chrome de la Mac); no se relanzaron WhatsApp, Messenger ni Pedidos; Analista, Finanzas y Oficina ya corrieron a las 16:00 sin datos nuevos. Tarea 2026-10-24-1 sigue para el 26/10"
 2026-10-24,18:02,local,"apagar_pc.ps1: PC se apaga en 2 minutos (la prendió la Raspberry a las 18:00, nadie la usó)"
+2026-10-24,20:16,gerente,"Informe diario 24/10 subido al Doc: sábado sin Chrome en la PC; 4 tareas propuestas (3 auto rutina, 1 espera a Santi), 2 mensajes de chat contestados, 0 notas de libreta, 0 de Telegram (Raspberry)"
