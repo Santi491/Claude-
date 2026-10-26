@@ -364,3 +364,12 @@ fecha,hora,agente,texto
 2026-10-26,13:40,local,"Ronda Mac: la de la mañana sí corrió (10:45-12:35) pero no se subió; se sube ahora y se quita el pedido 'cubre mac' del vigilante (13:00) para que la PC no repita mensajes"
 2026-10-26,13:45,gerente,"aviso de fin de ronda enviado (ronda Mac cerrada a las 13:50; pedido cubre mac quitado; notas de real-1/real-2 corregidas con la guía; libreta 10 cumplida)"
 2026-10-26,13:45,local,"Oficina: regenerada (verificar todo sin ERROR) y publicada versión 84 con datos.js, pantallas.js (compra conjunta en Finanzas) y la captura de Marketplace"
+2026-10-26,16:13,wa,"Ronda PC tarde: 3 respuestas enviadas (Nerd, Punto Tecnológico, Pc Soluciones); 0 chats nuevos (sin tiendas por contactar); Viadata, Quillacollo y TechMax sin nada nuevo que contestar"
+2026-10-26,16:30,mkt,"Ronda PC tarde: Messenger revisado, 0 respuestas nuevas de vendedores de productos vigilados; Instagram (lunes): 6 búsquedas por palabra y hashtag, 0 tiendas nuevas de Cochabamba (resultados de otros países; Cyrex Store ya estaba); sin cambios en precios"
+2026-10-26,16:30,dem,"Ronda PC tarde: demanda de hoy ya anotada por la Mac (16 filas); sin cambios"
+
+2026-10-26,16:17,pedidos,"Ronda PC tarde: pedidos reales: 2 UPS (4 Ryzen) sin lectura en la web (2 intentos); último dato en camino, llegada 27/10. Pruebas: 1 con 2 intentos sin lectura nueva; 2 sin rastrear esta ronda; 1 sin guía, pendiente de Santi. Jacksonville: mapa generado"
+2026-10-26,16:40,ana,"Ronda PC tarde: dólar 11,97; TRAER 7800X3D (margen 19,8 %, peor caso 7,3 %) y SSD 1TB (margen 18,7 %, peor caso 5,0 %: justo en el límite); ESPERAR 7700X (peor caso 4,7 %); NO TRAER 7600, 9950X y RAM DDR4 nueva. SSD 1TB de Punto Tecnológico (Bs 2.000, sin dato de estado) y 9700X no cuentan; sin alertas nuevas"
+2026-10-26,16:21,fin,"Ronda PC tarde: finanzas.py sin ventas ni compras nuevas; 4 Ryzen 7 7700X en camino (llegan 27/10); dólar usado 11,97 (dolarbolivia.net 26/10, compra 11,97 > venta 11,96 por 3.er día). Binance P2P responde hoy (mediana 12,06, 10 anuncios) pero la tarea 2026-10-22-4 queda sin hacer: exige cambiar tipo-cambio, fuera de mi puesto. Necesidad a la nube anotada"
+2026-10-26,16:22,local,Oficina: versión 85 publicada en la misma URL (datos.js 16:21 y calles de Jacksonville); verificar.py comun y oficina sin ERROR; publicado y comprobado contra el repo
+2026-10-26,16:35,gerente,Ronda PC tarde: verificar sin errores; chat contestado; tarea 24-5 cerrada (Chrome en la PC conectó); 22-5 sigue propuesta; aviso de fin de ronda enviado

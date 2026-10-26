@@ -167,6 +167,7 @@ eBay nuevo: USD 114.99 con envío en EE.UU. (eBay API; vendedor gadgetworld03 99
 | Marketplace Cochabamba (particular) | Kingston NV3 NVMe 1TB 6000MB/s (estado sin dato) | 1.850 | 306 (17%) | 2026-10-26 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Hiksemi Wave M.2 1TB) | 1.860 | 316 (17%) | 2026-10-12 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2817371738643128/) | no indicado (Crucial P310 1TB) | 2.000 | 456 (23%) | 2026-10-11 |
+| Punto Tecnológico (WhatsApp) | sin dato (modelo SN3000; falta confirmar NVMe, nuevo y garantía) | 2.000 | 456 (23%) | 2026-10-26 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/3707244856102112/) | WD Green SN3000 1TB (estado sin dato) | 2.050 | 506 (25%) | 2026-10-19 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/3707244856102112/) | estado sin dato (WD Green SN3000 1TB) | 2.050 | 506 (25%) | 2026-10-22 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; WD SN3000 M.2 1TB) | 2.060 | 516 (25%) | 2026-10-12 |

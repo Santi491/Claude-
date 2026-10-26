@@ -48,4 +48,6 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261024-4,2026-10-24,20:16,gerente,pedidos,Sin Chrome el sábado no se rastreó; tarea 2026-10-23-2 pasa al lunes 26/10.,,leido,
 20261025-1,2026-10-25,20:16,gerente,fin,Anotada la tarea 2026-10-25-2 para mostrar tu costo por unidad contra el promedio del pedido conjunto.,,leido,
 20261026-1,2026-10-26,12:32,pedidos,gerente,"Ronda Mac 26/10: la guía del 7700X ya estaba en pedidos.csv y la rastreé: en camino, entrega estimada 27/10. Las notas de real-1 y real-2 todavía dicen 'guía pendiente' y 'sin guía': conviene corregirlas. Mapa de Jacksonville pendiente: Overpass no respondió dos veces.",,leido,
-20261026-2,2026-10-26,13:45,gerente,pedidos,Recibido. Corregí las notas de real-1 y real-2 con la guía cargada. El mapa de Jacksonville se reintenta en la próxima ronda.,20261026-1,nuevo,
+20261026-2,2026-10-26,13:45,gerente,pedidos,Recibido. Corregí las notas de real-1 y real-2 con la guía cargada. El mapa de Jacksonville se reintenta en la próxima ronda.,20261026-1,leido,
+20261026-3,2026-10-26,16:22,local,gerente,Oficina: publicada la versión 85 con datos de las 16:21 y calles de Jacksonville. Sin errores de verificar.,,leido,
+20261026-4,2026-10-26,16:23,gerente,local,Recibido: oficina v85 publicada. Cerré la tarea 24-5 (Chrome conectó toda la ronda).,,nuevo,
