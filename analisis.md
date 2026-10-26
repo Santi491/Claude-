@@ -1,4 +1,4 @@
-# Análisis del Analista (2026-10-25)
+# Análisis del Analista (2026-10-26)
 
 Dólar 11.98 · pedido de 2 u, courier más barato, aduana 0 %, tax A 7 %, precio de venta = 5 % debajo de la mediana local (si no deja 10 % sobre el costo: no traer).
 Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: margen si el dólar sube 3 %, el courier cobra 20 % más, el precio local baja 10 % o todo junto.
@@ -26,9 +26,9 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | nuevo | 5.559 | 5.890 | 5.6 % | 6.0 % | 2.8 % | 5.1 % | -4.9 % | -8.7 % | **no traer** (margen 6% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 5 7600 | nuevo | 2.564 | 2.680 | 4.3 % | 4.5 % | 1.5 % | 3.1 % | -6.4 % | -11.0 % | **no traer** (margen 4% con el precio sugerido) | — |
 | RAM DDR4 16GB (2x8) 3200 | nuevo | 1.474 | 1.470 | -0.2 % | -0.2 % | -3.2 % | -2.5 % | -11.6 % | -17.6 % | **no traer** (margen -0% con el precio sugerido) | 1 anuncio(s) de particular sin marca o configuración descartado(s), 2 precio(s) local(es) atípico(s) (30 % bajo la mediana) descartado(s) |
-| Ryzen 9 9950X | usado | 5.619 | 5.560 | -1.1 % | -1.0 % | -4.1 % | -1.7 % | -12.1 % | -16.2 % | **no traer** (margen -1% con el precio sugerido) | precio local de usados (se comparó con nuevos) |
+| Ryzen 9 9950X | usado | 5.619 | 5.560 | -1.1 % | -1.0 % | -4.1 % | -1.7 % | -12.1 % | -16.2 % | **no traer** (margen -1% con el precio sugerido) | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | usado | 4.840 | 4.270 | -13.3 % | -11.8 % | -16.7 % | -14.1 % | -26.0 % | -30.7 % | **no traer** (margen -13% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
-| Ryzen 9 9950X | nuevo | 6.757 | 5.560 | -21.5 % | -17.7 % | -25.2 % | -22.1 % | -34.9 % | -39.6 % | **no traer** (margen -22% con el precio sugerido) | — |
+| Ryzen 9 9950X | nuevo | 6.757 | 5.560 | -21.5 % | -17.7 % | -25.2 % | -22.1 % | -34.9 % | -39.6 % | **no traer** (margen -22% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | nuevo | 5.667 | 4.270 | -32.7 % | -24.6 % | -36.7 % | -33.5 % | -47.6 % | -52.9 % | **no traer** (margen -33% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Intel Core i5-13400 | nuevo | 3.280 | 2.180 | -50.5 % | -33.5 % | -55.0 % | -52.0 % | -67.3 % | -74.1 % | **no traer** (margen -50% con el precio sugerido) | eBay nuevo viejo (2026-10-12), precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 5 5600 | nuevo | — | — | — | — | — | — | — | — | sin datos | precio local |

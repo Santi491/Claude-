@@ -8,3 +8,4 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 7,2026-10-20,17:10,santi,compromiso,"Cargar y rastrear la guía del courier B del pedido de los 7700X apenas Santi la pase, y avisarle cuando llegue a Cochabamba",,abierta,
 8,2026-10-20,17:10,santi,preferencia,"En las compras conjuntas con el socio, Santi quiere ver su costo por unidad contra el promedio del pedido (esta vez: Bs 2.655 contra Bs 2.331)",,abierta,
 9,2026-10-20,20:16,2000,compromiso,Contarle a Santi apenas el Ryzen 7 7700X de la compra conjunta tenga guía cargada y esté en camino a Cochabamba,2026-10-31,descartada,23/10 17:45: repetida de la 7 (Claude Mac 23/10)
+10,2026-10-25,20:16,2000,compromiso,Recordarle a Santi la guía del courier B de los 7700X y la conexión de Claude in Chrome en la PC antes de la ronda del lunes 16:00,2026-10-26,abierta,

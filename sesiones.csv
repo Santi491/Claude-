@@ -48,3 +48,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-24,pc,ronda ligera,18:01,18:02,alerta,"Pedido del vigilante 18:00: Claude in Chrome sigue sin conectarse en la PC (solo el de la Mac); WhatsApp, Messenger y Pedidos no corrieron; resto ya hecho a las 16:00; sin cambios de datos"
 2026-10-24,gerente,informe,20:15,20:16,ok,Informe diario 24/10 subido al Doc; 3 tareas auto
 2026-10-24,pc,ronda ligera,23:15,23:25,ok,"Recuperación 23:15 con Chrome ya conectado: WhatsApp y Messenger solo lectura (3 recibidos, 0 precios, nada enviado por la hora), Pedidos sin movimientos (GOFO no lee), oficina v83, aviso del Gerente enviado"
+2026-10-25,gerente,informe,20:15,20:17,ok,Resumen semanal 25/10 subido al Doc; 2 tareas auto
