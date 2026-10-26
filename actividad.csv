@@ -373,3 +373,4 @@ fecha,hora,agente,texto
 2026-10-26,16:21,fin,"Ronda PC tarde: finanzas.py sin ventas ni compras nuevas; 4 Ryzen 7 7700X en camino (llegan 27/10); dólar usado 11,97 (dolarbolivia.net 26/10, compra 11,97 > venta 11,96 por 3.er día). Binance P2P responde hoy (mediana 12,06, 10 anuncios) pero la tarea 2026-10-22-4 queda sin hacer: exige cambiar tipo-cambio, fuera de mi puesto. Necesidad a la nube anotada"
 2026-10-26,16:22,local,Oficina: versión 85 publicada en la misma URL (datos.js 16:21 y calles de Jacksonville); verificar.py comun y oficina sin ERROR; publicado y comprobado contra el repo
 2026-10-26,16:35,gerente,Ronda PC tarde: verificar sin errores; chat contestado; tarea 24-5 cerrada (Chrome en la PC conectó); 22-5 sigue propuesta; aviso de fin de ronda enviado
+2026-10-26,16:24,local,"Ronda PC tarde cerrada (16:08-16:24); paso 8c sin correr: el permiso de la sesión automática bloqueó apagar_pc.ps1, la PC queda prendida"
