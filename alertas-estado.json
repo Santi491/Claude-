@@ -58,7 +58,7 @@
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|nuevo": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|usado": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo": false,
-  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": true,
+  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": false,
   "RAM DDR4 16GB (2x8) 3200|nuevo": false,
   "RAM DDR4 16GB (2x8) 3200|usado": false,
   "SSD NVMe 1TB|nuevo": false,
@@ -73,5 +73,5 @@
   "⬇ RAM DDR4 16GB (2x8) 3200 (usado) bajó 14% en eBay: USD 69.99 → 59.99",
   "⬇ Ryzen 7 7700X (usado) bajó 22% en eBay: USD 189.99 → 149.00"
  ],
- "revisado": "2026-10-25 11:53"
+ "revisado": "2026-10-26 11:54"
 }

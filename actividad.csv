@@ -352,3 +352,6 @@ fecha,hora,agente,texto
 2026-10-25,07:58,nube,"Revisión diaria hecha (dólar 11,98, Excel, copia del día, informe 2026-10-25)"
 2026-10-25,20:20,gerente,"Resumen semanal 19-25/10 subido al Doc; 2 tareas propuestas y aprobadas por rutina (auto), 0 solo para Santi nuevas (siguen 2 esperando); 1 mensaje de chat contestado; libreta: 1 anotada, 0 cerradas; Telegram 0 (Raspberry)"
 2026-10-26,00:48,gerente,Telegram (Raspberry): el Gerente cambió pedidos.csv
+2026-10-26,07:55,ebay,"API: 14 precios nuevos y 14 usados, 0 corregidos por variante o repuestos; usados subieron vs ayer: Ryzen 7 7700X 149→189,99, Ryzen 5 5600 120→135,99, 5700X3D 299,5→336"
+2026-10-26,07:55,ana,"Conviene traer SSD 1TB nuevo (margen 20,4 %, peor caso 7,2 %) y Ryzen 7 7800X3D nuevo (19,8 %, peor caso 7,3 %). Esperar 7700X nuevo (17,7 %) y los usados (sin precio local de usados). No traer 7600 nuevo (4,4 %), 9950X ni DDR5."
+2026-10-26,07:55,nube,"Revisión diaria hecha: dólar (paralelo 11,97; la fuente repite el dato de ayer), eBay API, Excel, copia del día e informe"
