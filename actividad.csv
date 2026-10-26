@@ -362,3 +362,5 @@ fecha,hora,agente,texto
 2026-10-26,12:33,ana,"Recalculado con Marketplace de hoy y dólar 11,97: traer 7800X3D nuevo (margen 19,8 %, peor caso 7,3 %) y SSD 1TB nuevo (19,6 %, peor caso 6,1 %, bajó de 7,2 % por local 1.920); 7700X esperar (peor caso 4,7 %); resto sin cambio. Sin alertas nuevas"
 2026-10-26,12:33,fin,"Ronda Mac: finanzas.py sin compras ni ventas nuevas (4 u del 7700X en camino, dólar 11,97). Tarea 2026-10-25-2 hecha: costo por unidad nuestro Bs 2.655 vs promedio del pedido conjunto Bs 2.331 (+13,9 %) en finanzas.py y --json; pantalla pendiente en pantallas.js"
 2026-10-26,13:40,local,"Ronda Mac: la de la mañana sí corrió (10:45-12:35) pero no se subió; se sube ahora y se quita el pedido 'cubre mac' del vigilante (13:00) para que la PC no repita mensajes"
+2026-10-26,13:45,gerente,"aviso de fin de ronda enviado (ronda Mac cerrada a las 13:50; pedido cubre mac quitado; notas de real-1/real-2 corregidas con la guía; libreta 10 cumplida)"
+2026-10-26,13:45,local,"Oficina: regenerada (verificar todo sin ERROR) y publicada versión 84 con datos.js, pantallas.js (compra conjunta en Finanzas) y la captura de Marketplace"
