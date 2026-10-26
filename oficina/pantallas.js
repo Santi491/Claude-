@@ -287,6 +287,12 @@
       </div>
       ${F.hay_datos ? "" : `<p class="eq-note">Todavía no hay compras ni ventas del negocio (los pedidos de prueba no cuentan). Con el primer pedido real se arma el inventario, y con la primera venta, la ganancia real.</p>`}
       ${prods.length ? `<div class="ps-scroll"><table class="ps-t"><thead><tr><th>Producto</th>${cols.map(k => `<th class="n">${esc(lab[k] || k)}</th>`).join("")}</tr></thead><tbody>${prods.map(x => `<tr><td>${esc(x.producto)}</td>${cols.map(k => `<td class="n">${typeof x[k] === "number" ? fmt(x[k]) : esc(x[k] ?? "—")}</td>`).join("")}</tr>`).join("")}</tbody></table></div>` : ""}
+      ${(F.compras_conjuntas || []).map(c => `<div class="ps-box"><h4>${esc(c.producto)} · compra conjunta</h4>
+        <div class="ps-kpis">
+          ${kp("Nuestro costo por unidad", bs(c.nuestro_costo_unitario_bs), `${c.nuestras_unidades} u, todo incluido`)}
+          ${kp("Promedio del pedido conjunto", bs(c.promedio_conjunto_bs), `${c.unidades_pedido_conjunto} u · USD ${fmt(c.promedio_conjunto_usd)} c/u · dólar ${c.tc}`)}
+          ${kp("Diferencia", `${c.diferencia_bs >= 0 ? "+" : "−"}Bs ${fmt(Math.abs(c.diferencia_bs))}`, `${c.diferencia_pct >= 0 ? "+" : ""}${c.diferencia_pct} % sobre el promedio`, c.diferencia_bs > 0 ? C.red : C.green)}
+        </div><p class="eq-note">${esc(c.fuente)}</p></div>`).join("")}
       <div class="ps-box"><h4>Registro de ventas</h4>
         ${V.length ? `<div class="ps-scroll"><table class="ps-t"><thead><tr><th>Fecha</th><th>Producto</th><th class="n">Cant.</th><th class="n">Precio c/u</th><th class="n">Total</th><th>Anotada por</th></tr></thead><tbody>${V.slice().reverse().map(v => `<tr><td>${fechaCorta(v.fecha)}</td><td>${esc(v.producto)}</td><td class="n">${esc(v.cantidad)}</td><td class="n">${bs(+v.precio_bs)}</td><td class="n">${bs(+v.precio_bs * +v.cantidad)}</td><td>${esc(v.canal)}</td></tr>`).join("")}</tbody></table></div>` : `<p class="eq-note">Sin ventas todavía.</p>`}
         <p class="eq-note" style="margin-top:10px">Cuando vendas algo, anótalo de una de estas formas:</p>

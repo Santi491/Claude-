@@ -130,3 +130,5 @@ fecha,producto,precio_bs,estado,fuente,link,tipo,condiciones,vigencia
 2026-10-23,Ryzen 5 7600,2700,no cuenta: precio de segunda mano (lo consultó a un colega); estado y garantía sin confirmar,Nerd Tecnologias (WhatsApp),,cotizado,no es stock propio; solo referencia (se preguntó nuevo/garantía/stock),sin dato
 2026-10-23,SSD NVMe 1TB,1600,"no cuenta: precio de segunda mano (colega); marca y tipo sin confirmar (""M2 de 1 tera"")",Nerd Tecnologias (WhatsApp),,cotizado,no es stock propio; solo referencia (se preguntó NVMe/garantía/stock),sin dato
 2026-10-23,Intel Core Ultra 7 265K,4300,"no cuenta: es el Core Ultra 7 270K (no el 265K); sin garantía, traído de EEUU",TechMax Computers Cbba (WhatsApp),,cotizado,confirmado 23/10 14:16 que el modelo es 270K,sin dato
+2026-10-26,Ryzen 7 7800X3D,4800,"nuevo sellado (anuncio ""AMD Ryzen 7 7800X3D (Sellado)""; el vendedor dijo el 13/10 que acepta ofertas, no se oferta)",Marketplace Cochabamba (particular),,publicado,sellado; repetido: mismo precio visto el 13/10,sin dato
+2026-10-26,SSD NVMe 1TB,1850,"Kingston NV3 NVMe 1TB 6000MB/s (estado sin dato)",Marketplace Cochabamba (particular),,publicado,,sin dato

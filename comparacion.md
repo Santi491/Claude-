@@ -59,6 +59,7 @@ eBay nuevo: USD 329.00 con envío en EE.UU. (eBay API; vendedor aaawavecom 99.8%
 | Tienda Supermall (WhatsApp) · [ver](https://www.facebook.com/marketplace/item/1292124363069503/) | no indicado (la tienda lo ofrece como "7700x3d"; foto de caja 7800X3D; stock bajo; garantía 6 meses; confirmar modelo) | 4.760 | 654 (14%) | 2026-10-12 |
 | Marketplace Cochabamba (particular/vendedor) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado (según anuncio) | 4.800 | 694 (14%) | 2026-10-11 |
 | Marketplace Cochabamba (particular/vendedor; Messenger) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado de fábrica, confirmado por el vendedor (último en stock; precio ya rebajado) | 4.800 | 694 (14%) | 2026-10-13 |
+| Marketplace Cochabamba (particular) | nuevo sellado (anuncio "AMD Ryzen 7 7800X3D (Sellado)"; el vendedor dijo el 13/10 que acepta ofertas, no se oferta) | 4.800 | 694 (14%) | 2026-10-26 |
 | Marketplace Cochabamba (tienda sin confirmar) | nuevo (anuncio multi-modelo "9800X3D, 7800X3D, 8700G"; precio desde) | 4.860 | 754 (16%) | 2026-10-21 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2669179450145313/) | no indicado | 5.190 | 1.084 (21%) | 2026-10-11 |
 | OverCity (WhatsApp) | nuevo en caja sellada (box; el OEM está a Bs 5.500; el i5-14400F Bs 2.460 es su precio mínimo) | 5.350 | 1.244 (23%) | 2026-10-13 |
@@ -163,6 +164,7 @@ eBay nuevo: USD 114.99 con envío en EE.UU. (eBay API; vendedor gadgetworld03 99
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2078197563584097/) | no indicado (M.2 1TB; marca no indicada) | 1.800 | 256 (14%) | 2026-10-11 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | no indicado (Kingston NV3 1TB) | 1.850 | 306 (17%) | 2026-10-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | Kingston NV3 1TB (estado sin dato) | 1.850 | 306 (17%) | 2026-10-17 |
+| Marketplace Cochabamba (particular) | Kingston NV3 NVMe 1TB 6000MB/s (estado sin dato) | 1.850 | 306 (17%) | 2026-10-26 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Hiksemi Wave M.2 1TB) | 1.860 | 316 (17%) | 2026-10-12 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2817371738643128/) | no indicado (Crucial P310 1TB) | 2.000 | 456 (23%) | 2026-10-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/3707244856102112/) | WD Green SN3000 1TB (estado sin dato) | 2.050 | 506 (25%) | 2026-10-19 |

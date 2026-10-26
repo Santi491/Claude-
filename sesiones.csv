@@ -50,3 +50,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-24,pc,ronda ligera,23:15,23:25,ok,"Recuperación 23:15 con Chrome ya conectado: WhatsApp y Messenger solo lectura (3 recibidos, 0 precios, nada enviado por la hora), Pedidos sin movimientos (GOFO no lee), oficina v83, aviso del Gerente enviado"
 2026-10-25,gerente,informe,20:15,20:17,ok,Resumen semanal 25/10 subido al Doc; 2 tareas auto
 2026-10-26,raspberry,vigilante,13:00,13:00,arreglado,la Mac no hizo la ronda de la mañana: la cubre la PC
+2026-10-26,mac,ronda,10:45,13:40,ok,"Ronda de la mañana (10:45-12:35, cerrada a las 13:40): WA 4 mensajes sin precios, Marketplace 2 precios, guía del 7700X rastreada (llega a la casilla 27/10)"

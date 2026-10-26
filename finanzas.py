@@ -17,6 +17,13 @@ import os
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 EN_STOCK = ("entregado",)
+# Compras conjuntas con socios: total del pedido grande (todas las unidades, no solo las nuestras), en USD.
+# Dato de Santi (20/10, notas de pedidos.csv: 14 u por USD 2.747,15). Se compara con nuestro costo por unidad
+# en el paquete de pedidos.csv (columna paquete). Sin nombres de socios.
+COMPRAS_CONJUNTAS = {
+    "conjunto-7700x": {"producto": "Ryzen 7 7700X", "unidades": 14, "total_usd": 2747.15,
+                       "fuente": "compra conjunta del 20/10 (dato de Santi)"},
+}
 
 
 def leer(nombre):
@@ -44,6 +51,7 @@ def calcular():
     fx = sorted(leer("tipo-cambio.csv"), key=lambda f: f["fecha"])
     prod = {}
     sin_costo = []
+    conj = {}   # paquete -> {"unidades", "costo_bs", "tc"} de nuestras unidades en compras conjuntas
     for p in leer("pedidos.csv"):
         n = int(num(p.get("cantidad")) or 1)
         usd, env = num(p.get("precio_usd")), num(p.get("envio_usd"))
@@ -59,6 +67,10 @@ def calcular():
         if usd is not None and tc:
             x["costo_bs"] += (usd + (env or 0)) * tc * n   # usd y envío por unidad
             x["unidades_con_costo"] += n
+            if p.get("paquete") in COMPRAS_CONJUNTAS:
+                c = conj.setdefault(p["paquete"], {"unidades": 0, "costo_bs": 0.0, "tc": tc})
+                c["unidades"] += n
+                c["costo_bs"] += (usd + (env or 0)) * tc * n
             if env is None:
                 sin_costo.append(p["producto"])
     for v in leer("ventas.csv"):
@@ -94,6 +106,22 @@ def calcular():
         del x["en_stock_bruto"]
         filas.append(x)
     filas.sort(key=lambda x: x["producto"])
+    comparativa = []
+    for clave, ref in COMPRAS_CONJUNTAS.items():
+        c = conj.get(clave)
+        if not c or not c["unidades"]:
+            continue
+        nuestro = c["costo_bs"] / c["unidades"]
+        promedio = ref["total_usd"] / ref["unidades"] * c["tc"]
+        comparativa.append({
+            "paquete": clave, "producto": ref["producto"],
+            "nuestras_unidades": c["unidades"], "nuestro_costo_unitario_bs": round(nuestro, 2),
+            "unidades_pedido_conjunto": ref["unidades"], "promedio_conjunto_usd": round(ref["total_usd"] / ref["unidades"], 2),
+            "promedio_conjunto_bs": round(promedio, 2), "tc": c["tc"],
+            "diferencia_bs": round(nuestro - promedio, 2),
+            "diferencia_pct": round((nuestro - promedio) / promedio * 100, 1) if promedio else None,
+            "fuente": ref["fuente"],
+        })
     s = lambda k: round(sum(x[k] or 0 for x in filas), 2)
     ganancias = [x["ganancia_bs"] for x in filas if x["ganancia_bs"] is not None]
     return {
@@ -114,6 +142,7 @@ def calcular():
         "ganancia_bs": round(sum(ganancias), 2) if ganancias else None,
         "valor_stock_bs": s("valor_stock_bs"),
         "sin_costo_envio": sorted(set(sin_costo)),
+        "compras_conjuntas": comparativa,
         "hay_datos": bool(filas),
     }
 
@@ -129,6 +158,11 @@ def texto(f):
          f"Ganancia real (ventas − costo − comisiones): {bs(f['ganancia_bs'])}"]
     if f.get("dolar"):
         l.append(f"Dólar usado: {f['dolar']['usado']} Bs ({f['dolar']['fecha']}, {f['dolar']['fuente']})")
+    for cc in f.get("compras_conjuntas", []):
+        l.append(f"Compra conjunta ({cc['producto']}, {cc['nuestras_unidades']} u nuestras): costo por unidad nuestro "
+                 f"{bs(cc['nuestro_costo_unitario_bs'])} vs promedio del pedido conjunto {bs(cc['promedio_conjunto_bs'])} "
+                 f"({'+' if cc['diferencia_bs'] >= 0 else '−'}{bs(abs(cc['diferencia_bs']))}, "
+                 f"{cc['diferencia_pct']:+.1f} %".replace(".", ",") + f"; dólar {cc['tc']} Bs, {cc['fuente']})")
     if f["sin_costo_envio"]:
         l.append("Sin costo de envío cargado (la ganancia sale sin el courier): " + ", ".join(f["sin_costo_envio"]))
     for x in f["productos"]:

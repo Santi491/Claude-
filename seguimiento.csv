@@ -22,3 +22,5 @@ prueba-primo-1,2026-10-17,06:06,"Memphis, TN",35.15,-90.05,"Salió otra vez de l
 prueba-primo-1,2026-10-18,02:34,"Miami, FL",25.77,-80.19,"Llegó al centro de distribución de USPS en Miami; en tránsito al destino (tools.usps.com, revisado el 19/10 11:15), entrega estimada lunes 19/10",USPS web
 prueba-primo-1,2026-10-19,13:38,"Miami, FL",25.77,-80.19,"Entregado en Miami, dejado con una persona en la dirección (tools.usps.com, revisado el 19/10 16:15)",USPS web
 prueba-hermana-3,2026-10-19,19:04,"Miami, FL",25.77,-80.19,"Salió de la oficina del courier B en Miami hacia Santa Cruz (aviso de Santi, sin rastreo web todavía)",Santi
+real-1,2026-10-25,22:48,"Jacksonville, FL",30.33,-81.66,"En camino (UPS): último escaneo, en tránsito hacia el destino; entrega estimada 27/10 (UPS web, revisado el 26/10)",UPS web
+real-2,2026-10-25,22:48,"Jacksonville, FL",30.33,-81.66,"En camino (UPS): último escaneo, en tránsito hacia el destino; entrega estimada 27/10 (UPS web, revisado el 26/10)",UPS web

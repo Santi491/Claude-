@@ -118,3 +118,19 @@ fecha,producto,fuente,ciudad,anuncios,nuevos,desaparecidos,precio_min_bs,precio_
 2026-10-23,SSD NVMe 2TB,marketplace,Cochabamba,1,1,0,3350,3350,un Sandisk SSD 2TB a Bs 3.350 (tipo sin confirmar: NVMe o SATA); primer 2TB suelto; interés bajo
 2026-10-23,Ryzen 7 7700X,marketplace,Cochabamba,0,0,1,,,"ninguno hoy; no sale el de Bs 3.100 de ayer (desaparecido sin venta comprobada); solo 5700X, 9700X sellado a Bs 3.950 y 9600X son otros modelos"
 2026-10-23,Ryzen 5 7500F,marketplace,Cochabamba,0,0,0,,,ninguno (otra vez 0; sigue agotado en tiendas)
+2026-10-26,Ryzen 5 5600,marketplace,Cochabamba,0,0,0,,,"ninguno exacto: solo 5600G/5600GT (otros modelos, Bs 3.500-6.700 en PC o suelto); tarea 24-3 sin precio local; sin links, no se compara nuevos/desaparecidos"
+2026-10-26,Ryzen 7 5700X3D,marketplace,Cochabamba,0,0,0,,,"ninguno exacto: solo 5700X OEM Bs 2.450-2.540 y 5700G Bs 2.600 (otros modelos); tarea 24-3 sin precio local"
+2026-10-26,Ryzen 5 7600,marketplace,Cochabamba,0,0,0,,,ninguno; solo 8600G/9600X (otros modelos)
+2026-10-26,Ryzen 7 7800X3D,marketplace,Cochabamba,1,0,0,4800,4800,"1 sellado Bs 4.800 (otro anuncio multi-modelo no repetido hoy); sin links, no se compara nuevos/desaparecidos"
+2026-10-26,Ryzen 9 9950X,marketplace,Cochabamba,0,0,0,,,"ninguno exacto; solo 9950X3D2 sin precio (Bs 1 de marcador) y 9800X3D Bs 6.000"
+2026-10-26,Intel Core i5-12400F,marketplace,Cochabamba,1,0,0,2350,2350,"1 OEM Bs 2.350 (igual al del 21/10); sin links"
+2026-10-26,Intel Core i5-13400,marketplace,Cochabamba,0,0,0,,,ninguno
+2026-10-26,Intel Core i5-14400F,marketplace,Cochabamba,0,0,0,,,"ninguno F; i5-14400 sin F a Bs 2.700 y combo 1440F Bs 5.290 (no cuentan)"
+2026-10-26,Intel Core Ultra 7 265K,marketplace,Cochabamba,0,0,0,,,ninguno
+2026-10-26,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,marketplace,Cochabamba,0,0,0,,,"ninguno Corsair; solo Kingston Fury 5600 16/32GB sin precio claro"
+2026-10-26,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,marketplace,Cochabamba,0,0,0,,,"ninguno Corsair hoy (el RS Bs 6.200 del 21/10 no salió); hay 2x16 6000 Vulcan sin precio claro"
+2026-10-26,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,0,0,0,,,"ningun kit 2x8 3200 claro; salen 1x16 3200 Bs 1.300 y kit 2x8 3000 Bs 1.200 (no cuentan)"
+2026-10-26,SSD NVMe 1TB,marketplace,Cochabamba,3,1,0,1700,1850,"Kingston NV2 1.700, NV3 1.850 (nuevo) y Samsung 9100 Pro PCIe5 3.050; interés bajo"
+2026-10-26,SSD NVMe 2TB,marketplace,Cochabamba,1,0,0,3150,3350,"Sandisk 2TB Bs 3.150-3.550 (tipo sin confirmar); mismo anuncio del 23/10"
+2026-10-26,Ryzen 7 7700X,marketplace,Cochabamba,0,0,0,,,ninguno
+2026-10-26,Ryzen 5 7500F,marketplace,Cochabamba,0,0,0,,,"ninguno (2 semanas en 0 y agotado en tiendas); tarea 24-3 sin precio local"
