@@ -265,9 +265,9 @@
   // sala de operaciones: 3 filas de 3 puestos mirando al videowall. Se leen de izquierda a derecha empezando por la fila
   // de adelante: el Gerente está en el puesto 2 (el del medio de la primera fila)
   // Santi, 27/10: puestos como los del probador (más juntos y ordenados): columnas cada 4 m y filas cada 3,2 m
-  const STATION = { wa: [-7, 0.6], gerente: [-3, 0.6], mkt: [1, 0.6],
-    ebay: [-7, 3.8], ana: [-3, 3.8], pedidos: [1, 3.8],
-    fin: [-7, 7.0], dem: [-3, 7.0], nube: [1, 7.0] };
+  const STATION = { wa: [-11, 0.6], gerente: [-7, 0.6], mkt: [-3, 0.6],   // corridos a la izquierda (Santi, 27/10: que la nave se vea más amplia)
+    ebay: [-11, 3.8], ana: [-7, 3.8], pedidos: [-3, 3.8],
+    fin: [-11, 7.0], dem: [-7, 7.0], nube: [-3, 7.0] };
   const PASILLO_X = 8.6, FRENTE_Z = -1.6;   // pasillo entre operaciones y gym/lounge, y pasillo frente a las salas de vidrio
   // lámparas LED lineales colgantes sobre los escritorios
   function ledBar(x, z, len, y, rotY) {
@@ -739,7 +739,7 @@
   for (let x = XL + 1.2; x < XR - 0.6; x += 1.6) lineF(x, 12.8, 0.7, 0.05);
 
   // ---- 1. Centro de operaciones: videowall en la franja sobre el vidrio de las salas del fondo, frente a los puestos ----
-  const VW = 13, VH = 3.6, VX = -3, VY = 5.0, BANDA = -2.45;   // BANDA: cara de la franja oscura que mira a la sala
+  const VW = 13, VH = 3.6, VX = -7, VY = 5.0, BANDA = -2.45;   // BANDA: cara de la franja oscura que mira a la sala
   box(VW + 1.0, VH + 0.6, 0.06, M(0x24272b, { roughness: 1 }), VX, VY, BANDA + 0.03).castShadow = false;   // panel acústico de fondo
   box(VW + 0.12, VH + 0.12, 0.12, M(0x08090a, { metalness: .4, roughness: .3 }), VX, VY, BANDA + 0.09).castShadow = false;
   const opsCv = document.createElement("canvas"); opsCv.width = 2048; opsCv.height = 576;
@@ -796,7 +796,7 @@
     opsTex.needsUpdate = true;
   }
   paintOps();
-  floorText("OPERACIONES", -3, 9.6, 7);
+  floorText("OPERACIONES", -7, 9.6, 7);
 
   // ---- 2. Relojes de dos ciudades (hora real) ----
   const clocks = [["Cochabamba", "America/La_Paz", -12.9], ["Miami", "America/New_York", -11.1]].map(([n, tz, x]) => {
