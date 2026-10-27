@@ -55,3 +55,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-26,gerente,informe,20:15,20:17,ok,Informe diario 26/10 subido al Doc; 6 tareas (5 auto)
 2026-10-27,raspberry,vigilante,13:00,13:00,arreglado,la Mac no hizo la ronda de la mañana: la cubre la PC
 2026-10-27,raspberry,vigilante,14:30,14:30,alerta,pedido a la PC sin hacer hace 90 min
+2026-10-27,raspberry,vigilante,16:30,16:30,alerta,la PC no prendió para la ronda de las 16:00
