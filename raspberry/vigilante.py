@@ -60,11 +60,8 @@ def avisar(texto):
 
 
 def pc_prendida():
-    ip = os.environ.get("PC_IP")
-    if not ip:
-        return None
-    subprocess.run(["ping", "-c", "1", "-W", "1", ip], capture_output=True)
-    return "REACHABLE" in subprocess.run(["ip", "neigh", "show", ip], capture_output=True, text=True).stdout
+    import red   # busca la PC por su MAC (el router cambia las IP tras un corte, 27/10)
+    return red.pc_prendida()
 
 
 def prender_pc():
@@ -98,6 +95,7 @@ def main():
     pedido = json.load(open(PEDIDO, encoding="utf-8")) if os.path.exists(PEDIDO) else None
 
     # 1. La Mac no hizo su ronda de la mañana: la cubre la PC
+    # (si la Mac anotó "en curso" no se cubre: está trabajando, solo empezó tarde; salud lo da como "en curso")
     if e["mac"]["estado"] == "no corrió" and "cubre-mac" not in hecho and not pedido:
         pedir_a_pc("cubre mac", "la Mac no hizo la ronda de la mañana")
         prender_pc()
@@ -108,7 +106,7 @@ def main():
                "y la está haciendo ahí. Cuando termine te mando el resumen; no tienes que hacer nada.")
 
     # 2. La PC no prendió para la ronda de las 16:00
-    if dia in salud.HORARIO["pc"]["dias"] and e["pc"]["estado"] == "pendiente":
+    if dia in salud.HORARIO["pc"]["dias"] and e["pc"]["estado"] == "pendiente":   # "en curso" no entra: ya prendió
         if "16:15" <= hora < "16:30" and "reintento-pc" not in hecho and pc_prendida() is False:
             prender_pc()
             hecho.add("reintento-pc")

@@ -49,12 +49,12 @@ def mandar(p):
     return destinos
 
 
-def contesta(ip):
-    """La PC está prendida si su placa de red responde en la red local (ARP). No se usa la respuesta del ping:
-    el firewall de Windows no contesta pings, así que la PC parecía apagada aunque estuviera prendida."""
-    subprocess.run(["ping", "-c", "1", "-W", "1", ip], capture_output=True)   # solo para que se pregunte su MAC
-    vecino = subprocess.run(["ip", "neigh", "show", ip], capture_output=True, text=True).stdout
-    return "REACHABLE" in vecino
+def contesta(ip=None):
+    """La PC está prendida si su placa de red responde en la red local (ARP), buscada por su MAC: el router cambia las
+    IP tras un corte (27/10: pasó de .6 a .21). No se usa la respuesta del ping: el firewall de Windows no contesta pings."""
+    sys.path.insert(0, DIR)
+    import red
+    return bool(red.pc_prendida())
 
 
 def main():
@@ -64,15 +64,13 @@ def main():
     if "--probar" in sys.argv:
         print(f"Mandaría el paquete a la MAC {mac} (comprobación en {ip or 'sin PC_IP'})")
         return
-    if ip and contesta(ip):
+    if contesta():
         print("La PC ya estaba prendida.")
         return
     print("Paquete enviado a", ", ".join(mandar(p)), flush=True)
-    if not ip:
-        return
     for _ in range(24):          # hasta 4 minutos
         time.sleep(10)
-        if contesta(ip):
+        if contesta():
             print("La PC prendió.")
             return
         if _ in (5, 11):

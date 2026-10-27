@@ -344,8 +344,8 @@
 
   /* ---------- Salud del equipo (salud.py + sesiones.csv): qué corrió, qué falló y qué arregló el vigilante ---------- */
   const SAL = D.salud || { hoy: {}, semana: [], sesiones: [], horario: {} };
-  const SCOL = { ok: C.green, cubierta: C.cyan, arreglado: C.cyan, pendiente: C.amber, "no corrió": C.red, alerta: C.red, "sin señal": C.red, "no toca": "#2E2F31", antes: "#1E1F20", "sin datos": C.muted };
-  const SLBL = { ok: "corrió bien", cubierta: "la cubrió otra máquina", pendiente: "todavía no le toca o está en curso", "no corrió": "no corrió", "no toca": "no le toca hoy", antes: "antes de empezar el equipo", "sin datos": "sin datos", "sin señal": "sin señal" };
+  const SCOL = { ok: C.green, cubierta: C.cyan, arreglado: C.cyan, pendiente: C.amber, "en curso": C.amber, "no corrió": C.red, alerta: C.red, "sin señal": C.red, "no toca": "#2E2F31", antes: "#1E1F20", "sin datos": C.muted };
+  const SLBL = { ok: "corrió bien", cubierta: "la cubrió otra máquina", pendiente: "todavía no le toca", "en curso": "trabajando ahora", "no corrió": "no corrió", "no toca": "no le toca hoy", antes: "antes de empezar el equipo", "sin datos": "sin datos", "sin señal": "sin señal" };
   const QUIEN = { nube: "Nube", mac: "Mac", pc: "PC de la casa", gerente: "Gerente 20:00", raspberry: "Raspberry" };
   const DIAS = ["lu", "ma", "mi", "ju", "vi", "sá", "do"];
   function vSalud() {

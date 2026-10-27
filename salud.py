@@ -74,6 +74,35 @@ def corrio(quien, fecha, S=None):
     return None
 
 
+def en_curso(quien, fecha, S=None, horas=6):
+    """La ronda de `quien` empezó hoy (fila 'en curso' de `salud.py empezar`) y todavía no terminó (27/10: la Mac
+    empezó tarde dos días y el vigilante la creyó caída)."""
+    S = sesiones() if S is None else S
+    hoy = [s for s in S if s["fecha"] == fecha and s["quien"] == quien]
+    if not hoy or hoy[-1]["estado"] != "en curso":
+        return None
+    try:
+        ini = datetime.strptime(f"{fecha} {hoy[-1]['inicio']}", "%Y-%m-%d %H:%M").replace(tzinfo=TZ)
+        if (ahora() - ini).total_seconds() > horas * 3600:
+            return None   # empezó hace demasiado: se colgó
+    except ValueError:
+        pass
+    return hoy[-1]
+
+
+def empezar(quien, tipo="ronda"):
+    """Anota que la ronda empezó y la sube a GitHub, para que el vigilante sepa que está en curso."""
+    import subprocess
+    anotar(quien, tipo, "en curso", "empezó")
+    g = lambda *a: subprocess.run(["git", "-C", RAIZ, *a], capture_output=True, text=True, timeout=120)
+    g("add", "sesiones.csv"); g("commit", "-q", "-m", f"Sesión: {quien} empezó la {tipo}")
+    for _ in range(3):
+        if g("push", "-q").returncode == 0:
+            return True
+        g("pull", "--no-rebase", "--no-edit", "-q")
+    return False
+
+
 def cubierta(quien, fecha, S=None):
     """Si otra máquina cubrió la ronda (por ejemplo, la PC hizo la de la Mac)."""
     S = sesiones() if S is None else S
@@ -100,6 +129,8 @@ def estado_dia(fecha=None, hora=None):
             e = "ok"
         elif c:
             e = "cubierta"
+        elif en_curso(k, fecha, S):
+            e = "en curso"
         elif hora < h["limite"]:
             e = "pendiente"
         else:
@@ -133,6 +164,10 @@ def semana(dias=14):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) >= 3 and sys.argv[1] == "empezar":   # python3 salud.py empezar mac [ronda]
+        ok = empezar(sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else "ronda")
+        print("anotada en curso" + ("" if ok else " (no se pudo subir a GitHub)"))
+        sys.exit(0)
     e = estado_dia()
     if "--json" in sys.argv:
         print(json.dumps({"hoy": e, "semana": semana()}, ensure_ascii=False, indent=1, default=str))

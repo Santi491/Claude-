@@ -671,11 +671,10 @@ PEDIDO = os.path.join(REPO, "pedido-pc.json")
 
 
 def pc_prendida():
-    ip = os.environ.get("PC_IP")
-    if not ip:
-        return None
-    subprocess.run(["ping", "-c", "1", "-W", "1", ip], capture_output=True)
-    return "REACHABLE" in subprocess.run(["ip", "neigh", "show", ip], capture_output=True, text=True).stdout
+    # por la MAC de la PC, no por una IP fija: el router cambia las IP tras un corte (27/10)
+    sys.path.insert(0, os.path.join(REPO, "raspberry"))
+    import red
+    return red.pc_prendida()
 
 
 def prender_pc():
@@ -689,7 +688,7 @@ def cmd_estado_pc():
     if os.path.exists(PEDIDO):
         d = json.load(open(PEDIDO, encoding="utf-8"))
         extra = f" Tiene un pedido pendiente desde las {d.get('pedido', '')[-5:]}: {d.get('tipo')}."
-    return {True: "La PC está prendida.", False: "La PC está apagada.", None: "No sé: falta PC_IP en ~/.cargo-bot."}[p] + extra
+    return {True: "La PC está prendida.", False: "La PC está apagada.", None: "No sé: falta PC_MAC en ~/.cargo-bot."}[p] + extra
 
 
 def cmd_prender_pc():
