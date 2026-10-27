@@ -264,9 +264,10 @@
 
   // sala de operaciones: 3 filas de 3 puestos mirando al videowall. Se leen de izquierda a derecha empezando por la fila
   // de adelante: el Gerente está en el puesto 2 (el del medio de la primera fila)
-  const STATION = { wa: [-10, 0.6], gerente: [-3, 0.6], mkt: [4, 0.6],
-    ebay: [-10, 4.8], ana: [-3, 4.8], pedidos: [4, 4.8],
-    fin: [-10, 9.0], dem: [-3, 9.0], nube: [4, 9.0] };
+  // Santi, 27/10: puestos como los del probador (más juntos y ordenados): columnas cada 4 m y filas cada 3,2 m
+  const STATION = { wa: [-7, 0.6], gerente: [-3, 0.6], mkt: [1, 0.6],
+    ebay: [-7, 3.8], ana: [-3, 3.8], pedidos: [1, 3.8],
+    fin: [-7, 7.0], dem: [-3, 7.0], nube: [1, 7.0] };
   const PASILLO_X = 8.6, FRENTE_Z = -1.6;   // pasillo entre operaciones y gym/lounge, y pasillo frente a las salas de vidrio
   // lámparas LED lineales colgantes sobre los escritorios
   function ledBar(x, z, len, y, rotY) {
@@ -277,7 +278,7 @@
     box(len - 0.06, 0.012, 0.08, ledM, 0, y - 0.04, 0, g).castShadow = false;
     // sin luz puntual por puesto (Santi, 27/10): eran 9 luces que cada píxel calculaba y bajaban la resolución; la barra brilla igual
   }
-  Object.values(STATION).forEach(([x, z]) => ledBar(x, z + 0.2, 3.0));
+  Object.values(STATION).forEach(([x, z]) => ledBar(x, z + 0.2, 1.8));
 
   // pasillos marcados en el piso
   box(XLO - XL - 1, 0.01, 0.05, M(0xd9dde2, { roughness: .5 }), (XL + XLO) / 2, 0.005, FRENTE_Z);
@@ -354,8 +355,9 @@
   }
 
   /* ---------- Puestos de trabajo ---------- */
-  const skin = M(0xe7b98f, { roughness: .6 }), hairM = M(0x2b2018), deskM = marbleWM,
-    legM = M(0x1f2a33, { metalness: .5, roughness: .4 }), chairM = M(0x2a2d31, { roughness: .8 });
+  const skin = M(0xe7b98f, { roughness: .6 }), hairM = M(0x2b2018), deskM = M(0xffffff, { map: marble("#16181b", "#8a8f96"), roughness: .2 }),
+    grafM = M(0x1c1f23, { roughness: .45 }), monM = M(0x0f1113, { roughness: .5 }),
+    legM = M(0x2b2f35, { metalness: .6, roughness: .35 }), chairM = M(0x2a2d31, { roughness: .8 });
   const ST = {};
   // medidas del puesto (en z, desde el centro del escritorio hacia la silla): cubierta a 0,68 m porque ahí apoyan las
   // manos las animaciones de teclear de Mixamo; la silla metida y corrida 0,5 m para pararse
@@ -364,39 +366,28 @@
   AG.forEach(a => {
     const pos = STATION[a.id]; if (!pos) return;
     const g = new THREE.Group(); g.position.set(pos[0], 0, pos[1]); scene.add(g);
-    // alfombra del puesto, escritorio ancho, cajonera y planta propia
-    const rugP = new THREE.Mesh(new THREE.BoxGeometry(4.2, 0.015, 3.4), M(0x2c3036, { roughness: 1 })); rugP.position.set(0, 0.008, 0.55); rugP.receiveShadow = true; g.add(rugP);
-    box(4.0, 0.006, 3.2, M(0x3a3f46, { roughness: 1 }), 0, 0.017, 0.55, g).castShadow = false;
-    box(3.0, 0.08, 1.35, deskM, 0, 0.64, 0, g);
-    [[-1.42, -.55], [1.42, -.55], [-1.42, .55], [1.42, .55]].forEach(([x, z]) => box(0.06, 0.6, 0.06, legM, x, 0.3, z, g));
-    box(0.5, 0.56, 0.6, M(0x24282d, { roughness: .5 }), 1.05, 0.28, -0.2, g);
-    [0.15, 0.4].forEach(y => box(0.18, 0.025, 0.02, M(0xc9a35a, { metalness: .6, roughness: .3 }), 1.05, y, 0.11, g));
-    cyl(0.2, 0.16, 0.42, marbleWM, -1.85, 0.21, -0.35, g, 20);
-    [[0, .62, 0, .3], [.12, .55, .08, .22], [-.1, .74, -.04, .2]].forEach(([dx, dy, dz, r]) => { const m = new THREE.Mesh(new THREE.IcosahedronGeometry(r, 0), M(0x2f7a52, { roughness: .8 })); m.position.set(-1.85 + dx, dy, -0.35 + dz); m.castShadow = true; g.add(m); });
-    // monitor (el Gerente tiene dos, un poco girados hacia él)
+    // escritorio como el del probador (Santi, 27/10): cubierta de mármol negro de 1,8 × 0,8 m con laterales grafito y una
+    // pantalla (el Gerente, dos). El borde de adelante queda en DESK.frente, igual que antes, para que las personas se sienten igual
+    const DZ = DESK.frente - 0.4;
+    box(1.8, 0.06, 0.8, deskM, 0, 0.65, DZ, g);
+    [-0.85, 0.85].forEach(x => box(0.06, 0.62, 0.7, grafM, x, 0.31, DZ, g));
     const dual = a.id === "gerente";
-    const mons = (dual ? [[-0.64, 0.2], [0.64, -0.2]] : [[0, 0]]).map(([mx, rot]) => {
-      const mg = new THREE.Group(); mg.position.set(mx, 0, 0); mg.rotation.y = rot; g.add(mg);
-      const w = dual ? 1.24 : 1.62, h = dual ? 0.74 : 0.96, y = dual ? 1.28 : 1.36;
-      box(0.1, 0.38, 0.08, legM, 0, 0.86, -0.38, mg); box(0.4, 0.03, 0.25, legM, 0, 0.69, -0.38, mg);
-      box(w, h, 0.06, M(0x10181f, { metalness: .3, roughness: .4 }), 0, y, -0.42, mg);
+    const mons = (dual ? [[-0.44, 0.16], [0.44, -0.16]] : [[0, 0]]).map(([mx, rot]) => {
+      const mg = new THREE.Group(); mg.position.set(mx, 0, DZ); mg.rotation.y = rot; g.add(mg);
+      box(0.9, 0.52, 0.04, monM, 0, 1.01, -0.28, mg);
+      box(0.06, 0.22, 0.06, grafM, 0, 0.76, -0.3, mg); box(0.26, 0.015, 0.18, grafM, 0, 0.6875, -0.3, mg);
       const sc = document.createElement("canvas"); sc.width = 1024; sc.height = 576;
       const stex = new THREE.CanvasTexture(sc); stex.encoding = THREE.sRGBEncoding; stex.anisotropy = ANISO;
-      const screen = new THREE.Mesh(new THREE.PlaneGeometry(w - 0.1, h - 0.1), new THREE.MeshBasicMaterial({ map: stex, toneMapped: false }));
-      screen.position.set(0, y, -0.385); mg.add(screen);
+      const screen = new THREE.Mesh(new THREE.PlaneGeometry(0.84, 0.46), new THREE.MeshBasicMaterial({ map: stex, toneMapped: false }));
+      screen.position.set(0, 1.01, -0.255); mg.add(screen);
       return { screen, stex, sc, ctx: sc.getContext("2d") };
     });
     const { screen, stex, sc } = mons[0];
     // teclado bajo la mano izquierda y mouse con su pad donde va la derecha (la animación usa el mouse un tercio del tiempo)
-    box(0.42, 0.015, 0.14, M(0x1b252d), -0.08, 0.6875, 0.335, g);
-    box(0.24, 0.003, 0.2, M(0x23262b, { roughness: .95 }), 0.28, 0.6815, 0.29, g).castShadow = false;
-    const raton = new THREE.Mesh(new THREE.SphereGeometry(0.035, 14, 10), M(0x1b252d)); raton.scale.set(0.9, 0.45, 1.4); raton.position.set(0.27, 0.688, 0.29); raton.castShadow = true; g.add(raton);
-    cyl(0.07, 0.06, 0.13, M(0xe8e2d2), 0.85, 0.745, 0.1, g);
-    box(0.28, 0.02, 0.2, M(0xeae6dc), -0.8, 0.69, 0.05, g);
-    // placa con el nombre del agente en el borde del escritorio
-    box(0.66, 0.17, 0.04, M(0x16181b, { metalness: .4, roughness: .4 }), -1.05, 0.765, 0.6, g).castShadow = false;
-    const np = textPlane(0.62, 0.15, 512, 124, (c, w, h) => { c.fillStyle = "#16181b"; c.fillRect(0, 0, w, h); c.fillStyle = "#E9EBEE"; c.font = "600 52px Archivo, system-ui, sans-serif"; c.textAlign = "center"; c.fillText(a.name.slice(0, 18), w / 2, 80); }, { transparent: false });
-    np.position.set(-1.05, 0.765, 0.623); g.add(np);
+    const negro = M(0x16181b);
+    box(0.4, 0.015, 0.14, negro, -0.08, 0.6875, DESK.frente - 0.34, g);
+    box(0.24, 0.003, 0.2, M(0x23262b, { roughness: .95 }), 0.28, 0.6815, DESK.frente - 0.385, g).castShadow = false;
+    const raton = new THREE.Mesh(new THREE.SphereGeometry(0.035, 14, 10), negro); raton.scale.set(0.9, 0.45, 1.4); raton.position.set(0.27, 0.688, DESK.frente - 0.385); raton.castShadow = true; g.add(raton);
     // silla con rueditas (se arrima y se aleja con la persona)
     const ch = silla(g, 0, DESK.sillaDentro, 0, chairM, legM);
     // persona sentada simple: solo se ve si no cargan las personas de Mixamo
@@ -805,7 +796,7 @@
     opsTex.needsUpdate = true;
   }
   paintOps();
-  floorText("OPERACIONES", -3, 11.6, 7);
+  floorText("OPERACIONES", -3, 9.6, 7);
 
   // ---- 2. Relojes de dos ciudades (hora real) ----
   const clocks = [["Cochabamba", "America/La_Paz", -12.9], ["Miami", "America/New_York", -11.1]].map(([n, tz, x]) => {
