@@ -303,6 +303,16 @@ tr.row.open td{background:var(--accent-soft)}
 @media (max-width:760px){.mp-body{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(260px,1fr)}.mp-list{max-height:40vh;border-right:0;border-bottom:1px solid var(--o-line)}}
 footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 @media (prefers-reduced-motion:no-preference){tr.row td{transition:background .15s}}
+/* Santi, 27/10: barra de la oficina en negro, sin el título de arriba (la oficina ocupa ese lugar) y botón para bajar a la tabla */
+.hero{padding-block:0;gap:0}
+.hero header{display:none}
+.hero .office{background:#000;border-color:#1c1c1c;border-top:0}
+.hud{background:#000;border-bottom-color:#1c1c1c}
+.hud .hudbtns button{background:#111;border-color:#2a2a2a}
+.hud .hudbtns button:hover{border-color:var(--o-amber)}
+.hud #irTabla{background:#e9ebee;color:#0c0e11;border-color:#e9ebee}
+.hud #irTabla:hover{background:#fff;border-color:#fff}
+.zoom button{background:rgba(17,17,17,.92);border-color:#2a2a2a}
 </style>
 
 <div class="hero">
@@ -331,7 +341,7 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 
 <div class="wrap">
 
-  <header style="margin-top:10px">
+  <header style="margin-top:10px;scroll-margin-top:12px" id="tabla">
     <div class="eyebrow">Los 14 productos de vigilar.csv</div>
     <h2>¿Qué conviene traer?</h2>
     <p class="lede">Primero lo más barato en eBay (nuevo y usado, vendedor en EE.UU.), después lo más barato en Marketplace (mercado informal) y en tiendas (precio estándar) de Cochabamba, cuánto más cobra la tienda, y al final el cálculo. La fila del pie resume la diferencia entre los dos mercados. La columna resaltada de eBay es la que se usa. Toca una fila para ver anuncios y el cálculo.</p>
@@ -470,6 +480,7 @@ const fechaCorta=f=>{const [y,m,d]=String(f).split("-");return `${d}/${m}`};
 const P=D.productos;
 const lastFx=[...D.dolar].reverse().find(f=>f.usado);
 if(lastFx)$("tc").value=(+lastFx.usado).toFixed(2);
+document.addEventListener("click",e=>{if(e.target.closest("#irTabla")){const t=$("tabla");if(t)t.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",block:"start"});}});
 if(D.generado){const [f,h]=D.generado.split(" ");$("eyebrow").textContent=`Cargo Brothers · datos al ${f.split("-").reverse().join("/")} ${h||""}`}
 $("srcNote").textContent=`Precios de eBay: compra inmediata, vendedor en EE.UU. con ≥ 98 % de feedback; “nuevo” no incluye open box. Datos generados el ${D.generado} desde los archivos del repo.`;
 
@@ -739,14 +750,14 @@ function updateAnalyst(all){
 }
 function drawHud(all){
   const ok=all.filter(r=>r.c.status==="good").length;
-  $("hud").innerHTML=`<div class="brand" aria-label="Cargo Brothers · oficina">${cbSvg(30,false)}${cbSvg(28,true)}<span class="bw"><b>CARGO BROTHERS</b><small>Importación de componentes</small></span><em>Oficina</em></div>
+  $("hud").innerHTML=`<div class="brand" aria-label="Cargo Brothers · oficina">${cbSvg(30,false)}${cbSvg(28,true)}<span class="bw"><b>CARGO BROTHERS</b><small>Importación de componentes</small></span><em>Oficina${D.generado?` · datos al ${D.generado.slice(8,10)}/${D.generado.slice(5,7)} ${D.generado.slice(11,16)}`:""}</em></div>
    ${LIVE_ON?`<div class="kv"><span>En vivo</span><b class="r">● ${esc(LIVE._ronda.quien||"ronda en curso")}</b></div>`:`<div class="kv"><span>Estado</span><b>sin ronda en curso</b></div>`}
    <div class="kv"><span>Agentes</span><b>${AG.length}</b></div>
    <div class="kv"><span>Dólar</span><b>${lastFx?(+lastFx.usado).toFixed(2):"—"} Bs</b></div>
    <div class="kv"><span>Tiendas esperando</span><b class="a">${waiting.length}</b></div>
    <div class="kv"><span>Movimientos</span><b>${D.movimientos.length}</b></div>
    <div class="kv"><span>Conviene</span><b class="c">${ok} de ${P.length}</b></div>
-   <div class="hudbtns"><button type="button" data-abrir="tablero">Necesidades e ideas${window.pendientesDe&&window.pendientesDe()?`<span class="n">${window.pendientesDe()}</span>`:""}</button><button type="button" data-abrir="sim">Simulador de pedido</button><button type="button" data-abrir="graf">Gráficos de precios</button></div>`;
+   <div class="hudbtns"><button type="button" data-abrir="tablero">Necesidades e ideas${window.pendientesDe&&window.pendientesDe()?`<span class="n">${window.pendientesDe()}</span>`:""}</button><button type="button" data-abrir="sim">Simulador de pedido</button><button type="button" data-abrir="graf">Gráficos de precios</button><button type="button" id="irTabla" aria-label="Bajar a la tabla de productos">Ver tabla ↓</button></div>`;
 }
 function parseCSV(t){const rows=[];let row=[],f="",q=false;for(let i=0;i<t.length;i++){const c=t[i];if(q){if(c==='"'){if(t[i+1]==='"'){f+='"';i++}else q=false}else f+=c}else if(c==='"')q=true;else if(c===","){row.push(f);f=""}else if(c==="\n"){row.push(f);rows.push(row);row=[];f=""}else if(c!=="\r")f+=c}if(f||row.length){row.push(f);rows.push(row)}return rows.filter(r=>r.some(x=>x!==""))}
 function csvTable(t){
