@@ -12,7 +12,7 @@
      mientras se mueve puede bajar para ir fluida, nunca por debajo de la normal en compu, y vuelve a nítida al soltar. */
   const COARSE = matchMedia("(pointer:coarse)").matches;
   const PR_MAX = Math.min(2, window.devicePixelRatio || 1), PR_MIN = Math.min(PR_MAX, COARSE ? 0.85 : 1);
-  let prMove = Math.min(PR_MAX, COARSE ? 1 : 1.5), prIdle = PR_MAX, pr = prIdle;
+  let prMove = COARSE ? Math.min(PR_MAX, 1.25) : PR_MAX, prIdle = PR_MAX, pr = prIdle;   // en compu arranca al máximo también moviéndose (como el probador)
   /* Modo liviano: celulares y computadoras con poca memoria (o si el visitante lo elige con el botón) cargan 2 personas
      en vez de 6 y sin sombras. La elección se recuerda en este navegador. */
   let guardado = null; try { guardado = localStorage.getItem("cb-modo"); } catch (e) { }
@@ -25,7 +25,7 @@
   renderer.shadowMap.needsUpdate = true;
   renderer.outputEncoding = THREE.sRGBEncoding;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.0;
+  renderer.toneMappingExposure = 0.82;   // misma luz que el probador de personas (Santi, 27/10)
   const el = renderer.domElement;
   el.id = "cv3d"; el.tabIndex = 0;
   el.setAttribute("aria-label", "Oficina 3D con los agentes. Arrastra para girar, rueda o pellizco para acercar, flechas para cambiar de agente.");
@@ -53,13 +53,13 @@
   controls.maxPolarAngle = Math.PI * 0.46; controls.minDistance = 3; controls.maxDistance = 100;
   controls.screenSpacePanning = true;
 
-  scene.add(new THREE.HemisphereLight(0xe9eef4, 0x2a2c30, 0.86));
-  const sun = new THREE.DirectionalLight(0xffffff, 0.6);
+  scene.add(new THREE.HemisphereLight(0xdfe6ee, 0x15171a, 0.5));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.9);
   sun.position.set(25, 22, 16); sun.target.position.set(XC0, 0, 3); scene.add(sun.target); sun.castShadow = !LIVIANO;
   sun.shadow.mapSize.set(LIVIANO || COARSE ? 2048 : 4096, LIVIANO || COARSE ? 2048 : 4096); sun.shadow.bias = -0.0004;
   Object.assign(sun.shadow.camera, { left: -30, right: 30, top: 28, bottom: -28, near: 1, far: 90 });
   scene.add(sun);
-  const fill = new THREE.DirectionalLight(0xdfe8f2, 0.2); fill.position.set(-14, 8, 14); scene.add(fill);
+  const fill = new THREE.DirectionalLight(0xdfe8f2, 0.1); fill.position.set(-14, 8, 14); scene.add(fill);
 
   /* ---------- Utilidades ---------- */
   const M = (c, o) => new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: 0.72, metalness: 0.04 }, o || {}));
@@ -1004,7 +1004,7 @@
   // bandejas de cables pegadas a las vigas (no cruzan la vista desde arriba)
   [-6.5, 8.5].forEach(z => box(RW - 2, 0.06, 0.34, M(0x2b2f34, { metalness: .6, roughness: .4 }), XC, WH - 0.36, z + 0.26).castShadow = false);
   // la luz pareja del frente (antes 7 luces puntuales altas) la dan el hemisferio y una luz de relleno desde adelante
-  const front = new THREE.DirectionalLight(0xf4f7ff, 0.22); front.position.set(XC, 14, 40); front.target.position.set(XC, 0, 14); scene.add(front, front.target);
+  const front = new THREE.DirectionalLight(0xf4f7ff, 0.12); front.position.set(XC, 14, 40); front.target.position.set(XC, 0, 14); scene.add(front, front.target);
 
   /* ---------- Pantallas: la captura del agente, atenuada si está en espera ---------- */
   function paintScreen(a, s, t) {
@@ -1695,7 +1695,7 @@
     perf.n++; perf.sum += gap; if (perf.n < 45) return;
     const avg = perf.sum / perf.n; perf.n = 0; perf.sum = 0;
     if (full) {   // moviéndose: apunta a ~55 cuadros por segundo
-      if (avg > (1000 / 55) * 1.3 && prMove > PR_MIN) { prMove = Math.max(PR_MIN, prMove * 0.8); perf.cool = now + 15000; }
+      if (avg > (1000 / 45) * 1.3 && prMove > PR_MIN) { prMove = Math.max(PR_MIN, prMove * 0.8); perf.cool = now + 15000; }
       else if (avg < 1000 / 57 && prMove < PR_MAX && now > perf.cool) prMove = Math.min(PR_MAX, prMove * 1.15);
     } else if (avg > 1000 / 22 && prIdle > Math.max(PR_MIN, 1.5)) {   // quieta: solo baja si ni siquiera llega a ~22 cuadros
       prIdle = Math.max(PR_MIN, 1.5, prIdle * 0.85);
