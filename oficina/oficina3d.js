@@ -56,7 +56,7 @@
   scene.add(new THREE.HemisphereLight(0xdfe6ee, 0x15171a, 0.5));
   const sun = new THREE.DirectionalLight(0xffffff, 0.9);
   sun.position.set(25, 22, 16); sun.target.position.set(XC0, 0, 3); scene.add(sun.target); sun.castShadow = !LIVIANO;
-  sun.shadow.mapSize.set(LIVIANO || COARSE ? 2048 : 4096, LIVIANO || COARSE ? 2048 : 4096); sun.shadow.bias = -0.0004;
+  sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.0004;
   Object.assign(sun.shadow.camera, { left: -30, right: 30, top: 28, bottom: -28, near: 1, far: 90 });
   scene.add(sun);
   const fill = new THREE.DirectionalLight(0xdfe8f2, 0.1); fill.position.set(-14, 8, 14); scene.add(fill);
@@ -275,7 +275,7 @@
     [-len / 2 + 0.2, len / 2 - 0.2].forEach(dx => cyl(0.006, 0.006, WH - y, M(0x0d0d0d), dx, y + (WH - y) / 2, 0, g, 4).castShadow = false);
     box(len, 0.07, 0.12, M(0x141517, { metalness: .6, roughness: .35 }), 0, y, 0, g).castShadow = false;
     box(len - 0.06, 0.012, 0.08, ledM, 0, y - 0.04, 0, g).castShadow = false;
-    const l = new THREE.PointLight(0xf4f7ff, 0.55, 7.5, 2); l.position.set(0, y - 0.3, 0); g.add(l);
+    // sin luz puntual por puesto (Santi, 27/10): eran 9 luces que cada píxel calculaba y bajaban la resolución; la barra brilla igual
   }
   Object.values(STATION).forEach(([x, z]) => ledBar(x, z + 0.2, 3.0));
 
@@ -417,7 +417,7 @@
     // aro de estado en el piso y luz del monitor
     const ring = new THREE.Mesh(new THREE.RingGeometry(0.9, 1.15, 48), new THREE.MeshBasicMaterial({ color: 0x7f9aad, transparent: true, opacity: .35, side: THREE.DoubleSide }));
     ring.rotation.x = -Math.PI / 2; ring.position.set(0, 0.03, 0.9); g.add(ring);
-    const glow = new THREE.PointLight(0x4fd1e8, 0.45, 3.2, 2); glow.position.set(0, 1.5, 0.2); g.add(glow);
+    const glow = { color: new THREE.Color(0x4fd1e8), intensity: 0 };   // antes una luz cian por escritorio (9 luces); el estado ya se ve en el anillo y la etiqueta
     ST[a.id] = { g, screen, stex, sc, ctx: sc.getContext("2d"), mons, torso, headG, arms, ring, glow, silla: ch, simple: p, x: pos[0], z: pos[1], src: null, st: null, ver: -1 };
   });
 
