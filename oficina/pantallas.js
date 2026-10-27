@@ -4,7 +4,7 @@
    y Analista de demanda (qué se busca). Usa D (datos.js) y las funciones de la página (calc, P, S, fmt, esc...).
    La página es pública: nunca muestra teléfonos, chats, guías ni nombres de clientes. */
 (function () {
-  const C = { nuevo: "#2A9DB3", usado: "#B565CC", local: "#C27A22", green: "#5CD69A", amber: "#F2A541", red: "#F07A7A", muted: "#7F9AAD", ink: "#D8E8F2", line: "#1E3A4C", blue: "#4FD1E8" };
+  const C = { nuevo: "#2A9DB3", usado: "#B565CC", local: "#C27A22", green: "#5CD69A", amber: "#F2A541", red: "#F07A7A", muted: "#92959A", ink: "#E3E4E6", line: "#333437", blue: "#4FD1E8" };
   const NOMBRE = id => (AG.find(a => a.id === id) || {}).name || id;
   const tc = () => +$("tc").value || 11.9;
   const bs = v => v == null || isNaN(v) ? "—" : `Bs ${fmt(v)}`;
@@ -14,8 +14,8 @@
   const css = document.createElement("style");
   css.textContent = `
 .ps-tabs{display:flex;flex-wrap:wrap;gap:6px}
-.ps-tabs button{font:600 12px var(--f-mono);background:#0D1D2A;color:var(--o-ink);border:1px solid var(--o-line);border-radius:999px;padding:7px 12px;min-height:34px;cursor:pointer}
-.ps-tabs button[aria-pressed="true"]{background:var(--o-amber);color:#0B1620;border-color:var(--o-amber)}
+.ps-tabs button{font:600 12px var(--f-mono);background:#1B1B1C;color:var(--o-ink);border:1px solid var(--o-line);border-radius:999px;padding:7px 12px;min-height:34px;cursor:pointer}
+.ps-tabs button[aria-pressed="true"]{background:var(--o-amber);color:#151516;border-color:var(--o-amber)}
 .ps-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
 .ps-kpi{background:var(--o-panel);border:1px solid var(--o-line);border-radius:10px;padding:12px;display:grid;gap:4px;min-width:0}
 .ps-kpi span{font:600 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--o-muted)}
@@ -31,12 +31,12 @@
 .ps-t .n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .ps-t tr.best td{background:rgba(242,165,65,.08)}
 .ps-chip{display:inline-block;font:700 11px var(--f-mono);padding:2px 7px;border-radius:4px;white-space:nowrap}
-.c-good{background:#123323;color:#8FE3B5}.c-warn{background:#3A2814;color:#F2A541}.c-bad{background:#3A1818;color:#F3A3A3}.c-info{background:#10303A;color:#4FD1E8}.c-mute{background:#1A2530;color:#9FB6C7}
+.c-good{background:#123323;color:#8FE3B5}.c-warn{background:#3A2814;color:#F2A541}.c-bad{background:#3A1818;color:#F3A3A3}.c-info{background:#242526;color:#4FD1E8}.c-mute{background:#242526;color:#B0B2B6}
 .ps-pos{color:#8FE3B5}.ps-neg{color:#F3A3A3}
 .ps-funnel{display:grid;gap:8px}
 .ps-funnel .r{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr) 54px;gap:10px;align-items:center}
 .ps-funnel .r span{font:500 13px var(--f-body)}
-.ps-funnel .bar{height:24px;border-radius:5px;background:#16293A;overflow:hidden}
+.ps-funnel .bar{height:24px;border-radius:5px;background:#272829;overflow:hidden}
 .ps-funnel .bar i{display:block;height:100%;border-radius:5px}
 .ps-funnel b{font:700 14px var(--f-mono);text-align:right}
 .ps-agenda{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
@@ -48,13 +48,13 @@
 .ps-stack .track{position:relative;height:26px}
 .ps-stack .seg{position:absolute;top:0;height:26px}
 .gpanel[hidden]{display:none!important}
-.ps-stack .mark{position:absolute;top:-4px;width:3px;height:34px;background:#ECEDEF;border-radius:2px}
+.ps-stack .mark{position:absolute;top:-4px;width:3px;height:34px;background:#EDEDEE;border-radius:2px}
 .ps-stack .lbl{position:absolute;top:5px;font:600 12px var(--f-mono);white-space:nowrap}
 .ps-legend{display:flex;flex-wrap:wrap;gap:12px;font:500 12px var(--f-mono);color:var(--o-ink)}
 .ps-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px}
 .ps-form{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
 .ps-form label{display:grid;gap:4px;font:600 11px var(--f-mono);color:var(--o-muted);text-transform:uppercase}
-.ps-form input,.ps-form select{font:500 14px var(--f-mono);background:#0D1D2A;color:var(--o-ink);border:1px solid var(--o-line);border-radius:6px;padding:7px 8px;min-height:36px}
+.ps-form input,.ps-form select{font:500 14px var(--f-mono);background:#1B1B1C;color:var(--o-ink);border:1px solid var(--o-line);border-radius:6px;padding:7px 8px;min-height:36px}
 .ps-form button{font:600 13px var(--f-body);background:#123323;border:1px solid #2C6B4A;color:#8FE3B5;border-radius:6px;padding:8px 14px;min-height:36px;cursor:pointer}
 .ps-form button:disabled{opacity:.45;cursor:not-allowed}
 .ps-err{color:#F3A3A3;font-size:13px}
@@ -101,7 +101,7 @@
     series.forEach(s => {
       let p = "", on = false; s.v.forEach((v, i) => { if (v == null) { on = false; return; } p += `${on ? "L" : "M"}${X(i).toFixed(1)},${Y(v).toFixed(1)}`; on = true; });
       if (s.dash) g += `<path d="${p}" fill="none" stroke="${s.col}" stroke-width="1.5" stroke-dasharray="5 5"/>`;
-      else { g += `<path d="${p}" fill="none" stroke="${s.col}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>`; s.v.forEach((v, i) => { if (v != null) g += `<circle cx="${X(i).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="4" fill="${s.col}" stroke="#102230" stroke-width="2"/>`; }); }
+      else { g += `<path d="${p}" fill="none" stroke="${s.col}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>`; s.v.forEach((v, i) => { if (v != null) g += `<circle cx="${X(i).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="4" fill="${s.col}" stroke="#1F2021" stroke-width="2"/>`; }); }
       const li = s.v.map((v, i) => v != null ? i : -1).filter(i => i >= 0).pop();
       if (li != null && !s.dash) g += `<text x="${Math.min(X(li) + 8, W - R - 2)}" y="${Y(s.v[li]) - 9}" text-anchor="${X(li) > W - 90 ? "end" : "start"}" fill="${C.ink}" font-size="12" font-family="IBM Plex Mono">${unidad}${fmt(s.v[li], dec)}</text>`;
     });
@@ -169,7 +169,7 @@
         <div class="ps-kpi"><span>Revisar respuestas</span><b style="color:${C.blue}">${(A.responder || []).length}</b><small>escribieron después de nosotros</small></div>
       </div>
       <div class="ps-box"><h4>Embudo</h4><div class="ps-funnel">
-        ${fila("En la lista", e.total, "#2B4A63", `${e.sinWa} sin WhatsApp`)}${fila("Contactadas", e.contact, C.nuevo)}${fila("Respondieron", e.resp, C.amber)}${fila("Dieron precio", e.conP, C.green)}
+        ${fila("En la lista", e.total, "#454649", `${e.sinWa} sin WhatsApp`)}${fila("Contactadas", e.contact, C.nuevo)}${fila("Respondieron", e.resp, C.amber)}${fila("Dieron precio", e.conP, C.green)}
       </div></div>
       <div class="eq-sec">Agenda de hoy (${A.hoy ? fechaCorta(A.hoy) : "—"}) · un seguimiento cada 2 días como máximo; después de 2 sin respuesta la tienda queda fría</div>
       <div class="ps-agenda">
@@ -194,7 +194,7 @@
     const rows = P.map(p => ({ p, c: calc(p) })).filter(r => r.c.cost != null).sort((a, b) => (b.c.margin ?? -9) - (a.c.margin ?? -9));
     const max = Math.max(...rows.map(r => Math.max(r.c.cost, r.c.local || 0))) * 1.42 || 1, W = v => (v / max * 100).toFixed(2) + "%";
     return `<div class="ps-box"><h4>¿Por qué conviene o no?</h4>
-      <div class="ps-legend" style="margin-bottom:10px"><span><i style="background:${C.nuevo}"></i>eBay (con envío en EE.UU.)</span><span><i style="background:${C.amber}"></i>Courier</span><span><i style="background:${C.red}"></i>Aduana</span><span><i style="background:#ECEDEF;width:3px"></i>Mejor precio en Cochabamba</span></div>
+      <div class="ps-legend" style="margin-bottom:10px"><span><i style="background:${C.nuevo}"></i>eBay (con envío en EE.UU.)</span><span><i style="background:${C.amber}"></i>Courier</span><span><i style="background:${C.red}"></i>Aduana</span><span><i style="background:#EDEDEE;width:3px"></i>Mejor precio en Cochabamba</span></div>
       <div class="ps-stack">${rows.map(({ p, c }) => {
         const e = c.base * tc(), s = c.ship * tc(), a = c.aduUsd * tc(), col = c.status === "good" ? C.green : c.status === "warn" ? C.amber : C.red;
         return `<div class="row"><span title="${esc(p.name)}">${esc(p.name)}</span><div class="track" role="img" aria-label="${esc(p.name)}: eBay Bs ${fmt(e)}, courier Bs ${fmt(s)}, aduana Bs ${fmt(a)}, costo Bs ${fmt(c.cost)}, local ${c.local == null ? "sin dato" : "Bs " + fmt(c.local)}">

@@ -69,11 +69,11 @@
     ready = Promise.all([getJSON("mapa/base.json"), getJSON("mapa/rutas.json"), getJSON("mapa/urbano.json"), getJSON("mapa/calles/indice.json").catch(() => [])]).then(([b, rutas, urb, zonas]) => {
       base = b;
       const cv = L.canvas({ padding: 0.3 });
-      L.polygon(b.paises.map(p => polys(p.g)).flat(), { renderer: cv, interactive: false, stroke: true, color: "#1E3A50", weight: 1, fillColor: "#0E1F2C", fillOpacity: 1 }).addTo(map);
+      L.polygon(b.paises.map(p => polys(p.g)).flat(), { renderer: cv, interactive: false, stroke: true, color: "#1E3A50", weight: 1, fillColor: "#1C1D1E", fillOpacity: 1 }).addTo(map);
       const est = L.layerGroup().addTo(map);
       b.estados.forEach(s => {
-        L.polygon(polys(s.g), { renderer: cv, color: "#2E5A78", weight: 1.2, fillColor: "#112A3B", fillOpacity: 1 })
-          .on("mouseover", e => e.target.setStyle({ fillColor: "#16364C" })).on("mouseout", e => e.target.setStyle({ fillColor: "#112A3B" }))
+        L.polygon(polys(s.g), { renderer: cv, color: "#2E5A78", weight: 1.2, fillColor: "#252627", fillOpacity: 1 })
+          .on("mouseover", e => e.target.setStyle({ fillColor: "#2F3033" })).on("mouseout", e => e.target.setStyle({ fillColor: "#252627" }))
           .on("click", e => { if (map.getZoom() < 6) map.flyToBounds(e.target.getBounds(), { duration: 0.8, padding: [20, 20] }); })
           .addTo(est);
       });
@@ -142,13 +142,13 @@
       const cur = pts[pts.length - 1];
       let dest = p.destino_lat && p.destino_lon ? [+p.destino_lat, +p.destino_lon] : (!p.prueba && group(p.estado) !== "entregado" ? CBBA : null);
       if (dest) layShip.addLayer(L.polyline(arc(cur, dest), { renderer: svg, color: "#9FB6C7", weight: 2, dashArray: "6 8", opacity: on ? .9 : .25, interactive: false }));
-      if (dest) layShip.addLayer(L.circleMarker(dest, { renderer: svg, radius: 6, color: c, weight: 2, fillColor: "#0B1620", fillOpacity: 1 }).bindTooltip(p.destino || "Cochabamba", { className: "mp-tip" }));
+      if (dest) layShip.addLayer(L.circleMarker(dest, { renderer: svg, radius: 6, color: c, weight: 2, fillColor: "#151516", fillOpacity: 1 }).bindTooltip(p.destino || "Cochabamba", { className: "mp-tip" }));
       if (pts.length > 1) {
         const path = pts.slice(1).reduce((acc, q, i) => acc.concat(arc(pts[i], q, 24).slice(1)), [pts[0]]);
         layShip.addLayer(L.polyline(path, { renderer: svg, color: c, weight: 4, opacity: on ? 1 : .3, interactive: false }));
         layShip.addLayer(L.polyline(path, { renderer: svg, color: "#ffffff", weight: 2, opacity: on ? .8 : 0, dashArray: "2 14", className: "mp-ant", interactive: false }));
       }
-      ev.forEach((e, i) => layShip.addLayer(L.circleMarker(pts[i], { renderer: svg, radius: 4, color: c, weight: 2, fillColor: "#0B1620", fillOpacity: 1, opacity: on ? 1 : .35 })
+      ev.forEach((e, i) => layShip.addLayer(L.circleMarker(pts[i], { renderer: svg, radius: 4, color: c, weight: 2, fillColor: "#151516", fillOpacity: 1, opacity: on ? 1 : .35 })
         .bindTooltip(`<b>${esc(cityOnly(e.lugar))}</b><br>${fechaCorta(e.fecha)} ${esc(e.hora || "")} · ${esc(e.evento)}`, { className: "mp-tip" })));
       const last = ev[ev.length - 1];
       layShip.addLayer(L.marker(cur, { icon: pin(c, on), zIndexOffset: on ? 1000 : 0, keyboard: true, title: p.producto })
