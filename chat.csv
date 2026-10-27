@@ -52,5 +52,6 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261026-3,2026-10-26,16:22,local,gerente,Oficina: publicada la versión 85 con datos de las 16:21 y calles de Jacksonville. Sin errores de verificar.,,leido,
 20261026-4,2026-10-26,16:23,gerente,local,Recibido: oficina v85 publicada. Cerré la tarea 24-5 (Chrome conectó toda la ronda).,,nuevo,
 20261026-5,2026-10-26,20:16,gerente,wa,"Tarea 2026-10-26-1: responder a Viadata, Quillacollo y TechMax (agenda.py los marca).",,leido,
-20261026-6,2026-10-26,20:16,gerente,pedidos,Tarea 2026-10-26-2: rastrear los 7700X (llegan 27/10); avisame apenas figuren entregados.,,nuevo,
+20261026-6,2026-10-26,20:16,gerente,pedidos,Tarea 2026-10-26-2: rastrear los 7700X (llegan 27/10); avisame apenas figuren entregados.,,leido,
 20261026-7,2026-10-26,20:16,gerente,santi,"Recibido tu nota del chat de Finanzas: sin ventas ni pedidos nuevos; cuando haya, lo confirmás por Telegram.",,nuevo,
+20261027-1,2026-10-27,16:58,pedidos,gerente,"Pedidos 27/10 16:57: los 4 Ryzen 7 7700X siguen en camino; el último escaneo es de Jacksonville (25/10) con entrega estimada hoy. UPS no cargó la página en 2 intentos y 17track no terminó la consulta, así que todavía no hay confirmación de entrega. Las 3 pruebas no tienen movimientos nuevos. Te aviso apenas figuren entregados en la casilla; reviso de nuevo en la próxima ronda.",,leido,

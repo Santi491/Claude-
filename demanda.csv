@@ -134,3 +134,9 @@ fecha,producto,fuente,ciudad,anuncios,nuevos,desaparecidos,precio_min_bs,precio_
 2026-10-26,SSD NVMe 2TB,marketplace,Cochabamba,1,0,0,3150,3350,"Sandisk 2TB Bs 3.150-3.550 (tipo sin confirmar); mismo anuncio del 23/10"
 2026-10-26,Ryzen 7 7700X,marketplace,Cochabamba,0,0,0,,,ninguno
 2026-10-26,Ryzen 5 7500F,marketplace,Cochabamba,0,0,0,,,"ninguno (2 semanas en 0 y agotado en tiendas); tarea 24-3 sin precio local"
+2026-10-27,Ryzen 5 5600,marketplace,Cochabamba,0,0,0,,,"ninguno (salen 5600GT, 5600G y 5700X); tarea 26-4"
+2026-10-27,Ryzen 7 5700X3D,marketplace,Cochabamba,0,0,0,,,"ninguno (salen 5700X OEM Bs 2.450-2.540, 5700G, 9800X3D); tarea 26-4"
+2026-10-27,Ryzen 5 7500F,marketplace,Cochabamba,0,0,0,,,"ninguno (3 semanas en 0); tarea 26-4"
+2026-10-27,Ryzen 5 7600,marketplace,Cochabamba,0,0,0,,,"ninguno; salen 9600X Bs 2.450-2.770 (otro modelo)"
+2026-10-27,Ryzen 7 7800X3D,marketplace,Cochabamba,4,0,0,4800,5125,"4 anuncios: sellado 4.800, lista multi-modelo 4.860, 5.390 y 5.190 (viejo); mismos de la ronda del 23/10, sin nuevos; el 9800X3D se publica a Bs 5.690-6.000 (3 anuncios, no vigilado); interés bajo"
+2026-10-27,Intel Core i5-12400F,marketplace,Cochabamba,2,0,0,2350,2350,"OEM Bs 2.350 (igual al 21/10) y anuncio multi-modelo 12400F/12500T sin precio visible; interés bajo"
