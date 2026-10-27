@@ -8,15 +8,17 @@
   window.OFICINA_3D = true;
 
   const stage = $("stage"), cv2d = $("cv");
-  // Resolución automática: arranca media y sube o baja según cuántos cuadros por segundo aguanta el equipo
+  /* Resolución (Santi, 27/10: "se ve a baja resolución"): quieta, la oficina se dibuja nítida a la resolución de la pantalla;
+     mientras se mueve puede bajar para ir fluida, nunca por debajo de la normal en compu, y vuelve a nítida al soltar. */
   const COARSE = matchMedia("(pointer:coarse)").matches;
-  const PR_MAX = Math.min(2, window.devicePixelRatio || 1), PR_MIN = Math.min(PR_MAX, COARSE ? 0.75 : 0.9);
-  let pr = Math.min(PR_MAX, COARSE ? 1 : 1.25);
+  const PR_MAX = Math.min(2, window.devicePixelRatio || 1), PR_MIN = Math.min(PR_MAX, COARSE ? 0.85 : 1);
+  let prMove = Math.min(PR_MAX, COARSE ? 1 : 1.5), prIdle = PR_MAX, pr = prIdle;
   /* Modo liviano: celulares y computadoras con poca memoria (o si el visitante lo elige con el botón) cargan 2 personas
      en vez de 6 y sin sombras. La elección se recuerda en este navegador. */
   let guardado = null; try { guardado = localStorage.getItem("cb-modo"); } catch (e) { }
   const LIVIANO = guardado ? guardado === "liviano" : !!(COARSE || (navigator.deviceMemory && navigator.deviceMemory <= 4) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4));
   renderer.setPixelRatio(pr);
+  const ANISO = Math.min(LIVIANO ? 4 : 16, renderer.capabilities.getMaxAnisotropy ? renderer.capabilities.getMaxAnisotropy() : 4);   // piso y paredes nítidos de costado
   renderer.shadowMap.enabled = !LIVIANO;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.shadowMap.autoUpdate = false;   // las sombras se recalculan unas veces por segundo, no en cada cuadro (ver loop)
@@ -54,7 +56,7 @@
   scene.add(new THREE.HemisphereLight(0xe9eef4, 0x2a2c30, 0.86));
   const sun = new THREE.DirectionalLight(0xffffff, 0.6);
   sun.position.set(25, 22, 16); sun.target.position.set(XC0, 0, 3); scene.add(sun.target); sun.castShadow = !LIVIANO;
-  sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.0004;
+  sun.shadow.mapSize.set(LIVIANO || COARSE ? 2048 : 4096, LIVIANO || COARSE ? 2048 : 4096); sun.shadow.bias = -0.0004;
   Object.assign(sun.shadow.camera, { left: -30, right: 30, top: 28, bottom: -28, near: 1, far: 90 });
   scene.add(sun);
   const fill = new THREE.DirectionalLight(0xdfe8f2, 0.2); fill.position.set(-14, 8, 14); scene.add(fill);
@@ -71,7 +73,7 @@
   }
   function canvasTex(w, h, draw) {
     const c = document.createElement("canvas"); c.width = w; c.height = h; draw(c.getContext("2d"), w, h);
-    const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = 4; return t;
+    const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = ANISO; return t;
   }
   // semilla fija: el mármol y el concreto salen iguales en cada visita
   let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
@@ -379,7 +381,7 @@
       box(0.1, 0.38, 0.08, legM, 0, 0.86, -0.38, mg); box(0.4, 0.03, 0.25, legM, 0, 0.69, -0.38, mg);
       box(w, h, 0.06, M(0x10181f, { metalness: .3, roughness: .4 }), 0, y, -0.42, mg);
       const sc = document.createElement("canvas"); sc.width = 1024; sc.height = 576;
-      const stex = new THREE.CanvasTexture(sc); stex.encoding = THREE.sRGBEncoding; stex.anisotropy = 4;
+      const stex = new THREE.CanvasTexture(sc); stex.encoding = THREE.sRGBEncoding; stex.anisotropy = ANISO;
       const screen = new THREE.Mesh(new THREE.PlaneGeometry(w - 0.1, h - 0.1), new THREE.MeshBasicMaterial({ map: stex, toneMapped: false }));
       screen.position.set(0, y, -0.385); mg.add(screen);
       return { screen, stex, sc, ctx: sc.getContext("2d") };
@@ -569,7 +571,7 @@
   box(0.08, 0.6, 1.4, darkWood, -2.16, 0.3, 0, boss); box(0.08, 0.6, 1.4, darkWood, 2.16, 0.3, 0, boss);
   // tres monitores: uno recto al centro y dos curvos a los costados, girados hacia el jefe
   const bossScreens = [], bezelM = M(0x10181f, { metalness: .3, roughness: .4 });
-  function bossCanvas(w, h) { const c = document.createElement("canvas"); c.width = w; c.height = h; const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = 4; return { c, t }; }
+  function bossCanvas(w, h) { const c = document.createElement("canvas"); c.width = w; c.height = h; const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = ANISO; return { c, t }; }
   {
     const { c, t } = bossCanvas(768, 450);
     box(1.5, 0.9, 0.06, bezelM, 0, 1.38, -0.45, boss);
@@ -653,7 +655,7 @@
   // de cada agente (toca para abrir)
   const tabG = new THREE.Group(); tabG.position.set(XL + 0.12, 3.6, 4.8); tabG.rotation.y = Math.PI / 2; scene.add(tabG);
   box(6.3, 3.6, 0.1, M(0x0c0f12, { metalness: .4, roughness: .35 }), 0, 0, 0, tabG);
-  const tabTex = new THREE.CanvasTexture(TEX.tablero || document.createElement("canvas")); tabTex.encoding = THREE.sRGBEncoding; tabTex.anisotropy = 4;
+  const tabTex = new THREE.CanvasTexture(TEX.tablero || document.createElement("canvas")); tabTex.encoding = THREE.sRGBEncoding; tabTex.anisotropy = ANISO;
   const tabScr = new THREE.Mesh(new THREE.PlaneGeometry(6.1, 3.43), new THREE.MeshBasicMaterial({ map: tabTex, toneMapped: false }));
   tabScr.position.z = 0.056; tabG.add(tabScr);
   let tabVer = -1;
@@ -750,7 +752,7 @@
   box(VW + 1.0, VH + 0.6, 0.06, M(0x24272b, { roughness: 1 }), VX, VY, BANDA + 0.03).castShadow = false;   // panel acústico de fondo
   box(VW + 0.12, VH + 0.12, 0.12, M(0x08090a, { metalness: .4, roughness: .3 }), VX, VY, BANDA + 0.09).castShadow = false;
   const opsCv = document.createElement("canvas"); opsCv.width = 2048; opsCv.height = 576;
-  const opsTex = new THREE.CanvasTexture(opsCv); opsTex.encoding = THREE.sRGBEncoding; opsTex.anisotropy = 4;
+  const opsTex = new THREE.CanvasTexture(opsCv); opsTex.encoding = THREE.sRGBEncoding; opsTex.anisotropy = ANISO;
   const opsScr = new THREE.Mesh(new THREE.PlaneGeometry(VW, VH), new THREE.MeshBasicMaterial({ map: opsTex, toneMapped: false }));
   opsScr.position.set(VX, VY, BANDA + 0.16); scene.add(opsScr);
   box(VW + 0.3, 0.03, 0.08, ledM, VX, VY + VH / 2 + 0.12, BANDA + 0.1).castShadow = false;
@@ -1321,7 +1323,7 @@
     function preparar(obj) {
       obj.scale.setScalar(0.01);   // Mixamo trabaja en centímetros
       obj.traverse(c => { if (c.isMesh) { if (!c.geometry.attributes.normal) c.geometry.computeVertexNormals(); c.castShadow = !LIVIANO; c.receiveShadow = true; c.frustumCulled = false; c.userData.persona = true;
-        [].concat(c.material).forEach(m => { m.envMapIntensity = 0.6; if (m.map) m.map.anisotropy = 4; }); } });
+        [].concat(c.material).forEach(m => { m.envMapIntensity = 0.6; if (m.map) m.map.anisotropy = ANISO; }); } });
       return obj;
     }
     // modelo de cada uno (p1..p6): 0 hombre de traje, 1 y 2 hombres, 3, 4 y 5 mujeres; los repetidos son copias
@@ -1692,11 +1694,16 @@
     // promedio del tiempo entre cuadros dibujados; si no llega al ritmo pedido baja la resolución, si sobra la sube
     perf.n++; perf.sum += gap; if (perf.n < 45) return;
     const avg = perf.sum / perf.n; perf.n = 0; perf.sum = 0;
-    const meta = full ? 1000 / 55 : 1000 / 28;
-    let np = pr;
-    if (avg > meta * 1.3 && pr > PR_MIN) { np = Math.max(PR_MIN, pr * 0.8); perf.cool = now + 15000; }
-    else if (full && avg < 1000 / 57 && pr < PR_MAX && now > perf.cool) np = Math.min(PR_MAX, pr * 1.15);
-    if (Math.abs(np - pr) > 0.01) { pr = np; renderer.setPixelRatio(pr); }
+    if (full) {   // moviéndose: apunta a ~55 cuadros por segundo
+      if (avg > (1000 / 55) * 1.3 && prMove > PR_MIN) { prMove = Math.max(PR_MIN, prMove * 0.8); perf.cool = now + 15000; }
+      else if (avg < 1000 / 57 && prMove < PR_MAX && now > perf.cool) prMove = Math.min(PR_MAX, prMove * 1.15);
+    } else if (avg > 1000 / 22 && prIdle > Math.max(PR_MIN, 1.5)) {   // quieta: solo baja si ni siquiera llega a ~22 cuadros
+      prIdle = Math.max(PR_MIN, 1.5, prIdle * 0.85);
+    }
+  }
+  function resolucion(full) {
+    const np = full ? prMove : prIdle;
+    if (Math.abs(np - pr) > 0.01) { pr = np; renderer.setPixelRatio(pr); perf.n = 0; perf.sum = 0; }
   }
   function loop(now) {
     requestAnimationFrame(loop);
@@ -1707,6 +1714,7 @@
     if (window.__o3d) Object.assign(window.__o3d, { full: !!full, anim: !!anim, inp: Math.round(now - lastInput), ger: !!(GER && GER.caminando()), pr });
     if (gap < minGap) return;
     if (lastDraw && gap < 200) adaptar(now, gap, full);
+    resolucion(full);
     lastDraw = now;
     const t = now / 1000, dt = Math.min(0.05, (now - (lastNow || now)) / 1000); lastNow = now;
     // sombras: se recalculan 4 veces por segundo (8 si el Gerente camina), casi no se nota y ahorra la mitad del trabajo
