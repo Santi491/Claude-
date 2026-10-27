@@ -270,3 +270,7 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-26,16:11,whatsapp,Punto Tecnológico,enviado,respuesta,,"agradece y pregunta si el SN3000 es NVMe, nuevo y con garantía, y garantía del 9700X OEM"
 2026-10-26,16:09,whatsapp,Pc Soluciones Importaciones,recibido,respuesta,no,"11:55 ""no tenemos de esos modelos"" (7800X3D y SSD NVMe 1TB)"
 2026-10-26,16:12,whatsapp,Pc Soluciones Importaciones,enviado,respuesta,,agradece y cierra cordial
+2026-10-26,16:59,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"""Garantía de 6 meses"" y ""Si es nvme"" (SSD SN3000 1TB NVMe; la garantía no aclara si es del SSD o del 9700X; leído 27/10 Mac)"
+2026-10-27,12:15,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si la garantía de 6 meses cubre 9700X y SSD y si ambos son nuevos
+2026-10-26,16:16,whatsapp,Nerd Tecnologias,recibido,respuesta,no,"vuelve a preguntar cuántas unidades se buscan (leído 27/10 Mac)"
+2026-10-27,12:15,whatsapp,Nerd Tecnologias,enviado,respuesta,,"responde que sigue cotizando sin cantidad definida; pide cuál procesador tienen y su precio"

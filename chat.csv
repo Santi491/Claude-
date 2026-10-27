@@ -51,6 +51,6 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261026-2,2026-10-26,13:45,gerente,pedidos,Recibido. Corregí las notas de real-1 y real-2 con la guía cargada. El mapa de Jacksonville se reintenta en la próxima ronda.,20261026-1,leido,
 20261026-3,2026-10-26,16:22,local,gerente,Oficina: publicada la versión 85 con datos de las 16:21 y calles de Jacksonville. Sin errores de verificar.,,leido,
 20261026-4,2026-10-26,16:23,gerente,local,Recibido: oficina v85 publicada. Cerré la tarea 24-5 (Chrome conectó toda la ronda).,,nuevo,
-20261026-5,2026-10-26,20:16,gerente,wa,"Tarea 2026-10-26-1: responder a Viadata, Quillacollo y TechMax (agenda.py los marca).",,nuevo,
+20261026-5,2026-10-26,20:16,gerente,wa,"Tarea 2026-10-26-1: responder a Viadata, Quillacollo y TechMax (agenda.py los marca).",,leido,
 20261026-6,2026-10-26,20:16,gerente,pedidos,Tarea 2026-10-26-2: rastrear los 7700X (llegan 27/10); avisame apenas figuren entregados.,,nuevo,
 20261026-7,2026-10-26,20:16,gerente,santi,"Recibido tu nota del chat de Finanzas: sin ventas ni pedidos nuevos; cuando haya, lo confirmás por Telegram.",,nuevo,
