@@ -3,7 +3,7 @@
    Las decisiones de Santi se guardan en la colección `decisiones` de la base de datos de la oficina (solo el dueño
    puede escribir); la próxima ronda las pasa a plan.csv, ideas.csv y necesidades.csv con aplicar_decisiones.py. */
 (function () {
-  const C = { nuevo: "#2A9DB3", usado: "#B565CC", local: "#C27A22", green: "#5CD69A", amber: "#F2A541", red: "#F07A7A", muted: "#7F9AAD", ink: "#D8E8F2", line: "#1E3A4C" };
+  const C = { nuevo: "#2A9DB3", usado: "#B565CC", local: "#C27A22", green: "#5CD69A", amber: "#F2A541", red: "#F07A7A", muted: "#92959A", ink: "#E3E4E6", line: "#333437" };
   const NOMBRE = id => (AG.find(a => a.id === id) || {}).name || ({ local: "Ronda local", santi: "Santi" }[id] || id);
   const DEC = {};           // decisiones guardadas en la oficina: id -> datos
   let db = null, owner = false, listo = false;
@@ -12,9 +12,9 @@
   const css = document.createElement("style");
   css.textContent = `
 .hudbtns{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
-.hudbtns button{font:600 12px var(--f-mono);background:#12293A;color:var(--o-ink);border:1px solid var(--o-line);border-radius:999px;padding:6px 11px;cursor:pointer;min-height:32px}
+.hudbtns button{font:600 12px var(--f-mono);background:#252627;color:var(--o-ink);border:1px solid var(--o-line);border-radius:999px;padding:6px 11px;cursor:pointer;min-height:32px}
 .hudbtns button:hover{border-color:var(--o-amber)}
-.hudbtns .n{display:inline-block;min-width:18px;margin-left:6px;padding:0 5px;border-radius:9px;background:var(--o-amber);color:#0B1620;font-weight:700}
+.hudbtns .n{display:inline-block;min-width:18px;margin-left:6px;padding:0 5px;border-radius:9px;background:var(--o-amber);color:#151516;font-weight:700}
 .eq-body{overflow:auto;padding:14px 16px 22px;display:grid;grid-template-columns:minmax(0,1fr);gap:14px;align-content:start}
 .eq-body>*,.sim,.gr-wrap{min-width:0}
 .sim{display:grid;grid-template-columns:minmax(0,1fr);gap:4px}
@@ -28,33 +28,33 @@
 .eq-it p{margin:0;font-size:14px;line-height:1.4}
 .eq-it small{color:var(--o-muted);font-size:12px}
 .eq-it .k{font:600 10px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:4px;justify-self:start}
-.k-nec{background:#3A2814;color:#F2A541}.k-idea{background:#1E2A44;color:#9DB4F5}.k-plan{background:#10303A;color:#4FD1E8}
+.k-nec{background:#3A2814;color:#F2A541}.k-idea{background:#2F3033;color:#9DB4F5}.k-plan{background:#242526;color:#4FD1E8}
 .eq-acts{display:flex;flex-wrap:wrap;gap:6px}
-.eq-acts button{font:600 13px var(--f-body);border-radius:6px;padding:7px 12px;min-height:36px;cursor:pointer;border:1px solid var(--o-line);background:#0D1D2A;color:var(--o-ink)}
+.eq-acts button{font:600 13px var(--f-body);border-radius:6px;padding:7px 12px;min-height:36px;cursor:pointer;border:1px solid var(--o-line);background:#1B1B1C;color:var(--o-ink)}
 .eq-acts .ok{background:#123323;border-color:#2C6B4A;color:#8FE3B5}.eq-acts .no{background:#3A1818;border-color:#7A3434;color:#F3A3A3}
 .eq-acts button:disabled{opacity:.45;cursor:not-allowed}
 .eq-done{font:600 12px var(--f-mono);color:var(--o-green,#5CD69A)}
 .eq-note{font-size:13px;color:var(--o-muted);margin:0}
 .eq-empty{font-size:13px;color:var(--o-muted)}
 .eq-filter{display:flex;flex-wrap:wrap;gap:6px}
-.eq-filter button{font:600 12px var(--f-mono);background:#0D1D2A;color:var(--o-ink);border:1px solid var(--o-line);border-radius:999px;padding:6px 10px;min-height:32px;cursor:pointer}
-.eq-filter button[aria-pressed="true"]{background:var(--o-amber);color:#0B1620;border-color:var(--o-amber)}
+.eq-filter button{font:600 12px var(--f-mono);background:#1B1B1C;color:var(--o-ink);border:1px solid var(--o-line);border-radius:999px;padding:6px 10px;min-height:32px;cursor:pointer}
+.eq-filter button[aria-pressed="true"]{background:var(--o-amber);color:#151516;border-color:var(--o-amber)}
 .eq-views{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--o-line);border-radius:8px;justify-self:start}
 .eq-views button:first-child{border-radius:7px 0 0 7px}.eq-views button:last-child{border-radius:0 7px 7px 0}
-.eq-views button{font:600 13px var(--f-body);background:#0D1D2A;color:var(--o-ink);border:0;padding:8px 14px;min-height:38px;cursor:pointer}
+.eq-views button{font:600 13px var(--f-body);background:#1B1B1C;color:var(--o-ink);border:0;padding:8px 14px;min-height:38px;cursor:pointer}
 .eq-views button+button{border-left:1px solid var(--o-line)}
-.eq-views button[aria-pressed="true"]{background:var(--o-amber);color:#0B1620}
+.eq-views button[aria-pressed="true"]{background:var(--o-amber);color:#151516}
 .eq-it.dec p{color:var(--o-muted)}
 .eq-st{font:600 12px var(--f-mono)}.eq-st.ok{color:#8FE3B5}.eq-st.no{color:#F3A3A3}.eq-st.venc{color:#F2A541}
-.eq-pend{background:#10303A;border:1px solid #1F5C6B;color:#BFEFF7;border-radius:8px;padding:10px 12px;font-size:14px;margin:0}
-.eq-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;background:#102230;border:1px solid var(--o-line);color:var(--o-ink);padding:10px 14px;border-radius:8px;font-size:14px}
+.eq-pend{background:#242526;border:1px solid #434447;color:#BFEFF7;border-radius:8px;padding:10px 12px;font-size:14px;margin:0}
+.eq-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;background:#1F2021;border:1px solid var(--o-line);color:var(--o-ink);padding:10px 14px;border-radius:8px;font-size:14px}
 .sim table{width:100%;border-collapse:collapse;font-size:13px}
 .sim th,.gr-table th{background:transparent;color:var(--o-muted)}
 .sim td,.gr-table td{background:transparent;color:var(--o-ink);white-space:nowrap}
 .sim th{font:600 11px var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--o-muted);text-align:left;padding:6px 6px;border-bottom:1px solid var(--o-line)}
 .sim td{padding:6px;border-bottom:1px solid var(--o-line);vertical-align:middle}
 .sim td.n,.sim th.n{text-align:right;font-variant-numeric:tabular-nums}
-.sim input,.sim select{font:500 13px var(--f-mono);background:#0D1D2A;color:var(--o-ink);border:1px solid var(--o-line);border-radius:6px;padding:6px 7px;min-height:34px;width:100%}
+.sim input,.sim select{font:500 13px var(--f-mono);background:#1B1B1C;color:var(--o-ink);border:1px solid var(--o-line);border-radius:6px;padding:6px 7px;min-height:34px;width:100%}
 .sim input[type=number]{max-width:96px}
 .sim .x{background:none;border:0;color:var(--o-muted);font-size:18px;cursor:pointer;min-width:34px;min-height:34px}
 .sim .scroll{overflow-x:auto}
@@ -66,8 +66,8 @@
 .sim .opt span{font:500 12px var(--f-mono);color:var(--o-muted)}
 .sim .row{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
 .sim .row label{display:grid;gap:4px;font:600 11px var(--f-mono);color:var(--o-muted);text-transform:uppercase}
-.sim .add{font:600 13px var(--f-body);background:#12293A;color:var(--o-ink);border:1px solid var(--o-line);border-radius:6px;padding:8px 12px;min-height:36px;cursor:pointer}
-.sim .via{font:700 11px var(--f-mono);padding:2px 6px;border-radius:4px;background:#10303A;color:#4FD1E8}
+.sim .add{font:600 13px var(--f-body);background:#252627;color:var(--o-ink);border:1px solid var(--o-line);border-radius:6px;padding:8px 12px;min-height:36px;cursor:pointer}
+.sim .via{font:700 11px var(--f-mono);padding:2px 6px;border-radius:4px;background:#242526;color:#4FD1E8}
 .sim .via.b{background:#3A2814;color:#F2A541}
 .sim .pos{color:#8FE3B5}.sim .neg{color:#F3A3A3}
 .gr-wrap{display:grid;gap:12px}
@@ -75,7 +75,7 @@
 .gr-big svg{width:100%;height:auto;display:block}
 .gr-legend{display:flex;flex-wrap:wrap;gap:12px;font:500 12px var(--f-mono);color:var(--o-ink)}
 .gr-legend i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
-.gr-tip{position:absolute;pointer-events:none;background:#07111A;border:1px solid var(--o-line);border-radius:6px;padding:7px 9px;font:500 12px var(--f-mono);color:var(--o-ink);white-space:nowrap;display:none}
+.gr-tip{position:absolute;pointer-events:none;background:#101011;border:1px solid var(--o-line);border-radius:6px;padding:7px 9px;font:500 12px var(--f-mono);color:var(--o-ink);white-space:nowrap;display:none}
 .gr-mini{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
 .gr-mini button{all:unset;cursor:pointer;background:var(--o-panel);border:1px solid var(--o-line);border-radius:10px;padding:10px;display:grid;gap:4px}
 .gr-mini button[aria-pressed="true"]{border-color:var(--o-amber)}
@@ -211,21 +211,21 @@
   /* pantalla grande del tablero en la pared (la dibuja oficina3d.js con TEX.tablero) */
   function tableroCanvas() {
     const c = TEX.tablero || document.createElement("canvas"); c.width = 1600; c.height = 900; const g = c.getContext("2d");
-    g.fillStyle = "#07111A"; g.fillRect(0, 0, 1600, 900); g.fillStyle = "#12293A"; g.fillRect(0, 0, 1600, 86);
-    g.fillStyle = "#ECEDEF"; g.font = "800 44px Archivo, sans-serif"; g.fillText("TABLERO DEL EQUIPO", 36, 58);
+    g.fillStyle = "#101011"; g.fillRect(0, 0, 1600, 900); g.fillStyle = "#252627"; g.fillRect(0, 0, 1600, 86);
+    g.fillStyle = "#EDEDEE"; g.font = "800 44px Archivo, sans-serif"; g.fillText("TABLERO DEL EQUIPO", 36, 58);
     g.fillStyle = "#F2A541"; g.font = "600 30px 'IBM Plex Mono', monospace"; g.textAlign = "right";
     g.fillText(`${sinDecidir()} por decidir`, 1564, 56); g.textAlign = "left";
     const ids = AG.map(a => a.id), cols = 3, w = (1600 - 36 * 2 - 24 * (cols - 1)) / cols, h = 172;
     ids.forEach((id, k) => {
       const a = AG.find(x => x.id === id), st = STATES[a.state], x = 36 + (k % cols) * (w + 24), y = 112 + Math.floor(k / cols) * (h + 18);
-      g.fillStyle = "#102230"; g.fillRect(x, y, w, h);
+      g.fillStyle = "#1F2021"; g.fillRect(x, y, w, h);
       g.fillStyle = st.c; g.beginPath(); g.arc(x + 30, y + 38, 12, 0, 7); g.fill();
-      g.fillStyle = "#ECEDEF"; g.font = "700 32px Archivo, sans-serif"; g.fillText(a.name.slice(0, 22), x + 54, y + 49);
-      g.fillStyle = "#8D949C"; g.font = "500 22px 'IBM Plex Mono', monospace"; g.fillText(String(a.liveText || st.t).slice(0, 34), x + 22, y + 92);
+      g.fillStyle = "#EDEDEE"; g.font = "700 32px Archivo, sans-serif"; g.fillText(a.name.slice(0, 22), x + 54, y + 49);
+      g.fillStyle = "#919398"; g.font = "500 22px 'IBM Plex Mono', monospace"; g.fillText(String(a.liveText || st.t).slice(0, 34), x + 22, y + 92);
       const its = pendientes(id), nec = its.filter(i => i.tipo === "necesidad" && !DEC[i.key]).length, ide = its.filter(i => i.tipo !== "necesidad" && !DEC[i.key]).length;
       g.font = "600 24px 'IBM Plex Mono', monospace";
-      g.fillStyle = nec ? "#F2A541" : "#56626C"; g.fillText(`necesita ${nec}`, x + 22, y + 142);
-      g.fillStyle = ide ? "#9DB4F5" : "#56626C"; g.fillText(`ideas ${ide}`, x + 230, y + 142);
+      g.fillStyle = nec ? "#F2A541" : "#5E6064"; g.fillText(`necesita ${nec}`, x + 22, y + 142);
+      g.fillStyle = ide ? "#9DB4F5" : "#5E6064"; g.fillText(`ideas ${ide}`, x + 230, y + 142);
     });
     TEX.tablero = c; window.tableroVersion = (window.tableroVersion || 0) + 1;
   }
@@ -357,7 +357,7 @@
     s.forEach(x => {
       let path = "", on = false; x.v.forEach((v, i) => { if (v == null) { on = false; return; } path += `${on ? "L" : "M"}${X(i).toFixed(1)},${Y(v).toFixed(1)}`; on = true; });
       g += `<path d="${path}" fill="none" stroke="${x.col}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
-      x.v.forEach((v, i) => { if (v != null) g += `<circle cx="${X(i).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="4" fill="${x.col}" stroke="#102230" stroke-width="2"/>`; });
+      x.v.forEach((v, i) => { if (v != null) g += `<circle cx="${X(i).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="4" fill="${x.col}" stroke="#1F2021" stroke-width="2"/>`; });
       const li = x.v.map((v, i) => v != null ? i : -1).filter(i => i >= 0).pop();
       if (li != null) g += `<text x="${Math.min(X(li) + 8, W - R - 4)}" y="${Y(x.v[li]) - 8}" text-anchor="${X(li) + 60 > W ? "end" : "start"}" fill="${C.ink}" font-size="11" font-family="IBM Plex Mono">${fmt(x.v[li])}</text>`;
     });

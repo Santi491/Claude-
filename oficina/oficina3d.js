@@ -8,22 +8,24 @@
   window.OFICINA_3D = true;
 
   const stage = $("stage"), cv2d = $("cv");
-  // Resolución automática: arranca media y sube o baja según cuántos cuadros por segundo aguanta el equipo
+  /* Resolución (Santi, 27/10: "se ve a baja resolución"): quieta, la oficina se dibuja nítida a la resolución de la pantalla;
+     mientras se mueve puede bajar para ir fluida, nunca por debajo de la normal en compu, y vuelve a nítida al soltar. */
   const COARSE = matchMedia("(pointer:coarse)").matches;
-  const PR_MAX = Math.min(2, window.devicePixelRatio || 1), PR_MIN = Math.min(PR_MAX, COARSE ? 0.75 : 0.9);
-  let pr = Math.min(PR_MAX, COARSE ? 1 : 1.25);
+  const PR_MAX = Math.min(2, window.devicePixelRatio || 1), PR_MIN = Math.min(PR_MAX, COARSE ? 0.85 : 1);
+  let prMove = COARSE ? Math.min(PR_MAX, 1.25) : PR_MAX, prIdle = PR_MAX, pr = prIdle;   // en compu arranca al máximo también moviéndose (como el probador)
   /* Modo liviano: celulares y computadoras con poca memoria (o si el visitante lo elige con el botón) cargan 2 personas
      en vez de 6 y sin sombras. La elección se recuerda en este navegador. */
   let guardado = null; try { guardado = localStorage.getItem("cb-modo"); } catch (e) { }
   const LIVIANO = guardado ? guardado === "liviano" : !!(COARSE || (navigator.deviceMemory && navigator.deviceMemory <= 4) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4));
   renderer.setPixelRatio(pr);
+  const ANISO = Math.min(LIVIANO ? 4 : 16, renderer.capabilities.getMaxAnisotropy ? renderer.capabilities.getMaxAnisotropy() : 4);   // piso y paredes nítidos de costado
   renderer.shadowMap.enabled = !LIVIANO;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.shadowMap.autoUpdate = false;   // las sombras se recalculan unas veces por segundo, no en cada cuadro (ver loop)
   renderer.shadowMap.needsUpdate = true;
   renderer.outputEncoding = THREE.sRGBEncoding;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.0;
+  renderer.toneMappingExposure = 0.82;   // misma luz que el probador de personas (Santi, 27/10)
   const el = renderer.domElement;
   el.id = "cv3d"; el.tabIndex = 0;
   el.setAttribute("aria-label", "Oficina 3D con los agentes. Arrastra para girar, rueda o pellizco para acercar, flechas para cambiar de agente.");
@@ -51,13 +53,13 @@
   controls.maxPolarAngle = Math.PI * 0.46; controls.minDistance = 3; controls.maxDistance = 100;
   controls.screenSpacePanning = true;
 
-  scene.add(new THREE.HemisphereLight(0xe9eef4, 0x2a2c30, 0.86));
-  const sun = new THREE.DirectionalLight(0xffffff, 0.6);
+  scene.add(new THREE.HemisphereLight(0xdfe6ee, 0x15171a, 0.5));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.9);
   sun.position.set(25, 22, 16); sun.target.position.set(XC0, 0, 3); scene.add(sun.target); sun.castShadow = !LIVIANO;
   sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.0004;
   Object.assign(sun.shadow.camera, { left: -30, right: 30, top: 28, bottom: -28, near: 1, far: 90 });
   scene.add(sun);
-  const fill = new THREE.DirectionalLight(0xdfe8f2, 0.2); fill.position.set(-14, 8, 14); scene.add(fill);
+  const fill = new THREE.DirectionalLight(0xdfe8f2, 0.1); fill.position.set(-14, 8, 14); scene.add(fill);
 
   /* ---------- Utilidades ---------- */
   const M = (c, o) => new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: 0.72, metalness: 0.04 }, o || {}));
@@ -71,7 +73,7 @@
   }
   function canvasTex(w, h, draw) {
     const c = document.createElement("canvas"); c.width = w; c.height = h; draw(c.getContext("2d"), w, h);
-    const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = 4; return t;
+    const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = ANISO; return t;
   }
   // semilla fija: el mármol y el concreto salen iguales en cada visita
   let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
@@ -262,9 +264,10 @@
 
   // sala de operaciones: 3 filas de 3 puestos mirando al videowall. Se leen de izquierda a derecha empezando por la fila
   // de adelante: el Gerente está en el puesto 2 (el del medio de la primera fila)
-  const STATION = { wa: [-10, 0.6], gerente: [-3, 0.6], mkt: [4, 0.6],
-    ebay: [-10, 4.8], ana: [-3, 4.8], pedidos: [4, 4.8],
-    fin: [-10, 9.0], dem: [-3, 9.0], nube: [4, 9.0] };
+  // Santi, 27/10: puestos como los del probador (más juntos y ordenados): columnas cada 4 m y filas cada 3,2 m
+  const STATION = { wa: [-11, 0.6], gerente: [-7, 0.6], mkt: [-3, 0.6],   // corridos a la izquierda (Santi, 27/10: que la nave se vea más amplia)
+    ebay: [-11, 3.8], ana: [-7, 3.8], pedidos: [-3, 3.8],
+    fin: [-11, 7.0], dem: [-7, 7.0], nube: [-3, 7.0] };
   const PASILLO_X = 8.6, FRENTE_Z = -1.6;   // pasillo entre operaciones y gym/lounge, y pasillo frente a las salas de vidrio
   // lámparas LED lineales colgantes sobre los escritorios
   function ledBar(x, z, len, y, rotY) {
@@ -273,9 +276,9 @@
     [-len / 2 + 0.2, len / 2 - 0.2].forEach(dx => cyl(0.006, 0.006, WH - y, M(0x0d0d0d), dx, y + (WH - y) / 2, 0, g, 4).castShadow = false);
     box(len, 0.07, 0.12, M(0x141517, { metalness: .6, roughness: .35 }), 0, y, 0, g).castShadow = false;
     box(len - 0.06, 0.012, 0.08, ledM, 0, y - 0.04, 0, g).castShadow = false;
-    const l = new THREE.PointLight(0xf4f7ff, 0.55, 7.5, 2); l.position.set(0, y - 0.3, 0); g.add(l);
+    // sin luz puntual por puesto (Santi, 27/10): eran 9 luces que cada píxel calculaba y bajaban la resolución; la barra brilla igual
   }
-  Object.values(STATION).forEach(([x, z]) => ledBar(x, z + 0.2, 3.0));
+  Object.values(STATION).forEach(([x, z]) => ledBar(x, z + 0.2, 1.8));
 
   // pasillos marcados en el piso
   box(XLO - XL - 1, 0.01, 0.05, M(0xd9dde2, { roughness: .5 }), (XL + XLO) / 2, 0.005, FRENTE_Z);
@@ -352,8 +355,9 @@
   }
 
   /* ---------- Puestos de trabajo ---------- */
-  const skin = M(0xe7b98f, { roughness: .6 }), hairM = M(0x2b2018), deskM = marbleWM,
-    legM = M(0x1f2a33, { metalness: .5, roughness: .4 }), chairM = M(0x2a2d31, { roughness: .8 });
+  const skin = M(0xe7b98f, { roughness: .6 }), hairM = M(0x2b2018), deskM = M(0xffffff, { map: marble("#16181b", "#8a8f96"), roughness: .2 }),
+    grafM = M(0x1c1f23, { roughness: .45 }), monM = M(0x0f1113, { roughness: .5 }),
+    legM = M(0x2b2f35, { metalness: .6, roughness: .35 }), chairM = M(0x2a2d31, { roughness: .8 });
   const ST = {};
   // medidas del puesto (en z, desde el centro del escritorio hacia la silla): cubierta a 0,68 m porque ahí apoyan las
   // manos las animaciones de teclear de Mixamo; la silla metida y corrida 0,5 m para pararse
@@ -362,39 +366,28 @@
   AG.forEach(a => {
     const pos = STATION[a.id]; if (!pos) return;
     const g = new THREE.Group(); g.position.set(pos[0], 0, pos[1]); scene.add(g);
-    // alfombra del puesto, escritorio ancho, cajonera y planta propia
-    const rugP = new THREE.Mesh(new THREE.BoxGeometry(4.2, 0.015, 3.4), M(0x2c3036, { roughness: 1 })); rugP.position.set(0, 0.008, 0.55); rugP.receiveShadow = true; g.add(rugP);
-    box(4.0, 0.006, 3.2, M(0x3a3f46, { roughness: 1 }), 0, 0.017, 0.55, g).castShadow = false;
-    box(3.0, 0.08, 1.35, deskM, 0, 0.64, 0, g);
-    [[-1.42, -.55], [1.42, -.55], [-1.42, .55], [1.42, .55]].forEach(([x, z]) => box(0.06, 0.6, 0.06, legM, x, 0.3, z, g));
-    box(0.5, 0.56, 0.6, M(0x24282d, { roughness: .5 }), 1.05, 0.28, -0.2, g);
-    [0.15, 0.4].forEach(y => box(0.18, 0.025, 0.02, M(0xc9a35a, { metalness: .6, roughness: .3 }), 1.05, y, 0.11, g));
-    cyl(0.2, 0.16, 0.42, marbleWM, -1.85, 0.21, -0.35, g, 20);
-    [[0, .62, 0, .3], [.12, .55, .08, .22], [-.1, .74, -.04, .2]].forEach(([dx, dy, dz, r]) => { const m = new THREE.Mesh(new THREE.IcosahedronGeometry(r, 0), M(0x2f7a52, { roughness: .8 })); m.position.set(-1.85 + dx, dy, -0.35 + dz); m.castShadow = true; g.add(m); });
-    // monitor (el Gerente tiene dos, un poco girados hacia él)
+    // escritorio como el del probador (Santi, 27/10): cubierta de mármol negro de 1,8 × 0,8 m con laterales grafito y una
+    // pantalla (el Gerente, dos). El borde de adelante queda en DESK.frente, igual que antes, para que las personas se sienten igual
+    const DZ = DESK.frente - 0.4;
+    box(1.8, 0.06, 0.8, deskM, 0, 0.65, DZ, g);
+    [-0.85, 0.85].forEach(x => box(0.06, 0.62, 0.7, grafM, x, 0.31, DZ, g));
     const dual = a.id === "gerente";
-    const mons = (dual ? [[-0.64, 0.2], [0.64, -0.2]] : [[0, 0]]).map(([mx, rot]) => {
-      const mg = new THREE.Group(); mg.position.set(mx, 0, 0); mg.rotation.y = rot; g.add(mg);
-      const w = dual ? 1.24 : 1.62, h = dual ? 0.74 : 0.96, y = dual ? 1.28 : 1.36;
-      box(0.1, 0.38, 0.08, legM, 0, 0.86, -0.38, mg); box(0.4, 0.03, 0.25, legM, 0, 0.69, -0.38, mg);
-      box(w, h, 0.06, M(0x10181f, { metalness: .3, roughness: .4 }), 0, y, -0.42, mg);
+    const mons = (dual ? [[-0.44, 0.16], [0.44, -0.16]] : [[0, 0]]).map(([mx, rot]) => {
+      const mg = new THREE.Group(); mg.position.set(mx, 0, DZ); mg.rotation.y = rot; g.add(mg);
+      box(0.9, 0.52, 0.04, monM, 0, 1.01, -0.28, mg);
+      box(0.06, 0.22, 0.06, grafM, 0, 0.76, -0.3, mg); box(0.26, 0.015, 0.18, grafM, 0, 0.6875, -0.3, mg);
       const sc = document.createElement("canvas"); sc.width = 1024; sc.height = 576;
-      const stex = new THREE.CanvasTexture(sc); stex.encoding = THREE.sRGBEncoding; stex.anisotropy = 4;
-      const screen = new THREE.Mesh(new THREE.PlaneGeometry(w - 0.1, h - 0.1), new THREE.MeshBasicMaterial({ map: stex, toneMapped: false }));
-      screen.position.set(0, y, -0.385); mg.add(screen);
+      const stex = new THREE.CanvasTexture(sc); stex.encoding = THREE.sRGBEncoding; stex.anisotropy = ANISO;
+      const screen = new THREE.Mesh(new THREE.PlaneGeometry(0.84, 0.46), new THREE.MeshBasicMaterial({ map: stex, toneMapped: false }));
+      screen.position.set(0, 1.01, -0.255); mg.add(screen);
       return { screen, stex, sc, ctx: sc.getContext("2d") };
     });
     const { screen, stex, sc } = mons[0];
     // teclado bajo la mano izquierda y mouse con su pad donde va la derecha (la animación usa el mouse un tercio del tiempo)
-    box(0.42, 0.015, 0.14, M(0x1b252d), -0.08, 0.6875, 0.335, g);
-    box(0.24, 0.003, 0.2, M(0x23262b, { roughness: .95 }), 0.28, 0.6815, 0.29, g).castShadow = false;
-    const raton = new THREE.Mesh(new THREE.SphereGeometry(0.035, 14, 10), M(0x1b252d)); raton.scale.set(0.9, 0.45, 1.4); raton.position.set(0.27, 0.688, 0.29); raton.castShadow = true; g.add(raton);
-    cyl(0.07, 0.06, 0.13, M(0xe8e2d2), 0.85, 0.745, 0.1, g);
-    box(0.28, 0.02, 0.2, M(0xeae6dc), -0.8, 0.69, 0.05, g);
-    // placa con el nombre del agente en el borde del escritorio
-    box(0.66, 0.17, 0.04, M(0x16181b, { metalness: .4, roughness: .4 }), -1.05, 0.765, 0.6, g).castShadow = false;
-    const np = textPlane(0.62, 0.15, 512, 124, (c, w, h) => { c.fillStyle = "#16181b"; c.fillRect(0, 0, w, h); c.fillStyle = "#E9EBEE"; c.font = "600 52px Archivo, system-ui, sans-serif"; c.textAlign = "center"; c.fillText(a.name.slice(0, 18), w / 2, 80); }, { transparent: false });
-    np.position.set(-1.05, 0.765, 0.623); g.add(np);
+    const negro = M(0x16181b);
+    box(0.4, 0.015, 0.14, negro, -0.08, 0.6875, DESK.frente - 0.34, g);
+    box(0.24, 0.003, 0.2, M(0x23262b, { roughness: .95 }), 0.28, 0.6815, DESK.frente - 0.385, g).castShadow = false;
+    const raton = new THREE.Mesh(new THREE.SphereGeometry(0.035, 14, 10), negro); raton.scale.set(0.9, 0.45, 1.4); raton.position.set(0.27, 0.688, DESK.frente - 0.385); raton.castShadow = true; g.add(raton);
     // silla con rueditas (se arrima y se aleja con la persona)
     const ch = silla(g, 0, DESK.sillaDentro, 0, chairM, legM);
     // persona sentada simple: solo se ve si no cargan las personas de Mixamo
@@ -415,7 +408,7 @@
     // aro de estado en el piso y luz del monitor
     const ring = new THREE.Mesh(new THREE.RingGeometry(0.9, 1.15, 48), new THREE.MeshBasicMaterial({ color: 0x7f9aad, transparent: true, opacity: .35, side: THREE.DoubleSide }));
     ring.rotation.x = -Math.PI / 2; ring.position.set(0, 0.03, 0.9); g.add(ring);
-    const glow = new THREE.PointLight(0x4fd1e8, 0.45, 3.2, 2); glow.position.set(0, 1.5, 0.2); g.add(glow);
+    const glow = { color: new THREE.Color(0x4fd1e8), intensity: 0 };   // antes una luz cian por escritorio (9 luces); el estado ya se ve en el anillo y la etiqueta
     ST[a.id] = { g, screen, stex, sc, ctx: sc.getContext("2d"), mons, torso, headG, arms, ring, glow, silla: ch, simple: p, x: pos[0], z: pos[1], src: null, st: null, ver: -1 };
   });
 
@@ -569,7 +562,7 @@
   box(0.08, 0.6, 1.4, darkWood, -2.16, 0.3, 0, boss); box(0.08, 0.6, 1.4, darkWood, 2.16, 0.3, 0, boss);
   // tres monitores: uno recto al centro y dos curvos a los costados, girados hacia el jefe
   const bossScreens = [], bezelM = M(0x10181f, { metalness: .3, roughness: .4 });
-  function bossCanvas(w, h) { const c = document.createElement("canvas"); c.width = w; c.height = h; const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = 4; return { c, t }; }
+  function bossCanvas(w, h) { const c = document.createElement("canvas"); c.width = w; c.height = h; const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = ANISO; return { c, t }; }
   {
     const { c, t } = bossCanvas(768, 450);
     box(1.5, 0.9, 0.06, bezelM, 0, 1.38, -0.45, boss);
@@ -653,7 +646,7 @@
   // de cada agente (toca para abrir)
   const tabG = new THREE.Group(); tabG.position.set(XL + 0.12, 3.6, 4.8); tabG.rotation.y = Math.PI / 2; scene.add(tabG);
   box(6.3, 3.6, 0.1, M(0x0c0f12, { metalness: .4, roughness: .35 }), 0, 0, 0, tabG);
-  const tabTex = new THREE.CanvasTexture(TEX.tablero || document.createElement("canvas")); tabTex.encoding = THREE.sRGBEncoding; tabTex.anisotropy = 4;
+  const tabTex = new THREE.CanvasTexture(TEX.tablero || document.createElement("canvas")); tabTex.encoding = THREE.sRGBEncoding; tabTex.anisotropy = ANISO;
   const tabScr = new THREE.Mesh(new THREE.PlaneGeometry(6.1, 3.43), new THREE.MeshBasicMaterial({ map: tabTex, toneMapped: false }));
   tabScr.position.z = 0.056; tabG.add(tabScr);
   let tabVer = -1;
@@ -746,11 +739,11 @@
   for (let x = XL + 1.2; x < XR - 0.6; x += 1.6) lineF(x, 12.8, 0.7, 0.05);
 
   // ---- 1. Centro de operaciones: videowall en la franja sobre el vidrio de las salas del fondo, frente a los puestos ----
-  const VW = 13, VH = 3.6, VX = -3, VY = 5.0, BANDA = -2.45;   // BANDA: cara de la franja oscura que mira a la sala
+  const VW = 13, VH = 3.6, VX = -7, VY = 5.0, BANDA = -2.45;   // BANDA: cara de la franja oscura que mira a la sala
   box(VW + 1.0, VH + 0.6, 0.06, M(0x24272b, { roughness: 1 }), VX, VY, BANDA + 0.03).castShadow = false;   // panel acústico de fondo
   box(VW + 0.12, VH + 0.12, 0.12, M(0x08090a, { metalness: .4, roughness: .3 }), VX, VY, BANDA + 0.09).castShadow = false;
   const opsCv = document.createElement("canvas"); opsCv.width = 2048; opsCv.height = 576;
-  const opsTex = new THREE.CanvasTexture(opsCv); opsTex.encoding = THREE.sRGBEncoding; opsTex.anisotropy = 4;
+  const opsTex = new THREE.CanvasTexture(opsCv); opsTex.encoding = THREE.sRGBEncoding; opsTex.anisotropy = ANISO;
   const opsScr = new THREE.Mesh(new THREE.PlaneGeometry(VW, VH), new THREE.MeshBasicMaterial({ map: opsTex, toneMapped: false }));
   opsScr.position.set(VX, VY, BANDA + 0.16); scene.add(opsScr);
   box(VW + 0.3, 0.03, 0.08, ledM, VX, VY + VH / 2 + 0.12, BANDA + 0.1).castShadow = false;
@@ -803,7 +796,7 @@
     opsTex.needsUpdate = true;
   }
   paintOps();
-  floorText("OPERACIONES", -3, 11.6, 7);
+  floorText("OPERACIONES", -7, 9.6, 7);
 
   // ---- 2. Relojes de dos ciudades (hora real) ----
   const clocks = [["Cochabamba", "America/La_Paz", -12.9], ["Miami", "America/New_York", -11.1]].map(([n, tz, x]) => {
@@ -1002,7 +995,7 @@
   // bandejas de cables pegadas a las vigas (no cruzan la vista desde arriba)
   [-6.5, 8.5].forEach(z => box(RW - 2, 0.06, 0.34, M(0x2b2f34, { metalness: .6, roughness: .4 }), XC, WH - 0.36, z + 0.26).castShadow = false);
   // la luz pareja del frente (antes 7 luces puntuales altas) la dan el hemisferio y una luz de relleno desde adelante
-  const front = new THREE.DirectionalLight(0xf4f7ff, 0.22); front.position.set(XC, 14, 40); front.target.position.set(XC, 0, 14); scene.add(front, front.target);
+  const front = new THREE.DirectionalLight(0xf4f7ff, 0.12); front.position.set(XC, 14, 40); front.target.position.set(XC, 0, 14); scene.add(front, front.target);
 
   /* ---------- Pantallas: la captura del agente, atenuada si está en espera ---------- */
   function paintScreen(a, s, t) {
@@ -1321,7 +1314,7 @@
     function preparar(obj) {
       obj.scale.setScalar(0.01);   // Mixamo trabaja en centímetros
       obj.traverse(c => { if (c.isMesh) { if (!c.geometry.attributes.normal) c.geometry.computeVertexNormals(); c.castShadow = !LIVIANO; c.receiveShadow = true; c.frustumCulled = false; c.userData.persona = true;
-        [].concat(c.material).forEach(m => { m.envMapIntensity = 0.6; if (m.map) m.map.anisotropy = 4; }); } });
+        [].concat(c.material).forEach(m => { m.envMapIntensity = 0.6; if (m.map) m.map.anisotropy = ANISO; }); } });
       return obj;
     }
     // modelo de cada uno (p1..p6): 0 hombre de traje, 1 y 2 hombres, 3, 4 y 5 mujeres; los repetidos son copias
@@ -1692,11 +1685,16 @@
     // promedio del tiempo entre cuadros dibujados; si no llega al ritmo pedido baja la resolución, si sobra la sube
     perf.n++; perf.sum += gap; if (perf.n < 45) return;
     const avg = perf.sum / perf.n; perf.n = 0; perf.sum = 0;
-    const meta = full ? 1000 / 55 : 1000 / 28;
-    let np = pr;
-    if (avg > meta * 1.3 && pr > PR_MIN) { np = Math.max(PR_MIN, pr * 0.8); perf.cool = now + 15000; }
-    else if (full && avg < 1000 / 57 && pr < PR_MAX && now > perf.cool) np = Math.min(PR_MAX, pr * 1.15);
-    if (Math.abs(np - pr) > 0.01) { pr = np; renderer.setPixelRatio(pr); }
+    if (full) {   // moviéndose: apunta a ~55 cuadros por segundo
+      if (avg > (1000 / 45) * 1.3 && prMove > PR_MIN) { prMove = Math.max(PR_MIN, prMove * 0.8); perf.cool = now + 15000; }
+      else if (avg < 1000 / 57 && prMove < PR_MAX && now > perf.cool) prMove = Math.min(PR_MAX, prMove * 1.15);
+    } else if (avg > 1000 / 22 && prIdle > Math.max(PR_MIN, 1.5)) {   // quieta: solo baja si ni siquiera llega a ~22 cuadros
+      prIdle = Math.max(PR_MIN, 1.5, prIdle * 0.85);
+    }
+  }
+  function resolucion(full) {
+    const np = full ? prMove : prIdle;
+    if (Math.abs(np - pr) > 0.01) { pr = np; renderer.setPixelRatio(pr); perf.n = 0; perf.sum = 0; }
   }
   function loop(now) {
     requestAnimationFrame(loop);
@@ -1707,6 +1705,7 @@
     if (window.__o3d) Object.assign(window.__o3d, { full: !!full, anim: !!anim, inp: Math.round(now - lastInput), ger: !!(GER && GER.caminando()), pr });
     if (gap < minGap) return;
     if (lastDraw && gap < 200) adaptar(now, gap, full);
+    resolucion(full);
     lastDraw = now;
     const t = now / 1000, dt = Math.min(0.05, (now - (lastNow || now)) / 1000); lastNow = now;
     // sombras: se recalculan 4 veces por segundo (8 si el Gerente camina), casi no se nota y ahorra la mitad del trabajo
