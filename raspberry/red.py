@@ -7,6 +7,7 @@ PC_IP de ~/.cargo-bot queda solo como primer intento.
 """
 import os
 import subprocess
+import time
 
 
 def _vecinos():
@@ -47,6 +48,10 @@ def pc_prendida():
     ip = ip_pc()
     if not ip:
         return False
-    subprocess.run(["ping", "-c", "1", "-W", "1", ip], capture_output=True)
-    v = subprocess.run(["ip", "neigh", "show", ip], capture_output=True, text=True).stdout
-    return "REACHABLE" in v   # después del ping, solo cuenta si contestó (STALE queda un rato aunque se haya apagado)
+    for _ in range(3):   # a veces la tabla tarda en actualizarse: hasta 3 intentos
+        subprocess.run(["ping", "-c", "1", "-W", "1", ip], capture_output=True)
+        v = subprocess.run(["ip", "neigh", "show", ip], capture_output=True, text=True).stdout
+        if "REACHABLE" in v:   # después del ping, solo cuenta si contestó (STALE queda un rato aunque se haya apagado)
+            return True
+        time.sleep(0.5)
+    return False
