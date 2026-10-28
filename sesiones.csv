@@ -61,3 +61,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-27,pc,ronda,23:53,23:53,en curso,empezó
 2026-10-27,pc,ronda,23:52,23:56,alerta,"Ronda disparada a las 23:52 (no corrió a las 16:00): solo Pedidos, sin WhatsApp/Marketplace por la hora; 7700X sin confirmación de entrega"
 2026-10-28,mac,ronda,10:31,10:31,en curso,empezó
+2026-10-28,mac,ronda,10:31,10:45,ok,7700X entregados en la casilla; 0 chats nuevos (no quedan tiendas); oficina v96
