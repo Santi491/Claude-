@@ -132,5 +132,9 @@ fecha,producto,precio_bs,estado,fuente,link,tipo,condiciones,vigencia
 2026-10-23,Intel Core Ultra 7 265K,4300,"no cuenta: es el Core Ultra 7 270K (no el 265K); sin garantía, traído de EEUU",TechMax Computers Cbba (WhatsApp),,cotizado,confirmado 23/10 14:16 que el modelo es 270K,sin dato
 2026-10-26,Ryzen 7 7800X3D,4800,"nuevo sellado (anuncio ""AMD Ryzen 7 7800X3D (Sellado)""; el vendedor dijo el 13/10 que acepta ofertas, no se oferta)",Marketplace Cochabamba (particular),,publicado,sellado; repetido: mismo precio visto el 13/10,sin dato
 2026-10-26,SSD NVMe 1TB,1850,"Kingston NV3 NVMe 1TB 6000MB/s (estado sin dato)",Marketplace Cochabamba (particular),,publicado,,sin dato
-2026-10-26,SSD NVMe 1TB,2000,"sin dato (modelo SN3000; falta confirmar NVMe, nuevo y garantía)",Punto Tecnológico (WhatsApp),,cotizado,por unidad; se repregunta 26/10 16:11,sin dato
+2026-10-26,SSD NVMe 1TB,2000,"nuevo, NVMe (modelo SN3000), garantía 6 meses (confirmado 28/10)",Punto Tecnológico (WhatsApp),,cotizado,por unidad; se repregunta 26/10 16:11,sin dato
 2026-10-26,Ryzen 7 9700X,3680,no cuenta: no es producto de vigilar; OEM,Punto Tecnológico (WhatsApp),,cotizado,OEM; garantía sin confirmar,sin dato
+2026-10-28,Ryzen 7 7700X,4000,"nuevo sellado (""Ryzen 7 7700x Sellado""); Cochabamba",Marketplace Cochabamba (particular),,publicado,,sin dato
+2026-10-28,SSD NVMe 1TB,1700,"Kingston NV2 NVMe PCIe 4.0 1TB (estado sin dato); Cochabamba",Marketplace Cochabamba (particular),,publicado,,sin dato
+2026-10-28,SSD NVMe 1TB,1100,"""Disco duro m2 NVMe 1 tb"" marca y estado sin dato; Cochabamba",Marketplace Cochabamba (particular),,publicado,,sin dato
+2026-10-28,Ryzen 5 5600,,no cuenta: no listado hoy (la web ya no muestra el 5600; solo 5500 Bs 1.440 y otros modelos),Punto Tecnológico / Supermall (web),https://www.puntotecnologic.com/categories/procesadores,publicado,"visita 28/10 11:05; categoría procesadores, 20 productos, sin 5600, 5700X3D ni 7500F",sin dato

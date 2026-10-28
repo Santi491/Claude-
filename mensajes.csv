@@ -274,3 +274,6 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-27,12:15,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si la garantía de 6 meses cubre 9700X y SSD y si ambos son nuevos
 2026-10-26,16:16,whatsapp,Nerd Tecnologias,recibido,respuesta,no,"vuelve a preguntar cuántas unidades se buscan (leído 27/10 Mac)"
 2026-10-27,12:15,whatsapp,Nerd Tecnologias,enviado,respuesta,,"responde que sigue cotizando sin cantidad definida; pide cuál procesador tienen y su precio"
+2026-10-28,10:33,whatsapp,Punto Tecnológico,recibido,respuesta,no,"""Si"" (12:16 de ayer): la garantía de 6 meses cubre 9700X y SSD, ambos nuevos"
+2026-10-28,10:33,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si tienen 5700X3D o 7500F y a cuánto
+2026-10-28,10:35,whatsapp,PC FALCON,enviado,seguimiento,,segundo seguimiento (7800X3D y SSD NVMe 1TB)

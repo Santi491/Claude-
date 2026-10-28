@@ -104,8 +104,10 @@ def calcular():
         x["costo_bs"] = round(x["costo_bs"], 2)
         x["ventas_bs"] = round(x["ventas_bs"], 2)
         del x["en_stock_bruto"]
+        x["stock_esperado"] = max(0, x["comprado"] - x["vendido"])   # lo que debería haber: comprado (en camino o en stock) − vendido
         filas.append(x)
     filas.sort(key=lambda x: x["producto"])
+    por_producto = {x["producto"]: x for x in filas}
     comparativa = []
     for clave, ref in COMPRAS_CONJUNTAS.items():
         c = conj.get(clave)
@@ -113,8 +115,11 @@ def calcular():
             continue
         nuestro = c["costo_bs"] / c["unidades"]
         promedio = ref["total_usd"] / ref["unidades"] * c["tc"]
+        pr = por_producto.get(ref["producto"], {})
         comparativa.append({
             "paquete": clave, "producto": ref["producto"],
+            "stock_esperado": pr.get("stock_esperado"), "en_camino": pr.get("en_camino"),
+            "en_stock": pr.get("en_stock"), "vendidas": pr.get("vendido"),
             "nuestras_unidades": c["unidades"], "nuestro_costo_unitario_bs": round(nuestro, 2),
             "unidades_pedido_conjunto": ref["unidades"], "promedio_conjunto_usd": round(ref["total_usd"] / ref["unidades"], 2),
             "promedio_conjunto_bs": round(promedio, 2), "tc": c["tc"],
@@ -130,6 +135,7 @@ def calcular():
         "unidades_compradas": int(s("comprado")),
         "unidades_en_camino": int(s("en_camino")),
         "unidades_en_stock": int(s("en_stock")),
+        "unidades_stock_esperado": int(s("stock_esperado")),
         "unidades_vendidas": int(s("vendido")),
         "unidades_reservadas": int(s("reservado")),
         "unidades_disponibles": int(s("disponible")),
@@ -163,6 +169,9 @@ def texto(f):
                  f"{bs(cc['nuestro_costo_unitario_bs'])} vs promedio del pedido conjunto {bs(cc['promedio_conjunto_bs'])} "
                  f"({'+' if cc['diferencia_bs'] >= 0 else '−'}{bs(abs(cc['diferencia_bs']))}, "
                  f"{cc['diferencia_pct']:+.1f} %".replace(".", ",") + f"; dólar {cc['tc']} Bs, {cc['fuente']})")
+        if cc.get("stock_esperado") is not None:
+            l.append(f"Stock esperado de {cc['producto']}: {cc['stock_esperado']} u (en camino {cc['en_camino']}, "
+                     f"en stock {cc['en_stock']}, vendidas {cc['vendidas']})")
     if f["sin_costo_envio"]:
         l.append("Sin costo de envío cargado (la ganancia sale sin el courier): " + ", ".join(f["sin_costo_envio"]))
     for x in f["productos"]:
