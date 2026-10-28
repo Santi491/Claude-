@@ -207,6 +207,59 @@
 .gp-ok{margin:0;font:500 12.5px var(--f-mono);color:${C.green}}
 @media (max-width:860px){.gc{grid-template-columns:1fr}.gc-list{max-height:180px}
 .gp-box,.gp-box.w4,.gp-box.w8{grid-column:1/-1}.gp-hb .hr{grid-template-columns:110px 1fr 92px}.gp-funnel .fr{grid-template-columns:96px 1fr 34px 40px}.gpanel{padding:0}.gp-card{height:100vh;border-radius:0}}
+/* Escritorio tipo PC (Santi, 28/10): fondo "Noche" con el logo, barra de tareas clásica abajo y apps en ventanas */
+.gp-card.os{position:relative;display:block;padding:0;border:8px solid #0a0b0d;border-radius:16px;background:#101215}
+.os-desk{position:absolute;inset:0 0 46px 0;overflow:hidden;background:#101215}
+.os-wall{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(#1a1d21 1px,transparent 1px),linear-gradient(90deg,#1a1d21 1px,transparent 1px);background-size:25% 25%;display:grid;place-items:center;align-content:center;gap:22px}
+.os-wall .cbmark{opacity:.42}.os-wall b{font:500 18px var(--f-display);letter-spacing:.6em;color:#6f767e;padding-left:.6em}
+.os-icons{position:absolute;left:12px;top:12px;bottom:12px;display:grid;grid-auto-flow:column;grid-template-rows:repeat(auto-fill,96px);grid-auto-columns:94px;gap:4px 6px;align-content:start}
+.os-icons .gd-ic{padding:8px 4px;gap:6px;font-size:12.5px;text-shadow:0 1px 3px #000;line-height:1.2;text-align:center}
+.os-icons .gd-ic i{width:46px;height:46px;font-size:20px;border-radius:11px}
+.os-icons .gd-ic em{right:12px;top:2px}
+.os-icons .gd-ic.sel{background:rgba(201,164,92,.16);border-color:rgba(201,164,92,.5)}
+.os-widgets{position:absolute;right:12px;top:12px;width:290px;max-height:calc(100% - 24px);overflow:auto;display:grid;gap:10px;align-content:start}
+.os-widgets .gd-w{background:rgba(22,24,27,.9)}
+.os-wins{position:absolute;inset:0 0 46px 0;pointer-events:none;overflow:hidden}
+.os-win{position:absolute;pointer-events:auto;display:grid;grid-template-rows:auto minmax(0,1fr);background:var(--o-bg);border:1px solid #3a3e44;border-radius:10px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.55);resize:both;min-width:320px;min-height:220px}
+.os-win[hidden]{display:none}
+.os-win.max{left:0!important;top:0!important;width:100%!important;height:100%!important;border-radius:0;resize:none;border:0}
+.os-tt{display:flex;align-items:center;gap:8px;padding-left:10px;height:36px;background:#24272b;font:600 13px var(--f-body);color:var(--o-ink);user-select:none;touch-action:none}
+.os-win:not(.act) .os-tt{background:#1a1c1f;color:var(--o-muted)}
+.os-tt i{width:20px;height:20px;border-radius:5px;display:grid;place-items:center;font:800 12px var(--f-display);color:#101011;font-style:normal;flex:none}
+.os-tt span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.os-tt button{width:44px;height:36px;border:0;background:transparent;color:inherit;font:400 15px var(--f-body);cursor:pointer;flex:none}
+.os-tt button:hover{background:#33373c}.os-tt button.x:hover{background:#c42b1c;color:#fff}
+.os-wb{overflow:auto}
+.os-win .gd-back[data-t="escritorio"]{display:none}
+.os-bar{position:absolute;left:0;right:0;bottom:0;height:46px;background:#0b0c0e;border-top:1px solid #24272b;display:flex;align-items:center;gap:6px;padding:0 6px;z-index:3}
+.os-st{width:40px;height:38px;border-radius:6px;border:0;background:transparent;cursor:pointer;display:grid;place-items:center;flex:none}
+.os-st:hover,.os-st[aria-expanded="true"]{background:#1e2125}
+.os-q{display:flex;align-items:center;gap:6px;background:#1a1c1f;border:1px solid #2e3237;border-radius:6px;padding:0 10px;height:32px;width:210px;color:var(--o-muted);flex:none}
+.os-q input{background:transparent;border:0;color:var(--o-ink);font:500 13px var(--f-body);width:100%;outline:none}
+.os-apps{display:flex;gap:2px;flex:1;min-width:0;overflow-x:auto;height:100%;align-items:center}
+.os-tb{position:relative;width:44px;height:40px;border:0;border-radius:6px;background:transparent;cursor:pointer;display:grid;place-items:center;flex:none}
+.os-tb:hover{background:#1e2125}
+.os-tb i{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font:800 14px var(--f-display);color:#101011;font-style:normal}
+.os-tb.run::after{content:"";position:absolute;bottom:2px;left:50%;width:6px;height:3px;margin-left:-3px;border-radius:2px;background:#8D949C}
+.os-tb.act{background:#1e2125}.os-tb.act::after{width:16px;margin-left:-8px;background:#C9A45C}
+.os-tb em{position:absolute;top:1px;right:2px;min-width:16px;height:16px;border-radius:8px;background:${C.red};color:#fff;font:700 10px/16px var(--f-mono);font-style:normal;padding:0 4px}
+.os-tray{display:flex;align-items:center;gap:8px;font:500 12px var(--f-mono);color:var(--o-ink);flex:none}
+.os-tray select{font:500 12px var(--f-mono);background:#1a1c1f;color:var(--o-ink);border:1px solid #2e3237;border-radius:6px;padding:4px 6px}
+.os-tray .seg button{background:#1a1c1f;color:var(--o-ink);font-size:12px;padding:4px 8px}
+.os-tray .seg button[aria-pressed="true"]{background:var(--o-amber);color:var(--o-bg)}
+.os-clk{text-align:right;line-height:1.25;padding:0 4px;white-space:nowrap}
+.os-off{width:34px;height:34px;border:0;border-radius:6px;background:transparent;color:var(--o-muted);font-size:16px;cursor:pointer}.os-off:hover{background:#c42b1c;color:#fff}
+.os-start{position:absolute;left:6px;bottom:52px;width:350px;max-width:calc(100% - 12px);max-height:calc(100% - 64px);overflow:auto;background:#17191c;border:1px solid #33373c;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.6);padding:14px;z-index:4;display:grid;gap:10px}
+.os-start[hidden]{display:none}
+.os-start h5{margin:0;font:700 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--o-muted)}
+.os-start .ap{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.os-start .ap button{display:grid;justify-items:center;gap:6px;padding:10px 4px;border:0;border-radius:8px;background:transparent;color:var(--o-ink);font:600 12px var(--f-body);cursor:pointer;text-align:center}
+.os-start .ap button:hover,.os-start .ap button:focus-visible{background:#24272b}
+.os-start .ap i{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font:800 16px var(--f-display);color:#101011;font-style:normal}
+.os-start .ft{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #2a2d31;padding-top:10px;font:500 12px var(--f-mono);color:var(--o-muted)}
+.os-start .ft button{background:transparent;border:1px solid #33373c;border-radius:6px;color:var(--o-ink);padding:5px 10px;cursor:pointer;font:600 12px var(--f-mono)}
+@media (max-width:1100px){.os-q{width:140px}.os-tray .seg button{padding:4px 6px}}
+@media (max-width:760px){.os-q,.os-widgets,.os-tray .seg,.os-tray select{display:none}.os-win{min-width:0}.gp-card.os{border-width:0;border-radius:0}}
 `;
   document.head.appendChild(st);
 
@@ -214,13 +267,19 @@
   let tab = "escritorio", rango = "7", dia = MET.length ? MET[MET.length - 1].fecha : "";
   const box = document.createElement("div");
   box.className = "gpanel"; box.hidden = true; box.setAttribute("role", "dialog"); box.setAttribute("aria-label", "Panel de datos del Gerente");
-  box.innerHTML = `<div class="gp-card">
-    <div class="gp-head"><div><b>Escritorio del Gerente</b><span>Chat del equipo, tareas y metas, propuestas y el panel de datos · todo con datos reales</span></div>
-      <div class="gp-tools"><label class="gp-note" for="gpD">Día</label><select id="gpD"></select>
+  const logoCB = sz => typeof cbSvg === "function" ? cbSvg(sz, false, "#C9A45C") : `<b style="color:#C9A45C;font:800 ${Math.round(sz / 2)}px var(--f-display)">CB</b>`;
+  box.innerHTML = `<div class="gp-card os">
+    <div class="os-desk" id="gpB"></div>
+    <div class="os-wins" id="osW"></div>
+    <div class="os-start" id="osS" hidden role="menu" aria-label="Inicio"></div>
+    <div class="os-bar">
+      <button type="button" class="os-st" id="osSt" aria-label="Inicio" aria-expanded="false">${logoCB(24)}</button>
+      <label class="os-q"><span aria-hidden="true">⌕</span><input id="osQ" placeholder="Buscar" aria-label="Buscar aplicaciones" autocomplete="off"></label>
+      <div class="os-apps" id="osA"></div>
+      <div class="os-tray"><select id="gpD" aria-label="Día de los datos"></select>
         <div class="seg" id="gpR"><button type="button" data-r="7" aria-pressed="true">7 días</button><button type="button" data-r="30" aria-pressed="false">30 días</button><button type="button" data-r="todo" aria-pressed="false">Todo</button></div>
-        <button type="button" class="mp-x" id="gpX">Cerrar</button></div></div>
-    <div class="gp-tabs" role="tablist">${TABS.map(([k, t]) => `<button type="button" role="tab" data-t="${k}" aria-selected="${k === tab}">${t}</button>`).join("")}</div>
-    <div class="gp-body" id="gpB"></div></div>`;
+        <span class="os-clk" id="osC"></span><button type="button" class="os-off" id="gpX" aria-label="Cerrar el escritorio" title="Cerrar el escritorio">⏻</button></div>
+    </div></div>`;
   document.body.appendChild(box);
   const $g = id => box.querySelector("#" + id);
   $g("gpD").innerHTML = MET.slice().reverse().map(m => `<option value="${m.fecha}">${dm(m.fecha)}/${m.fecha.slice(0, 4)}</option>`).join("") || `<option>sin datos</option>`;
@@ -389,15 +448,15 @@
   function vEscritorio() {
     const fr = D.frescura || {}, viejo = Object.entries(fr).filter(([k, v]) => v && k !== "catalogos" && (new Date(HOY) - new Date(v.slice(0, 10))) / 864e5 >= 3).map(([k]) => k);
     const ult = CHAT.slice(-3).reverse(), mh = metasHoy();
-    return `<div class="gd-desk"><div><div class="gd-icons">${APPS.map(([k, t, ic, col, badge]) => { const b = badge(); return `<button type="button" class="gd-ic" data-t="${k}"><i style="background:${col}">${ic}</i>${esc(t)}${b ? `<em>${b}</em>` : ""}</button>`; }).join("")}</div>
-      <div class="gd-widgets">
+    return `<div class="os-wall" aria-hidden="true">${logoCB(300)}<b>CARGO BROTHERS</b></div>
+      <div class="os-icons">${APPS.map(([k, t, ic, col, badge]) => { const b = badge(); return `<button type="button" class="gd-ic${k === OS.sel ? " sel" : ""}" data-t="${k}"><i style="background:${col}">${ic}</i>${esc(t)}${b ? `<em>${b}</em>` : ""}</button>`; }).join("")}</div>
+      <div class="os-widgets">
         <div class="gd-w"><h5>Metas de hoy</h5>${mh.length ? mh.map(p => `<span>${p.estado === "hecho" ? "✓" : "•"} ${esc(QN[p.agente] || p.agente)}: ${esc(p.tarea)}</span>`).join("") : `<span style="color:var(--o-muted)">Sin metas. Ponlas por Telegram (meta wa: 10 tiendas nuevas hoy) o en Tareas y metas.</span>`}</div>
         <div class="gd-w"><h5>Últimos mensajes del equipo</h5>${owner ? (ult.length ? ult.map(c => `<span><b>${esc(QN[c.de] || c.de)}</b> → ${esc(QN[c.para] || c.para)}: ${esc(c.texto.length > 90 ? c.texto.slice(0, 89) + "…" : c.texto)}</span>`).join("") : `<span style="color:var(--o-muted)">Todavía nadie escribió.</span>`) : `<span style="color:var(--o-muted)">El chat del equipo lo ve solo Santi.</span>`}</div>
         <div class="gd-w"><h5>Libreta del Gerente</h5>${owner ? (memAb().length ? memAb().slice().sort((a, b) => (a.vence || "9").localeCompare(b.vence || "9")).slice(0, 3).map(m => `<span>${m.vence && m.vence <= HOY ? "⚠" : "•"} ${esc(m.resumen.length > 80 ? m.resumen.slice(0, 79) + "…" : m.resumen)}${m.vence ? ` <span style="color:var(--o-muted)">· ${dm(m.vence)}</span>` : ""}</span>`).join("") : `<span style="color:var(--o-muted)">Nada anotado. Por Telegram: anota: …</span>`) : `<span style="color:var(--o-muted)">La libreta la ve solo Santi.</span>`}</div>
         <div class="gd-w"><h5>Cola de tareas</h5><span>${abiertas().length} aprobadas por hacer · ${atrasadas().length} atrasadas · ${PLAN.filter(p => p.estado === "propuesto").length} esperan tu OK</span></div>
         <div class="gd-w"><h5>Datos al día</h5><span>${viejo.length ? `Ojo: ${esc(viejo.join(", "))} con 3 días o más` : "Todo con datos de los últimos días"}</span><span style="color:var(--o-muted)">Datos al ${esc((D.generado || "").replace(" ", " · "))}</span></div>
-      </div></div>
-      <div class="gd-bar"><span><b>Cargo Brothers</b> · escritorio del Gerente</span><span>${pendChat().length} mensajes esperan respuesta · ${propuestasAb()} propuestas abiertas</span></div></div>`;
+      </div>`;
   }
   function hilos() {
     const ks = new Set(["gerente", "santi"]); const map = {};
@@ -459,20 +518,111 @@
   });
 
   const VIEWS = { escritorio: vEscritorio, chat: vChat, tareas: vTareas, propuestas: vPropuestas, memoria: vMemoria, resumen: vResumen, contacto: vContacto, precios: vPrecios, oport: vOport, equipo: vEquipo, salud: vSalud, plan: vPlan };
-  function render() {
-    box.querySelectorAll(".gp-tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.t === tab)));
-    box.querySelectorAll("#gpR button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.r === rango)));
-    $g("gpB").innerHTML = MET.length || ["plan", "salud", "escritorio", "chat", "tareas", "propuestas", "memoria"].includes(tab) ? VIEWS[tab]() : `<div class="gp-box w12"><p class="gp-empty">Todavía no hay métricas: corre python3 metricas.py.</p></div>`;
+  /* ---------- Ventanas (Santi, 28/10: "que se parezca bastante a Windows en funciones") ----------
+     Cada app se abre en su ventana: se arrastra por la barra de título, se agranda desde la esquina, doble clic o □ la
+     maximiza, – la minimiza a la barra de tareas y ✕ la cierra. En la barra: clic en una app abierta la trae al frente o la
+     minimiza si ya está al frente. Inicio y el buscador muestran todas las apps. */
+  const OS = { wins: [], z: 10, n: 0, sel: "" };
+  const FIJAS = ["chat", "tareas", "propuestas", "memoria"];
+  const TODAS = TABS.filter(([k]) => k !== "escritorio").map(([k, t]) => { const a = APPS.find(x => x[0] === k); return a ? [k, a[1], a[2], a[3], a[4]] : [k, t, "▦", C.blue, () => 0]; });
+  const app = k => TODAS.find(a => a[0] === k) || [k, k, "▦", C.blue, () => 0];
+  const capa = () => $g("osW");
+  const arriba = () => OS.wins.filter(w => !w.min).sort((a, b) => b.z - a.z)[0];
+  const elDe = w => capa().querySelector(`[data-w="${w.k}"]`);
+  function cuerpo(w) { tab = w.k; return VIEWS[w.k](); }
+  function crear(w) {
+    const [k, t, ic, col] = app(w.k), el = document.createElement("section");
+    el.className = "os-win"; el.dataset.w = k; el.setAttribute("role", "dialog"); el.setAttribute("aria-label", t);
+    el.innerHTML = `<header class="os-tt" data-drag="${k}"><i style="background:${col}" aria-hidden="true">${ic}</i><span>${esc(t)}</span><button type="button" data-wmin="${k}" aria-label="Minimizar" title="Minimizar">–</button><button type="button" data-wmax="${k}" aria-label="Maximizar" title="Maximizar">□</button><button type="button" class="x" data-wx="${k}" aria-label="Cerrar" title="Cerrar">✕</button></header><div class="os-wb gp-body">${cuerpo(w)}</div>`;
+    capa().appendChild(el);
   }
-  box.addEventListener("click", e => { const b = e.target.closest("[data-t]"); if (b && box.contains(b)) { tab = b.dataset.t; aviso = ""; render(); $g("gpB").scrollTop = 0; const m = $g("gcM"); if (m) m.scrollTop = m.scrollHeight; } });
+  function guardarTam() { OS.wins.forEach(w => { const el = elDe(w); if (el && !w.max && !w.min) { w.w = el.offsetWidth; w.h = el.offsetHeight; } }); }
+  function aplicar() {
+    const top = arriba();
+    OS.wins.forEach(w => { const el = elDe(w); if (!el) return;
+      el.hidden = w.min; el.classList.toggle("max", w.max); el.classList.toggle("act", w === top);
+      Object.assign(el.style, { left: w.x + "px", top: w.y + "px", width: w.w + "px", height: w.h + "px", zIndex: w.z });
+      const b = el.querySelector("[data-wmax]"); b.textContent = w.max ? "❐" : "□"; b.setAttribute("aria-label", w.max ? "Restaurar" : "Maximizar"); });
+    barra();
+  }
+  function abrirApp(k) {
+    let w = OS.wins.find(x => x.k === k); cerrarInicio();
+    if (!w) { const L = capa(), W = L.clientWidth, H = L.clientHeight, n = OS.n++ % 6;
+      w = { k, x: Math.min(150 + n * 30, Math.max(0, W - 360)), y: 16 + n * 26, w: Math.max(320, Math.min(1000, W - 190)), h: Math.max(240, Math.min(640, H - 40)), min: false, max: W < 760, z: 0 };
+      OS.wins.push(w); crear(w); }
+    w.min = false; w.z = ++OS.z; tab = k; aplicar();
+    const m = $g("gcM"); if (m) m.scrollTop = m.scrollHeight;
+  }
+  function cerrarWin(k) { const w = OS.wins.find(x => x.k === k); if (!w) return; const el = elDe(w); if (el) el.remove(); OS.wins = OS.wins.filter(x => x !== w); aplicar(); }
+  function barra() {
+    const top = arriba(), ks = [...FIJAS, ...OS.wins.map(w => w.k).filter(k => !FIJAS.includes(k))];
+    $g("osA").innerHTML = ks.map(k => { const [, t, ic, col, badge] = app(k), w = OS.wins.find(x => x.k === k), b = badge();
+      return `<button type="button" class="os-tb${w ? " run" : ""}${w && w === top ? " act" : ""}" data-tb="${k}" title="${esc(t)}" aria-label="${esc(t)}${w ? (w.min ? " (minimizada)" : " (abierta)") : ""}"><i style="background:${col}" aria-hidden="true">${ic}</i>${b ? `<em>${b}</em>` : ""}</button>`; }).join("");
+  }
+  function inicio(q) {
+    const f = (q || "").trim().toLowerCase(), l = TODAS.filter(([, t]) => !f || t.toLowerCase().includes(f));
+    $g("osS").innerHTML = `<h5>${f ? "Resultados" : "Aplicaciones"}</h5><div class="ap">${l.length ? l.map(([k, t, ic, col]) => `<button type="button" role="menuitem" data-ab="${k}"><i style="background:${col}" aria-hidden="true">${ic}</i>${esc(t)}</button>`).join("") : `<p class="gp-empty" style="grid-column:1/-1">No hay apps con ese nombre.</p>`}</div>
+      <div class="ft"><span>Gerente · Cargo Brothers</span><button type="button" data-apagar>⏻ Cerrar escritorio</button></div>`;
+    $g("osS").hidden = false; $g("osSt").setAttribute("aria-expanded", "true"); return l;
+  }
+  function cerrarInicio() { $g("osS").hidden = true; $g("osSt").setAttribute("aria-expanded", "false"); }
+  function reloj() { const d = new Date(), p2 = x => String(x).padStart(2, "0"); $g("osC").innerHTML = `${p2(d.getHours())}:${p2(d.getMinutes())}<br>${p2(d.getDate())}/${p2(d.getMonth() + 1)}/${d.getFullYear()}`; }
+  setInterval(() => { if (!box.hidden) reloj(); }, 15000);
+  function render() {
+    box.querySelectorAll("#gpR button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.r === rango)));
+    const t0 = tab; $g("gpB").innerHTML = vEscritorio();
+    guardarTam();
+    OS.wins.forEach(w => { const el = elDe(w); if (!el) return; const wb = el.querySelector(".os-wb"), sc = wb.scrollTop;
+      wb.innerHTML = MET.length || ["plan", "salud", "chat", "tareas", "propuestas", "memoria"].includes(w.k) ? cuerpo(w) : `<div class="gp-box w12"><p class="gp-empty">Todavía no hay métricas: corre python3 metricas.py.</p></div>`; wb.scrollTop = sc; });
+    tab = (arriba() || {}).k || t0; aplicar();
+  }
+  // íconos del escritorio: un clic selecciona, doble clic abre (en el celular, un toque abre); dentro de una ventana, los botones abren la app
+  const TOQUE = matchMedia("(pointer:coarse)").matches;
+  box.addEventListener("click", e => {
+    const b = e.target.closest("[data-t]");
+    if (b && box.contains(b)) {
+      if (b.classList.contains("gd-ic") && b.closest(".os-icons") && !TOQUE) { OS.sel = b.dataset.t; box.querySelectorAll(".os-icons .gd-ic").forEach(x => x.classList.toggle("sel", x === b)); return; }
+      if (b.dataset.t === "escritorio") { const s = b.closest("[data-w]"); if (s) cerrarWin(s.dataset.w); return; }
+      abrirApp(b.dataset.t); return;
+    }
+    const tb = e.target.closest("[data-tb]");
+    if (tb) { const k = tb.dataset.tb, w = OS.wins.find(x => x.k === k); cerrarInicio();
+      if (!w) abrirApp(k); else if (w.min) { w.min = false; w.z = ++OS.z; tab = k; aplicar(); } else if (w === arriba()) { guardarTam(); w.min = true; aplicar(); } else { w.z = ++OS.z; tab = k; aplicar(); } return; }
+    const mn = e.target.closest("[data-wmin]"); if (mn) { const w = OS.wins.find(x => x.k === mn.dataset.wmin); guardarTam(); w.min = true; aplicar(); return; }
+    const mx = e.target.closest("[data-wmax]"); if (mx) { const w = OS.wins.find(x => x.k === mx.dataset.wmax); guardarTam(); w.max = !w.max; w.z = ++OS.z; aplicar(); return; }
+    const cx = e.target.closest("[data-wx]"); if (cx) { cerrarWin(cx.dataset.wx); return; }
+    const ab = e.target.closest("[data-ab]"); if (ab) { $g("osQ").value = ""; abrirApp(ab.dataset.ab); return; }
+    if (e.target.closest("[data-apagar]")) { cerrarInicio(); close(); return; }
+    if (e.target.closest("#osSt")) { $g("osS").hidden ? inicio($g("osQ").value) : cerrarInicio(); return; }
+    if (!e.target.closest("#osS") && !e.target.closest(".os-q")) cerrarInicio();
+    const win = e.target.closest("[data-w]"); if (win) { const w = OS.wins.find(x => x.k === win.dataset.w); if (w && w !== arriba()) { w.z = ++OS.z; tab = w.k; aplicar(); } }
+    else if (e.target.closest(".os-desk") && !e.target.closest(".gd-ic")) { OS.sel = ""; box.querySelectorAll(".os-icons .gd-ic.sel").forEach(x => x.classList.remove("sel")); }
+  });
+  box.addEventListener("dblclick", e => { const b = e.target.closest(".os-icons [data-t]"); if (b) { abrirApp(b.dataset.t); return; }
+    const tt = e.target.closest("[data-drag]"); if (tt && !e.target.closest("button")) { const w = OS.wins.find(x => x.k === tt.dataset.drag); guardarTam(); w.max = !w.max; aplicar(); } });
+  box.addEventListener("keydown", e => { const b = e.target.closest(".os-icons [data-t]"); if (b && e.key === "Enter") { e.preventDefault(); abrirApp(b.dataset.t); } });
+  // arrastrar la ventana por su barra de título
+  box.addEventListener("pointerdown", e => {
+    const tt = e.target.closest("[data-drag]"); if (!tt || e.target.closest("button") || e.button > 0) return;
+    const w = OS.wins.find(x => x.k === tt.dataset.drag); if (!w) return;
+    w.z = ++OS.z; tab = w.k; aplicar(); if (w.max) return;
+    const el = elDe(w), L = capa(), x0 = e.clientX - w.x, y0 = e.clientY - w.y; guardarTam();
+    try { tt.setPointerCapture(e.pointerId); } catch (_) { }
+    const mover = ev => { w.x = Math.max(-w.w + 120, Math.min(L.clientWidth - 120, ev.clientX - x0)); w.y = Math.max(0, Math.min(L.clientHeight - 36, ev.clientY - y0)); el.style.left = w.x + "px"; el.style.top = w.y + "px"; };
+    const soltar = () => { tt.removeEventListener("pointermove", mover); tt.removeEventListener("pointerup", soltar); tt.removeEventListener("pointercancel", soltar); };
+    tt.addEventListener("pointermove", mover); tt.addEventListener("pointerup", soltar); tt.addEventListener("pointercancel", soltar);
+  });
+  $g("osQ").addEventListener("input", e => inicio(e.target.value));
+  $g("osQ").addEventListener("focus", e => inicio(e.target.value));
+  $g("osQ").addEventListener("keydown", e => { if (e.key === "Enter") { const l = inicio(e.target.value); if (l[0]) { e.target.value = ""; abrirApp(l[0][0]); e.target.blur(); } } });
   $g("gpR").addEventListener("click", e => { const b = e.target.closest("[data-r]"); if (b) { rango = b.dataset.r; render(); } });
   $g("gpD").addEventListener("change", e => { dia = e.target.value; render(); });
   box.addEventListener("click", e => { if (e.target === box) close(); });
   $g("gpX").onclick = () => close();
   let lastFocus = null;
-  function open() { lastFocus = document.activeElement; box.hidden = false; tab = "escritorio"; render(); $g("gpX").focus(); }
+  function open() { lastFocus = document.activeElement; box.hidden = false; reloj(); render(); $g("osSt").focus(); }
   function close() { box.hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
-  document.addEventListener("keydown", e => { if (e.key === "Escape" && !box.hidden) { e.stopImmediatePropagation(); close(); } }, true);
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !box.hidden) { e.stopImmediatePropagation(); if (!$g("osS").hidden) cerrarInicio(); else close(); } }, true);
   document.addEventListener("click", e => { if (e.target.closest("[data-panel]")) open(); });
   window.abrirPanel = open;
 
