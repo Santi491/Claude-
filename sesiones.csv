@@ -65,3 +65,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-28,raspberry,vigilante,17:00,17:00,alerta,la PC no prendió para la ronda de las 16:00
 2026-10-28,raspberry,vigilante,18:00,18:00,arreglado,la PC no hizo la ronda de las 16:00: relanzada
 2026-10-28,raspberry,vigilante,19:30,19:30,alerta,pedido a la PC sin hacer hace 90 min
+2026-10-28,pc,ronda,19:40,19:40,en curso,empezó
