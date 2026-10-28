@@ -40,7 +40,8 @@
   "baja|RAM DDR4 16GB (2x8) 3200|usado|2026-10-25": "2026-10-25 11:53",
   "baja|Ryzen 7 7700X|usado|2026-10-25": "2026-10-25 11:53",
   "baja|Ryzen 5 7600|nuevo|2026-10-27": "2026-10-27 11:57",
-  "conviene|Ryzen 5 7600|nuevo|2026-10-27": "2026-10-27 11:57"
+  "conviene|Ryzen 5 7600|nuevo|2026-10-27": "2026-10-27 11:57",
+  "baja|Ryzen 5 5600|nuevo|2026-10-28": "2026-10-28 11:57"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": true,
@@ -71,8 +72,7 @@
   "Ryzen 7 7700X|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 5 7600 (nuevo) bajó 27% en eBay: USD 199.99 → 146.98",
-  "✅ Ahora conviene Ryzen 5 7600 (nuevo): +31% · costo puesto Bs 1.941 vs Bs 2.800 en Cochabamba"
+  "⬇ Ryzen 5 5600 (nuevo) bajó 13% en eBay: USD 159.99 → 138.90"
  ],
- "revisado": "2026-10-27 16:33"
+ "revisado": "2026-10-28 11:57"
 }
