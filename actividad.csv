@@ -413,3 +413,4 @@ fecha,hora,agente,texto
 2026-10-28,19:51,fin,"Ronda tarde PC: sin cambios. Sin compras ni ventas nuevas; 4 Ryzen 7 7700X en camino (Bs 10.620 invertidos, stock 0, sin confirmar recepción del courier); dólar usado 12,15 con compra mayor que venta otra vez (necesidad abierta del 26/10)"
 2026-10-28,19:53,local,"Oficina: ronda tarde 28/10. Regenerado oficina/datos.js (generado 19:51) con reportes y generar.py; verificar.py comun y oficina sin ERROR. Publicada versión 100 en la misma URL con datos.js y captura 2005-mkt; datos.js publicado verificado por hash. Primer publish rechazado por datos.js no visto: lo leí, era una versión de las 10:44 sin datos que falten; se publicó la nueva"
 2026-10-28,19:58,gerente,aviso de fin de ronda enviado
+2026-10-28,19:57,local,"apagar_pc.ps1: la PC queda prendida (arrancó 14:18, no la prendió la Raspberry para la ronda y se estaba usando)"
