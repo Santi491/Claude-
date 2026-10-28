@@ -197,16 +197,8 @@
 
   /* ---------- Muebles y decoración ---------- */
   const marbleWM = M(0xffffff, { map: marbleW, roughness: 0.22, metalness: 0.04 });
-  function plant(x, z, s) {
-    s = s || 1;
-    cyl(0.34 * s, 0.28 * s, 0.62 * s, marbleWM, x, 0.31 * s, z, scene, 28);
-    const leaf = M(0x2f7a52, { roughness: .8 });
-    [[0, 1.05, 0, .55], [.25, .9, .15, .4], [-.22, .95, -.1, .42], [.05, 1.35, -.05, .38]].forEach(([dx, dy, dz, r]) => {
-      const m = new THREE.Mesh(new THREE.IcosahedronGeometry(r * s, 0), leaf);
-      m.position.set(x + dx * s, dy * s, z + dz * s); m.castShadow = true; scene.add(m);
-    });
-  }
-  plant(XL + 1, ZB + 1); plant(-14.2, 11.6, .8); plant(XR - 1.4, ZF - 1.4, 1.1); plant(13.6, ZF - 1.4, 1.0);
+  // (Santi, 28/10) las plantas simples se cambiaron por la planta de lujo: un solo tipo de planta en toda la nave
+  const plant = (x, z, k) => plantaLujo(x, z, 0.9 * (k || 1));
 
   // materiales cálidos de las zonas de lujo (oficina de Santi, reuniones, lounge, recepción)
   const marmolCalido = M(0xffffff, { map: marble("#d9c4a5", "#6e4a22", .8, 18), roughness: .16, metalness: .04 });
@@ -247,6 +239,7 @@
     [[0, 2.05, 0, .42], [.24, 1.82, .1, .3], [-.22, 1.86, -.08, .32], [.06, 1.66, -.24, .26], [-.1, 1.7, .24, .27], [.16, 2.25, -.1, .25]].forEach(([hx, hy, hz, r], i) => {
       const h = new THREE.Mesh(new THREE.IcosahedronGeometry(r, 1), hoja[i % 3]); h.position.set(hx, 0.85 + (hy - 0.85) * alto, hz); h.castShadow = true; g.add(h); });
   }
+  plant(XL + 1, ZB + 1); plant(XR - 1.4, ZF - 1.4, 1.1); plant(13.6, ZF - 1.4, 1.0);
   // alfombra con borde dorado
   function alfombra(x, z, w, d, color, borde) {
     const a = new THREE.Mesh(new THREE.BoxGeometry(w, 0.012, d), M(color, { roughness: .95 })); a.position.set(x, 0.008, z); a.receiveShadow = true; scene.add(a);
@@ -254,7 +247,7 @@
   }
 
   // Rack de servidores (la nube), contra el muro izquierdo junto a la sala de operaciones
-  const rackG = new THREE.Group(); rackG.position.set(XL + 1.1, 0, 13.4); scene.add(rackG);
+  const rackG = new THREE.Group(); rackG.position.set(XL + 1.1, 0, 10.6); scene.add(rackG);
   box(1.2, 2.6, 1, M(0x1e2124, { metalness: .5, roughness: .4 }), 0, 1.3, 0, rackG);
   const leds = [];
   for (let i = 0; i < 9; i++) {
@@ -357,7 +350,7 @@
   /* ---------- Puestos de trabajo ---------- */
   const skin = M(0xe7b98f, { roughness: .6 }), hairM = M(0x2b2018), deskM = M(0xffffff, { map: marble("#16181b", "#8a8f96"), roughness: .2 }),
     grafM = M(0x1c1f23, { roughness: .45 }), monM = M(0x0f1113, { roughness: .5 }),
-    legM = M(0x2b2f35, { metalness: .6, roughness: .35 }), chairM = M(0x2a2d31, { roughness: .8 });
+    legM = M(0x2b2f35, { metalness: .6, roughness: .35 }), chairM = M(0x1a1512, { roughness: .42 });   // (Santi, 28/10) cuero negro, como una silla de reuniones sobria
   const ST = {};
   // medidas del puesto (en z, desde el centro del escritorio hacia la silla): cubierta a 0,68 m porque ahí apoyan las
   // manos las animaciones de teclear de Mixamo; la silla metida y corrida 0,5 m para pararse
@@ -370,6 +363,7 @@
     // pantalla (el Gerente, dos). El borde de adelante queda en DESK.frente, igual que antes, para que las personas se sienten igual
     const DZ = DESK.frente - 0.4;
     box(1.8, 0.06, 0.8, deskM, 0, 0.65, DZ, g);
+    box(1.82, 0.018, 0.82, bronce, 0, 0.612, DZ, g).castShadow = false;   // canto de bronce (Santi, 28/10)
     [-0.85, 0.85].forEach(x => box(0.06, 0.62, 0.7, grafM, x, 0.31, DZ, g));
     const dual = a.id === "gerente";
     const mons = (dual ? [[-0.44, 0.16], [0.44, -0.16]] : [[0, 0]]).map(([mx, rot]) => {
@@ -389,7 +383,7 @@
     box(0.24, 0.003, 0.2, M(0x23262b, { roughness: .95 }), 0.28, 0.6815, DESK.frente - 0.385, g).castShadow = false;
     const raton = new THREE.Mesh(new THREE.SphereGeometry(0.035, 14, 10), negro); raton.scale.set(0.9, 0.45, 1.4); raton.position.set(0.27, 0.688, DESK.frente - 0.385); raton.castShadow = true; g.add(raton);
     // silla con rueditas (se arrima y se aleja con la persona)
-    const ch = silla(g, 0, DESK.sillaDentro, 0, chairM, legM);
+    const ch = silla(g, 0, DESK.sillaDentro, 0, chairM, cromo);
     // persona sentada simple: solo se ve si no cargan las personas de Mixamo
     const p = new THREE.Group(); p.position.set(0, 0, 0.92); g.add(p);
     const shirt = M(new THREE.Color(a.shirt), { roughness: .7 });
@@ -471,7 +465,7 @@
   plantaLujo(28.3, ZB + 0.8); plantaLujo(PUERTA[0] - 0.9, ZB + 0.8, 0.9);
   // puerta al cobertizo de paquetería: marco de bronce y letrero
   PUERTA.forEach(x => box(0.06, 2.25, 0.36, bronce, x, 1.125, ZB - 0.15)); box(1.26, 0.06, 0.36, bronce, (PUERTA[0] + PUERTA[1]) / 2, 2.25, ZB - 0.15);
-  const pqSign = textPlane(1.5, 0.28, 512, 96, (g, w, h) => { g.fillStyle = "#16181b"; g.fillRect(0, 0, w, h); g.fillStyle = "#E9EBEE"; g.font = "700 44px 'IBM Plex Mono', monospace"; g.textAlign = "center"; g.fillText("PAQUETERÍA ↑", w / 2, 63); }, { transparent: false });
+  const pqSign = textPlane(1.5, 0.28, 512, 96, (g, w, h) => { g.fillStyle = "#1c1e21"; g.fillRect(0, 0, w, h); g.fillStyle = "#E9EBEE"; g.font = "600 42px Archivo, system-ui, sans-serif"; spaced(g, "PAQUETERÍA", w / 2, 63, 6); }, { transparent: false });
   pqSign.position.set((PUERTA[0] + PUERTA[1]) / 2, 2.6, ZB + 0.02); scene.add(pqSign);
   pointL(LG.tvX, 2.8, -6.6, 0.5, 9); pointL(BAR.x, 2.6, -7.5, 0.4, 8);
 
@@ -479,11 +473,11 @@
   const gym = new THREE.Group(); gym.position.set(21, 0, 9); scene.add(gym);
   const gmat = new THREE.Mesh(new THREE.BoxGeometry(12.6, 0.035, 4.0), M(0x1b1d20, { roughness: 1 })); gmat.position.y = 0.018; gmat.receiveShadow = true; gym.add(gmat);
   [[0, -2.0, 12.6, .04], [0, 2.0, 12.6, .04], [-6.3, 0, .04, 4.0], [6.3, 0, .04, 4.0]].forEach(([x, z, w, d]) => { const e = box(w, 0.012, d, ledM, x, 0.04, z, gym); e.castShadow = false; });
-  const steel = M(0xa7aeb5, { metalness: .85, roughness: .28 }), black = M(0x141414, { roughness: .6 }), rubber = M(0x101010, { roughness: .9 }), pad = M(0x2b2d31, { roughness: .6 });
+  const steel = M(0xc9a45c, { metalness: .85, roughness: .28 }), black = M(0x141414, { roughness: .6 }), rubber = M(0x101010, { roughness: .9 }), pad = M(0x1a1512, { roughness: .42 });   // (Santi, 28/10) bronce y cuero negro
   const hcyl = (r, len, mat, x, y, z, axis) => { const c = cyl(r, r, len, mat, x, y, z, gym, 20); if (axis === "x") c.rotation.z = Math.PI / 2; else c.rotation.x = Math.PI / 2; return c; };
   // jaula de sentadillas (power rack) sobre plataforma de madera, con barra cargada
   const rx = -4.9;
-  box(2.4, 0.06, 2.4, M(0x8b6a48, { roughness: .7 }), rx, 0.05, -0.3, gym);
+  box(2.4, 0.06, 2.4, M(0x5a3a22, { roughness: .6 }), rx, 0.05, -0.3, gym);
   [[-0.65, -1.0], [0.65, -1.0], [-0.65, 0.3], [0.65, 0.3]].forEach(([dx, dz]) => box(0.08, 2.35, 0.08, black, rx + dx, 1.2, dz, gym));
   [-1.0, 0.3].forEach(dz => box(1.38, 0.08, 0.08, black, rx, 2.36, dz, gym));
   [-0.65, 0.65].forEach(dx => box(0.08, 0.08, 1.38, black, rx + dx, 2.36, -0.35, gym));
@@ -527,15 +521,12 @@
   const sx = 4.9;
   [-0.8, 0.8].forEach(d => box(0.1, 3.0, 0.1, black, sx + d, 1.5, -0.6, gym)); box(1.7, 0.1, 0.1, black, sx, 3.0, -0.6, gym);
   cyl(0.006, 0.006, 0.5, M(0x777777), sx, 2.72, -0.6, gym, 4);
-  cyl(0.24, 0.24, 1.2, M(0xe8e6e1, { roughness: .7 }), sx, 1.85, -0.6, gym, 24);
+  cyl(0.24, 0.24, 1.2, M(0x2e170b, { roughness: .4 }), sx, 1.85, -0.6, gym, 24); cyl(0.245, 0.245, 0.04, bronce, sx, 2.43, -0.6, gym, 24);
   // colchoneta, balones medicinales y botella
-  box(0.6, 0.012, 1.7, M(0x5d6b78, { roughness: 1 }), 3.9, 0.04, 1.2, gym);
+  box(0.6, 0.012, 1.7, M(0x3a2414, { roughness: .9 }), 3.9, 0.04, 1.2, gym);
   [[5.6, 1.2, 0.16], [5.6, 1.6, 0.14]].forEach(([x, z, r]) => { const b = new THREE.Mesh(new THREE.SphereGeometry(r, 18, 14), M(0x2c2f33, { roughness: .8 })); b.position.set(x, r + 0.03, z); b.castShadow = true; gym.add(b); });
   cyl(0.035, 0.035, 0.22, M(0xd6dde3, { metalness: .6, roughness: .25 }), -4.3, 0.56, 1.75, gym, 12);
-  // letrero GYM colgado de la viga
-  const gymSign = canvasTex(512, 160, (g, w, h) => { g.fillStyle = "#1c1e21"; g.fillRect(0, 0, w, h); g.fillStyle = "#E9EBEE"; g.font = "900 96px Archivo, sans-serif"; g.textAlign = "center"; g.fillText("GYM", w / 2, 116); });
-  const gs = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.5), new THREE.MeshBasicMaterial({ map: gymSign, side: THREE.DoubleSide })); gs.position.set(0, 4.1, -0.4); gym.add(gs);
-  [-0.7, 0.7].forEach(d => cyl(0.005, 0.005, WH - 4.35, M(0x111111), d, 4.35 + (WH - 4.35) / 2, -0.4, gym, 4));
+  // letrero GYM: con hangSign, como el resto de los letreros (se pone más abajo, cuando ya existe la tipografía)
 
   /* ---------- Decoración del jefe: escritorio con su avatar, rincón gym ---------- */
   const rgbMats = [];
@@ -590,8 +581,20 @@
   const bossChair = sillaEjecutiva(boss, 0, 0.97, 0, cueroNegro);
   const bossP = person(boss, 0, 0.92, 0x111111, 1.08);   // Santi simple: solo se ve si no cargan las personas de Mixamo
   // mueble bajo con luz cálida y una planta, contra el muro del fondo
-  box(4.0, 0.6, 0.45, darkWood, -5.6, 0.3, ZB + 0.3); box(4.0, 0.02, 0.02, M(0xffd9a0, { emissive: 0xffc070, emissiveIntensity: 1.2 }), -5.6, 0.61, ZB + 0.53);
+  // (Santi, 28/10) detrás del escritorio: mueble bajo con luz cálida y el logo iluminado en el muro
+  box(4.4, 0.6, 0.45, darkWood, SANTI.x, 0.3, ZB + 0.3); box(4.4, 0.02, 0.02, M(0xffd9a0, { emissive: 0xffc070, emissiveIntensity: 1.2 }), SANTI.x, 0.61, ZB + 0.53);
+  cyl(0.05, 0.04, 0.12, M(0xf4f6f8), SANTI.x - 1.4, 0.66, ZB + 0.3, scene, 12); box(0.32, 0.22, 0.04, bronce, SANTI.x + 1.3, 0.72, ZB + 0.25);
   plantaLujo(-3.6, -3.3, 0.8);
+  // rincón de charla a la derecha del escritorio: dos sillones mirándose, mesita de mármol y alfombra (ahí se sienta el Gerente)
+  alfombra(-4.6, -7.6, 2.4, 3.2, 0x2b2622, 0x8a6d3e);
+  sillonS(-4.6, -8.7, Math.PI); sillonS(-4.6, -6.5, 0);
+  cyl(0.38, 0.38, 0.04, marbleWM, -4.6, 0.44, -7.6, scene, 32); cyl(0.06, 0.18, 0.42, bronce, -4.6, 0.21, -7.6, scene, 16);
+  cyl(0.04, 0.035, 0.1, M(0xf4f6f8), -4.45, 0.51, -7.5, scene, 12); box(0.24, 0.03, 0.18, M(0x2b2420), -4.75, 0.475, -7.7);
+  function sillonS(x, z, rot) {
+    const t = new THREE.Group(); t.position.set(x, 0, z); t.rotation.y = rot; scene.add(t);
+    box(0.85, 0.36, 0.8, cueroCognac, 0, 0.24, 0, t); box(0.85, 0.55, 0.18, cueroCognac, 0, 0.64, 0.31, t).rotation.x = 0.15;
+    [-0.4, 0.4].forEach(x2 => box(0.12, 0.3, 0.8, cueroCognac, x2, 0.5, 0, t));
+  }
   // izquierda: qué conviene traer · centro: el día de Cargo Brothers (dólar, oportunidades, pedidos, tiendas) · derecha: agentes
   function paintBoss() {
     const rank = typeof ranking !== "undefined" ? ranking : [], fx = typeof lastFx !== "undefined" ? lastFx : null, wait = typeof waiting !== "undefined" ? waiting : [];
@@ -644,7 +647,7 @@
 
   // Tablero del equipo: pantalla grande en el muro izquierdo, junto a la sala de operaciones, con las necesidades e ideas
   // de cada agente (toca para abrir)
-  const tabG = new THREE.Group(); tabG.position.set(XL + 0.12, 3.6, 4.8); tabG.rotation.y = Math.PI / 2; scene.add(tabG);
+  const tabG = new THREE.Group(); tabG.position.set(XL + 0.12, 3.5, 15.4); tabG.rotation.y = Math.PI / 2; tabG.scale.setScalar(0.85);   // (Santi, 28/10) pasó al frente: el videowall está en su lugar scene.add(tabG);
   box(6.3, 3.6, 0.1, M(0x0c0f12, { metalness: .4, roughness: .35 }), 0, 0, 0, tabG);
   const tabTex = new THREE.CanvasTexture(TEX.tablero || document.createElement("canvas")); tabTex.encoding = THREE.sRGBEncoding; tabTex.anisotropy = ANISO;
   const tabScr = new THREE.Mesh(new THREE.PlaneGeometry(6.1, 3.43), new THREE.MeshBasicMaterial({ map: tabTex, toneMapped: false }));
@@ -653,7 +656,7 @@
   ST.tablero = { g: tabG };
 
   // Archivo de documentos: archiveros en la oficina de Santi, contra el muro del fondo; se arma más abajo
-  const cabG = new THREE.Group(); cabG.position.set(-11.6, 0, ZB + 0.55); scene.add(cabG);
+  const cabG = new THREE.Group(); cabG.position.set(XL + 0.55, 0, -6.0); cabG.rotation.y = Math.PI / 2; scene.add(cabG);   // (Santi, 28/10) en la pared izquierda, no detrás de la silla
   ST.docs = { g: cabG };
   ST.jefe = { g: boss };
 
@@ -724,10 +727,10 @@
       cabDrawers.push(dg); cabTarget.push(0);
     });
     // letrero, LED y lámpara del archivo
-    hangSign("ARCHIVO", -11.6, ZB + 1.6, 0, 4.0, 2.4);
+    
     box(NC * (CWc + 0.04), 0.03, 0.06, ledM, 0, CHc + 0.05, CDc / 2 - 0.05, cabG).castShadow = false;
     const al = new THREE.PointLight(0xfff3dc, 0.45, 6, 2); al.position.set(0, 2.9, 1.4); cabG.add(al);
-    floorText("ARCHIVO DE DOCUMENTOS", -11.6, ZB + 1.7, 4.4);
+    floorText("ARCHIVO", XL + 2.1, -6.0, 2.4, Math.PI / 2);
   }
   // el explorador avisa qué cajón abrió (-1 = cerrar todos)
   window.archivo3D = { abrir(i) { cabTarget.forEach((_, k) => { cabTarget[k] = k === i ? 0.48 : 0; }); } };
@@ -739,14 +742,17 @@
   for (let x = XL + 1.2; x < XR - 0.6; x += 1.6) lineF(x, 12.8, 0.7, 0.05);
 
   // ---- 1. Centro de operaciones: videowall en la franja sobre el vidrio de las salas del fondo, frente a los puestos ----
-  const VW = 13, VH = 3.6, VX = -7, VY = 5.0, BANDA = -2.45;   // BANDA: cara de la franja oscura que mira a la sala
-  box(VW + 1.0, VH + 0.6, 0.06, M(0x24272b, { roughness: 1 }), VX, VY, BANDA + 0.03).castShadow = false;   // panel acústico de fondo
-  box(VW + 0.12, VH + 0.12, 0.12, M(0x08090a, { metalness: .4, roughness: .3 }), VX, VY, BANDA + 0.09).castShadow = false;
+  // (Santi, 28/10) ya no cuelga de la franja sobre el vidrio (tapaba la oficina de Santi y la sala de reuniones):
+  // va en el muro izquierdo, al costado de los puestos. vwG: x local = a lo largo del muro, z local = hacia la sala
+  const VW = 10, VH = 3.2, VY = 4.3, VZ = 2.6;
+  const vwG = new THREE.Group(); vwG.position.set(XL + 0.15, 0, VZ); vwG.rotation.y = Math.PI / 2; scene.add(vwG);
+  box(VW + 1.0, VH + 0.6, 0.06, M(0x24272b, { roughness: 1 }), 0, VY, 0.03, vwG).castShadow = false;   // panel acústico de fondo
+  box(VW + 0.12, VH + 0.12, 0.12, M(0x08090a, { metalness: .4, roughness: .3 }), 0, VY, 0.09, vwG).castShadow = false;
   const opsCv = document.createElement("canvas"); opsCv.width = 2048; opsCv.height = 576;
   const opsTex = new THREE.CanvasTexture(opsCv); opsTex.encoding = THREE.sRGBEncoding; opsTex.anisotropy = ANISO;
   const opsScr = new THREE.Mesh(new THREE.PlaneGeometry(VW, VH), new THREE.MeshBasicMaterial({ map: opsTex, toneMapped: false }));
-  opsScr.position.set(VX, VY, BANDA + 0.16); scene.add(opsScr);
-  box(VW + 0.3, 0.03, 0.08, ledM, VX, VY + VH / 2 + 0.12, BANDA + 0.1).castShadow = false;
+  opsScr.position.set(0, VY, 0.16); vwG.add(opsScr);
+  box(VW + 0.3, 0.03, 0.08, ledM, 0, VY + VH / 2 + 0.12, 0.1, vwG).castShadow = false;
   const STEPG = [/entregado|cochabamba|delivered/i, /bolivia|vuelo|aduana|camino|bodega|courier|miami|warehouse|enviado|recibido|tr[aá]nsito|en ruta/i];
   const etapa = e => STEPG[0].test(e || "") ? 2 : STEPG[1].test(e || "") ? 1 : 0;
   function paintOps() {
@@ -799,12 +805,12 @@
   floorText("OPERACIONES", -7, 9.6, 7);
 
   // ---- 2. Relojes de dos ciudades (hora real) ----
-  const clocks = [["Cochabamba", "America/La_Paz", -12.9], ["Miami", "America/New_York", -11.1]].map(([n, tz, x]) => {
+  const clocks = [["Cochabamba", "America/La_Paz", 3.6], ["Miami", "America/New_York", 4.9]].map(([n, tz, x]) => {
     const c = textPlane(1.05, 1.05, 256, 256, () => {}, { transparent: true });
-    c.position.set(x, 5.55, BANDA + 0.05); scene.add(c);
-    cyl(0.56, 0.56, 0.06, M(0x111214, { metalness: .5, roughness: .3 }), x, 5.55, BANDA + 0.01).rotation.x = Math.PI / 2;
+    c.position.set(x, 6.75, 0.05); vwG.add(c);
+    cyl(0.56, 0.56, 0.06, M(0x111214, { metalness: .5, roughness: .3 }), x, 6.75, 0.01, vwG).rotation.x = Math.PI / 2;
     const lab = textPlane(1.6, 0.26, 512, 84, (g, w, h) => { g.clearRect(0, 0, w, h); g.fillStyle = "#C9CED4"; g.font = `600 34px ${MONO}`; spaced(g, n.toUpperCase(), w / 2, 56, 6); });
-    lab.position.set(x, 4.82, BANDA + 0.05); scene.add(lab);
+    lab.position.set(x - 2.6, 6.75, 0.05); vwG.add(lab);
     return { c, tz };
   });
   function paintClocks() {
@@ -854,23 +860,25 @@
 
   // ---- 4. Recepción en la entrada: mostrador de mármol, pared de mármol negro con el logo, espera y jardín vertical ----
   box(4.6, 1.08, 0.7, nero, REC.x, 0.54, REC.z);
-  box(4.8, 0.05, 0.86, marbleWM, REC.x, 1.105, REC.z - 0.04);
-  box(4.5, 0.012, 0.03, ledM, REC.x, 0.06, REC.z + 0.36).castShadow = false;
+  box(4.8, 0.05, 0.86, nero, REC.x, 1.105, REC.z - 0.04); box(4.82, 0.025, 0.88, bronce, REC.x, 1.07, REC.z - 0.04);   // (Santi, 28/10) mármol negro con canto de bronce, como el escritorio de Santi
+  box(4.5, 0.012, 0.03, M(0xffd9a0, { emissive: 0xffc070, emissiveIntensity: 1.2 }), REC.x, 0.06, REC.z + 0.36).castShadow = false;
   box(4.2, 0.05, 0.6, M(0x2a2d31), REC.x, 0.76, REC.z - 0.7);
   box(0.55, 0.36, 0.04, M(0x0d0e10), REC.x + 1.2, 1.32, REC.z - 0.25).rotation.y = Math.PI;
   cyl(0.12, 0.09, 0.3, marbleWM, REC.x - 1.8, 1.27, REC.z - 0.05, scene, 18);
   [[0, .32, 0, .14], [.06, .4, .04, .1]].forEach(([dx, dy, dz, r]) => { const m = new THREE.Mesh(new THREE.IcosahedronGeometry(r, 0), M(0x2f7a52, { roughness: .8 })); m.position.set(REC.x - 1.8 + dx, 1.27 + dy - 0.1, REC.z - 0.05 + dz); scene.add(m); });
   box(0.04, 0.28, 0.22, M(0x0d0e10), REC.x + 1.05, 1.27, REC.z - 0.25);
-  sofa(-13.4, 16.6, 1.0, 0.95, Math.PI / 2); sofa(-13.4, 18.0, 1.0, 0.95, Math.PI / 2);
-  cyl(0.38, 0.38, 0.05, marbleWM, -12.3, 0.44, 17.3, scene, 36); cyl(0.2, 0.24, 0.42, M(0x2a2c30, { roughness: .4 }), -12.3, 0.21, 17.3, scene, 24);
-  // jardín vertical en el muro izquierdo
-  const leaves = canvasTex(512, 512, (g, w, h) => { g.fillStyle = "#1f3b2a"; g.fillRect(0, 0, w, h); for (let i = 0; i < 900; i++) { g.fillStyle = `hsl(${120 + rnd() * 30},${35 + rnd() * 25}%,${18 + rnd() * 22}%)`; g.beginPath(); g.ellipse(rnd() * w, rnd() * h, 6 + rnd() * 10, 3 + rnd() * 5, rnd() * 3, 0, 7); g.fill(); } });
-  leaves.wrapS = leaves.wrapT = THREE.RepeatWrapping; leaves.repeat.set(2, 1.4);
-  const gw = new THREE.Mesh(new THREE.PlaneGeometry(4.2, 3.2), M(0xffffff, { map: leaves, roughness: 1 })); gw.rotation.y = Math.PI / 2; gw.position.set(XL + 0.05, 1.9, 16.85); scene.add(gw);
-  for (let i = 0; i < 46; i++) { const m = new THREE.Mesh(new THREE.IcosahedronGeometry(0.1 + rnd() * 0.12, 0), M(0x2f7a52 + Math.floor(rnd() * 3) * 0x020301, { roughness: .8 })); m.position.set(XL + 0.12 + rnd() * 0.15, 0.4 + rnd() * 3.0, 14.85 + rnd() * 3.9); scene.add(m); }
-  box(0.12, 0.08, 4.3, ledM, XL + 0.12, 3.55, 16.85).castShadow = false;
+  // (Santi, 28/10) marco de bronce y brillo cálido en el muro del logo
+  { const zf = REC.z - 2.2 + 0.14; box(7.3, 0.05, 0.04, bronce, REC.x, 3.78, zf).castShadow = false; box(7.3, 0.05, 0.04, bronce, REC.x, 0.02, zf).castShadow = false;
+    [-3.63, 3.63].forEach(d => box(0.05, 3.8, 0.04, bronce, REC.x + d, 1.9, zf).castShadow = false);
+    box(7.0, 0.02, 0.03, M(0xffd9a0, { emissive: 0xffc070, emissiveIntensity: 1.2 }), REC.x, 0.1, zf + 0.02).castShadow = false; }
+  // sala de espera como el rincón de la oficina de Santi: dos sillones de cuero cognac, mesita de mármol, alfombra y plantas de lujo
+  alfombra(-3.2, 17.0, 3.4, 2.2, 0x2b2622, 0x8a6d3e);
+  sillonS(-4.3, 17.0, -Math.PI / 2); sillonS(-2.1, 17.0, Math.PI / 2);
+  cyl(0.36, 0.36, 0.04, marbleWM, -3.2, 0.44, 17.0, scene, 32); cyl(0.06, 0.18, 0.42, bronce, -3.2, 0.21, 17.0, scene, 16);
+  plantaLujo(REC.x + 4.3, REC.z - 1.7, 0.9); plantaLujo(REC.x - 4.3, REC.z - 1.7, 0.9);
+  // (Santi, 27/10) el jardín vertical del muro izquierdo se sacó: ahí era la recepción vieja
   // alfombra de entrada con el logo
-  const mat = textPlane(3.2, 1.6, 512, 256, (g, w, h) => { g.fillStyle = "#1c1e21"; g.fillRect(0, 0, w, h); if (typeof cbCanvas === "function") g.drawImage(cbCanvas(150, "#9aa0a8"), (w - 150) / 2, 34); }, { toneMapped: true, transparent: false });
+  const mat = textPlane(3.2, 1.6, 512, 256, (g, w, h) => { g.fillStyle = "#8a6d3e"; g.fillRect(0, 0, w, h); g.fillStyle = "#2b2622"; g.fillRect(8, 8, w - 16, h - 16); if (typeof cbCanvas === "function") g.drawImage(cbCanvas(150, "#c9a45c"), (w - 150) / 2, 34); }, { toneMapped: true, transparent: false });
   mat.rotation.x = -Math.PI / 2; mat.position.set(REC.x, 0.02, ZF - 1.1); scene.add(mat);
   floorText("RECEPCIÓN", REC.x + 4.6, REC.z + 0.4, 3.6);
   pointL(REC.x, 3.4, REC.z, 0.6, 9);
@@ -889,8 +897,10 @@
   glassWall(XL, VID_Z, PU_SANTI[0], VID_Z); glassWall(PU_SANTI[1], VID_Z, PU_REU[0], VID_Z); glassWall(PU_REU[1], VID_Z, XLO, VID_Z);
   glassWall(-3, ZB, -3, VID_Z); glassWall(XLO, ZB, XLO, VID_Z);
   [...PU_SANTI, ...PU_REU].forEach(x => box(0.07, 2.8, 0.07, M(0x16181a, { metalness: .6 }), x, 1.4, VID_Z));
-  box(XLO - XL, WH - 2.85, 0.3, muroM(XLO - XL), (XL + XLO) / 2, 2.85 + (WH - 2.85) / 2, VID_Z);   // franja sobre el vidrio
-  box(XLO - XL, 0.03, 0.06, ledM, (XL + XLO) / 2, 2.87, VID_Z + 0.17).castShadow = false;
+  // (Santi, 28/10) sin la franja oscura de 4 m sobre el vidrio: un perfil fino con LED y las salas abiertas arriba
+  box(XLO - XL, 0.16, 0.14, M(0x16181a, { metalness: .6 }), (XL + XLO) / 2, 2.9, VID_Z).castShadow = false;
+  box(XLO - XL, 0.02, 0.04, ledM, (XL + XLO) / 2, 2.83, VID_Z + 0.08).castShadow = false;
+  [-3, XLO].forEach(x => box(0.14, 0.16, ZB - VID_Z < 0 ? VID_Z - ZB : 0, M(0x16181a, { metalness: .6 }), x, 2.9, (ZB + VID_Z) / 2).castShadow = false);
   floorText("SANTI", SANTI.x, -3.4, 3.0); floorText("REUNIONES", 3, -3.4, 3.6);
 
   // sala de reuniones: mesa ovalada de mármol cálido con borde de bronce sobre dos pies esculpidos, 10 sillas ejecutivas
@@ -904,9 +914,11 @@
     [-1.8, -0.6, 0.6, 1.8].forEach(d => { sillaEjecutiva(scene, srCx + d, srCz - 1.4, Math.PI, cueroCognac); sillaEjecutiva(scene, srCx + d, srCz + 1.4, 0, cueroCognac); });
     sillaEjecutiva(scene, srCx - 3.25, srCz, -Math.PI / 2, cueroCognac); sillaEjecutiva(scene, srCx + 3.25, srCz, Math.PI / 2, cueroCognac);
     cyl(0.01, 0.01, WH - 2.95, bronce, srCx, 2.95 + (WH - 2.95) / 2, srCz, scene, 6);
-    const lamp = cyl(1, 1, 0.08, bronce, srCx, 2.95, srCz, scene, 40); lamp.scale.set(2.0, 1, 0.35); lamp.castShadow = false;
-    const brillo = cyl(1, 1, 0.01, new THREE.MeshBasicMaterial({ color: 0xffe2b0 }), srCx, 2.905, srCz, scene, 40); brillo.scale.set(1.95, 1, 0.32); brillo.castShadow = false;
+    const lamp = box(3.6, 0.05, 0.12, bronce, srCx, 2.95, srCz); lamp.castShadow = false;
+    const brillo = box(3.5, 0.01, 0.07, new THREE.MeshBasicMaterial({ color: 0xffe2b0 }), srCx, 2.92, srCz); brillo.castShadow = false;
     const calida = new THREE.PointLight(0xffc98a, .8, 8, 2); calida.position.set(srCx, 2.6, srCz); scene.add(calida); }
+  const santiLogo = textPlane(3.4, 1.7, 1024, 512, (g, w, h) => { g.clearRect(0, 0, w, h); brandArt(g, w, h, 300, 20, 18); }, { transparent: true });
+  santiLogo.position.set(SANTI.x, 2.05, ZB + 0.04); scene.add(santiLogo);
   // pantalla en el muro del fondo: logo y el informe del Gerente
   box(2.6, 1.5, 0.1, M(0x0a0a0b, { metalness: .4, roughness: .3 }), srCx, 1.75, ZB + 0.06);
   const srScr = textPlane(2.45, 1.38, 1024, 576, (g, w, h) => {
@@ -916,8 +928,14 @@
   }, { transparent: false });
   srScr.position.set(srCx, 1.75, ZB + 0.12); scene.add(srScr);
   const srSign = textPlane(4.4, 0.5, 1024, 116, (g, w, h) => { g.fillStyle = "rgba(22,24,27,.88)"; g.fillRect(0, 0, w, h); g.fillStyle = "#E9EBEE"; g.font = `600 52px ${FN}`; spaced(g, "SALA DE REUNIONES", w / 2, 78, 10); });
-  srSign.position.set(1.6, 2.3, VID_Z + 0.02); scene.add(srSign);
+  srSign.visible = false;   // (Santi, 28/10) el nombre va en la franja esmerilada
   plantaLujo(SR.x1 - 0.7, ZB + 0.8, 0.9);
+  // aparador con café contra el vidrio izquierdo de la sala
+  box(0.5, 0.85, 2.4, darkWood, SR.x0 + 0.35, 0.425, -6.4); box(0.52, 0.03, 2.42, bronce, SR.x0 + 0.35, 0.86, -6.4);
+  box(0.3, 0.36, 0.3, M(0x0f1113), SR.x0 + 0.35, 1.05, -7.2); [-6.2, -6.0, -5.8].forEach(z => cyl(0.04, 0.035, 0.1, M(0xf4f6f8), SR.x0 + 0.35, 0.93, z, scene, 12));
+  // franja esmerilada con el nombre en el vidrio del frente: da privacidad a la altura de los ojos sin tapar desde arriba
+  const srFrost = textPlane(SR.x1 - PU_REU[1] > 0 ? PU_REU[0] - SR.x0 - 0.4 : 8, 0.42, 1536, 80, (g, w, h) => { g.fillStyle = "rgba(235,240,245,.42)"; g.fillRect(0, 0, w, h); g.fillStyle = "rgba(20,22,26,.55)"; g.font = `600 44px ${FN}`; spaced(g, "CARGO BROTHERS · SALA DE REUNIONES", w / 2, 56, 12); }, { transparent: true });
+  srFrost.position.set((SR.x0 + PU_REU[0]) / 2, 1.55, VID_Z + 0.03); scene.add(srFrost);
 
   // ---- 6. Paquetería: cobertizo trasero detrás del lounge (se entra por la puerta del muro del fondo), lejos de los agentes ----
   const PQ = { x0: 12, x1: 23, z0: -17, z1: ZB }, PQH = 3.0;
@@ -988,7 +1006,7 @@
 
   // ---- 7. Señalética del resto de la nave ----
   floorText("LOUNGE", 19, -3.4, 3.6);
-  floorText("GYM", 21, 11.7, 2.8);
+  floorText("GYM", 21, 11.7, 2.8); hangSign("GYM", 21, 8.6, 0, 4.1, 2.0);
 
   // ---- 8. Techo y acabados: bandejas de cables, más luz pareja y luces de las zonas nuevas ----
   function pointL(x, y, z, i, d) { const l = new THREE.PointLight(0xf4f7ff, i, d, 2); l.position.set(x, y, z); scene.add(l); return l; }
@@ -1049,8 +1067,9 @@
       else if (id === "jefe") tmp.set(0, 2.55, 0.9).applyMatrix4(s.g.matrixWorld);
       else if (id === "gerente" && GER && GER.caminando()) tmp.set(0, 2.25, 0).applyMatrix4(GER.walker.matrixWorld);
       else tmp.set(0, 2.25, 0.9).applyMatrix4(s.g.matrixWorld);
+      const lejos = tmp.z < VID_Z && camera.position.distanceTo(tmp) > 20 && !(open && sel === id);   // (Santi, 28/10) salas del fondo: solo de cerca
       tmp.project(camera);
-      const vis = tmp.z < 1 && Math.abs(tmp.x) < 1.15 && Math.abs(tmp.y) < 1.15;
+      const vis = !lejos && tmp.z < 1 && Math.abs(tmp.x) < 1.15 && Math.abs(tmp.y) < 1.15;
       if (b.hidden !== !vis) b.hidden = !vis; if (!vis) return;
       const px = (tmp.x + 1) / 2 * W, py = (1 - tmp.y) / 2 * H;
       if (id === "jefe") {
