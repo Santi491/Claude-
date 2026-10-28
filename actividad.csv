@@ -388,3 +388,4 @@ fecha,hora,agente,texto
 2026-10-27,16:57,pedidos,"Pedidos (ronda Mac): 4 Ryzen 7 7700X (UPS) sin confirmar: UPS no cargó en 2 intentos y 17track no terminó; último dato en camino, entrega estimada 27/10. Las 3 pruebas revisadas: sin movimientos nuevos. Sin ciudades nuevas."
 2026-10-27,16:59,local,"Oficina: publicada versión 88 (datos de la ronda Mac 27/10 y captura de Marketplace)"
 2026-10-27,16:59,gerente,"Aviso de fin de ronda enviado (ronda Mac 27/10; confirma 4 necesidades resueltas en la oficina; recuerda la tarea 26-6)"
+2026-10-27,20:17,gerente,"Informe diario 27/10 subido al Doc. PC no prendió a las 16:00 (alerta del vigilante). Propuse 6 tareas, 6 aprobadas por rutina; cerré 2 tareas (22-4 y 26-5); contesté 1 mensaje del chat; 1 nota nueva en la libreta, 0 cerradas; 0 mensajes de Telegram (los lee la Raspberry)"
