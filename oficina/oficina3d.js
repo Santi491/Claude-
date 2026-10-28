@@ -1004,6 +1004,49 @@
   floorText("PAQUETERÍA", 18.6, ZB - 0.9, 3.4);
   pointL(17.5, 2.8, -13.5, 0.55, 11);
 
+  const EXTRA = [];   // animaciones que se mueven solas (el avioncito del mapa): el loop las llama en cada cuadro
+  const warmM = M(0xffd9a0, { emissive: 0xffc070, emissiveIntensity: 1.2 });
+  /* MAPA DE LA RUTA en el muro del fondo, sobre la sala de reuniones (Santi, 28/10, probado en el probador: "en la pared, no en el piso"): las Américas
+     en mármol negro, la ruta Miami → Cochabamba en bronce con un avioncito que la recorre y cuántos pedidos reales van en camino */
+  const MP = { x: 4.9, y: 4.5, z: ZB + 0.14, w: 5.8, h: 3.2 }, MCW = 2048, MCH = 1134;   // a la izquierda el mapa, a la derecha el texto
+  const lonX = lon => 70 + (lon + 128) / 98 * (1024 - 140), latY = lat => 50 + (52 - lat) / 94 * (MCH - 100);
+  const TIERRA = [[-125, 50], [-124, 42], [-120, 34], [-117, 32.5], [-110, 23], [-105, 20], [-97, 16], [-92, 14.5], [-87, 13], [-83, 8.5], [-79, 9], [-77.5, 7.5], [-80, 1], [-81, -5], [-76, -14], [-71, -18], [-70, -25], [-71.5, -33], [-73, -40], [-62, -40], [-57, -36], [-53, -33], [-48, -26], [-41, -22], [-39, -13], [-35, -8], [-35, -5], [-44, -2], [-50, 0], [-52, 5], [-60, 8.5], [-64, 10.5], [-72, 12], [-76, 9.5], [-77.5, 8.8], [-81, 9], [-83.5, 11], [-83.5, 15], [-87.5, 16], [-88, 21], [-90.5, 21], [-91, 19], [-94.5, 18.3], [-97, 22], [-97.5, 26], [-94, 29.5], [-89, 30.2], [-84, 30], [-82.5, 27], [-81, 25.2], [-80, 25.8], [-80.5, 28.5], [-81.4, 31], [-76, 35], [-75.5, 38], [-74, 40.5], [-70, 41.5], [-70, 44], [-66, 45], [-64, 47], [-60, 47], [-55, 50]];
+  const MIA = [lonX(-80.2), latY(25.8)], CBB = [lonX(-66.16), latY(-17.39)], CTRL = [(MIA[0] + CBB[0]) / 2 + 150, (MIA[1] + CBB[1]) / 2 - 40];
+  const enCamino = (D.pedidos || []).filter(p => !p.prueba && !/entregado/i.test(p.estado || "")).length;
+  const mapTex = canvasTex(MCW, MCH, (g, w, h) => {
+    g.fillStyle = "#0f1113"; g.fillRect(0, 0, w, h);
+    g.strokeStyle = "rgba(201,164,92,.10)"; g.lineWidth = 1; for (let lo = -120; lo <= -30; lo += 15) { g.beginPath(); g.moveTo(lonX(lo), latY(52)); g.lineTo(lonX(lo), latY(-42)); g.stroke(); }
+    for (let la = 45; la >= -40; la -= 15) { g.beginPath(); g.moveTo(lonX(-128), latY(la)); g.lineTo(lonX(-30), latY(la)); g.stroke(); }
+    g.beginPath(); TIERRA.forEach(([lo, la], i) => i ? g.lineTo(lonX(lo), latY(la)) : g.moveTo(lonX(lo), latY(la))); g.closePath();
+    g.fillStyle = "#24272b"; g.fill(); g.strokeStyle = "#4a4f56"; g.lineWidth = 3; g.stroke();
+    g.save(); g.shadowColor = "rgba(255,200,120,.9)"; g.shadowBlur = 18; g.strokeStyle = "#E0B866"; g.lineWidth = 7; g.setLineDash([22, 14]);
+    g.beginPath(); g.moveTo(...MIA); g.quadraticCurveTo(...CTRL, ...CBB); g.stroke(); g.restore();
+    [[MIA, "MIAMI", "casilla del courier", -1], [CBB, "COCHABAMBA", "nuestro destino", 1]].forEach(([[x, y], n, s, lado]) => {
+      g.fillStyle = "#E0B866"; g.beginPath(); g.arc(x, y, 14, 0, 7); g.fill(); g.strokeStyle = "rgba(224,184,102,.5)"; g.lineWidth = 4; g.beginPath(); g.arc(x, y, 28, 0, 7); g.stroke();
+      g.textAlign = lado < 0 ? "right" : "left"; g.fillStyle = "#EDEEF0"; g.font = "700 40px Archivo, sans-serif"; g.fillText(n, x + lado * 46, y + 6);
+      g.fillStyle = "#A9AFB6"; g.font = "500 24px 'IBM Plex Mono', monospace"; g.fillText(s, x + lado * 46, y + 38); });
+    g.fillStyle = "#C9A45C"; g.fillRect(1080, 140, 6, h - 280);
+    g.textAlign = "left"; g.fillStyle = "#EDEEF0"; g.font = "600 76px Archivo, sans-serif"; spaced(g, "RUTA DE", 1500, 330, 10); spaced(g, "NUESTROS PEDIDOS", 1500, 430, 10);
+    g.fillStyle = "#C9A45C"; g.font = "500 44px 'IBM Plex Mono', monospace"; g.textAlign = "center"; spaced(g, "MIAMI  →  COCHABAMBA", 1500, 540, 6);
+    g.fillStyle = "#A9AFB6"; g.font = "500 36px 'IBM Plex Mono', monospace";
+    g.textAlign = "center"; ["EE.UU. · casilla del courier en Miami", "vuelo a Bolivia", "entrega en Cochabamba"].forEach((t, i) => g.fillText(`${i + 1}  ${t}`, 1500, 660 + i * 64));
+    g.fillStyle = "#EDEEF0"; g.font = "700 64px Archivo, sans-serif"; g.fillText(enCamino ? `${enCamino} pedido${enCamino > 1 ? "s" : ""} en camino` : "Sin pedidos en camino", 1500, 960);
+  });
+  box(MP.w + 0.16, MP.h + 0.16, 0.06, bronce, MP.x, MP.y, MP.z - 0.05).castShadow = false;   // marco de bronce
+  box(MP.w + 0.5, 0.03, 0.05, warmM, MP.x, MP.y - MP.h / 2 - 0.16, MP.z - 0.06).castShadow = false;   // luz cálida abajo
+  const mapa = new THREE.Mesh(new THREE.PlaneGeometry(MP.w, MP.h), new THREE.MeshBasicMaterial({ map: mapTex, toneMapped: false }));
+  mapa.position.set(MP.x, MP.y, MP.z - 0.015); scene.add(mapa);
+  const aMuro = ([px, py]) => [MP.x - MP.w / 2 + px / MCW * MP.w, MP.y + MP.h / 2 - py / MCH * MP.h];
+  const avion = new THREE.Group(); scene.add(avion);
+  { const blanco = M(0xeef0f2, { roughness: .35 });
+    cyl(0.03, 0.022, 0.32, blanco, 0, 0, 0, avion, 12).rotation.z = Math.PI / 2;
+    box(0.07, 0.36, 0.01, blanco, 0.01, 0, 0, avion); box(0.04, 0.13, 0.01, blanco, -0.14, 0, 0, avion); box(0.05, 0.01, 0.06, bronce, -0.15, 0, 0.03, avion); }
+  const curva = k => { const u = 1 - k; return [u * u * MIA[0] + 2 * u * k * CTRL[0] + k * k * CBB[0], u * u * MIA[1] + 2 * u * k * CTRL[1] + k * k * CBB[1]]; };
+  EXTRA.push(t => {
+    const k = reduce ? 0.55 : (t % 9) / 9, [x, y] = aMuro(curva(k)), [x2, y2] = aMuro(curva(Math.min(1, k + 0.01)));
+    avion.position.set(x, y, MP.z + 0.06 + Math.sin(Math.PI * k) * 0.12); avion.rotation.z = Math.atan2(y2 - y, x2 - x);
+  });
+
   // ---- 7. Señalética del resto de la nave ----
   floorText("LOUNGE", 19, -3.4, 3.6);
   floorText("GYM", 21, 11.7, 2.8); hangSign("GYM", 21, 8.6, 0, 4.1, 2.0);
@@ -1743,6 +1786,7 @@
     if (!reduce && bossP.userData.head) bossP.userData.head.rotation.y = Math.sin(t * 0.4) * 0.5;
     const sec = Math.floor(t); if (sec % 3 === 0 && sec !== paintBoss.last) { paintBoss.last = sec; paintBoss(); paintOps(); paintClocks(); }
     leds.forEach((l, i) => { l.material.color.setHex(((Math.floor(t * 2.5) + i) % 3) ? 0xffffff : 0x3a3f45); });
+    EXTRA.forEach(f => f(t, dt));
     AG.forEach(a => {
       const s = ST[a.id]; if (!s) return;
       const src = TEX[a.id];
