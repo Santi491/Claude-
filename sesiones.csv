@@ -66,3 +66,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-28,raspberry,vigilante,18:00,18:00,arreglado,la PC no hizo la ronda de las 16:00: relanzada
 2026-10-28,raspberry,vigilante,19:30,19:30,alerta,pedido a la PC sin hacer hace 90 min
 2026-10-28,pc,ronda,19:40,19:40,en curso,empezó
+2026-10-28,pc,ronda,19:41,19:54,ok,"ronda tarde relanzada (pedido 18:00, tomada 19:40): WA 0 nuevos, 8400F consultado; MKT SSD NV2 1TB Bs 1.675; pedidos sin cambios; oficina v100"
