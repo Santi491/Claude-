@@ -59,3 +59,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-27,raspberry,vigilante,16:30,16:30,alerta,la PC no prendió para la ronda de las 16:00
 2026-10-27,gerente,informe,20:16,20:17,ok,Informe diario 27/10 al Doc; 6 tareas (6 auto); PC no corrió
 2026-10-27,pc,ronda,23:53,23:53,en curso,empezó
+2026-10-27,pc,ronda,23:52,23:56,alerta,"Ronda disparada a las 23:52 (no corrió a las 16:00): solo Pedidos, sin WhatsApp/Marketplace por la hora; 7700X sin confirmación de entrega"
