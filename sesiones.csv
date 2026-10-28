@@ -64,3 +64,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-28,mac,ronda,10:31,10:45,ok,7700X entregados en la casilla; 0 chats nuevos (no quedan tiendas); oficina v96
 2026-10-28,raspberry,vigilante,17:00,17:00,alerta,la PC no prendió para la ronda de las 16:00
 2026-10-28,raspberry,vigilante,18:00,18:00,arreglado,la PC no hizo la ronda de las 16:00: relanzada
+2026-10-28,raspberry,vigilante,19:30,19:30,alerta,pedido a la PC sin hacer hace 90 min
