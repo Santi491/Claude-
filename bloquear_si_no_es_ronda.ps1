@@ -4,14 +4,19 @@
 #  - a cualquier otra hora: bloquea la pantalla al instante (Windows pide el PIN o la contrasena) y NO abre Claude.
 # Lo corre la tarea de Windows "CargoBloqueo" al iniciar sesion (ver raspberry/LEEME.md). Claude NO debe estar en las
 # aplicaciones de inicio de Windows: lo abre este script.
+#  - con -SoloAbrir (tarea "CargoAbrir", cada 5 minutos con la sesion iniciada, 28/10): si la PC ya estaba prendida
+#    cuando llega un pedido del Gerente (o la ronda de las 16:00) y Claude esta cerrado, lo abre; nunca bloquea.
+#    Antes, si la PC estaba prendida y bloqueada, el pedido esperaba sin que nadie abriera Claude.
+param([switch]$SoloAbrir)
 $ahora = Get-Date
 $esDiaDeRonda = $ahora.DayOfWeek -ne [DayOfWeek]::Sunday
 $desde = $ahora.Date.AddHours(15).AddMinutes(40)
-$hasta = $ahora.Date.AddHours(16).AddMinutes(10)
+# hasta 16:45: el reintento del vigilante de las 16:15 hace arrancar la PC despues de las 16:10 (28/10)
+$hasta = $ahora.Date.AddHours(16).AddMinutes(45)
 # Modo prueba (una sola vez): si existe .prueba-ronda con la fecha de hoy, se porta como en la hora de la ronda y lo borra
 $prueba = Join-Path $PSScriptRoot ".prueba-ronda"
 $esPrueba = (Test-Path $prueba) -and ((Get-Content $prueba -ErrorAction SilentlyContinue | Select-Object -First 1) -eq $ahora.ToString("yyyy-MM-dd"))
-if (Test-Path $prueba) { Remove-Item $prueba -Force -ErrorAction SilentlyContinue }
+if ((Test-Path $prueba) -and -not $SoloAbrir) { Remove-Item $prueba -Force -ErrorAction SilentlyContinue }
 # Pedido del Gerente (Telegram o vigilante de la Raspberry): pedido-pc.json de las ultimas 3 horas -> se abre igual
 git -C $PSScriptRoot pull -q 2>$null
 $archPedido = Join-Path $PSScriptRoot "pedido-pc.json"
@@ -19,7 +24,16 @@ $hayPedido = $false
 if (Test-Path $archPedido) {
   try { $ped = Get-Content $archPedido -Raw | ConvertFrom-Json; $hayPedido = ((Get-Date) - [datetime]::ParseExact($ped.pedido, "yyyy-MM-dd HH:mm", $null)).TotalHours -lt 3 } catch { }
 }
-if ($esPrueba -or $hayPedido -or ($esDiaDeRonda -and $ahora -ge $desde -and $ahora -le $hasta)) {
+$hayQueAbrir = $esPrueba -or $hayPedido -or ($esDiaDeRonda -and $ahora -ge $desde -and $ahora -le $hasta)
+if ($SoloAbrir) {
+  # una sola vez por pedido (o por ronda del dia): si Santi cierra Claude a proposito, no se vuelve a abrir
+  $clave = if ($hayPedido) { "pedido-$($ped.id)" } else { "ronda-$($ahora.ToString('yyyy-MM-dd'))" }
+  $hecho = Join-Path $PSScriptRoot ".abierto-$clave"
+  $claudeAbierto = Get-Process -Name "claude" -ErrorAction SilentlyContinue
+  if (-not $hayQueAbrir -or $claudeAbierto -or (Test-Path $hecho)) { exit 0 }
+  Set-Content $hecho $ahora.ToString("yyyy-MM-dd HH:mm")
+}
+if ($hayQueAbrir) {
   # marca para apagar_pc.ps1: la PC se abrio para trabajar sola (si nadie la usa, se apaga al terminar)
   Set-Content (Join-Path $PSScriptRoot ".encendida-para-trabajo") $ahora.ToString("yyyy-MM-dd")
   # el acceso directo de Claude del menu Inicio (sirve para cualquier forma de instalacion)
@@ -38,7 +52,7 @@ if ($esPrueba -or $hayPedido -or ($esDiaDeRonda -and $ahora -ge $desde -and $aho
   if ($perfil -and $chrome) { Start-Sleep -Seconds 5; Start-Process $chrome -ArgumentList "--profile-directory=`"$($perfil.Name)`"" }
   "$($ahora.ToString('yyyy-MM-dd HH:mm')) abre Chrome (perfil: $($perfil.Name))" | Add-Content (Join-Path $env:TEMP "cargo-inicio.log")
   "$($ahora.ToString('yyyy-MM-dd HH:mm')) abre Claude (prueba: $esPrueba, pedido: $hayPedido, app: $($app.AppID), acceso: $($acceso.FullName))" | Add-Content (Join-Path $env:TEMP "cargo-inicio.log")
-} else {
+} elseif (-not $SoloAbrir) {
   "$($ahora.ToString('yyyy-MM-dd HH:mm')) bloquea (fuera del horario de la ronda)" | Add-Content (Join-Path $env:TEMP "cargo-inicio.log")
   rundll32.exe user32.dll,LockWorkStation
 }

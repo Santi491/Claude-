@@ -64,6 +64,7 @@ def main():
     if "--probar" in sys.argv:
         print(f"Mandaría el paquete a la MAC {mac} (comprobación en {ip or 'sin PC_IP'})")
         return
+    print(time.strftime("%Y-%m-%d %H:%M"), end=" ", flush=True)   # con hora, para saber qué intento falló
     if contesta():
         print("La PC ya estaba prendida.")
         return

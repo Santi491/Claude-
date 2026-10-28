@@ -7,3 +7,4 @@ __pycache__/
 
 # personas de Mixamo convertidas (27/10): se publican solo en el artifact de la oficina, nunca en este repo público
 oficina/personas/
+.abierto-*
