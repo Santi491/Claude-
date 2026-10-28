@@ -159,6 +159,7 @@ eBay nuevo: USD 114.99 con envío en EE.UU. (eBay API; vendedor gadgetworld03 99
 | Marketplace Cochabamba (particular) | "Disco duro m2 NVMe 1 tb" marca y estado sin dato; Cochabamba | 1.100 | -467 (-42%) | 2026-10-28 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (antes Bs 1.730; marca sin dato) | 1.230 | -337 (-27%) | 2026-10-17 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1098289102810322/) | sin dato de estado ni marca (recién publicado) | 1.500 | -67 (-4%) | 2026-10-17 |
+| Marketplace Cochabamba (particular) | Kingston NV2 NVMe 1TB (estado sin dato; "SSD NV2 de 1TB"); Cochabamba | 1.675 | 108 (6%) | 2026-10-28 |
 | Marketplace Cochabamba (particular) | Kingston NV2 NVMe 1TB (estado sin dato; recién publicado) | 1.700 | 133 (8%) | 2026-10-21 |
 | Marketplace Cochabamba (particular) | Kingston NV2 NVMe PCIe 4.0 1TB (estado sin dato); Cochabamba | 1.700 | 133 (8%) | 2026-10-28 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (M.2 1TB, marca no indicada; publicado hace 2 días) | 1.730 | 163 (9%) | 2026-10-16 |

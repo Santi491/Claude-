@@ -277,3 +277,6 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-28,10:33,whatsapp,Punto Tecnológico,recibido,respuesta,no,"""Si"" (12:16 de ayer): la garantía de 6 meses cubre 9700X y SSD, ambos nuevos"
 2026-10-28,10:33,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si tienen 5700X3D o 7500F y a cuánto
 2026-10-28,10:35,whatsapp,PC FALCON,enviado,seguimiento,,segundo seguimiento (7800X3D y SSD NVMe 1TB)
+2026-10-28,19:42,whatsapp,PC FALCON,recibido,respuesta,no,"""Stock agotado, más adelante tendremos y lo estaremos publicando"" (7800X3D y SSD NVMe 1TB); sin precio"
+2026-10-28,19:42,whatsapp,Punto Tecnológico,recibido,respuesta,no,"""ninguno por ahora"" (5700X3D y 7500F) y ofrece el 8400F (sin precio)"
+2026-10-28,19:42,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta precio del 8400F si es nuevo con garantía y precio por 2
