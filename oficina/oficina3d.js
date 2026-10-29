@@ -1432,9 +1432,52 @@
       bossP.visible = false;
       if (GER) GER.usar(hooksGer);
       api.listo = true;
+      setTimeout(() => fotos(gl), 1500);   // fotos de perfil del chat (Santi, 28/10), un rato después para no trabar la carga
       renderer.shadowMap.needsUpdate = true;
     })();
 
+    /* Fotos de perfil (Santi, 28/10): un retrato de la cara de cada uno con su propia persona, de pie y quieto, con luz
+       de estudio cálida y fondo transparente (el color de su puesto lo pone la página). Se sacan una sola vez con un
+       renderizador aparte de 256 px que después se libera; quedan en window.OFI_AVATARES y avisan con "ofi-avatares". */
+    function fotos(gl) {
+      let r2;
+      try {
+        const S = 256, esc2 = new THREE.Scene(), cam = new THREE.PerspectiveCamera(20, 1, 0.05, 10);
+        r2 = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+        r2.setPixelRatio(1); r2.setSize(S, S); r2.outputEncoding = renderer.outputEncoding; r2.toneMapping = renderer.toneMapping; r2.toneMappingExposure = 1.05;
+        r2.setClearColor(0x000000, 0);
+        esc2.add(new THREE.HemisphereLight(0xfff1dc, 0x2a2420, 0.75));
+        const key = new THREE.DirectionalLight(0xffe2bd, 1.25); key.position.set(0.9, 1.4, 1.6); esc2.add(key);
+        const rim = new THREE.DirectionalLight(0xc9a45c, 0.9); rim.position.set(-1.4, 1.2, -1.2); esc2.add(rim);
+        const fill = new THREE.DirectionalLight(0xdfe6ff, 0.45); fill.position.set(-1.2, 0.3, 1.4); esc2.add(fill);
+        const bajo = new THREE.DirectionalLight(0xffe9d2, 0.55); bajo.position.set(0, -0.6, 1.6); esc2.add(bajo);   // de abajo, para que el cuello no quede oscuro
+        const out = {}, hv = new THREE.Vector3();
+        ["gerente", "santi", ...AG.map(a => a.id)].forEach((id, k, arr) => {
+          if (arr.indexOf(id) !== k || out[id]) return;
+          let i = MODELO[id] != null ? MODELO[id] : 1;
+          if (LIVIANO) i = FEM.has(i) ? 1 : 0;
+          const base = gl.ps[i]; if (!base) return;
+          const o = THREE.SkeletonUtils.clone(base); o.position.set(0, 0, 0); o.rotation.set(0, 0, 0); o.scale.setScalar(0.01);
+          o.traverse(c => { if (c.isMesh) c.frustumCulled = false; });
+          esc2.add(o);
+          const hips = hueso(o, "Hips"), pref = hips ? hips.name.replace(/Hips$/, "") : "mixamorig";
+          const mx = new THREE.AnimationMixer(o);
+          if (clips.quieto) { const ac = mx.clipAction(clipPara("quieto", pref)); ac.play(); ac.time = 0.4; mx.update(0); }
+          o.updateMatrixWorld(true);
+          const head = hueso(o, "Head"); if (!head) { esc2.remove(o); return; }
+          head.getWorldPosition(hv);
+          // un poco de costado (como foto de perfil), mirando a la altura de los ojos
+          const ang = (k % 2 ? -1 : 1) * 0.26, d = 1.05;
+          cam.position.set(hv.x + Math.sin(ang) * d, hv.y + 0.1, hv.z + Math.cos(ang) * d); cam.lookAt(hv.x, hv.y + 0.03, hv.z);
+          r2.render(esc2, cam);
+          out[id] = r2.domElement.toDataURL("image/png");
+          mx.stopAllAction(); mx.uncacheRoot(o); esc2.remove(o);
+        });
+        window.OFI_AVATARES = out;
+        window.dispatchEvent(new Event("ofi-avatares"));
+      } catch (e) { /* sin fotos: la página usa los monogramas */ }
+      if (r2) { r2.dispose(); r2.forceContextLoss && r2.forceContextLoss(); }
+    }
     function clipPara(nom, pref) {
       const key = nom + "|" + pref; if (porPref[key]) return porPref[key];
       const c = clips[nom].clone(), tipo = TRANS[nom] || "medio";

@@ -185,27 +185,68 @@
 .gd-w{background:rgba(27,27,28,.85);border:1px solid var(--o-line);border-radius:12px;padding:12px;display:grid;gap:6px;font-size:13.5px}
 .gd-w h5{margin:0;font:700 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--o-muted)}
 .gd-back{justify-self:start;background:#1B1B1C;color:var(--o-ink);border:1px solid var(--o-line);border-radius:8px;padding:6px 12px;font:600 12.5px var(--f-mono);cursor:pointer}
-.gc{grid-column:1/-1;display:grid;grid-template-columns:240px minmax(0,1fr);min-height:520px;border:1px solid var(--o-line);border-radius:12px;overflow:hidden}
-.gc-list{background:#161617;border-right:1px solid var(--o-line);overflow:auto}
-.gc-list button{display:grid;grid-template-columns:1fr auto;gap:2px 8px;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid #262729;color:var(--o-ink);padding:10px 12px;cursor:pointer;font:600 14px var(--f-body)}
-.gc-list button small{grid-column:1/-1;font:500 12px var(--f-mono);color:var(--o-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.gc-list button[aria-pressed="true"]{background:#252628}
-.gc-list em{font-style:normal;background:${C.red};color:#fff;border-radius:9px;font:700 11px/18px var(--f-mono);padding:0 6px;align-self:center}
-.gc-th{display:grid;grid-template-rows:minmax(0,1fr) auto;background:#1B1B1C;min-height:0}
-.gc-msgs{overflow:auto;padding:14px;display:flex;flex-direction:column;gap:8px}
-.gc-m{max-width:78%;border-radius:12px;padding:8px 11px;font-size:14px;line-height:1.4;background:#262729;align-self:flex-start}
-.gc-m.yo{align-self:flex-end;background:#1F4A3A}
-.gc-m.ger{background:#2A2440}
-.gc-m small{display:block;font:500 11px var(--f-mono);color:var(--o-muted);margin-bottom:2px}
-.gc-form{display:flex;gap:8px;padding:10px;border-top:1px solid var(--o-line);background:#161617}
-.gc-form input{flex:1;min-width:0;font:500 14px var(--f-body);background:#1B1B1C;color:var(--o-ink);border:1px solid var(--o-line);border-radius:8px;padding:8px 10px}
+.wa{grid-column:1/-1;display:grid;grid-template-columns:minmax(260px,34%) minmax(0,1fr);height:100%;min-height:440px;background:#0b141a;color:#e9edef;font:400 14.5px/1.35 var(--f-body)}
+.os-win[data-w="chat"] .os-wb{padding:0;display:block;overflow:hidden}
+.os-win[data-w="chat"] .os-wb>.wa{height:100%}
+.wa-side{display:grid;grid-template-rows:auto auto auto minmax(0,1fr);background:#111b21;border-right:1px solid #222d34;min-height:0}
+.wa-top{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 8px}
+.wa-top b{font:700 20px var(--f-body);letter-spacing:.2px}
+.wa-top small{color:#8696a0;font:500 12px var(--f-mono)}
+.wa-q{margin:4px 12px 8px;display:flex;align-items:center;gap:10px;background:#202c33;border-radius:20px;padding:7px 14px;color:#8696a0}
+.wa-q input{flex:1;min-width:0;background:transparent;border:0;color:#e9edef;font:400 14px var(--f-body);outline:none}
+.wa-chips{display:flex;gap:6px;padding:0 12px 8px;flex-wrap:wrap}
+.wa-chips button{background:#202c33;color:#aebac1;border:0;border-radius:16px;padding:5px 12px;font:500 13px var(--f-body);cursor:pointer}
+.wa-chips button[aria-pressed="true"]{background:#0a332c;color:#25d366}
+.wa-list{overflow:auto;min-height:0}
+.wa-it{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:2px 12px;align-items:center;width:100%;text-align:left;background:transparent;border:0;color:inherit;padding:9px 14px;cursor:pointer;font:inherit}
+.wa-it:hover{background:#202c33}
+.wa-it[aria-pressed="true"]{background:#2a3942}
+.wa-it .av{grid-row:1/3}
+.wa-it .nm{font:500 16px var(--f-body);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wa-it .tm{font:400 12px var(--f-body);color:#8696a0;justify-self:end}
+.wa-it.nuevo .tm{color:#25d366}
+.wa-it .pv{grid-column:2;color:#8696a0;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-bottom:9px;border-bottom:1px solid #222d34}
+.wa-it .bd{grid-column:3;grid-row:2;justify-self:end;align-self:start;min-width:20px;height:20px;border-radius:10px;background:#25d366;color:#111b21;font:700 12px/20px var(--f-body);text-align:center;padding:0 6px}
+.av{position:relative;flex:none;width:var(--s,48px);height:var(--s,48px);border-radius:50%;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 50% 30%,var(--c2),var(--c1) 70%);box-shadow:inset 0 0 0 1.5px rgba(201,164,92,.55)}
+.av img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+.av b{font:700 calc(var(--s,48px)*.36) var(--f-mono);color:#f3e6c8;letter-spacing:.5px;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.av i{position:absolute;right:-1px;bottom:-1px;width:calc(var(--s,48px)*.38);height:calc(var(--s,48px)*.38);border-radius:50%;background:#111b21;color:#C9A45C;display:grid;place-items:center;font:700 calc(var(--s,48px)*.2) var(--f-mono);font-style:normal;box-shadow:0 0 0 2px #111b21}
+.wa-main{display:grid;grid-template-rows:auto minmax(0,1fr) auto;min-height:0;background:#0b141a}
+.wa-hd{display:flex;align-items:center;gap:12px;padding:9px 16px;background:#202c33;min-height:58px}
+.wa-hd .nm{font:500 16px var(--f-body)}
+.wa-hd small{display:block;color:#8696a0;font:400 13px var(--f-body);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wa-hd .gcb{display:none;background:transparent;border:0;color:#aebac1;font-size:20px;cursor:pointer;padding:0 4px}
+.wa-msgs{overflow:auto;padding:14px 7% 18px;display:flex;flex-direction:column;gap:2px;background-color:#0b141a;background-image:var(--wall);background-size:260px}
+.wa-day{align-self:center;margin:10px 0 8px;background:#182229;color:#8696a0;border-radius:8px;padding:5px 12px;font:500 12.5px var(--f-body);box-shadow:0 1px .5px rgba(0,0,0,.13)}
+.wa-sys{align-self:center;max-width:86%;margin:4px 0 10px;background:#182229;color:#e2c27d;border-radius:8px;padding:7px 12px;font:400 12.5px/1.4 var(--f-body);text-align:center}
+.wa-b{position:relative;max-width:min(78%,620px);padding:6px 9px 8px;border-radius:8px;background:#202c33;align-self:flex-start;box-shadow:0 1px .5px rgba(0,0,0,.13);margin-top:2px;white-space:pre-wrap;overflow-wrap:anywhere}
+.wa-b.yo{align-self:flex-end;background:#005c4b}
+.wa-b.ini{margin-top:8px}
+.wa-b.ini::before{content:"";position:absolute;top:0;left:-8px;border:8px solid transparent;border-top-color:#202c33;border-right-color:#202c33;border-width:0 8px 10px 0}
+.wa-b.yo.ini::before{left:auto;right:-8px;border-color:transparent;border-top-color:#005c4b;border-left-color:#005c4b;border-width:0 0 10px 8px}
+.wa-b.ini{border-top-left-radius:0}.wa-b.yo.ini{border-top-left-radius:8px;border-top-right-radius:0}
+.wa-b .de{display:block;font:500 13px var(--f-body);margin-bottom:2px}
+.wa-b .mt{float:right;margin:6px 0 -4px 12px;font:400 11px var(--f-body);color:rgba(233,237,239,.6);white-space:nowrap}
+.wa-b .mt .ck{color:#53bdeb;margin-left:3px}
+.wa-b .mt .ck.no{color:rgba(233,237,239,.6)}
+.wa-b .pa{display:block;font:400 11.5px var(--f-body);color:rgba(233,237,239,.55);margin-top:2px}
+.wa-vacio{align-self:center;margin:auto;max-width:360px;text-align:center;color:#8696a0;font-size:14px;line-height:1.5}
+.wa-vacio .av{margin:0 auto 12px}
+.wa-ft{display:flex;align-items:center;gap:10px;padding:8px 14px;background:#202c33}
+.wa-ft span{color:#8696a0;font-size:22px;line-height:1}
+.wa-ft input{flex:1;min-width:0;background:#2a3942;border:0;border-radius:22px;padding:10px 16px;color:#e9edef;font:400 15px var(--f-body);outline:none}
+.wa-ft input::placeholder{color:#8696a0}
+.wa-ft button{flex:none;width:42px;height:42px;border-radius:50%;border:0;background:#00a884;color:#111b21;display:grid;place-items:center;cursor:pointer}
+.wa-ft button:disabled{background:#2a3942;color:#8696a0;cursor:not-allowed}
+.wa-ok{position:absolute;left:50%;bottom:70px;transform:translateX(-50%);background:#e2c27d;color:#111b21;border-radius:8px;padding:6px 12px;font:600 12.5px var(--f-body);box-shadow:0 4px 14px rgba(0,0,0,.4)}
+@media (max-width:760px){.wa{grid-template-columns:1fr}.wa.en-chat .wa-side{display:none}.wa:not(.en-chat) .wa-main{display:none}.wa-hd .gcb{display:block}.wa-msgs{padding:12px 10px}}
 .gc-form button,.gt-form button{background:var(--o-amber);color:#101011;border:0;border-radius:8px;font:700 13px var(--f-mono);padding:8px 14px;cursor:pointer}
 .gc-form button:disabled,.gt-form button:disabled{opacity:.45;cursor:not-allowed}
 .gt-form{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .gt-form select,.gt-form input{font:500 14px var(--f-body);background:#1B1B1C;color:var(--o-ink);border:1px solid var(--o-line);border-radius:8px;padding:8px 10px}
 .gt-form input{flex:1;min-width:220px}
 .gp-ok{margin:0;font:500 12.5px var(--f-mono);color:${C.green}}
-@media (max-width:860px){.gc{grid-template-columns:1fr}.gc-list{max-height:180px}
+@media (max-width:860px){
 .gp-box,.gp-box.w4,.gp-box.w8{grid-column:1/-1}.gp-hb .hr{grid-template-columns:110px 1fr 92px}.gp-funnel .fr{grid-template-columns:96px 1fr 34px 40px}.gpanel{padding:0}.gp-card{height:100vh;border-radius:0}}
 /* Escritorio tipo PC (Santi, 28/10): fondo "Noche" con el logo, barra de tareas clásica abajo y apps en ventanas */
 .gp-card.os{position:relative;display:block;padding:0;border:8px solid #0a0b0d;border-radius:16px;background:#101215}
@@ -433,8 +474,9 @@
 
   /* ---------- Escritorio del Gerente (Santi, 17/10): apps como en una computadora ---------- */
   const CHAT = D.chat || [], HOY = (D.generado || "").slice(0, 10);
-  let db = null, owner = false, chatCon = "", aviso = "";
-  (async () => { try { if (!window.claude || !window.claude.use) return; const [d, u] = await Promise.all([window.claude.use("db"), window.claude.use("user")]); db = d; owner = u ? !!(await u.isOwner()) : false; if (!box.hidden) render(); } catch (e) { } })();
+  const DEMO = !!window.OFI_PROBADOR;
+  let db = null, owner = DEMO, chatCon = "", aviso = "";   // en el probador se ve como Santi (sin poder guardar)
+  (async () => { try { if (!window.claude || !window.claude.use || window.OFI_PROBADOR) return; const [d, u] = await Promise.all([window.claude.use("db"), window.claude.use("user")]); db = d; owner = u ? !!(await u.isOwner()) : false; if (!box.hidden) render(); } catch (e) { } })();
   const pendChat = () => CHAT.filter(c => (c.para === "gerente" || c.para === "santi") && c.estado !== "respondido");
   const metasHoy = () => PLAN.filter(p => /^s/i.test(p.obligatoria || "") && (p.plazo || p.fecha_para) >= HOY);
   const abiertas = () => PLAN.filter(p => p.estado === "aprobado");
@@ -464,16 +506,73 @@
     Object.keys(AGN).forEach(a => { if (a !== "nube" && !map[a]) map[a] = []; });
     return Object.entries(map).sort((a, b) => ((b[1].slice(-1)[0] || {}).id || "").localeCompare((a[1].slice(-1)[0] || {}).id || ""));
   }
+  /* Chat del equipo al estilo de WhatsApp Web (Santi, 28/10): chats a la izquierda (uno por agente, con su foto de perfil,
+     el último mensaje, la hora y los no leídos), la conversación a la derecha con globos, días y doble check.
+     Las fotos son retratos de la persona 3D de cada uno (oficina3d.js, window.OFI_AVATARES); mientras cargan, o sin 3D,
+     se ve un monograma con el color de su puesto. */
+  const PERFIL = {
+    gerente: ["#5a4524", "#C9A45C", "GE", "Coordina al equipo y te escribe cada día"], santi: ["#1f4a40", "#3f8a73", "SM", "Dueño de Cargo Brothers"],
+    wa: ["#0d4a37", "#1f9e6e", "WA", "Habla con las tiendas por WhatsApp"], mkt: ["#1c3b66", "#3f74c2", "MK", "Marketplace, Messenger y nuestros anuncios"],
+    ebay: ["#5c2418", "#c2553a", "EB", "Trae los precios de eBay EE.UU."], ana: ["#3a2a5c", "#7b5cb8", "AN", "Calcula costos, márgenes y qué traer"],
+    pedidos: ["#4d3216", "#a8743a", "PE", "Rastrea los paquetes hasta Cochabamba"], fin: ["#1d4a2a", "#3d8f56", "FI", "Plata, stock y ventas"],
+    dem: ["#5a3d0d", "#c08a2a", "DE", "Mide qué se mueve en Cochabamba"], nube: ["#1c3f55", "#3b7ea6", "ID", "Informe diario de la mañana"],
+    local: ["#2c3035", "#5b636c", "OF", "Rondas de la Mac y la PC y la oficina"] };
+  const perfil = k => PERFIL[k] || ["#2c3035", "#5b636c", (QN[k] || k).slice(0, 2).toUpperCase(), ""];
+  function avatar(k, sz) {
+    const [c1, c2, ini] = perfil(k), foto = (window.OFI_AVATARES || {})[k === "local" ? "" : k];
+    return `<span class="av" style="--s:${sz || 48}px;--c1:${c1};--c2:${c2}" aria-hidden="true">${foto ? `<img src="${foto}" alt="">` : `<b>${esc(ini)}</b>`}${foto && sz >= 40 ? `<i>${esc(ini)}</i>` : ""}</span>`;
+  }
+  window.addEventListener("ofi-avatares", () => { if (!box.hidden && OS.wins.some(w => w.k === "chat")) render(); });
+  // fondo de la conversación: dibujitos del negocio (procesador, caja, avión, dólar, ubicación) en bronce muy suave
+  const WALL = `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260' fill='none' stroke='%23C9A45C' stroke-opacity='.07' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><rect x='22' y='22' width='34' height='34' rx='4'/><rect x='31' y='31' width='16' height='16' rx='2'/><path d='M28 18v4M39 18v4M50 18v4M28 56v4M39 56v4M50 56v4M18 28h4M18 39h4M18 50h4M56 28h4M56 39h4M56 50h4'/><path d='M150 30l22-10 22 10-22 10zM150 30v24l22 10 22-10V30M172 40v24'/><path d='M96 120l40-14-8 8 22 6-6 4-22-4-10 12h-6l4-12-14-2z'/><circle cx='210' cy='130' r='15'/><path d='M210 120v20M215 124c-2-2-9-2-10 1s9 4 10 7-8 4-10 1'/><path d='M44 190c0-10 8-17 17-17s17 7 17 17c0 12-17 28-17 28s-17-16-17-28z'/><circle cx='61' cy='190' r='5'/><rect x='150' y='190' width='40' height='26' rx='3'/><path d='M150 198h40M160 208h8'/><path d='M110 34h18M119 25v18' stroke-opacity='.05'/><circle cx='120' cy='225' r='3'/><circle cx='235' cy='60' r='3'/></svg>`)}")`;
+  let chatQ = "", chatF = "todos", chatAbierto = false;
+  const DSEM = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+  const fechaD = f => new Date(f + "T12:00:00");
+  const difDias = f => Math.round((fechaD(HOY) - fechaD(f)) / 864e5);
+  const cuandoLista = c => { if (!c) return ""; const d = difDias(c.fecha); return d <= 0 ? c.hora : d === 1 ? "Ayer" : d < 7 ? DSEM[fechaD(c.fecha).getDay()] : dm(c.fecha); };
+  const cuandoDia = f => { const d = difDias(f); return d <= 0 ? "Hoy" : d === 1 ? "Ayer" : d < 7 ? DSEM[fechaD(f).getDay()].replace(/^./, x => x.toUpperCase()) : dm(f); };
+  // el chat es el WhatsApp del Gerente (Santi, 28/10): sus mensajes van en verde a la derecha; el hilo Gerente–Santi se
+  // llama "Santi" y va fijado arriba; lo que escribe Santi aparece con su nombre y su foto, como en un grupo
+  const nomHilo = k => k === "gerente" ? "Santi" : (QN[k] || k), fotoHilo = k => k === "gerente" ? "santi" : k;
+  const subHilo = k => k === "gerente" ? "Tu chat con el Gerente" : (perfil(k)[3] || "");
+  const noLeido = (c, k) => c.estado !== "respondido" && c.para === "gerente" && (k === "gerente" ? c.de === "santi" : c.de === k);
+  const ICO_BUSCA = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>`;
+  const ICO_ENVIAR = `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5l18-8.5L3 3.5l.02 6.6L15 12 3.02 13.9z"/></svg>`;
+  const ICO_PIN = `<svg width="13" height="13" viewBox="0 0 24 24" fill="#8696a0" aria-hidden="true" style="vertical-align:-1px;margin-left:6px"><path d="M14 3l7 7-3 1-4 4 1 5-2 2-4-6-5 5-1-1 5-5-6-4 2-2 5 1 4-4z"/></svg>`;
   function vChat() {
     if (!owner) return `${back()}<div class="gp-box w12"><h4>Chat del equipo</h4><p class="gp-empty">El chat entre los agentes, el Gerente y Santi lo ve solo Santi (abre la oficina con su cuenta). Por Telegram: escribe "chat" para ver lo que te preguntan.</p></div>`;
-    const H = hilos(); if (!chatCon && H.length) chatCon = H[0][0];
+    const H0 = hilos(), H = [...H0.filter(h => h[0] === "gerente"), ...H0.filter(h => h[0] !== "gerente")];
+    if (!H.some(h => h[0] === "gerente")) H.unshift(["gerente", []]);
+    if (!chatCon) chatCon = "gerente";
+    const conSanti = l => l.some(c => c.de === "santi" || c.para === "santi");
+    const vis = H.filter(([k, l]) => chatF === "todos" || (chatF === "nuevos" ? l.some(c => noLeido(c, k)) : k === "gerente" || conSanti(l)));
+    const nNuevos = H.filter(([k, l]) => l.some(c => noLeido(c, k))).length;
+    const item = ([k, l]) => { const u = l[l.length - 1], nl = l.filter(c => noLeido(c, k)).length;
+      const quien = u ? (u.de === "gerente" ? "Tú: " : u.de === "santi" && k !== "gerente" ? "Santi: " : "") : "";
+      const ck = u && u.de === "gerente" ? `<span style="color:${u.estado === "respondido" || u.estado === "leido" ? "#53bdeb" : "#8696a0"}">✓✓</span> ` : "";
+      return `<button type="button" class="wa-it${nl ? " nuevo" : ""}" data-chat="${esc(k)}" data-q="${esc((nomHilo(k) + " " + l.map(c => c.texto).join(" ")).toLowerCase())}" aria-pressed="${k === chatCon}">${avatar(fotoHilo(k), 49)}<span class="nm">${esc(nomHilo(k))}${k === "gerente" ? ICO_PIN : ""}</span><span class="tm">${esc(cuandoLista(u))}</span><span class="pv">${ck}${u ? esc(quien + u.texto) : `<i style="font-style:normal;opacity:.7">${esc(subHilo(k) || "sin mensajes")}</i>`}</span>${nl ? `<span class="bd">${nl}</span>` : ""}</button>`; };
     const msgs = (H.find(h => h[0] === chatCon) || [, []])[1];
-    return `${back()}<div class="gc"><div class="gc-list">${H.map(([k, l]) => { const u = l[l.length - 1], p = l.filter(c => (c.para === "santi" || c.para === "gerente") && c.estado !== "respondido" && c.de === k).length;
-        return `<button type="button" data-chat="${esc(k)}" aria-pressed="${k === chatCon}"><span>${esc(QN[k] || k)}</span>${p ? `<em>${p}</em>` : "<span></span>"}<small>${u ? esc(u.texto) : "sin mensajes"}</small></button>`; }).join("")}</div>
-      <div class="gc-th"><div class="gc-msgs" id="gcM">${msgs.length ? msgs.map(c => `<div class="gc-m ${c.de === "santi" ? "yo" : c.de === "gerente" ? "ger" : ""}"><small>${esc(QN[c.de] || c.de)} → ${esc(QN[c.para] || c.para)} · ${dm(c.fecha)} ${esc(c.hora)}${c.estado === "respondido" ? " · respondido" : ""}</small>${esc(c.texto)}</div>`).join("")
-        : `<p class="gp-empty">Sin mensajes con ${esc(QN[chatCon] || chatCon)} todavía. Los agentes escriben aquí cuando necesitan algo; el Gerente de la Raspberry te lo pasa por Telegram.</p>`}</div>
-      <form class="gc-form" id="gcF"><input id="gcT" maxlength="400" placeholder="Escríbele a ${esc(QN[chatCon] || chatCon)} (lo lee en su próximo turno)" aria-label="Mensaje" ${db ? "" : "disabled"}><button type="submit" ${db ? "" : "disabled"}>Enviar</button></form></div></div>
-      <p class="gp-note">${aviso ? `<span class="gp-ok">${esc(aviso)}</span> ` : ""}Solo cosas de trabajo: nada de guías, teléfonos, direcciones ni nombres de personas. Lo que escribes aquí lo pasa la próxima ronda al chat del agente (para que sea al instante, usa Telegram: chat ${esc(chatCon)}: …).</p>`;
+    let dia = "", prev = "";
+    const cuerpoMsgs = msgs.map(c => {
+      const yo = c.de === "gerente", sep = c.fecha !== dia ? `<div class="wa-day">${esc(cuandoDia(c.fecha))}</div>` : "";
+      const ini = sep || prev !== c.de; dia = c.fecha; prev = c.de;
+      // en el chat con Santi no hace falta el nombre; en el de un agente, sí (puede escribir el agente o Santi)
+      const flecha = !yo && c.para && c.para !== "gerente" && c.para !== c.de ? ` <span style="color:#8696a0;font-weight:400">→ ${esc(QN[c.para] || c.para)}</span>` : "";
+      const nombre = !yo && ini && chatCon !== "gerente" ? `<span class="de" style="color:${perfil(c.de)[1]}">${esc(QN[c.de] || c.de)}${flecha}</span>` : "";
+      const ck = yo ? `<span class="ck${c.estado === "respondido" || c.estado === "leido" ? "" : " no"}">✓✓</span>` : "";
+      return `${sep}<div class="wa-b${yo ? " yo" : ""}${ini ? " ini" : ""}">${nombre}${esc(c.texto)}${yo && c.para && c.para !== chatCon && chatCon !== "gerente" ? `<span class="pa">para ${esc(QN[c.para] || c.para)}</span>` : ""}<span class="mt">${esc(c.hora || "")}${ck}</span></div>`; }).join("");
+    const nom = nomHilo(chatCon), aQuien = chatCon === "gerente" ? "el Gerente" : nom;
+    return `<div class="wa${chatAbierto ? " en-chat" : ""}" style="--wall:${WALL}">
+      <aside class="wa-side"><div class="wa-top"><b>Chats</b><small>WhatsApp del Gerente</small></div>
+        <label class="wa-q">${ICO_BUSCA}<input id="gcQ" value="${esc(chatQ)}" placeholder="Buscar un chat o un mensaje" aria-label="Buscar en el chat"></label>
+        <div class="wa-chips" role="group" aria-label="Filtro">${[["todos", "Todos"], ["nuevos", `No leídos${nNuevos ? " " + nNuevos : ""}`], ["santi", "Con Santi"]].map(([k, t]) => `<button type="button" data-gcf="${k}" aria-pressed="${chatF === k}">${t}</button>`).join("")}</div>
+        <div class="wa-list" id="gcL">${vis.length ? vis.map(item).join("") : `<p class="wa-vacio" style="padding:30px 16px">No hay chats con este filtro.</p>`}</div></aside>
+      <section class="wa-main" aria-label="Conversación con ${esc(nom)}">
+        <header class="wa-hd"><button type="button" class="gcb" data-gcback aria-label="Volver a los chats">←</button>${avatar(fotoHilo(chatCon), 40)}<div style="min-width:0"><div class="nm">${esc(nom)}</div><small>${esc(subHilo(chatCon))}</small></div></header>
+        <div class="wa-msgs" id="gcM"><div class="wa-sys">${chatCon === "gerente" ? "Tu chat con el Gerente: lo que él te pregunta o te cuenta del equipo. Lo que hablan por Telegram no se guarda aquí (el repo es público)." : `Lo que escribas aquí sale con tu nombre y ${esc(nom)} lo recibe en su próxima ronda (al instante: por Telegram, chat ${esc(chatCon)}: …).`} Solo cosas de trabajo: nada de guías, teléfonos, direcciones ni nombres de personas.</div>
+          ${msgs.length ? cuerpoMsgs : `<div class="wa-vacio">${avatar(fotoHilo(chatCon), 84)}<b style="display:block;color:#e9edef;margin-bottom:4px">${esc(nom)}</b>Todavía no hay mensajes. Los agentes escriben aquí cuando necesitan algo y el Gerente de la Raspberry te lo pasa por Telegram.</div>`}</div>
+        <form class="wa-ft" id="gcF"><span aria-hidden="true">☺</span><input id="gcT" maxlength="400" autocomplete="off" placeholder="${db || DEMO ? `Escribe como Santi a ${esc(aQuien)}` : "Para escribir, abre la oficina con tu cuenta"}" aria-label="Mensaje" ${db || DEMO ? "" : "disabled"}><button type="submit" aria-label="Enviar" ${db || DEMO ? "" : "disabled"}>${ICO_ENVIAR}</button></form>
+        ${aviso && tab === "chat" ? `<div class="wa-ok" role="status">${esc(aviso)}</div>` : ""}</section></div>`;
   }
   const MTIPO = { compromiso: ["Compromisos", "lo que el Gerente te prometió", C.amber], pedido: ["Pedidos tuyos", "lo que quieres saber o que se haga", C.cyan], preferencia: ["Preferencias", "cómo te gusta trabajar", C.violet], dato: ["Datos", "lo que contaste y no está en otro archivo", C.blue] };
   const MFUENTE = { telegram: "Telegram", ronda: "fin de ronda", "2000": "informe 20:00", santi: "Santi" };
@@ -507,9 +606,20 @@
     const d = new Date(), p2 = x => String(x).padStart(2, "0"), id = `${tipo}-${d.getTime().toString(36)}`;
     await db.collection("decisiones").doc(id).set(Object.assign({ tipo, fecha: `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())}`, hora: `${p2(d.getHours())}:${p2(d.getMinutes())}`, aplicado: false }, datos));
   }
-  box.addEventListener("click", e => { const c = e.target.closest("[data-chat]"); if (c) { chatCon = c.dataset.chat; aviso = ""; render(); const m = $g("gcM"); if (m) m.scrollTop = m.scrollHeight; } if (e.target.closest("[data-abrir]")) close(); });
+  box.addEventListener("click", e => {
+    const c = e.target.closest("[data-chat]"); if (c) { chatCon = c.dataset.chat; chatAbierto = true; aviso = ""; render(); const m = $g("gcM"); if (m) m.scrollTop = m.scrollHeight; const t = $g("gcT"); if (t && !t.disabled && !TOQUE) t.focus(); }
+    const f = e.target.closest("[data-gcf]"); if (f) { chatF = f.dataset.gcf; render(); }
+    if (e.target.closest("[data-gcback]")) { chatAbierto = false; render(); }
+    if (e.target.closest("[data-abrir]")) close(); });
+  box.addEventListener("input", e => { if (e.target.id !== "gcQ") return; chatQ = e.target.value; const q = chatQ.trim().toLowerCase();
+    box.querySelectorAll("#gcL [data-q]").forEach(b => { b.hidden = !!q && !b.dataset.q.includes(q); }); });
   box.addEventListener("submit", async e => {
-    e.preventDefault(); if (!db || !owner) return;
+    e.preventDefault();
+    // probador: el mensaje aparece en la conversación como si se hubiera mandado, pero no se guarda en ningún lado
+    if (DEMO && e.target.id === "gcF") { const t = $g("gcT").value.trim(); if (!t) return; const d = new Date(), p2 = x => String(x).padStart(2, "0");
+      CHAT.push({ id: "demo-" + d.getTime(), de: "santi", para: chatCon === "gerente" ? "gerente" : chatCon, texto: t, fecha: HOY, hora: `${p2(d.getHours())}:${p2(d.getMinutes())}`, estado: "nuevo" });
+      aviso = "Probador: así se vería; el mensaje no se guarda."; render(); const m = $g("gcM"); if (m) m.scrollTop = m.scrollHeight; const i = $g("gcT"); if (i) i.focus(); return; }
+    if (!db || !owner) return;
     try {
       if (e.target.id === "gcF") { const t = $g("gcT").value.trim(); if (!t) return; await guardar("chat", { para: chatCon, texto: t }); aviso = `Guardado para ${QN[chatCon] || chatCon}: lo recibe en la próxima ronda.`; }
       if (e.target.id === "gtF") { const t = $g("gtT").value.trim(); if (!t) return; await guardar("meta", { agente: $g("gtA").value, texto: t, meta: (t.match(/\d+/) || [""])[0] }); aviso = `Meta guardada para ${AGN[$g("gtA").value]}: la anota la próxima ronda.`; }
