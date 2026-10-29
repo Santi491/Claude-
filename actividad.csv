@@ -445,3 +445,5 @@ fecha,hora,agente,texto
 2026-10-29,18:12,ana,"Sin cambios desde la ronda de las 10:46: recalculado con los mismos precios y USDT 12,20, sin alertas nuevas. Sigue: traer 7800X3D nuevo (margen 19 %) y 7700X nuevo (18 %, peor caso 5,3 %); el resto esperar o no traer"
 2026-10-29,18:14,local,"Oficina: publicada v104 (datos 18:10; sin campos privados ni datos de 3 días; vivo/_ronda en false). Pendiente: 2 datos del Analista sin precio local; guía del courier B"
 2026-10-29,18:20,local,"Pedido de la PC (ronda 18:00): WhatsApp y Marketplace no corrieron (la sesion automatica no tuvo permiso para escribir a tiendas); Analista, Finanzas y Oficina hechos"
+2026-10-29,18:22,gerente,aviso de fin de ronda enviado
+2026-10-29,18:22,local,"apagar_pc.ps1: La PC queda prendida (arranque 15:50, prendida para la ronda: True, nadie la uso: False)"
