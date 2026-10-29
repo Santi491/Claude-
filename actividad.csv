@@ -448,3 +448,4 @@ fecha,hora,agente,texto
 2026-10-29,18:22,gerente,aviso de fin de ronda enviado
 2026-10-29,18:22,local,"apagar_pc.ps1: La PC queda prendida (arranque 15:50, prendida para la ronda: True, nadie la uso: False)"
 2026-10-29,19:11,local,"finanzas.py y analista.py imprimen en UTF-8 aunque la consola de Windows sea cp1252 (ya no crashean con el signo menos); necesidad de Finanzas resuelta"
+2026-10-29,19:14,gerente,"Sesión con Santi (Mac): pedido a la PC (ronda completa de prueba para terminar lo de hoy: 9 chats nuevos de WhatsApp y Marketplace) y la PC prendida por la red"
