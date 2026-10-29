@@ -447,3 +447,4 @@ fecha,hora,agente,texto
 2026-10-29,18:20,local,"Pedido de la PC (ronda 18:00): WhatsApp y Marketplace no corrieron (la sesion automatica no tuvo permiso para escribir a tiendas); Analista, Finanzas y Oficina hechos"
 2026-10-29,18:22,gerente,aviso de fin de ronda enviado
 2026-10-29,18:22,local,"apagar_pc.ps1: La PC queda prendida (arranque 15:50, prendida para la ronda: True, nadie la uso: False)"
+2026-10-29,19:11,local,"finanzas.py y analista.py imprimen en UTF-8 aunque la consola de Windows sea cp1252 (ya no crashean con el signo menos); necesidad de Finanzas resuelta"

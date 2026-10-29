@@ -14,6 +14,14 @@ import argparse
 import csv
 import json
 import os
+import sys
+
+# la consola de Windows (cp1252) no puede mostrar "−" (U+2212) ni otros signos: se imprime siempre en UTF-8 (29/10)
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 EN_STOCK = ("entregado",)

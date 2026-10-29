@@ -22,6 +22,13 @@ import statistics
 import sys
 from datetime import date, datetime
 
+# la consola de Windows (cp1252) no puede mostrar "−" (U+2212) ni otros signos: se imprime siempre en UTF-8 (29/10)
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 import comparar as C
 
 DIR = os.path.dirname(os.path.abspath(__file__))
