@@ -41,10 +41,15 @@
   "baja|Ryzen 7 7700X|usado|2026-10-25": "2026-10-25 11:53",
   "baja|Ryzen 5 7600|nuevo|2026-10-27": "2026-10-27 11:57",
   "conviene|Ryzen 5 7600|nuevo|2026-10-27": "2026-10-27 11:57",
-  "baja|Ryzen 5 5600|nuevo|2026-10-28": "2026-10-28 11:57"
+  "baja|Ryzen 5 5600|nuevo|2026-10-28": "2026-10-28 11:57",
+  "baja|Intel Core i5-13400|usado|2026-10-29": "2026-10-29 11:57",
+  "conviene|Intel Core i5-13400|usado|2026-10-29": "2026-10-29 11:57",
+  "baja|RAM DDR4 16GB (2x8) 3200|nuevo|2026-10-29": "2026-10-29 11:57",
+  "baja|SSD NVMe 2TB|usado|2026-10-29": "2026-10-29 11:57",
+  "baja|Ryzen 5 7500F|usado|2026-10-29": "2026-10-29 11:57"
  },
  "conviene": {
-  "Ryzen 5 7600|nuevo": true,
+  "Ryzen 5 7600|nuevo": false,
   "Ryzen 5 7600|usado": true,
   "Ryzen 7 7800X3D|nuevo": false,
   "Ryzen 7 7800X3D|usado": true,
@@ -53,7 +58,7 @@
   "Intel Core i5-12400F|nuevo": true,
   "Intel Core i5-12400F|usado": true,
   "Intel Core i5-13400|nuevo": false,
-  "Intel Core i5-13400|usado": false,
+  "Intel Core i5-13400|usado": true,
   "Intel Core i5-14400F|nuevo": false,
   "Intel Core i5-14400F|usado": true,
   "Intel Core Ultra 7 265K|nuevo": true,
@@ -72,7 +77,11 @@
   "Ryzen 7 7700X|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 5 5600 (nuevo) bajó 13% en eBay: USD 159.99 → 138.90"
+  "⬇ Intel Core i5-13400 (usado) bajó 13% en eBay: USD 149.99 → 129.99",
+  "✅ Ahora conviene Intel Core i5-13400 (usado): +24% · costo puesto Bs 1.757 vs Bs 2.300 en Cochabamba",
+  "⬇ RAM DDR4 16GB (2x8) 3200 (nuevo) bajó 10% en eBay: USD 100.00 → 89.99",
+  "⬇ SSD NVMe 2TB (usado) bajó 14% en eBay: USD 179.99 → 154.99",
+  "⬇ Ryzen 5 7500F (usado) bajó 12% en eBay: USD 129.99 → 114.99"
  ],
- "revisado": "2026-10-28 19:50"
+ "revisado": "2026-10-29 11:57"
 }
