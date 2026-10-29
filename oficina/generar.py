@@ -11,6 +11,7 @@ import json
 import os
 import sys
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 OFI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.dirname(OFI)
@@ -222,7 +223,7 @@ def main():
     # Libreta del Gerente (memoria.py, Fase 2 del 19/10): compromisos, pedidos, preferencias y datos de Santi, en resumen
     memoria_ger = [{k: f.get(k, "") for k in ("id", "fecha", "hora", "fuente", "tipo", "resumen", "vence", "estado", "cerrado")}
                    for f in (leer("memoria-gerente.csv") if existe("memoria-gerente.csv") else [])][-200:]
-    datos = {"generado": datetime.now().strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
+    datos = {"generado": datetime.now(ZoneInfo("America/La_Paz")).strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
              "frescura": frescura, "chat": chat_eq, "memoria": memoria_ger,
              "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas,
              "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente, "catalogos": catalogos, "salud": salud_equipo,
