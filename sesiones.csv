@@ -73,3 +73,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-29,raspberry,vigilante,16:30,16:30,alerta,la PC no prendió para la ronda de las 16:00
 2026-10-29,pc,encargo,17:07,17:07,en curso,empezó
 2026-10-29,pc,encargo,17:07,17:12,ok,"rastreo de pedidos: UPS sin cambios; 4 Ryzen en camino a Bolivia segun Santi, falta guia del courier B; pruebas sin cambios"
+2026-10-29,raspberry,vigilante,18:00,18:00,arreglado,la PC no hizo la ronda de las 16:00: relanzada
