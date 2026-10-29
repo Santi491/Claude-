@@ -69,3 +69,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-28,pc,ronda,19:41,19:54,ok,"ronda tarde relanzada (pedido 18:00, tomada 19:40): WA 0 nuevos, 8400F consultado; MKT SSD NV2 1TB Bs 1.675; pedidos sin cambios; oficina v100"
 2026-10-28,gerente,informe,20:16,20:18,ok,"informe diario 28/10; 8 tareas, doc subido"
 2026-10-29,mac,ronda,10:35,10:35,en curso,empezó
+2026-10-29,mac,ronda,10:35,10:50,ok,WA 1 chat nuevo; MKT meta 21 tiendas nuevas (14 con WhatsApp); pedidos sin Chrome; agenda.py idea 10; oficina v102
