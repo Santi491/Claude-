@@ -1,0 +1,9 @@
+{
+ "id": "2026-10-29-1706",
+ "tipo": "encargo",
+ "ligera": false,
+ "pedido": "2026-10-29 17:06",
+ "por": "santi",
+ "plan_id": "2026-10-29-1",
+ "motivo": "Rastrear con Chrome (la sesión ya está iniciada) los pedidos reales real-1 y real-2 (4 Ryzen 7 7700X, UPS y courier B) y los pedidos de prueba de pedidos-prueba.csv. Anotar en seguimiento.csv cada movimiento nuevo, actualizar estado y actualizado en pedidos.csv y pedidos-prueba.csv, y dejar la fila "
+}
