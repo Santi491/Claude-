@@ -20,6 +20,8 @@ from datetime import date, datetime, timedelta
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 CERRADAS = re.compile(r"no vende|sin stock|no contactar|sin whatsapp|no sueltos|cerrad", re.I)
+# cierres sin precio (la tienda dijo que no tiene o cerró la charla): no hay nada que responder (idea 10, 29/10)
+CIERRES = re.compile(r"no tengo|agotad|sin stock|no hay|nom[aá]s|no se contesta|sin el producto", re.I)
 DIAS_SEGUIMIENTO, MAX_SEGUIMIENTOS = 2, 2
 
 
@@ -44,7 +46,9 @@ def calcular(hoy=None):
     out = {"hoy": hoy.isoformat(), "responder": [], "seguimiento": [], "esperar": [], "frias": [], "respondieron": []}
     for t in leer("tiendas-cochabamba.csv"):
         nombre, estado = t.get("tienda", ""), t.get("estado_contacto", "")
-        mios = [m for m in msgs if m["tienda"] == nombre]
+        # los saludos automáticos no son una respuesta de una persona
+        mios = [m for m in msgs if m["tienda"] == nombre
+                and not (m["direccion"] == "recibido" and m.get("tipo") == "automatica")]
         env = [fecha(m["fecha"]) for m in mios if m["direccion"] == "enviado"]
         rec = [fecha(m["fecha"]) for m in mios if m["direccion"] == "recibido"]
         if re.search(r"esperando|consultad", estado, re.I) and fecha(t.get("ultima_consulta")):
@@ -62,6 +66,10 @@ def calcular(hoy=None):
         # la tienda escribió y todavía no le contestamos (mismo día cuenta como respondida por nosotros si hay envío después)
         ult_env_dt = max([m["fecha"] + " " + m["hora"] for m in mios if m["direccion"] == "enviado"], default="")
         ult_rec_dt = max([m["fecha"] + " " + m["hora"] for m in mios if m["direccion"] == "recibido"], default="")
+        ult_rec_m = max([m for m in mios if m["direccion"] == "recibido"], key=lambda m: m["fecha"] + " " + m["hora"], default=None)
+        if ult_rec_dt and ult_rec_dt > ult_env_dt and ult_rec_m.get("con_precio") != "sí" and CIERRES.search(ult_rec_m.get("nota", "")):
+            out["respondieron"].append({**fila, "motivo": "cerró sin precio"})
+            continue
         if ult_rec_dt and ult_rec_dt > ult_env_dt:
             out["responder"].append({**fila, "motivo": "escribió después de nuestro último mensaje"})
             continue
