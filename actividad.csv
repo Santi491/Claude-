@@ -433,3 +433,4 @@ fecha,hora,agente,texto
 2026-10-29,10:48,local,"agenda.py: ignora cierres sin precio y saludos automáticos (idea 10, tarea 2026-10-28-6); Responder pasa de 3 a 0"
 2026-10-29,10:49,local,"Oficina: publicada versión 102 (ronda Mac 29/10)"
 2026-10-29,10:59,gerente,"Gerente: aviso de fin de ronda enviado (Mac 29/10); meta de Marketplace cumplida, 8400F reprogramado a 30/10"
+2026-10-29,11:54,gerente,Telegram (Raspberry): el Gerente cambió pedidos-prueba.csv
