@@ -72,3 +72,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-29,mac,ronda,10:35,10:50,ok,WA 1 chat nuevo; MKT meta 21 tiendas nuevas (14 con WhatsApp); pedidos sin Chrome; agenda.py idea 10; oficina v102
 2026-10-29,raspberry,vigilante,16:30,16:30,alerta,la PC no prendió para la ronda de las 16:00
 2026-10-29,pc,encargo,17:07,17:07,en curso,empezó
+2026-10-29,pc,encargo,17:07,17:12,ok,"rastreo de pedidos: UPS sin cambios; 4 Ryzen en camino a Bolivia segun Santi, falta guia del courier B; pruebas sin cambios"
