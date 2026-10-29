@@ -9,7 +9,7 @@ Avisa cuando:
   1. el precio real de eBay de un producto (nuevo o usado, con envío en EE.UU.) bajó 10 % o más respecto del día anterior con dato;
   2. un producto pasa a convenir: margen ≥ 15 % sobre el mejor precio de Cochabamba (pedido de 2 unidades, courier más barato,
      mismos supuestos que comparar.py);
-  3. el dólar paralelo usado en los cálculos se movió 1 % o más respecto del día anterior.
+  3. el dólar USDT usado en los cálculos se movió 1 % o más respecto del día anterior.
 Cada alerta se manda una sola vez: `alertas-estado.json` guarda lo ya avisado (lo comparten la nube y las rondas locales por git).
 Se corre después de comparar.py en la revisión de la nube (7:52) y al final de cada ronda local.
 """
@@ -69,7 +69,7 @@ def revisar():
         a, b = num(fx[-2]["usado"]), num(fx[-1]["usado"])
         clave = f"dolar|{fx[-1]['fecha']}"
         if a and abs(b - a) / a >= DOLAR and clave not in avisados:
-            nuevas.append((clave, f"💵 El dólar paralelo pasó de {a:.2f} a {b:.2f} Bs ({(b - a) / a:+.1%}): cambia la ganancia de todo"))
+            nuevas.append((clave, f"💵 El dólar USDT pasó de {a:.2f} a {b:.2f} Bs ({(b - a) / a:+.1%}): cambia la ganancia de todo"))
     return nuevas, est, conviene
 
 

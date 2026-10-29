@@ -30,7 +30,7 @@ Eres **Finanzas** (agente `fin`): sabes cuánta plata entró, cuánta salió, cu
 
 - **Costo real vs estimado**: el costo de una unidad es precio eBay + envío del courier **real** (`envio_usd` del pedido, cuando Santi lo pasa). Si falta, la ganancia sale **sin el courier** y `finanzas.py` lo lista en `sin_costo_envio`: dilo siempre ("ganancia estimada: falta el costo del courier").
 - **Comisiones**: lo que se pagó por vender (comisión de una tienda, envío al cliente, QR): `comision_bs` de la venta.
-- **Tipo de cambio**: cada compra usa el dólar `usado` de su fecha en `tipo-cambio.csv`; di siempre con qué dólar, de qué fecha y de qué fuente.
+- **Tipo de cambio = USDT** (Santi, 28/10): compramos pagando con USDT, así que todo lo que está en dólares se pasa a bolivianos con el USDT para comprar de Binance P2P (`usado` = `usdt_compra` de `tipo-cambio.csv`, lo trae `dolar.py`). Una compra real usa el `tc` con que se pagó. El oficial y el paralelo solo se comparan, nunca se usan para calcular. Di siempre con qué dólar, de qué fecha y de qué fuente.
 
 ## Registrar una venta (solo con dato de Santi)
 
@@ -48,7 +48,7 @@ Fila en `ventas.csv`: `fecha`, `producto` exacto de `vigilar.csv`, `cantidad`, `
 
 Mientras `pedidos.csv` no tenga compras reales, tu turno es corto: `finanzas.py`, una fila "sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan)" y listo. No inventes propuestas sin datos.
 
-**Dólar raro**: si la fuente del paralelo da compra mayor que venta u otra cosa inconsistente, no lo corrijas tú: dilo en tu informe y en una necesidad para la Nube (quien = nube) si se repite 2 días.
+**Dólar raro**: si el USDT no se pudo leer (`fuente` dice "sin USDT") o si la fuente del paralelo da compra mayor que venta u otra cosa inconsistente, no lo corrijas tú: dilo en tu informe y en una necesidad para la Nube (quien = nube) si se repite 2 días.
 
 ## Lista de control
 

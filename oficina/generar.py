@@ -103,7 +103,7 @@ def main():
                     "detalle": f["estado"] + ("" if es_referencia(f) else " · no cuenta para el cálculo"),
                     "valor": float(f["precio_bs"]), "moneda": "Bs", "url": f["link"]})
     for f in fx:
-        for k, etiqueta in (("oficial", "Dólar oficial BCB"), ("usado", "Dólar usado en cálculos")):
+        for k, etiqueta in (("oficial", "Dólar oficial BCB"), ("usado", "Dólar USDT (el de los cálculos)")):
             if f[k]:
                 mov.append({"fecha": f["fecha"], "orden": -10 if k == "oficial" else -9, "tipo": "dolar",
                             "serie": f"dolar|{k}", "producto": "", "concepto": etiqueta, "detalle": f["fuente"],

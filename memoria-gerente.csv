@@ -12,3 +12,7 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 11,2026-10-27,20:17,2000,compromiso,Confirmarle a Santi apenas los 4 Ryzen 7 7700X figuren entregados en la casilla y recordarle fijar el precio de venta (tarea 26-6),2026-10-29,cumplida,28/10 10:45
 12,2026-10-28,19:54,ronda,compromiso,Revisar mañana si Punto Tecnológico contestó el precio del Ryzen 5 8400F y confirmar con Santi si va a vigilar.csv,2026-10-29,abierta,
 13,2026-10-28,20:17,2000,compromiso,"Recordarle a Santi que falta fijar el precio de venta de los 7700X (sugerido Bs 3.480), confirmar casilla y courier, y revisar la BIOS de la PC (Wake-on-LAN)",2026-10-30,abierta,
+14,2026-10-28,21:19,santi,preferencia,Todo lo que está en dólares se calcula con el USDT para comprar (Binance P2P); el oficial y el paralelo solo se comparan,,abierta,
+15,2026-10-28,21:19,santi,pedido,El precio de venta de los 7700X lo fija Santi según vayan llegando; sin su precio y sus fotos Marketplace no publica,,abierta,
+16,2026-10-28,21:19,santi,dato,"Courier A: USD 10 por producto chico (CPU, RAM, SSD); lo grande o pesado se cotiza aparte (la ropa de prueba salió USD 30/kg)",,abierta,
+17,2026-10-28,21:19,santi,preferencia,Por ahora no se cambia la lista de productos de vigilar.csv (ni sacar ni agregar),,abierta,
