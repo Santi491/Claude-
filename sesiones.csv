@@ -70,3 +70,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-28,gerente,informe,20:16,20:18,ok,"informe diario 28/10; 8 tareas, doc subido"
 2026-10-29,mac,ronda,10:35,10:35,en curso,empezó
 2026-10-29,mac,ronda,10:35,10:50,ok,WA 1 chat nuevo; MKT meta 21 tiendas nuevas (14 con WhatsApp); pedidos sin Chrome; agenda.py idea 10; oficina v102
+2026-10-29,raspberry,vigilante,16:30,16:30,alerta,la PC no prendió para la ronda de las 16:00
