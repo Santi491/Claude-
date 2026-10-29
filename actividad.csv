@@ -415,3 +415,4 @@ fecha,hora,agente,texto
 2026-10-28,19:53,local,"Oficina: ronda tarde 28/10. Regenerado oficina/datos.js (generado 19:51) con reportes y generar.py; verificar.py comun y oficina sin ERROR. Publicada versión 100 en la misma URL con datos.js y captura 2005-mkt; datos.js publicado verificado por hash. Primer publish rechazado por datos.js no visto: lo leí, era una versión de las 10:44 sin datos que falten; se publicó la nueva"
 2026-10-28,19:58,gerente,aviso de fin de ronda enviado
 2026-10-28,19:57,local,"apagar_pc.ps1: la PC queda prendida (arrancó 14:18, no la prendió la Raspberry para la ronda y se estaba usando)"
+2026-10-28,20:25,gerente,"Informe 20:00 del 28/10: 8 tareas propuestas (6 aprobadas por rutina, 2 esperan a Santi), 3 mensajes del chat contestados, 1 nota de la libreta anotada, 0 de Telegram (lee la Raspberry); necesidad nueva: BIOS de la PC"

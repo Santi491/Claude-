@@ -11,3 +11,4 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 10,2026-10-25,20:16,2000,compromiso,Recordarle a Santi la guía del courier B de los 7700X y la conexión de Claude in Chrome en la PC antes de la ronda del lunes 16:00,2026-10-26,cumplida,26/10 13:45
 11,2026-10-27,20:17,2000,compromiso,Confirmarle a Santi apenas los 4 Ryzen 7 7700X figuren entregados en la casilla y recordarle fijar el precio de venta (tarea 26-6),2026-10-29,cumplida,28/10 10:45
 12,2026-10-28,19:54,ronda,compromiso,Revisar mañana si Punto Tecnológico contestó el precio del Ryzen 5 8400F y confirmar con Santi si va a vigilar.csv,2026-10-29,abierta,
+13,2026-10-28,20:17,2000,compromiso,"Recordarle a Santi que falta fijar el precio de venta de los 7700X (sugerido Bs 3.480), confirmar casilla y courier, y revisar la BIOS de la PC (Wake-on-LAN)",2026-10-30,abierta,
