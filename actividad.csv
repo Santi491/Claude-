@@ -481,3 +481,4 @@ fecha,hora,agente,texto
 2026-10-30,16:30,ana,"PC ronda tarde: sin cambios desde las 13:10; comparar, analista --md y alertas corridos, comparacion.md y analisis.md salieron iguales, sin alertas nuevas"
 2026-10-30,16:19,local,"Oficina: publicada versión 108 en la misma URL (datos.js de 16:17 y captura 1640 mkt); la versión anterior traía datos de 13:12 y se reemplazó por la nueva, sin filas perdidas; verificar.py comun y oficina sin ERROR; vivo/_ronda en false"
 2026-10-30,16:33,gerente,"aviso de fin de ronda enviado (PC tarde): sin ERROR; tarea 2026-10-29-1 con prioridad y plazo; nueva tarea 2026-10-30-1 para local (agenda.py marca tiendas ya respondidas); libreta 13 y 19 vencen hoy, siguen abiertas (falta guia y precio de Santi)"
+2026-10-30,16:37,local,"PC (ronda tarde): apagar_pc.ps1 apaga la PC en 2 minutos (arrancó 15:50 para la ronda, nadie la usó)"
