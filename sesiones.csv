@@ -79,3 +79,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-29,raspberry,vigilante,21:00,21:00,alerta,gerente no corrió
 2026-10-30,raspberry,vigilante,09:30,09:30,alerta,nube no corrió
 2026-10-30,mac,ronda,10:35,10:35,en curso,empezó
+2026-10-30,mac,ronda,10:35,10:38,alerta,"sin Chrome en la Mac: solo dólar, eBay (14), Analista, Finanzas y oficina v105; WhatsApp, Marketplace y Pedidos no corrieron"

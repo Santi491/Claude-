@@ -450,3 +450,13 @@ fecha,hora,agente,texto
 2026-10-29,19:11,local,"finanzas.py y analista.py imprimen en UTF-8 aunque la consola de Windows sea cp1252 (ya no crashean con el signo menos); necesidad de Finanzas resuelta"
 2026-10-29,19:14,gerente,"Sesión con Santi (Mac): pedido a la PC (ronda completa de prueba para terminar lo de hoy: 9 chats nuevos de WhatsApp y Marketplace) y la PC prendida por la red"
 2026-10-29,19:15,gerente,"Sesión con Santi (Mac): prueba completa de la PC: orden de apagar (orden-pc.json); el pedido de ronda se retira y se vuelve a dejar cuando esté apagada, antes de prenderla por la red"
+2026-10-30,10:37,ebay,"API (ronda Mac, la nube no corrió): 14 precios nuevos y 0 usados"
+2026-10-30,10:37,wa,"Ronda mañana sin WhatsApp: Chrome no está conectado en la Mac (2 intentos). Quedan para la PC 3 seguimientos (TECH COCHA, ENIGMA TECH, Quillacollo); 0 de 10 chats nuevos usados"
+2026-10-30,10:37,mkt,Ronda mañana sin Marketplace ni Messenger: Chrome no conectado en la Mac
+2026-10-30,10:37,dem,Sin conteo de demanda hoy: Chrome no conectado en la Mac
+2026-10-30,10:37,pedidos,Sin rastreo: Chrome no conectado en la Mac; 4 Ryzen 7 7700X siguen en bodega del courier según el último dato
+2026-10-30,10:37,fin,"Sin cambios: 4 Ryzen 7 7700X en camino (Bs 10.620), sin ventas; dólar de cálculo USDT 11,98 (bajó 1,8 %)"
+2026-10-30,10:37,ana,"Recalculado con eBay de hoy y USDT 11,98: traer 7800X3D nuevo (margen 19,7 %, peor caso 7,2 %); bajaron en eBay la RAM DDR4 16GB (-17 %), SSD 1TB (-11 %) y 2TB (-12 %); 5600, 5700X3D y 7500F siguen sin precio local"
+2026-10-30,10:38,nube,La revisión de la nube de las 7:52 no corrió (alerta del vigilante 09:30); la Mac trajo el dólar y eBay en su ronda
+2026-10-30,10:38,local,Oficina: publicada v105 (datos de la ronda Mac 30/10; solo datos.js); vivo/_ronda en false
+2026-10-30,10:38,gerente,aviso de fin de ronda enviado
