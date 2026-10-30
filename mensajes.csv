@@ -297,3 +297,11 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-30,10:46,whatsapp,INAV Computación,recibido,automatica,no,"saludo automático (laptops, todo en uno, tablets)"
 2026-10-30,10:44,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"8400F Bs 1.620 solo el procesador (""placa y ram"" aparte); nuevo/garantía sin confirmar"
 2026-10-30,10:48,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si el 8400F es nuevo con garantía 6 meses
+2026-10-30,16:10,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"8400F Bs 1.620 solo el procesador; confirma nuevo y garantía 6 meses (""si""); 8400F no está en vigilar.csv"
+2026-10-30,16:10,whatsapp,INAV Computación,recibido,respuesta,no,no vende accesorios de PC (10:50)
+2026-10-30,16:11,whatsapp,Tienda de Computadoras Quillacollo,enviado,seguimiento,,seguimiento: ¿pudieron ver la consulta de Ryzen 7600/7500F? (solo había automáticas DJ COMPUTER)
+2026-10-30,16:14,whatsapp,IPcenter,enviado,nuevo,,chat nuevo: Ryzen 5 7600 y Corsair DDR5 32GB
+2026-10-30,16:16,whatsapp,Comcell Corp (Cochabamba),enviado,nuevo,,intento de chat nuevo: el número no está en WhatsApp
+2026-10-30,16:17,whatsapp,BLADTHOR,enviado,nuevo,,intento de chat nuevo: el número no está en WhatsApp
+2026-10-30,16:18,whatsapp,Compumas Bolivia,enviado,nuevo,,chat nuevo: Ryzen 5 7600 y SSD NVMe 1TB
+2026-10-30,16:19,whatsapp,Creative Technology,enviado,nuevo,,chat nuevo: Ryzen 5 7600 y DDR5 32GB

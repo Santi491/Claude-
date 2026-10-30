@@ -18,3 +18,4 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 17,2026-10-28,21:19,santi,preferencia,Por ahora no se cambia la lista de productos de vigilar.csv (ni sacar ni agregar),,abierta,
 18,2026-10-29,10:50,ronda,compromiso,Revisar si Punto Tecnologico contesto el precio del Ryzen 5 8400F y confirmar con Santi si va a vigilar.csv (reprogramado),2026-10-30,cumplida,30/10 10:48
 19,2026-10-29,17:07,telegram,compromiso,Santi avisó el 29/10 que los 7700X están saliendo hacia Bolivia; pedirle la guía del courier B para rastrearlos y avisarle cuando lleguen a Cochabamba.,2026-10-30,abierta,
+20,2026-10-30,16:20,ronda,dato,Punto Tecnológico confirmó el Ryzen 5 8400F nuevo a Bs 1.620 con 6 meses de garantía; no está en vigilar.csv y por ahora no se cambia la lista,,abierta,
