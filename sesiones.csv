@@ -82,3 +82,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-30,mac,ronda,10:35,10:38,alerta,"sin Chrome en la Mac: solo dólar, eBay (14), Analista, Finanzas y oficina v105; WhatsApp, Marketplace y Pedidos no corrieron"
 2026-10-30,mac,ronda,10:39,10:39,en curso,empezó
 2026-10-30,mac,ronda,10:42,10:48,alerta,segunda parte con Chrome intermitente: WhatsApp 5 chats nuevos y 3 respuestas; Marketplace y Pedidos sin Chrome; oficina v106
+2026-10-30,raspberry,vigilante,13:00,13:00,arreglado,la Mac no hizo la ronda de la mañana: la cubre la PC
