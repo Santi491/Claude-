@@ -149,3 +149,19 @@ fecha,producto,fuente,ciudad,anuncios,nuevos,desaparecidos,precio_min_bs,precio_
 2026-10-28,Intel Core i5-14400F,marketplace,Cochabamba,0,0,0,,,"ninguno exacto (sale i5 14400 a Bs 2.600, otro modelo)"
 2026-10-28,SSD NVMe 1TB,marketplace,Cochabamba,6,0,0,1100,1850,"NV2 1.700, NV3 1.850, 1TB generico 1.100, WD/Samsung; interes medio; ronda parcial: sin comparar links"
 2026-10-28,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,marketplace,Cochabamba,0,0,0,,,"ninguno exacto (salen Kingston Fury 32GB laptop y Vortex DDR5 32GB); ronda parcial"
+2026-10-30,Ryzen 5 5600,marketplace,Cochabamba,0,0,0,,,"ninguno exacto (salen 5600G/5600GT/5700X otros modelos); ronda cubre mac, comparación por título (sin links)"
+2026-10-30,Ryzen 7 5700X3D,marketplace,Cochabamba,0,0,0,,,"ninguno exacto (5700X OEM 2.500-2.540, 5700G 2.250-2.770); tarea 27-3"
+2026-10-30,Ryzen 5 7600,marketplace,Cochabamba,0,0,0,,,"ninguno exacto (sale 9600X Bs 2.450-2.800 y 8600G, otros modelos)"
+2026-10-30,Ryzen 7 7800X3D,marketplace,Cochabamba,1,0,2,5190,5190,"1 anuncio exacto a 5.190 (+ multi-modelo 4.860 que no cuenta); no salen hoy el sellado 4.800 ni el 5.390; interés bajo (señal, no demanda confirmada)"
+2026-10-30,Ryzen 9 9950X,marketplace,Cochabamba,0,0,0,,,ninguno (salen 9950X3D2 a 'gratis' sin precio y 9800X3D otro modelo)
+2026-10-30,Ryzen 7 7700X,marketplace,Cochabamba,1,0,1,3000,3000,"1 anuncio exacto a 3.000 (antes 3.200); no sale hoy el sellado de 4.000; interés bajo; sin links, comparación por título/precio"
+2026-10-30,Ryzen 5 7500F,marketplace,Cochabamba,0,0,0,,,ninguno (5ª ronda en 0); tarea 27-3
+2026-10-30,Intel Core i5-12400F,marketplace,Cochabamba,1,0,0,,,1 anuncio solo procesador sin precio fijo (12400F/12500T 'a cotizar') + 7 combos 7.280-8.150; interés medio en combos (señal)
+2026-10-30,Intel Core i5-13400,marketplace,Cochabamba,0,0,0,,,ninguno (solo i5 12400F/12600K/12700 y combos)
+2026-10-30,Intel Core i5-14400F,marketplace,Cochabamba,0,0,0,,,ninguno exacto (i5 14400 con gráficos a 2.700; combo 5.290 'i5 1440F' con placa y RAM)
+2026-10-30,Intel Core Ultra 7 265K,marketplace,Cochabamba,0,0,0,,,"ninguno (sale 270K Plus a 4.350, otro modelo)"
+2026-10-30,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,marketplace,Cochabamba,0,0,0,,,"ninguno exacto (Fury Beast 32GB 5600 a 7.400, otra marca)"
+2026-10-30,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,marketplace,Cochabamba,1,1,0,6200,6200,1 anuncio 'última unidad' a 6.200; interés bajo (señal)
+2026-10-30,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,2,0,0,540,970,Fury Beast 16GB 3200 a 540 y Corsair DDR4 16GB 3200 a 1.400 (formato 2x8 sin confirmar); más ~12 de 8GB/16GB sueltos; interés medio-alto (señal)
+2026-10-30,SSD NVMe 1TB,marketplace,Cochabamba,4,1,2,1675,1775,"NV2 1.675/1.700 (posible el mismo), NV3 1.850, Samsung 9100 PRO 3.050 nuevo; no salen el 1.100 genérico ni uno WD/Samsung; interés medio; sin links, comparación por título"
+2026-10-30,SSD NVMe 2TB,marketplace,Cochabamba,2,0,0,3100,3325,SanDisk 2TB 3.100-3.550 (2 publicaciones); interés bajo (señal)
