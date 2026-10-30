@@ -282,3 +282,18 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-28,19:42,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta precio del 8400F si es nuevo con garantía y precio por 2
 2026-10-29,10:38,whatsapp,City Of Gamers,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y Corsair DDR5 32GB, nuevos con garantía"
 2026-10-29,10:38,whatsapp,Soft Computers,enviado,seguimiento,,"pregunta Ryzen 5 5600, 5700X3D y 7500F (tarea 2026-10-28-2)"
+2026-10-30,10:41,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"8400F Bs 1.620 ""y sería con piezas"" (ambiguo; 8400F no está en vigilar.csv)"
+2026-10-30,10:41,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si los Bs 1.620 son el procesador solo nuevo con garantía y qué significa con piezas
+2026-10-30,10:44,whatsapp,Soft Computers,recibido,respuesta,no,"solo tiene el Ryzen 7 5700G (no vigilado) y el i5-14400F; sin 5600/5700X3D/7500F"
+2026-10-30,10:44,whatsapp,City Of Gamers,recibido,respuesta,no,"no cuenta con esos productos por el momento"
+2026-10-30,10:46,whatsapp,TECH COCHA,enviado,seguimiento,,seguimiento: 7600 o 7700X y precio
+2026-10-30,10:43,whatsapp,SYSCITY,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y Corsair DDR5 32GB, por 2, nuevos con garantía"
+2026-10-30,10:45,whatsapp,i-Trendy,enviado,nuevo,,"chat nuevo: Ryzen 7 7800X3D e i5-14400F"
+2026-10-30,10:45,whatsapp,i-Trendy,recibido,respuesta,no,"no tienen procesadores por el momento, solo gráficas"
+2026-10-30,10:45,whatsapp,Global PC,enviado,nuevo,,"chat nuevo: SSD NVMe 1TB y RAM DDR5 32GB (número aparece como Import PC)"
+2026-10-30,10:46,whatsapp,Global PC,recibido,respuesta,no,"solo laptops y fundas por el momento; ofrece catálogo (no abierto)"
+2026-10-30,10:46,whatsapp,COMPUTADORAS & REPUESTOS CBBA,enviado,nuevo,,"intento de chat nuevo: el número no está en WhatsApp"
+2026-10-30,10:46,whatsapp,INAV Computación,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 e i5-12400F"
+2026-10-30,10:46,whatsapp,INAV Computación,recibido,automatica,no,"saludo automático (laptops, todo en uno, tablets)"
+2026-10-30,10:44,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"8400F Bs 1.620 solo el procesador (""placa y ram"" aparte); nuevo/garantía sin confirmar"
+2026-10-30,10:48,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si el 8400F es nuevo con garantía 6 meses
