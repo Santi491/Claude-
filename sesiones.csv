@@ -78,3 +78,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-29,pc,ronda,18:07,18:12,ok,relanzada por el vigilante: WhatsApp y Marketplace no corrieron (bloqueado por permisos de la sesion); Analista y Finanzas sin cambios; oficina v104
 2026-10-29,raspberry,vigilante,21:00,21:00,alerta,gerente no corrió
 2026-10-30,raspberry,vigilante,09:30,09:30,alerta,nube no corrió
+2026-10-30,mac,ronda,10:35,10:35,en curso,empezó
