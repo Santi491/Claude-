@@ -76,3 +76,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-29,raspberry,vigilante,18:00,18:00,arreglado,la PC no hizo la ronda de las 16:00: relanzada
 2026-10-29,pc,ronda,18:07,18:07,en curso,empezó
 2026-10-29,pc,ronda,18:07,18:12,ok,relanzada por el vigilante: WhatsApp y Marketplace no corrieron (bloqueado por permisos de la sesion); Analista y Finanzas sin cambios; oficina v104
+2026-10-29,raspberry,vigilante,21:00,21:00,alerta,gerente no corrió
