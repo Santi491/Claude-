@@ -83,3 +83,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-30,mac,ronda,10:39,10:39,en curso,empezó
 2026-10-30,mac,ronda,10:42,10:48,alerta,segunda parte con Chrome intermitente: WhatsApp 5 chats nuevos y 3 respuestas; Marketplace y Pedidos sin Chrome; oficina v106
 2026-10-30,raspberry,vigilante,13:00,13:00,arreglado,la Mac no hizo la ronda de la mañana: la cubre la PC
+2026-10-30,pc,cubre mac,13:02,13:02,en curso,empezó
