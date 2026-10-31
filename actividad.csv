@@ -493,3 +493,4 @@ fecha,hora,agente,texto
 2026-10-31,16:15,local,"Oficina: ronda ligera, datos.js regenerado (generar.py 16:15), oficina sin ERROR; comun marca ERROR de formato en actividad.csv (corregido por la coordinadora): publicada como versión 109 tras la corrección de la coordinadora (16:16); vivo/_ronda no tocado"
 2026-10-31,16:21,gerente,"Aviso de fin de ronda enviado (ronda ligera PC): Chrome sin conectar, WhatsApp y Marketplace sin correr; tareas de WhatsApp (30-2, 30-3) movidas a la primera ronda con Chrome y tarea 2026-10-31-1 para Marketplace; chat al dia (7 mensajes viejos cerrados); nota 19 de la libreta cerrada. Necesito de Santi: Chrome en la PC, guia del courier B y costo real del courier."
 2026-10-31,16:19,mkt,"Ronda ligera: Messenger no revisado, Claude in Chrome no conectado en la PC; queda la tarea 2026-10-31-1"
+2026-10-31,16:20,local,"PC (ronda ligera): apagar_pc.ps1 deja la PC prendida (arrancó 15:50 para la ronda, alguien la usó)"
