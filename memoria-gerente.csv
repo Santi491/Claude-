@@ -11,7 +11,7 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 10,2026-10-25,20:16,2000,compromiso,Recordarle a Santi la guía del courier B de los 7700X y la conexión de Claude in Chrome en la PC antes de la ronda del lunes 16:00,2026-10-26,cumplida,26/10 13:45
 11,2026-10-27,20:17,2000,compromiso,Confirmarle a Santi apenas los 4 Ryzen 7 7700X figuren entregados en la casilla y recordarle fijar el precio de venta (tarea 26-6),2026-10-29,cumplida,28/10 10:45
 12,2026-10-28,19:54,ronda,compromiso,Revisar mañana si Punto Tecnológico contestó el precio del Ryzen 5 8400F y confirmar con Santi si va a vigilar.csv,2026-10-29,descartada,29/10 10:50: Punto Tecnologico no dio precio del 8400F (solo autorrespuesta); se re-abre con vence 30/10
-13,2026-10-28,20:17,2000,compromiso,"Recordarle a Santi que falta fijar el precio de venta de los 7700X (sugerido Bs 3.480), confirmar casilla y courier, y revisar la BIOS de la PC (Wake-on-LAN)",2026-10-30,abierta,
+13,2026-10-28,20:17,2000,compromiso,"Recordarle a Santi que falta fijar el precio de venta de los 7700X (sugerido Bs 3.480), confirmar casilla y courier, y revisar la BIOS de la PC (Wake-on-LAN)",2026-10-30,descartada,30/10 20:17: Santi dijo el 28/10 que el precio lo fija cuando lleguen; se retoma al llegar
 14,2026-10-28,21:19,santi,preferencia,Todo lo que está en dólares se calcula con el USDT para comprar (Binance P2P); el oficial y el paralelo solo se comparan,,abierta,
 15,2026-10-28,21:19,santi,pedido,El precio de venta de los 7700X lo fija Santi según vayan llegando; sin su precio y sus fotos Marketplace no publica,,abierta,
 16,2026-10-28,21:19,santi,dato,"Courier A: USD 10 por producto chico (CPU, RAM, SSD); lo grande o pesado se cotiza aparte (la ropa de prueba salió USD 30/kg)",,abierta,
@@ -19,3 +19,4 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 18,2026-10-29,10:50,ronda,compromiso,Revisar si Punto Tecnologico contesto el precio del Ryzen 5 8400F y confirmar con Santi si va a vigilar.csv (reprogramado),2026-10-30,cumplida,30/10 10:48
 19,2026-10-29,17:07,telegram,compromiso,Santi avisó el 29/10 que los 7700X están saliendo hacia Bolivia; pedirle la guía del courier B para rastrearlos y avisarle cuando lleguen a Cochabamba.,2026-10-30,abierta,
 20,2026-10-30,16:20,ronda,dato,Punto Tecnológico confirmó el Ryzen 5 8400F nuevo a Bs 1.620 con 6 meses de garantía; no está en vigilar.csv y por ahora no se cambia la lista,,abierta,
+21,2026-10-30,20:17,2000,compromiso,"Recordarle a Santi la guía del courier B de los 7700X y, cuando lleguen a Cochabamba, fijar el precio de venta (sugerido Bs 3.390)",2026-11-03,abierta,
