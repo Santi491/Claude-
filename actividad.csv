@@ -483,3 +483,6 @@ fecha,hora,agente,texto
 2026-10-30,16:33,gerente,"aviso de fin de ronda enviado (PC tarde): sin ERROR; tarea 2026-10-29-1 con prioridad y plazo; nueva tarea 2026-10-30-1 para local (agenda.py marca tiendas ya respondidas); libreta 13 y 19 vencen hoy, siguen abiertas (falta guia y precio de Santi)"
 2026-10-30,16:37,local,"PC (ronda tarde): apagar_pc.ps1 apaga la PC en 2 minutos (arrancó 15:50 para la ronda, nadie la usó)"
 2026-10-30,20:18,gerente,"Informe diario 30/10 (Doc subido): 10 chats nuevos, 50% respuesta 7d, 7 tiendas sin responder, nube 7:52 y Gerente 29/10 no corrieron; 6 tareas propuestas (4 aprobadas auto rutina, 2 para Santi), 0 mensajes del chat contestados (ninguno pendiente), libreta: 1 descartada y 1 anotada, 0 mensajes de Telegram (Raspberry)"
+2026-10-31,07:54,ebay,"API: 14 precios nuevos y 14 usados (5700X3D nuevo sin anuncio que cumpla); sin filas corregidas",
+2026-10-31,07:54,ana,"Traer: Ryzen 7 7800X3D nuevo (margen 19.7 %, peor caso 7.2 %). Esperar: 7700X y casi todo lo demás (faltan precios locales o el peor caso queda bajo 10 %). No traer: DDR5 6000/5600 nuevo, SSD 1TB nuevo, 7600 nuevo, 9950X.",
+2026-10-31,nube,"Revisión diaria hecha: USDT 11.98, eBay, comparación, análisis, Excel y CSV del día; sin PDF (reportlab no carga en la nube); oficial y paralelo sin dato nuevo desde el 28/10",

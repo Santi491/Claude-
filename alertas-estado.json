@@ -50,7 +50,8 @@
   "baja|RAM DDR4 16GB (2x8) 3200|nuevo|2026-10-30": "2026-10-30 10:37",
   "baja|SSD NVMe 1TB|nuevo|2026-10-30": "2026-10-30 10:37",
   "baja|SSD NVMe 2TB|nuevo|2026-10-30": "2026-10-30 10:37",
-  "dolar|2026-10-30": "2026-10-30 10:37"
+  "dolar|2026-10-30": "2026-10-30 10:37",
+  "baja|Ryzen 7 7700X|usado|2026-10-31": "2026-10-31 11:54"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -81,10 +82,7 @@
   "Ryzen 7 7700X|usado": true
  },
  "ultimas": [
-  "⬇ RAM DDR4 16GB (2x8) 3200 (nuevo) bajó 17% en eBay: USD 89.99 → 75.00",
-  "⬇ SSD NVMe 1TB (nuevo) bajó 11% en eBay: USD 135.00 → 119.99",
-  "⬇ SSD NVMe 2TB (nuevo) bajó 12% en eBay: USD 209.99 → 185.00",
-  "💵 El dólar USDT pasó de 12.20 a 11.98 Bs (-1.8%): cambia la ganancia de todo"
+  "⬇ Ryzen 7 7700X (usado) bajó 18% en eBay: USD 189.99 → 155.00"
  ],
- "revisado": "2026-10-30 16:16"
+ "revisado": "2026-10-31 11:54"
 }
