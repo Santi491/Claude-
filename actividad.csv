@@ -495,3 +495,6 @@ fecha,hora,agente,texto
 2026-10-31,16:19,mkt,"Ronda ligera: Messenger no revisado, Claude in Chrome no conectado en la PC; queda la tarea 2026-10-31-1"
 2026-10-31,16:20,local,"PC (ronda ligera): apagar_pc.ps1 deja la PC prendida (arrancó 15:50 para la ronda, alguien la usó)"
 2026-10-31,20:16,gerente,"Informe diario 31/10 subido al Doc. Propuse 5 tareas (5 aprobadas por rutina) y reprogramé 4 al lunes 02/11; 0 mensajes de chat contestados (nada pendiente); 0 notas de libreta cerradas o anotadas; 0 de Telegram (la Raspberry lo lee). PC sin Chrome, WhatsApp y Marketplace sin correr"
+2026-11-01,07:53,ebay,"API: 14 precios nuevos y 14 usados; 0 corregidos por variante o repuestos"
+2026-11-01,07:53,ana,"Traer: Ryzen 7 7800X3D nuevo (margen 19,5 %, peor caso 7,0 %). Esperar: 7700X nuevo (17,5 %) y usados sin precio local. No traer: 7600 nuevo, DDR5 y SSD 1TB nuevos, 9950X."
+2026-11-01,07:53,nube,"Revisión diaria hecha: dólar USDT 12,01, comparación, Excel, informe (sin PDF: reportlab no carga en la nube)"

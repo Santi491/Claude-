@@ -51,7 +51,8 @@
   "baja|SSD NVMe 1TB|nuevo|2026-10-30": "2026-10-30 10:37",
   "baja|SSD NVMe 2TB|nuevo|2026-10-30": "2026-10-30 10:37",
   "dolar|2026-10-30": "2026-10-30 10:37",
-  "baja|Ryzen 7 7700X|usado|2026-10-31": "2026-10-31 11:54"
+  "baja|Ryzen 7 7700X|usado|2026-10-31": "2026-10-31 11:54",
+  "baja|Corsair Vengeance RGB DDR5 32GB (2x16) 5600|nuevo|2026-11-01": "2026-11-01 11:53"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -82,7 +83,7 @@
   "Ryzen 7 7700X|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 7 7700X (usado) bajó 18% en eBay: USD 189.99 → 155.00"
+  "⬇ Corsair Vengeance RGB DDR5 32GB (2x16) 5600 (nuevo) bajó 13% en eBay: USD 459.00 → 399.99"
  ],
- "revisado": "2026-10-31 16:14"
+ "revisado": "2026-11-01 11:53"
 }
