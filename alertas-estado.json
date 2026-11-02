@@ -52,10 +52,13 @@
   "baja|SSD NVMe 2TB|nuevo|2026-10-30": "2026-10-30 10:37",
   "dolar|2026-10-30": "2026-10-30 10:37",
   "baja|Ryzen 7 7700X|usado|2026-10-31": "2026-10-31 11:54",
-  "baja|Corsair Vengeance RGB DDR5 32GB (2x16) 5600|nuevo|2026-11-01": "2026-11-01 11:53"
+  "baja|Corsair Vengeance RGB DDR5 32GB (2x16) 5600|nuevo|2026-11-01": "2026-11-01 11:53",
+  "baja|Ryzen 5 7600|nuevo|2026-11-02": "2026-11-02 11:53",
+  "conviene|Ryzen 5 7600|nuevo|2026-11-02": "2026-11-02 11:53",
+  "baja|SSD NVMe 1TB|usado|2026-11-02": "2026-11-02 11:53"
  },
  "conviene": {
-  "Ryzen 5 7600|nuevo": false,
+  "Ryzen 5 7600|nuevo": true,
   "Ryzen 5 7600|usado": true,
   "Ryzen 7 7800X3D|nuevo": false,
   "Ryzen 7 7800X3D|usado": true,
@@ -83,7 +86,9 @@
   "Ryzen 7 7700X|usado": true
  },
  "ultimas": [
-  "⬇ Corsair Vengeance RGB DDR5 32GB (2x16) 5600 (nuevo) bajó 13% en eBay: USD 459.00 → 399.99"
+  "⬇ Ryzen 5 7600 (nuevo) bajó 12% en eBay: USD 199.99 → 175.00",
+  "✅ Ahora conviene Ryzen 5 7600 (nuevo): +19% · costo puesto Bs 2.277 vs Bs 2.800 en Cochabamba",
+  "⬇ SSD NVMe 1TB (usado) bajó 18% en eBay: USD 97.64 → 80.00"
  ],
- "revisado": "2026-11-01 11:53"
+ "revisado": "2026-11-02 11:53"
 }

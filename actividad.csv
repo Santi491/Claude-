@@ -499,3 +499,6 @@ fecha,hora,agente,texto
 2026-11-01,07:53,ana,"Traer: Ryzen 7 7800X3D nuevo (margen 19,5 %, peor caso 7,0 %). Esperar: 7700X nuevo (17,5 %) y usados sin precio local. No traer: 7600 nuevo, DDR5 y SSD 1TB nuevos, 9950X."
 2026-11-01,07:53,nube,"Revisión diaria hecha: dólar USDT 12,01, comparación, Excel, informe (sin PDF: reportlab no carga en la nube)"
 2026-11-01,20:20,gerente,Resumen semanal 26/10-01/11 subido al Doc. 0 tareas nuevas (el lunes ya tiene 6 por rutina); 0 aprobadas hoy; 0 mensajes de chat; 0 notas de libreta; 0 de Telegram (la Raspberry lo lee). Semana floja por falta de Chrome del 29 al 31/10
+2026-11-02,07:58,ebay,"API: 14 precios nuevos y 14 usados; 0 corregidos por variante o repuestos (revisados los títulos)"
+2026-11-02,07:58,ana,"Traer: Ryzen 7 7800X3D nuevo (USD 329, margen 19,3 %, peor caso 6,7 %). Esperar: Ryzen 5 7600 nuevo bajó a USD 175 (margen 15 %, peor caso 1,2 %; alerta de que conviene) y 7700X nuevo (15,4 %). No traer: DDR5 32 GB, 9950X, SSD 1TB nuevo, i5-13400 nuevo"
+2026-11-02,07:58,nube,"Revisión diaria hecha: dólar USDT 12,05, comparación, análisis, Excel, informe (sin PDF: reportlab no carga en la nube)"
