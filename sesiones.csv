@@ -95,3 +95,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-10-31,raspberry,vigilante,19:30,19:30,alerta,pedido a la PC sin hacer hace 90 min
 2026-10-31,gerente,informe,20:15,20:16,ok,Informe 31/10 subido; plan del lunes con 5 tareas auto
 2026-11-01,raspberry,vigilante,00:00,00:00,alerta,pedido a la PC sin hacer hace 360 min
+2026-11-01,gerente,informe,20:17,20:18,ok,resumen semanal 01/11 subido; plan del lunes ya con tareas auto
