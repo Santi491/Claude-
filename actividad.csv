@@ -529,3 +529,4 @@ fecha,hora,agente,texto
 2026-11-02,16:26,gerente,"Aviso de fin de ronda enviado (PC, ligera, sin envíos)"
 2026-11-02,16:20,local,"Oficina: publicada a las 16:2x por la coordinadora (corrige la fila de las 16:20); datos.js de la ronda ligera en línea"
 2026-11-02,16:21,local,"apagar_pc: la PC queda prendida (alguien la usó desde el arranque de las 15:50)"
+2026-11-02,17:44,local,Oficina: Mac publicó la versión 111 con las rondas de Mac y PC del 02/11 ya fusionadas
