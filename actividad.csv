@@ -518,3 +518,4 @@ fecha,hora,agente,texto
 2026-11-02,16:20,local,"Oficina: ronda ligera. datos.js generado 16:17 (verificar comun y oficina sin ERROR), pero NO publicado: el artifact tiene un datos.js del 31/10 que cambio desde la ultima vez que lo vi y no lo pise (queda en PENDIENTE). Version publicada sin cambios."
 2026-11-02,16:26,gerente,"Aviso de fin de ronda enviado (PC, ligera, sin envíos)"
 2026-11-02,16:20,local,"Oficina: publicada a las 16:2x por la coordinadora (corrige la fila de las 16:20); datos.js de la ronda ligera en línea"
+2026-11-02,16:21,local,"apagar_pc: la PC queda prendida (alguien la usó desde el arranque de las 15:50)"
