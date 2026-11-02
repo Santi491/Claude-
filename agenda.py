@@ -19,9 +19,11 @@ import sys
 from datetime import date, datetime, timedelta
 
 DIR = os.path.dirname(os.path.abspath(__file__))
-CERRADAS = re.compile(r"no vende|sin stock|no contactar|sin whatsapp|no sueltos|cerrad", re.I)
+CERRADAS = re.compile(r"no vende|sin stock|no contactar|sin whatsapp|no sueltos|cerrad|n[uú]mero equivocado", re.I)
 # cierres sin precio (la tienda dijo que no tiene o cerró la charla): no hay nada que responder (idea 10, 29/10)
-CIERRES = re.compile(r"no tengo|agotad|sin stock|no hay|nom[aá]s|no se contesta|sin el producto", re.I)
+CIERRES = re.compile(r"no tengo|agotad|sin stock|no hay|nom[aá]s|no se contesta|sin el producto|no vende", re.I)
+# la tienda ya confirmó lo que le preguntamos, con o sin precio: tampoco hay nada que responder (tarea 2026-10-30-1)
+RESUELTAS = re.compile(r"confirma", re.I)
 DIAS_SEGUIMIENTO, MAX_SEGUIMIENTOS = 2, 2
 
 
@@ -69,6 +71,9 @@ def calcular(hoy=None):
         ult_rec_m = max([m for m in mios if m["direccion"] == "recibido"], key=lambda m: m["fecha"] + " " + m["hora"], default=None)
         if ult_rec_dt and ult_rec_dt > ult_env_dt and ult_rec_m.get("con_precio") != "sí" and CIERRES.search(ult_rec_m.get("nota", "")):
             out["respondieron"].append({**fila, "motivo": "cerró sin precio"})
+            continue
+        if ult_rec_dt and ult_rec_dt > ult_env_dt and RESUELTAS.search(ult_rec_m.get("nota", "")):
+            out["respondieron"].append({**fila, "motivo": "ya confirmó lo que preguntamos"})
             continue
         if ult_rec_dt and ult_rec_dt > ult_env_dt:
             out["responder"].append({**fila, "motivo": "escribió después de nuestro último mensaje"})
