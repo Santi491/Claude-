@@ -99,3 +99,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-02,raspberry,vigilante,00:00,00:00,alerta,pedido a la PC sin hacer hace 1800 min
 2026-11-02,mac,ronda,10:50,10:50,en curso,empezó
 2026-11-02,mac,ronda,10:50,15:39,ok,Parcial: WhatsApp 3 respuestas; Chrome se cortó; Marketplace y Pedidos pasan a la PC
+2026-11-02,pc,ronda,16:07,16:07,en curso,empezó
