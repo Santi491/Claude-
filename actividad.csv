@@ -503,3 +503,9 @@ fecha,hora,agente,texto
 2026-11-02,07:58,ana,"Traer: Ryzen 7 7800X3D nuevo (USD 329, margen 19,3 %, peor caso 6,7 %). Esperar: Ryzen 5 7600 nuevo bajó a USD 175 (margen 15 %, peor caso 1,2 %; alerta de que conviene) y 7700X nuevo (15,4 %). No traer: DDR5 32 GB, 9950X, SSD 1TB nuevo, i5-13400 nuevo"
 2026-11-02,07:58,nube,"Revisión diaria hecha: dólar USDT 12,05, comparación, análisis, Excel, informe (sin PDF: reportlab no carga en la nube)"
 2026-11-02,15:08,wa,"Ronda Mac: 3 tiendas atendidas (IPcenter, Quillacollo, Soft Computers); Chrome se cortó; faltan 6 seguimientos y 2 agradecimientos"
+2026-11-02,15:38,mkt,Ronda Mac: Marketplace y Messenger no corrieron; WhatsApp se llevó el tiempo de la ronda (Chrome inestable) y a las 15:40 hay que dejarle el navegador a la PC. La tarea 2026-10-31-1 y la 31-6 pasan a la ronda de las 16:00
+2026-11-02,15:38,dem,"Ronda Mac: sin conteo de demanda hoy, Marketplace no corrió; queda para la ronda de la PC"
+2026-11-02,15:38,pedidos,"Ronda Mac: sin rastreo, no alcanzó el tiempo con Chrome; la tarea 2026-10-31-2 pasa a la ronda de las 16:00. Último dato: 4 Ryzen 7 7700X entregados en la casilla el 27/10, sin guía del courier B"
+2026-11-02,15:38,fin,"Ronda Mac: 4 Ryzen 7 7700X sin ventas; sigue faltando el costo real del courier B (envio_usd en 0), necesidad ya abierta para Santi"
+2026-11-02,15:39,gerente,"Aviso de fin de ronda enviado (Mac, parcial): WhatsApp 3 respuestas, 0 precios, 0 chats nuevos; Marketplace, demanda y Pedidos pasan a la PC de las 16:00; pendiente guía y costo del courier B"
+2026-11-02,15:39,local,Oficina: publicada con datos de la ronda Mac 02/11 (datos.js)
