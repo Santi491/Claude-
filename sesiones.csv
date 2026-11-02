@@ -97,3 +97,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-01,raspberry,vigilante,00:00,00:00,alerta,pedido a la PC sin hacer hace 360 min
 2026-11-01,gerente,informe,20:17,20:18,ok,resumen semanal 01/11 subido; plan del lunes ya con tareas auto
 2026-11-02,raspberry,vigilante,00:00,00:00,alerta,pedido a la PC sin hacer hace 1800 min
+2026-11-02,mac,ronda,10:50,10:50,en curso,empezó
