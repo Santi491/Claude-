@@ -305,3 +305,8 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-10-30,16:17,whatsapp,BLADTHOR,enviado,nuevo,,intento de chat nuevo: el número no está en WhatsApp
 2026-10-30,16:18,whatsapp,Compumas Bolivia,enviado,nuevo,,chat nuevo: Ryzen 5 7600 y SSD NVMe 1TB
 2026-10-30,16:19,whatsapp,Creative Technology,enviado,nuevo,,chat nuevo: Ryzen 5 7600 y DDR5 32GB
+2026-11-02,12:00,whatsapp,IPcenter,recibido,respuesta,no,"pregunta si es para PC (recibido 30/10 16:18)"
+2026-11-02,12:01,whatsapp,IPcenter,enviado,respuesta,,"confirma que es para armar PC; repregunta Ryzen 5 7600 y Corsair DDR5 32GB"
+2026-11-02,12:01,whatsapp,Tienda de Computadoras Quillacollo,recibido,respuesta,no,"agotado partes de PC; les llega a fines de noviembre"
+2026-11-02,12:01,whatsapp,Tienda de Computadoras Quillacollo,enviado,respuesta,,agradece
+2026-11-02,12:02,whatsapp,Soft Computers,enviado,respuesta,,agradece
