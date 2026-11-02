@@ -508,4 +508,4 @@ fecha,hora,agente,texto
 2026-11-02,15:38,pedidos,"Ronda Mac: sin rastreo, no alcanzó el tiempo con Chrome; la tarea 2026-10-31-2 pasa a la ronda de las 16:00. Último dato: 4 Ryzen 7 7700X entregados en la casilla el 27/10, sin guía del courier B"
 2026-11-02,15:38,fin,"Ronda Mac: 4 Ryzen 7 7700X sin ventas; sigue faltando el costo real del courier B (envio_usd en 0), necesidad ya abierta para Santi"
 2026-11-02,15:39,gerente,"Aviso de fin de ronda enviado (Mac, parcial): WhatsApp 3 respuestas, 0 precios, 0 chats nuevos; Marketplace, demanda y Pedidos pasan a la PC de las 16:00; pendiente guía y costo del courier B"
-2026-11-02,15:39,local,Oficina: publicada con datos de la ronda Mac 02/11 (datos.js)
+2026-11-02,15:39,local,"Oficina: la Mac no publicó; el publish se rechazó y a las 16:18 la PC ya había publicado una versión más nueva, que no se pisó"
