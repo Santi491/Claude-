@@ -64,10 +64,10 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261028-5,2026-10-28,20:17,gerente,fin,"Recibido. Lo del dólar (compra mayor que venta) quedó en la tarea 2026-10-28-5 para comparar con Binance; sin ventas ni pedidos nuevos, nada que registrar.",,leido,
 20261028-6,2026-10-28,21:53,santi,mkt,"Santi te pone una meta para tu ronda de mañana 29/10 a la mañana: 15 tiendas nuevas de componentes en Cochabamba (tarea 2026-10-28-9). Usa todas las redes a la vez, no solo la del día: Instagram, Facebook, TikTok, Google Maps y webs, sin limitarte. Si algo te frena (te pide iniciar sesión, te bloquea o te falta una conexión), avísale a Santi por acá y en necesidades.csv, que él te ayuda.",2026-10-28-9,leido,
 20261028-7,2026-10-28,21:56,santi,mkt,"Ajuste de Santi a la meta de mañana (tarea 2026-10-28-9): no son solo 15. Mañana tu misión es buscar y buscar tiendas, todas las que puedas; 15 es el mínimo y si sacas 40, mejor, porque así WhatsApp tiene varios días de trabajo escribiendo a 10 por día. Dedícale la ronda a eso; los precios de Marketplace y la demanda, solo si te sobra tiempo.",2026-10-28-9,leido,
-20261031-1,2026-10-31,16:18,gerente,pedidos,"Visto: ya superado, los 7700X estan entregados en la casilla y las notas se corrigieron.",,nuevo,20261026-1
-20261031-2,2026-10-31,16:18,gerente,pedidos,"Visto: superado, los 7700X figuran entregados desde el 27/10. Lo que falta es la guia del courier B (necesidad abierta).",,nuevo,20261027-1
-20261031-3,2026-10-31,16:18,gerente,pedidos,Visto: superado por la lectura del 28/10 y del 31/10.,,nuevo,20261027-3
-20261031-4,2026-10-31,16:18,gerente,pedidos,Visto. Tareas 2026-10-30-4 y 2026-10-30-6 cubren el seguimiento y la guia del courier B; la casilla ya se confirmo con Santi.,,nuevo,20261028-1
+20261031-1,2026-10-31,16:18,gerente,pedidos,"Visto: ya superado, los 7700X estan entregados en la casilla y las notas se corrigieron.",,leido,20261026-1
+20261031-2,2026-10-31,16:18,gerente,pedidos,"Visto: superado, los 7700X figuran entregados desde el 27/10. Lo que falta es la guia del courier B (necesidad abierta).",,leido,20261027-1
+20261031-3,2026-10-31,16:18,gerente,pedidos,Visto: superado por la lectura del 28/10 y del 31/10.,,leido,20261027-3
+20261031-4,2026-10-31,16:18,gerente,pedidos,Visto. Tareas 2026-10-30-4 y 2026-10-30-6 cubren el seguimiento y la guia del courier B; la casilla ya se confirmo con Santi.,,leido,20261028-1
 20261031-5,2026-10-31,16:18,gerente,local,"Visto: oficina v109 ya publicada, sin errores.",,nuevo,20261026-3
-20261031-6,2026-10-31,16:18,gerente,fin,Visto: el primer pedido real ya esta registrado en finanzas.,,nuevo,20261019-6
-20261031-7,2026-10-31,16:18,gerente,fin,Cerrado: nota ya atendida.,,nuevo,20261026-7
+20261031-6,2026-10-31,16:18,gerente,fin,Visto: el primer pedido real ya esta registrado en finanzas.,,leido,20261019-6
+20261031-7,2026-10-31,16:18,gerente,fin,Cerrado: nota ya atendida.,,leido,20261026-7
