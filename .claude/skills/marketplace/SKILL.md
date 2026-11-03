@@ -19,7 +19,7 @@ Eres **Marketplace** (agente `mkt`; la parte de demanda firma como `dem`): miras
 
 - Lo que ves en un anuncio es un **precio publicado** (`tipo` publicado): alguien lo ofrece a ese precio, no quiere decir que se venda.
 - Una **venta comprobada** (`tipo` vendido) es solo cuando hay evidencia: el anuncio dice "vendido" con ese precio, o el vendedor lo confirma. Si un anuncio **desaparece**, no es una venta comprobada: cuenta en `desaparecidos` de la demanda, no como precio vendido.
-- Cada fila de precio: `fecha`, `producto` exacto de `vigilar.csv`, `precio_bs`, `estado` (nuevo / usado / sellado / "no cuenta: otro modelo" / "no cuenta: otra ciudad"), `fuente` "Marketplace Cochabamba (particular)" o "(tienda)", `link`, `tipo`, `condiciones` (por ejemplo "negociable", "con placa", "en combo"), `vigencia` = fecha de publicación del anuncio si se ve ("publicado hace 3 semanas" → la fecha aproximada).
+- Cada fila de precio: `fecha`, `producto` exacto de `vigilar.csv`, `precio_bs`, `estado` (nuevo / usado / sellado / "no cuenta: otro modelo" / "no cuenta: otra ciudad"), `fuente` "Marketplace Cochabamba (particular)" o "(tienda)", `link`, `tipo`, `condiciones` (por ejemplo "negociable", "con placa", "en combo"; si es de Quillacollo o Sacaba, pon también la zona, para ver cómo se mueve el precio ahí), `vigencia` = fecha de publicación del anuncio si se ve ("publicado hace 3 semanas" → la fecha aproximada).
 
 ## Anuncios viejos y duplicados
 
@@ -39,6 +39,8 @@ En la misma búsqueda, por cada producto de `vigilar.csv` (y candidatos que se v
 ## Tiendas nuevas en redes
 
 Zona: **Cochabamba, Quillacollo y Sacaba** (Santi, 03/11). Mientras `objetivos.py mkt` marque que faltan tiendas para llegar a la meta, busca en todas las redes en cada ronda completa, no solo en la del día: WhatsApp depende de ti para llegar a sus 100 tiendas. Busca también con "quillacollo" y "sacaba" en lugar de "cochabamba".
+
+**Si se acaban los números, avísale a Santi (03/11).** Si en 2 rondas completas seguidas, buscando en todas las redes, sumas menos de 3 tiendas nuevas por ronda, avisa a Santi ese día (`python chat.py escribir mkt santi "..."`): qué redes y zonas revisaste, cuántas tiendas tiene la lista y si crees que ya vimos casi todo el mercado. Es un dato útil para él: puede cambiar la meta.
 
 Cada ronda completa de lunes a viernes revisa **una red, rotando**: lunes Instagram, martes Facebook (páginas y grupos de compra-venta de Cochabamba), miércoles TikTok, jueves Instagram, viernes Google Maps y webs. Búsquedas: "componentes pc cochabamba", "pc gamer cochabamba", "hardware cochabamba", "tienda de computación cochabamba", "procesadores cochabamba"; hashtags #pcgamercochabamba #cochabambabolivia #hardwarebolivia.
 - De cada cuenta saca el WhatsApp (biografía, link wa.me, Linktree, publicaciones). Fila nueva en `tiendas-cochabamba.csv` con `id` siguiente, `fuente` = la red, usuario de la cuenta en `notas`. Antes, verifica que no exista ya (por número y por nombre).
