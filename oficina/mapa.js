@@ -8,6 +8,8 @@
   const group = e => stepOf(e) === 0 ? "espera" : stepOf(e) >= 4 ? "entregado" : "camino";
   const GCOL = { espera: "#4FD1E8", camino: "#F2A541", entregado: "#5CD69A" };
   const CBBA = [-17.39, -66.157];
+  const SCZ = [-17.78, -63.18];   // todo pasa por Santa Cruz antes de Cochabamba (Santi, 03/11); solo la ciudad, nunca la dirección
+  const cerca = (a, b) => Math.abs(a[0] - b[0]) < 0.6 && Math.abs(a[1] - b[1]) < 0.6;
   const US_VIEW = [[24.2, -125], [49.5, -66.8]];
   let filt = "", showTest = true, selId = null, map = null, base = null, layShip = null, ready = null;
 
@@ -141,7 +143,11 @@
       if (!pts.length) return;
       const cur = pts[pts.length - 1];
       let dest = p.destino_lat && p.destino_lon ? [+p.destino_lat, +p.destino_lon] : (!p.prueba && group(p.estado) !== "entregado" ? CBBA : null);
-      if (dest) layShip.addLayer(L.polyline(arc(cur, dest), { renderer: svg, color: "#9FB6C7", weight: 2, dashArray: "6 8", opacity: on ? .9 : .25, interactive: false }));
+      // lo que falta: con escala en Santa Cruz si todavía no llegó ahí
+      const escala = dest === CBBA && !cerca(cur, SCZ) && !cerca(cur, CBBA);
+      const falta = escala ? arc(cur, SCZ).concat(arc(SCZ, CBBA).slice(1)) : dest ? arc(cur, dest) : null;
+      if (falta) layShip.addLayer(L.polyline(falta, { renderer: svg, color: "#9FB6C7", weight: 2, dashArray: "6 8", opacity: on ? .9 : .25, interactive: false }));
+      if (escala) layShip.addLayer(L.circleMarker(SCZ, { renderer: svg, radius: 5, color: c, weight: 2, fillColor: "#151516", fillOpacity: 1 }).bindTooltip("Santa Cruz (escala)", { className: "mp-tip" }));
       if (dest) layShip.addLayer(L.circleMarker(dest, { renderer: svg, radius: 6, color: c, weight: 2, fillColor: "#151516", fillOpacity: 1 }).bindTooltip(p.destino || "Cochabamba", { className: "mp-tip" }));
       if (pts.length > 1) {
         const path = pts.slice(1).reduce((acc, q, i) => acc.concat(arc(pts[i], q, 24).slice(1)), [pts[0]]);

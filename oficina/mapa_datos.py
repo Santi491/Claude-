@@ -5,7 +5,7 @@
     python3 oficina/mapa_datos.py --base    # rehace también estados, carreteras, ciudades y zonas urbanas
 
 Base: Natural Earth (dominio público). Calles: OpenStreetMap vía Overpass (© colaboradores de OSM, ODbL),
-un círculo de ~3 km alrededor de cada lugar de seguimiento.csv y de los puntos fijos (courier en Miami, Cochabamba).
+un círculo de ~3 km alrededor de cada lugar de seguimiento.csv y de los puntos fijos (courier en Miami, Santa Cruz, Cochabamba).
 La página no puede cargar mosaicos de otros sitios, así que todo se publica como archivos del artifact.
 """
 import csv
@@ -23,7 +23,7 @@ RAIZ = os.path.dirname(OFI)
 OUT = os.path.join(OFI, "mapa")
 NE = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/"
 CACHE = os.path.join(os.environ.get("TEMP", "/tmp"), "natural-earth")
-FIJOS = [("Miami (bodegas de courier)", 25.81, -80.33, 4500), ("Cochabamba", -17.39, -66.157, 3500)]
+FIJOS = [("Miami (bodegas de courier)", 25.81, -80.33, 4500), ("Cochabamba", -17.39, -66.157, 3500), ("Santa Cruz", -17.78, -63.18, 3500)]
 SERVIDORES = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter", "https://overpass.private.coffee/api/interpreter"]
 US_BBOX = (-125.5, 24.0, -66.5, 49.6)
 
