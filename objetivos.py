@@ -112,7 +112,8 @@ def main():
     for s in salida:
         marca = "OK " if s["cumplido"] else "VENCIDO" if s["vencido"] else "..."
         cifra = f"{s['avance']}/{s['meta']}" if s["avance"] is not None else (s["estado"] or "pendiente")
-        print(f"  {marca} [{s['id']}] {s['agente']} · {cifra} · {s['objetivo']} {f"(hasta {s['hasta'][8:]}/{s['hasta'][5:7]})" if s['hasta'] else ''}")
+        plazo = f" (hasta {s['hasta'][8:]}/{s['hasta'][5:7]})" if s["hasta"] else ""
+        print(f"  {marca} [{s['id']}] {s['agente']} · {cifra} · {s['objetivo']}{plazo}")
 
 
 if __name__ == "__main__":
