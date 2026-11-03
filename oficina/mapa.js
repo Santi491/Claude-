@@ -94,7 +94,7 @@
         z >= 6.5 ? r2.addTo(map) : r2.remove();
         z >= 4.5 && z < 8 ? tagsE.addTo(map) : tagsE.remove();
         const minPop = z < 5 ? 3e6 : z < 6 ? 1e6 : z < 7 ? 4e5 : z < 8 ? 1.5e5 : z < 10 ? 5e4 : 0;
-        tagsC.forEach(({ c, m }) => (c.p >= minPop && z < 13.5 && bb.contains(c.c)) ? m.addTo(map) : m.remove());
+        tagsC.forEach(({ c, m }) => ((c.b ? c.p * 10 : c.p) >= minPop && z < 13.5 && bb.contains(c.c)) ? m.addTo(map) : m.remove());
         z >= 9 && z < 12 ? zTags.addTo(map) : zTags.remove();
         if (z >= 11) zonas.forEach(zn => {
           if (calles[zn.f] || !bb.contains(zn.c) && map.distance(map.getCenter(), zn.c) > zn.r * 3) return;

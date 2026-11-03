@@ -23,9 +23,11 @@ RAIZ = os.path.dirname(OFI)
 OUT = os.path.join(OFI, "mapa")
 NE = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/"
 CACHE = os.path.join(os.environ.get("TEMP", "/tmp"), "natural-earth")
-FIJOS = [("Miami (bodegas de courier)", 25.81, -80.33, 4500), ("Cochabamba", -17.39, -66.157, 3500), ("Santa Cruz", -17.78, -63.18, 3500)]
+FIJOS = [("Miami (bodegas de courier)", 25.81, -80.33, 4500), ("Cochabamba", -17.39, -66.157, 3500), ("Santa Cruz", -17.78, -63.18, 3500),
+         ("Quillacollo", -17.39, -66.28, 3000), ("Sacaba", -17.40, -66.04, 3000)]
 SERVIDORES = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter", "https://overpass.private.coffee/api/interpreter"]
 US_BBOX = (-125.5, 24.0, -66.5, 49.6)
+BO_BBOX = (-69.7, -23.0, -57.4, -9.6)
 
 
 def bajar(nombre):
@@ -83,19 +85,28 @@ def base():
         if p["adm0_a3"] != "USA":
             continue
         estados.append({"n": p["name"], "a": (p.get("postal") or ""), "c": [round(p["latitude"], 2), round(p["longitude"], 2)], "g": geom(f["geometry"], 3)})
+    # Bolivia se ve igual que EE.UU.: departamentos, carreteras, ciudades y zonas urbanas (Santi, 03/11)
+    for f in bajar("ne_10m_admin_1_states_provinces.geojson"):
+        p = f["properties"]
+        if p["adm0_a3"] == "BOL":
+            estados.append({"n": p["name"], "a": "", "c": [round(p["latitude"], 2), round(p["longitude"], 2)], "g": geom(f["geometry"], 3)})
     rutas = []
     for f in bajar("ne_10m_roads.geojson"):
         p = f["properties"]
+        if p.get("sov_a3") is None and dentro(f["geometry"], BO_BBOX):   # fuera de EE.UU. Natural Earth no trae el país: va por zona
+            k = 1 if p["type"] == "Major Highway" or int(p.get("scalerank") or 9) <= 6 else 2
+            rutas.append({"k": k, "n": (p.get("label") or p.get("name") or "").strip(), "g": geom(f["geometry"], 3)})
+            continue
         if p.get("sov_a3") != "USA" or p.get("type") not in ("Major Highway", "Secondary Highway", "Beltway"):
             continue
         k = 1 if p["type"] == "Major Highway" or p["type"] == "Beltway" else 2
         rutas.append({"k": k, "n": (p.get("label") or p.get("name") or "").strip(), "g": geom(f["geometry"], 3)})
-    urb = [{"g": geom(f["geometry"], 3)} for f in bajar("ne_10m_urban_areas.geojson") if dentro(f["geometry"], US_BBOX)]
+    urb = [{"g": geom(f["geometry"], 3)} for f in bajar("ne_10m_urban_areas.geojson") if dentro(f["geometry"], US_BBOX) or dentro(f["geometry"], BO_BBOX)]
     ciud = []
     for f in bajar("ne_10m_populated_places_simple.geojson"):
         p = f["properties"]
         if p["adm0_a3"] in ("USA", "BOL"):
-            ciud.append({"n": p["name"], "e": p.get("adm1name") or "", "c": [round(p["latitude"], 3), round(p["longitude"], 3)], "p": int(p["pop_max"] or 0), "z": round(p.get("min_zoom") or 6, 1)})
+            ciud.append({"n": p["name"], "e": p.get("adm1name") or "", "c": [round(p["latitude"], 3), round(p["longitude"], 3)], "p": int(p["pop_max"] or 0), "z": round(p.get("min_zoom") or 6, 1), **({"b": 1} if p["adm0_a3"] == "BOL" else {})})
     ciud.sort(key=lambda c: -c["p"])
     guardar("base.json", {"paises": paises, "estados": estados, "ciudades": ciud})
     guardar("rutas.json", rutas)
