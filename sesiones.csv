@@ -107,3 +107,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-03,raspberry,vigilante,16:30,16:30,alerta,la PC no prendió para la ronda de las 16:00
 2026-11-03,pc,ronda,16:32,16:32,en curso,empezó
 2026-11-03,pc,ronda,16:31,16:51,alerta,"Parcial: sin envíos a tiendas (permiso automático los rechazó), WhatsApp y Messenger solo lectura; 4 respuestas leídas, 3 tiendas nuevas, 4 precios de OverCity; Pedidos, Analista, Finanzas, Oficina y Gerente hechos"
+2026-11-03,raspberry,vigilante,18:00,18:00,arreglado,la PC no hizo la ronda de las 16:00: relanzada
