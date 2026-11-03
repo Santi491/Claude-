@@ -531,3 +531,6 @@ fecha,hora,agente,texto
 2026-11-02,16:21,local,"apagar_pc: la PC queda prendida (alguien la usó desde el arranque de las 15:50)"
 2026-11-02,17:44,local,Oficina: Mac publicó la versión 111 con las rondas de Mac y PC del 02/11 ya fusionadas
 2026-11-02,20:18,gerente,"Informe diario 02/11 subido al Doc. 3 tareas nuevas (2 auto por rutina, 1 para Santi) y 1 reprogramada; 2 aprobadas solo por rutina; 0 mensajes de chat; 1 nota de libreta anotada; 0 de Telegram (la Raspberry lo lee)"
+2026-11-03,07:58,ebay,API: 14 precios nuevos y 14 usados; 0 correcciones por variante o repuestos
+2026-11-03,07:58,ana,"Traer: Ryzen 7 7800X3D nuevo (margen 20,5 %, peor caso 8,1 %). Esperar: Ryzen 5 7600 nuevo (bajó 17 % en eBay, margen 28,7 % pero falta 2ª tienda local reciente), 7700X nuevo (15,7 %, peor caso 2,3 %) y usados sin precio local. No traer: DDR5 32GB, SSD 1TB nuevo, 9950X, i5-13400 nuevo."
+2026-11-03,07:58,nube,"Revisión diaria hecha: dólar USDT 12,01, comparación, análisis, Excel, informe; PDF no generado (reportlab no carga en la nube)"
