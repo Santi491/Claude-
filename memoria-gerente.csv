@@ -20,8 +20,9 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 19,2026-10-29,17:07,telegram,compromiso,Santi avisó el 29/10 que los 7700X están saliendo hacia Bolivia; pedirle la guía del courier B para rastrearlos y avisarle cuando lleguen a Cochabamba.,2026-10-30,descartada,"31/10 16:19: reemplazada por la nota 21 (misma peticion de la guia, vence 03/11) y la tarea 2026-10-30-6"
 20,2026-10-30,16:20,ronda,dato,Punto Tecnológico confirmó el Ryzen 5 8400F nuevo a Bs 1.620 con 6 meses de garantía; no está en vigilar.csv y por ahora no se cambia la lista,,abierta,
 21,2026-10-30,20:17,2000,compromiso,"Recordarle a Santi la guía del courier B de los 7700X y, cuando lleguen a Cochabamba, fijar el precio de venta (sugerido Bs 3.390)",2026-11-03,cumplida,03/11 10:52: Recordatorio enviado 03/11; queda abierto fijar el precio al llegar (nota nueva)
-22,2026-11-02,20:15,2000,compromiso,Mañana 03/11 recordarle a Santi la guía o el costo del courier B de los 7700X y avisarle si algo se mueve,2026-11-04,abierta,
+22,2026-11-02,20:15,2000,compromiso,Mañana 03/11 recordarle a Santi la guía o el costo del courier B de los 7700X y avisarle si algo se mueve,2026-11-04,cumplida,03/11 16:50: Recordatorio de la guía/costo del courier B enviado a Santi en el aviso de fin de ronda del 03/11
 23,2026-11-03,10:52,ronda,compromiso,"Cuando los 7700X lleguen a Cochabamba, pedirle a Santi fijar el precio de venta; sugerido Bs 3.300 (margen 19,5 %); hay un 7700X de particular a Bs 3.100, condición sin dato",2026-11-10,abierta,
 24,2026-11-03,11:18,santi,preferencia,"Los objetivos de los agentes van por etapas y por semana (objetivos.py); zona de trabajo: Cochabamba, Quillacollo y Sacaba",,abierta,
 25,2026-11-03,11:18,santi,pedido,100 tiendas contactadas antes del 15/11 (incluye las 55 de antes) y 10 tiendas con precio por semana,2026-11-15,abierta,
 26,2026-11-03,11:31,santi,pedido,Cuando lleguen los 7700X: vender las 4 unidades en 7 días como mucho,,abierta,
+27,2026-11-03,16:50,ronda,compromiso,"Cuando Santi decida el permiso de WhatsApp, confirmar que la ronda siguiente mande lo pendiente: respuestas, cotización 7600 y SSD 2TB y chats nuevos",2026-11-05,abierta,

@@ -49,3 +49,13 @@ Costo = lo pagado por unidad con todo incluido (precio + envío × dólar de la 
 | Rápido (piso: 10 % de recargo) | 2.921 | 9.1 % | Bs 1.064 |
 | Sugerido (5 % bajo la mediana) | 3.300 | 19.5 % | Bs 2.580 |
 | De tienda (la mediana) | 3.480 | 23.7 % | Bs 3.300 |
+
+## Segundo pedido: 3 mejores candidatos (ana-2)
+
+Solo nuevos, sin el 7700X (ya comprado), ordenados por margen en el peor caso. La decisión es de Santi; nada se compra ni se ofrece.
+
+| # | Producto | Costo Bs/u | Venta sugerida | Ganancia/u | Margen | Peor caso | Estado |
+|---|---|---|---|---|---|---|---|
+| 1 | SSD NVMe 2TB | 2.390 | 3.850 | 1.460 | 37.9 % | 28.1 % | esperar: precios recientes (14 días) de al menos 2 tiendas distintas |
+| 2 | Ryzen 5 7600 | 1.910 | 2.680 | 770 | 28.7 % | 16.9 % | esperar: precios recientes (14 días) de al menos 2 tiendas distintas |
+| 3 | Ryzen 7 7800X3D | 4.071 | 5.120 | 1.049 | 20.5 % | 8.1 % | traer |

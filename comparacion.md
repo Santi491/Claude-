@@ -11,7 +11,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | SSD NVMe 2TB | [185.00](https://www.ebay.com/itm/377593610877) | 2.390 (B 1 kg) | 2.306 (B 1 kg) | 3.100 | 710 (23%) | 794 (26%) | conviene |
 | Intel Core Ultra 7 265K | [245.00](https://www.ebay.com/itm/198758612019) | 3.111 (B 1 kg) | 3.069 (B 1.5 kg) | 3.950 | 839 (21%) | 881 (22%) | conviene |
 | Ryzen 7 7800X3D | [324.99](https://www.ebay.com/itm/267831286489) | 4.071 (B 1 kg) | 4.071 (B 2 kg) | 4.760 | 689 (14%) | 689 (14%) | justo |
-| Intel Core i5-12400F | [151.38](https://www.ebay.com/itm/188895031520) | 1.986 (B 1 kg) | 1.944 (B 1.5 kg) | 2.260 | 274 (12%) | 316 (14%) | justo |
+| Intel Core i5-12400F | [151.38](https://www.ebay.com/itm/188895031520) | 1.986 (B 1 kg) | 1.944 (B 1.5 kg) | 2.250 | 264 (12%) | 306 (14%) | justo |
 | Intel Core i5-14400F | [164.49](https://www.ebay.com/itm/389945918228) | 2.144 (B 1 kg) | 2.102 (B 1.5 kg) | 2.384 | 240 (10%) | 282 (12%) | justo |
 | Ryzen 7 7700X | [223.98](https://www.ebay.com/itm/267042355650) | 2.858 (B 1 kg) | 2.858 (B 2 kg) | 3.000 | 142 (5%) | 142 (5%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [450.00](https://www.ebay.com/itm/147595555861) | 5.573 (B 1 kg) | 5.489 (B 1 kg) | 5.800 | 227 (4%) | 311 (5%) | no conviene |
@@ -26,7 +26,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs | Ganancia 2 u | Ganancia 4 u | Estado |
 |---|---|---|---|---|---|---|---|
 | Ryzen 5 7600 | [119.99](https://www.ebay.com/itm/237152777990) | 1.609 (B 1 kg) | 1.609 (B 2 kg) | 2.800 | 1.191 (43%) | 1.191 (43%) | conviene |
-| Intel Core i5-12400F | [119.99](https://www.ebay.com/itm/407329655674) | 1.609 (B 1 kg) | 1.567 (B 1.5 kg) | 2.260 | 651 (29%) | 693 (31%) | conviene |
+| Intel Core i5-12400F | [119.99](https://www.ebay.com/itm/407329655674) | 1.609 (B 1 kg) | 1.567 (B 1.5 kg) | 2.250 | 641 (28%) | 683 (30%) | conviene |
 | Intel Core i5-14400F | [129.99](https://www.ebay.com/itm/880020506112) | 1.729 (B 1 kg) | 1.687 (B 1.5 kg) | 2.384 | 655 (27%) | 697 (29%) | conviene |
 | SSD NVMe 2TB | [179.99](https://www.ebay.com/itm/117494760774) | 2.330 (B 1 kg) | 2.246 (B 1 kg) | 3.100 | 770 (25%) | 854 (28%) | conviene |
 | Ryzen 7 7800X3D | [285.00](https://www.ebay.com/itm/820204099321) | 3.591 (B 1 kg) | 3.591 (B 2 kg) | 4.760 | 1.169 (25%) | 1.169 (25%) | conviene |
@@ -49,6 +49,7 @@ eBay nuevo: USD 145.00 con envío en EE.UU. (eBay API; vendedor shelterdogs2010 
 | OverCity (WhatsApp) | OEM | 2.800 | 890 (32%) | 2026-10-15 |
 | OverCity (WhatsApp) | nuevo OEM (reconfirmado 16:09) | 2.800 | 890 (32%) | 2026-10-19 |
 | Punto Tecnológico (WhatsApp) | nuevo OEM, garantía 6 meses (cotización por WhatsApp) | 2.850 | 940 (33%) | 2026-10-16 |
+| OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | estado sin dato (\"últimas unidades\") | 2.850 | 940 (33%) | 2026-11-03 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | stock bajo (web) | 2.860 | 950 (33%) | 2026-10-12 |
 
 ### Ryzen 7 7800X3D
@@ -83,12 +84,14 @@ eBay nuevo: USD 570.49 con envío en EE.UU. (eBay API; vendedor newegg 99.6%; AM
 |---|---|---|---|---|
 | MSR Computers (web; fecha de actualización desconocida) · [ver](https://msrcomputers.framer.website/) | nuevo | 5.580 | -1.440 (-26%) | 2026-10-11 |
 | Tienda Supermall (WhatsApp) · [ver](https://www.facebook.com/marketplace/item/1292124363069503/) | nuevo OEM (garantía 6 meses) | 6.140 | -880 (-14%) | 2026-10-12 |
+| OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | estado sin dato (\"en stock\") | 6.150 | -870 (-14%) | 2026-11-03 |
 
 ### Intel Core i5-12400F
 eBay nuevo: USD 151.38 con envío en EE.UU. (eBay API; vendedor alexthephoneguy 99.6%; **NEW** Intel Core i5-12400F 3.70GHz 6 Core SRL4W 12 Thread , 2026-11-03). Costo puesto: **Bs 1.986**/u en pedido de 2, **Bs 1.944**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
+| OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | estado sin dato (\"en stock\") | 2.250 | 264 (12%) | 2026-11-03 |
 | T&T Todo en Tecnología (WhatsApp) | OEM con cooler Intel; Bs 20 menos c/u llevando 2 | 2.260 | 274 (12%) | 2026-10-15 |
 | Marketplace Cochabamba (particular) | OEM (anuncio "Procesador CPU i5 12400f OEM"; estado sin dato) | 2.350 | 364 (15%) | 2026-10-21 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | disponible (web) | 2.460 | 474 (19%) | 2026-10-12 |
@@ -121,6 +124,7 @@ eBay nuevo: USD 245.00 con envío en EE.UU. (eBay API; vendedor emat3414 100.0%;
 |---|---|---|---|---|
 | MSR Computers (web; fecha de actualización desconocida) · [ver](https://msrcomputers.framer.website/) | nuevo | 3.950 | 839 (21%) | 2026-10-11 |
 | OverCity (WhatsApp) | nuevo OEM | 4.100 | 989 (24%) | 2026-10-19 |
+| OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | estado sin dato (\"últimas unidades\") | 4.170 | 1.059 (25%) | 2026-11-03 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | stock bajo (web; por WhatsApp dijeron que el 265K solo está en Santa Cruz) | 4.290 | 1.179 (27%) | 2026-10-12 |
 
 ### Corsair Vengeance RGB DDR5 32GB (2x16) 5600

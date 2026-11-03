@@ -201,10 +201,25 @@ def stock_real(a):
     return "\n".join(L)
 
 
+def segundo_pedido(a):
+    """Los 3 mejores candidatos nuevos para el segundo pedido (sin el 7700X, que ya es el primero), por margen del peor caso."""
+    c = [f for f in a["productos"] if f["condicion"] == "nuevo" and f["recomendacion"] in ("traer", "esperar")
+         and not f["producto"].startswith("Ryzen 7 7700X") and (f["escenarios_margen_pct"]["peor caso"] or -1) >= 5]
+    c.sort(key=lambda f: -(f["escenarios_margen_pct"]["peor caso"] or -999))
+    L = ["", "## Segundo pedido: 3 mejores candidatos (ana-2)", "",
+         "Solo nuevos, sin el 7700X (ya comprado), ordenados por margen en el peor caso. La decisión es de Santi; nada se compra ni se ofrece.", "",
+         "| # | Producto | Costo Bs/u | Venta sugerida | Ganancia/u | Margen | Peor caso | Estado |", "|---|---|---|---|---|---|---|---|"]
+    for i, f in enumerate(c[:3], 1):
+        est = "traer" if f["recomendacion"] == "traer" else "esperar: " + ", ".join(f["faltan"] or [f["por_que"]])
+        L.append(f"| {i} | {f['producto']} | {C.bs(f['costo_bs'])} | {C.bs(f['precio_sugerido_bs'])} | {C.bs(f['ganancia_bs'])} | "
+                 f"{f['margen_pct']} % | {f['escenarios_margen_pct']['peor caso']} % | {est} |")
+    return "\n".join(L) + "\n"
+
+
 def main():
     a = analizar()
     if "--md" in sys.argv:
-        open(os.path.join(DIR, "analisis.md"), "w", encoding="utf-8").write(md(a) + stock_real(a))
+        open(os.path.join(DIR, "analisis.md"), "w", encoding="utf-8").write(md(a) + stock_real(a) + segundo_pedido(a))
         print("analisis.md escrito")
     print(json.dumps(a, ensure_ascii=False, indent=1) if "--json" in sys.argv else texto(a))
 
