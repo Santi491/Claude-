@@ -72,3 +72,4 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261031-6,2026-10-31,16:18,gerente,fin,Visto: el primer pedido real ya esta registrado en finanzas.,,leido,20261019-6
 20261031-7,2026-10-31,16:18,gerente,fin,Cerrado: nota ya atendida.,,leido,20261026-7
 20261103-1,2026-11-03,10:43,mkt,santi,"Competencia 7700X en Marketplace Cochabamba hoy: uno a Bs 3.100 (antes 3.500) y otro sellado a Bs 4.000. Nuestro costo es Bs 2.520-2.700, el precio de venta lo fijas vos; todavia sin publicar.",,nuevo,
+20261103-2,2026-11-03,10:52,gerente,mkt,Recibido: se lo paso a Santi en el aviso de fin de ronda.,,nuevo,
