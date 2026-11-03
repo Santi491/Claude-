@@ -4,6 +4,7 @@
     python3 objetivos.py                     # la etapa y todos los objetivos con su avance
     python3 objetivos.py wa                  # solo los de un agente (catálogos firma como mkt)
     python3 objetivos.py --json
+    python3 objetivos.py --etapa 2           # ver los objetivos de otra etapa
     python3 objetivos.py hecho mkt-3 "nota"  # marca un entregable o un objetivo sin medida automática
 
 Etapa: 1 producto en camino · 2 producto en mano (un pedido real en Cochabamba o entregado) · 3 vendiendo (primera venta).
@@ -72,7 +73,13 @@ def etapa():
 
 
 def main():
-    args = [a for a in sys.argv[1:] if a != "--json"]
+    argv = sys.argv[1:]
+    ver = None
+    if "--etapa" in argv:
+        i = argv.index("--etapa")
+        ver = argv[i + 1]
+        del argv[i:i + 2]
+    args = [a for a in argv if a != "--json"]
     if args[:1] == ["hecho"] and len(args) >= 2:
         filas = leer("objetivos.csv")
         if not any(f["id"] == args[1] for f in filas):
@@ -88,14 +95,14 @@ def main():
         return
     hoy = datetime.now(ZoneInfo("America/La_Paz")).date().isoformat()
     med, salida = medidas(hoy), []
+    e = etapa()
     for f in leer("objetivos.csv"):
-        if args and f["agente"] != args[0]:
+        if (args and f["agente"] != args[0]) or (ver or str(e)) not in f["etapa"]:
             continue
         av = med.get(f["medida"]) if f["medida"] else None
         meta = int(f["meta"])
         cumplido = f["estado"] == "hecho" or (av is not None and av >= meta)
-        salida.append({**f, "avance": av, "cumplido": cumplido, "vencido": not cumplido and f["tipo"] in ("acumulado", "entregable") and f["hasta"] < hoy})
-    e = etapa()
+        salida.append({**f, "avance": av, "cumplido": cumplido, "vencido": not cumplido and f["tipo"] in ("acumulado", "entregable") and f["hasta"] and f["hasta"] < hoy})
     if "--json" in sys.argv:
         print(json.dumps({"etapa": e, "nombre": ETAPAS[e], "objetivos": salida}, ensure_ascii=False, indent=1))
         return
@@ -105,7 +112,7 @@ def main():
     for s in salida:
         marca = "OK " if s["cumplido"] else "VENCIDO" if s["vencido"] else "..."
         cifra = f"{s['avance']}/{s['meta']}" if s["avance"] is not None else (s["estado"] or "pendiente")
-        print(f"  {marca} [{s['id']}] {s['agente']} · {cifra} · {s['objetivo']} (hasta {s['hasta'][8:]}/{s['hasta'][5:7]})")
+        print(f"  {marca} [{s['id']}] {s['agente']} · {cifra} · {s['objetivo']} {f"(hasta {s['hasta'][8:]}/{s['hasta'][5:7]})" if s['hasta'] else ''}")
 
 
 if __name__ == "__main__":

@@ -51,6 +51,10 @@ Cada ronda completa de lunes a viernes revisa **una red, rotando**: lunes Instag
 
 Contesta a los vendedores de Marketplace que respondieron (mismas reglas de mensajes que WhatsApp: André Maldonado, nada de datos personales, nunca comprar ni ofertar). Cada mensaje en `mensajes.csv` (`canal` messenger; en la oficina sale sin nombre). Archiva los chats que ya dieron la información.
 
+## Clientes potenciales, junto con WhatsApp (`cli-2`, Santi 03/11)
+
+Busca en Facebook e Instagram grupos de la zona y personas que piden componentes. Los grupos y tiendas van a `clientes-potenciales.csv`; de personas, nada en el repo (es público): ni nombres ni links de perfil. Si ves un comprador claro, avísale a Santi solo por `notificar.py`. No escribas a nadie ni ofrezcas nada hasta que Santi lo apruebe.
+
 ## Publicar nuestros productos (cuenta personal de Santi, desde el 28/10)
 
 Santi quiere que publiques en Facebook Marketplace los productos que compramos para vender (por ahora los 4 Ryzen 7 7700X). Es la **única** excepción a "no ofrecer ventas": vale solo para nuestros anuncios en Marketplace, nunca para ofrecerle productos a tiendas por WhatsApp.

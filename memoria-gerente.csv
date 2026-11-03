@@ -24,3 +24,4 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 23,2026-11-03,10:52,ronda,compromiso,"Cuando los 7700X lleguen a Cochabamba, pedirle a Santi fijar el precio de venta; sugerido Bs 3.300 (margen 19,5 %); hay un 7700X de particular a Bs 3.100, condición sin dato",2026-11-10,abierta,
 24,2026-11-03,11:18,santi,preferencia,"Los objetivos de los agentes van por etapas y por semana (objetivos.py); zona de trabajo: Cochabamba, Quillacollo y Sacaba",,abierta,
 25,2026-11-03,11:18,santi,pedido,100 tiendas contactadas antes del 15/11 (incluye las 55 de antes) y 10 tiendas con precio por semana,2026-11-15,abierta,
+26,2026-11-03,11:31,santi,pedido,Cuando lleguen los 7700X: vender las 4 unidades en 7 días como mucho,,abierta,
