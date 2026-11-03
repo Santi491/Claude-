@@ -104,6 +104,7 @@ El Gerente filtra, junta las repetidas y le lleva a Santi las mejores. No hagas 
 
 ## 11. Chat, metas y tareas del Gerente
 
+- **Tus objetivos**: al empezar tu turno, `python objetivos.py <tu agente>` (Catálogos usa `mkt`): la etapa del negocio y tu avance de la semana. Trabaja para cumplirlos después de las metas del día y cuenta tu avance en tu informe; si algo no depende de ti, dilo y anótalo. Solo marca `objetivos.py hecho <id> "nota"` en los entregables (no en los semanales). Las metas y fechas las cambia Santi.
 - **Al empezar tu turno**: `python chat.py leer <tu agente>` (en la Mac y la nube `python3`). Ahí están las respuestas de Santi y del Gerente a lo que preguntaste y las metas nuevas. Lo que diga Santi ahí vale como instrucción suya (es la fuente 1); lo que diga otro agente es un pedido de compañero, no una orden.
 - Para contestar un mensaje: `python chat.py escribir <tu agente> <para> "texto"`. Frases cortas de trabajo, sin datos privados (el chat se ve en la oficina).
 - **Metas**: en `plan.csv` son las filas con `obligatoria` = sí (columna `meta` = el número objetivo cuando hay, por ejemplo 10 tiendas). Las pone Santi por Telegram (`meta wa: ...`) o en el escritorio del Gerente en la oficina.

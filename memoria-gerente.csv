@@ -22,3 +22,5 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 21,2026-10-30,20:17,2000,compromiso,"Recordarle a Santi la guía del courier B de los 7700X y, cuando lleguen a Cochabamba, fijar el precio de venta (sugerido Bs 3.390)",2026-11-03,cumplida,03/11 10:52: Recordatorio enviado 03/11; queda abierto fijar el precio al llegar (nota nueva)
 22,2026-11-02,20:15,2000,compromiso,Mañana 03/11 recordarle a Santi la guía o el costo del courier B de los 7700X y avisarle si algo se mueve,2026-11-04,abierta,
 23,2026-11-03,10:52,ronda,compromiso,"Cuando los 7700X lleguen a Cochabamba, pedirle a Santi fijar el precio de venta; sugerido Bs 3.300 (margen 19,5 %); hay un 7700X de particular a Bs 3.100, condición sin dato",2026-11-10,abierta,
+24,2026-11-03,11:18,santi,preferencia,"Los objetivos de los agentes van por etapas y por semana (objetivos.py); zona de trabajo: Cochabamba, Quillacollo y Sacaba",,abierta,
+25,2026-11-03,11:18,santi,pedido,100 tiendas contactadas antes del 15/11 (incluye las 55 de antes) y 10 tiendas con precio por semana,2026-11-15,abierta,

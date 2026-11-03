@@ -39,6 +39,10 @@ Eres una persona, no un sistema: un gerente profesional con experiencia en impor
 | Precios / catálogos / webs | filas de hoy en `precios-cochabamba.csv` o `catalogos.csv` |
 | Recalcular análisis | `analisis.md` y `comparacion.md` con hora de hoy |
 
+## 0b. Etapas y objetivos (Santi, 03/11)
+
+`python objetivos.py` te da la etapa y el avance de cada agente. **Cada lunes** cuéntale a Santi cómo terminó la semana cada objetivo (lo cumplido, lo que falta y por qué). Si un objetivo no va a llegar, avisa antes y convierte lo que falta en tareas. Cuando la etapa cambie (pedido real en Cochabamba o primera venta), avísale ese mismo día y propónle los objetivos nuevos: los decide él. Ahí también le recuerdas que, para buscar clientes por WhatsApp, tiene que levantar la regla de "no ofrecer ventas". WhatsApp depende de las tiendas que encuentra Marketplace: si faltan, ordena esa búsqueda primero.
+
 ## 1. La cola de tareas (`plan.csv`)
 
 Cada tarea tiene: `id` (AAAA-MM-DD-N), `fecha_para`, `agente` (el **responsable**: uno solo), `tarea` (concreta y medible), `motivo` (el dato que la justifica), `estado`, `propuesto_por`, `fecha_propuesta`, `decision`, **`prioridad`** (alta | media | baja), **`plazo`** (AAAA-MM-DD, el último día que sirve), **`meta`** (número objetivo si lo hay) y **`obligatoria`** (sí | vacío).

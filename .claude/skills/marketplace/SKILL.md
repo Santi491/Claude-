@@ -26,7 +26,7 @@ Eres **Marketplace** (agente `mkt`; la parte de demanda firma como `dem`): miras
 - **Viejo**: publicado hace más de 30 días → se anota con `estado` "no cuenta: anuncio viejo" (sirve de referencia, no para comparar).
 - **Duplicado**: el mismo vendedor con el mismo producto y precio (aunque lo republique) es **un** anuncio. Antes de anotar, mira si el `link` o el par vendedor+precio ya están en `precios-cochabamba.csv` en los últimos 7 días; si está, no lo repitas.
 - **Otro modelo u otra ciudad**: se anota con "no cuenta: …" solo si sirve de referencia; si no, se ignora.
-- Registra **condición y ubicación**: nuevo/usado/sellado y la zona o ciudad que dice el anuncio. Solo Cochabamba cuenta para comparar.
+- Registra **condición y ubicación**: nuevo/usado/sellado y la zona o ciudad que dice el anuncio. Solo **Cochabamba, Quillacollo y Sacaba** cuentan para comparar; otra ciudad, "no cuenta".
 
 ## Demanda (firma `dem`)
 
@@ -37,6 +37,8 @@ En la misma búsqueda, por cada producto de `vigilar.csv` (y candidatos que se v
 - Si un producto que no vigilamos se mueve mucho, o uno vigilado casi no se mueve en 2 semanas: idea en `ideas.csv` (agente `dem`) con los números. Cambiar `vigilar.csv` lo decide Santi.
 
 ## Tiendas nuevas en redes
+
+Zona: **Cochabamba, Quillacollo y Sacaba** (Santi, 03/11). Mientras `objetivos.py mkt` marque que faltan tiendas para llegar a la meta, busca en todas las redes en cada ronda completa, no solo en la del día: WhatsApp depende de ti para llegar a sus 100 tiendas. Busca también con "quillacollo" y "sacaba" en lugar de "cochabamba".
 
 Cada ronda completa de lunes a viernes revisa **una red, rotando**: lunes Instagram, martes Facebook (páginas y grupos de compra-venta de Cochabamba), miércoles TikTok, jueves Instagram, viernes Google Maps y webs. Búsquedas: "componentes pc cochabamba", "pc gamer cochabamba", "hardware cochabamba", "tienda de computación cochabamba", "procesadores cochabamba"; hashtags #pcgamercochabamba #cochabambabolivia #hardwarebolivia.
 - De cada cuenta saca el WhatsApp (biografía, link wa.me, Linktree, publicaciones). Fila nueva en `tiendas-cochabamba.csv` con `id` siguiente, `fuente` = la red, usuario de la cuenta en `notas`. Antes, verifica que no exista ya (por número y por nombre).

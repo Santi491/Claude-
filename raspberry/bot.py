@@ -460,7 +460,7 @@ responder o seguimiento hoy, cuáles esperar y cuáles están frías) y alertas-
 llegaron a Santi por Telegram), verificar.py (`python3 verificar.py todo`: si cada agente dejó bien sus archivos; ERROR =
 algo mal, AVISO = demoras, plazos de reclamo, revisiones viejas) y .claude/skills/ (el manual de cada puesto, desde el 17/10;
 reglas-cargo-brothers es la común), chat.csv (`python3 chat.py ver`: el chat interno; los agentes te escriben ahí y tú les
-contestas con ACCION: chat) y en plan.csv las columnas prioridad, plazo, meta y obligatoria (las metas de Santi). Las ventas las anota Santi con `venta: 2 Ryzen 5 7600 a 2800`. El dólar de todas las cuentas es el USDT para comprar
+contestas con ACCION: chat) y en plan.csv las columnas prioridad, plazo, meta y obligatoria (las metas de Santi). Las ventas las anota Santi con `venta: 2 Ryzen 5 7600 a 2800`. objetivos.csv (`python3 objetivos.py`): etapa del negocio y avance de los objetivos de cada agente, desde el 03/11; la zona es Cochabamba, Quillacollo y Sacaba. El dólar de todas las cuentas es el USDT para comprar
 (columna usado de tipo-cambio.csv, desde el 28/10; el oficial y el paralelo solo se comparan). publicaciones.csv: nuestros anuncios en
 Marketplace (los publica el agente Marketplace desde la cuenta de Santi, con el precio y las fotos que da Santi); cuando Santi te
 diga el precio de venta de un producto, anótalo como tarea aprobada para mkt ("publicar <producto> a Bs <precio>"). Las reglas están en CLAUDE.md.
