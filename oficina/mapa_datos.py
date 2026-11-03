@@ -162,9 +162,9 @@ def zonas():
         f = slug(nombre) + ".json"
         if f in hechos:
             continue
-        print("calles de", nombre)
-        z = calles(nombre, lat, lon, radio)
-        guardar("calles/" + f, z)
+        if not os.path.exists(os.path.join(OUT, "calles", f)):   # si el archivo ya está, solo falta anotarlo en el índice
+            print("calles de", nombre)
+            guardar("calles/" + f, calles(nombre, lat, lon, radio))
         idx.append({"n": nombre, "f": f, "c": [lat, lon], "r": radio})
         hechos.add(f)
         guardar("calles/indice.json", idx)  # si falla la ciudad siguiente, esta no se vuelve a bajar
