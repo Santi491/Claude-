@@ -115,3 +115,5 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-04,raspberry,vigilante,13:00,13:00,alerta,pedido a la PC sin hacer hace 99 min
 2026-11-04,mac,ronda,11:00,13:19,alerta,No hecha: la PC figura con ronda activa desde las 11:25; la Mac no trabajó en paralelo
 2026-11-04,pc,ronda,16:10,16:10,en curso,empezó
+2026-11-04,pc,ronda,11:24,16:27,alerta,"Pedido de las 11:21: trabajó hasta 12:09 y quedó parado esperando aprobación de carpeta; sin cierre propio, lo guardó la ronda de las 16:09"
+2026-11-04,pc,ronda,16:09,16:27,alerta,"WhatsApp 9 respuestas enviadas, 3 tiendas nuevas, 2 precios útiles de Punto; Pedidos, Analista, Finanzas y Gerente ok; oficina NO publicada: el repo no está en las carpetas de la sesión"

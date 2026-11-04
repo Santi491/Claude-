@@ -50,6 +50,7 @@ eBay nuevo: USD 145.00 con envío en EE.UU. (eBay API; vendedor shelterdogs2010 
 | OverCity (WhatsApp) | nuevo OEM (reconfirmado 16:09) | 2.800 | 882 (32%) | 2026-10-19 |
 | Punto Tecnológico (WhatsApp) | nuevo OEM, garantía 6 meses (cotización por WhatsApp) | 2.850 | 932 (33%) | 2026-10-16 |
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | estado sin dato (\"últimas unidades\") | 2.850 | 932 (33%) | 2026-11-03 |
+| Punto Tecnológico (WhatsApp) | sin dato | 2.850 | 932 (33%) | 2026-11-04 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | stock bajo (web) | 2.860 | 942 (33%) | 2026-10-12 |
 
 ### Ryzen 7 7800X3D
@@ -167,6 +168,7 @@ eBay nuevo: USD 129.00 con envío en EE.UU. (eBay API; vendedor alejsand82 98.3%
 | Marketplace Cochabamba (particular) | "Disco duro m2 NVMe 1 tb" marca y estado sin dato; Cochabamba | 1.100 | -625 (-57%) | 2026-10-28 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (antes Bs 1.730; marca sin dato) | 1.230 | -495 (-40%) | 2026-10-17 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1098289102810322/) | sin dato de estado ni marca (recién publicado) | 1.500 | -225 (-15%) | 2026-10-17 |
+| Orange Computer (WhatsApp) | sellado | 1.550 | -175 (-11%) | 2026-11-04 |
 | Marketplace Cochabamba (particular) | Kingston NV2 NVMe 1TB (estado sin dato; "SSD NV2 de 1TB"); Cochabamba | 1.675 | -50 (-3%) | 2026-10-28 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV2 1TB; posible el mismo anuncio de 1.700 | 1.675 | -50 (-3%) | 2026-10-30 |
 | Marketplace Cochabamba (particular) | Kingston NV2 NVMe 1TB (estado sin dato; recién publicado) | 1.700 | -25 (-1%) | 2026-10-21 |
@@ -180,6 +182,7 @@ eBay nuevo: USD 129.00 con envío en EE.UU. (eBay API; vendedor alejsand82 98.3%
 | Marketplace Cochabamba (particular) | Kingston NV3 NVMe 1TB 6000MB/s (estado sin dato) | 1.850 | 125 (7%) | 2026-10-26 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV3 1TB; estado sin dato | 1.850 | 125 (7%) | 2026-10-30 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Hiksemi Wave M.2 1TB) | 1.860 | 135 (7%) | 2026-10-12 |
+| Soft Computers (WhatsApp) | sin dato | 1.950 | 225 (12%) | 2026-11-04 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2817371738643128/) | no indicado (Crucial P310 1TB) | 2.000 | 275 (14%) | 2026-10-11 |
 | Punto Tecnológico (WhatsApp) | nuevo, NVMe (modelo SN3000), garantía 6 meses (confirmado 28/10) | 2.000 | 275 (14%) | 2026-10-26 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/3707244856102112/) | WD Green SN3000 1TB (estado sin dato) | 2.050 | 325 (16%) | 2026-10-19 |
@@ -197,6 +200,7 @@ eBay nuevo: USD 185.00 con envío en EE.UU. (eBay API; vendedor honestdeals 99.4
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%202TB) | SanDisk 2TB 'recién llegadas' (interfaz sin confirmar); 3.100 a 3.550 | 3.100 | 700 (23%) | 2026-10-30 |
+| Punto Tecnológico (WhatsApp) | sin dato | 3.800 | 1.400 (37%) | 2026-11-04 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Apacer M.2 2TB 7400 MB/s) | 4.060 | 1.660 (41%) | 2026-10-12 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; Hiksemi Futurex M.2 2TB) | 4.560 | 2.160 (47%) | 2026-10-12 |
 
