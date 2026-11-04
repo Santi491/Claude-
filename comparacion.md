@@ -169,6 +169,7 @@ eBay nuevo: USD 129.00 con envío en EE.UU. (eBay API; vendedor alejsand82 98.3%
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (antes Bs 1.730; marca sin dato) | 1.230 | -495 (-40%) | 2026-10-17 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1098289102810322/) | sin dato de estado ni marca (recién publicado) | 1.500 | -225 (-15%) | 2026-10-17 |
 | Orange Computer (WhatsApp) | sellado | 1.550 | -175 (-11%) | 2026-11-04 |
+| Orange Computer (WhatsApp) | sellado | 1.550 | -175 (-11%) | 2026-11-04 |
 | Marketplace Cochabamba (particular) | Kingston NV2 NVMe 1TB (estado sin dato; "SSD NV2 de 1TB"); Cochabamba | 1.675 | -50 (-3%) | 2026-10-28 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV2 1TB; posible el mismo anuncio de 1.700 | 1.675 | -50 (-3%) | 2026-10-30 |
 | Marketplace Cochabamba (particular) | Kingston NV2 NVMe 1TB (estado sin dato; recién publicado) | 1.700 | -25 (-1%) | 2026-10-21 |
@@ -201,6 +202,7 @@ eBay nuevo: USD 185.00 con envío en EE.UU. (eBay API; vendedor honestdeals 99.4
 |---|---|---|---|---|
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%202TB) | SanDisk 2TB 'recién llegadas' (interfaz sin confirmar); 3.100 a 3.550 | 3.100 | 700 (23%) | 2026-10-30 |
 | Punto Tecnológico (WhatsApp) | sin dato | 3.800 | 1.400 (37%) | 2026-11-04 |
+| Punto Tecnológico (WhatsApp) | nuevo | 3.800 | 1.400 (37%) | 2026-11-04 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Apacer M.2 2TB 7400 MB/s) | 4.060 | 1.660 (41%) | 2026-10-12 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; Hiksemi Futurex M.2 2TB) | 4.560 | 2.160 (47%) | 2026-10-12 |
 
