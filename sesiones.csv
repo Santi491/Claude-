@@ -122,3 +122,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-04,pc,cubre mac,16:33,16:33,en curso,empezó
 2026-11-04,pc,cubre mac,16:33,16:40,ok,"Sin repetir la ronda de las 16:09: WhatsApp 7 enviados, 4 recibidos, 1 chat nuevo (10 de 10), sin precios cambiados; oficina sin publicar (carpeta del repo fuera de la sesión)"
 2026-11-04,raspberry,vigilante,18:00,18:00,arreglado,la PC no hizo la ronda de las 16:00: relanzada
+2026-11-04,pc,ronda,18:08,18:08,en curso,empezó
