@@ -320,3 +320,24 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-11-03,10:47,whatsapp,EQUIPAMIENTO MODERNO S.R.L.,recibido,respuesta,no,un compañero atenderá ese número (la persona está fuera); sin precio todavía
 2026-11-03,10:46,whatsapp,EdsonBIT Electronica,recibido,respuesta,no,"respuesta ambigua (""Ekibocado"", parece ""equivocado""); sin precio"
 2026-11-03,10:41,whatsapp,Compumas Bolivia,recibido,respuesta,no,no vende partes; solo cotiza PCs armadas con partes nuevas; se presenta como Werner (nombre de pila de la tienda)
+2026-11-04,11:28,whatsapp,Creative Technology,enviado,respuesta,,"agradece; pregunta si tienen SSD NVMe 2TB o algun procesador (Ryzen 5 5600 o Intel i5)"
+2026-11-04,11:29,whatsapp,EdsonBIT Electronica,enviado,respuesta,,"pide aclarar si fue numero equivocado o si venden componentes de PC"
+2026-11-04,11:29,whatsapp,EQUIPAMIENTO MODERNO S.R.L.,enviado,respuesta,,"saludo a Edwin (el companero) y consulta Ryzen 5 7600 y precio"
+2026-11-04,11:29,whatsapp,Soft Computers,enviado,seguimiento,,"seguimiento corto: SSD NVMe 2TB o Ryzen 5 7600"
+2026-11-04,11:30,whatsapp,City Of Gamers,enviado,respuesta,,agradece (no tiene esos productos)
+2026-11-04,11:30,whatsapp,Global PC,enviado,respuesta,,agradece (solo laptops y fundas); sin insistir
+2026-11-04,11:31,whatsapp,OverCity,enviado,seguimiento,,"cotiza Ryzen 5 7600 y SSD NVMe 2TB: precio, nuevo y garantia (tarea 2026-11-03-2)"
+2026-11-04,11:31,whatsapp,Punto Tecnológico,enviado,seguimiento,,"cotiza SSD NVMe 2TB y confirma Ryzen 5 7600 (Bs 2.850 del 16/10): nuevo y garantia (tarea 2026-11-03-2)"
+2026-11-04,11:32,whatsapp,i2C Electronics,enviado,nuevo,,"chat nuevo: procesadores/RAM/SSD sueltos, Ryzen 5 7600 y SSD NVMe 2TB"
+2026-11-04,11:32,whatsapp,i2C Electronics,recibido,automatica,no,saludo automatico (sin precio)
+2026-11-04,11:33,whatsapp,KANG MIN ELECTRONICS,enviado,nuevo,,"chat nuevo: componentes de PC, Ryzen 5 7600 y SSD NVMe 2TB"
+2026-11-04,11:33,whatsapp,KANG MIN ELECTRONICS,recibido,automatica,no,"saludo automatico (se presenta como Jeonja Technology); sin precio"
+2026-11-04,11:33,whatsapp,COMPUMUNDOHIPERMEGARED,enviado,nuevo,,"chat nuevo: componentes sueltos, Ryzen 5 7600 y SSD 2TB"
+2026-11-04,11:34,whatsapp,EMPRESEL Electrónica,enviado,nuevo,,"chat nuevo: procesadores/SSD, Ryzen 5 7600 y SSD NVMe 2TB"
+2026-11-04,11:42,whatsapp,PC Gaming Forge,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y SSD NVMe 2TB, precio por 1/2/4, sellado y garantia"
+2026-11-04,11:42,whatsapp,PC Gaming Forge,recibido,automatica,no,"saludo automatico (se presenta como Pc Gaming Forge); sin precio"
+2026-11-04,11:46,whatsapp,CRISTECNOLOGY,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y SSD NVMe 2TB, precio por 1/2/4, sellado y garantia"
+2026-11-04,11:46,whatsapp,CRISTECNOLOGY,recibido,automatica,no,"saludo automatico: se presenta como INNOVA TECH COCHABAMBA (laptops y accesorios; equipos nuevos, garantia real); nombre distinto al de Google Maps, posible mismo negocio con otro nombre; sin precio"
+2026-11-04,11:49,whatsapp,Cyrex Store América,enviado,nuevo,,"chat nuevo (sucursal Av. América, numero distinto al de Cyrex Store): Ryzen 5 7600 y SSD NVMe 2TB, precio por 1/2/4, sellado y garantia"
+2026-11-04,11:53,whatsapp,Orange Computer,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y SSD NVMe 2TB, precio por 1/2/4, sellado y garantia"
+2026-11-04,11:57,whatsapp,HooperBolivia,enviado,nuevo,,"chat nuevo: pregunta si venden componentes de PC (mensaje 1)"

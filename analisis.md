@@ -48,7 +48,7 @@ Costo = lo pagado por unidad con todo incluido (precio + envío × dólar de la 
 |---|---|---|---|
 | Rápido (piso: 10 % de recargo) | 2.921 | 9.1 % | Bs 1.064 |
 | Sugerido (5 % bajo la mediana) | 3.300 | 19.5 % | Bs 2.580 |
-| De tienda (la mediana) | 3.480 | 23.7 % | Bs 3.300 |
+| Tope (de tienda: la mediana) | 3.480 | 23.7 % | Bs 3.300 |
 
 ## Segundo pedido: 3 mejores candidatos (ana-2)
 

@@ -195,7 +195,7 @@ def stock_real(a):
         if ref:
             L += ["", "| Precio | Bs/u | Margen | Ganancia por lote |", "|---|---|---|---|"]
             for nom, pv in (("Rápido (piso: 10 % de recargo)", math.ceil(costo * 1.10)),
-                            ("Sugerido (5 % bajo la mediana)", ref["precio_sugerido_bs"]), ("De tienda (la mediana)", ref["mejor_local_bs"])):
+                            ("Sugerido (5 % bajo la mediana)", ref["precio_sugerido_bs"]), ("Tope (de tienda: la mediana)", ref["mejor_local_bs"])):
                 L.append(f"| {nom} | {C.bs(pv)} | {(pv - costo) / pv * 100:.1f} % | Bs {C.bs(round((pv - costo) * g['u']))} |")
         L.append("")
     return "\n".join(L)

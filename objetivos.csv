@@ -14,10 +14,10 @@ ebay-1,1-2,ebay,16 de 16 productos con precio real de eBay cada día,diario,16,2
 ebay-2,1,ebay,Mediana de ventas completadas de los 5 mejores productos cada semana (tipo vendido),semanal,5,2026-11-15,ebay_vendidos_semana,,
 ana-1a,1,ana,5 de 16 productos con precio firme (2 o más fuentes en 14 días),acumulado,5,2026-11-08,ana_firmes,,
 ana-1b,1,ana,8 de 16 productos con precio firme (2 o más fuentes en 14 días),acumulado,8,2026-11-15,ana_firmes,,
-ana-2,1,ana,"Piso, precio sugerido y tope del 7700X y los 3 mejores candidatos para el segundo pedido, en analisis.md (la decisión es de Santi)",entregable,1,2026-11-08,,,
+ana-2,1,ana,"Piso, precio sugerido y tope del 7700X y los 3 mejores candidatos para el segundo pedido, en analisis.md (la decisión es de Santi)",entregable,1,2026-11-08,,hecho,analisis.md: 7700X piso 2.921 / sugerido 3.300 / tope 3.480 y 3 candidatos
 ped-1,1-2,pedidos,Revisar todas las guías activas en cada ronda y avisar el mismo día si se mueven,diario,100,2026-11-15,ped_al_dia_pct,,
 ped-2,1,pedidos,Anotar los días reales de puerta a puerta de cada pedido cuando llegue,entregable,1,2026-11-15,,,
-fin-1,1,fin,"Costo real por unidad, punto de equilibrio y cuánta plata vuelve para el segundo pedido",entregable,1,2026-11-08,,,
+fin-1,1,fin,"Costo real por unidad, punto de equilibrio y cuánta plata vuelve para el segundo pedido",entregable,1,2026-11-08,,hecho,"Costo real, equilibrio y retorno del segundo pedido 7700X calculados con el courier B marcado incompleto (ver plan 2026-11-03-7)"
 ger-1,1-2,gerente,Contarle a Santi cada lunes el avance de cada objetivo y avisarle cuando cambie la etapa,semanal,1,2026-11-15,,,
 cli-1,1-2,wa,Clientes potenciales con Marketplace: calificar las tiendas del grupo E en clientes-potenciales.csv y ordenar A y B por a quién ofrecer primero (sin ofrecer nada todavía),entregable,1,2026-11-15,,,
 cli-2,1-2,mkt,"Clientes potenciales con WhatsApp: encontrar 10 grupos y compradores de la zona que buscan componentes; personas sin nombres ni datos en el repo (a Santi, solo por notificar.py)",entregable,1,2026-11-15,,,

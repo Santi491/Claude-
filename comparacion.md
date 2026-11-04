@@ -187,6 +187,7 @@ eBay nuevo: USD 129.00 con envío en EE.UU. (eBay API; vendedor alejsand82 98.3%
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; WD SN3000 M.2 1TB) | 2.060 | 335 (16%) | 2026-10-12 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/27971414262519546/) | estado sin dato (WD Green SN3000 1TB) | 2.060 | 335 (16%) | 2026-10-22 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; Kingston NV3 M.2 1TB) | 2.152 | 427 (20%) | 2026-10-12 |
+| TecnoGamer Bolivia (web) · [ver](https://www.tecnogamer.com.bo/categoria/discos-solidos-m-2/) | Kingston NV3 1TB NVMe; estado sin dato | 2.215 | 490 (22%) | 2026-11-04 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/2891757594521096/) | Lexar NM790 1TB con disipador (estado sin dato) | 2.500 | 775 (31%) | 2026-10-19 |
 | Marketplace Cochabamba (particular) | Samsung 9100 PRO 1TB PCIe 5.0 (gama alta; estado sin dato) | 3.050 | 1.325 (43%) | 2026-10-21 |
 

@@ -178,3 +178,16 @@ fecha,producto,fuente,ciudad,anuncios,nuevos,desaparecidos,precio_min_bs,precio_
 2026-11-03,SSD NVMe 1TB,marketplace,Cochabamba,4,,,1675,1775,"NV2 1.675, NV3 1.850 (x2 posible duplicado), Samsung 9100 PRO 3.050; sin links, por titulo; nuevos/desaparecidos sin comparar (no hay links guardados)"
 2026-11-03,SSD NVMe 2TB,marketplace,Cochabamba,2,,,3100,3100,SanDisk 2TB 3.100 y un M.2 2TB con disipador sin precio visible; interes bajo (senal); nuevos/desaparecidos sin comparar (no hay links guardados)
 2026-11-03,Ryzen 7 7700X,marketplace,Cochabamba,2,,,3100,3550,3.100 (antes 3.500) y 4.000 sellado (+ PC armada 16.400); competencia directa a nuestros 7700X; nuevos/desaparecidos sin comparar (no hay links guardados)
+2026-11-04,Ryzen 5 5600,marketplace,Cochabamba,0,,,,,"ninguno exacto; nuevos/desaparecidos sin comparar (no hay links guardados)"
+2026-11-04,Ryzen 7 5700X3D,marketplace,Cochabamba,0,,,,,"ninguno exacto (solo 5700X 2.500 OEM y 5700G); nuevos/desaparecidos sin comparar (no hay links guardados)"
+2026-11-04,Ryzen 5 7600,marketplace,Cochabamba,0,,,,,"ninguno exacto (7500F solo en PC armadas 13.500); nuevos/desaparecidos sin comparar (no hay links guardados)"
+2026-11-04,Ryzen 7 7800X3D,marketplace,Cochabamba,1,,,5190,5190,"5.190 (ayer 3 anuncios incl. 4.800 sellado, hoy no se ve); nuevos/desaparecidos sin comparar (no hay links guardados)"
+2026-11-04,Ryzen 9 9950X,marketplace,Cochabamba,0,,,,,"ninguno; nuevos/desaparecidos sin comparar (no hay links guardados)"
+2026-11-04,Intel Core i5-12400F,marketplace,Cochabamba,0,,,,,"no revisado hoy por tiempo; nuevos/desaparecidos sin comparar (no hay links guardados)"
+2026-11-04,Intel Core i5-14400F,marketplace,Cochabamba,0,,,,,"no revisado hoy por tiempo; nuevos/desaparecidos sin comparar (no hay links guardados)"
+2026-11-04,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,marketplace,Cochabamba,1,,,3000,3000,"solo Kingston Fury Impact SODIMM laptop 3.000 (otro modelo); sin Corsair exacto; nuevos/desaparecidos sin comparar (no hay links guardados)"
+2026-11-04,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,marketplace,Cochabamba,0,,,,,"ninguno exacto hoy (ayer 1 a 6.200); nuevos/desaparecidos sin comparar (no hay links guardados)"
+2026-11-04,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,1,,,950,950,"2 modulos DDR4 16GB a 950 (frecuencia no clara); nuevos/desaparecidos sin comparar (no hay links guardados)"
+2026-11-04,SSD NVMe 1TB,marketplace,Cochabamba,3,,,1850,1880,"NV3 1.880, M2 NV3 1.850, sin NV2 hoy; muestra de 10; nuevos/desaparecidos sin comparar (no hay links guardados)"
+2026-11-04,SSD NVMe 2TB,marketplace,Cochabamba,1,,,3100,3100,"SanDisk 2TB 3.100 (igual que ayer); interes bajo (senal); nuevos/desaparecidos sin comparar (no hay links guardados)"
+2026-11-04,Ryzen 7 7700X,marketplace,Cochabamba,0,,,,,"solo PC armada 16.000 (7700X+RTX3080); los 3.100 y 4.000 sueltos de ayer no aparecen hoy (puede ser el buscador, no venta comprobada); nuevos/desaparecidos sin comparar (no hay links guardados)"
