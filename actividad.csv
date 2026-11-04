@@ -606,3 +606,4 @@ fecha,hora,agente,texto
 2026-11-04,18:13,fin,"Ronda 18:08 PC: sin compras ni ventas nuevas (pedidos de prueba no cuentan). pedidos.csv sin filas nuevas: las 2 de compra real siguen en camino a Bolivia (solo cambio actualizado 18:11); ventas.csv sin ventas. Dolar 04/11 (12,06 USDT) sin cambios. Sin cambios."
 2026-11-04,18:15,local,"Oficina: ronda 18:08 regenerada (reportes.py y oficina/generar.py; datos.js 18:14) y verificada: comun y oficina sin ERROR, datos de 3 dias o mas ninguno. Queda sin publicar: la publica la coordinadora. Sin vivo (sin ArtifactData)."
 2026-11-04,18:30,gerente,"aviso de fin de ronda enviado (ronda 18:08 PC): oficina sin publicar por permiso de carpeta, TikTok pide sesion, idea 14 (9600X) para Santi, vigilante probablemente leyo estado alerta como ronda no corrida"
+2026-11-04,18:17,local,"apagar_pc.ps1: la PC queda prendida (arrancó 11:22 y se estaba usando); ronda 18:08 cerrada, oficina sin publicar"
