@@ -368,3 +368,6 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-11-04,16:37,whatsapp,Tecnología GabBoss,enviado,nuevo,,"chat nuevo (T091, Quillacollo): pregunta si venden componentes sueltos (mensaje 1)"
 2026-11-04,16:37,whatsapp,Tecnología GabBoss,recibido,automatica,no,"respuesta de IA de Meta (cuenta de empresa): vende RAM DDR3, SSD, procesadores Intel 4ta gen, placas H81, mantenimiento; sin precio"
 2026-11-04,16:38,whatsapp,Tecnología GabBoss,enviado,respuesta,,"pregunta si tienen SSD NVMe 2TB o Ryzen 5 7600, precio y garantia"
+2026-11-04,16:45,whatsapp,Punto Tecnológico,recibido,respuesta,si,"ofrece Ryzen 5 9600X OEM a Bs 2.750 (no vigilado); dice ""veré si me dejan vender solo procesador"" (sin aclarar sellado/OEM ni precio por 2 del 7600; espera su respuesta)"
+2026-11-04,16:39,whatsapp,Tecnología GabBoss,recibido,automatica,si,"IA de Meta: no tiene SSD NVMe 2TB ni Ryzen 5 7600; catálogo: SSD 512GB Netac Bs 830, SSD 240GB American Bs 520, i5 4590 Bs 400 (equipo viejo, no vigilado); sin garantía en ficha"
+2026-11-04,18:10,whatsapp,Tecnología GabBoss,enviado,respuesta,,"agradece, solo cotizando, sin insistir"
