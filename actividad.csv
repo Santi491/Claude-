@@ -570,3 +570,4 @@ fecha,hora,agente,texto
 2026-11-03,18:14,local,"Oficina: versión 119 publicada (datos.js de las 18:13); cambios revisados contra la versión en vivo: solo actividad, necesidad nueva, salud y fechas de revisión de pedidos"
 2026-11-03,18:14,gerente,"Aviso de fin de ronda enviado: ronda pedida por el vigilante sin envíos (permiso automático), sin respuestas ni precios nuevos; se pide a Santi revisar el permiso (2026-10-30-7) y la meta de tiendas"
 2026-11-03,18:14,local,"Apagado (8c): La PC queda prendida (arranque 15:50, prendida para la ronda: True, nadie la uso: False)"
+2026-11-03,20:17,gerente,"Informe diario 03/11 (Doc subido): 2 chats nuevos, 4 seguimientos, 72% respuesta 7d; envíos bloqueados por permiso 2 días; 6 tareas propuestas (4 auto rutina, 2 para Santi); 2 mensajes del chat contestados; 1 nota de libreta anotada; 0 de Telegram (la Raspberry lo lee)"
