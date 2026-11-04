@@ -113,3 +113,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-03,gerente,informe,20:16,20:17,ok,informe diario 03/11 subido; 6 tareas propuestas
 2026-11-04,pc,ronda,11:24,11:24,en curso,empezó
 2026-11-04,raspberry,vigilante,13:00,13:00,alerta,pedido a la PC sin hacer hace 99 min
+2026-11-04,mac,ronda,11:00,13:19,alerta,No hecha: la PC figura con ronda activa desde las 11:25; la Mac no trabajó en paralelo
