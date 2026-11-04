@@ -27,3 +27,4 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 26,2026-11-03,11:31,santi,pedido,Cuando lleguen los 7700X: vender las 4 unidades en 7 días como mucho,,abierta,
 27,2026-11-03,16:50,ronda,compromiso,"Cuando Santi decida el permiso de WhatsApp, confirmar que la ronda siguiente mande lo pendiente: respuestas, cotización 7600 y SSD 2TB y chats nuevos",2026-11-05,abierta,
 28,2026-11-03,20:16,2000,compromiso,"Recordar a Santi decidir qué hacer con los números de tiendas (quedan 2 por contactar, meta 78 al 08/11) y revisar el permiso del modo automático",2026-11-06,abierta,
+29,2026-11-04,11:22,telegram,compromiso,Santi pidió ronda completa en la PC el 04/11 a las 11:21 porque no tiene la Mac; confirmar cuando termine si WhatsApp pudo enviar lo pendiente o si el permiso lo bloqueó otra vez,2026-11-04,abierta,
