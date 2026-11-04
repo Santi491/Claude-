@@ -56,7 +56,8 @@
   "baja|Ryzen 5 7600|nuevo|2026-11-02": "2026-11-02 11:53",
   "conviene|Ryzen 5 7600|nuevo|2026-11-02": "2026-11-02 11:53",
   "baja|SSD NVMe 1TB|usado|2026-11-02": "2026-11-02 11:53",
-  "baja|Ryzen 5 7600|nuevo|2026-11-03": "2026-11-03 11:53"
+  "baja|Ryzen 5 7600|nuevo|2026-11-03": "2026-11-03 11:53",
+  "baja|Ryzen 5 5600|usado|2026-11-04": "2026-11-04 11:54"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": true,
@@ -87,7 +88,7 @@
   "Ryzen 7 7700X|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 5 7600 (nuevo) bajó 17% en eBay: USD 175.00 → 145.00"
+  "⬇ Ryzen 5 5600 (usado) bajó 22% en eBay: USD 134.99 → 105.00"
  ],
- "revisado": "2026-11-03 16:46"
+ "revisado": "2026-11-04 11:54"
 }
