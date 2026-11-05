@@ -694,3 +694,33 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-04,SSD NVMe 2TB,usado,179.99,0.00,real,eBay API; vendedor wazno 99.7%; POWERSPEC 2TB PCIe NVMe 4.0 X4 TLC SSD PS2TTN,https://www.ebay.com/itm/117500607960
 2026-11-04,Ryzen 7 7700X,usado,189.99,0.00,real,"eBay API; vendedor g-electronic 99.7%; AMD Ryzen 7 7700X Desktop Processor 8-Core, 16-Thread 4.5GHz",https://www.ebay.com/itm/327275170355
 2026-11-04,Ryzen 5 7500F,usado,105.00,0.00,real,eBay API; vendedor lucyhall8 100.0%; AMD Ryzen 5 7500F 6-Core Socket AM5 3.7GHz CPU Processor 100; envío no indicado,https://www.ebay.com/itm/237160372084
+2026-11-05,Ryzen 5 5600,nuevo,138.90,0.00,real,eBay API; vendedor 3c_wholesaler 99.5%; (New) AMD Ryzen 5 5600 Vermeer Zen3 6-Core 12-Thread AM4 CPU,https://www.ebay.com/itm/389732753480
+2026-11-05,Ryzen 5 7600,nuevo,145.00,0.00,real,eBay API; vendedor shelterdogs2010 100.0%; AMD Ryzen 5 7600 6-Core 12-Thread 5.1GHz Boost Socket AM5 De; envío no indicado,https://www.ebay.com/itm/128169221156
+2026-11-05,Ryzen 7 7800X3D,nuevo,310.00,0.00,real,eBay API; vendedor gameenoobster 100.0%; AMD Ryzen 7 7800X3D 8-Cores 4.2GHz Socket AM5 Gaming CPU Pro,https://www.ebay.com/itm/880084701124
+2026-11-05,Ryzen 9 9950X,nuevo,570.49,0.00,real,eBay API; vendedor newegg 99.6%; AMD Ryzen 9 9950X - Ryzen 9 9000 Series Granite Ridge (Zen 5,https://www.ebay.com/itm/305729926018
+2026-11-05,Intel Core i5-12400F,nuevo,151.38,0.00,real,eBay API; vendedor alexthephoneguy 99.6%; **NEW** Intel Core i5-12400F 3.70GHz 6 Core SRL4W 12 Thread ,https://www.ebay.com/itm/188895031520
+2026-11-05,Intel Core i5-14400F,nuevo,156.10,0.00,real,eBay API; vendedor nothingbutsavings 99.5%; Intel Core i5-14400F 10 Core 2.5GHz OCLGA-1700 Tray Processo,https://www.ebay.com/itm/800877621588
+2026-11-05,Intel Core Ultra 7 265K,nuevo,248.99,0.00,real,eBay API; vendedor mavcofinds 100.0%; Intel Core Ultra 7 Processor 265K LGA1851 20 Cores Brand New,https://www.ebay.com/itm/137893601856
+2026-11-05,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,nuevo,449.99,0.00,real,eBay API; vendedor 2012roms 100.0%; Corsair Vengeance 32GB (2x16GB) DDR5 5600MHz CL36 Desktop RA; envío no indicado,https://www.ebay.com/itm/327408972899
+2026-11-05,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,nuevo,450.00,0.00,real,eBay API; vendedor kn32451 99.9%; Corsair VENGEANCE RGB DDR5 RAM 32GB (2x16GB) 6000MHz CL36 In,https://www.ebay.com/itm/267833684470
+2026-11-05,RAM DDR4 16GB (2x8) 3200,nuevo,89.99,0.00,real,eBay API; vendedor junebug1013 100.0%; Teamgroup T-force Vulcan Z 16GB (2x8GB) DDR4 3200 MHz CL16 D; envío no indicado,https://www.ebay.com/itm/198771975455
+2026-11-05,SSD NVMe 1TB,nuevo,139.99,0.00,real,eBay API; vendedor fik-8981 100.0%; Fikwot M.2 SSD 1TB 2280 NVMe PCIe Gen 3.0 x 4 3500MB/ Intern,https://www.ebay.com/itm/366541111459
+2026-11-05,SSD NVMe 2TB,nuevo,195.00,0.00,real,eBay API; vendedor lookitsmac90 99.0%; Ediloca EN760 2TB M.2 NVMe SSD PCIe 4.0 PS5 SSD Hard Drive w,https://www.ebay.com/itm/880077613710
+2026-11-05,Ryzen 7 7700X,nuevo,209.99,13.99,real,eBay API; vendedor asusparts2022 99.9%; AMD Ryzen 7 7700X - Zen 4 8-Core 4.5 GHz - Socket AM5 - 105W,https://www.ebay.com/itm/267042355650
+2026-11-05,Ryzen 5 7500F,nuevo,135.60,0.00,real,eBay API; vendedor technological-trend 99.4%; AMD Ryzen 5 7500F - Ryzen 5 7000 Series Zen 4 6-Core 3.7 GHz,https://www.ebay.com/itm/178171158022
+2026-11-05,Ryzen 5 5600,usado,134.99,0.00,real,eBay API; vendedor paymore_castleton 99.7%; AMD Ryzen 5 5600 3.50GHz 6 Core 100-000000927 12 Thread AM4,https://www.ebay.com/itm/960129525754
+2026-11-05,Ryzen 7 5700X3D,usado,344.44,0.00,real,eBay API; vendedor jpmoney27xy 100.0%; AMD Ryzen 7 5700X3D 8-Core 16-Thread AM4 USA IN HAND QUICK S; envío no indicado,https://www.ebay.com/itm/157957582898
+2026-11-05,Ryzen 5 7600,usado,119.99,0.00,real,eBay API; vendedor paymore_summerville 99.6%; AMD Ryzen 5 7600 3.80GHz 6 Core 100-100001015BOX 12 Thread A,https://www.ebay.com/itm/137902188373
+2026-11-05,Ryzen 7 7800X3D,usado,279.99,0.00,real,"eBay API; vendedor jackofalltrades21 99.7%; AMD Ryzen 7 7800X3D Processor (8 Cores, Socket AM5) Used",https://www.ebay.com/itm/227598021653
+2026-11-05,Ryzen 9 9950X,usado,440.00,0.00,real,eBay API; vendedor beograd18 100.0%; Ryzen 9 9950X | Used AM5 CPU - Fully Functional + Tested; envío no indicado,https://www.ebay.com/itm/117500149640
+2026-11-05,Intel Core i5-12400F,usado,110.00,0.00,real,eBay API; vendedor kellenellek 100.0%; Intel Core i5-12400F CPU SRL5Z; envío no indicado,https://www.ebay.com/itm/860113995215
+2026-11-05,Intel Core i5-13400,usado,129.99,0.00,real,eBay API; vendedor paymore_milwaukee 99.6%; Intel Core i5-13400 2.50GHz 10 Core SRMBF 16 Thread LGA 1700,https://www.ebay.com/itm/900066014021
+2026-11-05,Intel Core i5-14400F,usado,115.00,0.00,real,eBay API; vendedor facepieauctions 100.0%; Intel Core i5-14400F 10-Core 2.50GHz LGA1700 Desktop CPU SRN,https://www.ebay.com/itm/960155899458
+2026-11-05,Intel Core Ultra 7 265K,usado,199.00,0.00,real,eBay API; vendedor adamnh 100.0%; Intel Core Ultra 7 265K CPU; envío no indicado,https://www.ebay.com/itm/287706144107
+2026-11-05,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,usado,399.99,0.00,real,eBay API; vendedor thedealnexus 99.9%; CORSAIR VENGEANCE DDR5 RAM 32GB 2x16GB 5600MHz CL36 CMK32GX5,https://www.ebay.com/itm/206666447654
+2026-11-05,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,usado,419.99,0.00,real,eBay API; vendedor wazno 99.7%; CORSAIR Vengeance RGB 32GB 2x16GB DDR5 RAM 6000MHz CMH32GX5M,https://www.ebay.com/itm/116237423865
+2026-11-05,RAM DDR4 16GB (2x8) 3200,usado,60.99,0.00,real,eBay API; vendedor lowwvoltage 100.0%; MICRON 16GB (2x8GB) RAM DDR4 3200 Desktop DIMM RAM 1Rx16 PC4; envío no indicado,https://www.ebay.com/itm/820315393064
+2026-11-05,SSD NVMe 1TB,usado,94.99,0.00,real,eBay API; vendedor warehousesalelv 100.0%; ADATA 2280mm Legend 800 Gold 1TB M.2 NVMe Gen 4.0 x 4 SSD SL,https://www.ebay.com/itm/227599118314
+2026-11-05,SSD NVMe 2TB,usado,179.99,0.00,real,eBay API; vendedor wazno 99.7%; POWERSPEC 2TB PCIe NVMe 4.0 X4 TLC SSD PS2TTN,https://www.ebay.com/itm/117500607960
+2026-11-05,Ryzen 7 7700X,usado,150.00,5.00,real,"eBay API; vendedor lucas_weiman 100.0%; AMD 7700X Ryzen 7 Processor 5.4 GHz, 8 Cores Socket AM5 CPU",https://www.ebay.com/itm/287705847373
+2026-11-05,Ryzen 5 7500F,usado,105.00,0.00,real,eBay API; vendedor lucyhall8 100.0%; AMD Ryzen 5 7500F 6-Core Socket AM5 3.7GHz CPU Processor 100; envío no indicado,https://www.ebay.com/itm/237160372084
