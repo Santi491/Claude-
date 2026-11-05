@@ -5,7 +5,7 @@ wa-2,1-2,wa,10 tiendas distintas con precio cada semana; primero los productos s
 mkt-1a,1,mkt,25 tiendas nuevas con celular (Cochabamba; Quillacollo o Sacaba),acumulado,25,2026-11-08,mkt_tiendas_nuevas,,
 mkt-1b,1-2,mkt,50 tiendas nuevas con celular (Cochabamba; Quillacollo o Sacaba),acumulado,50,2026-11-15,mkt_tiendas_nuevas,,
 mkt-2,1,mkt,Seguir cada 7700X publicado en la zona (precio y días en línea) en cada ronda completa,semanal,5,2026-11-15,mkt_filas_7700x_semana,,
-mkt-3,1,mkt,"Dejar en borrador-anuncios.md el anuncio del 7700X (sin precio, sin publicar) y 10 grupos de venta de la zona",entregable,1,2026-11-08,,,
+mkt-3,1,mkt,"Dejar en borrador-anuncios.md el anuncio del 7700X (sin precio, sin publicar) y 10 grupos de venta de la zona",entregable,1,2026-11-08,,hecho,borrador-anuncios.md con anuncio 7700X sin precio y 10 grupos
 cat-1,1,mkt,Catálogos: 10 precios de nuestra lista cada semana,semanal,10,2026-11-15,cat_precios_semana,,
 cat-2,1,mkt,Catálogos: revisar una vez la web o el catálogo de todas las tiendas que tengan,entregable,1,2026-11-15,,,
 dem-1,1,dem,Contar la demanda en todas las rondas completas (5 días por semana),semanal,5,2026-11-15,dem_dias_semana,,

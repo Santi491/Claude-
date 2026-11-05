@@ -241,6 +241,9 @@ def main():
              "finanzas": finanzas.calcular(), "demanda": demanda.calcular(),
              # agenda de seguimientos de WhatsApp (agenda.py), ventas sin notas (pueden tener nombres) y las últimas alertas
              "agenda": agenda.calcular(),
+             # clientes potenciales: solo tienda, letra del grupo y prioridad (sin por_que ni notas: la página es pública)
+             "clientes_potenciales": [{"tienda": c["tienda"], "grupo": (c["grupo"] or "?")[0], "prioridad": c["prioridad"]}
+                                      for c in leer("clientes-potenciales.csv") if c.get("tienda")],
              "ventas": [{k: f.get(k, "") for k in ("fecha", "producto", "cantidad", "precio_bs", "canal", "estado")}
                         for f in (leer("ventas.csv") if existe("ventas.csv") else [])],
              "alertas": (lambda e: {"ultimas": e.get("ultimas", []), "revisado": e.get("revisado", "")})(

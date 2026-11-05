@@ -156,6 +156,17 @@
     const conP = T.filter(t => precio.has(t.tienda) || D.productos.some(p => p.local.some(l => l.src === "tienda" && String(l.vendedor).startsWith(t.tienda) && /WhatsApp/.test(l.vendedor))));
     return { total: T.length, sinWa: sinWa.length, contact: contact.length, resp: resp.length, conP: conP.length };
   }
+  function htmlClientes() {
+    const C_ = D.clientes_potenciales || [];
+    if (!C_.length) return "";
+    const G = [["A", "A · Sin stock", C.green], ["B", "B · Arman PCs", C.nuevo], ["C", "C · Revenden", C.amber], ["E", "E · Por calificar", C.blue], ["D", "D · No apuntar", "#454649"], ["F", "F · Sin WhatsApp", "#454649"]];
+    const orden = { alta: 0, media: 1, baja: 2 }, max = Math.max(1, ...G.map(g => C_.filter(c => c.grupo === g[0]).length));
+    return `<div class="ps-box"><h4>Clientes potenciales por grupo · ${C_.length} tiendas</h4><div class="ps-funnel">
+      ${G.map(([k, t, col]) => { const L = C_.filter(c => c.grupo === k); return `<div class="r"><span>${esc(t)}</span><div class="bar"><i style="width:${(L.length / max * 100).toFixed(1)}%;background:${col}"></i></div><b>${L.length}</b></div>`; }).join("")}
+      </div>
+      ${["A", "B"].map(k => { const L = C_.filter(c => c.grupo === k).sort((a, b) => (orden[a.prioridad] ?? 3) - (orden[b.prioridad] ?? 3)); return L.length ? `<p class="eq-note"><b>${k}:</b> ${L.map(c => esc(c.tienda) + (c.prioridad === "alta" ? " ★" : "")).join(" · ")}</p>` : ""; }).join("")}
+      <p class="eq-note">Por ahora no se le ofrece nada a nadie: sirve para elegir a quién ofrecer primero cuando haya costos reales de envío. ★ = prioridad alta.</p></div>`;
+  }
   function renderWa() {
     const el = panel("psWa", "WhatsApp · embudo de tiendas", "armado con tiendas-cochabamba.csv, mensajes.csv y agenda.py · sin números ni chats (la página es pública)");
     const e = embudo(), A = D.agenda || {}, max = Math.max(1, e.total);
@@ -171,6 +182,7 @@
       <div class="ps-box"><h4>Embudo</h4><div class="ps-funnel">
         ${fila("En la lista", e.total, "#454649", `${e.sinWa} sin WhatsApp`)}${fila("Contactadas", e.contact, C.nuevo)}${fila("Respondieron", e.resp, C.amber)}${fila("Dieron precio", e.conP, C.green)}
       </div></div>
+      ${htmlClientes()}
       <div class="eq-sec">Agenda de hoy (${A.hoy ? fechaCorta(A.hoy) : "—"}) · un seguimiento cada 2 días como máximo; después de 2 sin respuesta la tienda queda fría</div>
       <div class="ps-agenda">
         ${lista("responder", "Revisar y responder", "c-info", x => x.motivo || "")}
