@@ -374,3 +374,6 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-11-05,10:54,whatsapp,Punto Tecnológico,enviado,respuesta,,"agradece el 9600X y repregunta si el Ryzen 5 7600 viene sellado u OEM (tarea 2026-11-04-1/6)"
 2026-11-05,10:55,whatsapp,SYSCITY,enviado,seguimiento,,"seguimiento corto: Ryzen 5 7600 o SSD NVMe 2TB"
 2026-11-05,10:56,whatsapp,BitCate,enviado,nuevo,,"chat nuevo (T092, Quillacollo): pregunta si venden componentes sueltos (mensaje 1)"
+2026-11-05,16:10,whatsapp,HC store,enviado,nuevo,,"chat nuevo (T093): componentes sueltos, Ryzen 5 7600 y SSD NVMe 2TB, precio, nuevo y garantía (tarea 2026-11-04-1)"
+2026-11-05,16:10,whatsapp,HC store,recibido,automatica,no,"bienvenida automática: solo ofrece televisores y lavadoras; sin componentes de PC"
+2026-11-05,16:40,messenger,vendedor M.2 512GB (Marketplace),recibido,respuesta,no,"respondió 14:39 ""Sí. ¿Te interesa?"" a la pregunta de disponibilidad; sin precio todavía; no se pudo contestar: el permiso automático rechazó enviar el mensaje desde Messenger; queda para la próxima ronda o para Santi"
