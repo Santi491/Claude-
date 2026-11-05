@@ -129,3 +129,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-05,mac,ronda,10:53,11:50,ok,"WhatsApp 3 enviados, 0 recibidos, 1 chat nuevo (1 de 10); 3 precios de Marketplace; 1 tienda nueva; Pedidos sin movimiento; filtros del Analista corregidos; oficina v121; Chrome se desconectó unos minutos; Instagram y Quillacollo sin hacer"
 2026-11-05,pc,ronda,16:08,16:08,en curso,empezó
 2026-11-05,pc,ronda,16:08,17:55,alerta,"WhatsApp 1 chat nuevo (2 de 10), 0 respuestas; Marketplace 7 tiendas nuevas (Instagram 1, Quillacollo 6); Messenger: respuesta sin contestar por permiso; Pedidos, Analista y Finanzas sin cambios; Catálogos no corrió (tiempo); oficina regenerada pero SIN publicar (sin permiso sobre la carpeta del repo)"
+2026-11-05,raspberry,vigilante,18:00,18:00,arreglado,la PC no hizo la ronda de las 16:00: relanzada
