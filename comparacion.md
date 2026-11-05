@@ -170,14 +170,17 @@ eBay nuevo: USD 139.99 con envío en EE.UU. (eBay API; vendedor fik-8981 100.0%;
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1098289102810322/) | sin dato de estado ni marca (recién publicado) | 1.500 | -351 (-23%) | 2026-10-17 |
 | Orange Computer (WhatsApp) | sellado | 1.550 | -301 (-19%) | 2026-11-04 |
 | Orange Computer (WhatsApp) | sellado | 1.550 | -301 (-19%) | 2026-11-04 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston NV3 1TB (estado sin dato; rebajado de 1.759); Cochabamba | 1.610 | -241 (-15%) | 2026-11-05 |
 | Marketplace Cochabamba (particular) | Kingston NV2 NVMe 1TB (estado sin dato; "SSD NV2 de 1TB"); Cochabamba | 1.675 | -176 (-11%) | 2026-10-28 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV2 1TB; posible el mismo anuncio de 1.700 | 1.675 | -176 (-11%) | 2026-10-30 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | NV2 1TB (estado sin dato); Cochabamba | 1.675 | -176 (-11%) | 2026-11-05 |
 | Marketplace Cochabamba (particular) | Kingston NV2 NVMe 1TB (estado sin dato; recién publicado) | 1.700 | -151 (-9%) | 2026-10-21 |
 | Marketplace Cochabamba (particular) | Kingston NV2 NVMe PCIe 4.0 1TB (estado sin dato); Cochabamba | 1.700 | -151 (-9%) | 2026-10-28 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV2 1TB; estado sin dato | 1.700 | -151 (-9%) | 2026-10-30 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (M.2 1TB, marca no indicada; publicado hace 2 días) | 1.730 | -121 (-7%) | 2026-10-16 |
 | Shopping PC (catálogo PDF) | nuevo (Kingston NV3 1TB; lista mayorista USD 148 del 12/10, sin factura; 146 en stock) | 1.754 | -97 (-6%) | 2026-10-15 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2078197563584097/) | no indicado (M.2 1TB; marca no indicada) | 1.800 | -51 (-3%) | 2026-10-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston NV3 1TB (estado sin dato); Cochabamba | 1.810 | -41 (-2%) | 2026-11-05 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | no indicado (Kingston NV3 1TB) | 1.850 | -1 (-0%) | 2026-10-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | Kingston NV3 1TB (estado sin dato) | 1.850 | -1 (-0%) | 2026-10-17 |
 | Marketplace Cochabamba (particular) | Kingston NV3 NVMe 1TB 6000MB/s (estado sin dato) | 1.850 | -1 (-0%) | 2026-10-26 |
