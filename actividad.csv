@@ -613,3 +613,5 @@ fecha,hora,agente,texto
 2026-11-05,07:58,nube,"Revisión diaria hecha: USDT 12,02, eBay, comparación, análisis, informe; PDF sin generar (reportlab no carga)"
 2026-11-05,10:58,wa,"Ronda mañana Mac: 2 respuestas/seguimientos (Punto Tecnológico, SYSCITY) y 1 chat nuevo (BitCate, Quillacollo); sin respuestas nuevas ni precios"
 2026-11-05,11:30,mkt,"Ronda Mac parcial: Google Maps (Supermall, Gold Center, Tecnocenter/Esteban Arze, Sacaba) casi todo ya estaba en la lista: 1 tienda nueva (T093); se cortó la conexión de Chrome; sin Marketplace ni demanda"
+2026-11-05,11:31,fin,"Ronda Mac 05/11: sin compras ni ventas del negocio todavía (los pedidos de prueba no cuentan); 4 Ryzen 7 7700X en camino (Bs 10.620 invertido, Bs 2.655/u), 0 vendidas, sin ganancia real aún; dólar 12,02 (USDT, nube 05/11)"
+2026-11-05,11:40,ana,"Corregí 2 filtros de analista.py. Ahora el Ryzen 5 7600 nuevo pasa de esperar a traer (6 precios, peor caso 17,6 %, margen 29 %) y el SSD 2TB nuevo de traer a esperar (margen 32,6 %, peor caso 22 %: solo queda una tienda real). Intel 265K y 9950X no cambian de veredicto; el i5-12400F nuevo pasa a no traer (margen 8,8 %)"

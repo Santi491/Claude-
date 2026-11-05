@@ -18,6 +18,7 @@ Nunca inventa: si falta un dato, lo dice en `faltan`.
 import json
 import math
 import os
+import re
 import statistics
 import sys
 from datetime import date, datetime
@@ -33,7 +34,7 @@ import comparar as C
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 HOY = date.today()
-SIN_DATO = ("marca sin dato", "marca no indicada", "config no indicada", "configuración no indicada", "ni marca",
+SIN_DATO = ("sin confirmar", "marca sin dato", "marca no indicada", "config no indicada", "configuración no indicada", "ni marca",
             "probablemente", "no dice si")  # anuncio sin marca o sin configuración clara (un estado sin dato pero con marca sí cuenta)
 
 
@@ -59,6 +60,16 @@ def costo_completo(of, peso, cant, tc, tax=C.A_TAX_DEF, courier_x=1.0):
     return (base + envio * courier_x) * tc, via, {"ebay_usd": round(base, 2), "courier_usd": round(envio * courier_x, 2)}
 
 
+def es_mayorista(cond):
+    """'mayorista' cuenta solo si no está negado ('sin cupón ni mayorista', 'no mayorista')."""
+    c = (cond or "").lower()
+    for m in re.finditer("mayorista", c):
+        antes = c[max(0, m.start() - 25):m.start()]
+        if not re.search(r"\b(sin|ni|no)\b[^.;,]*$", antes):
+            return True
+    return False
+
+
 def analizar():
     vig, ee, pcb = C.leer("vigilar.csv"), C.leer("precios-eeuu.csv"), C.leer("precios-cochabamba.csv")
     fx = [f for f in C.leer("tipo-cambio.csv") if num(f.get("usado"))]
@@ -67,7 +78,7 @@ def analizar():
     for v in vig:
         prod, peso = v["producto"], num(v.get("peso_g_con_caja")) or 350
         loc_todos = [f for f in C.locales(pcb, prod) if num(f.get("precio_bs")) and "viejo" not in f.get("estado", "")
-                     and "agotado" not in f.get("estado", "") and "mayorista" not in (f.get("condiciones") or "").lower()]
+                     and "agotado" not in f.get("estado", "") and not es_mayorista(f.get("condiciones"))]
         for cond in ("nuevo", "usado"):
             of = C.oferta(ee, prod, cond)
             faltan = []
