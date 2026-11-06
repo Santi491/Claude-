@@ -133,3 +133,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-05,pc,ronda,18:08,18:08,en curso,empezó
 2026-11-05,pc,ronda,18:09,18:21,ok,"pedido del vigilante (falso: la ronda de las 16:00 había corrido con alerta); complemento: 7 chats nuevos T094-T100 (9 de 10), 1 automática, 1 número equivocado; oficina sin publicar (permiso)"
 2026-11-05,gerente,informe,20:15,20:17,ok,informe diario 05/11 subido; 3 tareas auto; 0 errores verificar
+2026-11-06,raspberry,vigilante,13:00,13:00,arreglado,la Mac no hizo la ronda de la mañana: la cubre la PC
