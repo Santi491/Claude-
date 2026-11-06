@@ -139,3 +139,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-06,pc,ronda,16:08,16:08,en curso,empezó
 2026-11-06,pc,ronda,16:08,16:30,alerta,"4 chats nuevos WA (10 max), 0 numeros por contactar, 0 tiendas nuevas mkt, 2 respuestas Messenger, pedidos sin movimiento; oficina regenerada pero sin publicar (sin permiso de lectura de la carpeta del repo)"
 2026-11-06,raspberry,vigilante,17:00,17:00,alerta,la PC no prendió para la ronda de las 16:00
+2026-11-06,raspberry,vigilante,18:00,18:00,arreglado,la PC no hizo la ronda de las 16:00: relanzada
