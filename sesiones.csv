@@ -135,3 +135,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-05,gerente,informe,20:15,20:17,ok,informe diario 05/11 subido; 3 tareas auto; 0 errores verificar
 2026-11-06,raspberry,vigilante,13:00,13:00,arreglado,la Mac no hizo la ronda de la mañana: la cubre la PC
 2026-11-06,pc,cubre mac,13:02,13:02,en curso,empezó
+2026-11-06,pc,cubre mac,13:03,13:25,ok,"ronda completa con sub-agentes: 2 seguimientos WA, 0 chats nuevos (sin numeros validos), 3 tiendas nuevas mkt, 3 precios, pedidos sin movimiento; oficina sin publicar (datos.js 1,1 MB, la herramienta exige leerlo entero)"

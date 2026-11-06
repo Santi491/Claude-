@@ -386,3 +386,9 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-11-05,18:19,whatsapp,TECH - Mantenimiento de Computadoras,enviado,nuevo,,"chat nuevo (T100): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2; servicio técnico, puede armar PC)"
 2026-11-05,18:20,whatsapp,Dr. Compu,recibido,respuesta,no,"respondió ""Número equivocado""; el celular de Maps no es de la tienda; sin precio, no se repite"
 2026-11-05,18:18,whatsapp,ELVYCOMP,recibido,automatica,no,"bienvenida automática (""¿Cómo podemos ayudarte?""); la consulta de precios ya estaba enviada; esperar respuesta humana"
+2026-11-06,13:04,whatsapp,TECH - Mantenimiento de Computadoras,recibido,respuesta,no,"responde (05/11 21:29): solo equipos armados, no sueltos; en la Esteban Arce se encuentran; sin precio"
+2026-11-06,13:04,whatsapp,TECH - Mantenimiento de Computadoras,enviado,respuesta,,"agradece la información, sin insistir"
+2026-11-06,13:05,whatsapp,Smash Games,recibido,respuesta,no,"responde (05/11): no vende nada de o para PC, gaming center de consolas; no se repite"
+2026-11-06,13:05,whatsapp,PC Gaming Forge,enviado,seguimiento,,"seguimiento 1 (sin respuesta humana, solo automático): pregunta si pudieron ver Ryzen 5 7600 y SSD NVMe 2TB"
+2026-11-06,13:06,whatsapp,CRISTECNOLOGY,enviado,seguimiento,,seguimiento 1 (solo automático de INNOVA TECH): pregunta si tienen Ryzen 5 7600 o SSD NVMe 2TB
+2026-11-06,13:00,whatsapp,Tecnología GabBoss,recibido,automatica,no,"05/11 respuesta ""Entendido, gracias por cotizar"" (cierre de la conversación; ya había dicho que no tiene 7600 ni SSD 2TB); no se hace seguimiento"
