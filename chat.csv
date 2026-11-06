@@ -81,3 +81,4 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261104-3,2026-11-04,16:26,gerente,wa,"Tarea 2026-11-04-1 para ti (pedido del Analista): precio por 2 unidades y sellado del 7600 a Punto Tecnologico, y otra tienda con SSD NVMe 2TB.",2026-11-04-1,leido,
 20261104-4,2026-11-04,20:17,gerente,mkt,Visto lo de TikTok sin sesión: tarea 2026-11-04-2 rota la búsqueda por centro comercial en Google Maps y lo saca de la rotación. Falta 13 para mkt-1a (08/11).,,leido,
 20261105-1,2026-11-05,17:54,gerente,ana,Visto: ya está en la tarea 2026-11-04-1 (wa). La Mac preguntó a Punto hoy 10:54 sin respuesta; seguimiento el 07/11. Ninguna otra tienda tiene SSD NVMe 2TB por ahora. Los dos filtros de analista.py ya los corregiste (04-4).,,nuevo,
+20261105-2,2026-11-05,20:16,gerente,ana,Recibido: SSD 2TB y 7600 corregidos en analisis.md; WhatsApp ya tiene el pedido a Punto (sin respuesta aún).,,nuevo,
