@@ -26,3 +26,4 @@ fecha,oficial,paralelo_compra,paralelo_venta,usado,fuente,usdt_compra,usdt_venta
 2026-11-03,12.02,12.14,12.16,12.01,"Oficial y paralelo no hallados hoy (último dato 28/10); USDT CriptoYa (Binance P2P) 07:53 BOT (comprar 12.01 / vender 11.97), usado = USDT para comprar",12.01,11.97
 2026-11-04,12.06,12.01,11.97,12.06,"BCB oficial 12.06 (Red Uno 04/11); paralelo dolarbolivia.net 04/11 (compra 12.01 / venta 11.97), 07:53 BOT; USDT CriptoYa (Binance P2P) 07:53 BOT (comprar 12.06 / vender 12.02), usado = USDT para comprar",12.06,12.02
 2026-11-05,,,,12.02,"nube 05/11; USDT CriptoYa (Binance P2P) 07:53 BOT (comprar 12.02 / vender 11.98), usado = USDT para comprar",12.02,11.98
+2026-11-06,12,12.01,11.97,12.01,"dolarbolivia.net 06/11 (página dice act. 11:52 BOT, leído 07:53); BCB oficial 12.00; USDT CriptoYa (Binance P2P) 07:53 BOT (comprar 12.01 / vender 11.98), usado = USDT para comprar",12.01,11.98
