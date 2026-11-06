@@ -1,0 +1,28 @@
+fecha,quien,tipo,inicio,fin,estado,nota
+2026-10-12,mac,ronda,10:43,10:45,ok,"Proceso local 2026-10-12 (Mac): respuestas de Cyrex, Computer Magic, Smart Cube y Compucenter; contactos a TecnoGamer y Electro-TTS (del historial de git)"
+2026-10-12,pc,ronda,16:35,17:10,ok,Ronda de la PC de la casa: respuestas y 5 consultas nuevas (de actividad.csv)
+2026-10-13,nube,revisión,07:55,07:55,ok,"Revisión diaria 2026-10-13: dólar, eBay, comparación e informe (del historial de git)"
+2026-10-13,mac,ronda,10:29,17:33,ok,"Ronda Mac 13/10: 8 tiendas nuevas consultadas por WhatsApp, respuestas de Compucenter y OverCity (del historial de git)"
+2026-10-13,pc,ronda,16:18,16:18,ok,Ronda de la PC de la casa: OverCity 7800X3D y 14400F (de actividad.csv)
+2026-10-13,gerente,informe,18:19,18:19,ok,"Gerente: informe diario 13/10, plan propuesto para el 14/10 (del historial de git)"
+2026-10-14,nube,revisión,07:55,07:55,ok,"Revisión diaria 14/10: dólar, eBay API, comparación, informe (del historial de git)"
+2026-10-14,mac,ronda,11:02,11:02,ok,"Ronda Mac 14/10 mañana: 5 seguimientos, PC Factor y Crazy Store, TecnoGamer a grupo D, Marketplace y web de Geek Store, pedidos sin cambios, (del historial de git)"
+2026-10-14,gerente,informe,20:03,20:03,ok,Gerente: informe diario 14/10 y plan para el 15/10 (del historial de git)
+2026-10-15,nube,revisión,07:54,07:54,ok,Revisión diaria 2026-10-15 (del historial de git)
+2026-10-15,mac,ronda,11:01,18:01,ok,"Ronda local de la mañana 2026-10-15 (Mac): 6 precios nuevos, 5 chats nuevos, primera cuenta de demanda, SpeedX entregado en Miami (del historial de git)"
+2026-10-15,gerente,informe,20:03,20:03,ok,"Gerente: informe diario 15/10, plan para 16/10 (del historial de git)"
+2026-10-15,pc,ronda,22:06,22:39,ok,"Ronda local de la noche (PC) 15/10: 2 respuestas de WhatsApp, rastreo USPS sin cambios, oficina regenerada (del historial de git)"
+2026-10-16,nube,revisión,07:55,07:55,ok,"Revisión diaria 16/10: dólar, eBay API, comparación, informe (del historial de git)"
+2026-10-16,mac,ronda,14:01,14:01,ok,"Ronda Mac 16/10: 4 respuestas de WhatsApp (14400F Bs 2.500 en Soft Computers), 1 chat nuevo (Punto Tecnológico), precios web de Cyrex, cuent (del historial de git)"
+2026-10-16,gerente,informe,20:03,20:03,ok,Gerente: informe diario 16/10 y plan para el 17/10 (del historial de git)
+2026-10-17,nube,revisión,07:54,07:54,ok,"Revisión diaria 17/10: dólar, eBay, comparación, informe (del historial de git)"
+2026-10-17,mac,ronda,11:56,12:00,ok,"Ronda Mac 17/10: WhatsApp (Punto Tecnológico 7600 Bs 2.850, Gamer Store 7600X), 4 seguimientos, PC Armagedon nueva (del historial de git)"
+2026-10-17,pc,ronda,13:43,13:59,ok,"Ronda de la PC 13:43 (recuperó la del viernes al prender): Punto Tecnológico, 2 chats nuevos, 3 tiendas nuevas; registrada a mano desde la Mac"
+2026-10-17,pc,ronda ligera,16:08,16:14,ok,"Ronda ligera sábado 16:08: 2 respuestas (combo 7600+DDR5 Bs 6.050, 9800X3D Bs 6.000), 2 seguimientos aprobados, pedidos sin cambios, oficina publicada"
+2026-10-17,pc,encargo,17:08,17:09,ok,"Encargo 17-5 ronda de WhatsApp: sin respuestas nuevas desde las 16:15, nada que contestar"
+2026-10-17,gerente,informe,20:15,20:17,ok,Informe diario 17/10 subido al Doc; 6 tareas auto y 2 propuestas
+2026-10-18,gerente,informe,20:16,20:17,ok,Resumen semanal 12-18/10 subido al Doc; 2 tareas auto
+2026-10-19,mac,ronda,10:35,11:19,ok,"Ronda Mac 10:35: 5 chats nuevos y 5 seguimientos, 6 precios Marketplace, 5 tiendas nuevas, 7600 confirmado USD 140,26 (traer), oficina v68"
+2026-10-19,pc,ronda,16:04,16:23,ok,"Ronda PC 16:04: 6 respuestas WA, OverCity 7600 Bs 2.800 y 265K Bs 4.100, idea 4 (mediana) hecha, USPS prueba entregado en Miami, oficina v69, 0 chats nuevos"
+2026-10-19,gerente,informe,20:15,20:16,ok,Informe diario 19/10 subido al Doc; 5 tareas auto
+2026-10-20,mac,ronda,10:35,10:53,ok,"Ronda Mac 10:35: eBay 7800X3D y 265K confirmados, Viadata respondió, 4 precios Marketplace, 0 chats nuevos, paquete de prueba anotado, guías sin rastrear (Chrome desconectado), oficina v70"

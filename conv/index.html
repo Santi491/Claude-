@@ -1,0 +1,94 @@
+<!doctype html><meta charset="utf-8"><title>Conversor Mixamo</title>
+<body style="background:#111;color:#ddd;font:13px monospace"><pre id="log">listo</pre>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/fflate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FBXLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/exporters/GLTFExporter.js"></script>
+<script>
+const log = t => { document.getElementById("log").textContent += "\n" + t; };
+const cargar = url => new Promise((ok, mal) => new THREE.FBXLoader().load(url, ok, undefined, mal));
+async function guardar(nombre, buf) {
+  const r = await fetch("/guardar?n=" + encodeURIComponent(nombre), { method: "POST", body: buf });
+  if (!r.ok) throw new Error("no se guardó " + nombre);
+}
+function info(o) {
+  const out = { meshes: [], bones: 0, clips: (o.animations || []).map(c => ({ n: c.name, d: +c.duration.toFixed(2), tracks: c.tracks.length })) };
+  const box = new THREE.Box3().setFromObject(o); out.alto = +(box.max.y - box.min.y).toFixed(1);
+  o.traverse(c => {
+    if (c.isBone) out.bones++;
+    if (c.isMesh) {
+      const mats = Array.isArray(c.material) ? c.material : [c.material];
+      out.meshes.push({ n: c.name, skinned: !!c.isSkinnedMesh, verts: c.geometry.attributes.position.count,
+        mats: mats.map(m => ({ n: m.name, t: m.type, map: m.map && m.map.image ? m.map.image.width + "x" + m.map.image.height : null,
+          normal: m.normalMap && m.normalMap.image ? m.normalMap.image.width : null, spec: m.specularMap ? 1 : 0, color: m.color && m.color.getHexString(), op: m.opacity, tr: m.transparent })) });
+    }
+  });
+  return out;
+}
+async function inspeccionar(ruta) { const o = await cargar("/mixamo/" + ruta); return info(o); }
+
+// achica una textura a máx px y la deja como imagen nueva (canvas), en JPG salvo que tenga transparencia
+function achicar(tex, max, conAlfa) {
+  if (!tex || !tex.image) return null;
+  const im = tex.image, k = Math.min(1, max / Math.max(im.width, im.height));
+  const c = document.createElement("canvas"); c.width = Math.round(im.width * k); c.height = Math.round(im.height * k);
+  c.getContext("2d").drawImage(im, 0, 0, c.width, c.height);
+  const t = new THREE.CanvasTexture(c); t.flipY = tex.flipY; t.wrapS = tex.wrapS; t.wrapT = tex.wrapT;
+  t.format = conAlfa ? THREE.RGBAFormat : THREE.RGBFormat; t.encoding = tex.encoding;
+  return t;
+}
+const esperarImagenes = async o => {
+  const ts = []; o.traverse(c => { if (c.isMesh) [].concat(c.material).forEach(m => ["map", "normalMap"].forEach(k => m[k] && ts.push(m[k]))); });
+  for (let i = 0; i < 100 && ts.some(t => !t.image || !(t.image.width || t.image.naturalWidth)); i++) await new Promise(r => setTimeout(r, 100));
+};
+// geometría más liviana: pesos en 8 bits, índices en 16 bits cuando se puede, sin normales (se recalculan al cargar)
+function aligerar(g) {
+  const w = g.attributes.skinWeight;
+  if (w) { const u = new Uint8Array(w.count * 4); for (let i = 0; i < w.count * 4; i++) u[i] = Math.round(w.array[i] * 255); g.setAttribute("skinWeight", new THREE.BufferAttribute(u, 4, true)); }
+  const si = g.attributes.skinIndex; if (si && !(si.array instanceof Uint16Array)) g.setAttribute("skinIndex", new THREE.BufferAttribute(Uint16Array.from(si.array), 4));
+  if (g.index && g.attributes.position.count < 65536 && !(g.index.array instanceof Uint16Array)) g.setIndex(new THREE.BufferAttribute(Uint16Array.from(g.index.array), 1));
+  ["color", "uv2"].forEach(k => g.deleteAttribute(k));
+}
+async function convertirPersona(ruta, salida, opts) {
+  opts = opts || {}; const max = opts.max || 1024;
+  const o = await cargar("/mixamo/" + ruta);
+  await esperarImagenes(o);
+  o.animations = [];
+  const cache = new Map(), chica = (t, px, alfa) => { if (!t) return null; const k = t.uuid + px; if (!cache.has(k)) cache.set(k, achicar(t, px, alfa)); return cache.get(k); };
+  const mcache = new Map();
+  o.traverse(c => {
+    if (!c.isMesh) return;
+    if (!opts.normales) c.geometry.deleteAttribute("normal");
+    aligerar(c.geometry);
+    const conv = m => {
+      if (mcache.has(m.uuid)) return mcache.get(m.uuid);
+      const alfa = m.transparent || (m.opacity < 1) || /hair|lash|brow/i.test(m.name);
+      const s = new THREE.MeshStandardMaterial({ name: m.name, color: m.color ? m.color.clone() : 0xffffff, roughness: opts.rough || 0.72, metalness: 0,
+        map: chica(m.map, max, alfa), normalMap: opts.sinNormal ? null : chica(m.normalMap, Math.min(512, max), false),
+        transparent: alfa, alphaTest: alfa ? 0.35 : 0, side: alfa ? THREE.DoubleSide : THREE.FrontSide, skinning: true });
+      mcache.set(m.uuid, s); return s;
+    };
+    c.material = Array.isArray(c.material) ? c.material.map(conv) : conv(c.material);
+  });
+  const glb = await new Promise(ok => new THREE.GLTFExporter().parse(o, ok, { binary: true, onlyVisible: false, embedImages: true }));
+  await guardar(salida, glb);
+  return { salida, kb: Math.round(glb.byteLength / 1024), ...info(o) };
+}
+// junta los clips de varias animaciones (sin piel) en un solo GLB con un esqueleto mínimo
+async function convertirAnimaciones(lista, salida) {
+  let base = null; const clips = [];
+  for (const [ruta, nombre] of lista) {
+    const o = await cargar("/mixamo/" + ruta);
+    const c = o.animations[0]; if (!c) { log("sin clip: " + ruta); continue; }
+    c.name = nombre;
+    // solo rotaciones de todos los huesos + la posición de la cadera (así sirve para cualquier persona)
+    c.tracks = c.tracks.filter(t => t.name.endsWith(".quaternion") || /Hips\.position$/.test(t.name));
+    clips.push(c);
+    if (!base) { base = new THREE.Group(); let hips = null; o.traverse(b => { if (b.isBone && !hips && /Hips$/.test(b.name)) hips = b; }); base.add(hips); }
+    log("clip " + nombre + " " + c.duration.toFixed(2) + "s " + c.tracks.length + " pistas");
+  }
+  const glb = await new Promise(ok => new THREE.GLTFExporter().parse(base, ok, { binary: true, animations: clips, onlyVisible: false }));
+  await guardar(salida, glb);
+  return { salida, kb: Math.round(glb.byteLength / 1024), clips: clips.map(c => c.name) };
+}
+</script>

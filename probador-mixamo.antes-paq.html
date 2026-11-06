@@ -1,0 +1,562 @@
+<meta charset="utf-8">
+<title>Personas de la oficina</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Una sola pantalla: la nave a pantalla completa, barra arriba y leyenda abajo, como la oficina de Cargo Brothers */
+:root{
+  --bg:#0c0e11; --panel:rgba(18,21,25,.86); --line:#2a2f36; --ink:#e9ebee; --muted:#8b939d; --led:#f4f6f8; --ok:#5CD69A;
+  --f-display:"Archivo","Segoe UI",system-ui,sans-serif; --f-mono:"IBM Plex Mono",Consolas,monospace;
+  color-scheme:dark;
+}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font:500 14px/1.45 var(--f-display);overflow:hidden}
+#c{position:fixed;inset:0;display:block;width:100%;height:100%;outline:none}
+.top{position:fixed;inset:0 0 auto;z-index:5;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;
+  padding-top:calc(10px + env(safe-area-inset-top,0px));padding-bottom:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  background:linear-gradient(var(--panel),rgba(18,21,25,0));pointer-events:none}
+.top>*{pointer-events:auto}
+.brand b{font:800 20px var(--f-display);font-stretch:82%;letter-spacing:.01em}
+.brand span{display:block;font:500 12px var(--f-mono);color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+button{font:600 13px var(--f-mono);color:var(--ink);background:#15191e;border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer}
+button[aria-pressed="true"]{background:var(--led);color:#0c0e11;border-color:var(--led)}
+button:focus-visible{outline:2px solid var(--led);outline-offset:2px}
+.legend{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;
+  padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-top:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  background:linear-gradient(rgba(18,21,25,0),var(--panel));font:500 12px var(--f-mono);color:var(--muted)}
+.legend b{color:var(--ink);font-weight:600}
+.keys{display:none}.keys.on{display:inline}
+kbd{font:600 11px var(--f-mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:1px 5px;color:var(--ink);background:#15191e}
+.tag{position:fixed;z-index:4;transform:translate(-50%,-100%);pointer-events:none;white-space:nowrap;font:600 11px var(--f-mono);
+  color:var(--ink);background:rgba(12,14,17,.78);border:1px solid var(--line);border-radius:6px;padding:3px 7px}
+.tag i{font-style:normal;color:var(--muted);font-weight:500}
+.tag::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-right:6px;vertical-align:0}
+.tag.idle::before{background:var(--muted)}
+.pad{position:fixed;z-index:6;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(64px + env(safe-area-inset-bottom,0px));display:none;grid-template-columns:repeat(3,48px);gap:6px}
+.pad.on{display:grid}.pad button{height:48px;padding:0;font-size:18px}
+.msg{position:fixed;inset:0;display:grid;place-items:center;font:500 15px var(--f-display);color:var(--muted);padding-inline:max(16px,env(safe-area-inset-left,0px))}
+@media (max-width:640px){.legend .long{display:none}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+
+<canvas id="c" tabindex="0" aria-label="Nave de Cargo Brothers con las personas estilizadas"></canvas>
+<div class="msg" id="msg">Cargando la nave…</div>
+<header class="top">
+  <div class="brand"><b>Cargo Brothers · personas</b><span>Personas de Mixamo con sus movimientos</span></div>
+  <div class="btns">
+    <button type="button" id="bVer" aria-pressed="true">Vista de la nave</button>
+    <button type="button" id="bSanti" aria-pressed="false">Manejar a Santi</button>
+    <button type="button" id="bLiv" aria-pressed="false" title="Para celulares o computadoras lentas">Modo liviano</button>
+  </div>
+</header>
+<div class="legend" id="legend">
+  <span><b>WhatsApp</b> teclea en su puesto</span><span><b>Analista</b> camina al puesto</span><span><b>Pedidos</b> café en el lounge</span>
+  <span><b>Finanzas</b> corre en la cinta</span><span><b>Marketplace</b> mancuernas</span><span class="long"><b>Gerente</b> conversa con Santi en su oficina</span><span class="long"><b>Rastreador eBay</b> sentado en su puesto</span>
+  <span class="keys" id="keys"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> o flechas para caminar · <kbd>Shift</kbd> correr · clic derecho y arrastrar: girar la cámara · rueda: acercar · <kbd>Esc</kbd> volver</span>
+</div>
+<div class="pad" id="pad" aria-label="Controles táctiles">
+  <span></span><button type="button" data-k="w" aria-label="Adelante">↑</button><span></span>
+  <button type="button" data-k="a" aria-label="Izquierda">←</button><button type="button" data-k="s" aria-label="Atrás">↓</button><button type="button" data-k="d" aria-label="Derecha">→</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/utils/SkeletonUtils.js"></script>
+<script>
+(function () {
+  const msg = document.getElementById("msg");
+  if (!window.THREE) { msg.textContent = "No se pudo cargar el motor 3D."; return; }
+  const cv = document.getElementById("c");
+  let R;
+  try { R = new THREE.WebGLRenderer({ canvas: cv, antialias: true }); } catch (e) { msg.textContent = "Este navegador no tiene WebGL."; return; }
+  msg.remove();
+  R.setPixelRatio(Math.min(devicePixelRatio, 2)); R.outputEncoding = THREE.sRGBEncoding;
+  R.toneMapping = THREE.ACESFilmicToneMapping; R.toneMappingExposure = 0.82;
+  R.shadowMap.enabled = true; R.shadowMap.type = THREE.PCFSoftShadowMap;
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0x0c0e11); scene.fog = new THREE.Fog(0x0c0e11, 26, 60);
+  const cam = new THREE.PerspectiveCamera(42, 1, 0.1, 200); cam.position.set(9, 15, 17);
+  const ctl = new THREE.OrbitControls(cam, cv); ctl.target.set(-3, 0.5, -1); ctl.enableDamping = true; ctl.maxPolarAngle = 1.35; ctl.minDistance = 3; ctl.maxDistance = 34;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Materiales de la nave (mismos tonos que la oficina) ---------- */
+  const M = (c, o) => new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: .6, metalness: .05 }, o || {}));
+  function marble(base, vein, size) {
+    const c = document.createElement("canvas"); c.width = c.height = size || 512; const g = c.getContext("2d");
+    g.fillStyle = base; g.fillRect(0, 0, c.width, c.height);
+    for (let k = 0; k < 26; k++) {
+      g.strokeStyle = vein; g.globalAlpha = .05 + Math.random() * .12; g.lineWidth = .6 + Math.random() * 2.2; g.beginPath();
+      let x = Math.random() * c.width, y = 0; g.moveTo(x, y);
+      while (y < c.height) { x += (Math.random() - .5) * 40; y += 20 + Math.random() * 30; g.lineTo(x, y); }
+      g.stroke();
+    }
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.encoding = THREE.sRGBEncoding; return t;
+  }
+  const floorT = marble("#c4c6c8", "#6d7176"); floorT.repeat.set(5, 5);
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(30, 22), M(0xffffff, { map: floorT, roughness: .22, metalness: .05 }));
+  floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+  const wallM = M(0x1b1e22, { roughness: .85 });
+  const box = (w, h, d, m, x, y, z, p) => { const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); b.position.set(x, y, z); b.castShadow = b.receiveShadow = true; (p || scene).add(b); return b; };
+  const cyl = (rt, rb, h, m, x, y, z, p, s) => { const b = new THREE.Mesh(new THREE.CylinderGeometry(rt, rb, h, s || 16), m); b.position.set(x, y, z); b.castShadow = b.receiveShadow = true; (p || scene).add(b); return b; };
+  box(30, 6, 0.3, wallM, 0, 3, -11); box(0.3, 6, 22, wallM, -15, 3, 0);
+  // líneas LED blancas arriba (la firma de la nave)
+  const ledM = new THREE.MeshBasicMaterial({ color: 0xf4f6f8 });
+  [-6, -1, 4].forEach(z => { box(26, 0.05, 0.08, ledM, 0, 5.4, z); });
+  box(0.08, 0.05, 20, ledM, -14.6, 5.4, 0); box(28, 0.06, 0.06, ledM, 0, 0.03, -10.82);
+  // zonas marcadas en el piso con una línea blanca fina, como el video pero con nuestro LED
+  const zoneM = new THREE.MeshBasicMaterial({ color: 0xf4f6f8, transparent: true, opacity: .55 });
+  function zone(x, z, w, d) { [[0, -d / 2, w, 0.04], [0, d / 2, w, 0.04], [-w / 2, 0, 0.04, d], [w / 2, 0, 0.04, d]].forEach(([dx, dz, a, b]) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(a, b), zoneM); m.rotation.x = -Math.PI / 2; m.position.set(x + dx, 0.012, z + dz); scene.add(m); }); }
+  function floorText(t, x, z, rot) {
+    const c = document.createElement("canvas"); c.width = 512; c.height = 96; const g = c.getContext("2d");
+    g.font = "800 64px Archivo, sans-serif"; g.fillStyle = "rgba(20,22,26,.55)"; g.textAlign = "center"; g.fillText(t, 256, 70);
+    const tx = new THREE.CanvasTexture(c); const m = new THREE.Mesh(new THREE.PlaneGeometry(3.2, 0.6), new THREE.MeshBasicMaterial({ map: tx, transparent: true }));
+    m.rotation.x = -Math.PI / 2; m.rotation.z = rot || 0; m.position.set(x, 0.013, z); scene.add(m);
+  }
+  // plano A "sala de operaciones": al fondo la oficina del Gerente y la sala de reuniones (vidrio) y el lounge;
+  // al centro las filas de escritorios mirando a la pantalla grande; a la derecha el gym; adelante la entrada
+  zone(-8.5, 0.5, 10, 9.6); floorText("OPERACIONES", -8.5, 5.9);
+  zone(5, -8.2, 8, 5.4); floorText("LOUNGE", 5, -4.9);
+  zone(10.5, 2, 6.5, 9); floorText("GYM", 10.5, 6.9);
+  zone(0, 8.4, 6, 4.4); floorText("ENTRADA", 0, 10.3);
+
+  scene.add(new THREE.HemisphereLight(0xdfe6ee, 0x15171a, .5));
+  const sun = new THREE.DirectionalLight(0xffffff, .9); sun.position.set(8, 14, 9); sun.castShadow = true;
+  sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -16, right: 16, top: 14, bottom: -14, near: 1, far: 40 }); sun.shadow.bias = -0.0004; scene.add(sun);
+  [[-8.5, 0.5], [-11, -8.2], [-3, -8.2], [5, -8], [10.5, 2], [0, 8]].forEach(([x, z]) => { const p = new THREE.PointLight(0xf4f6f8, .35, 12, 2); p.position.set(x, 4.6, z); scene.add(p); });
+
+  /* ---------- Muebles ---------- */
+  const graf = M(0x1c1f23, { roughness: .45 }), metal = M(0x2b2f35, { metalness: .6, roughness: .35 }), blackM = M(0x0f1113, { roughness: .5 });
+  const marbN = marble("#16181b", "#8a8f96"); const deskTop = M(0xffffff, { map: marbN, roughness: .2 });
+  function screenTex(color, nombre) {
+    const c = document.createElement("canvas"); c.width = 256; c.height = 150; const g = c.getContext("2d");
+    g.fillStyle = "#0b0d10"; g.fillRect(0, 0, 256, 150); g.strokeStyle = color; g.lineWidth = 3; g.beginPath();
+    let y = 110; for (let x = 10; x < 250; x += 12) { y += (Math.random() - .45) * 22; y = Math.max(28, Math.min(135, y)); x === 10 ? g.moveTo(x, y) : g.lineTo(x, y); } g.stroke();
+    g.fillStyle = "#e9ebee"; g.font = "700 17px IBM Plex Mono, monospace"; g.fillText((nombre || "7700X  USD 199,99").toUpperCase(), 12, 22);
+    const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; return t;
+  }
+  function desk(x, z, rot, nombre) {
+    const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = rot || 0; scene.add(g);
+    // cubierta a 0,68 m: es la altura a la que la animación de teclear de Mixamo apoya las manos
+    box(1.8, 0.06, 0.8, deskTop, 0, 0.65, 0, g); box(0.06, 0.62, 0.7, graf, -0.85, 0.31, 0, g); box(0.06, 0.62, 0.7, graf, 0.85, 0.31, 0, g);
+    box(0.9, 0.52, 0.04, blackM, 0, 1.01, -0.28, g);
+    const s = new THREE.Mesh(new THREE.PlaneGeometry(0.84, 0.46), new THREE.MeshBasicMaterial({ map: screenTex("#f4f6f8", nombre), toneMapped: false })); s.position.set(0, 1.01, -0.255); g.add(s);
+    box(0.06, 0.22, 0.06, metal, 0, 0.76, -0.3, g);
+    // teclado bajo la mano izquierda y mouse con su pad donde va la derecha (la animación usa el mouse un tercio del tiempo)
+    const negro = M(0x16181b); box(0.4, 0.015, 0.14, negro, -0.08, 0.6875, 0.06, g);
+    box(0.24, 0.003, 0.2, M(0x23262b, { roughness: .95 }), 0.28, 0.6815, 0.01, g);
+    const raton = new THREE.Mesh(new THREE.SphereGeometry(0.035, 14, 10), negro); raton.scale.set(0.9, 0.45, 1.4); raton.position.set(0.27, 0.688, 0.01); raton.castShadow = true; g.add(raton);
+    g.silla = silla(g, 0, 0.62, 0); return g;
+  }
+  function silla(p, x, z, rot) {
+    const ch = new THREE.Group(); ch.position.set(x, 0, z); ch.rotation.y = rot; p.add(ch);
+    box(0.5, 0.08, 0.5, graf, 0, 0.47, 0, ch); box(0.5, 0.62, 0.07, graf, 0, 0.82, 0.24, ch);
+    ruedas(ch, metal); return ch;
+  }
+  // columna y base de 5 patas con rueditas (la silla se arrima y se aleja del escritorio)
+  function ruedas(ch, mat) {
+    cyl(0.03, 0.03, 0.38, mat, 0, 0.27, 0, ch, 8); cyl(0.045, 0.05, 0.06, mat, 0, 0.09, 0, ch, 10);
+    for (let k = 0; k < 5; k++) {
+      const pata = new THREE.Group(); pata.rotation.y = k * Math.PI * 2 / 5; ch.add(pata);
+      box(0.045, 0.03, 0.26, mat, 0, 0.085, 0.13, pata).rotation.x = 0.12;
+      box(0.03, 0.04, 0.03, mat, 0, 0.06, 0.255, pata);
+      cyl(0.026, 0.026, 0.024, blackM, 0, 0.026, 0.27, pata, 12).rotation.z = Math.PI / 2;
+    }
+  }
+  // materiales cálidos para las zonas de lujo: mármol crema con vetas doradas, bronce, cromo y cuero
+  const marmolCalido = M(0xffffff, { map: (() => { const t = marble("#d9c4a5", "#6e4a22"); t.repeat.set(1, 1); return t; })(), roughness: .16, metalness: .04 });
+  const bronce = M(0xc9a45c, { metalness: .85, roughness: .28 }), cromo = M(0xd9dee3, { metalness: .95, roughness: .16 });
+  const cueroNegro = M(0x1a1512, { roughness: .42 }), cueroCognac = M(0x4a2814, { roughness: .4 });
+  // silla ejecutiva: respaldo alto acolchado, cabecera, apoyabrazos y base cromada con rueditas
+  function sillaEjecutiva(p, x, z, rot, cuero) {
+    const ch = new THREE.Group(); ch.position.set(x, 0, z); ch.rotation.y = rot; p.add(ch);
+    box(0.58, 0.1, 0.56, cuero, 0, 0.47, 0, ch); box(0.52, 0.05, 0.5, cuero, 0, 0.54, -0.01, ch);   // asiento con almohadón
+    const resp = new THREE.Group(); resp.position.set(0, 0.55, 0.27); resp.rotation.x = 0.1; ch.add(resp);
+    box(0.56, 0.78, 0.1, cuero, 0, 0.42, 0, resp); [0.18, 0.4, 0.62].forEach(y => box(0.5, 0.17, 0.04, cuero, 0, y, -0.06, resp));   // acolchado
+    box(0.42, 0.2, 0.11, cuero, 0, 0.92, 0.01, resp);                                                                              // cabecera
+    [-1, 1].forEach(s => { box(0.06, 0.05, 0.4, cuero, s * 0.32, 0.72, -0.02, ch); box(0.04, 0.22, 0.04, cromo, s * 0.32, 0.6, 0.06, ch); });
+    ruedas(ch, cromo); return ch;
+  }
+  // planta de lujo: maceta alta de mármol con aro de bronce y un arbolito con varias copas
+  function plantaLujo(x, z, alto) {
+    const g = new THREE.Group(); g.position.set(x, 0, z); scene.add(g); alto = alto || 1;
+    cyl(0.3, 0.22, 0.85, marmolCalido, 0, 0.425, 0, g, 24); cyl(0.31, 0.31, 0.04, bronce, 0, 0.8, 0, g, 24); cyl(0.27, 0.27, 0.02, M(0x2a2018), 0, 0.84, 0, g, 20);
+    cyl(0.03, 0.045, 1.1 * alto, M(0x4a3426, { roughness: .9 }), 0, 0.85 + 0.55 * alto, 0, g, 8);
+    const hoja = [M(0x2f5a3c, { roughness: .8, flatShading: true }), M(0x3e6e47, { roughness: .8, flatShading: true }), M(0x264a32, { roughness: .8, flatShading: true })];
+    [[0, 2.05, 0, .42], [.24, 1.82, .1, .3], [-.22, 1.86, -.08, .32], [.06, 1.66, -.24, .26], [-.1, 1.7, .24, .27], [.16, 2.25, -.1, .25]].forEach(([hx, hy, hz, r], i) => {
+      const h = new THREE.Mesh(new THREE.IcosahedronGeometry(r, 1), hoja[i % 3]); h.position.set(hx, 0.85 + (hy - 0.85) * alto, hz); h.castShadow = true; g.add(h); });
+  }
+  // sala de operaciones: 3 filas mirando a la pantalla grande del fondo (columnas x -12, -8.5, -5)
+  const PUESTOS = { wa: [-12, -2.5, "WhatsApp"], mkt: [-8.5, -2.5, "Marketplace"], cat: [-5, -2.5, "Catálogos"],
+    ebay: [-12, 0.5, "Rastreador eBay"], ana: [-8.5, 0.5, "Analista"], ped: [-5, 0.5, "Pedidos"],
+    fin: [-12, 3.5, "Finanzas"], ofi: [-8.5, 3.5, "Oficina"] };
+  const sillas = {}; for (const k in PUESTOS) { const [x, z, n] = PUESTOS[k]; sillas[k] = desk(x, z, 0, n).silla; }
+  // la silla del Analista queda corrida hacia atrás mientras no está sentado
+  const sillaAna = sillas.ana; sillaAna.position.z = 1.12;
+
+  // fondo: oficina del Gerente y sala de reuniones con paredes de vidrio, y una franja oscura arriba con la pantalla grande
+  const vidrioM = M(0xdfe8f0, { transparent: true, opacity: .14, roughness: .05, metalness: .1, depthWrite: false });
+  function vidrio(x1, z1, x2, z2) {   // pared de vidrio recta de (x1,z1) a (x2,z2), con perfiles arriba y abajo
+    const enX = z1 === z2, w = enX ? Math.abs(x2 - x1) : Math.abs(z2 - z1), cx = (x1 + x2) / 2, cz = (z1 + z2) / 2;
+    box(enX ? w : 0.04, 2.6, enX ? 0.04 : w, vidrioM, cx, 1.3, cz).castShadow = false;
+    box(enX ? w : 0.06, 0.06, enX ? 0.06 : w, metal, cx, 2.6, cz); box(enX ? w : 0.06, 0.06, enX ? 0.06 : w, metal, cx, 0.03, cz);
+  }
+  // frente con dos puertas (Gerencia y Reuniones)
+  vidrio(-15, -5.5, -9.6, -5.5); vidrio(-8.6, -5.5, -1.2, -5.5); vidrio(-0.2, -5.5, 1, -5.5);
+  vidrio(-7, -11, -7, -5.5); vidrio(1, -11, 1, -5.5);
+  [-9.6, -8.6, -1.2, -0.2].forEach(x => box(0.07, 2.6, 0.07, metal, x, 1.3, -5.5));
+  box(16, 1.9, 0.3, wallM, -7, 3.55, -5.5);            // franja sobre el vidrio
+  function pantallaTex() {
+    const c = document.createElement("canvas"); c.width = 1400; c.height = 300; const g = c.getContext("2d");
+    g.fillStyle = "#0b0d10"; g.fillRect(0, 0, c.width, c.height);
+    g.fillStyle = "#e9ebee"; g.font = "800 46px Archivo, sans-serif"; g.fillText("CARGO BROTHERS · MESA DE OPERACIONES", 40, 66);
+    g.font = "600 34px IBM Plex Mono, monospace";
+    // datos de la ronda del 20/10 (solo precios: nada privado)
+    [["RYZEN 7 7700X", "eBay USD 199,99", "Cbba Bs 3.480", "traer 2"], ["7700X USADO", "eBay USD 169,99", "sin precio local", "esperar"], ["", "", "", ""]]
+      .forEach((r, i) => r.forEach((t, j) => { g.fillStyle = j === 3 ? "#9fe2b5" : "#c9ced4"; g.fillText(t, 40 + j * 340, 140 + i * 56); }));
+    g.strokeStyle = "#f4f6f8"; g.globalAlpha = .25; g.lineWidth = 2; g.strokeRect(20, 92, c.width - 40, 186);
+    const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; return t;
+  }
+  const pantalla = new THREE.Mesh(new THREE.PlaneGeometry(7, 1.5), new THREE.MeshBasicMaterial({ map: pantallaTex(), toneMapped: false }));
+  pantalla.position.set(-8.5, 3.55, -5.33); scene.add(pantalla);
+  floorText("SANTI", -11, -6.2); floorText("REUNIONES", -3, -6.2);
+  const alfombra = (x, z, w, d, color, borde) => { const a = new THREE.Mesh(new THREE.PlaneGeometry(w, d), M(color, { roughness: .95 })); a.rotation.x = -Math.PI / 2; a.position.set(x, 0.006, z); a.receiveShadow = true; scene.add(a);
+    if (borde) { const b = new THREE.Mesh(new THREE.PlaneGeometry(w + 0.12, d + 0.12), M(borde, { roughness: .6, metalness: .3 })); b.rotation.x = -Math.PI / 2; b.position.set(x, 0.004, z); scene.add(b); } };
+
+  // oficina de Santi (como en la oficina real): escritorio amplio de mármol con borde de bronce, tres pantallas
+  // (la del centro recta y las de los costados giradas hacia él), silla ejecutiva de cuero y sus detalles
+  alfombra(-11, -8.6, 5.2, 3.6, 0x24201c, 0x8a6d3e);
+  { const g = new THREE.Group(); g.position.set(-11, 0, -8.7); g.rotation.y = Math.PI; scene.add(g);
+    box(3.4, 0.08, 1.2, deskTop, 0, 0.74, 0, g); box(3.42, 0.025, 1.22, bronce, 0, 0.69, 0, g);
+    box(3.3, 0.66, 0.06, deskTop, 0, 0.36, -0.55, g); [-1.65, 1.65].forEach(x => box(0.08, 0.7, 1.15, deskTop, x, 0.35, 0, g));
+    const pant = (x, rot, nombre) => { const p = new THREE.Group(); p.position.set(x, 0, -0.32); p.rotation.y = rot; g.add(p);
+      box(0.98, 0.58, 0.04, blackM, 0, 1.17, 0, p); const s = new THREE.Mesh(new THREE.PlaneGeometry(0.93, 0.53), new THREE.MeshBasicMaterial({ map: screenTex("#9fe2b5", nombre), toneMapped: false })); s.position.set(0, 1.17, 0.022); p.add(s);
+      box(0.05, 0.3, 0.05, cromo, 0, 0.92, -0.03, p); box(0.3, 0.015, 0.2, cromo, 0, 0.785, -0.02, p); };
+    pant(0, 0, "Hoy en Cargo Brothers"); pant(-1.02, 0.38, "Qué conviene traer"); pant(1.02, -0.38, "Agentes");
+    box(0.5, 0.018, 0.16, M(0x16181b), 0, 0.787, 0.18, g); const r = new THREE.Mesh(new THREE.SphereGeometry(0.035, 14, 10), M(0x16181b)); r.scale.set(0.9, 0.45, 1.4); r.position.set(0.4, 0.795, 0.2); g.add(r);
+    cyl(0.05, 0.12, 0.3, bronce, -1.35, 0.93, 0.25, g, 20); const copa = new THREE.Mesh(new THREE.SphereGeometry(0.1, 16, 10, 0, Math.PI * 2, 0, Math.PI / 2), bronce); copa.rotation.x = Math.PI; copa.position.set(-1.35, 1.17, 0.25); g.add(copa);   // trofeo
+    cyl(0.045, 0.04, 0.11, M(0xf4f6f8), 1.3, 0.835, 0.3, g, 14);   // taza
+    box(0.22, 0.03, 0.3, M(0x2b2420), 1.0, 0.795, 0.25, g);         // libreta de cuero
+    sillaEjecutiva(g, 0, 0.95, 0, cueroNegro);
+  }
+  // mueble bajo detrás del escritorio con luz cálida y una planta
+  box(4.2, 0.6, 0.45, deskTop, -11, 0.3, -10.6); box(4.2, 0.02, 0.02, M(0xffd9a0, { emissive: 0xffc070, emissiveIntensity: 1.2 }), -11, 0.61, -10.37);
+  plantaLujo(-13.9, -10.3, 0.8);
+
+  // sala de reuniones: mesa ovalada de mármol cálido con borde de bronce sobre dos pies esculpidos, 8 sillas ejecutivas
+  // de cuero cognac y una lámpara colgante de luz cálida
+  alfombra(-3, -8.3, 6.2, 3.8, 0x2a2420, 0x8a6d3e);
+  { const top = cyl(1, 1, 0.07, marmolCalido, -3, 0.75, -8.3, scene, 48); top.scale.set(2.1, 1, 0.8);
+    const canto = cyl(1, 1, 0.03, bronce, -3, 0.705, -8.3, scene, 48); canto.scale.set(2.12, 1, 0.82);
+    [-4.1, -1.9].forEach(x => { cyl(0.16, 0.34, 0.68, marmolCalido, x, 0.34, -8.3, scene, 24); cyl(0.36, 0.36, 0.03, bronce, x, 0.015, -8.3, scene, 24); });
+    [-4.5, -3, -1.5].forEach(x => { sillaEjecutiva(scene, x, -9.45, Math.PI, cueroCognac); sillaEjecutiva(scene, x, -7.15, 0, cueroCognac); });
+    sillaEjecutiva(scene, -5.55, -8.3, -Math.PI / 2, cueroCognac); sillaEjecutiva(scene, -0.45, -8.3, Math.PI / 2, cueroCognac);
+    cyl(0.01, 0.01, 2.1, bronce, -3, 4.0, -8.3, scene, 6); const lamp = cyl(1, 1, 0.08, bronce, -3, 2.95, -8.3, scene, 40); lamp.scale.set(1.6, 1, 0.3);
+    const brillo = cyl(1, 1, 0.01, new THREE.MeshBasicMaterial({ color: 0xffe2b0 }), -3, 2.905, -8.3, scene, 40); brillo.scale.set(1.55, 1, 0.27);
+    const calida = new THREE.PointLight(0xffc98a, .7, 7, 2); calida.position.set(-3, 2.7, -8.3); scene.add(calida); }
+
+  // entrada: mostrador de mármol cálido con franja de bronce y dos árboles en macetas altas
+  box(2.6, 1.0, 0.6, marmolCalido, 0, 0.5, 8.2); box(2.64, 0.04, 0.64, bronce, 0, 0.82, 8.2); box(2.8, 0.05, 0.75, deskTop, 0, 1.03, 8.2);
+  plantaLujo(-3.2, 9.1); plantaLujo(3.2, 9.1);
+
+  // lounge: sofá seccional con almohadones de cuero cognac y cojines, sillón, mesa redonda de mármol, alfombra y lámpara de pie
+  alfombra(4.3, -7.6, 5.4, 3.6, 0x2b2622, 0x8a6d3e);
+  const tela = M(0x34383e, { roughness: .95 });
+  const sofa = new THREE.Group(); sofa.position.set(3.5, 0, -8.2); scene.add(sofa);
+  box(3.2, 0.3, 0.95, tela, 0, 0.15, 0, sofa); box(3.2, 0.72, 0.24, tela, 0, 0.5, -0.38, sofa);
+  box(0.24, 0.55, 0.95, tela, -1.48, 0.3, 0, sofa);   // a la derecha sigue el chaise, sin brazo en medio
+  [-0.9, 0, 0.9].forEach(x => { box(0.86, 0.12, 0.72, cueroCognac, x, 0.36, 0.08, sofa); box(0.84, 0.42, 0.14, cueroCognac, x, 0.68, -0.22, sofa).rotation.x = -0.12; });
+  [[-1.15, 0x8a6d3e], [1.12, 0xe9dfd0], [0.75, 0x2f5a3c]].forEach(([x, c], i) => { const k = box(0.36, 0.34, 0.1, M(c, { roughness: .9 }), x, 0.6, -0.08, sofa); k.rotation.set(-0.25, i ? -0.2 : 0.25, i ? 0.12 : -0.1); });
+  // chaise a la derecha
+  box(0.95, 0.3, 1.4, tela, 2.07, 0.15, 0.7, sofa); box(0.86, 0.12, 1.3, cueroCognac, 2.07, 0.36, 0.72, sofa); box(0.24, 0.55, 1.4, tela, 2.55, 0.3, 0.7, sofa);
+  // mesa redonda de mármol con pie de bronce
+  cyl(0.55, 0.55, 0.05, marmolCalido, 3.3, 0.42, -6.6, scene, 40); cyl(0.07, 0.2, 0.4, bronce, 3.3, 0.2, -6.6, scene, 16);
+  cyl(0.07, 0.06, 0.18, M(0xf4f6f8), 3.5, 0.53, -6.5, scene, 12); box(0.3, 0.04, 0.22, M(0x8a6d3e), 3.1, 0.465, -6.7);
+  // sillón individual mirando al sofá
+  { const s = new THREE.Group(); s.position.set(1.6, 0, -6.4); s.rotation.y = -0.8; scene.add(s);
+    box(0.9, 0.3, 0.85, cueroCognac, 0, 0.2, 0, s); box(0.9, 0.55, 0.2, cueroCognac, 0, 0.6, 0.33, s).rotation.x = 0.15; [-0.42, 0.42].forEach(x => box(0.14, 0.32, 0.85, cueroCognac, x, 0.46, 0, s));
+    [-0.35, 0.35].forEach(x => [-0.3, 0.3].forEach(z => cyl(0.02, 0.015, 0.06, bronce, x, 0.03, z, s, 6))); }
+  // lámpara de pie de bronce con pantalla cálida
+  cyl(0.18, 0.18, 0.03, bronce, 1.4, 0.015, -9.7, scene, 20); cyl(0.015, 0.015, 1.6, bronce, 1.4, 0.8, -9.7, scene, 6);
+  cyl(0.18, 0.24, 0.3, M(0xf1e4cc, { emissive: 0xffc98a, emissiveIntensity: .5, roughness: .9 }), 1.4, 1.68, -9.7, scene, 20);
+  box(0.55, 1.4, 0.5, blackM, 6.3, 0.7, -9.3); box(0.4, 0.08, 0.06, ledM, 6.3, 1.1, -9.04);
+  // gym: cinta, rack de mancuernas, banco
+  const tread = new THREE.Group(); tread.position.set(9, 0, -0.5); scene.add(tread);
+  box(0.8, 0.12, 1.9, blackM, 0, 0.12, 0, tread); box(0.66, 0.02, 1.7, M(0x2a2d31, { roughness: .95 }), 0, 0.19, 0, tread);
+  box(0.06, 1.15, 0.06, metal, -0.36, 0.7, -0.85, tread); box(0.06, 1.15, 0.06, metal, 0.36, 0.7, -0.85, tread); box(0.8, 0.18, 0.2, blackM, 0, 1.28, -0.85, tread);
+  box(1.8, 0.06, 0.4, metal, 12, 0.6, 1.2); box(0.06, 0.6, 0.4, metal, 11.15, 0.3, 1.2); box(0.06, 0.6, 0.4, metal, 12.85, 0.3, 1.2);
+  for (let k = 0; k < 5; k++) { const x = 11.3 + k * 0.35; cyl(0.07, 0.07, 0.3, blackM, x, 0.72, 1.2, scene, 10).rotation.z = Math.PI / 2; }
+
+  /* ---------- Choques: Santi no atraviesa paredes, vidrios ni muebles ---------- */
+  // cada mueble aporta su caja vista desde arriba; se ignoran lo plano del piso (alfombras, textos, líneas) y lo que
+  // está arriba de la cabeza (LED, franja de la pantalla, lámpara colgante). La silla del Analista se mide en cada cuadro porque se mueve.
+  const solidos = [], movil = new Set(); sillaAna.traverse(o => movil.add(o));
+  scene.updateMatrixWorld(true);
+  { const bb = new THREE.Box3();
+    scene.traverse(o => { if (!o.isMesh || movil.has(o)) return; bb.setFromObject(o);
+      if (bb.max.y - bb.min.y < 0.05 || bb.min.y > 1.9) return;
+      solidos.push({ x0: bb.min.x, x1: bb.max.x, z0: bb.min.z, z1: bb.max.z }); }); }
+  const cajaSilla = new THREE.Box3();
+  function choca(x, z, otros) {
+    const r = 0.25, dentro = b => x > b.x0 - r && x < b.x1 + r && z > b.z0 - r && z < b.z1 + r;
+    if (solidos.some(dentro)) return true;
+    cajaSilla.setFromObject(sillaAna); if (dentro({ x0: cajaSilla.min.x, x1: cajaSilla.max.x, z0: cajaSilla.min.z, z1: cajaSilla.max.z })) return true;
+    return otros.some(([px, pz]) => Math.hypot(x - px, z - pz) < 0.55);   // las demás personas
+  }
+
+  /* ---------- Personas realistas (modelos de Mixamo convertidos a GLB) ---------- */
+  const tagsEl = [], tmp = new THREE.Vector3(), tmp2 = new THREE.Vector3();
+  const loader = new THREE.GLTFLoader();
+  /* Modo liviano: celulares y computadoras con poca memoria (o si la página va lenta) cargan 2 personas en vez de 6,
+     sin sombras y con menos resolución. La elección se recuerda en este navegador. */
+  let guardado = null; try { guardado = localStorage.getItem("cb-modo"); } catch (e) {}
+  const auto = matchMedia("(pointer: coarse)").matches || (navigator.deviceMemory && navigator.deviceMemory <= 4) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+  const LIVIANO = guardado ? guardado === "liviano" : !!auto;
+  function aliviar() { R.setPixelRatio(1); R.shadowMap.enabled = false; sun.castShadow = false; scene.traverse(o => { if (o.material) [].concat(o.material).forEach(m => m.needsUpdate = true); }); size2(); }
+  function size2() { R.setSize(innerWidth, innerHeight, false); }
+  if (LIVIANO) aliviar();
+  const bLiv = document.getElementById("bLiv"); bLiv.setAttribute("aria-pressed", LIVIANO);
+  bLiv.onclick = () => { try { localStorage.setItem("cb-modo", LIVIANO ? "completo" : "liviano"); } catch (e) {} location.reload(); };
+  const cargar = url => new Promise((ok, mal) => loader.load(url, ok, undefined, mal));
+  const avance = document.createElement("div"); avance.className = "msg"; avance.textContent = "Cargando a las personas…"; document.body.appendChild(avance);
+  const mug = () => { const g = new THREE.Group(); cyl(4, 3.5, 9, M(0xf4f6f8), 0, 0, 0, g, 12); return g; };   // en centímetros (la mano está en la escala de Mixamo)
+  const dumbbell = () => { const g = new THREE.Group(); cyl(1.2, 1.2, 22, metal, 0, 0, 0, g, 6).rotation.z = Math.PI / 2; [-9, 9].forEach(x => cyl(4, 4, 5, blackM, x, 0, 0, g, 10).rotation.z = Math.PI / 2); return g; };
+
+  function preparar(obj) {
+    obj.scale.setScalar(0.01);   // Mixamo trabaja en centímetros
+    obj.traverse(c => {
+      if (c.isMesh) {
+        if (!c.geometry.attributes.normal) c.geometry.computeVertexNormals();
+        c.castShadow = true; c.receiveShadow = true; c.frustumCulled = false;
+        [].concat(c.material).forEach(m => { m.envMapIntensity = 0.6; if (m.map) m.map.anisotropy = 4; });
+      }
+    });
+    return obj;
+  }
+  function hueso(obj, nombre) { let b = null; obj.traverse(c => { if (!b && c.isBone && c.name.endsWith(nombre)) b = c; }); return b; }
+
+  (async () => {
+    let gl;
+    try {
+      const lista = LIVIANO ? ["animaciones", "p1", "p5"] : ["animaciones", "p1", "p2", "p3", "p4", "p5", "p6"];
+      const [anims, ...ps] = await Promise.all(lista.map(n => cargar(`personas/${n}.json`)));
+      gl = { clips: Object.fromEntries(anims.animations.map(c => [c.name, c])), ps: ps.map(p => p.scene) };
+    } catch (e) { avance.textContent = "No se pudieron cargar las personas."; return; }
+    avance.remove();
+    const clips = gl.clips;
+    // Mixamo nombra los huesos con un prefijo distinto en cada descarga (mixamorig, mixamorig1, mixamorig9...):
+    // cada animación se adapta al prefijo de la persona que la usa, si no la animación movería a la persona entera
+    const porPref = {};
+    // transiciones (sentarse, pararse...): la cadera se desplaza de verdad, así que no se centran ni se recortan.
+    // "ini": la animación arranca en el lugar de la persona; "fin": termina en él
+    const TRANS = { sentarse: "ini", pararse: "fin", a_teclear: "medio", de_teclear: "medio" };
+    // cuánto se va hacia atrás la cadera al sentarse (en cm): con esto las animaciones sentadas se corren
+    // para que la persona no cambie de lugar entre estar de pie y sentada
+    const RETRO = (() => { const t = clips.sentarse && clips.sentarse.tracks.find(t => /Hips\.position$/.test(t.name)); if (!t) return [0, 0];
+      const v = t.values, L = v.length; return [v[L - 3] - v[0], v[L - 1] - v[2]]; })();
+    function clipPara(nom, pref, corre) {
+      const key = nom + "|" + pref + (corre ? "|corre" : ""); if (porPref[key]) return porPref[key];
+      const c = clips[nom].clone(), tipo = TRANS[nom] || "medio";
+      c.tracks.forEach(t => { t.name = t.name.replace(/^mixamorig\d*/, pref); });
+      const hp = c.tracks.find(t => /Hips\.position$/.test(t.name));
+      if (hp) {
+        hp.values = hp.values.slice();
+        const v = hp.values, n = v.length / 3, m = 3 * (n >> 1);
+        // algunas animaciones traen un primer cuadro de pie: se reemplaza por el segundo en todas las pistas
+        if (!TRANS[nom] && n > 2 && Math.abs(v[1] - v[m + 1]) > 20) c.tracks.forEach(t => { const k = t.getValueSize(); for (let q = 0; q < k; q++) t.values[q] = t.values[k + q]; });
+        // la cadera queda centrada en el lugar de la persona (la del café venía corrida 2,7 m)
+        const r = tipo === "ini" ? 0 : tipo === "fin" ? v.length - 3 : m;
+        const x0 = v[r] - (corre ? RETRO[0] : 0), z0 = v[r + 2] - (corre ? RETRO[1] : 0);
+        for (let q = 0; q < v.length; q += 3) { v[q] -= x0; v[q + 2] -= z0; }
+      }
+      return (porPref[key] = c);
+    }
+    // las pistas de posición de la cadera vienen de la persona con la que se bajó la animación: sirven para todas
+    const usados = new Set();
+    function persona(i, clon) {
+      // en modo liviano hay un hombre (p1) y una mujer (p5) y todos son copias de ellos
+      if (LIVIANO) { const j = i >= 4 ? 1 : 0; clon = clon || usados.has(j); usados.add(j); i = j; }
+      const base = gl.ps[i], o = preparar(clon ? THREE.SkeletonUtils.clone(base) : base);
+      // "lugar" se ubica en la nave; adentro, el modelo se gira para que el cuerpo mire hacia adelante del lugar
+      const lugar = new THREE.Group(); scene.add(lugar); lugar.add(o); o.position.set(0, 0, 0); o.rotation.set(0, 0, 0);
+      const mixer = new THREE.AnimationMixer(o), acts = {}, giro = {};
+      const hips = hueso(o, "Hips"), pref = hips ? hips.name.replace(/Hips$/, "") : "mixamorig";
+      const piernaI = hueso(o, "LeftUpLeg"), piernaD = hueso(o, "RightUpLeg");
+      const P = { root: lugar, model: o, mixer, acts, actual: null, head: hueso(o, "Head"), manoD: hueso(o, "RightHand"), manoI: hueso(o, "LeftHand") };
+      // cada modelo de Mixamo trae el esqueleto orientado a su manera: se mide hacia dónde mira el cuerpo
+      // (de la cadera izquierda a la derecha, girado 90°) en la mitad de cada animación y se compensa
+      const up = new THREE.Vector3(0, 1, 0), a1 = new THREE.Vector3(), a2 = new THREE.Vector3(), inv = new THREE.Matrix4();
+      // mira hacia dónde apunta el cuerpo en 30 momentos de la animación; se queda con el tramo más largo en que mira
+      // siempre para el mismo lado (la del café gira 166° después de 2 s) y gira el modelo para que ese tramo mire adelante
+      function preparar2(clip) {
+        if (!piernaI || !piernaD) return { clip, giro: 0 };
+        const mx = new THREE.AnimationMixer(o), ac = mx.clipAction(clip); ac.play();
+        o.rotation.y = 0; const N = 30, ys = [];
+        for (let k = 0; k < N; k++) {
+          ac.time = clip.duration * (k + 0.5) / N; mx.update(0); lugar.updateMatrixWorld(true); inv.copy(lugar.matrixWorld).invert();
+          piernaI.getWorldPosition(a1).applyMatrix4(inv); piernaD.getWorldPosition(a2).applyMatrix4(inv);
+          const f = new THREE.Vector3().crossVectors(up, a2.sub(a1)); ys.push(Math.atan2(f.x, f.z));
+        }
+        ac.stop(); mx.uncacheRoot(o);
+        const dif = (x, y) => Math.abs(Math.atan2(Math.sin(x - y), Math.cos(x - y)));
+        let best = [0, 0];
+        for (let i = 0; i < N; i++) { let j = i; while (j + 1 < N && dif(ys[j + 1], ys[i]) < 0.6) j++; if (j - i > best[1] - best[0]) best = [i, j]; }
+        // en las transiciones el cuerpo se tuerce a la mitad (al sentarse gira ~12°): se mide solo al empezar y al terminar
+        const tramo = TRANS[clip.name] ? [ys[0], ys[N - 1]] : ys.slice(best[0], best[1] + 1), giro = -Math.atan2(tramo.reduce((t, y) => t + Math.sin(y), 0), tramo.reduce((t, y) => t + Math.cos(y), 0));
+        let c2 = clip;
+        if (best[1] - best[0] < N - 1 && !TRANS[clip.name]) {
+          const fps = 30, t0 = clip.duration * best[0] / N, t1 = clip.duration * (best[1] + 1) / N;
+          c2 = THREE.AnimationUtils.subclip(clip, clip.name, Math.floor(t0 * fps), Math.ceil(t1 * fps), fps);
+        }
+        return { clip: c2, giro };
+      }
+      const prep = {};
+      // corre: la versión de la animación con la cadera corrida hacia atrás (sentado sin cambiar de lugar)
+      P.play = (n, fade, corre) => {
+        const key = corre ? n + "*" : n;
+        if (P.actual === key) return;
+        const pr = prep[key] || (prep[key] = preparar2(clipPara(n, pref, corre)));
+        o.rotation.y = pr.giro;
+        const a = acts[key] || (acts[key] = mixer.clipAction(pr.clip));
+        if (TRANS[n]) { a.setLoop(THREE.LoopOnce, 1); a.clampWhenFinished = true; }
+        a.reset().setEffectiveWeight(1).fadeIn(fade == null ? 0.35 : fade).play();
+        if (P.actual && acts[P.actual]) acts[P.actual].fadeOut(fade == null ? 0.35 : fade);
+        P.actual = key;
+      };
+      P.dur = () => acts[P.actual].getClip().duration;
+      return P;
+    }
+    function agente(i, nombre, que, x, z, ry, anim, clon) {
+      const P = persona(i, clon); P.root.position.set(x, 0, z); P.root.rotation.y = ry; P.play(anim, 0);
+      // cada uno arranca en un momento distinto de su animación, así no se mueven todos igual
+      P.acts[anim].time = Math.random() * P.acts[anim].getClip().duration;
+      const el = document.createElement("div"); el.className = "tag"; el.innerHTML = `${nombre} <i>· ${que}</i>`; document.body.appendChild(el); P.tag = el; tagsEl.push(P);
+      return P;
+    }
+    // sillas a 0,47 m y escritorios a 0,68 m: las animaciones sentadas de Mixamo calzan con esas alturas
+    const wa = agente(4, "WhatsApp", "teclea en su puesto", -12, -1.95, Math.PI, "teclear");
+    const ana = agente(2, "Analista", "camina a su puesto", 1.8, 9.6, Math.PI, "caminar");
+    const santi = agente(1, "Santi", "tú", -9.1, -6.7, -2.26, "hablar2", true);
+    const reu = [agente(4, "Rastreador eBay", "sentado en su puesto", -12, 1.05, Math.PI, "sentado", true)];
+    const ped = agente(5, "Pedidos", "café en el lounge", 3.0, -8.05, 0, "cafe");
+    { const m = mug(); m.position.set(0, 8, 4); ped.manoD && ped.manoD.add(m); }
+    const fin = agente(3, "Finanzas", "corre en la cinta", 9, -0.4, Math.PI, "cinta"); fin.root.position.y = 0.19;
+    const mkt = agente(1, "Marketplace", "mancuernas", 12, 2.6, Math.PI, "pesas");
+    [mkt.manoD, mkt.manoI].forEach(h => { if (h) { const d = dumbbell(); d.position.set(0, 9, 2); h.add(d); } });
+    const ger = agente(0, "Gerente", "conversa con Santi", -10.2, -7.6, 0.885, "hablar");
+
+    // ruta del Analista: entra por el pasillo, se sienta a teclear un rato y vuelve a salir
+    // llega por el costado del escritorio (la silla está corrida atrás) y se para delante de la silla
+    const AFUERA = 1.07, ADENTRO = AFUERA - 0.5;   // dónde está de pie / sentado ya acomodado frente al teclado
+    const rutaAna = [[1.8, 9.6], [1.8, 6.2], [-6.9, 2.3], [-6.9, AFUERA], [-8.5, AFUERA]];
+    let anaFase = "camina", anaI = 0, anaT = 0, anaVa = "puesto";
+    const anaDice = t => { ana.tag.innerHTML = `Analista <i>· ${t}</i>`; };
+    // acomodarse: la silla y el Analista se arriman al escritorio (o se alejan) mientras dura la animación
+    const arrimar = t => { const s = t * t * (3 - 2 * t); ana.root.position.z = AFUERA + (ADENTRO - AFUERA) * s; sillaAna.position.z = 1.12 - 0.5 * s; };
+
+    /* ---------- Modo teclado: manejar a Santi ---------- */
+    const keys = {}; let modo = "ver";
+    const bVer = document.getElementById("bVer"), bSanti = document.getElementById("bSanti"), keysEl = document.getElementById("keys"), pad = document.getElementById("pad");
+    const touch = matchMedia("(pointer: coarse)").matches;
+    function setModo(m) {
+      modo = m; bVer.setAttribute("aria-pressed", m === "ver"); bSanti.setAttribute("aria-pressed", m === "santi");
+      keysEl.classList.toggle("on", m === "santi"); pad.classList.toggle("on", m === "santi" && touch);
+      ctl.enabled = m === "ver"; if (m === "santi") cv.focus(); else santi.play("hablar2");
+    }
+    bVer.onclick = () => setModo("ver"); bSanti.onclick = () => setModo("santi");
+    addEventListener("keydown", e => { if (e.key === "Escape") setModo("ver"); keys[e.key.toLowerCase()] = true; if (modo === "santi" && /^(arrow|w|a|s|d| )/i.test(e.key)) e.preventDefault(); });
+    addEventListener("keyup", e => { keys[e.key.toLowerCase()] = false; });
+    pad.querySelectorAll("[data-k]").forEach(b => { const k = b.dataset.k; const on = v => e => { e.preventDefault(); keys[k] = v; };
+      b.addEventListener("pointerdown", on(true)); b.addEventListener("pointerup", on(false)); b.addEventListener("pointerleave", on(false)); });
+    const camOff = new THREE.Vector3(0, 2.6, 4.4);
+    // con Santi: clic derecho (o un dedo en el celular) y arrastrar gira la cámara a su alrededor; la rueda acerca y aleja
+    const orb = { giro: 0, alto: Math.atan2(2.6, 4.4), dist: Math.hypot(2.6, 4.4), arrastra: null };
+    const ponerOff = () => camOff.set(Math.sin(orb.giro) * Math.cos(orb.alto), Math.sin(orb.alto), Math.cos(orb.giro) * Math.cos(orb.alto)).multiplyScalar(orb.dist);
+    cv.addEventListener("contextmenu", e => { if (modo === "santi") e.preventDefault(); });
+    cv.addEventListener("pointerdown", e => {
+      if (modo !== "santi" || !(e.button === 2 || e.pointerType === "touch")) return;
+      orb.arrastra = { id: e.pointerId, x: e.clientX, y: e.clientY }; try { cv.setPointerCapture(e.pointerId); } catch (_) {} e.preventDefault();
+    });
+    cv.addEventListener("pointermove", e => {
+      const a = orb.arrastra; if (!a || a.id !== e.pointerId) return;
+      orb.giro -= (e.clientX - a.x) * 0.006; orb.alto = THREE.MathUtils.clamp(orb.alto + (e.clientY - a.y) * 0.004, 0.08, 1.25);
+      a.x = e.clientX; a.y = e.clientY; ponerOff();
+    });
+    const soltar = e => { if (orb.arrastra && orb.arrastra.id === e.pointerId) orb.arrastra = null; };
+    cv.addEventListener("pointerup", soltar); cv.addEventListener("pointercancel", soltar);
+    cv.addEventListener("wheel", e => { if (modo !== "santi") return; e.preventDefault(); orb.dist = THREE.MathUtils.clamp(orb.dist * (e.deltaY > 0 ? 1.1 : 0.9), 2.5, 12); ponerOff(); }, { passive: false });
+
+    /* ---------- Bucle ---------- */
+    function size() { const w = innerWidth, h = innerHeight; R.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); }
+    addEventListener("resize", size); size();
+    let last = performance.now();
+    const medida = { n: 0, t: 0, listo: false };
+    const aviso = document.createElement("div"); aviso.className = "tag"; aviso.hidden = true; aviso.style.cssText = "left:50%;top:auto;bottom:70px;transform:translateX(-50%)";
+    aviso.textContent = "La página iba lenta: activé el modo liviano"; document.body.appendChild(aviso);
+    const todos = [wa, ana, ped, fin, mkt, ger, santi, ...reu];
+    function frame(now) {
+      const dt = Math.min(0.05, (now - last) / 1000); last = now; const k = 1 - Math.exp(-dt * 8);
+      // Analista: camina a su escritorio, se da vuelta, se sienta, se arrima y teclea; después se aleja, se levanta,
+      // vuelve a la entrada, espera de pie y repite
+      anaT += dt;
+      if (anaFase === "camina") {
+        const [x, z] = rutaAna[anaI + 1], dx = x - ana.root.position.x, dz = z - ana.root.position.z, d = Math.hypot(dx, dz), v = 1.3 * dt;
+        if (d < v) {
+          ana.root.position.set(x, 0, z); anaI++;
+          if (anaI >= rutaAna.length - 1) {
+            anaT = 0;
+            if (anaVa === "puesto") { anaFase = "gira"; ana.play("quieto", 0.3); }
+            else { anaFase = "espera"; ana.play("quieto", 0.4); anaDice("espera en la entrada"); }
+          }
+        } else { ana.root.position.x += dx / d * v; ana.root.position.z += dz / d * v; let dr = Math.atan2(dx, dz) - ana.root.rotation.y; dr = Math.atan2(Math.sin(dr), Math.cos(dr)); ana.root.rotation.y += dr * k; }
+      } else if (anaFase === "gira") {
+        // de espaldas a la silla, mirando al escritorio
+        let dr = Math.PI - ana.root.rotation.y; dr = Math.atan2(Math.sin(dr), Math.cos(dr)); ana.root.rotation.y += dr * k * 1.5;
+        if (anaT > 0.7) { ana.root.rotation.y = Math.PI; anaFase = "sienta"; anaT = 0; ana.play("sentarse", 0.3); anaDice("se sienta"); }
+      } else if (anaFase === "sienta") {
+        if (anaT > ana.dur() - 0.2) { anaFase = "arrima"; anaT = 0; ana.play("a_teclear", 0.2, true); }
+      } else if (anaFase === "arrima") {
+        arrimar(Math.min(1, anaT / ana.dur()));
+        if (anaT > ana.dur() - 0.15) { arrimar(1); anaFase = "teclea"; anaT = 0; ana.play("teclear", 0.3, true); anaDice("teclea en su puesto"); }
+      } else if (anaFase === "teclea") {
+        if (anaT > 10) { anaFase = "aleja"; anaT = 0; ana.play("de_teclear", 0.3, true); anaDice("se levanta"); }
+      } else if (anaFase === "aleja") {
+        arrimar(1 - Math.min(1, anaT / ana.dur()));
+        if (anaT > ana.dur() - 0.15) { arrimar(0); anaFase = "levanta"; anaT = 0; ana.play("pararse", 0.25); }
+      } else if (anaFase === "levanta") {
+        if (anaT > ana.dur() - 0.2) { anaFase = "camina"; anaI = 0; rutaAna.reverse(); anaVa = "entrada"; ana.play("caminar", 0.4); anaDice("vuelve a la entrada"); }
+      } else if (anaT > 4) { anaFase = "camina"; anaI = 0; rutaAna.reverse(); anaVa = "puesto"; ana.play("caminar", 0.5); anaDice("camina a su puesto"); }
+      // Santi
+      if (modo === "santi") {
+        const fx = (keys.d || keys.arrowright ? 1 : 0) - (keys.a || keys.arrowleft ? 1 : 0), fz = (keys.s || keys.arrowdown ? 1 : 0) - (keys.w || keys.arrowup ? 1 : 0);
+        const run = keys.shift, sp = (run ? 3.4 : 1.45) * dt;
+        if (fx || fz) {
+          cam.getWorldDirection(tmp); tmp.y = 0; tmp.normalize(); tmp2.set(-tmp.z, 0, tmp.x);
+          const mx = tmp2.x * fx - tmp.x * fz, mz = tmp2.z * fx - tmp.z * fz, n = Math.hypot(mx, mz) || 1;
+          // se prueba cada eje por separado: si choca de frente, igual se desliza a lo largo de la pared o del escritorio
+          const otros = todos.filter(P => P !== santi && P.head).map(P => { P.head.getWorldPosition(tmp2); return [tmp2.x, tmp2.z]; });
+          const p = santi.root.position, nx = THREE.MathUtils.clamp(p.x + mx / n * sp, -14.4, 14.4), nz = THREE.MathUtils.clamp(p.z + mz / n * sp, -10.4, 10.4);
+          if (!choca(nx, p.z, otros)) p.x = nx;
+          if (!choca(p.x, nz, otros)) p.z = nz;
+          let dr = Math.atan2(mx, mz) - santi.root.rotation.y; dr = Math.atan2(Math.sin(dr), Math.cos(dr)); santi.root.rotation.y += dr * k * 1.5;
+          santi.play(run ? "correr" : "caminar", 0.25);
+        } else santi.play("quieto", 0.3);
+        const want = tmp.copy(santi.root.position).add(camOff); cam.position.lerp(want, 1 - Math.exp(-dt * (orb.arrastra ? 14 : 4)));
+        ctl.target.lerp(tmp2.copy(santi.root.position).setY(1.2), 1 - Math.exp(-dt * 6)); cam.lookAt(ctl.target);
+      } else ctl.update();
+      todos.forEach(P => P.mixer.update(dt));
+      // si la compu no da (menos de 25 cuadros por segundo durante 5 s), se pasa sola al modo liviano
+      if (!LIVIANO && !medida.listo) { medida.n++; medida.t += dt; if (medida.t > 5) { medida.listo = true; if (medida.n / medida.t < 25) { aliviar(); try { localStorage.setItem("cb-modo", "liviano"); } catch (e) {} aviso.hidden = false; setTimeout(() => aviso.hidden = true, 6000); } } }
+      R.render(scene, cam);
+      tagsEl.forEach(P => { if (!P.head) return; P.head.getWorldPosition(tmp); tmp.y += 0.38; tmp.project(cam);
+        const vis = tmp.z < 1 && Math.abs(tmp.x) < 1.1 && Math.abs(tmp.y) < 1.1; P.tag.style.display = vis ? "" : "none";
+        if (vis) { P.tag.style.left = (tmp.x * .5 + .5) * innerWidth + "px"; P.tag.style.top = (-tmp.y * .5 + .5) * innerHeight + "px"; } });
+      requestAnimationFrame(frame);
+    }
+    window.__probador = { cam, ctl, todos, gl, clipPara, persona, frame, fase: () => anaFase, sillaAna };
+    requestAnimationFrame(frame);
+  })();
+})();
+</script>

@@ -137,3 +137,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-06,pc,cubre mac,13:02,13:02,en curso,empezó
 2026-11-06,pc,cubre mac,13:03,13:25,ok,"ronda completa con sub-agentes: 2 seguimientos WA, 0 chats nuevos (sin numeros validos), 3 tiendas nuevas mkt, 3 precios, pedidos sin movimiento; oficina sin publicar (datos.js 1,1 MB, la herramienta exige leerlo entero)"
 2026-11-06,pc,ronda,16:08,16:08,en curso,empezó
+2026-11-06,pc,ronda,16:08,16:30,alerta,"4 chats nuevos WA (10 max), 0 numeros por contactar, 0 tiendas nuevas mkt, 2 respuestas Messenger, pedidos sin movimiento; oficina regenerada pero sin publicar (sin permiso de lectura de la carpeta del repo)"

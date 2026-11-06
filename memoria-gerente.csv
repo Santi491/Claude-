@@ -32,3 +32,4 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 31,2026-11-04,16:26,ronda,dato,"Las tareas programadas de la PC piden aprobación para cambiarse a la carpeta del repo; hasta que Santi las configure con esa carpeta, la oficina no se puede publicar desde la PC",,abierta,
 32,2026-11-04,20:17,2000,compromiso,Contarle a Santi el viernes si los 7700X pasaron a en Cochabamba o siguen sin guía del courier B y cómo va mkt-1a (meta 25 tiendas al 08/11),2026-11-06,cumplida,06/11 13:25: Contado a Santi el 06/11: los 7700X siguen sin guía del courier B; mkt-1a no llegó a 25
 33,2026-11-05,20:17,2000,compromiso,Contarle a Santi el lunes 09/11 cómo terminó la semana cada objetivo de la etapa 1 (wa-1a y mkt-1a vencen el 08/11),2026-11-09,abierta,
+34,2026-11-06,16:30,ronda,dato,"06/11 tarde: aviso de fin de ronda enviado; pendientes de Santi: guia courier B, confirmar si Bs 2.655/u incluye courier B, abrir tarea PC con carpeta del repo para publicar oficina",,abierta,

@@ -1,0 +1,190 @@
+fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
+2026-10-13,09:43,whatsapp,Compucenter,recibido,respuesta,no,importa directo desde Miami; no busca proveedores
+2026-10-13,10:16,whatsapp,OverCity,enviado,nuevo,,consulta de precios grupo A
+2026-10-13,10:17,whatsapp,OverCity,recibido,respuesta,no,tiene los 3 productos; pregunta si solo busca esos
+2026-10-13,10:18,whatsapp,Legion Emporium,enviado,nuevo,,consulta de precios grupo A
+2026-10-13,10:18,whatsapp,Legion Emporium,recibido,automatica,no,catálogo y sucursales
+2026-10-13,10:19,whatsapp,OverCity,enviado,seguimiento,,pide el precio de cada producto
+2026-10-13,10:20,whatsapp,PC Morgana,enviado,nuevo,,consulta de precios grupo A
+2026-10-13,10:21,whatsapp,Centro PC,enviado,nuevo,,consulta de precios grupo A
+2026-10-13,10:25,whatsapp,Computer World,enviado,nuevo,,consulta de precios grupo B
+2026-10-13,10:26,whatsapp,4 Gamers,enviado,nuevo,,consulta de precios grupo B
+2026-10-13,10:26,whatsapp,4 Gamers,recibido,automatica,no,
+2026-10-13,10:27,whatsapp,PortatiComps,enviado,nuevo,,consulta de precios grupo B
+2026-10-13,10:28,whatsapp,Distribuidora DyD,enviado,nuevo,,consulta de precios grupo B
+2026-10-13,10:32,whatsapp,Soft Computers,enviado,nuevo,,consulta de precios grupo A (aviso IA de Meta aceptado)
+2026-10-13,10:38,whatsapp,Soft Computers,recibido,respuesta,sí,i5-14400F Bs 2.500; memorias solo DDR4
+2026-10-13,15:43,whatsapp,OverCity,recibido,respuesta,sí,7800X3D OEM Bs 5.500
+2026-10-13,15:44,whatsapp,OverCity,recibido,respuesta,sí,"i5-14400F OEM Bs 2.460; Corsair DDR5 agotada, tiene Apacer y XPG"
+2026-10-13,16:17,whatsapp,OverCity,enviado,respuesta,,"pide precio XPG DDR5 32GB 6000, precio por 2 o 4 y garantía"
+2026-10-13,16:17,whatsapp,Soft Computers,enviado,respuesta,,"pregunta si el 14400F es caja u OEM, si tiene 7800X3D y precio DDR4 16GB 3200"
+2026-10-13,11:35,messenger,Vendedor Marketplace (7800X3D sellado),recibido,respuesta,no,ya vendió los serie 9000; solo le queda el 7800X3D
+2026-10-13,16:22,messenger,Vendedor Marketplace (7800X3D sellado),enviado,respuesta,,"pregunta si es nuevo sellado en caja, precio final y si cambia llevando 2"
+2026-10-13,16:17,whatsapp,Soft Computers,recibido,respuesta,no,el i5-14400F es OEM
+2026-10-13,16:36,whatsapp,OverCity,recibido,respuesta,sí,"garantía 3 meses; XPG Lancer RGB DDR5 32GB (2x16) 6000 CL30 Bs 6.840"
+2026-10-13,17:27,whatsapp,OverCity,enviado,respuesta,,pregunta descuento llevando 2 del 7800X3D o del 14400F
+2026-10-13,16:30,messenger,Vendedor Marketplace (7800X3D sellado),recibido,respuesta,sí,"sellado de fábrica AMD, último en stock; Bs 4.800 ya con rebaja; dice que acepta ofertas (no se oferta)"
+2026-10-13,17:31,whatsapp,Hardware Technology,enviado,nuevo,,"consulta Ryzen 5 5600 y 5700X3D, precio por 2"
+2026-10-13,17:35,whatsapp,OverCity,recibido,respuesta,sí,i5-14400F Bs 2.460 es su precio mínimo
+2026-10-13,17:36,whatsapp,OverCity,recibido,respuesta,sí,7800X3D en caja sellada Bs 5.350
+2026-10-13,17:39,whatsapp,OverCity,enviado,respuesta,,agradece la información (sin compromiso)
+2026-10-13,17:44,whatsapp,OverCity,recibido,respuesta,no,"""Un gusto"" (cierre)"
+2026-10-14,10:46,whatsapp,Gamer Store Cbba,enviado,seguimiento,,un solo recordatorio (sin respuesta desde el 11/10)
+2026-10-14,10:46,whatsapp,Geek Store Bolivia,enviado,seguimiento,,un solo recordatorio (sin respuesta desde el 11/10)
+2026-10-14,10:46,whatsapp,Geek Store Bolivia,recibido,automatica,no,bienvenida con horario y link de su tienda kyte
+2026-10-14,10:46,whatsapp,SMART CUBE,enviado,seguimiento,,"recordatorio (el 12/10 dijo ""reviso"")"
+2026-10-14,10:47,whatsapp,TecnoGamer Bolivia,enviado,seguimiento,,un solo recordatorio (sin respuesta desde el 12/10)
+2026-10-14,10:47,whatsapp,T&T Todo en Tecnología,enviado,seguimiento,,un solo recordatorio (sin respuesta desde el 12/10)
+2026-10-14,10:47,whatsapp,TecnoGamer Bolivia,recibido,respuesta,no,no venden componentes internos
+2026-10-14,10:48,whatsapp,TecnoGamer Bolivia,enviado,respuesta,,agradece
+2026-10-14,10:56,messenger,Vendedora Marketplace (Corsair DDR5 RS),enviado,seguimiento,,un solo recordatorio: si sigue disponible y si es nueva en caja
+2026-10-14,10:56,whatsapp,PC Factor,enviado,nuevo,,"consulta Ryzen 5 7600, Ryzen 5 5600 y DDR5 32GB, precio por 2"
+2026-10-14,10:56,whatsapp,Crazy Store,enviado,nuevo,,"consulta 7800X3D, i5-14400F y Corsair DDR5 32GB 6000, precio por 2"
+2026-10-14,10:58,whatsapp,Crazy Store,recibido,respuesta,no,"solo les llegan algunos productos cuando los encuentran de oferta; tienen un solo procesador"
+2026-10-14,10:59,whatsapp,Crazy Store,enviado,respuesta,,pregunta cuál procesador tienen y si tienen memoria DDR5
+2026-10-14,10:59,whatsapp,Crazy Store,recibido,respuesta,sí,"Intel Core i9-14900K nuevo Bs 6.013 o USD 499 (no está en la lista)"
+2026-10-14,10:59,whatsapp,Crazy Store,recibido,respuesta,sí,"el i9-14900K ""hasta en 5.700"" (rebaja ofrecida por ellos; no se negocia)"
+2026-10-14,11:00,whatsapp,Crazy Store,enviado,respuesta,,agradece sin compromiso (está cotizando otros modelos)
+2026-10-14,13:07,whatsapp,PC Factor,recibido,respuesta,no,pregunta si solo busca esas piezas; enviará cotización
+2026-10-14,15:00,whatsapp,PC Factor,recibido,respuesta,sí,"solo tienen RAM DDR5 16GB a USD 320 c/u"
+2026-10-14,12:07,whatsapp,Geek Store Bolivia,recibido,respuesta,no,"solo tienen Ryzen 7 7700X; DDR5 Corsair no, sí otras marcas"
+2026-10-14,11:01,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,pasan el contacto de su número corporativo (Esteban Arce)
+2026-10-14,11:18,whatsapp,Crazy Store,recibido,respuesta,no,cortesía
+2026-10-14,11:32,whatsapp,SMART CUBE,recibido,respuesta,sí,"7800X3D Bs 5.890 facturado; i5-14400F Bs 3.080; DDR5 16GB Apacer 6000 Bs 3.650"
+2026-10-15,10:37,whatsapp,PC Factor,enviado,respuesta,,pregunta marca y velocidad de la DDR5 16GB y garantía
+2026-10-15,10:37,whatsapp,Geek Store Bolivia,enviado,respuesta,,pregunta precio del 7700X y marca/precio de DDR5 32GB
+2026-10-15,10:37,whatsapp,SMART CUBE,enviado,respuesta,,pregunta precio por 2 y garantía
+2026-10-15,10:37,whatsapp,SMART CUBE,recibido,automatica,no,mensaje automático de atención
+2026-10-15,10:38,whatsapp,SMART CUBE,recibido,respuesta,sí,"nuevos, caja sellada; rebajan Bs 50 c/u llevando 2"
+2026-10-15,10:38,whatsapp,T&T Todo en Tecnología,enviado,nuevo,,"número corporativo que pasó T&T: consulta i5-14400F, i5-12400F y Corsair DDR5 32GB 6000, precio por 2"
+2026-10-15,10:38,whatsapp,OverCity,enviado,seguimiento,,consulta Ryzen 5 7600 e i5-12400F (tarea 2026-10-14-9)
+2026-10-15,10:39,whatsapp,SMART CUBE,enviado,respuesta,,agradece sin compromiso
+2026-10-15,10:39,whatsapp,SMART CUBE,recibido,respuesta,no,cortesía
+2026-10-15,10:39,whatsapp,Display Importadora,enviado,seguimiento,,un solo recordatorio (7800X3D y 7600)
+2026-10-15,10:39,whatsapp,Distribuidora DyD,enviado,seguimiento,,"un solo recordatorio (7600, 265K, SSD 2TB)"
+2026-10-15,10:40,whatsapp,PC Morgana,enviado,seguimiento,,"un solo recordatorio (7800X3D, 14400F, DDR5)"
+2026-10-15,10:40,whatsapp,Centro PC,enviado,seguimiento,,un solo recordatorio (7800X3D o 14400F)
+2026-10-15,10:40,whatsapp,Computer World,enviado,seguimiento,,un solo recordatorio (7600 o SSD 2TB)
+2026-10-15,10:41,whatsapp,PortatiComps,enviado,seguimiento,,un solo recordatorio (Ryzen o SSD 2TB)
+2026-10-15,10:41,whatsapp,Hardware Technology,enviado,seguimiento,,un solo recordatorio (5600 o 5700X3D)
+2026-10-15,10:43,whatsapp,PC Factor,recibido,respuesta,no,audio (no se pudo escuchar)
+2026-10-15,10:44,whatsapp,OverCity,recibido,respuesta,sí,Ryzen 5 7600 OEM Bs 2.800
+2026-10-15,10:45,whatsapp,ECOM (Economic Computers),enviado,nuevo,,"consulta Ryzen 5 7600, i5-12400F y DDR5 32GB, precio por 2"
+2026-10-15,10:46,whatsapp,OverCity,enviado,respuesta,,pregunta si tienen el i5-12400F
+2026-10-15,10:46,whatsapp,PC Factor,enviado,respuesta,,pide el audio por escrito
+2026-10-15,10:47,whatsapp,NF Evolution,enviado,nuevo,,"consulta 7800X3D, i5-14400F y Corsair DDR5 32GB 6000, precio por 2"
+2026-10-15,10:46,whatsapp,NF Evolution,recibido,respuesta,no,solo venden tarjetas de video
+2026-10-15,10:46,whatsapp,Shopping PC,enviado,nuevo,,"consulta 7600, 7800X3D y 14400F, precio por 2"
+2026-10-15,10:46,whatsapp,Shopping PC,recibido,automatica,no,bienvenida
+2026-10-15,10:46,whatsapp,PC Factor,recibido,respuesta,no,no hay más memorias; le queda 1
+2026-10-15,10:47,whatsapp,PC Factor,enviado,respuesta,,agradece
+2026-10-15,10:50,whatsapp,Hardware Technology,recibido,respuesta,no,no tienen 5600 ni 5700X3D
+2026-10-15,10:52,whatsapp,Hardware Technology,enviado,respuesta,,agradece
+2026-10-15,10:52,whatsapp,NF Evolution,enviado,respuesta,,agradece
+2026-10-15,10:52,whatsapp,PCBOX,enviado,nuevo,,"consulta SSD NVMe 1TB/2TB y Ryzen 5 7600"
+2026-10-15,10:52,whatsapp,PCBOX,recibido,automatica,no,bienvenida
+2026-10-15,10:52,whatsapp,PCBOX,recibido,respuesta,no,no tienen stock disponible
+2026-10-15,10:52,whatsapp,PC Morgana,recibido,respuesta,no,no les está llegando
+2026-10-15,10:53,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,"Corsair DDR5 agotada; ofrecen solo el procesador"
+2026-10-15,10:53,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,pregunta precio de 14400F y 12400F y por 2
+2026-10-15,10:53,whatsapp,Shopping PC,recibido,respuesta,no,"dicen que tienen; preguntan de dónde escribo"
+2026-10-15,10:54,whatsapp,Shopping PC,enviado,respuesta,,"responde Cochabamba (cotizando para armar PCs) y pide precios"
+2026-10-15,10:54,whatsapp,PCBOX,enviado,respuesta,,agradece
+2026-10-15,10:54,whatsapp,PC Morgana,enviado,respuesta,,agradece
+2026-10-15,10:55,whatsapp,T&T Todo en Tecnología,recibido,respuesta,sí,"i5-12400F OEM + cooler Bs 2.260; i5-14400F OEM + cooler Bs 2.750; Bs 20 menos llevando 2"
+2026-10-15,10:56,whatsapp,Distribuidora DyD,recibido,respuesta,no,número equivocado
+2026-10-15,11:05,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,pregunta garantía
+2026-10-15,11:05,whatsapp,Distribuidora DyD,enviado,respuesta,,se disculpa; no se le escribe más
+2026-10-15,11:03,whatsapp,Computer World,recibido,respuesta,no,pregunta si es de Cochabamba y si es uso personal o tienda
+2026-10-15,11:17,whatsapp,Shopping PC,recibido,respuesta,sí,"mandó lista de precios en PDF (componentes para armado); sin factura y al por mayor"
+2026-10-15,11:25,whatsapp,Geek Store Bolivia,recibido,respuesta,sí,"Ryzen 7 7700X Bs 3.480; DDR5 16GB Kingston Fury Bs 2.900 c/u"
+2026-10-15,13:00,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,garantía de 6 meses en los procesadores
+2026-10-15,17:50,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,agradece el dato de la garantía
+2026-10-15,17:50,whatsapp,Geek Store Bolivia,enviado,respuesta,,pregunta velocidad de la Fury DDR5 y si el 7700X es sellado con garantía
+2026-10-15,17:50,whatsapp,Geek Store Bolivia,recibido,automatica,no,bienvenida
+2026-10-15,17:50,whatsapp,Shopping PC,enviado,respuesta,,agradece la lista y pregunta si son nuevos con garantía
+2026-10-15,17:51,whatsapp,Computer World,enviado,respuesta,,"responde Cochabamba, cotizando para armar PCs; pide precio de 7600 o SSD 2TB"
+2026-10-15,17:51,whatsapp,Compucenter,enviado,respuesta,,cierre cordial (no busca proveedores)
+2026-10-15,17:52,whatsapp,Soft Computers,enviado,seguimiento,,"pregunta precio de Ryzen 5 7600 e i5-12400F (tarea 2026-10-15-14)"
+2026-10-15,18:10,whatsapp,Shopping PC,recibido,respuesta,no,garantía solo de prueba
+2026-10-15,17:54,whatsapp,Soft Computers,recibido,respuesta,no,"solo tienen el i5-14400F (no 7600 ni 12400F)"
+2026-10-15,17:57,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,cierre cordial (otro número de la tienda)
+2026-10-16,09:25,whatsapp,MSR Computers,recibido,respuesta,no,"responde ""No"" a la consulta del lunes; no se le escribe más"
+2026-10-16,13:37,whatsapp,Shopping PC,enviado,respuesta,,"pregunta si manejan Ryzen 5 7600 / 7 7800X3D y SSD 2TB (no están en la lista)"
+2026-10-16,13:38,whatsapp,Soft Computers,enviado,respuesta,,pregunta precio del i5-14400F llevando 2
+2026-10-16,13:41,whatsapp,Gamer Store Cbba,enviado,seguimiento,,segundo y último seguimiento (7600 o Corsair DDR5)
+2026-10-16,13:40,whatsapp,Soft Computers,recibido,respuesta,sí,i5-14400F OEM Bs 2.500 c/u también llevando 2
+2026-10-16,13:43,whatsapp,Shopping PC,recibido,respuesta,no,"solo tienen lo de la lista (sin Ryzen ni SSD 2TB)"
+2026-10-16,13:45,whatsapp,Soft Computers,enviado,respuesta,,agradece
+2026-10-16,13:46,whatsapp,Shopping PC,enviado,respuesta,,agradece
+2026-10-16,13:49,whatsapp,Punto Tecnológico,enviado,nuevo,,"chat nuevo: Ryzen 5 7600, 7800X3D y Corsair DDR5 32GB, precio por 2 o 4"
+2026-10-16,13:49,whatsapp,Punto Tecnológico,recibido,automatica,no,bienvenida
+2026-10-16,13:50,whatsapp,Punto Tecnológico,recibido,respuesta,no,"saluda y dice que en un momento envía los precios"
+2026-10-16,14:12,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"cotización en imagen: Ryzen 5 7600 OEM Bs 2.850; DDR5 32GB 2x16 Nox Tuf Bs 5.960; nuevos, garantía 6 meses"
+2026-10-16,17:24,whatsapp,Gamer Store Cbba,recibido,respuesta,sí,"solo tiene Ryzen 5 7600X; combo B650M + 7600X + Samsung DDR5 16GB a Bs 5.900; sueltos: 7600X USD 175, placa USD 145, RAM 16GB USD 210"
+2026-10-17,11:50,whatsapp,Gamer Store Cbba,enviado,respuesta,,"repregunta: 7600X en Bs, precio por 2, si es sellado con garantía"
+2026-10-17,11:50,whatsapp,Punto Tecnológico,enviado,respuesta,,agradece cotización; pregunta 7800X3D y precio del 7600 por 2
+2026-10-17,11:51,whatsapp,ECOM (Economic Computers),enviado,seguimiento,,primer seguimiento (7600 o DDR5)
+2026-10-17,11:51,whatsapp,Display Importadora,enviado,seguimiento,,segundo y último seguimiento (SSD 2TB o Ryzen 7000)
+2026-10-17,11:52,whatsapp,Centro PC,enviado,seguimiento,,segundo y último seguimiento (procesadores sueltos)
+2026-10-17,11:53,whatsapp,PortatiComps,enviado,seguimiento,,segundo y último seguimiento (7600 o 265K)
+2026-10-17,11:54,whatsapp,PC Armagedon,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y DDR5 32GB, precio por 2"
+2026-10-17,11:54,whatsapp,PC Armagedon,recibido,automatica,no,"bienvenida (PC, portátiles y accesorios; lunes a sábado 8:30)"
+2026-10-17,12:30,whatsapp,Punto Tecnológico,recibido,respuesta,no,"los precios ya son los mínimos (sin rebaja por 2); 7800X3D sin stock; 9800X3D sí tienen"
+2026-10-17,13:43,whatsapp,Punto Tecnológico,enviado,respuesta,,"agradece; pregunta precio del 9800X3D, si es nuevo con garantía"
+2026-10-17,13:46,whatsapp,TECH COCHA,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y Corsair DDR5 32GB, precio por 2"
+2026-10-17,13:46,whatsapp,TECH COCHA,recibido,automatica,no,"bienvenida (servicio técnico a domicilio; manda su Facebook)"
+2026-10-17,13:48,whatsapp,ADN Gamer Store,enviado,nuevo,,"chat nuevo: 7800X3D o 7600, nuevos con garantía"
+2026-10-17,14:02,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"9800X3D Bs 6.000, nuevo en caja sellada, garantía 6 meses (no está en vigilar.csv)"
+2026-10-17,14:15,whatsapp,PC Armagedon,recibido,respuesta,no,"pregunta si busca solo 2 piezas o una PC completa"
+2026-10-17,16:07,whatsapp,PC Armagedon,recibido,respuesta,sí,"combo Ryzen 5 7600 + 16GB DDR5 5600 HKC: Bs 6.050 (no da el procesador suelto)"
+2026-10-17,16:12,whatsapp,PC Armagedon,enviado,respuesta,,"solo piezas sueltas; pregunta el 7600 solo, precio por 2, nuevo con garantía"
+2026-10-17,16:13,whatsapp,Punto Tecnológico,enviado,respuesta,,"agradece el precio del 9800X3D"
+2026-10-17,16:12,whatsapp,Legion Emporium,enviado,seguimiento,,"primer seguimiento (7800X3D o i5-14400F; su catálogo es todo a cotizar)"
+2026-10-17,16:15,whatsapp,4 Gamers,enviado,seguimiento,,"primer seguimiento (Ryzen 5 7600, precio de uno)"
+2026-10-19,10:40,whatsapp,Gamer Store Cbba,recibido,respuesta,no,"solo les queda un 7600X y lo venden en combo; sin precio nuevo"
+2026-10-19,10:40,whatsapp,Gamer Store Cbba,enviado,respuesta,,agradece y cierra cordial
+2026-10-19,10:40,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,agradece el contacto de su línea corporativa
+2026-10-19,10:41,whatsapp,ADN Gamer Store,enviado,seguimiento,,primer seguimiento (7800X3D o 7600)
+2026-10-19,10:44,whatsapp,ECOM (Economic Computers),enviado,seguimiento,,segundo y último seguimiento (7600 o DDR5 32GB)
+2026-10-19,10:47,whatsapp,4 Gamers,enviado,seguimiento,,segundo y último seguimiento (7600 o SSD NVMe 1TB)
+2026-10-19,10:51,whatsapp,Legion Emporium,enviado,seguimiento,,segundo y último seguimiento (7600 o DDR5 32GB)
+2026-10-19,10:52,whatsapp,Geek Store Bolivia,enviado,respuesta,,pregunta precio Ryzen 5 5600 y Ryzen 7 5700X3D (tarea 17-10)
+2026-10-19,10:59,whatsapp,Tienda de Computadoras Quillacollo,enviado,nuevo,,chat nuevo: ¿venden CPU y RAM sueltos? 7600 y DDR5 32GB; pregunta envío a Cochabamba
+2026-10-19,11:02,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,enviado,nuevo,,"chat nuevo: precio 7600 y DDR5 32GB, nuevos con garantía"
+2026-10-19,11:05,whatsapp,Pc Soluciones Importaciones,enviado,nuevo,,"chat nuevo: 7800X3D o 7600 sueltos, nuevo con garantía"
+2026-10-19,11:08,whatsapp,Cocotech - Sucursal América,enviado,nuevo,,"chat nuevo: 7600 o i5-14400F sueltos, precio y garantía"
+2026-10-19,11:12,whatsapp,Importadora Ardunel - Quillacollo,enviado,nuevo,,"chat nuevo: CPU y DDR5 sueltos, 7600 y 32GB; pregunta envío a Cochabamba"
+2026-10-19,11:05,whatsapp,Tienda de Computadoras Quillacollo,recibido,automatica,no,saludo automático (DJ COMPUTER)
+2026-10-19,11:08,whatsapp,Cocotech - Sucursal América,recibido,automatica,no,saludo automático
+2026-10-19,16:08,whatsapp,OverCity,enviado,respuesta,,tarea 2026-10-19-1: pide precio del Core Ultra 7 265K (no KF) y si el Ryzen 5 7600 de Bs 2.800 sigue vigente
+2026-10-19,16:09,whatsapp,OverCity,recibido,respuesta,sí,confirma Ryzen 5 7600 aún a Bs 2.800 (OEM)
+2026-10-19,16:10,whatsapp,OverCity,recibido,respuesta,sí,Core Ultra 7 265K OEM Bs 4.100
+2026-10-19,16:10,whatsapp,OverCity,enviado,respuesta,,pregunta garantía del 265K
+2026-10-19,16:10,whatsapp,OverCity,recibido,respuesta,sí,todos los componentes tienen garantía de 3 meses
+2026-10-19,16:14,whatsapp,OverCity,enviado,respuesta,,agradece; solo cotizando
+2026-10-19,16:08,whatsapp,Viadata Computadoras,enviado,respuesta,,tarea 2026-10-19-1: pide precio del Core Ultra 7 265K (no KF) y del Ryzen 5 7600 con garantía
+2026-10-19,16:09,whatsapp,Viadata Computadoras,recibido,respuesta,no,saludo (buenas tardes); todavía sin precios
+2026-10-19,11:29,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,recibido,respuesta,no,no tienen Ryzen 5 7600 ni DDR5 32GB
+2026-10-19,11:41,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,recibido,respuesta,sí,a pedido ofrece solo el procesador Ryzen 5 7500F (sin cooler) Bs 2.190
+2026-10-19,16:08,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,enviado,respuesta,,pregunta si el 7500F es nuevo con garantía y pide aviso si llega el 265K
+2026-10-19,11:24,whatsapp,Cocotech - Sucursal América,recibido,respuesta,no,no tienen el Ryzen 5 7600 ni el i5-14400F
+2026-10-19,11:32,whatsapp,Geek Store Bolivia,recibido,respuesta,no,no tienen Ryzen 5 5600 ni 5700X3D
+2026-10-19,11:13,whatsapp,Importadora Ardunel - Quillacollo,recibido,respuesta,no,no tienen esos productos
+2026-10-19,12:24,whatsapp,Pc Soluciones Importaciones,recibido,respuesta,no,"responde ""Se. Lo veo"" (sin precio)"
+2026-10-19,12:41,whatsapp,ADN Gamer Store,recibido,respuesta,no,"dice ""si ahora le respondo"" (aviso que contestará; sin precio)"
+2026-10-20,10:52,whatsapp,Viadata Computadoras,recibido,respuesta,sí,Core Ultra 7 265 (no K) BOX Bs 6.160 y Ryzen 5 7600X BOX Bs 3.300 (no son de vigilar)
+2026-10-20,10:55,whatsapp,Viadata Computadoras,enviado,respuesta,,pregunta 7600 sin X 265K y 5600 o 5700X3D (tarea 20-3) y garantía de los BOX
+2026-10-20,10:45,whatsapp,Viadata Computadoras,recibido,respuesta,sí,"Ryzen 7 5700 BOX pocas unidades en tránsito a Bs 2.400 en preventa, garantía 3 meses (no es de vigilar); no tienen 7600 sin X ni 265K"
+2026-10-20,16:05,whatsapp,Geek Store Bolivia,enviado,seguimiento,,"tarea 2026-10-20-8: confirma si el Ryzen 7 7700X (Bs 3.480 del 15/10) es nuevo sellado con garantía, stock, precio por 2 y 4 y si hay usado"
+2026-10-20,16:05,whatsapp,Geek Store Bolivia,recibido,automatica,no,saludo automático (atiende lun–sáb 9:00–19:00); sin respuesta real todavía
+2026-10-20,16:05,whatsapp,Punto Tecnológico,enviado,seguimiento,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (precio por 1, 2 y 4, sellado, garantía, usado)"
+2026-10-20,16:05,whatsapp,T&T Todo en Tecnología,enviado,seguimiento,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (precio por 1, 2 y 4, sellado, garantía); antes solo habían pasado su línea corporativa"
+2026-10-20,16:05,whatsapp,Shopping PC,enviado,seguimiento,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (disponible, precio por 1, 2 y 4, sellado)"
+2026-10-20,16:06,whatsapp,OverCity,enviado,respuesta,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (precio por 1, 2 y 4, caja u OEM, garantía)"
+2026-10-20,16:06,whatsapp,OverCity,recibido,respuesta,no,Ryzen 7 7700X AGOTADO
+2026-10-20,16:06,whatsapp,OverCity,recibido,respuesta,sí,"escribe ""Ryzen 7 7700X3D a 4700 Bs"" (modelo dudoso, probablemente 7800X3D; sin confirmar)"
+2026-10-20,16:07,whatsapp,OverCity,enviado,respuesta,,"pregunta si el de Bs 4.700 es el 7800X3D, OEM o caja, garantía, y si el 7700X llega pronto"
+2026-10-20,16:12,whatsapp,Shopping PC,recibido,respuesta,no,"Ryzen 7 7700X: ""no tenemos"" (sin precio)"
+2026-10-20,16:13,whatsapp,Punto Tecnológico,recibido,respuesta,no,"""Buenas tardes"" y ""Ahora reviso"" (consulta 7700X; sin precio todavía)"
+2026-10-20,16:13,whatsapp,OverCity,recibido,respuesta,no,"repite ""RYZEN 7 7700X3D BOX A 4700BS"" con foto de la caja (V-Cache); no aclara si es 7800X3D ni la garantía; modelo sin confirmar, no se anota precio"
