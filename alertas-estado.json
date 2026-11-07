@@ -65,7 +65,11 @@
   "baja|Ryzen 7 7700X|usado|2026-11-05": "2026-11-05 11:54",
   "baja|Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo|2026-11-06": "2026-11-06 11:53",
   "conviene|Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo|2026-11-06": "2026-11-06 11:53",
-  "baja|SSD NVMe 1TB|nuevo|2026-11-06": "2026-11-06 11:53"
+  "baja|SSD NVMe 1TB|nuevo|2026-11-06": "2026-11-06 11:53",
+  "baja|Ryzen 5 5600|usado|2026-11-07": "2026-11-07 11:53",
+  "conviene|Intel Core i5-12400F|nuevo|2026-11-07": "2026-11-07 11:53",
+  "baja|Ryzen 7 7700X|usado|2026-11-07": "2026-11-07 11:53",
+  "baja|Ryzen 5 7500F|usado|2026-11-07": "2026-11-07 11:53"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": true,
@@ -74,7 +78,7 @@
   "Ryzen 7 7800X3D|usado": true,
   "Ryzen 9 9950X|nuevo": false,
   "Ryzen 9 9950X|usado": false,
-  "Intel Core i5-12400F|nuevo": false,
+  "Intel Core i5-12400F|nuevo": true,
   "Intel Core i5-12400F|usado": true,
   "Intel Core i5-13400|nuevo": false,
   "Intel Core i5-13400|usado": true,
@@ -84,7 +88,7 @@
   "Intel Core Ultra 7 265K|usado": true,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|nuevo": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|usado": false,
-  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo": true,
+  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": false,
   "RAM DDR4 16GB (2x8) 3200|nuevo": false,
   "RAM DDR4 16GB (2x8) 3200|usado": false,
@@ -96,9 +100,10 @@
   "Ryzen 7 7700X|usado": true
  },
  "ultimas": [
-  "⬇ Corsair Vengeance RGB DDR5 32GB (2x16) 6000 (nuevo) bajó 16% en eBay: USD 450.00 → 379.99",
-  "✅ Ahora conviene Corsair Vengeance RGB DDR5 32GB (2x16) 6000 (nuevo): +18% · costo puesto Bs 4.732 vs Bs 5.800 en Cochabamba",
-  "⬇ SSD NVMe 1TB (nuevo) bajó 14% en eBay: USD 139.99 → 120.00"
+  "⬇ Ryzen 5 5600 (usado) bajó 11% en eBay: USD 129.99 → 116.34",
+  "✅ Ahora conviene Intel Core i5-12400F (nuevo): +16% · costo puesto Bs 1.879 vs Bs 2.250 en Cochabamba",
+  "⬇ Ryzen 7 7700X (usado) bajó 11% en eBay: USD 179.98 → 159.99",
+  "⬇ Ryzen 5 7500F (usado) bajó 17% en eBay: USD 114.99 → 94.99"
  ],
- "revisado": "2026-11-06 16:28"
+ "revisado": "2026-11-07 11:53"
 }
