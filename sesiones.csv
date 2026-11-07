@@ -142,3 +142,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-06,raspberry,vigilante,18:00,18:00,arreglado,la PC no hizo la ronda de las 16:00: relanzada
 2026-11-06,pc,ronda,18:07,18:08,arreglado,pedido 18:00 del vigilante: la ronda de las 16:00 sí corrió (16:08-16:30; quedó alerta solo por la oficina sin publicar); no se repitió
 2026-11-06,gerente,informe,20:15,20:17,ok,informe diario 06/11 subido; 6 tareas propuestas
+2026-11-07,raspberry,vigilante,16:30,16:30,alerta,la PC no prendió para la ronda de las 16:00
