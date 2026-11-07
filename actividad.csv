@@ -655,3 +655,4 @@ fecha,hora,agente,texto
 2026-11-06,16:35,gerente,aviso de fin de ronda enviado
 2026-11-06,16:31,local,Ronda tarde PC: oficina sin publicar (sin permiso de lectura de la carpeta del repo para publish_files); archivos sueltos subidos por error y sacados del repo; apagar_pc corrido
 2026-11-06,18:10,local,Pedido PC 18:00 (vigilante): no se repitió la ronda; la de las 16:00 sí corrió (16:08-16:30) y quedó como alerta por la oficina sin publicar
+2026-11-06,20:17,gerente,"Informe diario 06/11 (Doc subido): 4 chats nuevos, 55% respuesta 7d, 8 tiendas sin responder, Mac cubierta por la PC; 6 tareas propuestas (4 aprobadas auto rutina, 2 para Santi), 3 vencidas reprogramadas, 0 mensajes del chat contestados, libreta: 1 cerrada y 1 anotada/descartada, 0 de Telegram (Raspberry)"
