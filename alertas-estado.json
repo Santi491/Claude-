@@ -72,7 +72,9 @@
   "baja|Ryzen 5 7500F|usado|2026-11-07": "2026-11-07 11:53",
   "baja|Intel Core Ultra 7 265K|usado|2026-11-08": "2026-11-08 11:55",
   "baja|SSD NVMe 1TB|nuevo|2026-11-08": "2026-11-08 11:55",
-  "baja|SSD NVMe 2TB|nuevo|2026-11-08": "2026-11-08 11:55"
+  "baja|SSD NVMe 2TB|nuevo|2026-11-08": "2026-11-08 11:55",
+  "baja|Ryzen 9 9950X|nuevo|2026-11-09": "2026-11-09 11:53",
+  "baja|SSD NVMe 2TB|nuevo|2026-11-09": "2026-11-09 11:53"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -103,9 +105,8 @@
   "Ryzen 7 7700X|usado": true
  },
  "ultimas": [
-  "⬇ Intel Core Ultra 7 265K (usado) bajó 11% en eBay: USD 225.00 → 199.99",
-  "⬇ SSD NVMe 1TB (nuevo) bajó 12% en eBay: USD 129.99 → 115.00",
+  "⬇ Ryzen 9 9950X (nuevo) bajó 29% en eBay: USD 689.34 → 489.99",
   "⬇ SSD NVMe 2TB (nuevo) bajó 46% en eBay: USD 185.00 → 99.99"
  ],
- "revisado": "2026-11-08 11:55"
+ "revisado": "2026-11-09 11:53"
 }

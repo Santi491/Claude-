@@ -664,3 +664,6 @@ fecha,hora,agente,texto
 2026-11-08,07:58,ana,"Nada para traer hoy: Ryzen 5 7600 nuevo subió en eBay (145 → 262) y queda en -22 % de margen. Esperar: SSD 2TB nuevo (36 %, peor caso 26 %), 7800X3D (19,6 %) y 7700X (17 %) por falta de 2 tiendas locales recientes. No traer: DDR5 5600/6000, 9950X, i5-13400. Sin datos: 5600, 5700X3D, 7500F."
 2026-11-08,07:58,nube,"Revisión diaria hecha: dólar USDT 12,00, eBay API, comparación, análisis, Excel, historial CSV (PDF no: reportlab no instala), informe"
 2026-11-08,20:17,gerente,"Resumen semanal 02-08/11 (Doc subido): wa-1a cumplido, mkt-1a 23/25 no llegó; 6 tareas propuestas (4 aprobadas auto rutina, 2 repetidas rechazadas), 0 mensajes de chat, 4 notas de libreta cerradas, 0 de Telegram (lo lee la Raspberry)"
+2026-11-09,07:54,ebay,"API: 14 precios nuevos y 16 usados; corregí 1 fila (SSD 2TB nuevo era un SATA 2.5"" de USD 99,99; la alerta de bajó 46 % fue falsa)"
+2026-11-09,07:54,ana,"Traer solo SSD NVMe 1TB nuevo (margen 19 %, peor caso 5 %, justo). Esperar 2TB, Ultra 7 265K y 7800X3D (faltan precios locales). No traer 7600, 9950X ni DDR5."
+2026-11-09,07:54,nube,"Revisión diaria hecha: dólar USDT 12.01, eBay, comparación, análisis, informe. Sin Excel/PDF (reportlab no corre en la nube)."
