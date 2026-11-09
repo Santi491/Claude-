@@ -151,3 +151,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-09,raspberry,vigilante,00:00,00:00,alerta,pedido a la PC sin hacer hace 1800 min
 2026-11-09,pc,ronda,15:52,15:52,en curso,empezó
 2026-11-09,pc,ronda ligera,15:52,15:52,arreglado,pedido del vigilante del sábado 07/11 18:00 visto recién el lunes 09/11 15:52: no se repite la ronda ligera del sábado porque la ronda completa de las 16:00 de hoy la cubre
+2026-11-09,raspberry,vigilante,16:00,16:00,arreglado,la Mac no hizo la ronda de la mañana: la cubre la PC
