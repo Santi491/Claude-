@@ -64,6 +64,7 @@ eBay nuevo: USD 329.00 con envío en EE.UU. (eBay API; vendedor aaawavecom 99.8%
 | Marketplace Cochabamba (particular/vendedor; Messenger) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado de fábrica, confirmado por el vendedor (último en stock; precio ya rebajado) | 4.800 | 681 (14%) | 2026-10-13 |
 | Marketplace Cochabamba (particular) | nuevo sellado (anuncio "AMD Ryzen 7 7800X3D (Sellado)"; el vendedor dijo el 13/10 que acepta ofertas, no se oferta) | 4.800 | 681 (14%) | 2026-10-26 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sellado; Cochabamba (mismo vendedor del 13/10 probablemente) | 4.800 | 681 (14%) | 2026-11-03 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sellado; Cochabamba | 4.800 | 681 (14%) | 2026-11-09 |
 | Marketplace Cochabamba (tienda sin confirmar) | nuevo (anuncio multi-modelo "9800X3D, 7800X3D, 8700G"; precio desde) | 4.860 | 741 (15%) | 2026-10-21 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2669179450145313/) | no indicado | 5.190 | 1.071 (21%) | 2026-10-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=Ryzen%207%207800X3D) | nuevo/sin dato | 5.190 | 1.071 (21%) | 2026-10-30 |
@@ -169,6 +170,10 @@ eBay nuevo: USD 104.00 con envío en EE.UU. (eBay API; vendedor ersimk-0 99.6%; 
 |---|---|---|---|---|
 | Marketplace Cochabamba (particular) | "Disco duro m2 NVMe 1 tb" marca y estado sin dato; Cochabamba | 1.100 | -317 (-29%) | 2026-10-28 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (antes Bs 1.730; marca sin dato) | 1.230 | -187 (-15%) | 2026-10-17 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | estado sin dato; Cochabamba (3520 MB/s) | 1.250 | -167 (-13%) | 2026-11-09 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Crucial P3 1TB (estado sin dato); Cochabamba | 1.300 | -117 (-9%) | 2026-11-09 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | estado sin dato; Cochabamba | 1.400 | -17 (-1%) | 2026-11-09 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston M.2 1TB (estado sin dato); Cochabamba | 1.450 | 33 (2%) | 2026-11-09 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1098289102810322/) | sin dato de estado ni marca (recién publicado) | 1.500 | 83 (6%) | 2026-10-17 |
 | Orange Computer (WhatsApp) | sellado | 1.550 | 133 (9%) | 2026-11-04 |
 | Orange Computer (WhatsApp) | sellado | 1.550 | 133 (9%) | 2026-11-04 |

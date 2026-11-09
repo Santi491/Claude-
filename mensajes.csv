@@ -405,3 +405,19 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-11-06,16:27,messenger,vendedor disco M.2 NVMe Apacer (Marketplace),enviado,respuesta,,"pregunta si es nuevo o usado y si es PCIe 3.0 o 4.0"
 2026-11-06,16:29,messenger,vendedor M.2 NVMe 256GB (Marketplace),recibido,respuesta,sí,"Bs 450 por el 256GB (ya respondido el 05/11); sin más preguntas, no se contesta"
 2026-11-06,16:30,messenger,vendedor memoria M.2 256GB Hiksemi (Marketplace),recibido,respuesta,sí,"Bs 660 por el 256GB, disponible (jueves); información completa, no se contesta"
+2026-11-09,15:53,whatsapp,CRISTECNOLOGY,recibido,respuesta,no,"nota de voz de 17 s (06/11 17:49, INNOVA TECH) que no se puede escuchar; no se anota contenido"
+2026-11-09,15:53,whatsapp,CRISTECNOLOGY,enviado,respuesta,,pide que lo escriba (no escuchamos audios) y repite Ryzen 5 7600 y SSD NVMe 2TB: precio y sellado
+2026-11-09,15:54,whatsapp,Punto Tecnológico,enviado,seguimiento,,seguimiento 2: sellado en caja u OEM del Ryzen 5 7600 y precio llevando 2 (tarea 2026-11-06-1)
+2026-11-09,15:54,whatsapp,BitCate,enviado,seguimiento,,seguimiento 1: si venden procesadores o SSD sueltos
+2026-11-09,15:54,whatsapp,HC store,enviado,seguimiento,,seguimiento 1 (solo automática de TV/lavadoras): pregunta si manejan Ryzen o SSD NVMe
+2026-11-09,15:55,whatsapp,Pop Store Cbba,enviado,seguimiento,,seguimiento 1: Ryzen 5 7600 y SSD NVMe 2TB (tarea 2026-11-06-2)
+2026-11-09,15:55,whatsapp,ELVYCOMP,enviado,seguimiento,,"seguimiento 1 (solo automática): Ryzen 5 7600 y SSD NVMe 2TB, precio"
+2026-11-09,15:55,whatsapp,Accesorios Technology,enviado,seguimiento,,seguimiento 1: Ryzen 5 7600 y SSD NVMe 2TB
+2026-11-09,15:55,whatsapp,PC Gaming Forge,enviado,seguimiento,,seguimiento 2 (solo automática): Ryzen 5 7600 y SSD NVMe 2TB
+2026-11-09,15:55,whatsapp,INTEGRAL TU-PC,enviado,seguimiento,,seguimiento 1: precio Ryzen 5 7600 y SSD NVMe 2TB (tarea 2026-11-06-2)
+2026-11-09,15:55,whatsapp,Microworld,enviado,seguimiento,,seguimiento 1: precio Ryzen 5 7600 y SSD NVMe 2TB (tarea 2026-11-06-2)
+2026-11-09,15:55,whatsapp,COMPU-X,enviado,seguimiento,,seguimiento 1: Ryzen 5 7600 y SSD NVMe 2TB (tarea 2026-11-06-2)
+2026-11-09,16:08,messenger,vendedor disco M.2 NVMe Apacer (Marketplace),recibido,respuesta,sí,"512GB nuevo, PCIe 3.0, Bs 970 (viernes); información completa, no se contesta"
+2026-11-09,16:08,messenger,vendedor M.2 512GB (Marketplace),recibido,respuesta,sí,"dice que es usada (viernes); información completa, no se contesta"
+2026-11-09,16:09,messenger,vendedor disco sólido 1TB Kingston (Marketplace),recibido,respuesta,sí,"Bs 900 por el 1TB (viernes); el vendedor lo marcó vendido el 06/11 (cuenta como venta declarada por el vendedor, sin NVMe confirmado)"
+2026-11-09,16:09,messenger,vendedor discos sólidos 240GB (Marketplace),recibido,respuesta,no,"pregunta en qué capacidad; es de 240GB (no es producto nuestro), no se contesta"

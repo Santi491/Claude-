@@ -216,3 +216,19 @@ fecha,producto,fuente,ciudad,anuncios,nuevos,desaparecidos,precio_min_bs,precio_
 2026-11-06,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,1,,,725,725,2x8 3600MHz 725 (mismo de ayer) + 2 anuncios 16GB DDR4 3200 con precio no legible; sin comparar
 2026-11-06,SSD NVMe 1TB,marketplace,Cochabamba,4,,,1675,1845,"NV2 1.675, NV3 1.810 y 1.880 (iguales a ayer) + Lexar NM790 2.500 (nuevo); NV3 sigue lo más ofrecido: señal de oferta, no demanda confirmada; Samsung 9100 PRO 3.050 (PCIe 5) no cuenta"
 2026-11-06,SSD NVMe 2TB,marketplace,Cochabamba,1,,,,,"Corsair MP600 Mini 2TB, precio no legible (ayer SanDisk 2TB 3.100 no aparece); SSD externo Kodak 2.490 no cuenta; interés bajo (señal)"
+2026-11-09,Ryzen 5 5600,marketplace,Cochabamba,0,0,0,,,"ninguno exacto (solo 3600X, 5600G/GT y PC armadas)"
+2026-11-09,Ryzen 7 5700X3D,marketplace,Cochabamba,0,0,0,,,"ninguno exacto (5700X 2.540, 5700G, 5800X3D sin precio legible no cuentan)"
+2026-11-09,Ryzen 5 7600,marketplace,Cochabamba,0,0,0,,,ninguno exacto
+2026-11-09,Ryzen 7 7800X3D,marketplace,Cochabamba,2,1,2,4500,4650,"4.500 (igual que 06/11) y 4.800 sellado (reaparece); ya no están los 5.190 y 5.390; señal de oferta con rebaja de precio, no demanda confirmada"
+2026-11-09,Ryzen 9 9950X,marketplace,Cochabamba,1,1,0,,,un anuncio OEM de 9950X/9950X3D con precio no legible; el resto gratis/3D2 no cuenta
+2026-11-09,Intel Core i5-12400F,marketplace,Cochabamba,2,0,0,2350,2350,OEM suelto 2.350 (igual) + un anuncio sin precio legible; combos con placa no cuentan
+2026-11-09,Intel Core i5-13400,marketplace,Cochabamba,0,0,0,,,"ninguno (solo i5 14400 a 2.700, otro modelo)"
+2026-11-09,Intel Core i5-14400F,marketplace,Cochabamba,0,0,0,,,solo combo 14400F + placa + RAM 5.290 (no suelto)
+2026-11-09,Intel Core Ultra 7 265K,marketplace,Cochabamba,0,0,0,,,ninguno; aparecen 270K Plus a 4.100 y 4.350 (otro modelo)
+2026-11-09,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,marketplace,Cochabamba,0,0,0,,,ninguno
+2026-11-09,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,marketplace,Cochabamba,1,1,0,,,Corsair 2x16 6000 con precio dudoso (Bs 630 tachado de 5.800); sin comparar
+2026-11-09,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,1,0,0,725,725,2x8 3600MHz 725 (igual); otros 2x8 de 3000 MHz a 1.200 y uno sin velocidad a 1.250; sin comparar
+2026-11-09,SSD NVMe 1TB,marketplace,Cochabamba,5,3,3,1250,1400,"nuevos 1.250, 1.400 y 1.450 (recién publicados) + Crucial P3 1.300; NV3 1.880 sigue; ya no están NV2 1.675, NV3 1.810 ni Lexar 2.500; oferta en baja de precio: señal de oferta, no demanda confirmada"
+2026-11-09,SSD NVMe 2TB,marketplace,Cochabamba,0,0,1,,,ninguno; desapareció el Corsair MP600 Mini 2TB del 06/11
+2026-11-09,Ryzen 5 7500F,marketplace,Cochabamba,0,0,0,,,solo PC armadas con 7500F
+2026-11-09,Ryzen 7 7700X,marketplace,Cochabamba,0,0,0,,,ninguno suelto; solo PC armada con 7700X (15.500 a 16.000 con RTX 3080); competencia de nuestros 7700X: ninguna
