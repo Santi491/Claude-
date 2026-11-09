@@ -149,3 +149,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-08,raspberry,vigilante,00:00,00:00,alerta,pedido a la PC sin hacer hace 360 min
 2026-11-08,gerente,informe,20:15,20:17,ok,resumen semanal 08/11 subido; 4 tareas auto
 2026-11-09,raspberry,vigilante,00:00,00:00,alerta,pedido a la PC sin hacer hace 1800 min
+2026-11-09,pc,ronda,15:52,15:52,en curso,empezó
