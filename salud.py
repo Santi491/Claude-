@@ -62,7 +62,11 @@ def anotar(quien, tipo, estado="ok", nota="", inicio="", fin=""):
 def corrio(quien, fecha, S=None):
     """La sesión de `quien` que corrió ese día (dict) o None."""
     S = sesiones() if S is None else S
-    filas = [s for s in S if s["fecha"] == fecha and s["quien"] == quien and s["estado"] in ("ok", "arreglado")
+    # 10/11: una ronda que terminó en "alerta" (parcial: sin Chrome, sin publicar la oficina...) también corrió; antes
+    # contaba como "no corrió" y el vigilante la relanzaba (06/11). Solo no cuenta si la nota dice que no se hizo.
+    filas = [s for s in S if s["fecha"] == fecha and s["quien"] == quien
+             and (s["estado"] in ("ok", "arreglado")
+                  or (s["estado"] == "alerta" and not s["nota"].strip().lower().startswith(("no hecha", "no corri"))))
              and not s["tipo"].startswith(("encargo", "vigilante", "encendido", "cubre"))]
     if filas:
         return filas[-1]
