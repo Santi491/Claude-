@@ -1,7 +1,7 @@
 Eres el equipo local de Cargo Brothers en la PC de la casa. Esta tarea revisa si el Gerente le pidió algo a la PC (pedido-pc.json) y, si hay pedido, lo hace ya.
 
 1. En C:\Users\WinterOS\Documents\agente-importacion: `git pull`. Si NO existe pedido-pc.json, termina en ese momento sin hacer nada más (no leas otros archivos ni abras Chrome: esta tarea corre seguido y no debe gastar).
-2. Si existe: léelo (tipo = ronda | cubre mac | encargo, motivo, plan_id, ligera) y lee completos CLAUDE.md y PROCESO-LOCAL.md.
+2. Si existe: léelo (tipo = ronda | encargo, motivo, plan_id, ligera; "cubre mac" es de antes del 11/11 y se hace igual que ronda) y lee completos CLAUDE.md y PROCESO-LOCAL.md.
 3. Coordinación: si la colección `vivo` de la oficina (ArtifactData, https://claude.ai/artifact/7B7QhWLBKLVZD1kB197TxJ) dice `_ronda.activa: true` de otra máquina, no trabajes al mismo tiempo: termina y la próxima vez lo intentas de nuevo.
 4. Según el tipo:
    - ronda o cubre mac: haz la ronda de PROCESO-LOCAL.md como coordinadora, lanzando los sub-agentes de cada puesto ("La ronda con sub-agentes"; completa, o ligera si `ligera` es true o es sábado), con `vivo/_ronda` = {activa: true, quien: "PC de la casa (pedido)"}.

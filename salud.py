@@ -186,7 +186,7 @@ def semana(dias=14):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) >= 3 and sys.argv[1] == "empezar":   # python3 salud.py empezar mac [ronda]
+    if len(sys.argv) >= 3 and sys.argv[1] == "empezar":   # python3 salud.py empezar pc [ronda]
         ok = empezar(sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else "ronda")
         print("anotada en curso" + ("" if ok else " (no se pudo subir a GitHub)"))
         sys.exit(0)

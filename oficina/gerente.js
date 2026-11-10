@@ -516,7 +516,7 @@
     ebay: ["#5c2418", "#c2553a", "EB", "Trae los precios de eBay EE.UU."], ana: ["#3a2a5c", "#7b5cb8", "AN", "Calcula costos, márgenes y qué traer"],
     pedidos: ["#4d3216", "#a8743a", "PE", "Rastrea los paquetes hasta Cochabamba"], fin: ["#1d4a2a", "#3d8f56", "FI", "Plata, stock y ventas"],
     dem: ["#5a3d0d", "#c08a2a", "DE", "Mide qué se mueve en Cochabamba"], nube: ["#1c3f55", "#3b7ea6", "ID", "Informe diario de la mañana"],
-    local: ["#2c3035", "#5b636c", "OF", "Rondas de la Mac y la PC y la oficina"] };
+    local: ["#2c3035", "#5b636c", "OF", "Rondas de la PC (10:30 y 16:00) y la oficina"] };
   const perfil = k => PERFIL[k] || ["#2c3035", "#5b636c", (QN[k] || k).slice(0, 2).toUpperCase(), ""];
   function avatar(k, sz) {
     const [c1, c2, ini] = perfil(k), foto = (window.OFI_AVATARES || {})[k === "local" ? "" : k];
