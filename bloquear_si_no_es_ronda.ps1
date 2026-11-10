@@ -5,7 +5,7 @@
 #  - a cualquier otra hora: bloquea la pantalla al instante (Windows pide el PIN o la contrasena) y NO abre Claude.
 # Lo corre la tarea de Windows "CargoBloqueo" al iniciar sesion (ver raspberry/LEEME.md). Claude NO debe estar en las
 # aplicaciones de inicio de Windows: lo abre este script.
-#  - con -SoloAbrir (tarea "CargoAbrir", cada 5 minutos con la sesion iniciada, 28/10): si la PC ya estaba prendida
+#  - con -SoloAbrir (tarea "CargoAbrir", cada 15 minutos y sin ventana con la sesion iniciada; 28/10, 15 min desde el 10/11): si la PC ya estaba prendida
 #    cuando llega un pedido del Gerente (o la ronda de las 16:00) y Claude esta cerrado, lo abre; nunca bloquea.
 #    Antes, si la PC estaba prendida y bloqueada, el pedido esperaba sin que nadie abriera Claude.
 param([switch]$SoloAbrir)
