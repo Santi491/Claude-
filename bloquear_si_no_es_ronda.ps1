@@ -10,6 +10,9 @@
 #    Antes, si la PC estaba prendida y bloqueada, el pedido esperaba sin que nadie abriera Claude.
 param([switch]$SoloAbrir)
 $ahora = Get-Date
+# CargoAbrir solo trabaja de lunes a sabado de 8:00 a 21:00 (Santi, 10/11: juega de noche y no quiere que se le abra
+# nada): fuera de ese horario termina al instante, sin git pull. Los pedidos de la noche esperan a la manana.
+if ($SoloAbrir -and ($ahora.DayOfWeek -eq [DayOfWeek]::Sunday -or $ahora.Hour -lt 8 -or $ahora.Hour -ge 21)) { exit 0 }
 $esDiaDeRonda = $ahora.DayOfWeek -ne [DayOfWeek]::Sunday
 $desde = $ahora.Date.AddHours(15).AddMinutes(40)
 # hasta 16:45: el reintento del vigilante de las 16:15 hace arrancar la PC despues de las 16:10 (28/10)
