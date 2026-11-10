@@ -1,5 +1,6 @@
 # Al iniciar sesion en la PC de la casa (Santi, 17/10):
-#  - en la hora en que la Raspberry la prende para la ronda (lunes a sabado, 15:40 a 16:10): abre la app de Claude
+#  - en la hora en que la Raspberry la prende para la ronda (lunes a sabado, 15:40 a 16:45; y desde el 11/11 tambien
+#    lunes a viernes de 9:50 a 11:15 para la ronda de la manana): abre la app de Claude
 #    para que corra la ronda de las 16:00 y deja la sesion abierta;
 #  - a cualquier otra hora: bloquea la pantalla al instante (Windows pide el PIN o la contrasena) y NO abre Claude.
 # Lo corre la tarea de Windows "CargoBloqueo" al iniciar sesion (ver raspberry/LEEME.md). Claude NO debe estar en las
@@ -13,6 +14,10 @@ $esDiaDeRonda = $ahora.DayOfWeek -ne [DayOfWeek]::Sunday
 $desde = $ahora.Date.AddHours(15).AddMinutes(40)
 # hasta 16:45: el reintento del vigilante de las 16:15 hace arrancar la PC despues de las 16:10 (28/10)
 $hasta = $ahora.Date.AddHours(16).AddMinutes(45)
+# ronda de la manana en la PC (Santi, 10/11; desde el 11/11): lunes a viernes, la Raspberry la prende a las 10:00
+$esDiaDeManana = $esDiaDeRonda -and $ahora.DayOfWeek -ne [DayOfWeek]::Saturday
+$desdeM = $ahora.Date.AddHours(9).AddMinutes(50)
+$hastaM = $ahora.Date.AddHours(11).AddMinutes(15)
 # Modo prueba (una sola vez): si existe .prueba-ronda con la fecha de hoy, se porta como en la hora de la ronda y lo borra
 $prueba = Join-Path $PSScriptRoot ".prueba-ronda"
 $esPrueba = (Test-Path $prueba) -and ((Get-Content $prueba -ErrorAction SilentlyContinue | Select-Object -First 1) -eq $ahora.ToString("yyyy-MM-dd"))
@@ -24,10 +29,10 @@ $hayPedido = $false
 if (Test-Path $archPedido) {
   try { $ped = Get-Content $archPedido -Raw | ConvertFrom-Json; $hayPedido = ((Get-Date) - [datetime]::ParseExact($ped.pedido, "yyyy-MM-dd HH:mm", $null)).TotalHours -lt 3 } catch { }
 }
-$hayQueAbrir = $esPrueba -or $hayPedido -or ($esDiaDeRonda -and $ahora -ge $desde -and $ahora -le $hasta)
+$hayQueAbrir = $esPrueba -or $hayPedido -or ($esDiaDeRonda -and $ahora -ge $desde -and $ahora -le $hasta) -or ($esDiaDeManana -and $ahora -ge $desdeM -and $ahora -le $hastaM)
 if ($SoloAbrir) {
   # una sola vez por pedido (o por ronda del dia): si Santi cierra Claude a proposito, no se vuelve a abrir
-  $clave = if ($hayPedido) { "pedido-$($ped.id)" } else { "ronda-$($ahora.ToString('yyyy-MM-dd'))" }
+  $clave = if ($hayPedido) { "pedido-$($ped.id)" } elseif ($ahora.Hour -lt 13) { "manana-$($ahora.ToString('yyyy-MM-dd'))" } else { "ronda-$($ahora.ToString('yyyy-MM-dd'))" }
   $hecho = Join-Path $PSScriptRoot ".abierto-$clave"
   $claudeAbierto = Get-Process -Name "claude" -ErrorAction SilentlyContinue
   if (-not $hayQueAbrir -or $claudeAbierto -or (Test-Path $hecho)) { exit 0 }

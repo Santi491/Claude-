@@ -9,7 +9,7 @@ Responde al momento a Santi. Lo simple lo resuelve solo, sin IA y sin gastar el 
     uso                                                -> cuántas preguntas a Claude van hoy
     estado pc · prender pc · apagar pc                 -> ve si la PC está prendida / la prende / la apaga
     ronda ahora  ·  pc: <encargo>                      -> la PC hace una ronda completa o solo ese encargo ya
-    salud                                              -> cómo está el equipo hoy (nube, Mac, PC, Gerente, Raspberry)
+    salud                                              -> cómo está el equipo hoy (nube, rondas 10:30 y 16:00 de la PC, Gerente, Raspberry)
     meta wa: 10 tiendas nuevas hoy                     -> tarea OBLIGATORIA de hoy para ese agente (no termina sin cumplirla)
     chat pedidos: <texto>                              -> le contesta a un agente en el chat interno (chat.csv)
     chat                                               -> los mensajes de los agentes que esperan respuesta
@@ -163,7 +163,7 @@ def cmd_deshacer(estado):
         return "No tengo ningún cambio mío reciente para deshacer."
     if git("revert", "--no-edit", h).returncode != 0:
         git("revert", "--abort")
-        return "No pude deshacerlo solo: después de mi cambio alguien más tocó esos archivos. Lo vemos en una sesión con Claude en la Mac."
+        return "No pude deshacerlo solo: después de mi cambio alguien más tocó esos archivos. Lo vemos en una sesión con Claude en la PC."
     for _ in range(3):
         if git("push", "-q").returncode == 0:
             break
@@ -487,7 +487,7 @@ Según el cambio (Santi, 20/10):
   público); las guías solo en la columna guia de pedidos.csv.
 - No puedes tocar código (.py), la oficina, CLAUDE.md, los skills ni otros archivos: si Santi pide un cambio así, propónselo
   y, si acepta, encárgaselo a la PC con ACCION: pc encargo: <el cambio, bien explicado> (la PC tiene a Claude con manos
-  completas; tarda 10 a 20 minutos) o dile que es para una sesión con Claude en la Mac si es grande.
+  completas; tarda 10 a 20 minutos) o dile que es para una sesión con Claude en la PC si es grande.
 Para las órdenes de abajo (aprobar, tareas rápidas, la PC, la libreta) sigue usando las líneas ACCION, exactamente así:
 ACCION: aprobar 1 3          (tareas propuestas de plan.csv, por su número final)
 ACCION: rechazar 2

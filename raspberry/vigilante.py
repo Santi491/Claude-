@@ -5,7 +5,9 @@
     python3 raspberry/vigilante.py --probar  # solo muestra qué haría
 
 Qué hace (Santi, 17/10: "que me diga: pasó esto, hice esto y lo solucioné"):
-- Si a las 13:00 de lunes a viernes la Mac no hizo su ronda, pide a la PC que la cubra (pedido-pc.json) y la prende.
+- Mañana (desde el 11/11 la hace la PC, Santi 10/11): de lunes a viernes prende la PC a las 10:00 para la ronda de las
+  10:30; si a las 10:30 sigue apagada la vuelve a prender y a las 11:00 avisa; si a las 13:00 no hizo la ronda, la
+  relanza una vez (pedido + encender).
 - Si a las 16:15 de lunes a sábado la PC no prendió, la vuelve a prender; si a las 16:30 sigue apagada, avisa.
 - Si a las 18:00 la PC no hizo su ronda, la relanza una vez (pedido + encender).
 - Si la nube (9:30) o el Gerente de las 20:00 (20:45) no corrieron, avisa (eso no lo puede arreglar la Raspberry;
@@ -94,16 +96,31 @@ def main():
     cambios, eventos = [], []
     pedido = json.load(open(PEDIDO, encoding="utf-8")) if os.path.exists(PEDIDO) else None
 
-    # 1. La Mac no hizo su ronda de la mañana: la cubre la PC
-    # (si la Mac anotó "en curso" no se cubre: está trabajando, solo empezó tarde; salud lo da como "en curso")
-    if e["mac"]["estado"] == "no corrió" and "cubre-mac" not in hecho and not pedido:
-        pedir_a_pc("cubre mac", "la Mac no hizo la ronda de la mañana")
+    # 1. Ronda de la mañana en la PC (desde el 11/11; antes la hacía la Mac y la PC la cubría)
+    # (si la ronda anotó "en curso" no se toca: está trabajando, solo empezó tarde; salud lo da como "en curso")
+    m = e["manana"]["estado"]
+    if dia in salud.HORARIO["manana"]["dias"] and m == "pendiente":
+        if "10:00" <= hora < "10:30" and "prende-manana" not in hecho:
+            hecho.add("prende-manana")
+            if pc_prendida() is False:
+                prender_pc()
+        if "10:30" <= hora < "11:00" and "reintento-manana" not in hecho and pc_prendida() is False:
+            prender_pc()
+            hecho.add("reintento-manana")
+            eventos.append(("arreglo", "la PC no prendió a las 10:00: segundo intento"))
+        if "11:00" <= hora and "pc-apagada-manana" not in hecho and pc_prendida() is False:
+            hecho.add("pc-apagada-manana")
+            eventos.append(("alerta", "la PC no prendió para la ronda de las 10:30"))
+            avisar("Santi, ojo: intenté prender la PC dos veces para la ronda de las 10:30 y no respondió. "
+                   "Puede ser la luz o el cable de red. A las 13:00 lo vuelvo a intentar.")
+    if m == "no corrió" and "relanza-manana" not in hecho and not pedido:
+        pedir_a_pc("ronda", "la PC no hizo la ronda de las 10:30")
         prender_pc()
-        hecho.add("cubre-mac")
+        hecho.add("relanza-manana")
         cambios.append("pedido-pc.json")
-        eventos.append(("arreglo", "la Mac no hizo la ronda de la mañana: la cubre la PC"))
-        avisar("Te cuento, Santi: la Mac no hizo la ronda de la mañana (seguramente estaba apagada), así que prendí la PC "
-               "y la está haciendo ahí. Cuando termine te mando el resumen; no tienes que hacer nada.")
+        eventos.append(("arreglo", "la PC no hizo la ronda de las 10:30: relanzada"))
+        avisar("Te cuento, Santi: la ronda de las 10:30 no se hizo, así que se la volví a pedir a la PC y la prendí. "
+               "Cuando termine te mando el resumen; no tienes que hacer nada.")
 
     # 2. La PC no prendió para la ronda de las 16:00
     if dia in salud.HORARIO["pc"]["dias"] and e["pc"]["estado"] == "pendiente":   # "en curso" no entra: ya prendió

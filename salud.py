@@ -8,7 +8,8 @@ Fuentes: sesiones.csv (una fila por sesión de trabajo: nube, mac, pc, gerente, 
 (la nube), informes/gerente/indice.csv (el Gerente de las 20:00), actividad.csv (respaldo para días viejos) y
 salud-raspberry.json (el último latido de la Raspberry).
 Horario (Santi, 17/10): nube y Gerente todos los días; Mac lunes a viernes; PC lunes a sábado (sábado ronda ligera);
-domingo sin rondas con Chrome.
+domingo sin rondas con Chrome. Desde el 11/11 (Santi, 10/11: ya no tiene clases a la mañana) la ronda de la mañana
+también la hace la PC: la parte "manana" junta la Mac (días viejos) y la PC antes de las 14:00; "pc" es la de la tarde.
 """
 import csv
 import json
@@ -26,8 +27,11 @@ INICIO = "2026-10-12"   # primer día con el equipo trabajando: antes no cuenta 
 # dias: 0 = lunes ... 6 = domingo; limite: hora a la que, si no corrió, cuenta como "no corrió"
 HORARIO = {
     "nube": {"nombre": "Nube · revisión 7:52", "dias": range(7), "hora": "07:52", "limite": "09:30"},
-    "mac": {"nombre": "Mac · ronda 10:30", "dias": range(5), "hora": "10:30", "limite": "13:00"},
-    "pc": {"nombre": "PC · ronda 16:00", "dias": range(6), "hora": "16:00", "limite": "18:00", "ligera": [5]},
+    # quien: qué máquinas cuentan; antes/desde: la ronda tiene que empezar antes o desde esa hora (la PC hace las dos)
+    "manana": {"nombre": "PC · ronda 10:30", "dias": range(5), "hora": "10:30", "limite": "13:00",
+               "quien": ("mac", "pc"), "antes": "14:00"},
+    "pc": {"nombre": "PC · ronda 16:00", "dias": range(6), "hora": "16:00", "limite": "18:00", "ligera": [5],
+           "quien": ("pc",), "desde": "14:00"},
     "gerente": {"nombre": "Gerente · informe 20:00", "dias": range(7), "hora": "20:00", "limite": "20:45"},
 }
 
@@ -59,12 +63,25 @@ def anotar(quien, tipo, estado="ok", nota="", inicio="", fin=""):
         w.writerow([t.strftime("%Y-%m-%d"), quien, tipo, inicio or t.strftime("%H:%M"), fin or t.strftime("%H:%M"), estado, nota])
 
 
+def _es_de(s, parte):
+    """La fila de sesiones.csv es de esa parte del horario (por máquina y, si hace falta, por hora de inicio)."""
+    h = HORARIO.get(parte)
+    if not h or "quien" not in h:
+        return s["quien"] == parte
+    if s["quien"] not in h["quien"]:
+        return False
+    if s["quien"] == "mac":   # la Mac solo hizo rondas de la mañana
+        return True
+    ini = s.get("inicio") or ""
+    return (not h.get("antes") or bool(ini and ini < h["antes"])) and (not h.get("desde") or not ini or ini >= h["desde"])
+
+
 def corrio(quien, fecha, S=None):
-    """La sesión de `quien` que corrió ese día (dict) o None."""
+    """La sesión de `quien` (una parte del horario o una máquina) que corrió ese día (dict) o None."""
     S = sesiones() if S is None else S
     # 10/11: una ronda que terminó en "alerta" (parcial: sin Chrome, sin publicar la oficina...) también corrió; antes
     # contaba como "no corrió" y el vigilante la relanzaba (06/11). Solo no cuenta si la nota dice que no se hizo.
-    filas = [s for s in S if s["fecha"] == fecha and s["quien"] == quien
+    filas = [s for s in S if s["fecha"] == fecha and _es_de(s, quien)
              and (s["estado"] in ("ok", "arreglado")
                   or (s["estado"] == "alerta" and not s["nota"].strip().lower().startswith(("no hecha", "no corri"))))
              and not s["tipo"].startswith(("encargo", "vigilante", "encendido", "cubre"))]
@@ -82,7 +99,7 @@ def en_curso(quien, fecha, S=None, horas=6):
     """La ronda de `quien` empezó hoy (fila 'en curso' de `salud.py empezar`) y todavía no terminó (27/10: la Mac
     empezó tarde dos días y el vigilante la creyó caída)."""
     S = sesiones() if S is None else S
-    hoy = [s for s in S if s["fecha"] == fecha and s["quien"] == quien]
+    hoy = [s for s in S if s["fecha"] == fecha and _es_de(s, quien)]
     if not hoy or hoy[-1]["estado"] != "en curso":
         return None
     try:
@@ -110,7 +127,8 @@ def empezar(quien, tipo="ronda"):
 def cubierta(quien, fecha, S=None):
     """Si otra máquina cubrió la ronda (por ejemplo, la PC hizo la de la Mac)."""
     S = sesiones() if S is None else S
-    return next((s for s in S if s["fecha"] == fecha and s["tipo"] == f"cubre {quien}" and s["estado"] in ("ok", "arreglado")), None)
+    tipos = ("cubre mac", "cubre manana") if quien == "manana" else (f"cubre {quien}",)
+    return next((s for s in S if s["fecha"] == fecha and s["tipo"] in tipos and s["estado"] in ("ok", "arreglado")), None)
 
 
 def estado_dia(fecha=None, hora=None):

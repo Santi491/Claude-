@@ -27,7 +27,7 @@ La Raspberry Pi 3 B+ queda prendida y contesta a Santi por Telegram al momento.
 Mientras la Pi está prendida, ella lee Telegram. Si la nube, la PC o la Mac corren `telegram_leer.py` al mismo tiempo, Telegram puede rechazar a uno de los dos ("conflict"); la Pi reintenta sola a los 15 s. Si la Pi está apagada, todo sigue como antes.
 
 ## Prender la PC para la ronda de las 16:00 (Wake-on-LAN, 17/10)
-La Raspberry prende la PC de la casa de lunes a sábado a las 15:50 con `despertar_pc.py`, y la ronda de la PC la apaga al terminar (`apagar_pc.ps1`, paso 8c de `PROCESO-LOCAL.md`) solo si nadie la estaba usando. Si la PC no responde en 4 minutos, avisa a Santi por Telegram.
+La Raspberry prende la PC de la casa de lunes a sábado a las 15:50 con `despertar_pc.py` (y desde el 11/11 también de lunes a viernes a las 10:00 para la ronda de la mañana: eso lo hace `vigilante.py`, no hace falta otra línea de cron), y la ronda de la PC la apaga al terminar (`apagar_pc.ps1`, paso 8c de `PROCESO-LOCAL.md`) solo si nadie la estaba usando. Si la PC no responde en 4 minutos, avisa a Santi por Telegram.
 1. En `~/.cargo-bot` agregar `PC_MAC=AA:BB:CC:DD:EE:FF` (la "Dirección física" del adaptador **Ethernet** en `ipconfig /all` de la PC) y `PC_IP=192.168.0.x` (su IPv4).
 2. Probar: `python3 ~/cargo/raspberry/despertar_pc.py --probar`, y con la PC apagada, `python3 ~/cargo/raspberry/despertar_pc.py`.
 3. Cron: `crontab -e` y agregar `50 15 * * 1-6 cd ~/cargo && python3 raspberry/despertar_pc.py >> ~/despertar.log 2>&1` (la Raspberry tiene que estar en hora de Bolivia: `timedatectl` debe decir America/La_Paz).

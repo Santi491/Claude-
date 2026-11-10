@@ -446,7 +446,7 @@
   const SAL = D.salud || { hoy: {}, semana: [], sesiones: [], horario: {} };
   const SCOL = { ok: C.green, cubierta: C.cyan, arreglado: C.cyan, pendiente: C.amber, "en curso": C.amber, "no corrió": C.red, alerta: C.red, "sin señal": C.red, "no toca": "#2E2F31", antes: "#1E1F20", "sin datos": C.muted };
   const SLBL = { ok: "corrió bien", cubierta: "la cubrió otra máquina", pendiente: "todavía no le toca", "en curso": "trabajando ahora", "no corrió": "no corrió", "no toca": "no le toca hoy", antes: "antes de empezar el equipo", "sin datos": "sin datos", "sin señal": "sin señal" };
-  const QUIEN = { nube: "Nube", mac: "Mac", pc: "PC de la casa", gerente: "Gerente 20:00", raspberry: "Raspberry" };
+  const QUIEN = { nube: "Nube", manana: "Ronda 10:30", mac: "Mac", pc: "Ronda 16:00", gerente: "Gerente 20:00", raspberry: "Raspberry" };
   const DIAS = ["lu", "ma", "mi", "ju", "vi", "sá", "do"];
   function vSalud() {
     const H = SAL.hoy || {}, R = H.raspberry || {};
@@ -458,7 +458,7 @@
     const rasp = `<div class="gp-ag"><b><i style="background:${SCOL[R.estado] || C.muted}"></i>Raspberry · siempre prendida</b>
       <time>${R.ultima ? `última señal ${dm(R.ultima)} ${esc(R.ultima.slice(11))}` : "todavía sin señal"}${R.horas != null ? ` (hace ${R.horas} h)` : ""}</time>
       <span>${R.ultima ? `Bot de Telegram: ${esc(R.bot || "?")} · PC: ${esc(R.pc || "?")} · vigilante cada 30 min` : "El vigilante sube su latido cada 3 horas."}</span></div>`;
-    const comps = ["nube", "mac", "pc", "gerente"], sem = SAL.semana || [];
+    const comps = ["nube", "manana", "pc", "gerente"], sem = SAL.semana || [];
     const grid = `<div class="gp-tbl"><table><thead><tr><th></th>${sem.map(d => `<th style="text-align:center!important">${DIAS[(new Date(d.fecha + "T12:00:00").getDay() + 6) % 7]}<br>${dm(d.fecha)}</th>`).join("")}</tr></thead><tbody>
       ${comps.map(k => `<tr><td>${esc(QUIEN[k])}</td>${sem.map(d => `<td title="${esc(SLBL[d[k]] || d[k])}" style="text-align:center!important"><i style="display:inline-block;width:16px;height:16px;border-radius:4px;background:${SCOL[d[k]] || C.muted}"></i></td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
     const ses = (SAL.sesiones || []).slice().reverse().slice(0, 40);
@@ -467,7 +467,7 @@
     return `<div class="gp-kpis">${kpi("Hoy", comps.filter(k => (H[k] || {}).estado === "ok" || (H[k] || {}).estado === "cubierta").length + " de " + comps.filter(k => (H[k] || {}).estado !== "no toca").length, "partes que ya corrieron")}${kpi("Fallas en 14 días", fallas, "sesiones que no corrieron")}${kpi("Arreglos del vigilante", arreglos, "lo resolvió solo y te avisó")}${kpi("Raspberry", R.estado === "ok" ? "viva" : (R.estado || "sin datos"), R.ultima ? "última señal " + esc(R.ultima.slice(11)) : "")}</div>
     <div class="gp-box w12"><h4>Cómo está cada parte hoy</h4><div class="gp-agents">${comps.map(card).join("")}${rasp}</div></div>
     <div class="gp-box w12"><h4>Últimos 14 días</h4>${grid}
-      <p class="gp-note">Verde: corrió · celeste: la cubrió otra máquina · ámbar: pendiente · rojo: no corrió · gris: no le tocaba (Mac lunes a viernes, PC lunes a sábado; domingo sin rondas).</p></div>
+      <p class="gp-note">Verde: corrió · celeste: la cubrió otra máquina · ámbar: pendiente · rojo: no corrió · gris: no le tocaba (ronda de las 10:30 lunes a viernes, en la PC desde el 11/11 y antes en la Mac; ronda de las 16:00 lunes a sábado; domingo sin rondas).</p></div>
     <div class="gp-box w12"><h4>Historial de sesiones</h4>${ses.length ? `<div class="gp-tbl"><table><thead><tr><th>Día</th><th>Quién</th><th>Qué</th><th>Hora</th><th>Estado</th><th>Nota</th></tr></thead><tbody>
       ${ses.map(x => `<tr><td>${dm(x.fecha)}</td><td>${esc(QUIEN[x.quien] || x.quien)}</td><td>${esc(x.tipo)}</td><td>${esc(x.inicio || "")}${x.fin && x.fin !== x.inicio ? "–" + esc(x.fin) : ""}</td><td><span class="gp-tag" style="background:${SCOL[x.estado] || C.muted}">${esc(x.estado)}</span></td><td style="color:var(--o-muted)">${esc(x.nota || "")}</td></tr>`).join("")}</tbody></table></div>` : `<p class="gp-empty">Todavía no hay sesiones registradas.</p>`}</div>`;
   }
