@@ -119,7 +119,8 @@ def subir(mensaje, extra=()):
 # El Gerente de Telegram puede editar SOLO estos archivos de datos. Todo lo demás (código, oficina, CLAUDE.md, skills)
 # se deshace solo si lo toca, y lo grande se lo encarga a la PC (ACCION: pc encargo).
 EDITABLES = ("vigilar.csv", "plan.csv", "tiendas-cochabamba.csv", "clientes-potenciales.csv", "necesidades.csv", "ideas.csv",
-             "memoria-gerente.csv", "chat.csv", "precios-cochabamba.csv", "pedidos.csv", "pedidos-prueba.csv", "ventas.csv")
+             "memoria-gerente.csv", "chat.csv", "precios-cochabamba.csv", "pedidos.csv", "pedidos-prueba.csv", "ventas.csv",
+             "seguimiento.csv")
 
 
 DEL_VIGILANTE = ("sesiones.csv", "salud-raspberry.json", "pedido-pc.json", "orden-pc.json", "actividad.csv")
@@ -483,7 +484,7 @@ al inicio de cada mensaje te paso la lista actual de necesidades. Cuéntaselas a
 importantes, explicando qué se destraba si las resuelve, sin repetir la lista entera en cada mensaje.
 MANOS SOBRE LOS DATOS (Santi, 20/10). Puedes editar con la herramienta Edit SOLO estos archivos de datos: vigilar.csv,
 plan.csv, tiendas-cochabamba.csv, clientes-potenciales.csv, necesidades.csv, ideas.csv, memoria-gerente.csv, chat.csv,
-precios-cochabamba.csv, pedidos.csv, pedidos-prueba.csv y ventas.csv. Lee el archivo antes, respeta sus columnas y su formato
+precios-cochabamba.csv, pedidos.csv, pedidos-prueba.csv, seguimiento.csv y ventas.csv. Lee el archivo antes, respeta sus columnas y su formato
 CSV (comillas si el texto lleva coma), agrega filas al final y nunca borres filas (para anular algo se cambia el estado).
 Después de tu mensaje el bot revisa el cambio con verificar.py, lo deshace solo si queda un error, le dice a Santi qué
 cambió y lo sube; Santi puede escribir "deshacer". actividad.csv la anota el bot: no la toques.
@@ -495,6 +496,11 @@ Según el cambio (Santi, 20/10):
   cosa que cambie cómo trabaja el equipo.
 - Producto nuevo en vigilar.csv: producto, busqueda_ebay ("AMD Ryzen 7 7700X CPU"), peso_g_con_caja (procesador 350, RAM 150,
   SSD 80) y, en plan.csv, una tarea aprobada de prioridad alta y plazo de 2 días para ebay, wa, mkt y ana con el motivo.
+- Pedidos (Santi, 10/11): del courier de Miami a Bolivia NO hay código de seguimiento; nunca se lo pidas. Cuando Santi avise:
+  llegó a Santa Cruz → estado "en camino a Cochabamba" y fila Santa Cruz en seguimiento.csv (-17.78, -63.18, fuente Santi);
+  llegó a Cochabamba y lo va a recoger → "en Cochabamba"; ya lo recogió o lo tiene → "entregado" y fila Cochabamba
+  (-17.39, -66.16, fuente Santi). Cambia todas las compras del mismo paquete (columna paquete) y marca resuelta la
+  pregunta de necesidades.csv que lo pedía. No le preguntes por los paquetes más de una vez.
 - Tareas nuevas en plan.csv: id AAAA-MM-DD-N (el N siguiente de ese día), con prioridad (alta|media|baja) y plazo.
 - Nunca pongas en los archivos el texto de Santi tal cual ni nombres de personas, teléfonos o direcciones (el repo es
   público); las guías solo en la columna guia de pedidos.csv.

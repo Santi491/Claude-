@@ -21,7 +21,9 @@ from datetime import date, datetime, timedelta
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 HOY = date.today()
-ESTADOS_PEDIDO = ["comprado", "enviado", "en bodega del courier", "en camino a Bolivia", "en Cochabamba", "entregado", "cancelado"]
+# 10/11 (Santi): "en camino a Bolivia" se partió en dos; del courier a Bolivia no hay rastreo (lo confirma Santi)
+ESTADOS_PEDIDO = ["comprado", "enviado", "en bodega del courier", "en camino a Santa Cruz", "en camino a Cochabamba",
+                  "en Cochabamba", "entregado", "cancelado"]
 COLS_PEDIDO = ["id", "fecha_compra", "tienda", "producto", "cantidad", "precio_usd", "envio_usd", "courier", "guia", "origen",
                "destino", "destino_lat", "destino_lon", "estado", "eta", "actualizado", "foto", "notas",
                "paquete", "incidencia", "reclamo_hasta"]
@@ -150,7 +152,7 @@ def pedidos(R, ronda=False):
         eta = fecha(p.get("eta"))
         if eta and eta < HOY:
             R.aviso(f"{pid}: la fecha estimada ({eta:%d/%m}) ya pasó y sigue '{p['estado']}'")
-        if ult and p["estado"] in ("enviado", "en camino a Bolivia") and (HOY - ult).days >= 3:
+        if ult and p["estado"] == "enviado" and (HOY - ult).days >= 3:
             R.aviso(f"{pid}: {(HOY - ult).days} días sin movimiento")
         if p.get("incidencia"):
             R.aviso(f"{pid}: incidencia abierta: {p['incidencia']}")

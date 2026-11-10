@@ -753,7 +753,7 @@
   const opsScr = new THREE.Mesh(new THREE.PlaneGeometry(VW, VH), new THREE.MeshBasicMaterial({ map: opsTex, toneMapped: false }));
   opsScr.position.set(0, VY, 0.16); vwG.add(opsScr);
   box(VW + 0.3, 0.03, 0.08, ledM, 0, VY + VH / 2 + 0.12, 0.1, vwG).castShadow = false;
-  const STEPG = [/entregado|cochabamba|delivered/i, /bolivia|vuelo|aduana|camino|bodega|courier|miami|warehouse|enviado|recibido|tr[aá]nsito|en ruta/i];
+  const STEPG = [/^entregado|^en cochabamba|delivered/i, /bolivia|santa cruz|vuelo|aduana|camino|bodega|courier|miami|warehouse|enviado|recibido|tr[aá]nsito|en ruta/i];
   const etapa = e => STEPG[0].test(e || "") ? 2 : STEPG[1].test(e || "") ? 1 : 0;
   function paintOps() {
     const g = opsCv.getContext("2d"), W = 2048, H = 576, CW = W / 4;

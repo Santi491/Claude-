@@ -2,10 +2,12 @@
    Lee D.pedidos (generar.py: pedidos.csv + pedidos-prueba.csv + seguimiento.csv) y los datos de oficina/mapa/
    (mapa_datos.py: Natural Earth + calles de OpenStreetMap). Nunca muestra guías ni direcciones. */
 (function () {
-  const STEPS = [["Etiqueta creada", /etiqueta|comprado|pagado|esperando/i], ["Enviado", /enviado|recibido|aceptado|tr[aá]nsito|en ruta|departed|arrived/i],
-    ["Bodega courier", /bodega|courier|miami|warehouse/i], ["Rumbo a Bolivia", /bolivia|vuelo|aduana|camino/i], ["Entregado", /entregado|cochabamba|delivered/i]];
+  // etapas de pedidos.csv (Santi, 10/11: "en camino a Bolivia" se partió en Santa Cruz y Cochabamba; recogido = entregado)
+  const STEPS = [["Comprado", /^comprado|etiqueta|pagado|esperando/i], ["Enviado en EE.UU.", /^enviado|recibido|aceptado|tr[aá]nsito|en ruta/i],
+    ["Bodega del courier", /bodega|warehouse/i], ["Rumbo a Santa Cruz", /santa cruz|bolivia|vuelo|aduana/i],
+    ["Rumbo a Cochabamba", /camino a cochabamba/i], ["En Cochabamba", /^en cochabamba/i], ["Recogido", /^entregado|delivered/i]];
   const stepOf = e => { let k = 0; STEPS.forEach(([, re], i) => { if (re.test(e || "")) k = i; }); return k; };
-  const group = e => stepOf(e) === 0 ? "espera" : stepOf(e) >= 4 ? "entregado" : "camino";
+  const group = e => stepOf(e) === 0 ? "espera" : stepOf(e) >= 6 ? "entregado" : "camino";
   const GCOL = { espera: "#4FD1E8", camino: "#F2A541", entregado: "#5CD69A" };
   const CBBA = [-17.39, -66.157];
   const SCZ = [-17.78, -63.18];   // todo pasa por Santa Cruz antes de Cochabamba (Santi, 03/11); solo la ciudad, nunca la dirección

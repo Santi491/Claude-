@@ -10,7 +10,7 @@
 | GOFO Express | empieza con GFUS | `https://www.gofoexpress.com/track` (pegar la guía en el buscador). Si redirige a la página general, ir directo a 17track. |
 | SpeedX | empieza con SPX | `https://www.speedx.io` → Track My Package: escribir la guía en el buscador de la página (un link con la guía en la dirección no carga el resultado). |
 | Cualquiera (respaldo) | — | `https://www.17track.net/es/track?nums=<guía>`. Comprobar que el resultado muestra **nuestra** guía: 17track a veces muestra un número de demostración; eso no es un resultado. |
-| Courier a Bolivia | según el courier | su web o lo que diga Santi (fuente = "courier" o "Santi") |
+| Courier a Bolivia | **no hay rastreo** (Santi, 10/11) | solo lo que diga Santi (fuente = "Santi"); nunca pedirle una guía de este tramo |
 
 No hay API de USPS (Santi no puede crear la cuenta desde Bolivia): el rastreo es siempre con Chrome, en la ronda local.
 
@@ -21,9 +21,10 @@ No hay API de USPS (Santi no puede crear la cuenta desde Bolivia): el rastreo es
 | Label created, pre-shipment, awaiting item | `comprado` (todavía no salió) |
 | Accepted, picked up, in transit, departed, arrived at facility, out for delivery (en EE.UU., antes del courier) | `enviado` |
 | Delivered (incluido "front door" / "mailroom" / "dock") en la ciudad de la casilla del courier del pedido (courier A: Miami, Florida; courier B: su dirección en un estado sin sales tax; los pedidos de prueba van a Miami), o el courier confirma recepción | `en bodega del courier` (si el courier todavía no lo confirmó, dilo en el informe; a los 2 días hábiles sin confirmación es necesidad para Santi) |
-| El courier lo despachó, vuelo, en aduana | `en camino a Bolivia` |
-| Llegó a la oficina del courier en Cochabamba | `en Cochabamba` |
-| Santi lo recibió | `entregado` |
+| 2 días después de llegar a la bodega del courier (automático, `pedidos_etapas.py`; estimado) | `en camino a Santa Cruz` |
+| Santi: llegó a Santa Cruz / ya lo mandan a Cochabamba | `en camino a Cochabamba` |
+| Santi: llegó a Cochabamba, lo va a recoger | `en Cochabamba` |
+| Santi: ya lo recogió / ya lo tiene | `entregado` |
 
 Si el texto es de un problema (exception, alert, returned, undeliverable, held, damaged), el estado **no cambia**: se anota en `incidencia`.
 
