@@ -679,3 +679,6 @@ fecha,hora,agente,texto
 2026-11-09,16:40,gerente,"Fin de ronda tarde PC: verificar.py sin errores; chat contestado (mkt, wa); necesidad del dato repetido oficial/paralelo cerrada; 3 tareas de Santi reprogramadas al 12/11; aviso de fin de ronda enviado"
 2026-11-09,16:23,local,"Apagado: PC se apaga en 2 minutos (la prendió la Raspberry para la ronda y nadie la usó)"
 2026-11-09,20:16,gerente,"Informe 20:00 hecho: avance semanal de objetivos, 5 tareas auto (rutina) para el 10/11, 0 propuestas nuevas, 2 mensajes del chat contestados, 1 nota de libreta anotada, Telegram lo lee la Raspberry"
+2026-11-10,07:58,ebay,"API: 14 precios nuevos y 13 usados; borradas 2 filas de hoy que eran SATA y no NVMe (SSD 2TB nuevo y SSD 1TB usado)"
+2026-11-10,07:58,ana,"Nada para traer hoy: lo mejor sigue en esperar por falta de precios locales (SSD 2TB nuevo 36 % con peor caso 26 %, Ultra 7 265K 23 %). El SSD 1TB nuevo pasó a no traer (-5 %) porque eBay subió de USD 104 a 140."
+2026-11-10,07:58,nube,"Revisión diaria hecha: dólar USDT 11,95, comparación, análisis, informe del día y copia CSV; Excel y PDF pendientes (reportlab no funciona en la nube)"
