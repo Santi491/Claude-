@@ -678,3 +678,4 @@ fecha,hora,agente,texto
 2026-11-09,16:30,local,Oficina: ronda tarde PC: reportes y generar.py corridos; publicada versión 122 de la oficina (datos.js verificado por hash con el repo; capturas mkt 16:07 y 16:13 subidas); verificar comun y oficina sin ERROR; vivo/_ronda en false
 2026-11-09,16:40,gerente,"Fin de ronda tarde PC: verificar.py sin errores; chat contestado (mkt, wa); necesidad del dato repetido oficial/paralelo cerrada; 3 tareas de Santi reprogramadas al 12/11; aviso de fin de ronda enviado"
 2026-11-09,16:23,local,"Apagado: PC se apaga en 2 minutos (la prendió la Raspberry para la ronda y nadie la usó)"
+2026-11-09,20:16,gerente,"Informe 20:00 hecho: avance semanal de objetivos, 5 tareas auto (rutina) para el 10/11, 0 propuestas nuevas, 2 mensajes del chat contestados, 1 nota de libreta anotada, Telegram lo lee la Raspberry"
