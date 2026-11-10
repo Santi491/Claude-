@@ -434,3 +434,7 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-11-10,13:11,whatsapp,Compuland,recibido,automatica,no,"respuesta automática: tienda 100% en línea, entregas, pago contra entrega; pide marca/modelo (ya los dimos); sin precio"
 2026-11-10,13:13,whatsapp,Importadora ITA,enviado,nuevo,,"chat nuevo (T105): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2, nuevo sellado y garantía (mensaje 2; tarea 2026-11-09-1)"
 2026-11-10,13:13,whatsapp,Importadora ITA,recibido,automatica,no,"respuesta automática con invitación a un grupo de WhatsApp (equipos americanos, 100 equipos esta semana); no se une; sin precio"
+2026-11-10,16:20,whatsapp,ELVYCOMP,recibido,respuesta,sí,"Corsair MP600 PRO LPX 2TB: nuevo sellado; garantía de marca no existe en Bolivia (solo cambio por falla de fábrica); por 2 unidades se puede rebajar el precio final (sin monto); la venta es con previa reserva (no se reserva)"
+2026-11-10,16:21,whatsapp,ELVYCOMP,enviado,respuesta,,"agradece, pregunta cuánto quedaría cada uno llevando 2 y si tienen Ryzen 5 5600, 5700X3D o 7500F y a qué precio (tarea 2026-11-09-3)"
+2026-11-10,16:22,whatsapp,Importadora ITA,recibido,respuesta,no,"'no tuviera componentes de PC y NVMe de 2TB no tengo, solo de 1TB'; cerrado, no se contesta"
+2026-11-10,16:24,whatsapp,Punto Tecnológico,enviado,respuesta,,"pregunta si el SSD Hiksemi 2TB viene sellado y su precio llevando 2, y si tienen Ryzen 5 5600, 5700X3D o 7500F (tarea 2026-11-09-3)"
