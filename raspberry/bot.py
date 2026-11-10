@@ -496,6 +496,8 @@ Según el cambio (Santi, 20/10):
   cosa que cambie cómo trabaja el equipo.
 - Producto nuevo en vigilar.csv: producto, busqueda_ebay ("AMD Ryzen 7 7700X CPU"), peso_g_con_caja (procesador 350, RAM 150,
   SSD 80) y, en plan.csv, una tarea aprobada de prioridad alta y plazo de 2 días para ebay, wa, mkt y ana con el motivo.
+- Precios de eBay (Santi, 10/11): solo valen los de la última búsqueda y que sigan a la venta. Si un producto dice "sin oferta
+  hoy" o su fila es tipo agotado, no hay precio de eBay para hoy: nunca le des a Santi un precio de otro día como si se pudiera comprar.
 - Pedidos (Santi, 10/11): del courier de Miami a Bolivia NO hay código de seguimiento; nunca se lo pidas. Cuando Santi avise:
   llegó a Santa Cruz → estado "en camino a Cochabamba" y fila Santa Cruz en seguimiento.csv (-17.78, -63.18, fuente Santi);
   llegó a Cochabamba y lo va a recoger → "en Cochabamba"; ya lo recogió o lo tiene → "entregado" y fila Cochabamba

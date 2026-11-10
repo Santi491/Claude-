@@ -397,8 +397,8 @@ def ebay(R, ronda=False):
     _, vig = leer("vigilar.csv")
     prods = {v["producto"]: v for v in vig}
     for i, p in enumerate(ee, 2):
-        if p.get("tipo") not in ("real", "estimado", "vendido"):
-            R.error(f"precios-eeuu.csv línea {i}: tipo '{p.get('tipo')}' (real | estimado | vendido)")
+        if p.get("tipo") not in ("real", "estimado", "vendido", "agotado"):   # agotado: se vendió entre rondas (ebay.py --revisar)
+            R.error(f"precios-eeuu.csv línea {i}: tipo '{p.get('tipo')}' (real | estimado | vendido | agotado)")
         if p.get("condicion") not in ("nuevo", "usado", "openbox"):
             R.error(f"precios-eeuu.csv línea {i}: condición '{p.get('condicion')}'")
         if re.search(r"for parts|parts only|as is|untested|not working|broken|defective", p.get("fuente", ""), re.I):

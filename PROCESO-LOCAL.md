@@ -14,7 +14,7 @@ Cada puesto tiene su skill en `.claude/skills/` y su sub-agente en `.claude/agen
 - **Los que usan Chrome van de a uno** (comparten el navegador): WhatsApp, Marketplace, Catálogos, Rastreador eBay (si usa Chrome) y Pedidos. Los que no usan Chrome (Analista, Finanzas) pueden ir juntos.
 - **Orden:**
   1. Coordinadora: `git pull`, `vivo/_ronda` activa, decisiones de la oficina (paso 0b), `python chat.py pendientes` y tareas/metas de hoy para repartir.
-  2. Recolectan: **rastreador-ebay** (solo si la nube no trajo los precios de hoy o toca vendidos) → **whatsapp** → **marketplace** (no en la ligera, salvo Messenger) → **catalogos** (si hay catálogos pendientes o webs que tocan) → **pedidos**.
+  2. Recolectan: primero, siempre, `python ebay.py --revisar` (sin agente, unos segundos: los anuncios de eBay de hoy que se vendieron o agotaron desde la última ronda pasan a `agotado` y se reemplazan por el siguiente disponible; Santi, 10/11: la oficina muestra solo lo que se puede comprar hoy) → **rastreador-ebay** (solo si la nube no trajo los precios de hoy o toca vendidos) → **whatsapp** → **marketplace** (no en la ligera, salvo Messenger) → **catalogos** (si hay catálogos pendientes o webs que tocan) → **pedidos**.
   3. Procesan: **analista** y **finanzas**.
   4. **oficina**: regenera, verifica y publica.
   5. **gerente**: controla (`verificar.py todo`, chat, tareas, propuestas) y manda el mensaje de fin de ronda a Santi (paso 8b).

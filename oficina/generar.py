@@ -19,6 +19,7 @@ sys.path.insert(0, RAIZ)
 import demanda  # noqa: E402
 import finanzas  # noqa: E402
 import agenda  # noqa: E402
+import comparar as C  # noqa: E402
 
 
 def leer(nombre):
@@ -60,12 +61,9 @@ def main():
     productos = []
     for v in vigilar:
         nombre = v["producto"]
-        ofertas = {}
-        for f in sorted((f for f in eeuu if f["producto"] == nombre), key=lambda f: f["fecha"]):
-            ofertas[f["condicion"]] = f  # gana la última fila del día más reciente
-
         def oferta(c):
-            f = ofertas.get(c)
+            # solo la de la última búsqueda y que siga a la venta (Santi, 10/11; comparar.oferta)
+            f = C.oferta(eeuu, nombre, c)
             if not f:
                 return None
             o = {"usd": float(f["precio_usd"]), "ship": float(f["envio_usd"] or 0), "url": f["link"],
@@ -84,7 +82,9 @@ def main():
                           "vendedor": f["fuente"], "estado": f["estado"], "contacto": est,
                           "url": f["link"], "fecha": f["fecha"]})
         productos.append({"name": nombre, "cat": categoria(nombre), "g": float(v["peso_g_con_caja"]),
-                          "nw": oferta("nuevo"), "us": oferta("usado"), "local": local})
+                          "nw": oferta("nuevo"), "us": oferta("usado"), "local": local,
+                          # sin oferta hoy: último día en que se vio un anuncio (la oficina dice "sin oferta hoy · visto …")
+                          "nwv": C.ultimo_visto(eeuu, nombre, "nuevo"), "usv": C.ultimo_visto(eeuu, nombre, "usado")})
 
     # ---------- Historial: cada precio visto, en orden, con el cambio contra el anterior de la misma serie ----------
     mov = []

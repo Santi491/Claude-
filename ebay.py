@@ -8,11 +8,18 @@ Si no están, las lee de ~/.ebay-claves (lo crea configurar-ebay.sh; queda fuera
     python3 ebay.py --vigilar                         # todos los de vigilar.csv
     python3 ebay.py --vigilar --condicion usado --json
     python3 ebay.py --vigilar --guardar               # además agrega el más barato a precios-eeuu.csv
+    python3 ebay.py --revisar                         # ¿los anuncios de hoy siguen a la venta? (en cada ronda)
+
+Stock (Santi, 10/11): la oficina muestra solo lo que se puede comprar hoy. Antes de guardar un anuncio se le pregunta
+a eBay si sigue a la venta y con stock; si se vendió, terminó o está agotado, se toma el siguiente más barato.
+--revisar vuelve a preguntar por los anuncios guardados hoy: si alguno se vendió entre rondas, su fila pasa a
+tipo "agotado" y se guarda el siguiente disponible (si no hay ninguno, la oficina dice "sin oferta hoy").
 """
 import argparse
 import base64
 import csv
 import datetime
+import http.client
 import json
 import os
 import re
@@ -22,6 +29,8 @@ import urllib.request
 
 TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
+ITEM_URL = "https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id"
+MAX_REVISAR = 8   # anuncios que se prueban por producto antes de rendirse
 # conditionIds de eBay: 1000 nuevo; 1500 open box; 3000 usado
 CONDICIONES = {"nuevo": "1000", "openbox": "1500", "usado": "3000", "todos": None}
 # Categorías de eBay: procesadores, memoria RAM de escritorio, SSD
@@ -140,18 +149,97 @@ def buscar(tok, consulta, condicion="nuevo", limite=50):
     return sorted(unicos.values(), key=lambda x: x["total_usd"])
 
 
-def guardar(resultados, condicion):
+def disponible(tok, link):
+    """True si el anuncio sigue a la venta con stock; False si se vendió, terminó o está agotado;
+    None si eBay no contestó (en la duda no se descarta)."""
+    m = re.search(r"/itm/(\d+)", link or "")
+    if not m:
+        return None
+    req = urllib.request.Request(f"{ITEM_URL}?legacy_item_id={m.group(1)}", headers={
+        "Authorization": f"Bearer {tok}", "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"})
+    d = None
+    for _ in range(2):   # una conexión cortada se reintenta una vez
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                d = json.load(r)
+            break
+        except (OSError, http.client.HTTPException, ValueError):   # URLError, cortes y tiempos de espera
+            continue
+    if d is None:
+        return None
+    fin = d.get("itemEndDate")
+    if fin and datetime.datetime.fromisoformat(fin.replace("Z", "+00:00")) <= datetime.datetime.now(datetime.timezone.utc):
+        return False
+    for a in d.get("estimatedAvailabilities") or []:
+        if a.get("estimatedAvailabilityStatus") == "OUT_OF_STOCK" or a.get("estimatedAvailableQuantity") == 0:
+            return False
+    return True
+
+
+def primer_disponible(tok, items):
+    """El más barato que sigue a la venta (devuelve el anuncio y cuántos se descartaron por vendidos o agotados)."""
+    fuera = 0
+    for it in items[:MAX_REVISAR]:
+        if disponible(tok, it["link"]) is False:
+            fuera += 1
+            continue
+        return it, fuera
+    return None, fuera
+
+
+def fila(hoy, nombre, condicion, it):
+    return [hoy, nombre, condicion, f"{it['precio_usd']:.2f}", f"{it['envio_usd'] or 0:.2f}", "real",
+            f"eBay API; vendedor {it['vendedor']} {it['feedback_pct']}%; {it['titulo'][:60]}"
+            + ("; envío no indicado" if it["envio_usd"] is None else ""), it["link"]]
+
+
+def guardar(elegidos, condicion):
     ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "precios-eeuu.csv")
     hoy = datetime.date.today().isoformat()
     with open(ruta, "a", encoding="utf-8", newline="") as f:
         w = csv.writer(f, lineterminator="\n")
-        for nombre, items in resultados.items():
-            if items:
-                it = items[0]
-                w.writerow([hoy, nombre, condicion,
-                            f"{it['precio_usd']:.2f}", f"{it['envio_usd'] or 0:.2f}", "real",
-                            f"eBay API; vendedor {it['vendedor']} {it['feedback_pct']}%; {it['titulo'][:60]}"
-                            + ("; envío no indicado" if it["envio_usd"] is None else ""), it["link"]])
+        for nombre, it in elegidos.items():
+            if it:
+                w.writerow(fila(hoy, nombre, condicion, it))
+
+
+def revisar(tok, productos):
+    """Vuelve a preguntar por los anuncios guardados hoy; los vendidos o agotados pasan a "agotado" y se reemplazan."""
+    ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "precios-eeuu.csv")
+    with open(ruta, encoding="utf-8", newline="") as f:
+        crudo = f.read()
+    lector = csv.DictReader(crudo.splitlines())
+    campos, filas = lector.fieldnames, list(lector)
+    hoy, hora = datetime.date.today().isoformat(), datetime.datetime.now().strftime("%H:%M")
+    nuevas, informe, revisados = [], [], 0
+    for nombre, q in productos:
+        for cond in ("nuevo", "usado"):
+            de_hoy = [f for f in filas if f["producto"] == nombre and f["condicion"] == cond
+                      and f["tipo"] == "real" and f["fecha"] == hoy]
+            if not de_hoy:
+                continue
+            f = de_hoy[-1]
+            revisados += 1
+            if disponible(tok, f["link"]) is not False:
+                continue
+            f["tipo"] = "agotado"
+            f["fuente"] += f"; vendido o agotado al revisar a las {hora}"
+            try:
+                otros = [x for x in buscar(tok, q, cond) if x["link"] != f["link"]]
+            except (OSError, http.client.HTTPException, ValueError):
+                otros = []   # la búsqueda no contestó: queda "sin oferta hoy" hasta la próxima revisión
+            alt, _ = primer_disponible(tok, otros)
+            if alt:
+                nuevas.append(dict(zip(campos, fila(hoy, nombre, cond, alt))))
+                informe.append(f"{nombre} {cond}: USD {f['precio_usd']} ya no está; ahora USD {alt['precio_usd']:.2f} ({alt['vendedor']})")
+            else:
+                informe.append(f"{nombre} {cond}: USD {f['precio_usd']} ya no está y no hay otro disponible (sin oferta hoy)")
+    if informe:
+        with open(ruta, "w", encoding="utf-8", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=campos, lineterminator="\r\n" if "\r\n" in crudo else "\n")
+            w.writeheader()
+            w.writerows(filas + nuevas)
+    print(f"revisados {revisados} anuncios de hoy; " + (f"{len(informe)} cambiaron:\n  " + "\n  ".join(informe) if informe else "todos siguen a la venta"))
 
 
 def main():
@@ -162,11 +250,12 @@ def main():
     ap.add_argument("--top", type=int, default=3)
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--guardar", action="store_true", help="agregar el más barato de cada producto a precios-eeuu.csv")
+    ap.add_argument("--revisar", action="store_true", help="¿los anuncios guardados hoy siguen a la venta? (en cada ronda)")
     a = ap.parse_args()
-    if not a.consulta and not a.vigilar:
-        ap.error("pasa una consulta o --vigilar")
+    if not a.consulta and not a.vigilar and not a.revisar:
+        ap.error("pasa una consulta, --vigilar o --revisar")
 
-    if a.vigilar:
+    if a.vigilar or a.revisar:
         ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vigilar.csv")
         with open(ruta, encoding="utf-8") as f:
             productos = [(r["producto"], r["busqueda_ebay"]) for r in csv.DictReader(f)]
@@ -174,9 +263,21 @@ def main():
         productos = [(a.consulta, a.consulta)]
 
     tok = token()
-    resultados = {nombre: buscar(tok, q, a.condicion)[: a.top] for nombre, q in productos}
+    if a.revisar:
+        revisar(tok, productos)
+        return
+    resultados = {nombre: buscar(tok, q, a.condicion) for nombre, q in productos}
     if a.guardar:
-        guardar(resultados, a.condicion)
+        # solo se guarda un anuncio que sigue a la venta con stock (Santi, 10/11)
+        elegidos = {}
+        for nombre, items in resultados.items():
+            elegidos[nombre], fuera = primer_disponible(tok, items)
+            if fuera:
+                print(f"{nombre}: {fuera} anuncio(s) más barato(s) ya vendidos o agotados, se saltaron")
+            if elegidos[nombre]:
+                resultados[nombre] = [elegidos[nombre]] + [x for x in items if x is not elegidos[nombre]]
+        guardar(elegidos, a.condicion)
+    resultados = {k: v[: a.top] for k, v in resultados.items()}
     if a.json:
         print(json.dumps(resultados, ensure_ascii=False, indent=2))
         return

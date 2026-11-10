@@ -51,9 +51,23 @@ def oferta(filas, producto, condicion):
     ult = {}
     for f in sorted(cand, key=lambda f: (f["fecha"], f["tipo"] == "real")):
         ult[f["condicion"]] = f
+    # Santi, 10/11: solo cuenta lo que se vio en la última búsqueda de eBay. Si el producto no apareció ese día
+    # (se vendió o se agotó), no hay oferta: nada de precios de días anteriores.
+    ult = {c: f for c, f in ult.items() if f["fecha"] >= ultima_busqueda(filas, c)}
     if condicion == "min":
         return min(ult.values(), key=lambda f: float(f["precio_usd"]) + float(f["envio_usd"] or 0), default=None)
     return ult.get(condicion)
+
+
+def ultima_busqueda(filas, condicion):
+    """Día de la última búsqueda de eBay de esa condición (cualquier producto)."""
+    return max((f["fecha"] for f in filas if f["condicion"] == condicion and f.get("tipo") in ("real", "estimado", "agotado")), default="")
+
+
+def ultimo_visto(filas, producto, condicion):
+    """Último día en que hubo un anuncio de ese producto (para decir "sin oferta hoy, visto el …")."""
+    return max((f["fecha"] for f in filas if f["producto"] == producto and f["condicion"] == condicion
+                and f.get("tipo") in ("real", "estimado", "agotado")), default="")
 
 
 def locales(filas, producto):
