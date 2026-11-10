@@ -22,6 +22,8 @@ La Raspberry Pi 3 B+ queda prendida y contesta a Santi por Telegram al momento.
 - Ver qué está haciendo: `journalctl -u cargo-bot -f`
 - Reiniciar después de un `git pull`: `sudo systemctl restart cargo-bot`
 - Las claves están en `~/.telegram` y `~/.cargo-bot` (fuera del repo). Nunca subirlas.
+- **Git que no se traba (10/11):** el vigilante y el bot hacen `git pull` con `git_seguro.py`. Si quedó un merge a medias o un `index.lock` viejo, lo limpian; si dos computadoras cambiaron lo mismo, se quedan con la versión de GitHub en las líneas que chocan; si igual no se puede tres veces seguidas, guardan lo que la Pi tenía distinto en `~/cargo-respaldos/AAAA-MM-DD-HHMM.patch` y dejan la carpeta igual a GitHub. En todos los casos le avisan a Santi por Telegram. `actividad.csv` y `sesiones.csv` se juntan solos (`.gitattributes`).
+- **Si el vigilante se rompe** (error de Python), avisa una vez por día por Telegram con el error. Para verlo: `cd ~/cargo && python3 raspberry/vigilante.py --probar`.
 
 ## Convivencia con las otras sesiones
 Mientras la Pi está prendida, ella lee Telegram. Si la nube, la PC o la Mac corren `telegram_leer.py` al mismo tiempo, Telegram puede rechazar a uno de los dos ("conflict"); la Pi reintenta sola a los 15 s. Si la Pi está apagada, todo sigue como antes.

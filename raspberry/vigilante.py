@@ -12,7 +12,14 @@ Qué hace (Santi, 17/10: "que me diga: pasó esto, hice esto y lo solucioné"):
 - Si a las 18:00 la PC no hizo su ronda, la relanza una vez (pedido + encender).
 - Si la nube (9:30) o el Gerente de las 20:00 (20:45) no corrieron, avisa (eso no lo puede arreglar la Raspberry;
   los agentes de la ronda local recuperan el dólar y eBay si faltan).
-- Si un pedido a la PC lleva más de 90 minutos sin hacerse, avisa.
+- Si un pedido a la PC lleva más de 2 horas y media sin hacerse, avisa (la PC revisa los pedidos cada 2 horas desde el
+  10/11). Si lleva más de 4 horas y la PC no está
+  trabajando en él, lo da por perdido: lo borra y avisa (Santi, 10/11: un pedido trabado del 07/11 frenó todas las
+  reparaciones hasta el 09/11, porque el vigilante no relanza nada mientras haya un pedido).
+- Si una ronda terminó en "alerta" (a medias: por ejemplo, Chrome desconectado y WhatsApp sin hacer), le avisa a Santi
+  con la nota; no la repite sola para no duplicar mensajes a tiendas (Santi puede pedir "ronda ahora").
+- Si el git pull choca (dos computadoras cambiaron lo mismo), se recupera solo con git_seguro.py y avisa.
+- Si el propio vigilante se rompe, avisa una vez por día con el error.
 - Cada 3 horas sube su latido (salud-raspberry.json) para que la oficina y el Gerente sepan que está viva.
 Todo lo que hace queda en sesiones.csv (quien raspberry, tipo vigilante) y se sube a GitHub.
 """
@@ -26,6 +33,7 @@ DIR = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(DIR)
 sys.path.insert(0, REPO)
 import salud  # noqa: E402
+import git_seguro  # noqa: E402
 from notificar import cargar, telegram  # noqa: E402
 
 PROBAR = "--probar" in sys.argv
@@ -41,15 +49,8 @@ def git(*a):
 
 def subir(msg, archivos):
     if PROBAR:
-        return
-    git("add", *archivos)
-    if git("diff", "--cached", "--quiet").returncode == 0:
-        return
-    git("commit", "-q", "-m", msg)
-    for _ in range(3):
-        if git("push", "-q").returncode == 0:
-            return
-        git("pull", "--no-rebase", "--no-edit", "-q")
+        return ""
+    return git_seguro.subir(REPO, msg, archivos)[1]
 
 
 def avisar(texto):
@@ -84,8 +85,7 @@ def pedir_a_pc(tipo, motivo, ligera=False):
 
 
 def main():
-    if not PROBAR:
-        git("pull", "--no-rebase", "--no-edit", "-q")
+    problema_git = "" if PROBAR else git_seguro.pull(REPO)
     t = salud.ahora()
     hoy, hora, dia = t.strftime("%Y-%m-%d"), t.strftime("%H:%M"), t.weekday()
     est = json.load(open(ESTADO)) if os.path.exists(ESTADO) else {}
@@ -94,7 +94,44 @@ def main():
     hecho = set(est["hecho"])
     e = salud.estado_dia(hoy, hora)
     cambios, eventos = [], []
-    pedido = json.load(open(PEDIDO, encoding="utf-8")) if os.path.exists(PEDIDO) else None
+    try:
+        pedido = json.load(open(PEDIDO, encoding="utf-8")) if os.path.exists(PEDIDO) else None
+    except ValueError:
+        pedido = {"id": "roto", "tipo": "?", "pedido": "2000-01-01 00:00"}   # archivo roto: que caduque abajo
+
+    if problema_git and "git" not in hecho:
+        hecho.add("git")
+        eventos.append(("arreglo", "git de la Raspberry: " + problema_git[:150]))
+        avisar("Te cuento, Santi: " + problema_git + ". No tienes que hacer nada.")
+
+    # 0. Pedido trabado (10/11): si la sesión que lo hacía se cortó, el archivo queda y frena todas las reparaciones
+    #    (abajo nada se relanza mientras haya pedido). Más de 4 h y nada trabajando: se da por perdido.
+    #    bloquear_si_no_es_ronda.ps1 ya no abre Claude por un pedido de más de 3 horas.
+    if pedido:
+        try:
+            edad = (t - datetime.strptime(pedido["pedido"], "%Y-%m-%d %H:%M").replace(tzinfo=salud.TZ)).total_seconds() / 60
+        except (KeyError, ValueError, TypeError):
+            edad = 9999
+        ult = [s for s in salud.sesiones() if s["fecha"] == hoy and s["quien"] == "pc"][-1:]
+        trabajando = bool(ult and ult[0]["estado"] == "en curso"
+                          and salud.en_curso("manana" if ult[0]["inicio"] < "14:00" else "pc", hoy))
+        if edad > 240 and not trabajando and "07:00" <= hora < "22:00":
+            if not PROBAR:
+                os.remove(PEDIDO)
+            cambios.append("pedido-pc.json")
+            hecho.add(f"pedido-viejo-{pedido.get('id')}")
+            eventos.append(("arreglo", f"pedido a la PC sin hacer hace {int(edad)} min: dado por perdido y borrado"))
+            cuanto = "estaba dañado" if pedido.get("id") == "roto" else f"lleva {int(edad // 60)} h sin hacerse"
+            avisar(f"Santi, el pedido a la PC ({pedido.get('tipo')}: {str(pedido.get('motivo', ''))[:80]}) {cuanto}, "
+                   "así que lo di por perdido y lo borré para que el equipo siga normal. "
+                   "Si todavía lo quieres, pídelo de nuevo (por ejemplo \"ronda ahora\").")
+            pedido = None
+        elif edad > 150 and f"pedido-viejo-{pedido.get('id')}" not in hecho and not trabajando and "07:00" <= hora < "22:00":
+            hecho.add(f"pedido-viejo-{pedido.get('id')}")
+            eventos.append(("alerta", f"pedido a la PC sin hacer hace {int(edad)} min"))
+            avisar(f"Santi, el pedido a la PC ({pedido.get('tipo')}: {str(pedido.get('motivo', ''))[:80]}) lleva {int(edad)} minutos "
+                   "sin hacerse. Puede que Claude no se haya abierto en la PC; ¿la puedes mirar cuando llegues? "
+                   "Si a las 4 horas sigue sin hacerse, lo borro para que no frene al resto.")
 
     # 1. Ronda de la mañana en la PC (desde el 11/11; antes la hacía la Mac y la PC la cubría)
     # (si la ronda anotó "en curso" no se toca: está trabajando, solo empezó tarde; salud lo da como "en curso")
@@ -152,17 +189,15 @@ def main():
             eventos.append(("alerta", f"{k} no corrió"))
             avisar("Santi, te aviso que " + txt)
 
-    # 5. Un pedido a la PC lleva demasiado sin hacerse
-    if pedido:
-        try:
-            edad = (t - datetime.strptime(pedido["pedido"], "%Y-%m-%d %H:%M").replace(tzinfo=salud.TZ)).total_seconds() / 60
-        except (KeyError, ValueError):
-            edad = 0
-        if edad > 90 and f"pedido-viejo-{pedido.get('id')}" not in hecho:
-            hecho.add(f"pedido-viejo-{pedido.get('id')}")
-            eventos.append(("alerta", f"pedido a la PC sin hacer hace {int(edad)} min"))
-            avisar(f"Santi, el pedido a la PC ({pedido.get('tipo')}: {pedido.get('motivo', '')[:80]}) lleva {int(edad)} minutos "
-                   "sin hacerse. Puede que Claude no se haya abierto en la PC; ¿la puedes mirar cuando llegues?")
+    # 5. Una ronda terminó a medias ("alerta"): cuenta como hecha (no se relanza sola para no repetir mensajes a
+    #    tiendas), pero Santi se entera aunque el mensaje del Gerente no haya salido (10/11)
+    for k, cuando in (("manana", "de las 10:30"), ("pc", "de las 16:00")):
+        s = e[k].get("sesion") or {}
+        if s.get("estado") == "alerta" and f"alerta-{k}-{s.get('inicio')}" not in hecho:
+            hecho.add(f"alerta-{k}-{s.get('inicio')}")
+            eventos.append(("alerta", f"la ronda {cuando} terminó a medias"))
+            avisar(f"Santi, la ronda {cuando} terminó a medias: {s.get('nota', '')[:220]}. No la repito sola para no "
+                   "escribirle dos veces a las tiendas; si quieres que la rehaga, escríbeme \"ronda ahora\".")
 
     # latido cada 3 horas (o si hubo eventos)
     lat = os.path.join(REPO, "salud-raspberry.json")
@@ -187,5 +222,22 @@ def main():
     print(hora, {k: v["estado"] for k, v in e.items()}, "eventos:", [n for _, n in eventos])
 
 
+def main_seguro():
+    """Si el vigilante se rompe (un archivo mal escrito, un cambio de código), avisa una vez por día en vez de
+    callarse para siempre (10/11)."""
+    try:
+        main()
+    except Exception as ex:
+        import traceback
+        traceback.print_exc()
+        marca = os.path.expanduser("~/.cargo-vigilante-error")
+        hoy = salud.ahora().strftime("%Y-%m-%d")
+        if PROBAR or (os.path.exists(marca) and open(marca).read().strip() == hoy):
+            return
+        open(marca, "w").write(hoy)
+        avisar(f"Santi, el vigilante de la Raspberry se rompió y hoy no está revisando al equipo: {type(ex).__name__}: "
+               f"{str(ex)[:150]}. Pásale este mensaje a Claude en la PC para que lo arregle.")
+
+
 if __name__ == "__main__":
-    main()
+    main_seguro()

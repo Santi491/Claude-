@@ -34,6 +34,7 @@ from zoneinfo import ZoneInfo
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, REPO)
 from notificar import cargar, pedir  # noqa: E402
+import git_seguro  # noqa: E402  (raspberry/: pull que no se traba, 10/11)
 
 TZ = ZoneInfo("America/La_Paz")
 ESTADO = os.path.expanduser("~/.cargo-bot-estado.json")  # fuera del repo
@@ -95,7 +96,11 @@ def git(*args):
 
 
 def actualizar_repo():
-    git("pull", "--no-rebase", "--no-edit", "-q")
+    """git pull que no se traba (git_seguro.py, 10/11): si chocó con otra computadora se recupera solo y le cuenta a Santi."""
+    problema = git_seguro.pull(REPO)
+    if problema:
+        print("git:", problema, flush=True)
+        responder("Te cuento, Santi: " + problema + ". No tienes que hacer nada.")
 
 
 def subir(mensaje, extra=()):
@@ -106,7 +111,7 @@ def subir(mensaje, extra=()):
     for _ in range(3):
         if git("push", "-q").returncode == 0:
             return True
-        git("pull", "--no-rebase", "--no-edit", "-q")
+        actualizar_repo()
     return False
 
 
@@ -167,7 +172,7 @@ def cmd_deshacer(estado):
     for _ in range(3):
         if git("push", "-q").returncode == 0:
             break
-        git("pull", "--no-rebase", "--no-edit", "-q")
+        actualizar_repo()
     estado.pop("ultimo_cambio", None)
     return "Listo, deshice mi último cambio y quedó como estaba."
 
@@ -452,7 +457,10 @@ Retoma lo que hablaron hoy y consulta a Santi lo que es decisión suya. Las deci
 
 Horario del equipo (desde el 11/11, Santi): nube 7:52 todos los días; la PC hace las dos rondas, 10:30 de lunes a viernes y
 16:00 de lunes a sábado (sábado ligera); la Mac ya no hace rondas; el Gerente de la nube informa a las 20:00; el vigilante de
-la Raspberry revisa cada 30 minutos, prende la PC (10:00 y 15:50) y relanza una ronda que no corrió. Qué corrió hoy y qué
+la Raspberry revisa cada 30 minutos, prende la PC (10:00 y 15:50) y relanza una ronda que no corrió. La PC revisa los
+pedidos (pc ronda, pc encargo) cada 2 horas; un pedido que lleva 4 horas sin hacerse se da por perdido y se borra (Santi lo
+pide de nuevo si lo quiere). Nada de trabajo de la PC a las 21:00 o después, ni el domingo. Si una ronda termina "a medias"
+(alerta), el vigilante le avisa a Santi y no la repite sola. Qué corrió hoy y qué
 arregló el vigilante: sesiones.csv y `python3 salud.py`. Tu libreta compartida es memoria-gerente.csv (`python3 memoria.py ver`):
 ahí están los cambios recientes que te contó Santi; léela cuando te pregunte cómo está el equipo o qué cambió.
 Lo que sabes sale de este repo; lee solo lo que necesites: actividad.csv (qué hizo cada agente), informes/ (el último),
@@ -506,7 +514,8 @@ ACCION: pc ronda              (prende la PC y hace una ronda completa ya)
 ACCION: pc encargo: <qué hacer>  (prende la PC y hace solo ese encargo puntual con Chrome: preguntar a una tienda, revisar
                               el correo del agente, mirar un anuncio, rastrear un paquete...; nunca comprar, pagar ni ofertar)
 Si Santi pide algo que se resuelve leyendo los archivos, contéstalo tú sin prender la PC. Usa pc encargo solo cuando haga
-falta Chrome o escribir a alguien, y avísale que el resultado llega en 10 a 15 minutos.
+falta Chrome o escribir a alguien, y avísale cuándo llega el resultado: unos 15 minutos si la PC estaba apagada (al prender
+abre Claude y lo hace enseguida) o hasta 2 horas si ya estaba prendida (revisa los pedidos cada 2 horas, Santi 10/11).
 ACCION: memoria <tipo> [vence AAAA-MM-DD]: <resumen>   (anotas en tu libreta; tipo: compromiso | pedido | preferencia | dato)
 ACCION: cumplida 3            (cierras la nota 3 de tu libreta porque ya se cumplió)
 ACCION: descartar 3           (la nota 3 ya no sirve)
@@ -726,7 +735,8 @@ def cmd_pedido_pc(tipo, texto=""):
     ya = pc_prendida()
     if not ya:
         prender_pc()
-    cuando = "en la próxima media hora (la PC ya estaba prendida)" if ya else "en unos 10 a 15 minutos"
+    # la PC revisa los pedidos cada 2 horas (Santi, 10/11: ahorra plan; no le molesta esperar)
+    cuando = "en menos de 2 horas (la PC ya estaba prendida y revisa los pedidos cada 2 horas)" if ya else "en unos 15 minutos"
     que = "la ronda completa" if tipo == "ronda" else "el encargo"
     return f"Listo, le pasé {que} a la PC{'' if ya else ' y la estoy prendiendo'}. Te aviso con el resultado {cuando}."
 

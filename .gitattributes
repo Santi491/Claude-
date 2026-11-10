@@ -1,0 +1,4 @@
+# 10/11 (Santi): listas a las que todas las computadoras solo agregan filas. Si dos agregan a la vez, git junta
+# las dos en vez de chocar (antes un choque podía dejar trabada a la Raspberry). Ver raspberry/git_seguro.py.
+actividad.csv merge=union
+sesiones.csv merge=union
