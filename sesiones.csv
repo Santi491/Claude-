@@ -156,3 +156,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-09,gerente,informe,20:15,20:16,ok,"informe diario 09/11, 5 tareas auto"
 2026-11-10,raspberry,vigilante,13:00,13:00,arreglado,la Mac no hizo la ronda de la mañana: la cubre la PC
 2026-11-10,pc,cubre mac,13:07,13:07,en curso,empezó
+2026-11-10,pc,cubre mac,13:07,13:32,ok,"wa 2 chats nuevos 6 respuestas (ELVYCOMP SSD 2TB 4.880); mkt 0 tiendas, 0 7700X sueltos; cat MSR y Microworld; pedidos sin movimiento; SSD 2TB y 265K pasan a traer; oficina v123; aviso Gerente enviado"

@@ -421,3 +421,16 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-11-09,16:08,messenger,vendedor M.2 512GB (Marketplace),recibido,respuesta,sí,"dice que es usada (viernes); información completa, no se contesta"
 2026-11-09,16:09,messenger,vendedor disco sólido 1TB Kingston (Marketplace),recibido,respuesta,sí,"Bs 900 por el 1TB (viernes); el vendedor lo marcó vendido el 06/11 (cuenta como venta declarada por el vendedor, sin NVMe confirmado)"
 2026-11-09,16:09,messenger,vendedor discos sólidos 240GB (Marketplace),recibido,respuesta,no,"pregunta en qué capacidad; es de 240GB (no es producto nuestro), no se contesta"
+2026-11-09,16:12,whatsapp,Accesorios Technology,recibido,respuesta,no,"'No señor' (no tiene Ryzen 5 7600 ni SSD NVMe 2TB); cerrado, no se contesta"
+2026-11-09,16:42,whatsapp,Microworld,recibido,automatica,no,"segunda respuesta automática (horarios, delivery, catálogo de WhatsApp Business); sin precio"
+2026-11-09,16:43,whatsapp,INTEGRAL TU-PC,recibido,respuesta,sí,"'con 1 TB tengo, 6900 bs, HP Ryzen 5, RAM 8 GB, almacenamiento 1 TB' (es una laptop, no producto vigilado); no dio 7600 ni NVMe 2TB; un audio 16:43 no escuchado"
+2026-11-09,16:49,whatsapp,ELVYCOMP,recibido,respuesta,sí,Corsair MP600 PRO LPX 2TB PCIe 4 NVMe Bs 4.880; procesador solo serie 9000: Ryzen 5 9600X Bs 3.430 (no vigilado); sin 7600
+2026-11-09,18:04,whatsapp,BitCate,recibido,respuesta,no,"'por momento solo estamos realizando mantenimiento completo a equipos' (no vende sueltos); cerrado, no se contesta"
+2026-11-10,09:27,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"tres mensajes: 'Sin stock' (Ryzen 5 7600), '9600x oem', 'nuevos'; el 7600 está agotado; sigue SSD Hiksemi 2TB Bs 3.800 del 04/11"
+2026-11-10,13:09,whatsapp,ELVYCOMP,enviado,respuesta,,"pregunta si el Corsair MP600 PRO LPX 2TB es nuevo sellado, con garantía, y si por 2 baja el precio"
+2026-11-10,13:10,whatsapp,INTEGRAL TU-PC,enviado,respuesta,,"aclara que busca solo SSD NVMe 2TB y Ryzen 5 7600 sueltos, sin equipo"
+2026-11-10,13:11,whatsapp,SS Electrónica Cbba - Quillacollo,enviado,seguimiento,,seguimiento 1: Ryzen 5 7600 o SSD NVMe 2TB
+2026-11-10,13:12,whatsapp,Compuland,enviado,nuevo,,"chat nuevo (T104): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2, nuevo sellado y garantía (mensaje 2; tarea 2026-11-09-1)"
+2026-11-10,13:11,whatsapp,Compuland,recibido,automatica,no,"respuesta automática: tienda 100% en línea, entregas, pago contra entrega; pide marca/modelo (ya los dimos); sin precio"
+2026-11-10,13:13,whatsapp,Importadora ITA,enviado,nuevo,,"chat nuevo (T105): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2, nuevo sellado y garantía (mensaje 2; tarea 2026-11-09-1)"
+2026-11-10,13:13,whatsapp,Importadora ITA,recibido,automatica,no,"respuesta automática con invitación a un grupo de WhatsApp (equipos americanos, 100 equipos esta semana); no se une; sin precio"
