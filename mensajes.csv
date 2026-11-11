@@ -438,3 +438,9 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-11-10,16:21,whatsapp,ELVYCOMP,enviado,respuesta,,"agradece, pregunta cuánto quedaría cada uno llevando 2 y si tienen Ryzen 5 5600, 5700X3D o 7500F y a qué precio (tarea 2026-11-09-3)"
 2026-11-10,16:22,whatsapp,Importadora ITA,recibido,respuesta,no,"'no tuviera componentes de PC y NVMe de 2TB no tengo, solo de 1TB'; cerrado, no se contesta"
 2026-11-10,16:24,whatsapp,Punto Tecnológico,enviado,respuesta,,"pregunta si el SSD Hiksemi 2TB viene sellado y su precio llevando 2, y si tienen Ryzen 5 5600, 5700X3D o 7500F (tarea 2026-11-09-3)"
+2026-11-11,10:06,whatsapp,Punto Tecnológico,recibido,respuesta,no,'Ryzen 7 5800X3D en stock; Hiksemi 2TB agotado; solo me queda en Samsung' (sin precios; no dijo nada de 5600/5700X3D/7500F)
+2026-11-11,10:39,whatsapp,Punto Tecnológico,enviado,respuesta,,"pregunta modelo y precio del Samsung 2TB, precio y si es sellado el 5800X3D, y si tienen 5600, 5700X3D o 7500F (tarea 2026-11-10-2)"
+2026-11-11,10:39,whatsapp,HC store,enviado,seguimiento,,"seguimiento: pregunta si tienen Ryzen 5 5600, 5700X3D o 7500F y precio (tarea 2026-11-10-2)"
+2026-11-11,10:39,whatsapp,Pop Store Cbba,enviado,seguimiento,,"seguimiento: pregunta si manejan Ryzen 5 5600, 5700X3D o 7500F y precio (tarea 2026-11-10-2)"
+2026-11-11,10:40,whatsapp,COMPU-X,enviado,seguimiento,,"seguimiento: pregunta si tienen Ryzen 5 5600, 5700X3D o 7500F y precio (tarea 2026-11-10-2)"
+2026-11-11,10:41,whatsapp,ELVYCOMP,recibido,respuesta,no,"ya leído: 'solamente Ryzen serie 9000, las otras no tengo a la venta' (5600, 5700X3D y 7500F sin stock); no se contesta más"

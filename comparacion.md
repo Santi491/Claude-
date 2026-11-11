@@ -11,7 +11,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Intel Core Ultra 7 265K | [259.99](https://www.ebay.com/itm/128145077866) | 3.266 (B 1 kg) | 3.224 (B 1.5 kg) | 3.950 | 684 (17%) | 726 (18%) | conviene |
 | Intel Core i5-12400F | [142.99](https://www.ebay.com/itm/206675761087) | 1.871 (B 1 kg) | 1.830 (B 1.5 kg) | 2.250 | 379 (17%) | 420 (19%) | conviene |
 | Intel Core i5-14400F | [156.10](https://www.ebay.com/itm/800900000529) | 2.028 (B 1 kg) | 1.986 (B 1.5 kg) | 2.384 | 356 (15%) | 398 (17%) | justo |
-| Ryzen 7 7800X3D | [328.88](https://www.ebay.com/itm/168021862717) | 4.087 (B 1 kg) | 4.087 (B 2 kg) | 4.400 | 313 (7%) | 313 (7%) | justo |
+| Ryzen 7 7800X3D | [328.88](https://www.ebay.com/itm/168021862717) | 4.087 (B 1 kg) | 4.087 (B 2 kg) | 4.350 | 263 (6%) | 263 (6%) | justo |
 | Ryzen 7 7700X | [223.98](https://www.ebay.com/itm/267042355650) | 2.837 (B 1 kg) | 2.837 (B 2 kg) | 3.000 | 163 (5%) | 163 (5%) | justo |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [450.00](https://www.ebay.com/itm/287717209291) | 5.531 (B 1 kg) | 5.447 (B 1 kg) | 5.800 | 269 (5%) | 353 (6%) | no conviene |
 | Ryzen 9 9950X | [489.99](https://www.ebay.com/itm/800893981003) | 6.008 (B 1 kg) | 6.008 (B 2 kg) | 5.580 | -428 (-8%) | -428 (-8%) | no conviene |
@@ -30,7 +30,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Intel Core i5-12400F | [119.99](https://www.ebay.com/itm/287717239450) | 1.597 (B 1 kg) | 1.555 (B 1.5 kg) | 2.250 | 653 (29%) | 695 (31%) | conviene |
 | Intel Core i5-13400 | [124.99](https://www.ebay.com/itm/267839647255) | 1.657 (B 1 kg) | 1.615 (B 1.5 kg) | 2.300 | 643 (28%) | 685 (30%) | conviene |
 | SSD NVMe 2TB | [181.00](https://www.ebay.com/itm/267837155649) | 2.324 (B 1 kg) | 2.241 (B 1 kg) | 3.100 | 776 (25%) | 859 (28%) | conviene |
-| Ryzen 7 7800X3D | [265.00](https://www.ebay.com/itm/820337685641) | 3.326 (B 1 kg) | 3.326 (B 2 kg) | 4.400 | 1.074 (24%) | 1.074 (24%) | conviene |
+| Ryzen 7 7800X3D | [275.00](https://www.ebay.com/itm/900081309888) | 3.445 (B 1 kg) | 3.445 (B 2 kg) | 4.350 | 905 (21%) | 905 (21%) | conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [389.00](https://www.ebay.com/itm/168853287058) | 4.804 (B 1 kg) | 4.720 (B 1 kg) | 5.800 | 996 (17%) | 1.080 (19%) | conviene |
 | Ryzen 9 9950X | [454.99](https://www.ebay.com/itm/257573828939) | 5.590 (B 1 kg) | 5.590 (B 2 kg) | 5.580 | -10 (-0%) | -10 (-0%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [399.00](https://www.ebay.com/itm/377593144670) | 4.923 (B 1 kg) | 4.840 (B 1 kg) | 4.500 | -423 (-9%) | -340 (-8%) | no conviene |
@@ -56,7 +56,9 @@ eBay nuevo: USD 328.88 con envío en EE.UU. (eBay API; vendedor components_whole
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo | 4.350 | 263 (6%) | 2026-11-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | estado sin dato; Cochabamba | 4.400 | 313 (7%) | 2026-11-10 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | usado/no indica | 4.400 | 313 (7%) | 2026-11-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sin dato; Cochabamba | 4.500 | 413 (9%) | 2026-11-06 |
 | Tienda Supermall (WhatsApp) · [ver](https://www.facebook.com/marketplace/item/1292124363069503/) | no indicado (la tienda lo ofrece como "7700x3d"; foto de caja 7800X3D; stock bajo; garantía 6 meses; confirmar modelo) | 4.760 | 673 (14%) | 2026-10-12 |
 | Marketplace Cochabamba (particular/vendedor) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado (según anuncio) | 4.800 | 713 (15%) | 2026-10-11 |
@@ -122,6 +124,7 @@ eBay nuevo: USD 259.99 con envío en EE.UU. (eBay API; vendedor luis11389 99.1%;
 | OverCity (WhatsApp) | nuevo OEM | 4.100 | 834 (20%) | 2026-10-19 |
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | estado sin dato (\"últimas unidades\") | 4.170 | 904 (22%) | 2026-11-03 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=intel%20core%20ultra%207%20265k) | sellado (caja sellada); Cochabamba | 4.250 | 984 (23%) | 2026-11-10 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1098070649594906/) | sellado | 4.250 | 984 (23%) | 2026-11-11 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | stock bajo (web; por WhatsApp dijeron que el 265K solo está en Santa Cruz) | 4.290 | 1.024 (24%) | 2026-10-12 |
 
 ### Corsair Vengeance RGB DDR5 32GB (2x16) 5600
@@ -153,7 +156,9 @@ eBay nuevo: USD 92.95 con envío en EE.UU. (eBay API; vendedor dutchessgoods 99.
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ram%20ddr4%2016gb%203200) | Corsair LPX 2x8 3200 (estado sin dato); Cochabamba | 1.450 | 175 (12%) | 2026-11-10 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2347323546077904/) | no indicado (2x8 3200; Sacaba) | 1.500 | 225 (15%) | 2026-10-11 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2345958202816013/) | no indicado (Corsair Vengeance 2x8; Sacaba; rebajado de 1600) | 1.500 | 225 (15%) | 2026-10-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ram%20ddr4%2016gb%203200) | usado/no indica | 1.500 | 225 (15%) | 2026-11-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1726943245105041/) | sin dato de estado (Corsair Vengeance Pro 2x8GB 3200 MHz) | 1.600 | 325 (20%) | 2026-10-23 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ram%20ddr4%2016gb%203200) | usado/no indica | 1.680 | 405 (24%) | 2026-11-11 |
 | Compucenter (WhatsApp) · [ver](https://compucenter.store/) | nuevo (Corsair Vengeance RGB DDR4 16GB 3600; no dice si es 2x8; Bs 2.560 con factura) | 2.150 | 875 (41%) | 2026-10-12 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/memoria-ram) | disponible (web; Corsair Vengeance RGB Pro TUF Gaming 2x8 3200) | 2.160 | 885 (41%) | 2026-10-12 |
 
@@ -166,8 +171,10 @@ eBay nuevo: USD 129.99 con envío en EE.UU. (eBay API; vendedor islandbuyin44 10
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (antes Bs 1.730; marca sin dato) | 1.230 | -486 (-40%) | 2026-10-17 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | estado sin dato; Cochabamba (3520 MB/s) | 1.250 | -466 (-37%) | 2026-11-09 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Crucial P3 1TB (estado sin dato); Cochabamba | 1.300 | -416 (-32%) | 2026-11-09 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 1.300 | -416 (-32%) | 2026-11-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston M.2 1TB (estado sin dato); Cochabamba | 1.350 | -366 (-27%) | 2026-11-10 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | estado sin dato; Cochabamba | 1.400 | -316 (-23%) | 2026-11-09 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 1.400 | -316 (-23%) | 2026-11-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston M.2 1TB (estado sin dato); Cochabamba | 1.450 | -266 (-18%) | 2026-11-09 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1098289102810322/) | sin dato de estado ni marca (recién publicado) | 1.500 | -216 (-14%) | 2026-10-17 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | WD 1TB (estado sin dato); Cochabamba | 1.500 | -216 (-14%) | 2026-11-10 |
@@ -192,6 +199,7 @@ eBay nuevo: USD 129.99 con envío en EE.UU. (eBay API; vendedor islandbuyin44 10
 | Soft Computers (WhatsApp) | sin dato | 1.950 | 234 (12%) | 2026-11-04 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2817371738643128/) | no indicado (Crucial P310 1TB) | 2.000 | 284 (14%) | 2026-10-11 |
 | Punto Tecnológico (WhatsApp) | nuevo, NVMe (modelo SN3000), garantía 6 meses (confirmado 28/10) | 2.000 | 284 (14%) | 2026-10-26 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 2.000 | 284 (14%) | 2026-11-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/3707244856102112/) | WD Green SN3000 1TB (estado sin dato) | 2.050 | 334 (16%) | 2026-10-19 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/3707244856102112/) | estado sin dato (WD Green SN3000 1TB) | 2.050 | 334 (16%) | 2026-10-22 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; WD SN3000 M.2 1TB) | 2.060 | 344 (17%) | 2026-10-12 |
