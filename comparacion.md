@@ -13,11 +13,11 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Intel Core i5-14400F | [156.10](https://www.ebay.com/itm/800900000529) | 2.028 (B 1 kg) | 1.986 (B 1.5 kg) | 2.384 | 356 (15%) | 398 (17%) | justo |
 | Ryzen 7 7800X3D | [328.88](https://www.ebay.com/itm/168021862717) | 4.087 (B 1 kg) | 4.087 (B 2 kg) | 4.350 | 263 (6%) | 263 (6%) | justo |
 | Ryzen 7 7700X | [223.98](https://www.ebay.com/itm/267042355650) | 2.837 (B 1 kg) | 2.837 (B 2 kg) | 3.000 | 163 (5%) | 163 (5%) | justo |
-| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [450.00](https://www.ebay.com/itm/287717209291) | 5.531 (B 1 kg) | 5.447 (B 1 kg) | 5.800 | 269 (5%) | 353 (6%) | no conviene |
+| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [474.49](https://www.ebay.com/itm/277814335680) | 5.823 (B 1 kg) | 5.739 (B 1 kg) | 5.800 | -23 (-0%) | 61 (1%) | no conviene |
 | Ryzen 9 9950X | [489.99](https://www.ebay.com/itm/800893981003) | 6.008 (B 1 kg) | 6.008 (B 2 kg) | 5.580 | -428 (-8%) | -428 (-8%) | no conviene |
 | Ryzen 5 7600 | [261.69](https://www.ebay.com/itm/800899976094) | 3.286 (B 1 kg) | 3.286 (B 2 kg) | 2.800 | -486 (-17%) | -486 (-17%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [465.00](https://www.ebay.com/itm/287663939921) | 5.710 (B 1 kg) | 5.626 (B 1 kg) | 4.500 | -1.210 (-27%) | -1.126 (-25%) | no conviene |
-| SSD NVMe 1TB | [129.99](https://www.ebay.com/itm/227609151537) | 1.716 (B 1 kg) | 1.633 (B 1 kg) | 1.100 | -616 (-56%) | -533 (-48%) | no conviene |
+| SSD NVMe 1TB | [139.99](https://www.ebay.com/itm/313876500622) | 1.836 (B 1 kg) | 1.752 (B 1 kg) | 1.100 | -736 (-67%) | -652 (-59%) | no conviene |
 | RAM DDR4 16GB (2x8) 3200 | [92.95](https://www.ebay.com/itm/900081308690) | 1.275 (B 1 kg) | 1.191 (B 1 kg) | 540 | -735 (-136%) | -651 (-121%) | no conviene |
 
 ## eBay usado (mejor caso: se compara contra precios locales de nuevos)
@@ -34,7 +34,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [389.00](https://www.ebay.com/itm/168853287058) | 4.804 (B 1 kg) | 4.720 (B 1 kg) | 5.800 | 996 (17%) | 1.080 (19%) | conviene |
 | Ryzen 9 9950X | [454.99](https://www.ebay.com/itm/257573828939) | 5.590 (B 1 kg) | 5.590 (B 2 kg) | 5.580 | -10 (-0%) | -10 (-0%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [399.00](https://www.ebay.com/itm/377593144670) | 4.923 (B 1 kg) | 4.840 (B 1 kg) | 4.500 | -423 (-9%) | -340 (-8%) | no conviene |
-| SSD NVMe 1TB | [99.00](https://www.ebay.com/itm/840097159149) | 1.347 (B 1 kg) | 1.264 (B 1 kg) | 1.100 | -247 (-22%) | -164 (-15%) | no conviene |
+| SSD NVMe 1TB | [89.50](https://www.ebay.com/itm/377634421316) | 1.234 (B 1 kg) | 1.150 (B 1 kg) | 1.100 | -134 (-12%) | -50 (-5%) | no conviene |
 | RAM DDR4 16GB (2x8) 3200 | [60.99](https://www.ebay.com/itm/820315393064) | 894 (B 1 kg) | 810 (B 1 kg) | 540 | -354 (-66%) | -270 (-50%) | no conviene |
 
 ## Detalle por vendedor (eBay nuevo)
@@ -135,14 +135,14 @@ eBay nuevo: USD 465.00 con envío en EE.UU. (eBay API; vendedor restoredglory 10
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/2840215069674304/) | usado como nuevo (4 meses de uso; publicado hace 7 semanas) | 4.500 | -1.210 (-27%) | 2026-10-12 |
 
 ### Corsair Vengeance RGB DDR5 32GB (2x16) 6000
-eBay nuevo: USD 450.00 con envío en EE.UU. (eBay API; vendedor aeas2123 99.3%; New Corsair Vengeance RGB For AMD 32GB (2x16GB) RAM DDR5 600; envío no indicado, 2026-11-11). Costo puesto: **Bs 5.531**/u en pedido de 2, **Bs 5.447**/u en pedido de 4.
+eBay nuevo: USD 474.49 con envío en EE.UU. (eBay API; vendedor hbk41096 100.0%; CORSAIR Vengence RGB DDR5 RAM 32GB (2x16GB) 6000MHz C36 UDIM; envío no indicado, 2026-11-11). Costo puesto: **Bs 5.823**/u en pedido de 2, **Bs 5.739**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1625374825929437/) | Corsair Vengeance RGB 2x16 6000 MHz (estado sin dato) | 5.800 | 269 (5%) | 2026-10-19 |
-| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1414394683871926/) | no indicado (modelo RS) | 6.200 | 669 (11%) | 2026-10-11 |
-| Marketplace Cochabamba (particular) | Corsair Vengeance RGB RS 2x16 6000 MHz ("última unidad"; estado sin dato) | 6.200 | 669 (11%) | 2026-10-21 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=DDR5%2032GB%20Corsair%20Vengeance) | sin dato (dice 'última unidad'; Vengeance RGB RS 32GB 2x16 DDR5 6000) | 6.200 | 669 (11%) | 2026-10-30 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1625374825929437/) | Corsair Vengeance RGB 2x16 6000 MHz (estado sin dato) | 5.800 | -23 (-0%) | 2026-10-19 |
+| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1414394683871926/) | no indicado (modelo RS) | 6.200 | 377 (6%) | 2026-10-11 |
+| Marketplace Cochabamba (particular) | Corsair Vengeance RGB RS 2x16 6000 MHz ("última unidad"; estado sin dato) | 6.200 | 377 (6%) | 2026-10-21 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=DDR5%2032GB%20Corsair%20Vengeance) | sin dato (dice 'última unidad'; Vengeance RGB RS 32GB 2x16 DDR5 6000) | 6.200 | 377 (6%) | 2026-10-30 |
 
 ### RAM DDR4 16GB (2x8) 3200
 eBay nuevo: USD 92.95 con envío en EE.UU. (eBay API; vendedor dutchessgoods 99.8%; G.Skill Ripjaws V 16GB (2x8GB) DDR4-3200 desktop RAM kit - S, 2026-11-11). Costo puesto: **Bs 1.275**/u en pedido de 2, **Bs 1.191**/u en pedido de 4.
@@ -163,52 +163,52 @@ eBay nuevo: USD 92.95 con envío en EE.UU. (eBay API; vendedor dutchessgoods 99.
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/memoria-ram) | disponible (web; Corsair Vengeance RGB Pro TUF Gaming 2x8 3200) | 2.160 | 885 (41%) | 2026-10-12 |
 
 ### SSD NVMe 1TB
-eBay nuevo: USD 129.99 con envío en EE.UU. (eBay API; vendedor islandbuyin44 100.0%; New SanDisk 2280mm Optimus 5100 1TB M.2 NVMe Gen 4.0 x 4 SSD; envío no indicado, 2026-11-11). Costo puesto: **Bs 1.716**/u en pedido de 2, **Bs 1.633**/u en pedido de 4.
+eBay nuevo: USD 139.99 con envío en EE.UU. (eBay API; vendedor netac-official-store 99.9%; Netac 1TB SSD 3D NAND NVMe PCIe Gen3×4 M.2 2280 Internal Sol, 2026-11-11). Costo puesto: **Bs 1.836**/u en pedido de 2, **Bs 1.752**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
-| Marketplace Cochabamba (particular) | "Disco duro m2 NVMe 1 tb" marca y estado sin dato; Cochabamba | 1.100 | -616 (-56%) | 2026-10-28 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (antes Bs 1.730; marca sin dato) | 1.230 | -486 (-40%) | 2026-10-17 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | estado sin dato; Cochabamba (3520 MB/s) | 1.250 | -466 (-37%) | 2026-11-09 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Crucial P3 1TB (estado sin dato); Cochabamba | 1.300 | -416 (-32%) | 2026-11-09 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 1.300 | -416 (-32%) | 2026-11-11 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston M.2 1TB (estado sin dato); Cochabamba | 1.350 | -366 (-27%) | 2026-11-10 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | estado sin dato; Cochabamba | 1.400 | -316 (-23%) | 2026-11-09 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 1.400 | -316 (-23%) | 2026-11-11 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston M.2 1TB (estado sin dato); Cochabamba | 1.450 | -266 (-18%) | 2026-11-09 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1098289102810322/) | sin dato de estado ni marca (recién publicado) | 1.500 | -216 (-14%) | 2026-10-17 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | WD 1TB (estado sin dato); Cochabamba | 1.500 | -216 (-14%) | 2026-11-10 |
-| Orange Computer (WhatsApp) | sellado | 1.550 | -166 (-11%) | 2026-11-04 |
-| Orange Computer (WhatsApp) | sellado | 1.550 | -166 (-11%) | 2026-11-04 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston NV3 1TB (estado sin dato; rebajado de 1.759); Cochabamba | 1.610 | -106 (-7%) | 2026-11-05 |
-| Marketplace Cochabamba (particular) | Kingston NV2 NVMe 1TB (estado sin dato; "SSD NV2 de 1TB"); Cochabamba | 1.675 | -41 (-2%) | 2026-10-28 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV2 1TB; posible el mismo anuncio de 1.700 | 1.675 | -41 (-2%) | 2026-10-30 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | NV2 1TB (estado sin dato); Cochabamba | 1.675 | -41 (-2%) | 2026-11-05 |
-| Marketplace Cochabamba (particular) | Kingston NV2 NVMe 1TB (estado sin dato; recién publicado) | 1.700 | -16 (-1%) | 2026-10-21 |
-| Marketplace Cochabamba (particular) | Kingston NV2 NVMe PCIe 4.0 1TB (estado sin dato); Cochabamba | 1.700 | -16 (-1%) | 2026-10-28 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV2 1TB; estado sin dato | 1.700 | -16 (-1%) | 2026-10-30 |
-| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (M.2 1TB, marca no indicada; publicado hace 2 días) | 1.730 | 14 (1%) | 2026-10-16 |
-| Shopping PC (catálogo PDF) | nuevo (Kingston NV3 1TB; lista mayorista USD 148 del 12/10, sin factura; 146 en stock) | 1.754 | 38 (2%) | 2026-10-15 |
-| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2078197563584097/) | no indicado (M.2 1TB; marca no indicada) | 1.800 | 84 (5%) | 2026-10-11 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston NV3 1TB (estado sin dato); Cochabamba | 1.810 | 94 (5%) | 2026-11-05 |
-| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | no indicado (Kingston NV3 1TB) | 1.850 | 134 (7%) | 2026-10-11 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | Kingston NV3 1TB (estado sin dato) | 1.850 | 134 (7%) | 2026-10-17 |
-| Marketplace Cochabamba (particular) | Kingston NV3 NVMe 1TB 6000MB/s (estado sin dato) | 1.850 | 134 (7%) | 2026-10-26 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV3 1TB; estado sin dato | 1.850 | 134 (7%) | 2026-10-30 |
-| Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Hiksemi Wave M.2 1TB) | 1.860 | 144 (8%) | 2026-10-12 |
-| Soft Computers (WhatsApp) | sin dato | 1.950 | 234 (12%) | 2026-11-04 |
-| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2817371738643128/) | no indicado (Crucial P310 1TB) | 2.000 | 284 (14%) | 2026-10-11 |
-| Punto Tecnológico (WhatsApp) | nuevo, NVMe (modelo SN3000), garantía 6 meses (confirmado 28/10) | 2.000 | 284 (14%) | 2026-10-26 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 2.000 | 284 (14%) | 2026-11-11 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/3707244856102112/) | WD Green SN3000 1TB (estado sin dato) | 2.050 | 334 (16%) | 2026-10-19 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/3707244856102112/) | estado sin dato (WD Green SN3000 1TB) | 2.050 | 334 (16%) | 2026-10-22 |
-| Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; WD SN3000 M.2 1TB) | 2.060 | 344 (17%) | 2026-10-12 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/27971414262519546/) | estado sin dato (WD Green SN3000 1TB) | 2.060 | 344 (17%) | 2026-10-22 |
-| Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; Kingston NV3 M.2 1TB) | 2.152 | 436 (20%) | 2026-10-12 |
-| TecnoGamer Bolivia (web) · [ver](https://www.tecnogamer.com.bo/categoria/discos-solidos-m-2/) | Kingston NV3 1TB NVMe; estado sin dato | 2.215 | 499 (23%) | 2026-11-04 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/2891757594521096/) | Lexar NM790 1TB con disipador (estado sin dato) | 2.500 | 784 (31%) | 2026-10-19 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%202tb%20nvme) | Lexar NM790 1TB con disipador (estado sin dato); Cochabamba | 2.500 | 784 (31%) | 2026-11-06 |
-| Marketplace Cochabamba (particular) | Samsung 9100 PRO 1TB PCIe 5.0 (gama alta; estado sin dato) | 3.050 | 1.334 (44%) | 2026-10-21 |
+| Marketplace Cochabamba (particular) | "Disco duro m2 NVMe 1 tb" marca y estado sin dato; Cochabamba | 1.100 | -736 (-67%) | 2026-10-28 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (antes Bs 1.730; marca sin dato) | 1.230 | -606 (-49%) | 2026-10-17 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | estado sin dato; Cochabamba (3520 MB/s) | 1.250 | -586 (-47%) | 2026-11-09 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Crucial P3 1TB (estado sin dato); Cochabamba | 1.300 | -536 (-41%) | 2026-11-09 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 1.300 | -536 (-41%) | 2026-11-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston M.2 1TB (estado sin dato); Cochabamba | 1.350 | -486 (-36%) | 2026-11-10 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | estado sin dato; Cochabamba | 1.400 | -436 (-31%) | 2026-11-09 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 1.400 | -436 (-31%) | 2026-11-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston M.2 1TB (estado sin dato); Cochabamba | 1.450 | -386 (-27%) | 2026-11-09 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1098289102810322/) | sin dato de estado ni marca (recién publicado) | 1.500 | -336 (-22%) | 2026-10-17 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | WD 1TB (estado sin dato); Cochabamba | 1.500 | -336 (-22%) | 2026-11-10 |
+| Orange Computer (WhatsApp) | sellado | 1.550 | -286 (-18%) | 2026-11-04 |
+| Orange Computer (WhatsApp) | sellado | 1.550 | -286 (-18%) | 2026-11-04 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston NV3 1TB (estado sin dato; rebajado de 1.759); Cochabamba | 1.610 | -226 (-14%) | 2026-11-05 |
+| Marketplace Cochabamba (particular) | Kingston NV2 NVMe 1TB (estado sin dato; "SSD NV2 de 1TB"); Cochabamba | 1.675 | -161 (-10%) | 2026-10-28 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV2 1TB; posible el mismo anuncio de 1.700 | 1.675 | -161 (-10%) | 2026-10-30 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | NV2 1TB (estado sin dato); Cochabamba | 1.675 | -161 (-10%) | 2026-11-05 |
+| Marketplace Cochabamba (particular) | Kingston NV2 NVMe 1TB (estado sin dato; recién publicado) | 1.700 | -136 (-8%) | 2026-10-21 |
+| Marketplace Cochabamba (particular) | Kingston NV2 NVMe PCIe 4.0 1TB (estado sin dato); Cochabamba | 1.700 | -136 (-8%) | 2026-10-28 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV2 1TB; estado sin dato | 1.700 | -136 (-8%) | 2026-10-30 |
+| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (M.2 1TB, marca no indicada; publicado hace 2 días) | 1.730 | -106 (-6%) | 2026-10-16 |
+| Shopping PC (catálogo PDF) | nuevo (Kingston NV3 1TB; lista mayorista USD 148 del 12/10, sin factura; 146 en stock) | 1.754 | -82 (-5%) | 2026-10-15 |
+| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2078197563584097/) | no indicado (M.2 1TB; marca no indicada) | 1.800 | -36 (-2%) | 2026-10-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston NV3 1TB (estado sin dato); Cochabamba | 1.810 | -26 (-1%) | 2026-11-05 |
+| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | no indicado (Kingston NV3 1TB) | 1.850 | 14 (1%) | 2026-10-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | Kingston NV3 1TB (estado sin dato) | 1.850 | 14 (1%) | 2026-10-17 |
+| Marketplace Cochabamba (particular) | Kingston NV3 NVMe 1TB 6000MB/s (estado sin dato) | 1.850 | 14 (1%) | 2026-10-26 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV3 1TB; estado sin dato | 1.850 | 14 (1%) | 2026-10-30 |
+| Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Hiksemi Wave M.2 1TB) | 1.860 | 24 (1%) | 2026-10-12 |
+| Soft Computers (WhatsApp) | sin dato | 1.950 | 114 (6%) | 2026-11-04 |
+| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2817371738643128/) | no indicado (Crucial P310 1TB) | 2.000 | 164 (8%) | 2026-10-11 |
+| Punto Tecnológico (WhatsApp) | nuevo, NVMe (modelo SN3000), garantía 6 meses (confirmado 28/10) | 2.000 | 164 (8%) | 2026-10-26 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 2.000 | 164 (8%) | 2026-11-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/3707244856102112/) | WD Green SN3000 1TB (estado sin dato) | 2.050 | 214 (10%) | 2026-10-19 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/3707244856102112/) | estado sin dato (WD Green SN3000 1TB) | 2.050 | 214 (10%) | 2026-10-22 |
+| Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; WD SN3000 M.2 1TB) | 2.060 | 224 (11%) | 2026-10-12 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/27971414262519546/) | estado sin dato (WD Green SN3000 1TB) | 2.060 | 224 (11%) | 2026-10-22 |
+| Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; Kingston NV3 M.2 1TB) | 2.152 | 316 (15%) | 2026-10-12 |
+| TecnoGamer Bolivia (web) · [ver](https://www.tecnogamer.com.bo/categoria/discos-solidos-m-2/) | Kingston NV3 1TB NVMe; estado sin dato | 2.215 | 379 (17%) | 2026-11-04 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/2891757594521096/) | Lexar NM790 1TB con disipador (estado sin dato) | 2.500 | 664 (27%) | 2026-10-19 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%202tb%20nvme) | Lexar NM790 1TB con disipador (estado sin dato); Cochabamba | 2.500 | 664 (27%) | 2026-11-06 |
+| Marketplace Cochabamba (particular) | Samsung 9100 PRO 1TB PCIe 5.0 (gama alta; estado sin dato) | 3.050 | 1.214 (40%) | 2026-10-21 |
 
 ### SSD NVMe 2TB
 eBay nuevo: USD 185.00 con envío en EE.UU. (eBay API; vendedor honestdeals 99.4%; 2TB Leven JPS600 M.2 NVMe Gen 3.0 SSD New (corregido: el más barato era SATA no NVMe), 2026-11-11). Costo puesto: **Bs 2.372**/u en pedido de 2, **Bs 2.289**/u en pedido de 4.
