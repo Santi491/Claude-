@@ -317,7 +317,34 @@ def escribir_excel(ruta, vigilar, eeuu, cbba, fx, hoy_filas, hist):
     wb.save(ruta)
 
 
+def asegurar(modulo, *paquetes):
+    """Si falta la librería, la instala para ESTE mismo Python (en la nube `pip` a secas instala para otro y no sirve).
+    Prueba cada versión en orden: la última y, si no anda con este Python (reportlab 5 pide 3.10+), una anterior."""
+    import importlib
+    import site
+    import subprocess
+    import sys
+    for paquete in (None,) + paquetes:
+        if paquete:
+            base = [sys.executable, "-m", "pip", "install", "--user", "-q", "--upgrade", "--force-reinstall", paquete]
+            for extra in ([], ["--break-system-packages"]):
+                if subprocess.run(base + extra, capture_output=True).returncode == 0:
+                    break
+            if site.getusersitepackages() not in sys.path:
+                sys.path.append(site.getusersitepackages())
+            importlib.invalidate_caches()
+            for m in [m for m in sys.modules if m == modulo or m.startswith(modulo + ".")]:
+                del sys.modules[m]
+        try:
+            importlib.import_module(modulo)
+            return
+        except ImportError:
+            continue
+
+
 def main():
+    asegurar("reportlab", "reportlab", "reportlab<4.1")
+    asegurar("openpyxl", "openpyxl", "openpyxl<3.2")
     vigilar, eeuu, cbba, fx = leer("vigilar.csv"), leer("precios-eeuu.csv"), leer("precios-cochabamba.csv"), leer("tipo-cambio.csv")
     cbba = [f for f in cbba if (f.get("precio_bs") or "").strip()]   # "agotado" sin precio: no entra en los cálculos
     hoy = date.today().isoformat()
@@ -330,12 +357,21 @@ def main():
 
     os.makedirs(HIST, exist_ok=True)
     escribir_csv(os.path.join(HIST, f"{hoy}.csv"), COLUMNAS, hoy_filas)
-    escribir_pdf(os.path.join(HIST, f"{hoy}.pdf"), hoy_filas, hoy, tc, bcb, par)
+    faltan = []   # si falta una librería (pasa en la nube), se hace lo demás igual y se dice qué faltó
+    try:
+        escribir_pdf(os.path.join(HIST, f"{hoy}.pdf"), hoy_filas, hoy, tc, bcb, par)
+    except ImportError as e:
+        faltan.append(f"PDF ({e.name or e}: pip install --user reportlab)")
     hcols = ["Fecha", "Producto", "Tipo", "eBay nuevo USD", "eBay usado USD", "Marketplace Bs", "Tiendas Bs", "Dólar BCB",
              "Dólar paralelo", "Link del producto", "Fecha anterior", "Δ eBay nuevo USD", "Δ eBay usado USD", "Δ Marketplace Bs", "Δ Tiendas Bs"]
     escribir_csv(os.path.join(HIST, "historial.csv"), hcols, hist)
-    escribir_excel(os.path.join(DIR, "importacion-cochabamba.xlsx"), vigilar, eeuu, cbba, fx, hoy_filas, hist)
+    try:
+        escribir_excel(os.path.join(DIR, "importacion-cochabamba.xlsx"), vigilar, eeuu, cbba, fx, hoy_filas, hist)
+    except ImportError as e:
+        faltan.append(f"Excel ({e.name or e}: pip install --user openpyxl)")
     print(f"importacion-cochabamba.xlsx · historial/{hoy}.csv · historial/{hoy}.pdf · historial/historial.csv ({len(hist)} filas)")
+    if faltan:
+        print("NO SE HIZO: " + "; ".join(faltan) + ". Lo completa la próxima ronda de la PC.")
 
 
 if __name__ == "__main__":

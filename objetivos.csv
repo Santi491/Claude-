@@ -1,9 +1,9 @@
 id,etapa,agente,objetivo,tipo,meta,hasta,medida,estado,nota
 wa-1a,1,wa,Llegar a 78 tiendas contactadas (distintas; incluye las 55 de antes del 03/11),acumulado,78,2026-11-08,wa_contactadas,,
-wa-1b,1-2,wa,Llegar a 100 tiendas contactadas (distintas; incluye las 55 de antes del 03/11),acumulado,100,2026-11-15,wa_contactadas,,
+wa-1b,1-2,wa,Llegar a 85 tiendas contactadas (distintas; incluye las 55 de antes del 03/11),acumulado,85,2026-11-15,wa_contactadas,,Santi 11/11: baja de 100 a 85 (casi no quedan números)
 wa-2,1-2,wa,10 tiendas distintas con precio cada semana; primero los productos sin dato,semanal,10,2026-11-15,wa_con_precio_semana,,
 mkt-1a,1,mkt,25 tiendas nuevas con celular (Cochabamba; Quillacollo o Sacaba),acumulado,25,2026-11-08,mkt_tiendas_nuevas,,
-mkt-1b,1-2,mkt,50 tiendas nuevas con celular (Cochabamba; Quillacollo o Sacaba),acumulado,50,2026-11-15,mkt_tiendas_nuevas,,
+mkt-1b,1-2,mkt,30 tiendas nuevas con celular (Cochabamba; Quillacollo o Sacaba),acumulado,30,2026-11-15,mkt_tiendas_nuevas,,Santi 11/11: baja de 50 a 30 (pocas tiendas nuevas por ronda)
 mkt-2,1,mkt,Seguir cada 7700X publicado en la zona (precio y días en línea) en cada ronda completa,semanal,5,2026-11-15,mkt_filas_7700x_semana,,
 mkt-3,1,mkt,"Dejar en borrador-anuncios.md el anuncio del 7700X (sin precio, sin publicar) y 10 grupos de venta de la zona",entregable,1,2026-11-08,,hecho,borrador-anuncios.md con anuncio 7700X sin precio y 10 grupos
 cat-1,1,mkt,Catálogos: 10 precios de nuestra lista cada semana,semanal,10,2026-11-15,cat_precios_semana,,
