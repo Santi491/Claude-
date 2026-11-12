@@ -262,3 +262,8 @@ fecha,producto,precio_bs,estado,fuente,link,tipo,condiciones,vigencia
 2026-10-30,Ryzen 5 9600X,2450,nuevo,Marketplace Cochabamba (particular),,publicado,"el más bajo del rango Bs 2.450-2.800 visto al buscar el 7600 (nota de demanda.csv 30/10); pasado al agregarlo a vigilar.csv (Santi 12/11)",sin dato
 2026-11-03,Ryzen 5 9600X,2770,nuevo,Marketplace Cochabamba (particular),,publicado,"visto al buscar el 7600 (nota de demanda.csv 03/11: 9600X Bs 2.770-2.800); pasado al agregarlo a vigilar.csv (Santi 12/11)",sin dato
 2026-11-06,Ryzen 5 9600X,2800,sellado,Marketplace Cochabamba (particular),,publicado,"sellado; visto al buscar el 7600 (nota de demanda.csv 06/11); pasado al agregarlo a vigilar.csv (Santi 12/11)",sin dato
+2026-11-12,Ryzen 9 9950X3D,12590,nuevo,Punto Tecnológico / Supermall (web),,publicado,nuevo; de mercado.csv al agregarlo a vigilar.csv (Santi 12/11); zona Cochabamba,sin dato
+2026-11-04,Ryzen 9 9950X3D,10500,nuevo,PC Components Bolivia (web),,publicado,nuevo; de mercado.csv al agregarlo a vigilar.csv (Santi 12/11); zona Cochabamba,sin dato
+2026-11-04,Ryzen 5 7600X,2677.5,nuevo,Cyrex Store América (WhatsApp),,cotizado,nuevo; de mercado.csv al agregarlo a vigilar.csv (Santi 12/11); zona Cochabamba,sin dato
+2026-11-03,Ryzen 9 9950X3D,12580,nuevo,OverCity (web),,publicado,nuevo; de mercado.csv al agregarlo a vigilar.csv (Santi 12/11); zona Cochabamba,sin dato
+2026-10-20,Ryzen 5 7600X,3300,nuevo,Viadata Computadoras (WhatsApp),,cotizado,nuevo; de mercado.csv al agregarlo a vigilar.csv (Santi 12/11); zona Cochabamba,sin dato
