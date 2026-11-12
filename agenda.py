@@ -8,6 +8,12 @@ Reglas (CLAUDE.md, "Mensajes a tiendas: autonomía"): si una tienda no responde,
 después de 2 seguimientos sin respuesta la tienda queda "fría" y no se le vuelve a escribir sin que Santi lo pida.
 Si la tienda escribió después de nuestro último mensaje, toca responderle.
 
+Lista completa (Santi, 12/11): ya casi no quedan números nuevos, así que a cada tienda que ya tenemos se le pide UNA vez
+el precio de toda nuestra lista (o su catálogo / lista de precios). La sección "Pedir lista completa" dice a quiénes falta,
+en orden: primero las que ya nos pasaron precios, después las que respondieron, las que dijeron "sin stock" de algo y las
+que tocan seguimiento (el pedido de la lista les vale como seguimiento). Nunca a frías, "no vende", "no contactar",
+sin WhatsApp o número equivocado. Se marca con "Lista completa" al inicio de la nota en mensajes.csv.
+
 Fuentes: mensajes.csv (desde el 13/10, una fila por mensaje) y tiendas-cochabamba.csv (estado y ultima_consulta, que cubre
 los contactos anteriores a mensajes.csv). Solo canal WhatsApp: en Messenger son personas.
 """
@@ -25,6 +31,9 @@ CIERRES = re.compile(r"no tengo|agotad|sin stock|no hay|nom[aá]s|no se contesta
 # la tienda ya confirmó lo que le preguntamos, con o sin precio: tampoco hay nada que responder (tarea 2026-10-30-1)
 RESUELTAS = re.compile(r"confirma", re.I)
 DIAS_SEGUIMIENTO, MAX_SEGUIMIENTOS = 2, 2
+LISTA_DESDE = "2026-11-12"
+NUNCA_LISTA = re.compile(r"no vende|no contactar|sin whatsapp|no sueltos|n[uú]mero equivocado|sin whatsapp|otra ciudad", re.I)
+LISTA_POR_RONDA = 10
 
 
 def leer(nombre):
@@ -45,8 +54,10 @@ def fecha(s):
 def calcular(hoy=None):
     hoy = hoy or date.today()
     msgs = [m for m in leer("mensajes.csv") if m.get("canal") == "whatsapp"]
-    out = {"hoy": hoy.isoformat(), "responder": [], "seguimiento": [], "esperar": [], "frias": [], "respondieron": []}
-    for t in leer("tiendas-cochabamba.csv"):
+    out = {"hoy": hoy.isoformat(), "responder": [], "seguimiento": [], "esperar": [], "frias": [], "respondieron": [],
+           "lista_completa": [], "lista_pedida": 0}
+    tiendas = leer("tiendas-cochabamba.csv")
+    for t in tiendas:
         nombre, estado = t.get("tienda", ""), t.get("estado_contacto", "")
         # los saludos automáticos no son una respuesta de una persona
         mios = [m for m in msgs if m["tienda"] == nombre
@@ -93,6 +104,31 @@ def calcular(hoy=None):
             out["esperar"].append({**fila, "proximo": (ult_env + timedelta(days=DIAS_SEGUIMIENTO)).isoformat()})
     for k in ("seguimiento", "frias"):
         out[k].sort(key=lambda f: -f["dias_sin_respuesta"])
+    # Pedir lista completa (Santi, 12/11)
+    pedida = {m["tienda"] for m in msgs if m["direccion"] == "enviado" and m["fecha"] >= LISTA_DESDE
+              and (m.get("nota") or "").lower().startswith("lista completa")}
+    out["lista_pedida"] = len(pedida)
+    frias = {f["tienda"] for f in out["frias"]}
+    esperar = {f["tienda"] for f in out["esperar"]}
+    seguimiento = {f["tienda"] for f in out["seguimiento"]}
+    con_precio = {m["tienda"] for m in msgs if m["direccion"] == "recibido" and m.get("con_precio") == "sí"}
+    respondio = {m["tienda"] for m in msgs if m["direccion"] == "recibido" and m.get("tipo") != "automatica"}
+    for t in tiendas:
+        n, est = t.get("tienda", ""), t.get("estado_contacto", "")
+        if not n or n in pedida or n in frias or n in esperar or not (t.get("whatsapp") or "").strip() or NUNCA_LISTA.search(est):
+            continue
+        if n in con_precio:
+            orden, por = 0, "ya nos pasó precios"
+        elif n in respondio or re.search(r"respondi", est, re.I):
+            orden, por = 1, "respondió antes"
+        elif re.search(r"sin stock", est, re.I):
+            orden, por = 2, "dijo sin stock de algo: puede tener otros"
+        elif n in seguimiento:
+            orden, por = 3, "le toca seguimiento: va como seguimiento"
+        else:
+            continue
+        out["lista_completa"].append({"tienda": n, "id": t.get("id", ""), "estado": est, "motivo": por, "orden": orden})
+    out["lista_completa"].sort(key=lambda f: f["orden"])
     return out
 
 
@@ -105,6 +141,12 @@ def texto(a):
         for f in a[k]:
             extra = f.get("motivo") or (f"próximo seguimiento el {f['proximo']}" if f.get("proximo") else "")
             L.append(f"  - {f['tienda']} · {extra}")
+    lc = a["lista_completa"]
+    L.append(f"\nPedir lista completa (Santi 12/11; hasta {LISTA_POR_RONDA} por ronda, ya pedida a {a['lista_pedida']}): faltan {len(lc)}")
+    for f in lc[:LISTA_POR_RONDA]:
+        L.append(f"  - {f['tienda']} · {f['motivo']}")
+    if len(lc) > LISTA_POR_RONDA:
+        L.append(f"  ... y {len(lc) - LISTA_POR_RONDA} más en las próximas rondas")
     return "\n".join(L)
 
 
