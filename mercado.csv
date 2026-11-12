@@ -21,3 +21,260 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-04,Intel Core i5-4590,cpu,400,Bs,400,nuevo,Tecnología GabBoss,whatsapp,sí,importado de las notas de mensajes.csv (12/11)
 2026-11-12,Ryzen 7 5800X3D,cpu,4960,Bs,4960,nuevo,Punto Tecnológico,whatsapp,sí,importado de las notas de mensajes.csv (12/11)
 2026-11-04,Ryzen 5 7600X,cpu,2677.5,Bs,2677.5,nuevo,Cyrex Store América,whatsapp,sí,importado de las notas de precios-cochabamba.csv (12/11)
+2026-11-12,Ryzen 7 5700X,cpu,2500,Bs,2500,nuevo,particular,marketplace,sí,"OEM nuevo, Cochabamba (Marketplace 12/11)"
+2026-11-12,Ryzen 5 5600GT,cpu,5100,Bs,5100,no indica,particular,marketplace,sí,precio rebajado de 6.700; Cochabamba (Marketplace 12/11)
+2026-11-12,Ryzen 5 5600X,cpu,2300,Bs,2300,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 9 9900X,cpu,6700,Bs,6700,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core i5-13500T,cpu,2850,Bs,2850,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core i3-14100T,cpu,2200,Bs,2200,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core i5-12500T,cpu,2700,Bs,2700,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 5 3500X,cpu,1250,Bs,1250,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 5 PRO 2400G,cpu,1200,Bs,1200,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 5 PRO 3400G,cpu,1400,Bs,1400,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core i9-14900K,cpu,7700,Bs,7700,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 7 5700X,cpu,2850,Bs,2850,nuevo,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 7 5700G,cpu,3020,Bs,3020,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 7 9800X3D,cpu,6450,Bs,6450,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 5 5600GT,cpu,2450,Bs,2450,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core Ultra 7 270K Plus,cpu,4750,Bs,4750,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 7 8700G,cpu,3580,Bs,3580,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core i5-14500T,cpu,2950,Bs,2950,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 5 8500G,cpu,2100,Bs,2100,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 5 8600G,cpu,2450,Bs,2450,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core Ultra 9 285K,cpu,8100,Bs,8100,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 7 9700X,cpu,4500,Bs,4500,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Ryzen 3 3200G,cpu,1150,Bs,1150,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core i7-12700,cpu,4350,Bs,4350,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core i7-14700K,cpu,6500,Bs,6500,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core i7-14700F,cpu,4980,Bs,4980,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core Ultra 5 250KF Plus,cpu,3150,Bs,3150,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core i5-10500T,cpu,1700,Bs,1700,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core i3-12100,cpu,2050,Bs,2050,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core i7-14700,cpu,5300,Bs,5300,oem,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Intel Core i5-14500T,cpu,2560,Bs,2560,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Intel Core i5-13500T,cpu,2510,Bs,2510,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Intel Core i5-8400T,cpu,970,Bs,970,oem,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Ryzen 9 9950X3D2,cpu,12590,Bs,12590,nuevo,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Intel Core i9-13900KF,cpu,5960,Bs,5960,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Intel Core Ultra 5 225F,cpu,2270,Bs,2270,oem,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Intel Core i5-12600K,cpu,2960,Bs,2960,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Intel Core i5-12500T,cpu,2860,Bs,2860,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Intel Core Ultra 5 245K,cpu,2840,Bs,2840,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Intel Core Ultra 5 225,cpu,2470,Bs,2470,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Ryzen 7 8700F,cpu,2280,Bs,2280,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Ryzen 5 8400F,cpu,1680,Bs,1680,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Intel Core Ultra 9 285K,cpu,8310,Bs,8310,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Ryzen 7 9800X3D,cpu,6110,Bs,6110,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Intel Core i5-14500T,cpu,2550,Bs,2550,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core i5-13500T,cpu,2500,Bs,2500,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core i5-8400T,cpu,965,Bs,965,oem,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 7 5800X3D,cpu,4970,Bs,4970,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 9 9950X3D2,cpu,12580,Bs,12580,nuevo,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core i9-13900KF,cpu,5970,Bs,5970,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core Ultra 5 225F,cpu,2260,Bs,2260,oem,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core i5-12600K,cpu,2950,Bs,2950,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core i5-12500T,cpu,2850,Bs,2850,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core Ultra 5 245K,cpu,2830,Bs,2830,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core Ultra 5 225,cpu,2460,Bs,2460,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 7 8700F,cpu,2270,Bs,2270,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 5 8400F,cpu,1670,Bs,1670,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core Ultra 9 285K,cpu,8320,Bs,8320,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 5 5500,cpu,1430,Bs,1430,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 7 9800X3D,cpu,6120,Bs,6120,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 7 5700X,cpu,2350,Bs,2350,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 7 9700X,cpu,3730,Bs,3730,oem,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core i9-14900K,cpu,7770,Bs,7770,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 5 3500,cpu,1045,Bs,1045,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 9 9900X,cpu,5120,Bs,5120,oem,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core i7-12700K,cpu,3950,Bs,3950,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core i7-12700KF,cpu,3500,Bs,3500,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 5 5600GT,cpu,2350,Bs,2350,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core i5-14400,cpu,2900,Bs,2900,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Athlon 3000G,cpu,775,Bs,775,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core i7-14700K,cpu,5370,Bs,5370,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 7 8700G,cpu,3550,Bs,3550,nuevo,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 5 8600G,cpu,2350,Bs,2350,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 5 8500G,cpu,1950,Bs,1950,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 7 5700G,cpu,2650,Bs,2650,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Ryzen 3 3200G,cpu,1145,Bs,1145,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core i5-12400,cpu,2400,Bs,2400,no indica,OverCity,web,sí,web OverCity 12/11
+2026-11-12,Intel Core i5-12500T,cpu,2240,Bs,2240,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Athlon 3000G,cpu,785,Bs,785,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 5 8400F,cpu,1760,Bs,1760,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 7 8700F,cpu,2650,Bs,2650,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 5 3500,cpu,1040,Bs,1040,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Intel Core i7-14700F,cpu,4250,Bs,4250,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 7 9700X,cpu,3450,Bs,3450,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Intel Core Ultra 5 225,cpu,2260,Bs,2260,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Intel Core Ultra 5 245K,cpu,2800,Bs,2800,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Intel Core Ultra 7 265KF,cpu,3480,Bs,3480,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Intel Core i9-13900K,cpu,4280,Bs,4280,oem,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 7 9800X3D,cpu,5500,Bs,5500,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 5 8500G,cpu,1740,Bs,1740,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 5 8600G,cpu,2200,Bs,2200,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 5 5600GT,cpu,1650,Bs,1650,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Intel Core i9-14900KF,cpu,5750,Bs,5750,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Intel Core i7-12700F,cpu,2990,Bs,2990,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 3 3200G,cpu,840,Bs,840,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 7 5700G,cpu,2380,Bs,2380,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 7 8700G,cpu,3300,Bs,3300,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 7 7700,cpu,2850,Bs,2850,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Intel Core Ultra 9 285K,cpu,8500,Bs,8500,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Intel Core i7-12700,cpu,3350,Bs,3350,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Intel Core i7-12700KF,cpu,2950,Bs,2950,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 7 5700X,cpu,2550,Bs,2550,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Intel Core i5-12400,cpu,2100,Bs,2100,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Intel Core i3-12100,cpu,1450,Bs,1450,no indica,MSR Computers,web,sí,MSR no vende sueltos (referencia); web 12/11
+2026-11-12,Ryzen 9 9900X,cpu,5731,USD,480,no indica,Cyrex Store,web,sí,USD 480 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 5 5600X,cpu,2090,USD,175,oem,Cyrex Store,web,sí,USD 175 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Intel Core i7-14700,cpu,4836,USD,405,oem,Cyrex Store,web,sí,USD 405 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 5 5600G,cpu,2257,USD,189,oem,Cyrex Store,web,sí,USD 189 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 7 5700X,cpu,2388,USD,200,oem,Cyrex Store,web,sí,USD 200 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Intel Core i7-12700KF,cpu,3403,USD,285,oem,Cyrex Store,web,sí,USD 285 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Intel Core i7-12700,cpu,4000,USD,335,oem,Cyrex Store,web,sí,USD 335 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Intel Core Ultra 5 225F,cpu,2388,USD,200,no indica,Cyrex Store,web,sí,USD 200 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 7 9850X3D,cpu,6627,USD,555,nuevo,Cyrex Store,web,sí,USD 555 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 7 9800X3D,cpu,6209,USD,520,nuevo,Cyrex Store,web,sí,USD 520 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 7 9700X,cpu,4597,USD,385,nuevo,Cyrex Store,web,sí,USD 385 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 9 5900XT,cpu,4418,USD,370,no indica,Cyrex Store,web,sí,USD 370 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 7 8700G,cpu,3546,USD,297,nuevo,Cyrex Store,web,sí,USD 297 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 7 5800XT,cpu,3403,USD,285,nuevo,Cyrex Store,web,sí,USD 285 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 7 5700G,cpu,2603,USD,218,nuevo,Cyrex Store,web,sí,USD 218 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 5 8600G,cpu,2328,USD,195,nuevo,Cyrex Store,web,sí,USD 195 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 5 8400F,cpu,2269,USD,190,nuevo,Cyrex Store,web,sí,USD 190 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 5 8500G,cpu,1946,USD,163,nuevo,Cyrex Store,web,sí,USD 163 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 5 5500,cpu,1397,USD,117,nuevo,Cyrex Store,web,sí,USD 117 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 5 3400G,cpu,1254,USD,105,nuevo,Cyrex Store,web,sí,USD 105 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 3 3200G,cpu,955,USD,80,nuevo,Cyrex Store,web,sí,USD 80 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Intel Core Ultra 9 285K,cpu,8239,USD,690,no indica,Cyrex Store,web,sí,USD 690 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Intel Core i5-12600KF,cpu,2925,USD,245,nuevo,Cyrex Store,web,sí,USD 245 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Intel Core Ultra 7 265KF,cpu,4418,USD,370,nuevo,Cyrex Store,web,sí,USD 370 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Intel Core Ultra 5 245KF,cpu,2746,USD,230,no indica,Cyrex Store,web,sí,USD 230 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 7 5700,cpu,2209,USD,185,nuevo,Cyrex Store,web,sí,USD 185 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Intel Core i3-8300,cpu,740,USD,62,oem,Cyrex Store,web,sí,USD 62 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,AMD A12-9800E,cpu,716,USD,60,nuevo,Cyrex Store,web,sí,USD 60 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Ryzen 3 3200G,cpu,1194,USD,99.99,no indica,Geek Store Bolivia,web,sí,USD 99.99 × 11.94 (USDT 12/11); web Kyte 12/11
+2026-11-12,Ryzen 5 8500G,cpu,2149,USD,180,no indica,Geek Store Bolivia,web,sí,USD 180 × 11.94 (USDT 12/11); web Kyte 12/11
+2026-11-12,Ryzen 5 8600G,cpu,2507,USD,210,no indica,Geek Store Bolivia,web,sí,USD 210 × 11.94 (USDT 12/11); web Kyte 12/11
+2026-11-12,Ryzen 7 5700X,cpu,2388,USD,200,no indica,Geek Store Bolivia,web,sí,USD 200 × 11.94 (USDT 12/11); web Kyte 12/11
+2026-11-12,Ryzen 5 5600G,cpu,2209,USD,185,no indica,Geek Store Bolivia,web,sí,USD 185 × 11.94 (USDT 12/11); web Kyte 12/11
+2026-11-12,Ryzen 5 8400F,cpu,2257,USD,189,no indica,Geek Store Bolivia,web,sí,USD 189 × 11.94 (USDT 12/11); web Kyte 12/11
+2026-11-12,Intel Core i5-14400,cpu,2973,USD,249,no indica,Geek Store Bolivia,web,sí,USD 249 × 11.94 (USDT 12/11); web Kyte 12/11
+2026-11-12,Intel Core Ultra 5 245KF,cpu,2686,USD,225,no indica,Geek Store Bolivia,web,sí,USD 225 × 11.94 (USDT 12/11); web Kyte 12/11
+2026-11-12,Intel Core i5-12600K,cpu,2865,USD,239.99,no indica,Geek Store Bolivia,web,sí,USD 239.99 × 11.94 (USDT 12/11); web Kyte 12/11
+2026-11-12,Viper DDR5 32GB 6000,ram,6500,Bs,6500,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11; kit sin dato
+2026-11-12,Samsung DDR5 16GB (1x16) 5600,ram,2550,Bs,2550,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Apacer TUF Gaming DDR5 32GB (2x16) 6000,ram,6750,Bs,6750,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Manta DDR5 32GB (2x16) 6000,ram,6850,Bs,6850,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Corsair Vengeance LPX DDR4 16GB (2x8) 3600,ram,1800,Bs,1800,no indica,PC Components Bolivia,web,sí,"tienda de Santa Cruz (referencia); web 12/11; la web dice ""CORSAIR LPX"""
+2026-11-12,Corsair DDR5 RGB 16GB 6000,ram,4100,Bs,4100,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Kingston DDR5 RGB 32GB 5600,ram,6600,Bs,6600,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11; kit sin dato
+2026-11-12,Kingston DDR5 16GB 4800,ram,2750,Bs,2750,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Corsair DDR5 RGB 32GB (2x16) 5200,ram,6500,Bs,6500,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,HyperX Fury DDR4 32GB (2x16) 3200,ram,3000,Bs,3000,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,HyperX Fury DDR4 16GB (1x16) 3200,ram,1600,Bs,1600,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11; kit sin dato
+2026-11-12,HyperX Fury DDR4 8GB 3200,ram,850,Bs,850,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,MSI Spatium S270 SSD 480GB SATA,ssd,1100,Bs,1100,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Kingston SSD 4TB M.2 6000MB/s NVMe,ssd,7800,Bs,7800,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Samsung 990 Pro 1TB,ssd,3800,Bs,3800,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11; NVMe
+2026-11-12,Samsung 9100 Pro 1TB,ssd,3900,Bs,3900,no indica,PC Components Bolivia,web,sí,"tienda de Santa Cruz (referencia); web 12/11; NVMe, 14700MB/s"
+2026-11-12,Dahua SSD 1TB,ssd,1400,Bs,1400,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11; sin dato de NVMe (probable SATA)
+2026-11-12,Super Tale M.2 256GB,ssd,700,Bs,700,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Hiksemi M.2 512GB,ssd,1150,Bs,1150,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Dato M.2 512GB,ssd,1250,Bs,1250,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Kingston NV3 500GB,ssd,1450,Bs,1450,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11; NVMe
+2026-11-12,Kingston SSD 960GB,ssd,1650,Bs,1650,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11; SATA probable
+2026-11-12,Puskill SSD 1TB,ssd,1450,Bs,1450,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11; sin dato de NVMe (probable SATA)
+2026-11-12,Apacer SSD 256GB,ssd,550,Bs,550,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Macrovip SSD 240GB,ssd,530,Bs,530,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Hikvision M.2 1TB,ssd,2300,Bs,2300,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Puskill M.2 NVMe 1TB,ssd,1750,Bs,1750,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11; NVMe
+2026-11-12,Kingston NV3 1TB,ssd,1870,Bs,1870,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11; NVMe
+2026-11-12,WD Green SN3000 1TB,ssd,1950,Bs,1950,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11; NVMe
+2026-11-12,Hiksemi SSD 512GB,ssd,970,Bs,970,no indica,PC Components Bolivia,web,sí,tienda de Santa Cruz (referencia); web 12/11
+2026-11-12,Corsair Dominator Platinum RGB White DDR4 16GB (2x8) 4000,ram,2625,Bs,2625,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Corsair Vengeance RGB Pro DDR4 8GB (1x8) 3200,ram,1000,Bs,1000,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Corsair Dominator Platinum White DDR4 16GB (2x8) 3600,ram,2060,Bs,2060,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Kingston Fury DDR5 8GB 4800,ram,1660,Bs,1660,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Hiksemi DDR5 16GB 5600 laptop,ram,2860,Bs,2860,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo; SODIMM
+2026-11-12,Apacer Nox DDR5 32GB 5200,ram,5560,Bs,5560,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; kit sin dato
+2026-11-12,Kingston DDR5 16GB 5600 laptop,ram,2860,Bs,2860,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo; SODIMM
+2026-11-12,Hynix DDR4 16GB 2666 OEM,ram,1360,Bs,1360,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Mushking Red Line DDR4 16GB laptop,ram,1760,Bs,1760,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; SODIMM
+2026-11-12,Kingston Fury DDR4 16GB 3200,ram,1660,Bs,1660,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo; kit sin dato
+2026-11-12,Corsair Vengeance LPX DDR4 8GB 3000,ram,1030,Bs,1030,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Corsair Vengeance LPX DDR4 8GB (1x8) 3200,ram,1000,Bs,1000,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Kingston Fury DDR5 16GB 5600,ram,3160,Bs,3160,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,XPG Lancer RGB White DDR5 16GB 6000,ram,3510,Bs,3510,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Crucial DDR4 8GB 3200 laptop,ram,850,Bs,850,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo; SODIMM
+2026-11-12,Kingston Fury DDR4 8GB 2666,ram,750,Bs,750,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo
+2026-11-12,Kingston Fury Gen DDR4 16GB 3200,ram,1510,Bs,1510,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; kit sin dato
+2026-11-12,Klevv SSD M.2 240GB PCIe 3.0,ssd,680,Bs,680,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo
+2026-11-12,Colorful SSD 512GB,ssd,890,Bs,890,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; sin dato de NVMe
+2026-11-12,"HKC SSD 1TB SATA 2.5""",ssd,1723,Bs,1723,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo
+2026-11-12,"Colorful SSD 240GB SATA 2.5""",ssd,520,Bs,520,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Diamond SSD M.2 512GB,ssd,1150,Bs,1150,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo
+2026-11-12,Crucial BX500 2TB SATA,ssd,2860,Bs,2860,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo
+2026-11-12,Apacer SSD M.2 512GB Pro,ssd,1220,Bs,1220,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Billion SSD 256GB SATA,ssd,460,Bs,460,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Semsotai SSD M.2 256GB,ssd,570,Bs,570,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo
+2026-11-12,Samsung 9100 Pro 1TB,ssd,3110,Bs,3110,no indica,Punto Tecnológico / Supermall,web,sí,"web 12/11; NVMe, 14700MB/s"
+2026-11-12,Corsair MP600 Mini 1TB,ssd,2160,Bs,2160,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo; M.2 NVMe
+2026-11-12,Crucial E100 480GB,ssd,1310,Bs,1310,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo
+2026-11-12,"SSD M.2 512GB (marca ""Solid State Drive"")",ssd,1050,Bs,1050,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo
+2026-11-12,Hiksemi Wave SSD 256GB 2026,ssd,500,Bs,500,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Hiksemi Wave SSD M.2 1TB,ssd,1860,Bs,1860,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11; stock bajo; la web no dice si es NVMe (la serie Wave de Hiksemi es SATA)
+2026-11-12,Hiksemi Wave SSD 512GB,ssd,930,Bs,930,no indica,Punto Tecnológico / Supermall,web,sí,web 12/11
+2026-11-12,Apacer Panther DDR5 16GB 5600,ram,3104,USD,260,no indica,Cyrex Store,web,sí,USD 260 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Puskill Killblade White DDR4 32GB (2x16) 3200,ram,,USD,210,no indica,Cyrex Store,web,no,USD 210 × 11.94 (USDT 12/11); web 12/11; agotado
+2026-11-12,T-Force Delta RGB DDR4 16GB (2x8) 3600,ram,2209,USD,185,no indica,Cyrex Store,web,sí,USD 185 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,GeIL Orion DDR4 32GB (2x16) 3200,ram,2866,USD,240,no indica,Cyrex Store,web,sí,USD 240 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Kingston Fury DDR4 16GB 3200,ram,1313,USD,110,no indica,Cyrex Store,web,sí,USD 110 × 11.94 (USDT 12/11); web 12/11; kit sin dato
+2026-11-12,Kingspec DDR4 16GB 3200,ram,1373,USD,115,no indica,Cyrex Store,web,sí,USD 115 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Crucial Basics DDR4 SODIMM 8GB 3200,ram,776,USD,65,no indica,Cyrex Store,web,sí,USD 65 × 11.94 (USDT 12/11); web 12/11; SODIMM
+2026-11-12,Hiksemi Hiker DDR4 SODIMM 8GB 3200,ram,836,USD,70,no indica,Cyrex Store,web,sí,USD 70 × 11.94 (USDT 12/11); web 12/11; SODIMM
+2026-11-12,Hiksemi Future U100 RGB DDR5 16GB (1x16) 6400,ram,3224,USD,270,no indica,Cyrex Store,web,sí,USD 270 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Apacer Nox RGB Classic Black DDR5 16GB (1x16) 5600,ram,3033,USD,254,no indica,Cyrex Store,web,sí,USD 254 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Patriot Viper Venom RGB DDR5 16GB (1x16) 6000,ram,3164,USD,265,no indica,Cyrex Store,web,sí,USD 265 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,G.Skill Ripjaws M5 Neo RGB DDR5 16GB (1x16) 6000,ram,3224,USD,270,no indica,Cyrex Store,web,sí,USD 270 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,PNY XLR8 Epic-X White RGB DDR4 8GB 3600,ram,860,USD,72,no indica,Cyrex Store,web,sí,USD 72 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Kingston Fury DDR4 8GB 3200,ram,860,USD,72,no indica,Cyrex Store,web,sí,USD 72 × 11.94 (USDT 12/11); web 12/11; solo para Intel
+2026-11-12,Apacer Nox RGB DDR4 8GB 3200,ram,1015,USD,85,no indica,Cyrex Store,web,sí,USD 85 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Hiksemi Armor Black DDR4 8GB 3200,ram,896,USD,75,no indica,Cyrex Store,web,sí,USD 75 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Hiksemi Armor Blue DDR4 16GB (1x16) 3200,ram,1815,USD,152,no indica,Cyrex Store,web,sí,USD 152 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Apacer Nox RGB DDR4 16GB (2x8) 3600,ram,1970,USD,165,no indica,Cyrex Store,web,sí,USD 165 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,OLOy Black Owl DDR4 16GB (2x8) 2666,ram,1910,USD,160,no indica,Cyrex Store,web,sí,USD 160 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Kingston Fury Beast DDR5 16GB (1x16) 5600,ram,2985,USD,250,no indica,Cyrex Store,web,sí,USD 250 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,XPG Lancer Blade DDR5 16GB (1x16) 5600,ram,2925,USD,245,no indica,Cyrex Store,web,sí,USD 245 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Crucial P310 SSD M.2 500GB NVMe,ssd,1313,USD,110,no indica,Cyrex Store,web,sí,USD 110 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,WD Green SSD 2TB SATA,ssd,2209,USD,185,no indica,Cyrex Store,web,sí,USD 185 × 11.94 (USDT 12/11); web 12/11; SATA
+2026-11-12,Kingston A400 960GB SATA,ssd,1851,USD,155,no indica,Cyrex Store,web,sí,USD 155 × 11.94 (USDT 12/11); web 12/11; SATA
+2026-11-12,Lexar SSD 960GB,ssd,1791,USD,150,no indica,Cyrex Store,web,sí,USD 150 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,"T-Force Vulcan Z SSD 512GB SATA 2.5""",ssd,1134,USD,95,no indica,Cyrex Store,web,sí,USD 95 × 11.94 (USDT 12/11); web 12/11; SATA
+2026-11-12,Crucial BX500 SSD 240GB SATA,ssd,716,USD,60,no indica,Cyrex Store,web,sí,USD 60 × 11.94 (USDT 12/11); web 12/11; SATA
+2026-11-12,T-Force GC Pro M.2 4TB PCIe Gen5,ssd,8597,USD,720,no indica,Cyrex Store,web,sí,USD 720 × 11.94 (USDT 12/11); web 12/11; NVMe
+2026-11-12,Samsung 990 Pro 1TB NVMe,ssd,,USD,260,no indica,Cyrex Store,web,no,USD 260 × 11.94 (USDT 12/11); web 12/11; agotado
+2026-11-12,Crucial E100 1TB NVMe Gen4,ssd,1946,USD,163,no indica,Cyrex Store,web,sí,USD 163 × 11.94 (USDT 12/11); web 12/11; NVMe
+2026-11-12,WD Green SN3000 1TB NVMe,ssd,1898,USD,159,no indica,Cyrex Store,web,sí,USD 159 × 11.94 (USDT 12/11); web 12/11; NVMe
+2026-11-12,Hikvision Wave SSD 240GB SATA,ssd,621,USD,52,no indica,Cyrex Store,web,sí,USD 52 × 11.94 (USDT 12/11); web 12/11; SATA
+2026-11-12,Crucial BX500 SSD 1TB SATA,ssd,1851,USD,155,no indica,Cyrex Store,web,sí,USD 155 × 11.94 (USDT 12/11); web 12/11; SATA
+2026-11-12,Hiksemi Wave SSD 512GB SATA,ssd,955,USD,80,no indica,Cyrex Store,web,sí,USD 80 × 11.94 (USDT 12/11); web 12/11; SATA
+2026-11-12,MSI Spatium S270 SSD 240GB SATA,ssd,597,USD,50,no indica,Cyrex Store,web,sí,USD 50 × 11.94 (USDT 12/11); web 12/11; SATA
+2026-11-12,Crucial BX500 SSD 2TB SATA,ssd,3701,USD,310,no indica,Cyrex Store,web,sí,USD 310 × 11.94 (USDT 12/11); web 12/11; SATA
+2026-11-12,Adata SU630 SSD 480GB SATA,ssd,955,USD,80,no indica,Cyrex Store,web,sí,USD 80 × 11.94 (USDT 12/11); web 12/11; SATA
+2026-11-12,Colorful SL500 SSD 480GB,ssd,931,USD,78,no indica,Cyrex Store,web,sí,USD 78 × 11.94 (USDT 12/11); web 12/11
+2026-11-12,Kingston NV2 SSD M.2 500GB NVMe,ssd,1313,USD,110,no indica,Cyrex Store,web,sí,USD 110 × 11.94 (USDT 12/11); web 12/11; NVMe
+2026-11-12,Crucial E100 480GB NVMe Gen4,ssd,1552,USD,130,no indica,Cyrex Store,web,sí,USD 130 × 11.94 (USDT 12/11); web 12/11; NVMe
+2026-11-12,Hiksemi Wave SSD M.2 SATA 512GB,ssd,955,USD,80,no indica,Cyrex Store,web,sí,USD 80 × 11.94 (USDT 12/11); web 12/11; SATA
+2026-11-12,Hiksemi Wave SSD M.2 SATA 256GB,ssd,549,USD,46,no indica,Cyrex Store,web,sí,USD 46 × 11.94 (USDT 12/11); web 12/11; SATA
+2026-11-12,WD Green SN350 1TB NVMe Gen4,ssd,1851,USD,155,no indica,Cyrex Store,web,sí,USD 155 × 11.94 (USDT 12/11); web 12/11; NVMe
+2026-11-12,Kingston Fury DDR4 16GB 3200,ram,1373,USD,115,no indica,Geek Store Bolivia,web,sí,USD 115 × 11.94 (USDT 12/11); web Kyte 12/11; kit sin dato
+2026-11-12,Kingston Fury DDR4 8GB 3200,ram,716,USD,60,no indica,Geek Store Bolivia,web,sí,USD 60 × 11.94 (USDT 12/11); web Kyte 12/11
+2026-11-12,Kingston Fury DDR5 16GB 5600,ram,2686,USD,225,no indica,Geek Store Bolivia,web,sí,USD 225 × 11.94 (USDT 12/11); web Kyte 12/11
+2026-11-12,Kingston Fury DDR5 32GB 5600,ram,5170,USD,433,no indica,Geek Store Bolivia,web,sí,USD 433 × 11.94 (USDT 12/11); web Kyte 12/11; precio de lista USD 440
+2026-11-12,Kingston NV3 500GB NVMe,ssd,1373,USD,115,no indica,Geek Store Bolivia,web,sí,USD 115 × 11.94 (USDT 12/11); web Kyte 12/11
+2026-11-12,Crucial BX500 SSD 2TB SATA,ssd,2866,USD,240,no indica,Geek Store Bolivia,web,sí,USD 240 × 11.94 (USDT 12/11); web Kyte 12/11; SATA
+2026-11-12,Kingston A400 SSD 240GB,ssd,836,USD,70,no indica,Geek Store Bolivia,web,sí,USD 70 × 11.94 (USDT 12/11); web Kyte 12/11; SATA
+2026-11-12,Kingston A400 SSD 960GB,ssd,1660,USD,139,no indica,Geek Store Bolivia,web,sí,USD 139 × 11.94 (USDT 12/11); web Kyte 12/11; SATA
+2026-11-12,WD Blue SSD M.2 SATA 2TB,ssd,2949,USD,247,no indica,Geek Store Bolivia,web,sí,USD 247 × 11.94 (USDT 12/11); web Kyte 12/11; M.2 SATA; precio de lista USD 255
+2026-11-12,Adata SU630 SSD 960GB SATA,ssd,1516,USD,127,no indica,Geek Store Bolivia,web,sí,USD 127 × 11.94 (USDT 12/11); web Kyte 12/11; SATA

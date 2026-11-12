@@ -82,15 +82,21 @@
   "conviene|SSD NVMe 2TB|nuevo|2026-11-11": "2026-11-11 11:55",
   "baja|Ryzen 7 7700X|usado|2026-11-11": "2026-11-11 11:55",
   "baja|Intel Core i5-14400F|nuevo|2026-11-12": "2026-11-12 11:55",
-  "conviene|Intel Core i5-14400F|nuevo|2026-11-12": "2026-11-12 11:55"
+  "conviene|Intel Core i5-14400F|nuevo|2026-11-12": "2026-11-12 11:55",
+  "conviene|Ryzen 5 9600X|usado|2026-11-12": "2026-11-12 16:35",
+  "conviene|Ryzen 5 7600X|nuevo|2026-11-12": "2026-11-12 16:35",
+  "conviene|Ryzen 5 7600X|usado|2026-11-12": "2026-11-12 16:35",
+  "conviene|Ryzen 9 9950X3D|nuevo|2026-11-12": "2026-11-12 16:35",
+  "conviene|Ryzen 9 9950X3D|usado|2026-11-12": "2026-11-12 16:35"
  },
  "conviene": {
+  "Ryzen 5 7600|nuevo": false,
   "Ryzen 5 7600|usado": true,
   "Ryzen 7 7800X3D|nuevo": false,
   "Ryzen 7 7800X3D|usado": true,
   "Ryzen 9 9950X|nuevo": false,
   "Ryzen 9 9950X|usado": false,
-  "Intel Core i5-12400F|nuevo": true,
+  "Intel Core i5-12400F|nuevo": false,
   "Intel Core i5-12400F|usado": true,
   "Intel Core i5-13400|usado": true,
   "Intel Core i5-14400F|nuevo": true,
@@ -107,11 +113,22 @@
   "SSD NVMe 2TB|nuevo": true,
   "SSD NVMe 2TB|usado": true,
   "Ryzen 7 7700X|nuevo": false,
-  "Ryzen 7 7700X|usado": true
+  "Ryzen 7 7700X|usado": true,
+  "Ryzen 5 7500F|nuevo": false,
+  "Ryzen 5 7500F|usado": false,
+  "Ryzen 5 9600X|nuevo": false,
+  "Ryzen 5 9600X|usado": true,
+  "Ryzen 5 7600X|nuevo": true,
+  "Ryzen 5 7600X|usado": true,
+  "Ryzen 9 9950X3D|nuevo": true,
+  "Ryzen 9 9950X3D|usado": true
  },
  "ultimas": [
-  "⬇ Intel Core i5-14400F (nuevo) bajó 11% en eBay: USD 156.10 → 139.00",
-  "✅ Ahora conviene Intel Core i5-14400F (nuevo): +23% · costo puesto Bs 1.827 vs Bs 2.384 en Cochabamba"
+  "✅ Ahora conviene Ryzen 5 9600X (usado): +27% · costo puesto Bs 1.779 vs Bs 2.450 en Cochabamba",
+  "✅ Ahora conviene Ryzen 5 7600X (nuevo): +26% · costo puesto Bs 1.898 vs Bs 2.550 en Cochabamba",
+  "✅ Ahora conviene Ryzen 5 7600X (usado): +40% · costo puesto Bs 1.540 vs Bs 2.550 en Cochabamba",
+  "✅ Ahora conviene Ryzen 9 9950X3D (nuevo): +26% · costo puesto Bs 7.092 vs Bs 9.560 en Cochabamba",
+  "✅ Ahora conviene Ryzen 9 9950X3D (usado): +31% · costo puesto Bs 6.555 vs Bs 9.560 en Cochabamba"
  ],
- "revisado": "2026-11-12 10:47"
+ "revisado": "2026-11-12 16:35"
 }
