@@ -108,6 +108,9 @@ def calcular(hoy=None):
     pedida = {m["tienda"] for m in msgs if m["direccion"] == "enviado" and m["fecha"] >= LISTA_DESDE
               and (m.get("nota") or "").lower().startswith("lista completa")}
     out["lista_pedida"] = len(pedida)
+    # idea 6 (Santi 12/11): agenda.py solo sabe lo que se anotó en mensajes.csv. Si una tienda contestó y nadie lo anotó,
+    # acá figura como "seguimiento", "esperar" o "fría". Antes de escribirles, se abre el chat y se mira si ya respondieron.
+    out["revisar_chat"] = sorted({f["tienda"] for k in ("seguimiento", "esperar", "frias") for f in out[k]})
     frias = {f["tienda"] for f in out["frias"]}
     esperar = {f["tienda"] for f in out["esperar"]}
     seguimiento = {f["tienda"] for f in out["seguimiento"]}
@@ -115,9 +118,11 @@ def calcular(hoy=None):
     respondio = {m["tienda"] for m in msgs if m["direccion"] == "recibido" and m.get("tipo") != "automatica"}
     for t in tiendas:
         n, est = t.get("tienda", ""), t.get("estado_contacto", "")
-        if not n or n in pedida or n in frias or n in esperar or not (t.get("whatsapp") or "").strip() or NUNCA_LISTA.search(est):
+        if not n or n in pedida or n in esperar or not (t.get("whatsapp") or "").strip() or NUNCA_LISTA.search(est):
             continue
-        if n in con_precio:
+        if n in frias:
+            orden, por = 4, "fría: un solo mensaje, sin seguimiento después (si en el chat ya había respondido, va arriba)"
+        elif n in con_precio:
             orden, por = 0, "ya nos pasó precios"
         elif n in respondio or re.search(r"respondi", est, re.I):
             orden, por = 1, "respondió antes"
@@ -133,7 +138,12 @@ def calcular(hoy=None):
 
 
 def texto(a):
-    L = [f"Agenda de WhatsApp para hoy ({a['hoy']}):"]
+    L = [f"Agenda de WhatsApp para hoy ({a['hoy']}):",
+         "\nANTES DE TODO (Santi 12/11): en WhatsApp Web abre el filtro \"No leídos\" y lee CADA chat sin leer (tienda,"
+         " número nuevo o grupo). Anota cada mensaje recibido en mensajes.csv, saca todo el dato que tenga (precios, catálogos,"
+         " stock, qué vende, si arma PCs o le falta producto) y contesta si hace falta. Esta agenda no ve lo que nadie anotó.",
+         f"\nRevisar en el chat antes de escribir (puede haber una respuesta sin anotar): {len(a.get('revisar_chat', []))}",
+         "  " + ", ".join(a.get("revisar_chat", []))]
     sec = [("responder", "Responder (escribieron y falta contestar)"), ("seguimiento", "Seguimiento hoy (uno corto por tienda)"),
            ("esperar", "Esperar (todavía no toca)"), ("frias", "Frías (no escribir sin que Santi lo pida)")]
     for k, t in sec:

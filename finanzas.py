@@ -181,7 +181,8 @@ def texto(f):
             l.append(f"Stock esperado de {cc['producto']}: {cc['stock_esperado']} u (en camino {cc['en_camino']}, "
                      f"en stock {cc['en_stock']}, vendidas {cc['vendidas']})")
     if f["sin_costo_envio"]:
-        l.append("Sin costo de envío cargado (la ganancia sale sin el courier): " + ", ".join(f["sin_costo_envio"]))
+        l.append("COSTO INCOMPLETO, envío sin dato (envio_usd vacío; la ganancia sale sin el courier): " + ", ".join(f["sin_costo_envio"]))
+    l.append("envio_usd: vacío = no sabemos cuánto costó el envío (costo incompleto) · 0 = no hay costo de envío aparte (ya está dentro del precio, como los 7700X a Bs 2.655 con todo incluido)")
     for x in f["productos"]:
         l.append(f"- {x['producto']}: {x['comprado']} comprados, {x['en_camino']} en camino, {x['en_stock']} en stock, "
                  f"{x['vendido']} vendidos · costo {bs(x['costo_unitario_bs'])}/u · ganancia {bs(x['ganancia_bs'])}")

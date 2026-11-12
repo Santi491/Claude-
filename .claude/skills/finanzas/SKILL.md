@@ -62,3 +62,6 @@ Mientras `pedidos.csv` no tenga compras reales, tu turno es corto: `finanzas.py`
 ## Qué propones
 
 Ejemplos: "Necesito el costo real del courier del primer pedido para pasar la ganancia de estimada a real" (necesidad para Santi); "Hay 2 unidades reservadas hace 9 días: ¿se cobraron?"; "El 7600 rota en 5 días y el 265K en 20: conviene que el próximo pedido lleve más 7600".
+
+## Envío vacío contra envío 0 (idea aprobada por Santi el 12/11)
+En `pedidos.csv`, `envio_usd` **vacío** quiere decir "no sabemos cuánto costó el envío": el costo está **incompleto** y así se dice (finanzas.py lo marca "COSTO INCOMPLETO"). `envio_usd` **0** quiere decir que no hay costo de envío aparte, porque ya está dentro del precio. Es el caso de los 4 Ryzen 7 7700X: Bs 2.655 por unidad con eBay, envío y courier incluidos, confirmado por Santi. Ahí la ganancia **sí** se puede calcular cuando haya venta: no digas "falta el desglose del courier". Si no sabes un envío, déjalo vacío, nunca 0.

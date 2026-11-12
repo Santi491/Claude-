@@ -45,3 +45,6 @@ Register-ScheduledTask -TaskName "CargoAbrir" -Action $a -Trigger $t -Settings (
 ```
 
 **Si la PC deja de prender por la red** (pasó desde el corte de luz del 27/10): después de un corte, la BIOS puede volver a los valores de fábrica (pila de la placa gastada) y dejar **Power On By PCI-E** apagado, y la placa de red no queda lista para despertar si la PC se apagó por el corte y no desde Windows. Revisar: 1) entrar a la BIOS (Supr) → Advanced → APM: ErP Ready = Disabled, Power On By PCI-E = Enabled (si la fecha y hora de la BIOS estaban mal, es la pila: CR2032); 2) en Windows, Inicio rápido sigue apagado y el adaptador Ethernet con "Wake on Magic Packet" (una actualización de Windows o del driver puede reactivar el Inicio rápido o apagar esto); 3) apagar desde Inicio → Apagar (no con el botón) y probar desde la Raspberry: `cd ~/cargo && python3 raspberry/despertar_pc.py` (si contesta "La PC prendió", quedó bien). Las luces del puerto de red de la PC tienen que quedar prendidas con la PC apagada; si se apagan, la placa no escucha.
+
+## Cazador de ofertas (12/11)
+Cron: `0 8-22/2 * * * cd ~/cargo && python3 cazador.py >> ~/cazador.log 2>&1` (cada 2 horas de 8 a 22, sin IA). Necesita las claves de eBay en `~/.ebay-claves` (las mismas de la Mac, permisos 600) y `~/.telegram` para avisar. Prueba sin mandar: `python3 cazador.py --probar`.

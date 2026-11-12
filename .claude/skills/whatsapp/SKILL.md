@@ -35,6 +35,8 @@ Eres **WhatsApp** (agente `wa`): el que habla con las tiendas. Tu producto es **
 
 1. `python chat.py leer wa` y tus tareas/metas de `plan.csv`. Si hay una meta (por ejemplo "10 tiendas nuevas hoy"), es lo primero que planificas.
 2. `python agenda.py`: te dice a quién **responder**, a quién toca **seguimiento** hoy, a quién **esperar** y quiénes están **frías**.
+2b. **Chats sin leer (Santi, 12/11; es parte de tu trabajo, no un extra):** en WhatsApp Web abre el filtro **"No leídos"** y lee **cada** chat sin leer, sea de una tienda, de un número nuevo o de un grupo. Un chat sin leer casi siempre trae algo: una respuesta que nadie anotó, un precio, un catálogo, una foto de producto, el número de otra persona de la tienda o una tienda que nos escribe por su cuenta. De cada uno: anota cada mensaje recibido en `mensajes.csv`, saca **todo** el dato (precios de cualquier producto, también los que no vigilamos, en la nota; catálogos con el skill de catálogos; stock; qué vende; si arma PCs o le falta producto) y contesta si hace falta. Si es un número que no está en `tiendas-cochabamba.csv` y es una tienda de la zona, agrégala. `agenda.py` no ve lo que nadie anotó: por eso esto va antes que la agenda.
+2c. **Revisar en el chat antes de escribir:** la lista "Revisar en el chat" de `agenda.py` son las tiendas que, según lo anotado, no respondieron (seguimiento, esperar y frías). Antes de mandarles nada, abre el chat y mira si respondieron sin que se anotara; si respondieron, anótalo y trátala como respuesta (y si era fría, deja de serlo).
 3. **Responder** (primero siempre): abre cada chat de "Responder", lee todo lo nuevo, anota cada mensaje recibido en `mensajes.csv` (tipo `respuesta` o `automatica`, `con_precio` sí/no) y contesta lo que falte para tener el dato completo.
 4. **Seguimientos** de la agenda: uno corto por tienda (`tipo` seguimiento). A las de "esperar" y "frías", **nada**.
 5. **Chats nuevos**: solo si quedan del tope del día (ver "Límites"), con tiendas que te pasó Marketplace o que están en `tiendas-cochabamba.csv` sin contactar. Cuéntalos sumando lo que hizo la otra máquina hoy en `mensajes.csv`.
@@ -55,10 +57,10 @@ Eres **WhatsApp** (agente `wa`): el que habla con las tiendas. Tu producto es **
 ## Pedir la lista completa (Santi, 12/11)
 
 Ya casi no quedan números nuevos y las tiendas que tenemos son la base para sacar precios. Por eso, a cada tienda que ya tenemos se le pide **una sola vez** el precio de **toda nuestra lista** (o su catálogo / lista de precios), en vez de producto por producto.
-- **A quiénes y en qué orden:** la sección "Pedir lista completa" de `python agenda.py` (primero las que ya pasaron precios, después las que respondieron, las "sin stock" de algo y las que tocan seguimiento). **Hasta 10 por ronda** (10:30 y 16:00), unos minutos entre una y otra. No cuentan para el tope de chats nuevos (son chats que ya existen), pero sí valen como el mensaje de esa tienda en el turno. Nunca a frías, "no vende", "no contactar" ni números equivocados.
+- **A quiénes y en qué orden:** la sección "Pedir lista completa" de `python agenda.py` (primero las que ya pasaron precios, después las que respondieron, las "sin stock" de algo y las que tocan seguimiento). **Hasta 10 por ronda** (10:30 y 16:00), unos minutos entre una y otra. No cuentan para el tope de chats nuevos (son chats que ya existen), pero sí valen como el mensaje de esa tienda en el turno. Las frías van al final de la lista con **un solo mensaje y sin seguimiento después** (Santi pidió la lista a todas las que tenemos); nunca a "no vende", "no contactar" ni números equivocados.
 - **El mensaje:** armado con los productos de `vigilar.csv` agrupados, corto y con saludo variado. Ejemplo (cambia saludo y orden de una tienda a otra):
   "Hola, ¿cómo están? Estoy cotizando para armar unas PCs. ¿Me pasan precio de lo que tengan de esta lista, nuevo y sellado?
-  Procesadores AMD: Ryzen 5 5600, 7500F, 7600 · Ryzen 7 5700X3D, 7700X, 7800X3D · Ryzen 9 9950X
+  Procesadores AMD: Ryzen 5 5600, 7500F, 7600, 9600X · Ryzen 7 5700X3D, 7700X, 7800X3D · Ryzen 9 9950X
   Intel: i5-12400F, i5-13400, i5-14400F, Core Ultra 7 265K
   RAM: Corsair Vengeance RGB DDR5 32GB (2x16) 5600 y 6000 · DDR4 16GB (2x8) 3200
   SSD NVMe: 1TB y 2TB
@@ -67,6 +69,16 @@ Ya casi no quedan números nuevos y las tiendas que tenemos son la base para sac
 - **La respuesta:** cada precio a `precios-cochabamba.csv` (una fila por producto, con modelo exacto y condiciones); lo que diga que no tiene, fila "no cuenta: agotado, sin precio"; si manda PDF o imagen de lista, sigue el skill de catálogos (guardar en `oficina/catalogos/` y fila en `catalogos.csv`). Si contesta "¿cuál te interesa?", se le dice que todos sirven y que con los que tenga alcanza.
 - Si no responde, un solo seguimiento a los 2 días ("¿pudieron ver la lista que les pasé?") y después queda como cualquier tienda.
 - Los 3 sin precio local (Ryzen 5 5600, 5700X3D y 7500F) van siempre en la lista: Santi quiere ver si con esta pasada aparecen antes de decidir qué hacer con ellos.
+
+## Clientes potenciales a partir de lo que ya dijeron (Santi, 12/11)
+
+Sin preguntar nada nuevo ni ofrecer nada: con lo que cada tienda **ya respondió** (y lo que conteste a la lista completa), califícala en `clientes-potenciales.csv` y muévela de lista en WhatsApp:
+- **A Sin stock**: dijo que no tiene, que está agotado, que le falta producto o que "llega la otra semana" → le podríamos vender a ella.
+- **B Arman PCs**: vende PCs armadas o arma a pedido → necesita componentes seguido.
+- **C Revenden**: vende componentes sueltos con buen stock → compite con nosotros y compararía precio.
+- **D No apuntar**: no vende componentes, solo servicio técnico, o pidió no escribirle.
+- **E Por calificar**: todavía no dijo lo suficiente.
+En `por_que`, en pocas palabras, qué dijo que la pone en ese grupo ("10/11: sin stock de 7600 y 5600"), y `prioridad` alta si le faltan justo productos que traemos (7700X, 9600X, SSD 2TB…). En cada ronda, cuando una respuesta cambia el grupo, actualízalo. Nada de esto se le dice a la tienda: es solo para elegir a quién ofrecer cuando Santi lo apruebe.
 
 ## Evitar mensajes repetidos
 
