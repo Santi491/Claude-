@@ -952,7 +952,7 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-12,Ryzen 5 9600X,nuevo,150.00,0.00,agotado,"eBay API; vendedor toastjr223 100.0%; AMD Ryzen 5 9600X Processor (3.9 GHz, 6 Cores, Socket AM5) 1; vendido o agotado al revisar a las 16:09",https://www.ebay.com/itm/880109636162
 2026-11-12,Ryzen 5 9600X,usado,135.00,0.00,real,"eBay API; vendedor revivelifecycle 100.0%; AMD Ryzen 5 9600X Processor (3.9 GHz, 6 Cores, Socket AM5) 1; envío no indicado",https://www.ebay.com/itm/820345401429
 2026-11-12,Ryzen 5 7600X,nuevo,145.00,0.00,real,eBay API; vendedor inasense3k2 100.0%; AMD Ryzen 5 7600X Processor CPU 6 Cores 12 Threads Socket AM,https://www.ebay.com/itm/128186195259
-2026-11-12,Ryzen 5 7600X,usado,115.00,0.00,real,"eBay API; vendedor bra-982411 100.0%; AMD Ryzen 5 7600x Processor (5.3 GHz, 6 Cores, LGA 1718/Sock",https://www.ebay.com/itm/137925153378
+2026-11-12,Ryzen 5 7600X,usado,115.00,0.00,agotado,"eBay API; vendedor bra-982411 100.0%; AMD Ryzen 5 7600x Processor (5.3 GHz, 6 Cores, LGA 1718/Sock; vendido o agotado al revisar a las 19:24",https://www.ebay.com/itm/137925153378
 2026-11-12,Ryzen 9 9950X3D,nuevo,579.99,0.00,real,eBay API; vendedor okpv3357 98.0%; NEW SEALED AMD Ryzen 9 9950X3D 4.3 GHz 16-Core 32-Thread Pro,https://www.ebay.com/itm/336889201621
 2026-11-12,Ryzen 9 9950X3D,usado,534.99,0.00,real,eBay API; vendedor paymore_dayton_south 99.6%; AMD Ryzen 9 9950X3D 4.30GHz 16 Core 100-000000719 32 Thread ,https://www.ebay.com/itm/366799839237
 2026-11-12,Ryzen 5 7600,nuevo,261.69,0.00,real,eBay API; vendedor nothingbutsavings 99.5%; AMD Ryzen 5 7600 6 Core 3.80GHz Socket AM5 OEM/Tray (New),https://www.ebay.com/itm/206694959577
@@ -960,3 +960,4 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-12,Intel Core Ultra 7 265K,nuevo,249.00,0.00,real,eBay API; vendedor doug1978 100.0%; Intel Core Ultra 7 Desktop Processor 265K - 20 cores (8 P-co,https://www.ebay.com/itm/237176339841
 2026-11-12,Ryzen 7 7700X,usado,159.99,0.00,real,eBay API; vendedor jackofalltrades21 99.7%; AMD Ryzen 7 7700X Used 4.50GHz 8 Core Thread AM5,https://www.ebay.com/itm/227607987724
 2026-11-12,Ryzen 5 9600X,nuevo,164.99,0.00,real,eBay API; vendedor all4homeusa 99.7%; AMD Ryzen 5 9600X Processor (Zen 5) 6-Core AM5 *NEW SEALED*,https://www.ebay.com/itm/327452714785
+2026-11-12,Ryzen 5 7600X,usado,115.00,0.00,real,"eBay API; vendedor revivelifecycle 100.0%; AMD Ryzen 5 7600X Processor (4.7 GHz, 6 Cores, Socket AM5) 1; envío no indicado",https://www.ebay.com/itm/820345431508

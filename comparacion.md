@@ -28,7 +28,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 
 | Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs | Ganancia 2 u | Ganancia 4 u | Estado |
 |---|---|---|---|---|---|---|---|
-| Ryzen 5 7600X | [115.00](https://www.ebay.com/itm/137925153378) | 1.540 (B 1 kg) | 1.540 (B 2 kg) | 2.550 | 1.010 (40%) | 1.010 (40%) | conviene |
+| Ryzen 5 7600X | [115.00](https://www.ebay.com/itm/820345431508) | 1.540 (B 1 kg) | 1.540 (B 2 kg) | 2.550 | 1.010 (40%) | 1.010 (40%) | conviene |
 | Ryzen 5 7600 | [129.99](https://www.ebay.com/itm/147673724240) | 1.719 (B 1 kg) | 1.719 (B 2 kg) | 2.800 | 1.081 (39%) | 1.081 (39%) | conviene |
 | Ryzen 9 9950X3D | [534.99](https://www.ebay.com/itm/366799839237) | 6.555 (B 1 kg) | 6.555 (B 2 kg) | 9.560 | 3.005 (31%) | 3.005 (31%) | conviene |
 | Ryzen 7 7700X | [159.99](https://www.ebay.com/itm/227607987724) | 2.077 (B 1 kg) | 2.077 (B 2 kg) | 3.000 | 923 (31%) | 923 (31%) | conviene |

@@ -342,7 +342,7 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 <div class="wrap">
 
   <header style="margin-top:10px;scroll-margin-top:12px" id="tabla">
-    <div class="eyebrow">Los 14 productos de vigilar.csv</div>
+    <div class="eyebrow" id="nProd">Los productos de vigilar.csv</div>
     <h2>¿Qué conviene traer?</h2>
     <p class="lede">Primero lo más barato en eBay (nuevo y usado, vendedor en EE.UU.), después lo más barato en Marketplace (mercado informal) y en tiendas (precio estándar) de Cochabamba, cuánto más cobra la tienda, y al final el cálculo. La fila del pie resume la diferencia entre los dos mercados. La columna resaltada de eBay es la que se usa. Toca una fila para ver anuncios y el cálculo.</p>
   </header>
@@ -451,6 +451,7 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 <script>
 const D=Object.assign({productos:[],movimientos:[],dolar:[],actividad:[],documentos:[],tiendas:[],capturas:[],pedidos:[],generado:""},window.DATOS||{});
 const $=id=>document.getElementById(id);
+$("nProd").textContent=`Los ${D.productos.length} productos de vigilar.csv`;   // se cuenta solo (12/11: eran 14 fijos)
 /* ---------- Logo de Cargo Brothers: monograma C + B en círculo, monolínea (principal) o sólido (ícono chico) ---------- */
 const CB_PATHS={C:"M -2 -38 A 38 38 0 1 0 -2 38",B:"M 4 -38 L 18 -38 A 18 18 0 0 1 18 -2 L 6 -2 M 18 -2 L 22 -2 A 20 20 0 0 1 22 38 L -4 38",D:"M -26 56 L 26 -56"};
 let cbN=0;
