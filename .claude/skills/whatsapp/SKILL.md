@@ -119,3 +119,11 @@ Desde WhatsApp ves cómo responden las tiendas. Ejemplos: "OverCity responde sie
 
 ## Lo que no está en la lista también sirve (Santi, 12/11)
 Cuando una tienda pasa precios de procesadores, RAM o SSD que **no** están en `vigilar.csv` (por ejemplo, al contestar la lista completa: "no tengo el 7600 pero sí el 7600X a 2.900"), anótalos en **`mercado.csv`** (mismas columnas que explica el skill de catálogos, `canal` whatsapp). Si dice que **no tiene** un producto, también: fila con `en_stock` no y sin precio. Un producto que varias tiendas no tienen es un hueco para vender.
+
+## Links y catálogos que mandan las tiendas (Santi, 12/11)
+Muchas tiendas contestan con un link (su web, el catálogo de WhatsApp Business, un álbum de Facebook o Instagram, una lista en Drive) o con fotos de listas de precios. **Ábrelos y revísalos**, no te quedes con "mandó un link":
+- Del link sale **todo** lo que tenga de procesadores, RAM y SSD: lo de la lista va a `precios-cochabamba.csv` y lo demás a `mercado.csv` (con `en_stock` no si dice agotado). Si es un catálogo grande (más de ~15 productos), pásalo al agente Catálogos (chat o fila en `catalogos.csv`) y sigue con lo tuyo.
+- El catálogo de WhatsApp Business de la tienda (ícono de tienda en su perfil) también cuenta: revísalo una vez por tienda.
+- Seguridad (reglas de catálogos): solo páginas web y archivos PDF, imagen, Excel o CSV; nunca programas, comprimidos ni links que pidan iniciar sesión o instalar algo. En ese caso no se abre y va a `necesidades.csv`.
+- Anota en la nota de `mensajes.csv` qué link era (tipo: "web", "catálogo WhatsApp", "Drive"), sin copiar números de teléfono.
+**Primera pasada:** en la semana de la lista completa (desde el 12/11), revisa también los links y catálogos que las tiendas mandaron antes y quedaron sin revisar (búscalos en el chat de cada tienda que ya respondió).

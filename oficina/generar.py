@@ -84,7 +84,8 @@ def main():
         productos.append({"name": nombre, "cat": categoria(nombre), "g": float(v["peso_g_con_caja"]),
                           "nw": oferta("nuevo"), "us": oferta("usado"), "local": local,
                           # sin oferta hoy: último día en que se vio un anuncio (la oficina dice "sin oferta hoy · visto …")
-                          "nwv": C.ultimo_visto(eeuu, nombre, "nuevo"), "usv": C.ultimo_visto(eeuu, nombre, "usado")})
+                          "nwv": C.ultimo_visto(eeuu, nombre, "nuevo"), "usv": C.ultimo_visto(eeuu, nombre, "usado"),
+                          "nwl": C.ultimo_link(eeuu, nombre, "nuevo"), "usl": C.ultimo_link(eeuu, nombre, "usado")})
 
     # ---------- Historial: cada precio visto, en orden, con el cambio contra el anterior de la misma serie ----------
     mov = []

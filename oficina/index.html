@@ -509,7 +509,8 @@ const ST={good:["Conviene","st-good",0],warn:["Justo","st-warn",1],bad:["No conv
 const dash='<span class="dash">—</span>';
 const money=o=>o?`<a href="${esc(o.url)}" target="_blank" rel="noopener">${fmt(tot(o),2)}</a>${o.cond?`<span class="tag">${o.cond}</span>`:""}`:dash;
 // Santi, 10/11: si el anuncio se vendió o no apareció en la última búsqueda, no se muestra un precio viejo
-const sinHoy=v=>v?`<span class="dash" title="El anuncio que se vio el ${fechaCorta(v)} ya no está a la venta">sin oferta hoy · visto ${fechaCorta(v)}</span>`:dash;
+/* Santi, 12/11: "sin oferta hoy" es un link al último anuncio que se vio, para comprobar en eBay que se vendió o está agotado */
+const sinHoy=(v,l)=>v?(l?`<a class="dash" href="${esc(l)}" target="_blank" rel="noopener" title="Abre en eBay el anuncio que se vio el ${fechaCorta(v)}: ahí se ve que se vendió o está agotado">sin oferta hoy · visto ${fechaCorta(v)} ↗</a>`:`<span class="dash" title="El anuncio que se vio el ${fechaCorta(v)} ya no está a la venta">sin oferta hoy · visto ${fechaCorta(v)}</span>`):dash;
 const localCell=(l,count)=>l?`${l.url?`<a href="${esc(l.url)}" target="_blank" rel="noopener">${fmt(l.bs)}</a>`:fmt(l.bs)}${count>1?`<span class="n">+${count-1}</span>`:""}`:dash;
 function localItem(l){
   const extra=[l.estado,l.contacto?`contacto: ${l.contacto}`:""].filter(Boolean).join(" · ");
@@ -544,7 +545,7 @@ function render(){
     const tr=document.createElement("tr");tr.className="row"+(S.open.has(p.name)?" open":"");tr.tabIndex=0;tr.setAttribute("aria-expanded",S.open.has(p.name));
     const st=ST[c.status];const uN=c.kind==="nuevo",uU=c.kind==="usado";
     tr.innerHTML=`<td class="name">${esc(p.name)}</td><td class="cat">${p.cat}</td>
-      <td class="grp ${uN?"use":""}">${p.nw?money(p.nw):sinHoy(p.nwv)}</td><td class="${uU?"use":""}">${p.us?money(p.us):sinHoy(p.usv)}</td>
+      <td class="grp ${uN?"use":""}">${p.nw?money(p.nw):sinHoy(p.nwv,p.nwl)}</td><td class="${uU?"use":""}">${p.us?money(p.us):sinHoy(p.usv,p.usl)}</td>
       <td class="grp">${localCell(c.mk,refs(p,"mkt").length)}</td><td>${localCell(c.sh,refs(p,"tienda").length)}</td><td>${gapCell(gapOf(c))}</td>
       <td class="grp">${c.ship==null?dash:fmt(c.ship,2)+' <span class="dash">'+(c.useA?'A':'B')+'</span>'}</td>
       <td>${c.cost==null?dash:fmt(c.cost)}</td>
@@ -559,13 +560,13 @@ function render(){
     if(S.open.has(p.name)){
       const dt=document.createElement("tr");dt.className="detail";
       const lst=(src,empty)=>{const a=p.local.filter(l=>l.src===src).sort((x,y)=>x.bs-y.bs);return a.length?`<ul>${a.map(localItem).join("")}</ul>`:`<p class="dash" style="margin:0">${empty}</p>`};
-      const eb=(o,v)=>o?`USD ${fmt(tot(o),2)}${o.note?" — "+esc(o.note):""} <span class="dash">(${o.via}, ${fechaCorta(o.fecha)})</span> · <a href="${esc(o.url)}" target="_blank" rel="noopener">eBay</a>`:v?`<span class="dash">sin oferta hoy (el último anuncio se vio el ${fechaCorta(v)} y ya no está)</span>`:'<span class="dash">sin anuncio de vendedor en EE.UU.</span>';
+      const eb=(o,v,l)=>o?`USD ${fmt(tot(o),2)}${o.note?" — "+esc(o.note):""} <span class="dash">(${o.via}, ${fechaCorta(o.fecha)})</span> · <a href="${esc(o.url)}" target="_blank" rel="noopener">eBay</a>`:v?`<span class="dash">sin oferta hoy (el último anuncio se vio el ${fechaCorta(v)} y ya no está)</span>${l?` · <a href="${esc(l)}" target="_blank" rel="noopener">ver ese anuncio en eBay</a>`:""}`:'<span class="dash">sin anuncio de vendedor en EE.UU.</span>';
       const cl=c.cost==null?"":`<div class="calc" style="margin-top:8px"><span>Precio ${c.kind} + envío EE.UU.</span><span>USD ${fmt(c.base,2)}</span>
         <span>Courier B (${fmt(c.b.kg,1)} kg ÷ ${S.qty})</span><span>USD ${fmt(c.b.per,2)}</span>
         <span>Courier A (10 + tax)</span><span>USD ${fmt(c.a,2)}</span><span>Aduana</span><span>USD ${fmt(c.aduUsd,2)}</span>
         <span class="tot">Costo puesto</span><span class="tot">USD ${fmt(c.costUsd,2)} = Bs ${fmt(c.cost)}</span></div>`;
       dt.innerHTML=`<td colspan="13"><div class="dgrid">
-        <div><h3>eBay</h3><ul><li>Nuevo: ${eb(p.nw,p.nwv)}</li><li>Usado: ${eb(p.us,p.usv)}</li></ul>${cl}</div>
+        <div><h3>eBay</h3><ul><li>Nuevo: ${eb(p.nw,p.nwv,p.nwl)}</li><li>Usado: ${eb(p.us,p.usv,p.usl)}</li></ul>${cl}</div>
         <div><h3>Marketplace Cochabamba</h3>${lst("mkt","Sin anuncios todavía.")}</div>
         <div><h3>Tiendas</h3>${lst("tienda","Ninguna tienda dio precio todavía.")}</div></div></td>`;
       tb.appendChild(dt);

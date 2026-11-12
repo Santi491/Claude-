@@ -70,6 +70,13 @@ def ultimo_visto(filas, producto, condicion):
                 and f.get("tipo") in ("real", "estimado", "agotado")), default="")
 
 
+def ultimo_link(filas, producto, condicion):
+    """Link del último anuncio que se vio (el que se vendió o se agotó): la oficina lo abre al tocar "sin oferta hoy"."""
+    fs = [f for f in filas if f["producto"] == producto and f["condicion"] == condicion and f.get("link")
+          and f.get("tipo") in ("real", "estimado", "agotado")]
+    return max(fs, key=lambda f: (f["fecha"], f.get("tipo") == "agotado"), default={}).get("link", "")
+
+
 def locales(filas, producto):
     """Precios de Cochabamba que cuentan (sin otras ciudades ni anuncios de otro modelo)."""
     return [f for f in filas if f["producto"] == producto and "no cuenta" not in f["estado"]
