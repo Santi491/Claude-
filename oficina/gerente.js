@@ -211,6 +211,26 @@
 .av img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
 .av b{font:700 calc(var(--s,48px)*.36) var(--f-mono);color:#f3e6c8;letter-spacing:.5px;text-shadow:0 1px 2px rgba(0,0,0,.35)}
 .av i{position:absolute;right:-1px;bottom:-1px;width:calc(var(--s,48px)*.38);height:calc(var(--s,48px)*.38);border-radius:50%;background:#111b21;color:#C9A45C;display:grid;place-items:center;font:700 calc(var(--s,48px)*.2) var(--f-mono);font-style:normal;box-shadow:0 0 0 2px #111b21}
+.ob-step{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ob-step div{border:1px solid var(--o-line);border-radius:10px;padding:10px 12px;display:grid;gap:3px;font-size:12.5px;color:var(--o-muted);position:relative}
+.ob-step div b{font:600 13.5px var(--f-body);color:var(--o-ink)}
+.ob-step div.on{border-color:#C9A45C;background:linear-gradient(180deg,rgba(201,164,92,.12),transparent)}
+.ob-step div.on b{color:#E9C77E}.ob-step div.ok b::after{content:" ✓";color:#5CD69A}
+.ob-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.ob-card{border:1px solid var(--o-line);border-radius:12px;padding:14px;display:grid;gap:10px;background:#1E1E20;align-content:start}
+.ob-hd{display:flex;align-items:center;gap:12px}.ob-hd div{min-width:0;flex:1;display:grid;gap:2px}
+.ob-hd b{font:600 15px var(--f-body)}.ob-hd small{color:var(--o-muted);font-size:12px}
+.gp-box svg.ob-ring{flex:none;width:52px;height:52px}.ob-ring text{font:700 13px var(--f-mono);fill:var(--o-ink)}
+.ob-o{display:grid;gap:4px;font-size:12.5px}.ob-o p{margin:0;display:flex;gap:8px;justify-content:space-between;align-items:baseline}
+.ob-o p span{min-width:0}.ob-o p em{font:600 12px var(--f-mono);font-style:normal;white-space:nowrap}
+.ob-bar{height:6px;border-radius:3px;background:#2a2b2e;overflow:hidden}.ob-bar i{display:block;height:100%;border-radius:3px}
+.ob-rd{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:end;border-top:1px solid var(--o-line);padding-top:10px}
+.ob-sp{display:flex;align-items:flex-end;gap:3px;height:34px}.ob-sp i{width:9px;border-radius:2px 2px 0 0;background:#C9A45C;opacity:.85;min-height:2px}
+.ob-sp i.z{background:#3a3b3f}
+.ob-k{display:flex;flex-wrap:wrap;gap:6px}.ob-k span{border:1px solid var(--o-line);border-radius:999px;padding:2px 9px;font-size:11.5px;color:var(--o-muted)}.ob-k b{color:var(--o-ink);font-family:var(--f-mono)}
+.ob-last{font-size:12px;color:var(--o-muted);line-height:1.4}.ob-last time{font:500 11px var(--f-mono)}
+.ob-next summary{cursor:pointer;color:#E9C77E;font-size:13px}.ob-next ul{margin:8px 0 0;padding-left:18px;display:grid;gap:4px;font-size:12.5px;color:var(--o-muted)}
+@media (max-width:760px){.ob-step{grid-template-columns:1fr}.ob-grid{grid-template-columns:1fr}}
 .wa-main{display:grid;grid-template-rows:auto minmax(0,1fr) auto;min-height:0;background:#0b141a}
 .wa-hd{display:flex;align-items:center;gap:12px;padding:9px 16px;background:#202c33;min-height:58px}
 .wa-hd .nm{font:500 16px var(--f-body)}
@@ -304,7 +324,7 @@
 `;
   document.head.appendChild(st);
 
-  const TABS = [["escritorio", "Escritorio"], ["chat", "Chat del equipo"], ["tareas", "Tareas y metas"], ["propuestas", "Propuestas"], ["memoria", "Libreta"], ["resumen", "Resumen"], ["contacto", "Contacto con tiendas"], ["precios", "Precios y dólar"], ["oport", "Oportunidades"], ["equipo", "Equipo"], ["salud", "Salud del equipo"], ["plan", "Plan e informes"]];
+  const TABS = [["escritorio", "Escritorio"], ["chat", "Chat del equipo"], ["tareas", "Tareas y metas"], ["propuestas", "Propuestas"], ["memoria", "Libreta"], ["resumen", "Resumen"], ["contacto", "Contacto con tiendas"], ["precios", "Precios y dólar"], ["oport", "Oportunidades"], ["equipo", "Equipo"], ["salud", "Salud del equipo"], ["objetivos", "Objetivos"], ["plan", "Plan e informes"]];
   let tab = "escritorio", rango = "7", dia = MET.length ? MET[MET.length - 1].fecha : "";
   const box = document.createElement("div");
   box.className = "gpanel"; box.hidden = true; box.setAttribute("role", "dialog"); box.setAttribute("aria-label", "Panel de datos del Gerente");
@@ -472,6 +492,45 @@
       ${ses.map(x => `<tr><td>${dm(x.fecha)}</td><td>${esc(QUIEN[x.quien] || x.quien)}</td><td>${esc(x.tipo)}</td><td>${esc(x.inicio || "")}${x.fin && x.fin !== x.inicio ? "–" + esc(x.fin) : ""}</td><td><span class="gp-tag" style="background:${SCOL[x.estado] || C.muted}">${esc(x.estado)}</span></td><td style="color:var(--o-muted)">${esc(x.nota || "")}</td></tr>`).join("")}</tbody></table></div>` : `<p class="gp-empty">Todavía no hay sesiones registradas.</p>`}</div>`;
   }
 
+  /* ---------- Objetivos (Santi, 12/11): la etapa del negocio, el avance de cada agente con su foto y su rendimiento de 7 días ---------- */
+  const OBJ = D.objetivos || null;
+  const OB_ORDEN = ["wa", "mkt", "ana", "ebay", "pedidos", "fin", "dem", "gerente"];
+  const OB_ETAPA_TXT = { 1: "Pedido en camino: cerrar precios, contactar tiendas y dejar la venta lista", 2: "Producto en mano: publicar y vender las 4 unidades en 7 días", 3: "Vendiendo: medir precio y velocidad, decidir el segundo pedido" };
+  function obCifra(o) { return o.avance != null ? `${o.avance}/${o.meta}` : o.cumplido ? "hecho" : "pendiente"; }
+  function obColor(o) { return o.cumplido ? C.green : o.vencido ? C.red : C.amber; }
+  function obPct(o) { return o.cumplido ? 100 : o.avance != null ? Math.max(3, Math.min(100, Math.round(100 * o.avance / Math.max(1, +o.meta)))) : 4; }
+  function obRing(h, t) {
+    const r = 21, L = 2 * Math.PI * r, f = t ? h / t : 0, col = !t ? C.muted : f >= 1 ? C.green : f >= .5 ? C.amber : C.red;
+    return `<svg class="ob-ring" width="52" height="52" viewBox="0 0 52 52" role="img" aria-label="${h} de ${t} objetivos cumplidos"><circle cx="26" cy="26" r="${r}" fill="none" stroke="#2a2b2e" stroke-width="5"/>
+      <circle cx="26" cy="26" r="${r}" fill="none" stroke="${col}" stroke-width="5" stroke-linecap="round" stroke-dasharray="${(L * f).toFixed(1)} ${L.toFixed(1)}" transform="rotate(-90 26 26)"/>
+      <text x="26" y="30.5" text-anchor="middle">${t ? h + "/" + t : "–"}</text></svg>`;
+  }
+  function vObjetivos() {
+    if (!OBJ) return `<div class="gp-box w12"><p class="gp-empty">Todavía no hay objetivos en los datos: corre python3 oficina/generar.py.</p></div>`;
+    const os = OBJ.objetivos || [], R = OBJ.rendimiento || {}, dias = OBJ.dias || [];
+    const hechos = os.filter(o => o.cumplido).length, venc = os.filter(o => o.vencido).length;
+    const prox = os.filter(o => !o.cumplido && o.hasta && o.hasta >= HOY).map(o => o.hasta).sort()[0];
+    const faltan = prox ? Math.round((fechaD(prox) - fechaD(HOY)) / 864e5) : null;
+    const step = [1, 2, 3].map(n => `<div class="${n === OBJ.etapa ? "on" : n < OBJ.etapa ? "ok" : ""}"><b>Etapa ${n} · ${esc((OBJ.etapas || {})[n] || "")}</b>${esc(OB_ETAPA_TXT[n])}</div>`).join("");
+    const ags = OB_ORDEN.filter(k => os.some(o => o.agente === k) || (R[k] && R[k].acciones));
+    const card = k => {
+      const mios = os.filter(o => o.agente === k).sort((x, y) => (x.cumplido - y.cumplido) || (y.vencido - x.vencido)), r = R[k] || { acciones: 0, serie: [], kpis: [] }, mx = Math.max(1, ...(r.serie || []));
+      const h = mios.filter(o => o.cumplido).length;
+      return `<article class="ob-card"><div class="ob-hd">${avatar(k, 52)}<div><b>${esc(QN[k] || k)}</b><small>${esc(perfil(k)[3] || "")}</small></div>${obRing(h, mios.length)}</div>
+        ${mios.length ? `<div class="ob-o">${mios.map(o => `<div><p><span>${esc(o.objetivo)}${o.hasta ? ` <span style="color:var(--o-muted)">· ${dm(o.hasta)}</span>` : ""}</span><em style="color:${obColor(o)}">${esc(obCifra(o))}${o.vencido ? " · vencido" : ""}</em></p><div class="ob-bar"><i style="width:${obPct(o)}%;background:${obColor(o)}"></i></div></div>`).join("")}</div>` : `<p class="gp-empty" style="margin:0">Sin objetivos en esta etapa (trabajo de apoyo).</p>`}
+        <div class="ob-rd"><div class="ob-sp" title="Acciones por día, últimos 7 días">${(r.serie || []).map((n, i) => `<i class="${n ? "" : "z"}" style="height:${Math.round(4 + 30 * n / mx)}px" title="${dm(dias[i] || "")}: ${n}"></i>`).join("")}</div>
+          <div class="ob-k"><span><b>${r.acciones}</b> acciones en 7 días</span>${(r.kpis || []).map(([l, v]) => `<span><b>${v}</b> ${esc(l.toLowerCase())}</span>`).join("")}</div></div>
+        ${r.ultima ? `<div class="ob-last"><time>${dm(r.ultima.fecha)} ${esc(r.ultima.hora)}</time> · ${esc(r.ultima.texto)}</div>` : `<div class="ob-last">Sin actividad en los últimos 7 días.</div>`}</article>`;
+    };
+    const sig = OBJ.siguiente || [];
+    return `<div class="gp-kpis">${kpi("Etapa", OBJ.etapa + " de 3", esc(OBJ.nombre))}${kpi("Objetivos cumplidos", hechos + " de " + os.length, venc ? `<span style="color:${C.red}">${venc} vencido${venc > 1 ? "s" : ""}</span>` : "ninguno vencido")}${kpi("Próximo cierre", prox ? dm(prox) : "–", faltan != null ? (faltan === 0 ? "hoy" : `faltan ${faltan} día${faltan > 1 ? "s" : ""}`) : "")}${kpi("Tiendas por contactar", OBJ.por_contactar, "con número, sin escribir")}</div>
+      <div class="gp-box w12"><h4>En qué etapa está el negocio</h4><div class="ob-step">${step}</div>
+        <p class="gp-note">La etapa cambia sola: pasa a 2 cuando un pedido real llega a Cochabamba y a 3 con la primera venta. Los objetivos son por semana (lunes a domingo); cambiar una meta lo decides tú.</p></div>
+      <div class="gp-box w12"><h4>El equipo</h4><div class="ob-grid">${ags.map(card).join("")}</div>
+        <p class="gp-note">Anillo: objetivos cumplidos de la etapa. Barras: verde cumplido, ámbar en curso, rojo vencido. Columnas doradas: acciones anotadas cada día en actividad.csv.</p></div>
+      ${sig.length ? `<div class="gp-box w12"><details class="ob-next"><summary>Lo que viene en la etapa ${OBJ.etapa + 1} (${sig.length} objetivos, arrancan solos)</summary><ul>${sig.map(o => `<li><b style="color:var(--o-ink)">${esc(QN[o.agente] || o.agente)}</b> · ${esc(o.objetivo)}</li>`).join("")}</ul></details></div>` : ""}`;
+  }
+
   /* ---------- Escritorio del Gerente (Santi, 17/10): apps como en una computadora ---------- */
   const CHAT = D.chat || [], HOY = (D.generado || "").slice(0, 10);
   const DEMO = !!window.OFI_PROBADOR;
@@ -484,7 +543,7 @@
   const MEM = D.memoria || [], memAb = () => MEM.filter(m => m.estado === "abierta"), memVence = () => memAb().filter(m => m.vence && m.vence <= HOY);
   const propuestasAb = () => (D.ideas || []).filter(i => i.estado === "propuesta").length + (D.necesidades || []).length;
   const APPS = [["chat", "Chat del equipo", "💬", C.cyan, () => pendChat().length], ["tareas", "Tareas y metas", "✓", C.amber, () => metasHoy().filter(p => p.estado === "aprobado").length],
-    ["propuestas", "Propuestas", "★", C.violet, () => propuestasAb()], ["memoria", "Libreta", "✎", C.gold, () => owner ? memVence().length : 0], ["salud", "Salud del equipo", "♥", C.green, () => 0], ["plan", "Informes", "▤", C.blue, () => 0],
+    ["propuestas", "Propuestas", "★", C.violet, () => propuestasAb()], ["memoria", "Libreta", "✎", C.gold, () => owner ? memVence().length : 0], ["objetivos", "Objetivos", "◎", "#C9A45C", () => OBJ ? (OBJ.objetivos || []).filter(o => o.vencido).length : 0], ["salud", "Salud del equipo", "♥", C.green, () => 0], ["plan", "Informes", "▤", C.blue, () => 0],
     ["resumen", "Panel de datos", "▦", C.gold, () => 0], ["oport", "Oportunidades", "$", C.green, () => 0], ["equipo", "Equipo", "◉", C.muted, () => 0]];
   const back = () => `<button type="button" class="gd-back" data-t="escritorio">← Escritorio</button>`;
   function vEscritorio() {
@@ -522,7 +581,7 @@
     const [c1, c2, ini] = perfil(k), foto = (window.OFI_AVATARES || {})[k === "local" ? "" : k];
     return `<span class="av" style="--s:${sz || 48}px;--c1:${c1};--c2:${c2}" aria-hidden="true">${foto ? `<img src="${foto}" alt="">` : `<b>${esc(ini)}</b>`}${foto && sz >= 40 ? `<i>${esc(ini)}</i>` : ""}</span>`;
   }
-  window.addEventListener("ofi-avatares", () => { if (!box.hidden && OS.wins.some(w => w.k === "chat")) render(); });
+  window.addEventListener("ofi-avatares", () => { if (!box.hidden && OS.wins.some(w => w.k === "chat" || w.k === "objetivos")) render(); });
   // fondo de la conversación: dibujitos del negocio (procesador, caja, avión, dólar, ubicación) en bronce muy suave
   const WALL = `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260' fill='none' stroke='%23C9A45C' stroke-opacity='.07' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><rect x='22' y='22' width='34' height='34' rx='4'/><rect x='31' y='31' width='16' height='16' rx='2'/><path d='M28 18v4M39 18v4M50 18v4M28 56v4M39 56v4M50 56v4M18 28h4M18 39h4M18 50h4M56 28h4M56 39h4M56 50h4'/><path d='M150 30l22-10 22 10-22 10zM150 30v24l22 10 22-10V30M172 40v24'/><path d='M96 120l40-14-8 8 22 6-6 4-22-4-10 12h-6l4-12-14-2z'/><circle cx='210' cy='130' r='15'/><path d='M210 120v20M215 124c-2-2-9-2-10 1s9 4 10 7-8 4-10 1'/><path d='M44 190c0-10 8-17 17-17s17 7 17 17c0 12-17 28-17 28s-17-16-17-28z'/><circle cx='61' cy='190' r='5'/><rect x='150' y='190' width='40' height='26' rx='3'/><path d='M150 198h40M160 208h8'/><path d='M110 34h18M119 25v18' stroke-opacity='.05'/><circle cx='120' cy='225' r='3'/><circle cx='235' cy='60' r='3'/></svg>`)}")`;
   let chatQ = "", chatF = "todos", chatAbierto = false;
@@ -627,13 +686,13 @@
     } catch (err) { aviso = "No se pudo guardar. Por Telegram funciona siempre."; render(); }
   });
 
-  const VIEWS = { escritorio: vEscritorio, chat: vChat, tareas: vTareas, propuestas: vPropuestas, memoria: vMemoria, resumen: vResumen, contacto: vContacto, precios: vPrecios, oport: vOport, equipo: vEquipo, salud: vSalud, plan: vPlan };
+  const VIEWS = { escritorio: vEscritorio, chat: vChat, tareas: vTareas, propuestas: vPropuestas, memoria: vMemoria, resumen: vResumen, contacto: vContacto, precios: vPrecios, oport: vOport, equipo: vEquipo, salud: vSalud, objetivos: vObjetivos, plan: vPlan };
   /* ---------- Ventanas (Santi, 28/10: "que se parezca bastante a Windows en funciones") ----------
      Cada app se abre en su ventana: se arrastra por la barra de título, se agranda desde la esquina, doble clic o □ la
      maximiza, – la minimiza a la barra de tareas y ✕ la cierra. En la barra: clic en una app abierta la trae al frente o la
      minimiza si ya está al frente. Inicio y el buscador muestran todas las apps. */
   const OS = { wins: [], z: 10, n: 0, sel: "" };
-  const FIJAS = ["chat", "tareas", "propuestas", "memoria"];
+  const FIJAS = ["chat", "tareas", "objetivos", "propuestas", "memoria"];
   const TODAS = TABS.filter(([k]) => k !== "escritorio").map(([k, t]) => { const a = APPS.find(x => x[0] === k); return a ? [k, a[1], a[2], a[3], a[4]] : [k, t, "▦", C.blue, () => 0]; });
   const app = k => TODAS.find(a => a[0] === k) || [k, k, "▦", C.blue, () => 0];
   const capa = () => $g("osW");
@@ -683,7 +742,7 @@
     const t0 = tab; $g("gpB").innerHTML = vEscritorio();
     guardarTam();
     OS.wins.forEach(w => { const el = elDe(w); if (!el) return; const wb = el.querySelector(".os-wb"), sc = wb.scrollTop;
-      wb.innerHTML = MET.length || ["plan", "salud", "chat", "tareas", "propuestas", "memoria"].includes(w.k) ? cuerpo(w) : `<div class="gp-box w12"><p class="gp-empty">Todavía no hay métricas: corre python3 metricas.py.</p></div>`; wb.scrollTop = sc; });
+      wb.innerHTML = MET.length || ["plan", "salud", "objetivos", "chat", "tareas", "propuestas", "memoria"].includes(w.k) ? cuerpo(w) : `<div class="gp-box w12"><p class="gp-empty">Todavía no hay métricas: corre python3 metricas.py.</p></div>`; wb.scrollTop = sc; });
     tab = (arriba() || {}).k || t0; aplicar();
   }
   // íconos del escritorio: un clic selecciona, doble clic abre (en el celular, un toque abre); dentro de una ventana, los botones abren la app

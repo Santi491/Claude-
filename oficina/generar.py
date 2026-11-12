@@ -10,7 +10,7 @@ import glob
 import json
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 OFI = os.path.dirname(os.path.abspath(__file__))
@@ -223,7 +223,41 @@ def main():
     # Libreta del Gerente (memoria.py, Fase 2 del 19/10): compromisos, pedidos, preferencias y datos de Santi, en resumen
     memoria_ger = [{k: f.get(k, "") for k in ("id", "fecha", "hora", "fuente", "tipo", "resumen", "vence", "estado", "cerrado")}
                    for f in (leer("memoria-gerente.csv") if existe("memoria-gerente.csv") else [])][-200:]
+    # Objetivos (Santi, 12/11: app "Objetivos" en la PC del Gerente): etapa, avance de cada objetivo (objetivos.py),
+    # los de la etapa siguiente y el rendimiento de cada agente en los últimos 7 días (solo conteos, nada privado)
+    import objetivos as _obj
+    _o = _obj.calcular()
+    _hoy = datetime.now(ZoneInfo("America/La_Paz")).date()
+    _dias = [(_hoy - timedelta(days=i)).isoformat() for i in range(6, -1, -1)]
+    _act = [a for a in leer("actividad.csv") if a.get("fecha", "") >= _dias[0]]
+    _msj = [m for m in (leer("mensajes.csv") if existe("mensajes.csv") else []) if m.get("fecha", "") >= _dias[0]]
+    _loc = [x for x in leer("precios-cochabamba.csv") if x.get("fecha", "") >= _dias[0] and (x.get("precio_bs") or "").strip()]
+    _ee = [x for x in leer("precios-eeuu.csv") if x.get("fecha", "") >= _dias[0] and x.get("tipo") == "real"]
+    _wa = [m for m in _msj if m.get("canal") == "whatsapp"]
+    _extra = {
+        "wa": [["Mensajes enviados", sum(m["direccion"] == "enviado" for m in _wa)], ["Respuestas", sum(m["direccion"] == "recibido" and m.get("tipo") != "automatica" for m in _wa)],
+               ["Tiendas con precio", len({m["tienda"] for m in _wa if m["direccion"] == "recibido" and _obj.es_si(m.get("con_precio"))})]],
+        "mkt": [["Precios de Marketplace", sum("marketplace" in x.get("fuente", "").lower() for x in _loc)],
+                ["Mensajes de Messenger", sum(m.get("canal") == "messenger" for m in _msj)],
+                ["Catálogos leídos", sum(c.get("fecha", "") >= _dias[0] for c in (leer("catalogos.csv") if existe("catalogos.csv") else []))]],
+        "ebay": [["Precios reales", len(_ee)], ["Días con precios", len({x["fecha"] for x in _ee})]],
+        "ana": [["Precios locales nuevos", len(_loc)], ["Productos con precio firme", _obj.medidas(_hoy.isoformat())["ana_firmes"]]],
+        "pedidos": [["Pedidos en camino", sum(p.get("estado") not in ("entregado", "") for p in leer("pedidos.csv"))]],
+        "fin": [["Ventas", sum(v.get("fecha", "") >= _dias[0] for v in (leer("ventas.csv") if existe("ventas.csv") else []))]],
+        "dem": [["Días con conteo", len({d["fecha"] for d in (leer("demanda.csv") if existe("demanda.csv") else []) if d.get("fecha", "") >= _dias[0]})]],
+    }
+    _rend = {}
+    for _k in ("gerente", "wa", "mkt", "ebay", "ana", "pedidos", "fin", "dem", "nube"):
+        _mias = [a for a in _act if a.get("agente") == _k]
+        _ult = max(_mias, key=lambda a: a["fecha"] + a.get("hora", ""), default=None)
+        _rend[_k] = {"acciones": len(_mias), "serie": [sum(a["fecha"] == d for a in _mias) for d in _dias],
+                     "ultima": {"fecha": _ult["fecha"], "hora": _ult.get("hora", ""), "texto": _ult.get("texto", "")[:220]} if _ult else None,
+                     "kpis": _extra.get(_k, [])}
+    objetivos_d = {"etapa": _o["etapa"], "nombre": _o["nombre"], "por_contactar": _o["por_contactar"], "objetivos": _o["objetivos"],
+                   "etapas": _obj.ETAPAS, "dias": _dias, "rendimiento": _rend,
+                   "siguiente": _obj.calcular(_o["etapa"] + 1)["objetivos"] if _o["etapa"] < 3 else []}
     datos = {"generado": datetime.now(ZoneInfo("America/La_Paz")).strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
+             "objetivos": objetivos_d,
              "frescura": frescura, "chat": chat_eq, "memoria": memoria_ger,
              "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas,
              "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente, "catalogos": catalogos, "salud": salud_equipo,

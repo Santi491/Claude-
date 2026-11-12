@@ -72,6 +72,21 @@ def etapa():
     return 1
 
 
+def calcular(ver=None, agente=None, hoy=None):
+    """Etapa y avance de cada objetivo (lo usan main y la oficina, oficina/generar.py)."""
+    hoy = hoy or datetime.now(ZoneInfo("America/La_Paz")).date().isoformat()
+    med, salida, e = medidas(hoy), [], etapa()
+    for f in leer("objetivos.csv"):
+        if (agente and f["agente"] != agente) or str(ver or e) not in f["etapa"]:
+            continue
+        av = med.get(f["medida"]) if f["medida"] else None
+        meta = int(f["meta"])
+        cumplido = f["estado"] == "hecho" or (av is not None and av >= meta)
+        salida.append({**f, "avance": av, "cumplido": cumplido, "vencido": not cumplido and f["tipo"] in ("acumulado", "entregable") and f["hasta"] and f["hasta"] < hoy})
+    return {"etapa": e, "nombre": ETAPAS[e], "objetivos": salida,
+            "por_contactar": sum(1 for t in leer("tiendas-cochabamba.csv") if t.get("whatsapp") and t.get("estado_contacto", "").startswith("sin contactar"))}
+
+
 def main():
     argv = sys.argv[1:]
     ver = None
@@ -93,22 +108,14 @@ def main():
             w.writerows(filas)
         print(f"{args[1]}: hecho")
         return
-    hoy = datetime.now(ZoneInfo("America/La_Paz")).date().isoformat()
-    med, salida = medidas(hoy), []
-    e = etapa()
-    for f in leer("objetivos.csv"):
-        if (args and f["agente"] != args[0]) or (ver or str(e)) not in f["etapa"]:
-            continue
-        av = med.get(f["medida"]) if f["medida"] else None
-        meta = int(f["meta"])
-        cumplido = f["estado"] == "hecho" or (av is not None and av >= meta)
-        salida.append({**f, "avance": av, "cumplido": cumplido, "vencido": not cumplido and f["tipo"] in ("acumulado", "entregable") and f["hasta"] and f["hasta"] < hoy})
+    r = calcular(ver, args[0] if args else None)
+    e, salida = r["etapa"], r["objetivos"]
     if "--json" in sys.argv:
         print(json.dumps({"etapa": e, "nombre": ETAPAS[e], "objetivos": salida}, ensure_ascii=False, indent=1))
         return
     print(f"Etapa {e}: {ETAPAS[e]}")
     if not args or args[0] in ("wa", "mkt"):
-        print(f"Tiendas con número por contactar: {sum(1 for t in leer('tiendas-cochabamba.csv') if t.get('whatsapp') and t.get('estado_contacto', '').startswith('sin contactar'))}")
+        print(f"Tiendas con número por contactar: {r['por_contactar']}")
     for s in salida:
         marca = "OK " if s["cumplido"] else "VENCIDO" if s["vencido"] else "..."
         cifra = f"{s['avance']}/{s['meta']}" if s["avance"] is not None else (s["estado"] or "pendiente")
