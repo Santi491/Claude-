@@ -99,6 +99,13 @@ def coincide(consulta, titulo):
     t = normalizar(titulo)
     if any(x in t for x in EXCLUIR):
         return False
+    c = normalizar(consulta)
+    # SSD NVMe: fuera los SATA y los de 2,5" (Rastreador eBay, tarea 2026-11-11-3)
+    if "nvme" in c and (re.search(r"\bsata\b", t) or re.search(r"2\.5\s*(\"|”|''|in\b|inch)", t)):
+        return False
+    # Corsair Vengeance RGB: los códigos CMK son la línea sin RGB (la RGB es CMH)
+    if "corsair" in c and "rgb" in c and (re.search(r"\bcmk", t) or "rgb" not in t):
+        return False
     claves = [w for w in normalizar(consulta).split() if any(c.isdigit() for c in w)]
     # Anuncios con varias capacidades (ej. "Netac 2TB 1TB 500GB") muestran el precio de la más barata
     if any(re.fullmatch(r"\d+tb", w) for w in claves):
