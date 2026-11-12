@@ -226,6 +226,7 @@ def main():
     # Objetivos (Santi, 12/11: app "Objetivos" en la PC del Gerente): etapa, avance de cada objetivo (objetivos.py),
     # los de la etapa siguiente y el rendimiento de cada agente en los últimos 7 días (solo conteos, nada privado)
     import objetivos as _obj
+    import cazador as _caz
     _o = _obj.calcular()
     _hoy = datetime.now(ZoneInfo("America/La_Paz")).date()
     _dias = [(_hoy - timedelta(days=i)).isoformat() for i in range(6, -1, -1)]
@@ -258,6 +259,8 @@ def main():
                    "siguiente": _obj.calcular(_o["etapa"] + 1)["objetivos"] if _o["etapa"] < 3 else []}
     datos = {"generado": datetime.now(ZoneInfo("America/La_Paz")).strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,
              "objetivos": objetivos_d,
+             # Cazador de ofertas (12/11): tope de cada producto = precio de eBay que todavía deja 20 % contra Cochabamba
+             "cazador": {"meta": round(_caz.MARGEN_META * 100), "topes": [{k: t.get(k) for k in ("producto", "tope_usd", "mediana_bs", "tiendas", "por_que")} for t in _caz.topes()]},
              "frescura": frescura, "chat": chat_eq, "memoria": memoria_ger,
              "dolar": fx, "actividad": act, "documentos": docs, "tiendas": lista_tiendas, "capturas": capturas,
              "pedidos": pedidos, "metricas": metricas, "plan": plan, "mensajes": mensajes, "informes_gerente": informes_gerente, "catalogos": catalogos, "salud": salud_equipo,

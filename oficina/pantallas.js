@@ -141,8 +141,33 @@
       <div class="ps-scroll"><table class="ps-t"><thead><tr><th>Producto</th><th class="n">Nuevo hoy</th><th class="n">Usado hoy</th><th>Frente a su promedio (nuevo)</th></tr></thead><tbody>
       ${P.map(q => { const x = ebResumen(q); return `<tr class="${q.name === p.name ? "best" : ""}" data-ps-eb="${esc(q.name)}" style="cursor:pointer" tabindex="0"><td>${esc(q.name)}</td><td class="n">${usd(x.hoyN)}</td><td class="n">${usd(x.hoyU)}</td><td>${vsChip(x.dN)}</td></tr>`; }).join("")}
       </tbody></table></div>
+      ${htmlCazador()}
       <p class="eq-note">El historial sale de precios-eeuu.csv (una fila por día y producto). Cuando el precio baja 10 % o más de un día al otro, te llega una alerta por Telegram.</p>`;
     return el;
+  }
+  /* Cazador de ofertas (Santi, 12/11): la Raspberry revisa eBay cada 2 horas de 8 a 22 y avisa por Telegram si un producto nuevo
+     baja de su tope. El tope sale de la diferencia con Cochabamba, no de un precio fijo. */
+  function htmlCazador() {
+    const Z = D.cazador || {}, T = Z.topes || [];
+    if (!T.length) return "";
+    const filas = T.map(t => { const q = P.find(x => x.name === t.producto), hoy = q ? ebResumen(q).hoyN : null;
+      const est = t.tope_usd == null ? `<span class="ps-chip c-mute">sin tope: ${esc(t.por_que || "")}</span>`
+        : hoy == null ? `<span class="ps-chip c-mute">sin precio de eBay hoy</span>`
+        : hoy <= t.tope_usd ? `<span class="ps-chip c-good">bajo el tope · se avisa</span>`
+        : `<span class="ps-chip c-warn">${usd(hoy - t.tope_usd)} arriba del tope</span>`;
+      return { t, hoy, est, ord: t.tope_usd == null ? 3 : hoy == null ? 2 : hoy <= t.tope_usd ? 0 : 1, gap: hoy != null && t.tope_usd ? hoy / t.tope_usd : 9 }; })
+      .sort((a, b) => a.ord - b.ord || a.gap - b.gap);
+    const bajo = filas.filter(f => f.ord === 0).length;
+    return `<div class="eq-sec">Cazador de ofertas · la Raspberry revisa eBay cada 2 horas (8 a 22) y te avisa por Telegram</div>
+      <div class="ps-kpis">
+        <div class="ps-kpi"><span>Bajo el tope hoy</span><b style="color:${bajo ? C.green : "inherit"}">${bajo}</b><small>productos con oferta para avisar</small></div>
+        <div class="ps-kpi"><span>Con tope</span><b>${T.filter(t => t.tope_usd != null).length} de ${T.length}</b><small>los demás no tienen precio en Cochabamba</small></div>
+        <div class="ps-kpi"><span>Margen que exige</span><b>${Z.meta || 20} %</b><small>contra la mediana de Cochabamba</small></div>
+      </div>
+      <div class="ps-scroll"><table class="ps-t"><thead><tr><th>Producto</th><th class="n">Tope</th><th class="n">Nuevo hoy</th><th class="n">Cochabamba</th><th>Estado</th></tr></thead><tbody>
+      ${filas.map(f => `<tr><td>${esc(f.t.producto)}</td><td class="n">${f.t.tope_usd != null ? usd(f.t.tope_usd) : "—"}</td><td class="n">${usd(f.hoy)}</td><td class="n">${f.t.mediana_bs ? "Bs " + fmt(f.t.mediana_bs) : "—"}</td><td>${f.est}</td></tr>`).join("")}
+      </tbody></table></div>
+      <p class="eq-note">El tope es el precio de eBay más alto (con envío en EE.UU.) que, puesto en Cochabamba con el courier más barato y el dólar USDT, y vendido 5 % debajo de la mediana local de 30 días, todavía deja ${Z.meta || 20} % de margen. Sube o baja solo con los precios de acá. El aviso trae modelo, margen, peor caso y link; nunca se compra nada sin ti.</p>`;
   }
 
   /* =============== WhatsApp · embudo de tiendas y agenda =============== */
@@ -167,6 +192,21 @@
       ${["A", "B"].map(k => { const L = C_.filter(c => c.grupo === k).sort((a, b) => (orden[a.prioridad] ?? 3) - (orden[b.prioridad] ?? 3)); return L.length ? `<p class="eq-note"><b>${k}:</b> ${L.map(c => esc(c.tienda) + (c.prioridad === "alta" ? " ★" : "")).join(" · ")}</p>` : ""; }).join("")}
       <p class="eq-note">Por ahora no se le ofrece nada a nadie: sirve para elegir a quién ofrecer primero cuando haya costos reales de envío. ★ = prioridad alta.</p></div>`;
   }
+  /* Lista completa (Santi, 12/11): a cada tienda que ya tenemos se le pide una vez el precio de toda la lista, 10 por ronda */
+  function htmlLista(A) {
+    const L = A.lista_completa || [], hechas = A.lista_pedida || 0, tot = hechas + L.length;
+    if (!tot) return "";
+    const G = [[0, "ya nos pasaron precios"], [1, "respondieron antes"], [2, "dijeron sin stock de algo"], [3, "tocaba seguimiento"], [4, "frías (un solo mensaje)"]];
+    const rev = A.revisar_chat || [];
+    return `<div class="ps-box"><h4>Pedido de la lista completa · ${hechas} de ${tot} tiendas</h4>
+      <div class="ps-funnel"><div class="r"><span>Avance<br><small style="color:var(--o-muted)">10 por ronda · unos ${Math.ceil(L.length / 20)} días más</small></span><div class="bar"><i style="width:${(hechas / tot * 100).toFixed(1)}%;background:${C.green}"></i></div><b>${Math.round(hechas / tot * 100)} %</b></div></div>
+      <p class="eq-note" style="margin:6px 0 2px"><b>Próximas:</b> ${L.slice(0, 10).map(x => esc(x.tienda)).join(" · ") || "ninguna"}</p>
+      <p class="eq-note" style="margin:2px 0">${G.map(([o, t]) => { const n = L.filter(x => x.orden === o).length; return n ? `${n} ${t}` : ""; }).filter(Boolean).join(" · ")}</p>
+      <p class="eq-note" style="margin:6px 0 0">Un solo mensaje por tienda con toda nuestra lista (y si tienen catálogo); si no responde, un recordatorio a los 2 días.</p></div>
+      <div class="ps-box"><h4><span class="ps-chip c-info">${rev.length}</span> Revisar en el chat antes de escribir</h4>
+      <p class="eq-note" style="margin:0 0 4px">Según lo anotado no respondieron, pero puede haber una respuesta sin anotar: el agente abre cada chat antes de mandarles algo. Además, cada ronda empieza leyendo todos los chats "No leídos".</p>
+      <p class="eq-note" style="margin:0">${rev.map(esc).join(" · ") || "Ninguna."}</p></div>`;
+  }
   function renderWa() {
     const el = panel("psWa", "WhatsApp · embudo de tiendas", "armado con tiendas-cochabamba.csv, mensajes.csv y agenda.py · sin números ni chats (la página es pública)");
     const e = embudo(), A = D.agenda || {}, max = Math.max(1, e.total);
@@ -182,6 +222,7 @@
       <div class="ps-box"><h4>Embudo</h4><div class="ps-funnel">
         ${fila("En la lista", e.total, "#454649", `${e.sinWa} sin WhatsApp`)}${fila("Contactadas", e.contact, C.nuevo)}${fila("Respondieron", e.resp, C.amber)}${fila("Dieron precio", e.conP, C.green)}
       </div></div>
+      ${htmlLista(A)}
       ${htmlClientes()}
       <div class="eq-sec">Agenda de hoy (${A.hoy ? fechaCorta(A.hoy) : "—"}) · un seguimiento cada 2 días como máximo; después de 2 sin respuesta la tienda queda fría</div>
       <div class="ps-agenda">
