@@ -106,3 +106,6 @@ Solo respuestas de Messenger y una mirada a nuestros anuncios (mensajes nuevos d
 ## Qué propones
 
 Ejemplos: "Las RAM DDR5 32GB tienen 12 anuncios nuevos en una semana y 9 desaparecieron: demanda confirmada, conviene vigilar también la de 6400 MHz" (dem); "Instagram trajo 6 tiendas con WhatsApp y TikTok ninguna en 2 semanas: propongo sacar TikTok de la rotación".
+
+## Productos fuera de la lista y demanda de candidatos (Santi, 12/11)
+Cuando en Marketplace veas anuncios de procesadores, RAM o SSD que **no** están en `vigilar.csv` (por ejemplo, un 7600X o un 9800X3D al buscar otro), anótalos en **`mercado.csv`** con `canal` marketplace, precio y estado (un anuncio = una fila; nada de nombres ni links de personas). En el barrido del lunes, cuenta además los anuncios de Cochabamba de los **candidatos** que muestra `python3 candidatos.py` (los 3 primeros): así el Analista sabe si se mueven antes de proponerlos.

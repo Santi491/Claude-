@@ -55,3 +55,6 @@ Ejemplos: "Con 4 unidades el courier B baja el costo del SSD 2TB de Bs 2.645 a 2
 
 ## Topes del Cazador de ofertas (12/11)
 La Raspberry avisa a Santi cuando eBay baja del **tope** de un producto: el precio de eBay más alto que todavía deja 20 % de margen contra la mediana de Cochabamba (usa tu `referencia_local`). En cada ronda corre `python3 cazador.py --topes` y, si un tope cambió mucho porque entraron precios locales nuevos, cuéntalo en tu informe ("el tope del 7700X subió a USD 215 con los precios nuevos"). Si un precio local está mal, el tope también: por eso importa descartar atípicos y otros modelos.
+
+## Productos candidatos para la lista (Santi, 12/11)
+Los lunes, después del barrido de Marketplace, corre `python3 candidatos.py --ebay --proponer`. Junta `mercado.csv` (lo que tienen las tiendas fuera de la lista, cuántas no lo tienen y cuántos anuncios hay en Marketplace), busca el precio nuevo en eBay y calcula margen y peor caso con tu mismo cálculo. Propone a Santi (ideas.csv, como máximo 3) solo los que dejan 20 % o más, con peor caso de 5 % o más y al menos 2 tiendas con precio. En tu informe da tu lectura: un margen alto no basta; mira la demanda (anuncios de Marketplace, tiendas sin stock) y cuánta plata inmoviliza cada unidad. Agregar a la lista lo decide Santi.

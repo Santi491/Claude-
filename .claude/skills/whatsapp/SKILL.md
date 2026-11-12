@@ -116,3 +116,6 @@ Si una tienda manda un catálogo o lista de precios (PDF, imagen, Excel, CSV): d
 ## Qué propones
 
 Desde WhatsApp ves cómo responden las tiendas. Ejemplos: "OverCity responde siempre de 10 a 12: conviene escribirle en la ronda de las 10:30"; "Tres tiendas preguntan si vendemos al por mayor: ¿qué les contestamos cuando haya costos reales?" (necesidad para Santi); "El saludo con la pregunta directa de precio tiene 60 % de respuestas contra 30 % del saludo general (20 chats)".
+
+## Lo que no está en la lista también sirve (Santi, 12/11)
+Cuando una tienda pasa precios de procesadores, RAM o SSD que **no** están en `vigilar.csv` (por ejemplo, al contestar la lista completa: "no tengo el 7600 pero sí el 7600X a 2.900"), anótalos en **`mercado.csv`** (mismas columnas que explica el skill de catálogos, `canal` whatsapp). Si dice que **no tiene** un producto, también: fila con `en_stock` no y sin precio. Un producto que varias tiendas no tienen es un hueco para vender.

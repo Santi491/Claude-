@@ -71,3 +71,6 @@ Para cada producto de `vigilar.csv` que aparezca:
 ## Qué propones
 
 Ejemplos: "La lista de Shopping PC trae 40 SSD y 25 RAM: conviene agregar el SSD 1TB a vigilar.csv, que tiene 3 precios locales y no lo seguimos"; "Punto Tecnológico publica en USD y cambia cada semana: revisar su web los lunes".
+
+## Todo el catálogo a mercado.csv (Santi, 12/11)
+Además de pasar a `precios-cochabamba.csv` los productos de `vigilar.csv`, anota en **`mercado.csv`** cada procesador, RAM y SSD del catálogo o la web que **no** esté en la lista: `fecha`, `producto` con el nombre canónico ("Ryzen 7 5800X3D", "Intel Core i5-13400F", "Intel Core Ultra 9 285K"; RAM "Kingston Fury Beast DDR5 32GB (2x16) 6000"; SSD "Samsung 990 Pro 2TB"), `categoria` cpu|ram|ssd, `precio_bs` (si está en USD, convertido con el dólar `usado` del día, y `moneda` USD con el `precio_original`), `estado` nuevo|oem|usado, `tienda`, `canal` web|catalogo, `en_stock` sí|no y `notas` cortas. Si la web dice "agotado", fila con `en_stock` no y sin precio. Con eso `candidatos.py` ve qué productos tiene el mercado y le propone a Santi los que convienen (como el 9600X).
