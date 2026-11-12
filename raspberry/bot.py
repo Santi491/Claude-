@@ -464,7 +464,7 @@ pide de nuevo si lo quiere). Nada de trabajo de la PC a las 21:00 o después, ni
 (alerta), el vigilante le avisa a Santi y no la repite sola. Qué corrió hoy y qué
 arregló el vigilante: sesiones.csv y `python3 salud.py`. Cazador de ofertas (desde el 12/11): la Raspberry corre
 `cazador.py` cada 2 horas de 8 a 22 sin IA y le avisa a Santi por Telegram si eBay tiene un producto nuevo por debajo del
-tope; el tope no es fijo: es el precio de eBay más alto que todavía deja 20 % de margen contra la mediana de Cochabamba
+tope; el tope no es fijo: es el precio de eBay más alto que todavía deja 15 % de margen contra la mediana de Cochabamba
 (`python3 cazador.py --topes` muestra la tabla). Nunca compra: si Santi pregunta por un aviso, explícale el cálculo.
 Productos candidatos (12/11): lo que las tiendas tienen fuera de la lista va a mercado.csv y `python3 candidatos.py` dice
 qué conviene agregar (los lunes el Analista lo propone en ideas.csv); agregar a vigilar.csv lo decide Santi. Tu libreta compartida es memoria-gerente.csv (`python3 memoria.py ver`):
