@@ -70,6 +70,33 @@ def es_mayorista(cond):
     return False
 
 
+def referencia_local(loc_todos, cond):
+    """Los precios de Cochabamba que cuentan para un producto y su condición (la usa también cazador.py)."""
+    faltan = []
+    loc = loc_todos
+    if cond == "usado":
+        # un usado se vende como usado: se compara con usados de Cochabamba; si no hay, con nuevos y nunca se recomienda "traer"
+        usados = [f for f in loc_todos if "usad" in (f.get("estado") or "").lower()]
+        if usados:
+            loc = usados
+        else:
+            faltan.append("precio local de usados (se comparó con nuevos)")
+    # particulares sin marca/configuración (Marketplace): fuera, si quedan al menos 2 precios; luego, atípicos: con 3 o más
+    # precios, fuera los que están 30 % o más debajo de la mediana. La referencia local es la MEDIANA, no el más barato.
+    sin_dato = [f for f in loc if "marketplace" in (f.get("fuente") or "").lower()
+                and any(k in (f.get("estado") or "").lower() for k in SIN_DATO)]
+    if sin_dato and len(loc) - len(sin_dato) >= 2:
+        loc = [f for f in loc if f not in sin_dato]
+        faltan.append(f"{len(sin_dato)} anuncio(s) de particular sin marca o configuración descartado(s)")
+    if len(loc) >= 3:
+        med = statistics.median(num(f["precio_bs"]) for f in loc)
+        atip = [f for f in loc if num(f["precio_bs"]) < 0.7 * med]
+        if atip:
+            loc = [f for f in loc if f not in atip]
+            faltan.append(f"{len(atip)} precio(s) local(es) atípico(s) (30 % bajo la mediana) descartado(s)")
+    return loc, faltan
+
+
 def analizar():
     vig, ee, pcb = C.leer("vigilar.csv"), C.leer("precios-eeuu.csv"), C.leer("precios-cochabamba.csv")
     fx = [f for f in C.leer("tipo-cambio.csv") if num(f.get("usado"))]
@@ -81,28 +108,7 @@ def analizar():
                      and "agotado" not in f.get("estado", "") and not es_mayorista(f.get("condiciones"))]
         for cond in ("nuevo", "usado"):
             of = C.oferta(ee, prod, cond)
-            faltan = []
-            loc = loc_todos
-            if cond == "usado":
-                # un usado se vende como usado: se compara con usados de Cochabamba; si no hay, con nuevos y nunca se recomienda "traer"
-                usados = [f for f in loc_todos if "usad" in (f.get("estado") or "").lower()]
-                if usados:
-                    loc = usados
-                else:
-                    faltan.append("precio local de usados (se comparó con nuevos)")
-            # particulares sin marca/configuración (Marketplace): fuera, si quedan al menos 2 precios; luego, atípicos: con 3 o más
-            # precios, fuera los que están 30 % o más debajo de la mediana. La referencia local es la MEDIANA, no el más barato.
-            sin_dato = [f for f in loc if "marketplace" in (f.get("fuente") or "").lower()
-                        and any(k in (f.get("estado") or "").lower() for k in SIN_DATO)]
-            if sin_dato and len(loc) - len(sin_dato) >= 2:
-                loc = [f for f in loc if f not in sin_dato]
-                faltan.append(f"{len(sin_dato)} anuncio(s) de particular sin marca o configuración descartado(s)")
-            if len(loc) >= 3:
-                med = statistics.median(num(f["precio_bs"]) for f in loc)
-                atip = [f for f in loc if num(f["precio_bs"]) < 0.7 * med]
-                if atip:
-                    loc = [f for f in loc if f not in atip]
-                    faltan.append(f"{len(atip)} precio(s) local(es) atípico(s) (30 % bajo la mediana) descartado(s)")
+            loc, faltan = referencia_local(loc_todos, cond)
             recientes = [f for f in loc if dias(f["fecha"]) is not None and dias(f["fecha"]) <= 14]
             tiendas = {(f.get("fuente") or "").split("(")[0].strip().lower() for f in recientes}
             if not tc:
@@ -136,6 +142,9 @@ def analizar():
                 else:
                     rec, por = "esperar", ("el peor caso lo deja en " + f"{esc['peor caso']} %" if (esc["peor caso"] or -1) < 5
                                            else "faltan datos: " + ", ".join(faltan))
+                # idea 2 (Santi 12/11): un usado sin usados en Cochabamba no está "en espera": no hay con qué compararlo
+                if rec == "esperar" and cond == "usado" and any("precio local de usados" in x for x in faltan):
+                    rec, por = "sin datos", "sin oferta local de usados: en Cochabamba no hay usados para comparar"
                 fila |= {"ebay_usd": partes["ebay_usd"], "courier_usd": partes["courier_usd"], "via": via, "tc": tc,
                          "costo_bs": round(costo), "mejor_local_bs": round(mejor), "precios_locales": len(loc),
                          "precio_sugerido_bs": venta, "ganancia_bs": round(g), "margen_pct": round(margen * 100, 1),
