@@ -33,7 +33,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [389.00](https://www.ebay.com/itm/168853287058) | 4.812 (B 1 kg) | 4.728 (B 1 kg) | 5.800 | 988 (17%) | 1.072 (18%) | conviene |
 | Ryzen 9 9950X | [454.99](https://www.ebay.com/itm/257573828939) | 5.600 (B 1 kg) | 5.600 (B 2 kg) | 5.580 | -20 (-0%) | -20 (-0%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [399.00](https://www.ebay.com/itm/377593144670) | 4.931 (B 1 kg) | 4.848 (B 1 kg) | 4.500 | -431 (-10%) | -348 (-8%) | no conviene |
-| SSD NVMe 1TB | [99.95](https://www.ebay.com/itm/900080947365) | 1.361 (B 1 kg) | 1.277 (B 1 kg) | 1.100 | -261 (-24%) | -177 (-16%) | no conviene |
+| SSD NVMe 1TB | [95.00](https://www.ebay.com/itm/168856340744) | 1.301 (B 1 kg) | 1.218 (B 1 kg) | 1.100 | -201 (-18%) | -118 (-11%) | no conviene |
 | RAM DDR4 16GB (2x8) 3200 | [60.99](https://www.ebay.com/itm/820315393064) | 895 (B 1 kg) | 812 (B 1 kg) | 540 | -355 (-66%) | -272 (-50%) | no conviene |
 
 ## Detalle por vendedor (eBay nuevo)
@@ -53,14 +53,17 @@ eBay nuevo: USD 328.88 con envío en EE.UU. (eBay API; vendedor components_whole
 | Marketplace Cochabamba (particular) | nuevo sellado (anuncio "AMD Ryzen 7 7800X3D (Sellado)"; el vendedor dijo el 13/10 que acepta ofertas, no se oferta) | 4.800 | 706 (15%) | 2026-10-26 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sellado; Cochabamba (mismo vendedor del 13/10 probablemente) | 4.800 | 706 (15%) | 2026-11-03 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sellado; Cochabamba | 4.800 | 706 (15%) | 2026-11-09 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sellado | 4.800 | 706 (15%) | 2026-11-12 |
 | Marketplace Cochabamba (tienda sin confirmar) | nuevo (anuncio multi-modelo "9800X3D, 7800X3D, 8700G"; precio desde) | 4.860 | 766 (16%) | 2026-10-21 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2669179450145313/) | no indicado | 5.190 | 1.096 (21%) | 2026-10-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=Ryzen%207%207800X3D) | nuevo/sin dato | 5.190 | 1.096 (21%) | 2026-10-30 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo/no indica | 5.190 | 1.096 (21%) | 2026-11-12 |
 | OverCity (WhatsApp) | nuevo en caja sellada (box; el OEM está a Bs 5.500; el i5-14400F Bs 2.460 es su precio mínimo) | 5.350 | 1.256 (23%) | 2026-10-13 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1361869715871206/) | no indicado | 5.390 | 1.296 (24%) | 2026-10-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1361869715871206/) | nuevo (anuncio 'El mejor para Gaming'; disponible) | 5.390 | 1.296 (24%) | 2026-10-20 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo/sin dato; Cochabamba | 5.390 | 1.296 (24%) | 2026-11-03 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sin dato; Cochabamba (Socket AM5) | 5.390 | 1.296 (24%) | 2026-11-06 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo/no indica | 5.390 | 1.296 (24%) | 2026-11-12 |
 | Viadata Computadoras (WhatsApp) · [ver](https://www.facebook.com/computadorascochabamba/) | nuevo OEM (solo el chip) | 5.500 | 1.406 (26%) | 2026-10-12 |
 | OverCity (WhatsApp) | nuevo OEM (solo el chip) | 5.500 | 1.406 (26%) | 2026-10-13 |
 | Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | BOX (según foto de su web; USD 480) | 5.664 | 1.570 (28%) | 2026-10-12 |
@@ -86,6 +89,7 @@ eBay nuevo: USD 142.99 con envío en EE.UU. (eBay API; vendedor gr_liquidators 9
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | estado sin dato (\"en stock\") | 2.250 | 376 (17%) | 2026-11-03 |
 | T&T Todo en Tecnología (WhatsApp) | OEM con cooler Intel; Bs 20 menos c/u llevando 2 | 2.260 | 386 (17%) | 2026-10-15 |
 | Marketplace Cochabamba (particular) | OEM (anuncio "Procesador CPU i5 12400f OEM"; estado sin dato) | 2.350 | 476 (20%) | 2026-10-21 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=i5%2012400f) | usado/no indica | 2.350 | 476 (20%) | 2026-11-12 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | disponible (web) | 2.460 | 586 (24%) | 2026-10-12 |
 
 ### Intel Core i5-14400F
@@ -127,6 +131,7 @@ eBay nuevo: USD 474.49 con envío en EE.UU. (eBay API; vendedor hbk41096 100.0%;
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1625374825929437/) | Corsair Vengeance RGB 2x16 6000 MHz (estado sin dato) | 5.800 | -33 (-1%) | 2026-10-19 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=corsair%20vengeance%20ddr5%2032gb) | usado/no indica | 5.800 | -33 (-1%) | 2026-11-12 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1414394683871926/) | no indicado (modelo RS) | 6.200 | 367 (6%) | 2026-10-11 |
 | Marketplace Cochabamba (particular) | Corsair Vengeance RGB RS 2x16 6000 MHz ("última unidad"; estado sin dato) | 6.200 | 367 (6%) | 2026-10-21 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=DDR5%2032GB%20Corsair%20Vengeance) | sin dato (dice 'última unidad'; Vengeance RGB RS 32GB 2x16 DDR5 6000) | 6.200 | 367 (6%) | 2026-10-30 |
@@ -145,6 +150,7 @@ eBay nuevo: USD 89.99 con envío en EE.UU. (eBay API; vendedor eburnaselectronic
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2345958202816013/) | no indicado (Corsair Vengeance 2x8; Sacaba; rebajado de 1600) | 1.500 | 258 (17%) | 2026-10-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ram%20ddr4%2016gb%203200) | usado/no indica | 1.500 | 258 (17%) | 2026-11-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1726943245105041/) | sin dato de estado (Corsair Vengeance Pro 2x8GB 3200 MHz) | 1.600 | 358 (22%) | 2026-10-23 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=corsair%20vengeance%20ddr5%2032gb) | usado/no indica | 1.600 | 358 (22%) | 2026-11-12 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ram%20ddr4%2016gb%203200) | usado/no indica | 1.680 | 438 (26%) | 2026-11-11 |
 | Compucenter (WhatsApp) · [ver](https://compucenter.store/) | nuevo (Corsair Vengeance RGB DDR4 16GB 3600; no dice si es 2x8; Bs 2.560 con factura) | 2.150 | 908 (42%) | 2026-10-12 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/memoria-ram) | disponible (web; Corsair Vengeance RGB Pro TUF Gaming 2x8 3200) | 2.160 | 918 (43%) | 2026-10-12 |
@@ -178,11 +184,13 @@ eBay nuevo: USD 139.99 con envío en EE.UU. (eBay API; vendedor netac-official-s
 | Shopping PC (catálogo PDF) | nuevo (Kingston NV3 1TB; lista mayorista USD 148 del 12/10, sin factura; 146 en stock) | 1.754 | -85 (-5%) | 2026-10-15 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2078197563584097/) | no indicado (M.2 1TB; marca no indicada) | 1.800 | -39 (-2%) | 2026-10-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston NV3 1TB (estado sin dato); Cochabamba | 1.810 | -29 (-2%) | 2026-11-05 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 1.810 | -29 (-2%) | 2026-11-12 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | no indicado (Kingston NV3 1TB) | 1.850 | 11 (1%) | 2026-10-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | Kingston NV3 1TB (estado sin dato) | 1.850 | 11 (1%) | 2026-10-17 |
 | Marketplace Cochabamba (particular) | Kingston NV3 NVMe 1TB 6000MB/s (estado sin dato) | 1.850 | 11 (1%) | 2026-10-26 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV3 1TB; estado sin dato | 1.850 | 11 (1%) | 2026-10-30 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Hiksemi Wave M.2 1TB) | 1.860 | 21 (1%) | 2026-10-12 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 1.880 | 41 (2%) | 2026-11-12 |
 | Soft Computers (WhatsApp) | sin dato | 1.950 | 111 (6%) | 2026-11-04 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2817371738643128/) | no indicado (Crucial P310 1TB) | 2.000 | 161 (8%) | 2026-10-11 |
 | Punto Tecnológico (WhatsApp) | nuevo, NVMe (modelo SN3000), garantía 6 meses (confirmado 28/10) | 2.000 | 161 (8%) | 2026-10-26 |
@@ -209,6 +217,7 @@ eBay nuevo: USD 185.00 con envío en EE.UU. (eBay API; vendedor honestdeals 99.5
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; Hiksemi Futurex M.2 2TB) | 4.560 | 2.184 (48%) | 2026-10-12 |
 | ELVYCOMP (WhatsApp) | nuevo/sellado sin confirmar | 4.880 | 2.504 (51%) | 2026-11-10 |
 | ELVYCOMP (WhatsApp) | nuevo/sellado | 4.880 | 2.504 (51%) | 2026-11-10 |
+| Punto Tecnológico (WhatsApp) | nuevo | 5.860 | 3.484 (59%) | 2026-11-12 |
 
 ### Ryzen 7 7700X
 eBay nuevo: USD 223.98 con envío en EE.UU. (eBay API; vendedor asusparts2022 99.9%; AMD Ryzen 7 7700X - Zen 4 8-Core 4.5 GHz - Socket AM5 - 105W, 2026-11-12). Costo puesto: **Bs 2.841**/u en pedido de 2, **Bs 2.841**/u en pedido de 4.

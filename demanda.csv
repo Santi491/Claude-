@@ -264,3 +264,19 @@ fecha,producto,fuente,ciudad,anuncios,nuevos,desaparecidos,precio_min_bs,precio_
 2026-11-11,SSD NVMe 2TB,marketplace,Cochabamba,0,0,0,,,ninguno suelto (solo una laptop con 2TB); sin señal
 2026-11-11,Ryzen 7 7700X,marketplace,Cochabamba,0,0,0,,,"ninguno suelto; 3 PC armadas con 7700X + RTX 3080 a 15.000 (rebajadas, sin nuevas) = competencia nuestra: ninguna; sin señal"
 2026-11-11,Ryzen 5 7500F,marketplace,Cochabamba,0,0,0,,,ninguno suelto; 1 PC armada con 7500F a 13.200; sin señal
+2026-11-12,Ryzen 5 5600,marketplace,Cochabamba,0,0,0,,,sin 5600 suelto (solo 5600G/5600GT y PC armadas); sin señal
+2026-11-12,Ryzen 7 5700X3D,marketplace,Cochabamba,0,0,0,,,"ninguno (5700X, 5700G y 5800X3D son otro modelo); sin señal"
+2026-11-12,Ryzen 5 7600,marketplace,Cochabamba,0,0,0,,,ninguno suelto; sin señal
+2026-11-12,Ryzen 7 7800X3D,marketplace,Cochabamba,5,3,0,4350,4800,"5 sueltos: 4.350, 4.400, 4.800 (sellado), 5.190 y 5.390; 3 nuevos frente a ayer (2). Señal de interés media, no confirmada: nada desapareció"
+2026-11-12,Ryzen 9 9950X,marketplace,Cochabamba,0,0,0,,,"un aviso ""9950X OEM"" sin precio visible (cotización); sin señal"
+2026-11-12,Intel Core i5-12400F,marketplace,Cochabamba,2,2,0,2350,2350,"1 suelto OEM a 2.350 y 1 sin precio; 5 combos 12400F+B760+16GB a 6.620-8.150; señal de interés en combos, no confirmada"
+2026-11-12,Intel Core i5-13400,marketplace,Cochabamba,0,0,0,,,ninguno; sin señal
+2026-11-12,Intel Core i5-14400F,marketplace,Cochabamba,0,0,0,,,"ningún 14400F suelto (hay un 14400 sin F a 2.700, otro modelo); sin señal"
+2026-11-12,Intel Core Ultra 7 265K,marketplace,Cochabamba,1,0,0,4250,4250,la misma caja sellada de ayer a 4.250; también un 270K Plus a 4.350 (otro modelo); sin señal nueva
+2026-11-12,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,marketplace,Cochabamba,0,0,0,,,ninguno; solo Kingston Fury y otras marcas; sin señal
+2026-11-12,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,marketplace,Cochabamba,1,1,0,5800,5800,1 kit 2x16 6000 a 5.800 (nuevo hoy en la lista); sin señal de demanda
+2026-11-12,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,3,1,0,1100,1500,"3 kits 16GB DDR4 3200: 1.100, 1.500 y 1.600; mismo nivel que ayer, muchos módulos de 8GB"
+2026-11-12,SSD NVMe 1TB,marketplace,Cochabamba,8,5,0,1300,1880,"8 con precio (1.300 a 3.050; NV3 1.810-2.000); mayoría nuevos frente a ayer porque el conteo de ayer fue parcial. Señal de interés alta, no confirmada"
+2026-11-12,SSD NVMe 2TB,marketplace,Cochabamba,0,0,0,,,"ninguno suelto (un WD P50 externo a 3.500, no cuenta); sin señal"
+2026-11-12,Ryzen 7 7700X,marketplace,Cochabamba,1,0,0,3100,3100,"1 suelto nuevo con caja a 3.100 (antes 3.500), publicado hace 10 semanas (no se había visto: ayer decía ninguno); competencia de nuestros 7700X; más 3 PC con 7700X a 15.000-16.000"
+2026-11-12,Ryzen 5 7500F,marketplace,Cochabamba,0,0,0,,,ninguno suelto; 1 PC con 7500F a 13.200; sin señal
