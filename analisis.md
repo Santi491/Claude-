@@ -6,14 +6,10 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Producto | Cond. | Costo Bs/u | Venta sugerida | Margen | Recargo | Dólar +3 % | Courier +20 % | Local −10 % | Peor caso | Recomendación | Falta |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | SSD NVMe 2TB | nuevo | 2.376 | 4.330 | 45.1 % | 82.2 % | 43.5 % | 44.4 % | 38.9 % | 36.2 % | **traer** (aguanta el peor caso (36.2 %)) | 1 anuncio(s) de particular sin marca o configuración descartado(s) |
+| Ryzen 5 9600X | nuevo | 1.958 | 2.630 | 25.5 % | 34.3 % | 23.3 % | 24.3 % | 17.0 % | 13.1 % | **traer** (aguanta el peor caso (13.1 %)) | — |
 | Intel Core Ultra 7 265K | nuevo | 3.152 | 3.990 | 21.0 % | 26.6 % | 18.6 % | 20.2 % | 12.2 % | 8.6 % | **traer** (aguanta el peor caso (8.6 %)) | — |
-| SSD NVMe 2TB | usado | 2.316 | 4.330 | 46.5 % | 86.9 % | 44.9 % | 45.7 % | 40.5 % | 37.8 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos), 1 anuncio(s) de particular sin marca o configuración descartado(s)) | precio local de usados (se comparó con nuevos), 1 anuncio(s) de particular sin marca o configuración descartado(s) |
 | RAM DDR4 16GB (2x8) 3200 | usado | 895 | 1.520 | 41.1 % | 69.8 % | 39.3 % | 38.9 % | 34.2 % | 29.7 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
-| Ryzen 7 7700X | usado | 2.066 | 3.300 | 37.4 % | 59.8 % | 35.5 % | 36.4 % | 30.5 % | 27.2 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas) | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
-| Ryzen 5 7600 | usado | 1.719 | 2.700 | 36.3 % | 57.0 % | 34.4 % | 35.1 % | 29.2 % | 25.7 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos)) | precio local de usados (se comparó con nuevos) |
-| Intel Core i5-14400F | usado | 1.660 | 2.380 | 30.3 % | 43.4 % | 28.2 % | 28.9 % | 22.4 % | 18.5 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas) | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
 | Intel Core i5-12400F | usado | 1.600 | 2.230 | 28.3 % | 39.4 % | 26.1 % | 26.8 % | 20.0 % | 15.9 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
-| Intel Core i5-13400 | usado | 1.660 | 2.180 | 23.9 % | 31.4 % | 21.6 % | 22.3 % | 15.3 % | 11.0 % | **esperar** (faltan datos: precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas) | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
 | SSD NVMe 1TB | usado | 1.301 | 1.710 | 23.9 % | 31.4 % | 21.6 % | 21.9 % | 15.5 % | 10.7 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Intel Core i5-14400F | nuevo | 1.827 | 2.380 | 23.2 % | 30.3 % | 20.9 % | 21.8 % | 14.6 % | 10.5 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 7 7800X3D | nuevo | 4.094 | 4.930 | 17.0 % | 20.4 % | 14.5 % | 16.3 % | 7.6 % | 4.0 % | **esperar** (el peor caso lo deja en 4.0 %) | 1 anuncio(s) de particular sin marca o configuración descartado(s), precios recientes (14 días) de al menos 2 tiendas distintas |
@@ -28,6 +24,12 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | SSD NVMe 1TB | nuevo | 1.839 | 1.730 | -6.3 % | -5.9 % | -9.5 % | -8.2 % | -17.9 % | -23.6 % | **no traer** (margen -6% con el precio sugerido) | 4 anuncio(s) de particular sin marca o configuración descartado(s), 2 precio(s) local(es) atípico(s) (30 % bajo la mediana) descartado(s) |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | usado | 4.931 | 4.270 | -15.5 % | -13.4 % | -18.9 % | -16.3 % | -28.4 % | -33.2 % | **no traer** (margen -15% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | nuevo | 5.719 | 4.270 | -33.9 % | -25.3 % | -38.0 % | -34.7 % | -48.9 % | -54.3 % | **no traer** (margen -34% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
+| SSD NVMe 2TB | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), 1 anuncio(s) de particular sin marca o configuración descartado(s) |
+| Ryzen 7 7700X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
+| Ryzen 5 7600 | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
+| Ryzen 5 9600X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
+| Intel Core i5-14400F | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
+| Intel Core i5-13400 | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 5 5600 | nuevo | — | — | — | — | — | — | — | — | sin datos | precio local |
 | Ryzen 5 5600 | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precio local |
 | Ryzen 7 5700X3D | nuevo | — | — | — | — | — | — | — | — | sin datos | precio de eBay nuevo, precio local |
@@ -57,5 +59,5 @@ Solo nuevos, sin el 7700X (ya comprado), ordenados por margen en el peor caso. L
 | # | Producto | Costo Bs/u | Venta sugerida | Ganancia/u | Margen | Peor caso | Estado |
 |---|---|---|---|---|---|---|---|
 | 1 | SSD NVMe 2TB | 2.376 | 4.330 | 1.954 | 45.1 % | 36.2 % | traer |
-| 2 | Intel Core i5-14400F | 1.827 | 2.380 | 553 | 23.2 % | 10.5 % | esperar: precios recientes (14 días) de al menos 2 tiendas distintas |
-| 3 | Intel Core Ultra 7 265K | 3.152 | 3.990 | 838 | 21.0 % | 8.6 % | traer |
+| 2 | Ryzen 5 9600X | 1.958 | 2.630 | 672 | 25.5 % | 13.1 % | traer |
+| 3 | Intel Core i5-14400F | 1.827 | 2.380 | 553 | 23.2 % | 10.5 % | esperar: precios recientes (14 días) de al menos 2 tiendas distintas |

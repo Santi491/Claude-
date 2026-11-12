@@ -10,6 +10,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Intel Core i5-14400F | [139.00](https://www.ebay.com/itm/357885790585) | 1.827 (B 1 kg) | 1.785 (B 1.5 kg) | 2.384 | 557 (23%) | 599 (25%) | conviene |
 | SSD NVMe 2TB | [185.00](https://www.ebay.com/itm/377593610877) | 2.376 (B 1 kg) | 2.292 (B 1 kg) | 3.100 | 724 (23%) | 808 (26%) | conviene |
 | Intel Core Ultra 7 265K | [249.99](https://www.ebay.com/itm/137893601856) | 3.152 (B 1 kg) | 3.110 (B 1.5 kg) | 3.950 | 798 (20%) | 840 (21%) | conviene |
+| Ryzen 5 9600X | [150.00](https://www.ebay.com/itm/880109636162) | 1.958 (B 1 kg) | 1.958 (B 2 kg) | 2.450 | 492 (20%) | 492 (20%) | conviene |
 | Intel Core i5-12400F | [142.99](https://www.ebay.com/itm/206675761087) | 1.874 (B 1 kg) | 1.833 (B 1.5 kg) | 2.250 | 376 (17%) | 417 (19%) | conviene |
 | Ryzen 7 7800X3D | [328.88](https://www.ebay.com/itm/168021862717) | 4.094 (B 1 kg) | 4.094 (B 2 kg) | 4.350 | 256 (6%) | 256 (6%) | justo |
 | Ryzen 7 7700X | [223.98](https://www.ebay.com/itm/267042355650) | 2.841 (B 1 kg) | 2.841 (B 2 kg) | 3.000 | 159 (5%) | 159 (5%) | justo |
@@ -28,6 +29,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Intel Core i5-14400F | [125.00](https://www.ebay.com/itm/128181576805) | 1.660 (B 1 kg) | 1.618 (B 1.5 kg) | 2.384 | 724 (30%) | 766 (32%) | conviene |
 | Intel Core i5-12400F | [119.99](https://www.ebay.com/itm/287717239450) | 1.600 (B 1 kg) | 1.558 (B 1.5 kg) | 2.250 | 650 (29%) | 692 (31%) | conviene |
 | Intel Core i5-13400 | [124.99](https://www.ebay.com/itm/267839647255) | 1.660 (B 1 kg) | 1.618 (B 1.5 kg) | 2.300 | 640 (28%) | 682 (30%) | conviene |
+| Ryzen 5 9600X | [135.00](https://www.ebay.com/itm/820345401429) | 1.779 (B 1 kg) | 1.779 (B 2 kg) | 2.450 | 671 (27%) | 671 (27%) | conviene |
 | SSD NVMe 2TB | [179.99](https://www.ebay.com/itm/117488908468) | 2.316 (B 1 kg) | 2.233 (B 1 kg) | 3.100 | 784 (25%) | 867 (28%) | conviene |
 | Ryzen 7 7800X3D | [279.99](https://www.ebay.com/itm/800906056028) | 3.510 (B 1 kg) | 3.510 (B 2 kg) | 4.350 | 840 (19%) | 840 (19%) | conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [389.00](https://www.ebay.com/itm/168853287058) | 4.812 (B 1 kg) | 4.728 (B 1 kg) | 5.800 | 988 (17%) | 1.072 (18%) | conviene |
@@ -233,6 +235,17 @@ eBay nuevo: USD 223.98 con envío en EE.UU. (eBay API; vendedor asusparts2022 99
 | Cyrex Store (WhatsApp) | nuevo BOX (según foto de su chat; solo queda 1 unidad) | 3.674 | 832 (23%) | 2026-10-23 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/887277370696710/) | sellado | 4.000 | 1.159 (29%) | 2026-10-20 |
 | Marketplace Cochabamba (particular) | nuevo sellado ("Ryzen 7 7700x Sellado"); Cochabamba | 4.000 | 1.159 (29%) | 2026-10-28 |
+
+### Ryzen 5 9600X
+eBay nuevo: USD 150.00 con envío en EE.UU. (eBay API; vendedor toastjr223 100.0%; AMD Ryzen 5 9600X Processor (3.9 GHz, 6 Cores, Socket AM5) 1, 2026-11-12). Costo puesto: **Bs 1.958**/u en pedido de 2, **Bs 1.958**/u en pedido de 4.
+
+| Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
+|---|---|---|---|---|
+| Marketplace Cochabamba (particular) | nuevo | 2.450 | 492 (20%) | 2026-10-30 |
+| Punto Tecnológico (WhatsApp) | nuevo | 2.750 | 792 (29%) | 2026-11-10 |
+| Marketplace Cochabamba (particular) | nuevo | 2.770 | 812 (29%) | 2026-11-03 |
+| Marketplace Cochabamba (particular) | sellado | 2.800 | 842 (30%) | 2026-11-06 |
+| ELVYCOMP (WhatsApp) | nuevo | 3.430 | 1.472 (43%) | 2026-11-09 |
 
 ## Sin comparación todavía (eBay nuevo)
 
