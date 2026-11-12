@@ -951,3 +951,7 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-12,SSD NVMe 1TB,usado,95.00,0.00,real,eBay API; vendedor gefv6436 100.0%; TeamGroup 1TB M.2 NVMe Gen 3.0 x 4 SSD TM8FP6001T0C101; envío no indicado,https://www.ebay.com/itm/168856340744
 2026-11-12,Ryzen 5 9600X,nuevo,150.00,0.00,real,"eBay API; vendedor toastjr223 100.0%; AMD Ryzen 5 9600X Processor (3.9 GHz, 6 Cores, Socket AM5) 1",https://www.ebay.com/itm/880109636162
 2026-11-12,Ryzen 5 9600X,usado,135.00,0.00,real,"eBay API; vendedor revivelifecycle 100.0%; AMD Ryzen 5 9600X Processor (3.9 GHz, 6 Cores, Socket AM5) 1; envío no indicado",https://www.ebay.com/itm/820345401429
+2026-11-12,Ryzen 5 7600X,nuevo,145.00,0.00,real,eBay API; vendedor inasense3k2 100.0%; AMD Ryzen 5 7600X Processor CPU 6 Cores 12 Threads Socket AM,https://www.ebay.com/itm/128186195259
+2026-11-12,Ryzen 5 7600X,usado,115.00,0.00,real,"eBay API; vendedor bra-982411 100.0%; AMD Ryzen 5 7600x Processor (5.3 GHz, 6 Cores, LGA 1718/Sock",https://www.ebay.com/itm/137925153378
+2026-11-12,Ryzen 9 9950X3D,nuevo,579.99,0.00,real,eBay API; vendedor okpv3357 98.0%; NEW SEALED AMD Ryzen 9 9950X3D 4.3 GHz 16-Core 32-Thread Pro,https://www.ebay.com/itm/336889201621
+2026-11-12,Ryzen 9 9950X3D,usado,534.99,0.00,real,eBay API; vendedor paymore_dayton_south 99.6%; AMD Ryzen 9 9950X3D 4.30GHz 16 Core 100-000000719 32 Thread ,https://www.ebay.com/itm/366799839237

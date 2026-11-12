@@ -38,7 +38,7 @@ sys.path.insert(0, DIR)
 import analista as A  # noqa: E402
 import comparar as C  # noqa: E402
 
-MARGEN_META = 0.20          # margen que tiene que dejar el precio de eBay para avisar
+MARGEN_META = 0.15          # margen que tiene que dejar el precio de eBay para avisar (Santi 12/11: "si hay una buena oferta, que me avise"; 15 % = "conviene")
 ESTADO = os.path.expanduser("~/.cargo-cazador.json")
 REAVISO = 0.97              # el mismo anuncio se vuelve a avisar solo si baja 3 % más
 AHORA = datetime.now(ZoneInfo("America/La_Paz"))
