@@ -19,7 +19,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [454.49](https://www.ebay.com/itm/277814335680) | 5.608 (B 1 kg) | 5.524 (B 1 kg) | 5.800 | 192 (3%) | 276 (5%) | no conviene |
 | Ryzen 5 7500F | [135.60](https://www.ebay.com/itm/178171158022) | 1.791 (B 1 kg) | 1.791 (B 2 kg) | 1.755 | -36 (-2%) | -36 (-2%) | no conviene |
 | Ryzen 9 9950X | [489.99](https://www.ebay.com/itm/800893981003) | 6.033 (B 1 kg) | 6.033 (B 2 kg) | 5.580 | -453 (-8%) | -453 (-8%) | no conviene |
-| Ryzen 5 7600 | [261.69](https://www.ebay.com/itm/206694959577) | 3.300 (B 1 kg) | 3.300 (B 2 kg) | 2.800 | -500 (-18%) | -500 (-18%) | no conviene |
+| Ryzen 5 7600 | [261.69](https://www.ebay.com/itm/206698127336) | 3.300 (B 1 kg) | 3.300 (B 2 kg) | 2.800 | -500 (-18%) | -500 (-18%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [465.00](https://www.ebay.com/itm/287663939921) | 5.734 (B 1 kg) | 5.650 (B 1 kg) | 4.500 | -1.234 (-27%) | -1.150 (-26%) | no conviene |
 | SSD NVMe 1TB | [134.99](https://www.ebay.com/itm/920136003885) | 1.783 (B 1 kg) | 1.700 (B 1 kg) | 1.100 | -683 (-62%) | -600 (-55%) | no conviene |
 | RAM DDR4 16GB (2x8) 3200 | [92.95](https://www.ebay.com/itm/900081308690) | 1.280 (B 1 kg) | 1.196 (B 1 kg) | 540 | -740 (-137%) | -656 (-122%) | no conviene |
@@ -126,6 +126,7 @@ eBay nuevo: USD 139.00 con envío en EE.UU. (eBay API; vendedor mtsbiz 100.0%; I
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo OEM (web: USD 202 a la tasa de la tienda, 11,80; hay otra publicación del mismo a USD 215) | 2.384 | 553 (23%) | 2026-10-16 |
+| Cyrex Store (WhatsApp) | nuevo | 2.394 | 562 (23%) | 2026-11-13 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | oem | 2.412 | 580 (24%) | 2026-11-12 |
 | OverCity (WhatsApp) | nuevo OEM | 2.460 | 629 (26%) | 2026-10-13 |
 | Soft Computers (WhatsApp) | nuevo OEM | 2.500 | 669 (27%) | 2026-10-13 |
@@ -225,6 +226,7 @@ eBay nuevo: USD 134.99 con envío en EE.UU. (eBay API; vendedor paymoremcallen 9
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV3 1TB; estado sin dato | 1.850 | 67 (4%) | 2026-10-30 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Hiksemi Wave M.2 1TB) | 1.860 | 77 (4%) | 2026-10-12 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 1.880 | 97 (5%) | 2026-11-12 |
+| Cyrex Store (WhatsApp) | nuevo | 1.884 | 101 (5%) | 2026-11-13 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=almacenamiento) | nuevo/no indica | 1.898 | 115 (6%) | 2026-11-12 |
 | Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/almacenamiento/1732592627077-dxXRD) | nuevo/no indica | 1.898 | 115 (6%) | 2026-11-12 |
 | Soft Computers (WhatsApp) | sin dato | 1.950 | 167 (9%) | 2026-11-04 |
@@ -251,7 +253,9 @@ eBay nuevo: USD 185.00 con envío en EE.UU. (eBay API; vendedor honestdeals 99.5
 | Punto Tecnológico (WhatsApp) | sin dato | 3.800 | 1.418 (37%) | 2026-11-04 |
 | Punto Tecnológico (WhatsApp) | nuevo | 3.800 | 1.418 (37%) | 2026-11-04 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | stock bajo (web; Apacer M.2 2TB 7400 MB/s) | 4.060 | 1.678 (41%) | 2026-10-12 |
+| Cyrex Store (WhatsApp) | nuevo | 4.088 | 1.706 (42%) | 2026-11-13 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=almacenamiento) | nuevo/no indica | 4.119 | 1.737 (42%) | 2026-11-12 |
+| Microworld (WhatsApp) | nuevo | 4.147 | 1.765 (43%) | 2026-11-13 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; Hiksemi Futurex M.2 2TB) | 4.560 | 2.178 (48%) | 2026-10-12 |
 | ELVYCOMP (WhatsApp) | nuevo/sellado sin confirmar | 4.880 | 2.498 (51%) | 2026-11-10 |
 | ELVYCOMP (WhatsApp) | nuevo/sellado | 4.880 | 2.498 (51%) | 2026-11-10 |
@@ -294,6 +298,7 @@ eBay nuevo: USD 164.99 con envío en EE.UU. (eBay API; vendedor all4homeusa 99.7
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 2.750 | 607 (22%) | 2026-11-12 |
 | Marketplace Cochabamba (particular) | nuevo | 2.770 | 627 (23%) | 2026-11-03 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | nuevo/no indica | 2.770 | 627 (23%) | 2026-11-12 |
+| Cyrex Store (WhatsApp) | nuevo | 2.785 | 642 (23%) | 2026-11-13 |
 | Marketplace Cochabamba (particular) | sellado | 2.800 | 657 (23%) | 2026-11-06 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | sellado | 2.800 | 657 (23%) | 2026-11-12 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.806 | 663 (24%) | 2026-11-12 |
@@ -318,9 +323,6 @@ eBay nuevo: USD 500.00 con envío en EE.UU. (eBay API; vendedor apple-pros 100.0
 |---|---|---|---|---|
 | Punto Tecnológico / Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | nuevo | 9.560 | 3.407 (36%) | 2026-11-12 |
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 9.570 | 3.417 (36%) | 2026-11-12 |
-| PC Components Bolivia (web) | nuevo | 10.500 | 4.347 (41%) | 2026-11-04 |
-| OverCity (web) | nuevo | 12.580 | 6.427 (51%) | 2026-11-03 |
-| Punto Tecnológico / Supermall (web) | nuevo | 12.590 | 6.437 (51%) | 2026-11-12 |
 
 ## Sin comparación todavía (eBay nuevo)
 
