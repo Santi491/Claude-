@@ -1902,14 +1902,14 @@
         const L = LUGAR[p.spot]; if (!L || L.sentado || p.spot === "cinta") return;
         if (Math.hypot(s.x - p.root.position.x, s.z - p.root.position.z) < 2.2 && now - (p.ultSaludo || -1e9) > 90000) saludar(a.id, false); });
     }
-    // botón de la junta: aparece cuando Santi está sentado en su silla (o mientras dura la junta)
+    // botón de la junta: aparece cuando Santi está sentado en su silla o en una silla de la sala de reuniones (o mientras dura la junta)
     const bJunta = document.createElement("button"); bJunta.type = "button"; bJunta.hidden = true; bJunta.setAttribute("aria-pressed", "false");
     if (zoomBar) zoomBar.appendChild(bJunta);
     bJunta.onclick = () => { llamarJunta(!junta); el.focus(); };
     function llamarJunta(v) { junta = v; bJunta.setAttribute("aria-pressed", String(v)); botonJunta(); }
     let juntaVis = null;
     function botonJunta() {
-      const ver = junta || (api.listo && (!api.manejando || !!(santiAcc && santiAcc.silla)));
+      const ver = junta || (api.listo && (!api.manejando || !!(santiAcc && (santiAcc.silla || santiAcc.sillaJ != null))));   // en su silla o en la sala de reuniones
       const txt = junta ? "Terminar junta" : "Llamar a junta";
       if (ver + txt !== juntaVis) { juntaVis = ver + txt; bJunta.hidden = !ver; bJunta.textContent = txt; }
     }
