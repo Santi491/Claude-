@@ -87,7 +87,8 @@
   "conviene|Ryzen 5 7600X|nuevo|2026-11-12": "2026-11-12 16:35",
   "conviene|Ryzen 5 7600X|usado|2026-11-12": "2026-11-12 16:35",
   "conviene|Ryzen 9 9950X3D|nuevo|2026-11-12": "2026-11-12 16:35",
-  "conviene|Ryzen 9 9950X3D|usado|2026-11-12": "2026-11-12 16:35"
+  "conviene|Ryzen 9 9950X3D|usado|2026-11-12": "2026-11-12 16:35",
+  "baja|Ryzen 9 9950X3D|nuevo|2026-11-13": "2026-11-13 11:54"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -124,11 +125,7 @@
   "Ryzen 9 9950X3D|usado": true
  },
  "ultimas": [
-  "✅ Ahora conviene Ryzen 5 9600X (usado): +27% · costo puesto Bs 1.779 vs Bs 2.450 en Cochabamba",
-  "✅ Ahora conviene Ryzen 5 7600X (nuevo): +26% · costo puesto Bs 1.898 vs Bs 2.550 en Cochabamba",
-  "✅ Ahora conviene Ryzen 5 7600X (usado): +40% · costo puesto Bs 1.540 vs Bs 2.550 en Cochabamba",
-  "✅ Ahora conviene Ryzen 9 9950X3D (nuevo): +26% · costo puesto Bs 7.092 vs Bs 9.560 en Cochabamba",
-  "✅ Ahora conviene Ryzen 9 9950X3D (usado): +31% · costo puesto Bs 6.555 vs Bs 9.560 en Cochabamba"
+  "⬇ Ryzen 9 9950X3D (nuevo) bajó 14% en eBay: USD 579.99 → 500.00"
  ],
- "revisado": "2026-11-12 16:35"
+ "revisado": "2026-11-13 11:54"
 }
