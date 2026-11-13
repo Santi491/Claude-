@@ -118,7 +118,7 @@
   "Ryzen 5 7500F|nuevo": false,
   "Ryzen 5 7500F|usado": false,
   "Ryzen 5 9600X|nuevo": false,
-  "Ryzen 5 9600X|usado": true,
+  "Ryzen 5 9600X|usado": false,
   "Ryzen 5 7600X|nuevo": true,
   "Ryzen 5 7600X|usado": true,
   "Ryzen 9 9950X3D|nuevo": true,
@@ -127,5 +127,5 @@
  "ultimas": [
   "⬇ Ryzen 9 9950X3D (nuevo) bajó 14% en eBay: USD 579.99 → 500.00"
  ],
- "revisado": "2026-11-13 10:56"
+ "revisado": "2026-11-13 16:27"
 }

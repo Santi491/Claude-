@@ -279,3 +279,10 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-12,WD Blue SSD M.2 SATA 2TB,ssd,2949,USD,247,no indica,Geek Store Bolivia,web,sí,USD 247 × 11.94 (USDT 12/11); web Kyte 12/11; M.2 SATA; precio de lista USD 255
 2026-11-12,Adata SU630 SSD 960GB SATA,ssd,1516,USD,127,no indica,Geek Store Bolivia,web,sí,USD 127 × 11.94 (USDT 12/11); web Kyte 12/11; SATA
 2026-11-13,Ryzen 5 7600X3D,cpu,4406.4,Bs,4406.4,nuevo,Microworld,whatsapp,sí,BOX; 12/11 17:57; no está en vigilar.csv
+2026-11-13,AMD Ryzen 5 3600,cpu,1077.3,USD,90,nuevo,Shopping PC,whatsapp,sí,"USD × 11,97 (USDT 13/11); lista mayorista PDF 09/11 leída en el visor de WhatsApp (baja resolución, por confirmar); sin factura"
+2026-11-13,AMD Ryzen 7 8700G,cpu,4189.5,USD,350,nuevo,Shopping PC,whatsapp,sí,"USD × 11,97 (USDT 13/11); lista mayorista PDF 09/11 leída en el visor de WhatsApp (baja resolución, por confirmar); sin factura"
+2026-11-13,Intel Core i3-14100,cpu,1795.5,USD,150,nuevo,Shopping PC,whatsapp,sí,"USD × 11,97 (USDT 13/11); lista mayorista PDF 09/11 leída en el visor de WhatsApp (baja resolución, por confirmar); sin factura"
+2026-11-13,Intel Core i5-14400 (venta con placa),cpu,2812.95,USD,235,nuevo,Shopping PC,whatsapp,sí,"USD × 11,97 (USDT 13/11); lista mayorista PDF 09/11 leída en el visor de WhatsApp (baja resolución, por confirmar); sin factura"
+2026-11-13,Intel Core i9-13900KF,cpu,5027.4,USD,420,nuevo,Shopping PC,whatsapp,sí,"USD × 11,97 (USDT 13/11); lista mayorista PDF 09/11 leída en el visor de WhatsApp (baja resolución, por confirmar); sin factura"
+2026-11-13,Kingston NV3 500GB NVMe,ssd,1316.7,USD,110,nuevo,Shopping PC,whatsapp,sí,"USD × 11,97 (USDT 13/11); lista mayorista PDF 09/11 leída en el visor de WhatsApp (baja resolución, por confirmar); sin factura"
+2026-11-13,Intel Core i9-14900K,cpu,5973,USD,499,nuevo,Crazy Store,web,sí,"crazystore.com.bo 13/11 16:50; USD 499 × 11,97 (USDT 13/11); la web muestra Bs 5.988; único componente de PC (sin Ryzen, RAM ni SSD)"

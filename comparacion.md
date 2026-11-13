@@ -9,11 +9,11 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 |---|---|---|---|---|---|---|---|
 | Ryzen 9 9950X3D | [500.00](https://www.ebay.com/itm/377616204617) | 6.153 (B 1 kg) | 6.153 (B 2 kg) | 9.560 | 3.407 (36%) | 3.407 (36%) | conviene |
 | Ryzen 5 7600X | [145.00](https://www.ebay.com/itm/128186195259) | 1.903 (B 1 kg) | 1.903 (B 2 kg) | 2.550 | 647 (25%) | 647 (25%) | conviene |
-| Intel Core Ultra 7 265K | [235.00](https://www.ebay.com/itm/237176339841) | 2.981 (B 1 kg) | 2.939 (B 1.5 kg) | 3.950 | 969 (25%) | 1.011 (26%) | conviene |
 | Intel Core i5-14400F | [139.00](https://www.ebay.com/itm/357885790585) | 1.831 (B 1 kg) | 1.790 (B 1.5 kg) | 2.384 | 553 (23%) | 594 (25%) | conviene |
 | SSD NVMe 2TB | [185.00](https://www.ebay.com/itm/377593610877) | 2.382 (B 1 kg) | 2.298 (B 1 kg) | 3.100 | 718 (23%) | 802 (26%) | conviene |
+| Intel Core Ultra 7 265K | [249.99](https://www.ebay.com/itm/880110847221) | 3.160 (B 1 kg) | 3.118 (B 1.5 kg) | 3.950 | 790 (20%) | 832 (21%) | conviene |
 | Ryzen 5 9600X | [164.99](https://www.ebay.com/itm/327452714785) | 2.143 (B 1 kg) | 2.143 (B 2 kg) | 2.450 | 307 (13%) | 307 (13%) | justo |
-| Intel Core i5-12400F | [142.99](https://www.ebay.com/itm/206675761087) | 1.879 (B 1 kg) | 1.837 (B 1.5 kg) | 2.054 | 175 (8%) | 216 (11%) | justo |
+| Intel Core i5-12400F | [142.99](https://www.ebay.com/itm/206675761087) | 1.879 (B 1 kg) | 1.837 (B 1.5 kg) | 2.050 | 171 (8%) | 213 (10%) | justo |
 | Ryzen 7 7800X3D | [328.88](https://www.ebay.com/itm/168021862717) | 4.104 (B 1 kg) | 4.104 (B 2 kg) | 4.350 | 246 (6%) | 246 (6%) | justo |
 | Ryzen 7 7700X | [223.98](https://www.ebay.com/itm/267042355650) | 2.849 (B 1 kg) | 2.849 (B 2 kg) | 3.000 | 151 (5%) | 151 (5%) | justo |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [454.49](https://www.ebay.com/itm/277814335680) | 5.608 (B 1 kg) | 5.524 (B 1 kg) | 5.800 | 192 (3%) | 276 (5%) | no conviene |
@@ -33,13 +33,13 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Ryzen 9 9950X3D | [530.00](https://www.ebay.com/itm/377631289052) | 6.512 (B 1 kg) | 6.512 (B 2 kg) | 9.560 | 3.048 (32%) | 3.048 (32%) | conviene |
 | Ryzen 7 7700X | [159.99](https://www.ebay.com/itm/227607987724) | 2.083 (B 1 kg) | 2.083 (B 2 kg) | 3.000 | 917 (31%) | 917 (31%) | conviene |
 | Intel Core i5-14400F | [125.00](https://www.ebay.com/itm/128181576805) | 1.664 (B 1 kg) | 1.622 (B 1.5 kg) | 2.384 | 720 (30%) | 762 (32%) | conviene |
-| Ryzen 5 9600X | [135.00](https://www.ebay.com/itm/820345401429) | 1.784 (B 1 kg) | 1.784 (B 2 kg) | 2.450 | 666 (27%) | 666 (27%) | conviene |
-| SSD NVMe 2TB | [179.89](https://www.ebay.com/itm/257847705832) | 2.321 (B 1 kg) | 2.237 (B 1 kg) | 3.100 | 779 (25%) | 863 (28%) | conviene |
+| SSD NVMe 2TB | [179.99](https://www.ebay.com/itm/227612079939) | 2.322 (B 1 kg) | 2.238 (B 1 kg) | 3.100 | 778 (25%) | 862 (28%) | conviene |
 | Intel Core i5-13400 | [135.00](https://www.ebay.com/itm/147658602660) | 1.784 (B 1 kg) | 1.742 (B 1.5 kg) | 2.300 | 516 (22%) | 558 (24%) | conviene |
-| Intel Core i5-12400F | [119.99](https://www.ebay.com/itm/287717239450) | 1.604 (B 1 kg) | 1.562 (B 1.5 kg) | 2.054 | 450 (22%) | 492 (24%) | conviene |
 | Ryzen 7 7800X3D | [269.99](https://www.ebay.com/itm/237174496217) | 3.399 (B 1 kg) | 3.399 (B 2 kg) | 4.350 | 951 (22%) | 951 (22%) | conviene |
+| Intel Core i5-12400F | [119.99](https://www.ebay.com/itm/287717239450) | 1.604 (B 1 kg) | 1.562 (B 1.5 kg) | 2.050 | 446 (22%) | 488 (24%) | conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [389.00](https://www.ebay.com/itm/168853287058) | 4.824 (B 1 kg) | 4.740 (B 1 kg) | 5.800 | 976 (17%) | 1.060 (18%) | conviene |
 | Ryzen 5 7500F | [114.99](https://www.ebay.com/itm/257792135268) | 1.544 (B 1 kg) | 1.544 (B 2 kg) | 1.755 | 211 (12%) | 211 (12%) | justo |
+| Ryzen 5 9600X | [169.98](https://www.ebay.com/itm/127803717729) | 2.202 (B 1 kg) | 2.202 (B 2 kg) | 2.450 | 248 (10%) | 248 (10%) | justo |
 | Ryzen 9 9950X | [454.99](https://www.ebay.com/itm/257573828939) | 5.614 (B 1 kg) | 5.614 (B 2 kg) | 5.580 | -34 (-1%) | -34 (-1%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [399.00](https://www.ebay.com/itm/377593144670) | 4.944 (B 1 kg) | 4.860 (B 1 kg) | 4.500 | -444 (-10%) | -360 (-8%) | no conviene |
 | SSD NVMe 1TB | [95.00](https://www.ebay.com/itm/287648070173) | 1.305 (B 1 kg) | 1.221 (B 1 kg) | 1.100 | -205 (-19%) | -121 (-11%) | no conviene |
@@ -111,6 +111,7 @@ eBay nuevo: USD 142.99 con envío en EE.UU. (eBay API; vendedor gr_liquidators 9
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
+| PC Armagedon (WhatsApp) | nuevo | 2.050 | 171 (8%) | 2026-11-13 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | oem | 2.054 | 175 (8%) | 2026-11-12 |
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | estado sin dato (\"en stock\") | 2.250 | 371 (16%) | 2026-11-03 |
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 2.250 | 371 (16%) | 2026-11-12 |
@@ -137,18 +138,19 @@ eBay nuevo: USD 139.00 con envío en EE.UU. (eBay API; vendedor mtsbiz 100.0%; I
 | SMART CUBE (WhatsApp) | nuevo sellado; llevando 2 rebajan Bs 50 c/u (Bs 3.030) | 3.080 | 1.249 (41%) | 2026-10-15 |
 
 ### Intel Core Ultra 7 265K
-eBay nuevo: USD 235.00 con envío en EE.UU. (eBay API; vendedor doug1978 100.0%; Intel Core Ultra 7 Desktop Processor 265K - 20 cores (8 P-co, 2026-11-13). Costo puesto: **Bs 2.981**/u en pedido de 2, **Bs 2.939**/u en pedido de 4.
+eBay nuevo: USD 249.99 con envío en EE.UU. (eBay API; vendedor drink_soy_sauce 100.0%; Intel Core Ultra 7 265K 20-Core LGA 1851 Unlocked CPU BX8076, 2026-11-13). Costo puesto: **Bs 3.160**/u en pedido de 2, **Bs 3.118**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
-| MSR Computers (web; fecha de actualización desconocida) · [ver](https://msrcomputers.framer.website/) | nuevo | 3.950 | 969 (25%) | 2026-10-11 |
-| OverCity (WhatsApp) | nuevo OEM | 4.100 | 1.119 (27%) | 2026-10-19 |
-| OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | estado sin dato (\"últimas unidades\") | 4.170 | 1.189 (29%) | 2026-11-03 |
-| Punto Tecnológico / Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | nuevo | 4.210 | 1.229 (29%) | 2026-11-12 |
-| OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 4.220 | 1.239 (29%) | 2026-11-12 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=intel%20core%20ultra%207%20265k) | sellado (caja sellada); Cochabamba | 4.250 | 1.269 (30%) | 2026-11-10 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1098070649594906/) | sellado | 4.250 | 1.269 (30%) | 2026-11-11 |
-| Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | stock bajo (web; por WhatsApp dijeron que el 265K solo está en Santa Cruz) | 4.290 | 1.309 (31%) | 2026-10-12 |
+| MSR Computers (web; fecha de actualización desconocida) · [ver](https://msrcomputers.framer.website/) | nuevo | 3.950 | 790 (20%) | 2026-10-11 |
+| PC Armagedon (WhatsApp) | nuevo | 4.010 | 850 (21%) | 2026-11-13 |
+| OverCity (WhatsApp) | nuevo OEM | 4.100 | 940 (23%) | 2026-10-19 |
+| OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | estado sin dato (\"últimas unidades\") | 4.170 | 1.010 (24%) | 2026-11-03 |
+| Punto Tecnológico / Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | nuevo | 4.210 | 1.050 (25%) | 2026-11-12 |
+| OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 4.220 | 1.060 (25%) | 2026-11-12 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=intel%20core%20ultra%207%20265k) | sellado (caja sellada); Cochabamba | 4.250 | 1.090 (26%) | 2026-11-10 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1098070649594906/) | sellado | 4.250 | 1.090 (26%) | 2026-11-11 |
+| Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | stock bajo (web; por WhatsApp dijeron que el 265K solo está en Santa Cruz) | 4.290 | 1.130 (26%) | 2026-10-12 |
 
 ### Corsair Vengeance RGB DDR5 32GB (2x16) 5600
 eBay nuevo: USD 465.00 con envío en EE.UU. (eBay API; vendedor restoredglory 100.0%; CORSAIR Vengeance RGB 32GB (2x16GB) DDR5 5600MHz CL40 AMD EX, 2026-11-13). Costo puesto: **Bs 5.734**/u en pedido de 2, **Bs 5.650**/u en pedido de 4.
@@ -217,7 +219,9 @@ eBay nuevo: USD 134.99 con envío en EE.UU. (eBay API; vendedor paymoremcallen 9
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=SSD%20NVMe%201TB) | Kingston NV2 1TB; estado sin dato | 1.700 | -83 (-5%) | 2026-10-30 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1412645017712543/) | nuevo (M.2 1TB, marca no indicada; publicado hace 2 días) | 1.730 | -53 (-3%) | 2026-10-16 |
 | Shopping PC (catálogo PDF) | nuevo (Kingston NV3 1TB; lista mayorista USD 148 del 12/10, sin factura; 146 en stock) | 1.754 | -29 (-2%) | 2026-10-15 |
+| Shopping PC (WhatsApp) | nuevo | 1.772 | -12 (-1%) | 2026-11-13 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2078197563584097/) | no indicado (M.2 1TB; marca no indicada) | 1.800 | 17 (1%) | 2026-10-11 |
+| PC Armagedon (WhatsApp) | nuevo | 1.800 | 17 (1%) | 2026-11-13 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston NV3 1TB (estado sin dato); Cochabamba | 1.810 | 27 (1%) | 2026-11-05 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 1.810 | 27 (1%) | 2026-11-12 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | no indicado (Kingston NV3 1TB) | 1.850 | 67 (4%) | 2026-10-11 |
@@ -294,6 +298,7 @@ eBay nuevo: USD 164.99 con envío en EE.UU. (eBay API; vendedor all4homeusa 99.7
 | Marketplace Cochabamba (particular) | nuevo | 2.450 | 307 (13%) | 2026-10-30 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | nuevo/no indica | 2.450 | 307 (13%) | 2026-11-12 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | nuevo/no indica | 2.500 | 357 (14%) | 2026-11-12 |
+| PC Armagedon (WhatsApp) | nuevo | 2.560 | 417 (16%) | 2026-11-13 |
 | Punto Tecnológico (WhatsApp) | nuevo | 2.750 | 607 (22%) | 2026-11-10 |
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 2.750 | 607 (22%) | 2026-11-12 |
 | Marketplace Cochabamba (particular) | nuevo | 2.770 | 627 (23%) | 2026-11-03 |
