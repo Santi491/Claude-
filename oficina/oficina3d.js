@@ -1165,7 +1165,23 @@
     flyTo(pos, tgt);
     if (narrow3()) requestAnimationFrame(() => $("drawer").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" }));
   }
-  function close3D() { open = false; $("drawer").hidden = true; viewOffset(); flyTo(HOME.pos.clone(), HOME.target.clone()); }
+  function close3D() { open = false; $("drawer").hidden = true; viewOffset(); if (PERS && PERS.manejando) return; flyTo(HOME.pos.clone(), HOME.target.clone()); }
+  /* (Santi, 12/11) con "Manejar a Santi", E frente a una computadora abre el panel de ese agente sin mover la cámara ni
+     dejar de manejar; un segundo E abre su pantalla completa (o el archivo, el mapa o el panel del Gerente) */
+  function verPanel(id) {
+    if (id === "tablero") { if (window.abrirTablero) window.abrirTablero(); return; }
+    if (open && sel === id) {
+      if (id === "docs" && window.abrirArchivo) { window.abrirArchivo(); return; }
+      if (window.tienePantalla && window.tienePantalla(id)) { window.abrirPantalla(id); return; }
+      if (id === "pedidos" && window.abrirMapa) { window.abrirMapa(); return; }
+      if (id === "gerente" && window.abrirPanel) { window.abrirPanel(); return; }
+      cerrarPanel(); return;
+    }
+    if (id === "docs" && sel !== "docs") cabSel = null;
+    sel = id; open = true; $("drawer").hidden = false; drawDrawer(); $("dBody").scrollTop = 0; viewOffset();
+  }
+  function cerrarPanel() { open = false; $("drawer").hidden = true; viewOffset(); }
+  const segundaE = id => (id === "docs" && window.abrirArchivo) || (window.tienePantalla && window.tienePantalla(id)) || (id === "pedidos" && window.abrirMapa) || (id === "gerente" && window.abrirPanel);
   // Panel del jefe: resumen del día
   const _drawDrawer = drawDrawer;
   drawDrawer = function () {
@@ -1383,26 +1399,55 @@
     const MODELO = { gerente: 0, santi: 1, mkt: 1, ana: 2, ebay: 2, fin: 3, dem: 3, wa: 4, pedidos: 5, nube: 5 };
     const FEM = new Set([3, 4, 5]);
     // lugares para cuando no trabajan: pts = camino desde el pasillo; x, z = donde quedan parados; rot = hacia dónde miran
+    /* Tiempo libre (Santi, 12/11: "que tengan completa libertad"): ya no hay un lugar fijo por agente. Cuando no trabaja,
+       cada uno elige un lugar libre (con sus gustos: a Finanzas le tira el gym, a eBay la barra...), hace ahí varias cosas
+       distintas (anims) y cada uno o dos minutos se va a otro. Dos agentes nunca ocupan el mismo lugar. */
     const LUGAR = {
-      sofa1:  { zona: "lounge", pts: [[11.45, FRENTE_Z], [11.45, -6.97]], x: 11.6, z: -6.97, rot: 0, anim: "cafe", sentado: true, que: "toma un café en el lounge", prop: "taza" },
-      sofa2:  { zona: "lounge", pts: [[13.4, FRENTE_Z], [13.4, -6.97]], x: 13.4, z: -6.97, rot: 0, anim: "sentado", sentado: true, que: "descansa en el lounge" },
-      sillon: { zona: "lounge", pts: [[11.45, FRENTE_Z], [11.45, -6.2]], x: 10.906, z: -6.097, rot: 2.342, anim: "sentado", sentado: true, que: "descansa en el lounge" },
-      barra1: { zona: "lounge", pts: [[22.7, FRENTE_Z], [22.7, -8.3]], x: 22.7, z: -8.3, rot: Math.PI, anim: "quieto", que: "en la barra de café" },
-      barra2: { zona: "lounge", pts: [[23.7, FRENTE_Z], [23.7, -8.3]], x: 23.7, z: -8.3, rot: Math.PI, anim: "hablar2", que: "conversa en la barra" },
-      cinta:  { zona: "gym", pts: [[22.4, 12.6], [22.4, 10.9]], x: 22.4, z: 9.6, rot: Math.PI, y: 0.23, anim: "cinta", que: "corre en la cinta" },
-      pesas:  { zona: "gym", pts: [[20.7, 12.6]], x: 20.7, z: 8.4, rot: 0, anim: "pesas", que: "levanta pesas en el gym", prop: "pesas" },
-      charla: { zona: "gym", pts: [[18.2, 12.6]], x: 18.2, z: 10.4, rot: 0.5, anim: "hablar", que: "conversa en el gym" },
+      sofa1:  { zona: "lounge", grupo: "sofa", donde: "en el lounge", pts: [[11.45, FRENTE_Z], [11.45, -6.97]], x: 11.6, z: -6.97, rot: 0, sentado: true, anims: ["cafe", "sentado", "reir_sentado"], santi: "sentarse en el sofá" },
+      sofa2:  { zona: "lounge", grupo: "sofa", donde: "en el lounge", pts: [[13.4, FRENTE_Z], [13.4, -6.97]], x: 13.4, z: -6.97, rot: 0, sentado: true, anims: ["sentado", "reir_sentado", "cafe"], santi: "sentarse en el sofá" },
+      sillon: { zona: "lounge", grupo: "sofa", donde: "en el lounge", pts: [[11.45, FRENTE_Z], [11.45, -6.2]], x: 10.906, z: -6.097, rot: 2.342, sentado: true, anims: ["sentado", "cafe"], santi: "sentarse en el sillón" },
+      barra1: { zona: "lounge", grupo: "barra", donde: "en la barra de café", pts: [[22.7, FRENTE_Z], [22.7, -8.3]], x: 22.7, z: -8.3, rot: Math.PI, anims: ["beber", "quieto", "celular", "charla_pie"] },
+      barra2: { zona: "lounge", grupo: "barra", donde: "en la barra de café", pts: [[23.7, FRENTE_Z], [23.7, -8.3]], x: 23.7, z: -8.3, rot: Math.PI, anims: ["hablar2", "beber", "reir", "charla_pie"] },
+      cinta:  { zona: "gym", grupo: "gym", donde: "en el gym", pts: [[22.4, 12.6], [22.4, 10.9]], x: 22.4, z: 9.6, rot: Math.PI, y: 0.23, anims: ["cinta"], santi: "correr en la cinta" },
+      pesas:  { zona: "gym", grupo: "gym", donde: "en el gym", pts: [[20.7, 12.6]], x: 20.7, z: 8.4, rot: 0, anims: ["pesas", "estirarse", "pesas"], santi: "levantar pesas" },
+      charla: { zona: "gym", grupo: "gym", donde: "en el gym", pts: [[18.2, 12.6]], x: 18.2, z: 10.4, rot: 0.5, anims: ["hablar", "estirarse", "reir", "charla_pie"] },
+      mapa:   { zona: "reuniones", grupo: "mapa", donde: "frente al mapa de la ruta", pts: [[6.6, -3.2], [7.4, -3.8], [7.4, -8.9]], x: 5.5, z: -8.9, rot: Math.PI, anims: ["mirar", "senalar", "pensar"] },
+      mapa2:  { zona: "reuniones", grupo: "mapa", donde: "frente al mapa de la ruta", pts: [[6.6, -3.2], [7.4, -3.8], [7.4, -9.0]], x: 4.1, z: -9.0, rot: Math.PI, anims: ["pensar", "senalar", "charla_pie"] },
+      pasillo:{ zona: "pasillo", grupo: "pasillo", donde: "en el pasillo", pts: [], x: 9.5, z: 5.0, rot: -Math.PI / 2, anims: ["telefono", "celular", "estirarse"] },
+      paquete:{ zona: "paqueteria", grupo: "paqueteria", donde: "en la paquetería", pts: [[17.5, -9.4], [17.5, -13.2]], x: 15.0, z: -13.2, rot: Math.PI, anims: ["recoger", "pensar", "celular"] },
     };
-    const LUGAR_DE = { pedidos: "sofa1", wa: "sofa2", ana: "sillon", ebay: "barra1", dem: "barra2", fin: "cinta", mkt: "pesas", nube: "charla" };
-    const ENTRADA = { lounge: [PASILLO_X, FRENTE_Z], gym: [PASILLO_X, 12.6] };
+    // gustos de cada uno (peso extra por grupo de lugares)
+    const GUSTO = { pedidos: { sofa: 3, paqueteria: 3 }, wa: { sofa: 2, pasillo: 3 }, ana: { mapa: 3, sofa: 1 }, ebay: { barra: 3, paqueteria: 2 },
+      dem: { barra: 2, mapa: 2 }, fin: { gym: 3 }, mkt: { gym: 2, pasillo: 2 }, nube: { gym: 2, mapa: 2 } };
+    // qué está haciendo, para la etiqueta de arriba de la cabeza
+    const HACE = { sentado: "descansa", cafe: "toma un café", reir_sentado: "se ríe", quieto: "espera su café", beber: "toma un café", celular: "revisa el celular",
+      charla_pie: "conversa", reir: "se ríe", hablar: "conversa", hablar2: "conversa", cinta: "corre en la cinta", pesas: "levanta pesas", estirarse: "se estira",
+      mirar: "mira el mapa", senalar: "señala la ruta", pensar: "piensa", telefono: "habla por teléfono", recoger: "ordena paquetes" };
+    const PROP = { cafe: "taza", beber: "taza", pesas: "pesas" };
+    // desde el pasillo central hasta la entrada de cada zona
+    const ENTRADA = { lounge: [[PASILLO_X, FRENTE_Z]], gym: [[PASILLO_X, 12.6]], reuniones: [[PASILLO_X, FRENTE_Z], [6.6, FRENTE_Z]],
+      paqueteria: [[PASILLO_X, FRENTE_Z], [17.5, FRENTE_Z]], pasillo: [[PASILLO_X, 5.0]] };
+    const azar = (a, b) => a + Math.random() * (b - a);
+    /* Horario (Santi, 12/11): en la ronda (10:30 de lunes a viernes y 16:00 de lunes a sábado, hora de Bolivia, unos 45
+       minutos) o cuando hay una ronda en vivo, todos se sientan a trabajar aunque no se pueda leer el estado en vivo */
+    let rondaCache = { t: 0, v: false }, rondaAntes = false;
+    function enRonda() {
+      const now = performance.now(); if (now - rondaCache.t < 5000) return rondaCache.v;
+      let v = typeof LIVE_ON !== "undefined" && LIVE_ON;
+      if (!v) { try { const t = new Date(new Date().toLocaleString("en-US", { timeZone: "America/La_Paz" })), d = t.getDay(), m = t.getHours() * 60 + t.getMinutes();
+        v = (d >= 1 && d <= 5 && m >= 630 && m < 675) || (d >= 1 && d <= 6 && m >= 960 && m < 1005); } catch (e) { } }
+      rondaCache = { t: now, v }; return v;
+    }
     let P = {}, clips, TRANS, RETRO, porPref = {};
 
     (async () => {
       let gl;
       try {
         const lista = LIVIANO ? ["animaciones", "p1", "p5"] : ["animaciones", "p1", "p2", "p3", "p4", "p5", "p6"];
-        const [anims, ...ps] = await Promise.all(lista.map(n => cargar(`personas/${n}.json`)));
-        gl = { ps: ps.map(p => p.scene) }; clips = Object.fromEntries(anims.animations.map(c => [c.name, c]));
+        // animaciones2 (12/11): celular, teléfono, saludar, reír, estirarse, mirar, pensar, aplaudir, beber, recoger, señalar
+        const [anims, anims2, ...ps] = await Promise.all([cargar("personas/animaciones.json"), cargar("personas/animaciones2.json").catch(() => null),
+          ...lista.slice(1).map(n => cargar(`personas/${n}.json`))]);
+        gl = { ps: ps.map(p => p.scene) }; clips = Object.fromEntries(anims.animations.concat(anims2 ? anims2.animations : []).map(c => [c.name, c]));
       } catch (e) { return; }   // sin modelos: quedan las personas simples
       // transiciones (sentarse, pararse...): la cadera se desplaza de verdad, así que no se centran ni se recortan.
       // "ini": la animación arranca en el lugar de la persona; "fin": termina en él
@@ -1419,13 +1464,18 @@
         P[id] = persona(gl.ps[i], clon);
       });
       // utilería: taza en la mano derecha y mancuernas (en centímetros: la mano está en la escala de Mixamo)
-      const taza = new THREE.Group(); cyl(4, 3.5, 9, M(0xf4f6f8), 0, 0, 0, taza, 12); taza.position.set(0, 8, 4);
-      if (P.pedidos && P.pedidos.manoD) { P.pedidos.manoD.add(taza); P.pedidos.props.taza = [taza]; }
+      // todos (Santi incluido) pueden tomar café o levantar pesas, así que cada uno tiene su taza y sus mancuernas
+      const tazaM = M(0xf4f6f8), taza = () => { const g = new THREE.Group(); cyl(4, 3.5, 9, tazaM, 0, 0, 0, g, 12); g.position.set(0, 8, 4); return g; };
       const pesa = () => { const g = new THREE.Group(); cyl(1.2, 1.2, 22, cromo, 0, 0, 0, g, 6).rotation.z = Math.PI / 2; [-9, 9].forEach(x => cyl(4, 4, 5, negroM, x, 0, 0, g, 10).rotation.z = Math.PI / 2); g.position.set(0, 9, 2); return g; };
-      if (P.mkt) { P.mkt.props.pesas = [P.mkt.manoD, P.mkt.manoI].filter(Boolean).map(h => { const d = pesa(); h.add(d); return d; }); }
+      Object.values(P).forEach(p => {
+        if (p.manoD) { const t = taza(); p.manoD.add(t); p.props.taza = [t]; }
+        p.props.pesas = [p.manoD, p.manoI].filter(Boolean).map(h => { const d = pesa(); h.add(d); return d; });
+      });
       Object.values(P).forEach(p => Object.values(p.props).forEach(l => l.forEach(o => { o.visible = false; })));
       // ubicación inicial, sin caminar
-      AG.forEach(a => { const p = P[a.id]; if (!p) return; const d = destino(a); if (d === "puesto") enPuesto(p, a.id, animPuesto(a)); else enLugar(p, LUGAR[LUGAR_DE[a.id]]); p.donde = d; });
+      AG.forEach(a => { const p = P[a.id]; if (!p) return; const d = destino(a); p.donde = "puesto";
+        if (d === "lugar") { const k = elegirLugar(a.id); if (k) { p.spot = k; enLugar(p, LUGAR[k]); p.donde = "lugar"; p.tLugar = azar(20, 80); } }
+        if (p.donde === "puesto") enPuesto(p, a.id, animPuesto(a)); });
       if (P.gerente) P.gerente.sentadoG = true;
       sentarSanti();
       AG.forEach(a => { if (ST[a.id] && ST[a.id].simple) ST[a.id].simple.visible = false; });
@@ -1561,8 +1611,16 @@
 
     /* puesto: la persona queda parada en "afuera" (frente al escritorio, con la silla corrida) o sentada y arrimada ("adentro") */
     const pie = id => { const [x, z] = STATION[id]; return { x, adentro: z + DESK.frente + 0.15 - RM0, afuera: z + DESK.frente + 0.65 - RM0 }; };
-    const destino = a => a.id === "gerente" || a.state === "working" || a.state === "waiting" ? "puesto" : "lugar";
-    const animPuesto = a => a.state === "working" ? "teclear" : "sentado";
+    const destino = a => a.id === "gerente" || a.state === "working" || a.state === "waiting" || enRonda() || (P[a.id] && P[a.id].aplauso > 0) ? "puesto" : "lugar";
+    const animPuesto = a => a.state === "working" || (enRonda() && a.state !== "waiting") ? "teclear" : "sentado";
+    function elegirLugar(id, evitar) {
+      const ocupados = new Set(Object.values(P).map(q => q.spot).filter(Boolean)); if (santiAcc && santiAcc.spot) ocupados.add(santiAcc.spot);
+      const g = GUSTO[id] || {}, cand = Object.keys(LUGAR).filter(k => !ocupados.has(k) && k !== evitar);
+      if (!cand.length) return null;
+      const w = cand.map(k => 1 + (g[LUGAR[k].grupo] || 0)), tot = w.reduce((x, y) => x + y, 0);
+      let r = Math.random() * tot; for (let i = 0; i < cand.length; i++) { r -= w[i]; if (r <= 0) return cand[i]; }
+      return cand[cand.length - 1];
+    }
     function arrimar(p, id, k) {
       const s = k * k * (3 - 2 * k), q = pie(id);
       p.root.position.z = q.afuera + (q.adentro - q.afuera) * s;
@@ -1574,7 +1632,7 @@
     }
     function enLugar(p, L) {
       p.root.position.set(L.x, L.y || 0, L.z); p.root.rotation.y = L.rot; p.cola = []; p.paso = null;
-      p.play(L.anim, 0, !!L.sentado); p.azar(); mostrar(p, L.prop);
+      const n = L.anims[Math.floor(Math.random() * L.anims.length)]; p.play(n, 0, !!L.sentado); p.azar(); mostrar(p, PROP[n]); p.hace = n; p.tAnim = azar(6, 16);
     }
     function mostrar(p, prop) { Object.entries(p.props).forEach(([k, l]) => l.forEach(o => { o.visible = k === prop; })); }
 
@@ -1592,22 +1650,41 @@
     }
     // del puesto al pasillo: por delante del escritorio hacia la derecha, al pasillo de la fila y al pasillo central
     function caminoPuesto(id) { const [x, z] = STATION[id], q = pie(id); return [[x, q.afuera], [x + 2.1, q.afuera], [x + 2.1, z + 2.6], [PASILLO_X, z + 2.6]]; }
-    function irAlLugar(p, a) {
-      const L = LUGAR[LUGAR_DE[a.id]], e = ENTRADA[L.zona];
-      const seq = [...seqLevantarse(a.id), ...caminarA(caminoPuesto(a.id).slice(1)), ...caminarA([e]), ...caminarA(L.pts), ...caminarA([[L.x, L.z]]), { a: "girar", rot: L.rot }];
+    // llegar a un lugar: girar, subirse a la cinta, sentarse si es un sofá y empezar a hacer algo
+    function llegar(p, L) {
+      const n = L.anims[Math.floor(Math.random() * L.anims.length)], seq = [...caminarA([[L.x, L.z]]), { a: "girar", rot: L.rot }];
       if (L.y) seq.push({ a: "fn", f: () => { p.root.position.y = L.y; } });
-      if (L.sentado) seq.push({ a: "anim", n: "sentarse", fade: 0.3, hasta: "fin" }, { a: "anim", n: L.anim, corre: true, fade: 0.3, hasta: 0 });
-      else seq.push({ a: "anim", n: L.anim, fade: 0.4, hasta: 0 });
-      seq.push({ a: "fn", f: () => { mostrar(p, L.prop); p.donde = "lugar"; } });
-      p.cola = seq; p.donde = "yendo";
+      if (L.sentado) seq.push({ a: "anim", n: "sentarse", fade: 0.3, hasta: "fin" }, { a: "anim", n, corre: true, fade: 0.3, hasta: 0 });
+      else seq.push({ a: "anim", n, fade: 0.4, hasta: 0 });
+      seq.push({ a: "fn", f: () => { mostrar(p, PROP[n]); p.hace = n; p.donde = "lugar"; p.tAnim = azar(6, 16); p.tLugar = azar(45, 130); } });
+      return seq;
     }
-    function volverAlPuesto(p, a) {
-      const L = LUGAR[LUGAR_DE[a.id]], e = ENTRADA[L.zona], seq = [{ a: "fn", f: () => mostrar(p, null) }];
+    // dejar un lugar: guardar la taza, pararse, bajarse de la cinta y caminar hasta la salida de la zona
+    function dejar(p, L, conEntrada) {
+      const seq = [{ a: "fn", f: () => mostrar(p, null) }];
       if (L.sentado) seq.push({ a: "anim", n: "pararse", fade: 0.25, hasta: "fin" });
       if (L.y) seq.push({ a: "fn", f: () => { p.root.position.y = 0; } });
-      seq.push(...caminarA([...L.pts].reverse()), ...caminarA([e]), ...caminarA(caminoPuesto(a.id).reverse()), ...seqSentarse(a.id, animPuesto(a)),
-        { a: "fn", f: () => { p.donde = "puesto"; } });
-      p.cola = seq; p.donde = "yendo";
+      seq.push(...caminarA([...L.pts].reverse()));
+      if (conEntrada) seq.push(...caminarA([...ENTRADA[L.zona]].reverse()));
+      return seq;
+    }
+    function irAlLugar(p, a) {
+      const k = elegirLugar(a.id); if (!k) return false;
+      const L = LUGAR[k]; p.spot = k;
+      p.cola = [...seqLevantarse(a.id), ...caminarA(caminoPuesto(a.id).slice(1)), ...caminarA(ENTRADA[L.zona]), ...caminarA(L.pts), ...llegar(p, L)];
+      p.donde = "yendo"; return true;
+    }
+    function cambiarDeLugar(p, a) {
+      const k = elegirLugar(a.id, p.spot); if (!k) { p.tLugar = azar(30, 60); return; }
+      const A = LUGAR[p.spot], L = LUGAR[k], misma = A.zona === L.zona; p.spot = k;
+      p.cola = [...dejar(p, A, !misma), ...(misma ? [] : caminarA(ENTRADA[L.zona])), ...caminarA(L.pts), ...llegar(p, L)];
+      p.donde = "yendo";
+    }
+    function volverAlPuesto(p, a) {
+      const L = LUGAR[p.spot]; p.spot = null;
+      p.cola = [...(L ? dejar(p, L, true) : []), ...caminarA(caminoPuesto(a.id).reverse()), ...seqSentarse(a.id, animPuesto(a)),
+        { a: "fn", f: () => { p.donde = "puesto"; } }];
+      p.donde = "yendo";
     }
     function paso(p, dt, id) {
       if (!p.paso) { if (!p.cola.length) return; p.paso = p.cola.shift(); p.t = 0; empezar(p, p.paso); }
@@ -1659,7 +1736,7 @@
     bLiv.onclick = () => { try { localStorage.setItem("cb-modo", LIVIANO ? "completo" : "liviano"); } catch (e) { } location.reload(); };
     const ayuda = document.createElement("div"); ayuda.className = "hint manejo"; ayuda.hidden = true;
     ayuda.textContent = COARSE ? "Flechas para caminar · arrastra para girar la cámara · «Manejar a Santi» otra vez para salir"
-      : "W A S D o flechas para caminar · Shift corre · clic derecho y arrastrar gira la cámara · rueda acerca · Esc para salir";
+      : "W A S D o flechas para caminar · Shift corre · E para usar lo que tienes cerca · clic derecho y arrastrar gira la cámara · rueda acerca · Esc para salir";
     stage.appendChild(ayuda);
     const pad = document.createElement("div"); pad.className = "pad3d"; pad.hidden = true;
     pad.innerHTML = '<span></span><button type="button" data-k="w" aria-label="Adelante">↑</button><span></span><button type="button" data-k="a" aria-label="Izquierda">←</button><button type="button" data-k="s" aria-label="Atrás">↓</button><button type="button" data-k="d" aria-label="Derecha">→</button>';
@@ -1668,7 +1745,8 @@
     pad.querySelectorAll("[data-k]").forEach(b => { const k = b.dataset.k, on = v => e => { e.preventDefault(); teclas[k] = v; };
       b.addEventListener("pointerdown", on(true)); b.addEventListener("pointerup", on(false)); b.addEventListener("pointerleave", on(false)); });
     el.addEventListener("keydown", e => { if (!api.manejando) return; const k = e.key.toLowerCase(); teclas[k] = true;
-      if (k === "escape") { manejar(false); return; }
+      if (k === "e") { e.preventDefault(); e.stopImmediatePropagation(); if (!e.repeat) interactuar(); return; }
+      if (k === "escape") { e.stopImmediatePropagation(); if (open) { cerrarPanel(); panelE = null; return; } manejar(false); return; }
       if (/^(arrow|w$|a$|s$|d$| )/.test(k)) { e.preventDefault(); e.stopImmediatePropagation(); } }, true);
     el.addEventListener("keyup", e => { teclas[e.key.toLowerCase()] = false; });
     el.addEventListener("blur", () => { Object.keys(teclas).forEach(k => { teclas[k] = false; }); });
@@ -1697,8 +1775,78 @@
       if (!enNave && !enCobertizo) return true;
       return solidos.some(dentro) || sillas.some(dentro) || otros.some(([px, pz]) => Math.hypot(x - px, z - pz) < 0.55);
     }
+    /* ---- Tecla E (Santi, 12/11): computadoras, escritorio de Santi, archivo, tablero, mapas, café, sofás, cinta, pesas y
+       saludar a los agentes. Un aviso abajo dice qué hace E; en el celular el aviso es un botón. ---- */
+    let santiAcc = null, panelE = null, avisoTxt = "", cerca = null;
+    const aviso = document.createElement("button"); aviso.type = "button"; aviso.hidden = true;
+    aviso.style.cssText = "position:absolute;left:50%;bottom:56px;transform:translateX(-50%);z-index:3;font:600 14px var(--f-mono);color:#0E0E0F;background:#F2A541;border:0;border-radius:8px;padding:9px 16px;box-shadow:0 6px 20px rgba(0,0,0,.45);cursor:pointer;max-width:calc(100% - 32px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis";
+    aviso.addEventListener("click", e => { e.preventDefault(); interactuar(); el.focus(); });
+    stage.appendChild(aviso);
+    const NOMBRE = id => (AG.find(a => a.id === id) || {}).name || id;
+    const ocupado = k => Object.values(P).some(q => q.spot === k);
+    function opciones() {
+      const s = P.santi.root.position, out = [], d = (x, z) => Math.hypot(s.x - x, s.z - z);
+      const add = (dist, r, o) => { if (dist < r) out.push({ ...o, d: dist / r }); };
+      if (santiAcc) return [{ d: 0, txt: santiAcc.sentado ? "E · pararse" : "E · dejar de " + santiAcc.que, f: terminarAccion }];
+      AG.forEach(a => {
+        if (STATION[a.id]) { const [x, z] = STATION[a.id], sigue = open && sel === a.id;
+          add(d(x, z + 1.25), 1.5, { txt: sigue ? (segundaE(a.id) ? `E · abrir la pantalla de ${a.name}` : "E · cerrar") : `E · ver la computadora de ${a.name}`, f: () => abrirE(a.id, x, z + 1.25) }); }
+        const p = P[a.id];
+        if (p && a.id !== "gerente" && p.donde === "lugar" && !p.saludo) add(d(p.root.position.x, p.root.position.z), 1.6, { txt: `E · saludar a ${a.name}`, f: () => saludar(a.id, true), extra: 0.1 });
+      });
+      const sig = id => open && sel === id;
+      add(d(SANTI.x, SANTI.z), 1.9, { txt: sig("jefe") ? "E · cerrar" : "E · ver el resumen del día", f: () => abrirE("jefe", SANTI.x, SANTI.z) });
+      add(d(XL + 1.5, -6.0), 1.7, { txt: sig("docs") ? "E · abrir el archivo" : "E · ver los documentos", f: () => abrirE("docs", XL + 1.5, -6.0) });
+      add(d(XL + 1.3, 15.4), 2.2, { txt: "E · ver el tablero", f: () => verPanel("tablero") });
+      add(d(5.0, -8.6), 2.4, { txt: "E · ver el mapa de envíos", f: () => window.abrirMapa && window.abrirMapa() });
+      add(d(14.3, -13.0), 1.8, { txt: "E · ver el mapa de envíos", f: () => window.abrirMapa && window.abrirMapa() });
+      add(d(23.2, -8.3), 1.7, { txt: "E · tomar un café", f: () => accion({ que: "tomar café", anim: "beber", prop: "taza", dur: 6 }) });
+      Object.entries(LUGAR).filter(([, L]) => L.santi).forEach(([k, L]) => add(d(L.x, L.z), 1.4, { txt: ocupado(k) ? `${L.santi[0].toUpperCase() + L.santi.slice(1)}: ocupado` : "E · " + L.santi,
+        f: () => { if (!ocupado(k)) accion({ que: L.santi, spot: k, L }); } }));
+      return out.sort((x, y) => (x.d + (x.extra || 0)) - (y.d + (y.extra || 0)));
+    }
+    function abrirE(id, x, z) { panelE = { id, x, z }; verPanel(id); }
+    function interactuar() { const o = cerca || opciones()[0]; if (o) o.f(); }
+    // Santi hace algo: tomar café donde está, o sentarse / correr / levantar pesas en un lugar libre
+    function accion(o) {
+      const p = P.santi, pos = p.root.position;
+      santiAcc = { ...o, prev: { x: pos.x, z: pos.z }, t: o.dur || 0, sentado: !!(o.L && o.L.sentado), que: o.que };
+      if (o.L) { const L = o.L; p.root.position.set(L.x, L.y || 0, L.z); p.root.rotation.y = L.rot;
+        if (L.sentado) { santiAcc.fase = "sentandose"; p.play("sentarse", 0.25); santiAcc.t = 1.2; } else { p.play(L.anims[0], 0.3); mostrar(p, PROP[L.anims[0]]); } }
+      else { p.play(o.anim, 0.3); mostrar(p, o.prop); }
+    }
+    function terminarAccion() {
+      const p = P.santi, a = santiAcc; if (!a || a.fase === "parandose") return;
+      mostrar(p, null);
+      if (a.sentado) { a.fase = "parandose"; p.play("pararse", 0.2); a.t = 1.1; return; }
+      if (a.L) { p.root.position.set(a.prev.x, 0, a.prev.z); }
+      santiAcc = null; p.play("quieto", 0.3);
+    }
+    function avanzarAccion(dt) {
+      const p = P.santi, a = santiAcc; a.t -= dt;
+      if (a.fase === "sentandose" && a.t <= 0) { a.fase = null; const n = a.L.anims[0]; p.play(n, 0.3, true); mostrar(p, PROP[n]); }
+      else if (a.fase === "parandose" && a.t <= 0) { p.root.position.set(a.prev.x, 0, a.prev.z); santiAcc = null; p.play("quieto", 0.3); }
+      else if (!a.L && a.dur && a.t <= 0) { mostrar(p, null); santiAcc = null; p.play("quieto", 0.4); }
+    }
+    // un agente saluda a Santi: se da vuelta (si está de pie), le hace señas y le cuenta en qué anda
+    function saludar(id, largo) {
+      const p = P[id], s = P.santi; if (!p || p.saludo) return;
+      const L = p.spot && LUGAR[p.spot];
+      if (L && L.sentado) { p.play("reir_sentado", 0.3, true); }
+      else { p.root.rotation.y = Math.atan2(s.root.position.x - p.root.position.x, s.root.position.z - p.root.position.z); p.play("saludar", 0.25); }
+      mostrar(p, null); p.saludo = { t: largo ? 4.5 : 2.6 }; p.ultSaludo = performance.now();
+      if (largo && !(L && L.sentado)) setTimeout(() => { if (p.saludo) p.play("charla_pie", 0.4); }, 2200);
+    }
+    // al pasar cerca, los que están de pie y libres lo saludan solos (una vez cada minuto y medio)
+    function saludosCerca() {
+      const s = P.santi.root.position, now = performance.now();
+      AG.forEach(a => { const p = P[a.id]; if (!p || a.id === "gerente" || p.donde !== "lugar" || p.saludo || p.cola.length || p.paso) return;
+        const L = LUGAR[p.spot]; if (!L || L.sentado || p.spot === "cinta") return;
+        if (Math.hypot(s.x - p.root.position.x, s.z - p.root.position.z) < 2.2 && now - (p.ultSaludo || -1e9) > 90000) saludar(a.id, false); });
+    }
     function manejar(on) {
       const p = P.santi; if (!p) return;
+      if (!on) { if (santiAcc) { mostrar(p, null); p.root.position.y = 0; santiAcc = null; } aviso.hidden = true; panelE = null; }
       api.manejando = on; bManejar.setAttribute("aria-pressed", String(on)); ayuda.hidden = !on; pad.hidden = !(on && COARSE); $("hint").hidden = on;
       controls.enabled = !on; anim = null;
       if (on) {
@@ -1713,7 +1861,8 @@
       const p = P.santi, k = teclas;
       const fx = (k.d || k.arrowright ? 1 : 0) - (k.a || k.arrowleft ? 1 : 0), fz = (k.s || k.arrowdown ? 1 : 0) - (k.w || k.arrowup ? 1 : 0);
       const corre = k.shift, sp = (corre ? 3.4 : 1.45) * dt;
-      if (fx || fz) {
+      if (santiAcc) { if (fx || fz) terminarAccion(); avanzarAccion(dt); }
+      else if (fx || fz) {
         camera.getWorldDirection(tmpV); tmpV.y = 0; tmpV.normalize(); tmpV2.set(-tmpV.z, 0, tmpV.x);
         const mx = tmpV2.x * fx - tmpV.x * fz, mz = tmpV2.z * fx - tmpV.z * fz, n = Math.hypot(mx, mz) || 1;
         const otros = Object.entries(P).filter(([id]) => id !== "santi").map(([, q]) => [q.root.position.x, q.root.position.z]);
@@ -1725,6 +1874,11 @@
         let dr = Math.atan2(mx, mz) - p.root.rotation.y; dr = Math.atan2(Math.sin(dr), Math.cos(dr)); p.root.rotation.y += dr * Math.min(1, dt * 12);
         p.play(corre ? "correr" : "caminar", 0.25);
       } else p.play("quieto", 0.3);
+      // qué hay cerca para la tecla E; el panel abierto con E se cierra solo al alejarse
+      cerca = opciones()[0] || null;
+      const txt = cerca ? cerca.txt : "";
+      if (txt !== avisoTxt) { avisoTxt = txt; aviso.textContent = txt; aviso.hidden = !txt; }
+      if (panelE && open && sel === panelE.id && Math.hypot(p.root.position.x - panelE.x, p.root.position.z - panelE.z) > 4) { cerrarPanel(); panelE = null; }
       // cámara detrás, siguiéndolo
       const pos = p.root.position;
       tmpV.set(Math.sin(orb.giro) * Math.cos(orb.alto), Math.sin(orb.alto), Math.cos(orb.giro) * Math.cos(orb.alto)).multiplyScalar(orb.dist).add(pos);
@@ -1734,17 +1888,42 @@
 
     api.update = (now, dt) => {
       if (!api.listo) return;
+      // al terminar una ronda los que están en su puesto aplauden unos segundos antes de irse
+      const r = enRonda();
+      if (rondaAntes && !r) AG.forEach(a => { const p = P[a.id]; if (p && a.id !== "gerente" && p.donde === "puesto") p.aplauso = 4; });
+      rondaAntes = r;
       AG.forEach(a => {
         const p = P[a.id]; if (!p || a.id === "gerente") return;
         if (!p.cola.length && !p.paso) {
           const d = destino(a);
-          if (d !== p.donde) { if (d === "lugar") irAlLugar(p, a); else volverAlPuesto(p, a); }
-          else if (d === "puesto") p.play(animPuesto(a), 0.5, true);
+          if (p.saludo) {   // saluda a Santi y después sigue con lo suyo
+            p.saludo.t -= dt;
+            if (p.saludo.t <= 0) { const L = p.spot && LUGAR[p.spot]; if (L && !L.sentado) p.root.rotation.y = L.rot; p.saludo = null; p.tAnim = 0; }
+          } else if (d !== p.donde && p.donde !== "yendo") {
+            if (d === "lugar") { if (!irAlLugar(p, a)) p.play("sentado", 0.5, true); } else volverAlPuesto(p, a);
+          } else if (d === "puesto") {
+            if (p.aplauso > 0) { p.aplauso -= dt; p.play("aplaudir_sentado", 0.4, true); }
+            else { p.tPuesto = (p.tPuesto || 0) - dt; const base = animPuesto(a);
+              // de vez en cuando deja de teclear un momento (se reclina) y vuelve
+              if (p.tPuesto <= 0) { const pausa = base === "teclear" && Math.random() < 0.3; p.enPausa = pausa; p.tPuesto = pausa ? azar(3, 6) : azar(15, 35); }
+              p.play(p.enPausa ? "sentado" : base, 0.5, true); }
+          } else if (p.donde === "lugar") {
+            const L = LUGAR[p.spot];
+            p.tLugar -= dt; p.tAnim -= dt;
+            if (p.tLugar <= 0) cambiarDeLugar(p, a);
+            else if (p.tAnim <= 0 && L.anims.length > 1) {
+              const otras = L.anims.filter(n => n !== p.hace), n = otras[Math.floor(Math.random() * otras.length)];
+              p.play(n, 0.5, !!L.sentado); mostrar(p, PROP[n]); p.hace = n; p.tAnim = azar(7, 18);
+            } else if (p.tAnim <= 0) p.tAnim = 20;
+          }
         }
         paso(p, dt, a.id);
-        p.que = p.donde === "yendo" ? (destino(a) === "puesto" ? "vuelve a su puesto" : "va al " + LUGAR[LUGAR_DE[a.id]].zona)
-          : p.donde === "lugar" ? LUGAR[LUGAR_DE[a.id]].que : a.state === "working" ? "trabaja en su puesto" : "espera respuestas en su puesto";
+        const L = p.spot && LUGAR[p.spot];
+        p.que = p.saludo ? "saluda a Santi" : p.donde === "yendo" ? (destino(a) === "puesto" ? "vuelve a su puesto" : L ? "va " + L.donde.replace(/^en el |^frente al /, "al ").replace(/^en la /, "a la ") : "camina")
+          : p.donde === "lugar" && L ? (HACE[p.hace] || "descansa") + (/ en /.test(HACE[p.hace] || "") ? "" : " " + L.donde)
+          : p.aplauso > 0 ? "aplaude: terminó la ronda" : a.state === "working" || (enRonda() && a.state !== "waiting") ? "trabaja en su puesto" : "espera respuestas en su puesto";
       });
+      if (api.manejando) saludosCerca(dt);
       if (P.gerente) {
         const g = P.gerente, a = AG.find(x => x.id === "gerente");
         if (g.sentadoG && !g.cola.length && !g.paso) g.play(GER && GER.escribiendo() ? "teclear" : animPuesto(a), 0.5, true);
