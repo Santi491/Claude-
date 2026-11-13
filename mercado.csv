@@ -278,3 +278,4 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-12,Kingston A400 SSD 960GB,ssd,1660,USD,139,no indica,Geek Store Bolivia,web,sí,USD 139 × 11.94 (USDT 12/11); web Kyte 12/11; SATA
 2026-11-12,WD Blue SSD M.2 SATA 2TB,ssd,2949,USD,247,no indica,Geek Store Bolivia,web,sí,USD 247 × 11.94 (USDT 12/11); web Kyte 12/11; M.2 SATA; precio de lista USD 255
 2026-11-12,Adata SU630 SSD 960GB SATA,ssd,1516,USD,127,no indica,Geek Store Bolivia,web,sí,USD 127 × 11.94 (USDT 12/11); web Kyte 12/11; SATA
+2026-11-13,Ryzen 5 7600X3D,cpu,4406.4,Bs,4406.4,nuevo,Microworld,whatsapp,sí,BOX; 12/11 17:57; no está en vigilar.csv
