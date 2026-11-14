@@ -162,7 +162,9 @@ def pedidos(R, ronda=False):
         if nombre == "pedidos.csv" and "ebay" in p.get("tienda", "").lower() and not rh:
             R.aviso(f"{pid}: compra de eBay sin reclamo_hasta")
         act = fecha(p.get("actualizado"))
-        if ronda and act != HOY:
+        # Santi 10/11: del courier de Miami a Bolivia no hay rastreo; solo se exige revisión del día en las etapas con guía en EE.UU.
+        rastreable = p.get("estado", "") in ("comprado", "enviado")
+        if ronda and rastreable and act != HOY:
             R.error(f"{pid}: no se revisó hoy (actualizado = {p.get('actualizado') or 'vacío'})")
         elif not ronda and (not act or (HOY - act).days >= 2):
             R.aviso(f"{pid}: última revisión {p.get('actualizado') or 'nunca'}")
