@@ -88,7 +88,10 @@
   "conviene|Ryzen 5 7600X|usado|2026-11-12": "2026-11-12 16:35",
   "conviene|Ryzen 9 9950X3D|nuevo|2026-11-12": "2026-11-12 16:35",
   "conviene|Ryzen 9 9950X3D|usado|2026-11-12": "2026-11-12 16:35",
-  "baja|Ryzen 9 9950X3D|nuevo|2026-11-13": "2026-11-13 11:54"
+  "baja|Ryzen 9 9950X3D|nuevo|2026-11-13": "2026-11-13 11:54",
+  "baja|Ryzen 5 5600|usado|2026-11-14": "2026-11-14 11:54",
+  "baja|Ryzen 7 5700X3D|usado|2026-11-14": "2026-11-14 11:54",
+  "baja|Intel Core i5-12400F|usado|2026-11-14": "2026-11-14 11:54"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -125,7 +128,9 @@
   "Ryzen 9 9950X3D|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 9 9950X3D (nuevo) bajó 14% en eBay: USD 579.99 → 500.00"
+  "⬇ Ryzen 5 5600 (usado) bajó 10% en eBay: USD 133.99 → 119.99",
+  "⬇ Ryzen 7 5700X3D (usado) bajó 10% en eBay: USD 344.44 → 309.90",
+  "⬇ Intel Core i5-12400F (usado) bajó 12% en eBay: USD 119.99 → 105.00"
  ],
- "revisado": "2026-11-13 16:27"
+ "revisado": "2026-11-14 11:54"
 }
