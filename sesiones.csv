@@ -177,3 +177,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-13,gerente,informe,20:16,20:19,ok,"informe diario 13/11, Doc subido, 5 tareas, sin ERROR"
 2026-11-14,raspberry,vigilante,18:00,18:00,arreglado,la PC no hizo la ronda de las 16:00: relanzada
 2026-11-14,pc,ronda,18:06,18:06,en curso,empezó
+2026-11-14,pc,ronda,18:22,18:22,en curso,empezó
