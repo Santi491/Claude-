@@ -30,10 +30,10 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | nuevo | 5.700 | 4.270 | -33.5 % | -25.1 % | -37.5 % | -34.3 % | -48.4 % | -53.8 % | **no traer** (margen -33% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | SSD NVMe 2TB | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), 1 anuncio(s) de particular sin marca o configuración descartado(s) |
 | Ryzen 7 7700X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
-| Ryzen 5 7600X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Ryzen 5 7600 | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Intel Core i5-14400F | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 9 9950X3D | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
+| Ryzen 5 7600X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Intel Core i5-13400 | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 5 9600X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Ryzen 9 9950X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |

@@ -12,7 +12,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Intel Core i5-14400F | [139.00](https://www.ebay.com/itm/357885790585) | 1.821 (B 1 kg) | 1.779 (B 1.5 kg) | 2.384 | 563 (24%) | 605 (25%) | conviene |
 | SSD NVMe 2TB | [185.00](https://www.ebay.com/itm/377593610877) | 2.368 (B 1 kg) | 2.285 (B 1 kg) | 3.100 | 732 (24%) | 815 (26%) | conviene |
 | Intel Core Ultra 7 265K | [240.00](https://www.ebay.com/itm/880110847221) | 3.023 (B 1 kg) | 2.981 (B 1.5 kg) | 3.950 | 927 (23%) | 969 (25%) | conviene |
-| Ryzen 5 9600X | [164.99](https://www.ebay.com/itm/327452714785) | 2.130 (B 1 kg) | 2.130 (B 2 kg) | 2.450 | 320 (13%) | 320 (13%) | justo |
+| Ryzen 5 9600X | [165.00](https://www.ebay.com/itm/267843622998) | 2.130 (B 1 kg) | 2.130 (B 2 kg) | 2.450 | 320 (13%) | 320 (13%) | justo |
 | Intel Core i5-12400F | [142.99](https://www.ebay.com/itm/206675761087) | 1.868 (B 1 kg) | 1.827 (B 1.5 kg) | 2.050 | 182 (9%) | 223 (11%) | justo |
 | Ryzen 7 7800X3D | [328.88](https://www.ebay.com/itm/168021862717) | 4.080 (B 1 kg) | 4.080 (B 2 kg) | 4.350 | 270 (6%) | 270 (6%) | justo |
 | Ryzen 7 7700X | [223.98](https://www.ebay.com/itm/267042355650) | 2.832 (B 1 kg) | 2.832 (B 2 kg) | 3.000 | 168 (6%) | 168 (6%) | justo |
@@ -29,11 +29,11 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs | Ganancia 2 u | Ganancia 4 u | Estado |
 |---|---|---|---|---|---|---|---|
 | Ryzen 5 7600 | [124.99](https://www.ebay.com/itm/407361322642) | 1.654 (B 1 kg) | 1.654 (B 2 kg) | 2.800 | 1.146 (41%) | 1.146 (41%) | conviene |
-| Ryzen 5 7600X | [115.00](https://www.ebay.com/itm/820345431508) | 1.535 (B 1 kg) | 1.535 (B 2 kg) | 2.550 | 1.015 (40%) | 1.015 (40%) | conviene |
 | Ryzen 7 7700X | [149.99](https://www.ebay.com/itm/880114697902) | 1.951 (B 1 kg) | 1.951 (B 2 kg) | 3.000 | 1.049 (35%) | 1.049 (35%) | conviene |
 | Ryzen 9 9950X3D | [530.00](https://www.ebay.com/itm/377631289052) | 6.474 (B 1 kg) | 6.474 (B 2 kg) | 9.560 | 3.086 (32%) | 3.086 (32%) | conviene |
 | Intel Core i5-12400F | [105.00](https://www.ebay.com/itm/198790623774) | 1.416 (B 1 kg) | 1.374 (B 1.5 kg) | 2.050 | 634 (31%) | 676 (33%) | conviene |
 | Intel Core i5-14400F | [125.00](https://www.ebay.com/itm/128181576805) | 1.654 (B 1 kg) | 1.612 (B 1.5 kg) | 2.384 | 730 (31%) | 772 (32%) | conviene |
+| Ryzen 5 7600X | [139.99](https://www.ebay.com/itm/327094285155) | 1.832 (B 1 kg) | 1.832 (B 2 kg) | 2.550 | 718 (28%) | 718 (28%) | conviene |
 | SSD NVMe 2TB | [174.99](https://www.ebay.com/itm/318826733936) | 2.249 (B 1 kg) | 2.166 (B 1 kg) | 3.100 | 851 (27%) | 934 (30%) | conviene |
 | Intel Core i5-13400 | [135.00](https://www.ebay.com/itm/147658602660) | 1.773 (B 1 kg) | 1.731 (B 1.5 kg) | 2.300 | 527 (23%) | 569 (25%) | conviene |
 | Ryzen 7 7800X3D | [269.99](https://www.ebay.com/itm/237174496217) | 3.379 (B 1 kg) | 3.379 (B 2 kg) | 4.350 | 971 (22%) | 971 (22%) | conviene |
@@ -291,7 +291,7 @@ eBay nuevo: USD 135.60 con envío en EE.UU. (eBay API; vendedor technological-tr
 | Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD) | nuevo/no indica | 1.755 | -25 (-1%) | 2026-11-12 |
 
 ### Ryzen 5 9600X
-eBay nuevo: USD 164.99 con envío en EE.UU. (eBay API; vendedor all4homeusa 99.7%; AMD Ryzen 5 9600X Processor (Zen 5) 6-Core AM5 *NEW SEALED*, 2026-11-14). Costo puesto: **Bs 2.130**/u en pedido de 2, **Bs 2.130**/u en pedido de 4.
+eBay nuevo: USD 165.00 con envío en EE.UU. (eBay API; vendedor smartbuyliquidations25 99.8%; AMD Ryzen 5 9600X Processor (Zen 5) 6-Core 3.9GHz AM5 65W CP, 2026-11-14). Costo puesto: **Bs 2.130**/u en pedido de 2, **Bs 2.130**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
