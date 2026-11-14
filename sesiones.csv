@@ -175,3 +175,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-13,pc,ronda,16:08,16:08,en curso,empezó
 2026-11-13,pc,ronda,16:08,16:30,ok,"tarde: wa 8 no leídos, 6 precios, 10 listas completas, 0 chats nuevos (sin números); mkt 1 tienda nueva dudosa; catálogos cat-2 hecha (Crazy Store); pedidos sin cambios (2 ERROR de verificar por revisión diaria en etapa sin rastreo, necesidad abierta); ebay --revisar 3 reemplazos; oficina v143; aviso del Gerente enviado"
 2026-11-13,gerente,informe,20:16,20:19,ok,"informe diario 13/11, Doc subido, 5 tareas, sin ERROR"
+2026-11-14,raspberry,vigilante,18:00,18:00,arreglado,la PC no hizo la ronda de las 16:00: relanzada
