@@ -805,3 +805,4 @@ fecha,hora,agente,texto
 2026-11-14,18:31,local,Oficina: datos.js regenerado (reportes.py y generar.py) y oficina publicada (v144); verificar.py todo sin ERROR
 2026-11-14,18:31,local,Pedidos del Gerente (18:22): ronda ligera del sábado hecha por esta tarea; a las 18:07 la Ronda de la tarde y Pedidos del Gerente se cedieron el pedido una a la otra y ninguna trabajó
 2026-11-14,18:31,gerente,aviso de fin de ronda enviado
+2026-11-14,18:31,local,apagar_pc.ps1: la PC queda prendida (alguien la usó desde el arranque de las 14:43)
