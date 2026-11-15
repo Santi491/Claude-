@@ -806,3 +806,4 @@ fecha,hora,agente,texto
 2026-11-14,18:31,local,Pedidos del Gerente (18:22): ronda ligera del sábado hecha por esta tarea; a las 18:07 la Ronda de la tarde y Pedidos del Gerente se cedieron el pedido una a la otra y ninguna trabajó
 2026-11-14,18:31,gerente,aviso de fin de ronda enviado
 2026-11-14,18:31,local,apagar_pc.ps1: la PC queda prendida (alguien la usó desde el arranque de las 14:43)
+2026-11-14,20:17,gerente,"Informe diario 14/11 (Doc subido): sábado ligero cubierto 18:22 (la tarea de las 16:00 arrancó 18:06 y se cedió el pedido), 0 chats nuevos, 55% respuesta 7d, 0 ERROR; 4 tareas propuestas (3 aprobadas auto rutina, 1 para Santi), 1 aprobada cerrada (12-5, sigue en 13-18), 0 mensajes del chat contestados, 1 nota de la libreta anotada, 0 de Telegram (los lee la Raspberry)"
