@@ -91,7 +91,10 @@
   "baja|Ryzen 9 9950X3D|nuevo|2026-11-13": "2026-11-13 11:54",
   "baja|Ryzen 5 5600|usado|2026-11-14": "2026-11-14 11:54",
   "baja|Ryzen 7 5700X3D|usado|2026-11-14": "2026-11-14 11:54",
-  "baja|Intel Core i5-12400F|usado|2026-11-14": "2026-11-14 11:54"
+  "baja|Intel Core i5-12400F|usado|2026-11-14": "2026-11-14 11:54",
+  "conviene|Intel Core Ultra 7 265K|usado|2026-11-16": "2026-11-16 11:56",
+  "baja|Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo|2026-11-16": "2026-11-16 11:56",
+  "baja|Ryzen 9 9950X3D|nuevo|2026-11-16": "2026-11-16 11:56"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -103,13 +106,14 @@
   "Intel Core i5-12400F|nuevo": false,
   "Intel Core i5-12400F|usado": true,
   "Intel Core i5-13400|usado": true,
-  "Intel Core i5-14400F|nuevo": true,
+  "Intel Core i5-14400F|nuevo": false,
   "Intel Core i5-14400F|usado": true,
   "Intel Core Ultra 7 265K|nuevo": true,
+  "Intel Core Ultra 7 265K|usado": true,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|nuevo": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|usado": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo": false,
-  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": true,
+  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": false,
   "RAM DDR4 16GB (2x8) 3200|nuevo": false,
   "RAM DDR4 16GB (2x8) 3200|usado": false,
   "SSD NVMe 1TB|nuevo": false,
@@ -128,9 +132,9 @@
   "Ryzen 9 9950X3D|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 5 5600 (usado) bajó 10% en eBay: USD 133.99 → 119.99",
-  "⬇ Ryzen 7 5700X3D (usado) bajó 10% en eBay: USD 344.44 → 309.90",
-  "⬇ Intel Core i5-12400F (usado) bajó 12% en eBay: USD 119.99 → 105.00"
+  "✅ Ahora conviene Intel Core Ultra 7 265K (usado): +31% · costo puesto Bs 2.731 vs Bs 3.950 en Cochabamba",
+  "⬇ Corsair Vengeance RGB DDR5 32GB (2x16) 6000 (nuevo) bajó 13% en eBay: USD 479.49 → 415.00",
+  "⬇ Ryzen 9 9950X3D (nuevo) bajó 12% en eBay: USD 569.99 → 499.99"
  ],
- "revisado": "2026-11-15 11:54"
+ "revisado": "2026-11-16 11:56"
 }
