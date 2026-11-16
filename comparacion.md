@@ -38,7 +38,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | SSD NVMe 2TB | [179.00](https://www.ebay.com/itm/227616049212) | 2.302 (B 1 kg) | 2.219 (B 1 kg) | 3.100 | 798 (26%) | 881 (28%) | conviene |
 | Intel Core i5-13400 | [135.00](https://www.ebay.com/itm/147658602660) | 1.778 (B 1 kg) | 1.736 (B 1.5 kg) | 2.300 | 522 (23%) | 564 (25%) | conviene |
 | Ryzen 7 7800X3D | [274.99](https://www.ebay.com/itm/920113028849) | 3.448 (B 1 kg) | 3.448 (B 2 kg) | 4.350 | 902 (21%) | 902 (21%) | conviene |
-| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [399.99](https://www.ebay.com/itm/168865074355) | 4.939 (B 1 kg) | 4.855 (B 1 kg) | 5.800 | 861 (15%) | 945 (16%) | justo |
+| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [404.99](https://www.ebay.com/itm/860013609443) | 4.999 (B 1 kg) | 4.915 (B 1 kg) | 5.800 | 801 (14%) | 885 (15%) | justo |
 | Ryzen 5 7500F | [114.99](https://www.ebay.com/itm/257792135268) | 1.539 (B 1 kg) | 1.539 (B 2 kg) | 1.755 | 216 (12%) | 216 (12%) | justo |
 | Ryzen 5 9600X | [169.98](https://www.ebay.com/itm/127803717729) | 2.195 (B 1 kg) | 2.195 (B 2 kg) | 2.450 | 255 (10%) | 255 (10%) | justo |
 | Ryzen 9 9950X | [454.99](https://www.ebay.com/itm/257573828939) | 5.595 (B 1 kg) | 5.595 (B 2 kg) | 5.580 | -15 (-0%) | -15 (-0%) | no conviene |
@@ -69,6 +69,7 @@ eBay nuevo: USD 325.00 con envío en EE.UU. (eBay API; vendedor ginormous228 100
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo | 4.350 | 306 (7%) | 2026-11-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | estado sin dato; Cochabamba | 4.400 | 356 (8%) | 2026-11-10 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | usado/no indica | 4.400 | 356 (8%) | 2026-11-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/29029553683371087/) | usado (como nuevo) | 4.400 | 356 (8%) | 2026-11-16 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sin dato; Cochabamba | 4.500 | 456 (10%) | 2026-11-06 |
 | Tienda Supermall (WhatsApp) · [ver](https://www.facebook.com/marketplace/item/1292124363069503/) | no indicado (la tienda lo ofrece como "7700x3d"; foto de caja 7800X3D; stock bajo; garantía 6 meses; confirmar modelo) | 4.760 | 716 (15%) | 2026-10-12 |
 | Marketplace Cochabamba (particular/vendedor) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado (según anuncio) | 4.800 | 756 (16%) | 2026-10-11 |
@@ -167,6 +168,7 @@ eBay nuevo: USD 415.00 con envío en EE.UU. (eBay API; vendedor jacea-87 100.0%;
 |---|---|---|---|---|
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1625374825929437/) | Corsair Vengeance RGB 2x16 6000 MHz (estado sin dato) | 5.800 | 682 (12%) | 2026-10-19 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=corsair%20vengeance%20ddr5%2032gb) | usado/no indica | 5.800 | 682 (12%) | 2026-11-12 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1625374825929437/) | nuevo | 5.800 | 682 (12%) | 2026-11-16 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1414394683871926/) | no indicado (modelo RS) | 6.200 | 1.082 (17%) | 2026-10-11 |
 | Marketplace Cochabamba (particular) | Corsair Vengeance RGB RS 2x16 6000 MHz ("última unidad"; estado sin dato) | 6.200 | 1.082 (17%) | 2026-10-21 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=DDR5%2032GB%20Corsair%20Vengeance) | sin dato (dice 'última unidad'; Vengeance RGB RS 32GB 2x16 DDR5 6000) | 6.200 | 1.082 (17%) | 2026-10-30 |

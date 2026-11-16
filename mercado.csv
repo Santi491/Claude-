@@ -286,3 +286,10 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-13,Intel Core i9-13900KF,cpu,5027.4,USD,420,nuevo,Shopping PC,whatsapp,sí,"USD × 11,97 (USDT 13/11); lista mayorista PDF 09/11 leída en el visor de WhatsApp (baja resolución, por confirmar); sin factura"
 2026-11-13,Kingston NV3 500GB NVMe,ssd,1316.7,USD,110,nuevo,Shopping PC,whatsapp,sí,"USD × 11,97 (USDT 13/11); lista mayorista PDF 09/11 leída en el visor de WhatsApp (baja resolución, por confirmar); sin factura"
 2026-11-13,Intel Core i9-14900K,cpu,5973,USD,499,nuevo,Crazy Store,web,sí,"crazystore.com.bo 13/11 16:50; USD 499 × 11,97 (USDT 13/11); la web muestra Bs 5.988; único componente de PC (sin Ryzen, RAM ni SSD)"
+2026-11-16,Ryzen 7 9800X3D,cpu,5690,Bs,5690,nuevo,"Marketplace Cochabamba (tienda, 16 semanas)",marketplace,sí,"anuncio viejo, referencia"
+2026-11-16,Ryzen 9 9900X3D,cpu,6650,Bs,6650,nuevo sellado,Marketplace Cochabamba (particular),marketplace,sí,publicado hace 4 semanas
+2026-11-16,Ryzen 7 5800X3D,cpu,4900,Bs,4900,nuevo (box),Marketplace Cochabamba (particular),marketplace,sí,
+2026-11-16,Ryzen 7 5700X,cpu,2540,Bs,2540,nuevo (oferta),Marketplace Cochabamba (particular),marketplace,sí,suelto; otro combo a 3.950
+2026-11-16,Ryzen 7 8700G,cpu,3450,Bs,3450,nuevo,Marketplace Cochabamba (particular),marketplace,sí,AM5
+2026-11-16,Ryzen 7 5700G,cpu,2600,Bs,2600,nuevo (oferta),Marketplace Cochabamba (particular),marketplace,sí,
+2026-11-16,Intel Core i5-14400,cpu,2700,Bs,2700,no indica,Marketplace Cochabamba (particular),marketplace,sí,no es 14400F
