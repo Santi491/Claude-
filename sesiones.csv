@@ -182,3 +182,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-14,gerente,informe,20:15,20:17,ok,Informe diario 14/11 con Doc; 4 tareas para el lunes; 0 ERROR
 2026-11-15,nube,revision,07:52,07:55,ok,"dólar USDT 11,95; eBay 17+18; informe; sin alertas"
 2026-11-15,gerente,informe,20:15,20:17,ok,resumen semanal 15/11 subido; 5 tareas (4 auto); 0 ERROR
+2026-11-16,pc,ronda,10:35,10:35,en curso,empezó
