@@ -11,7 +11,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Ryzen 5 7600X | [145.99](https://www.ebay.com/itm/137926619063) | 1.909 (B 1 kg) | 1.909 (B 2 kg) | 2.550 | 641 (25%) | 641 (25%) | conviene |
 | SSD NVMe 2TB | [185.00](https://www.ebay.com/itm/377593610877) | 2.374 (B 1 kg) | 2.291 (B 1 kg) | 3.100 | 726 (23%) | 809 (26%) | conviene |
 | Intel Core Ultra 7 265K | [249.00](https://www.ebay.com/itm/287733023578) | 3.138 (B 1 kg) | 3.096 (B 1.5 kg) | 3.950 | 812 (21%) | 854 (22%) | conviene |
-| Ryzen 5 9600X | [164.00](https://www.ebay.com/itm/227614941964) | 2.124 (B 1 kg) | 2.124 (B 2 kg) | 2.450 | 326 (13%) | 326 (13%) | justo |
+| Ryzen 5 9600X | [165.00](https://www.ebay.com/itm/267843622998) | 2.135 (B 1 kg) | 2.135 (B 2 kg) | 2.450 | 315 (13%) | 315 (13%) | justo |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [415.00](https://www.ebay.com/itm/840133207369) | 5.118 (B 1 kg) | 5.034 (B 1 kg) | 5.800 | 682 (12%) | 766 (13%) | justo |
 | Intel Core i5-14400F | [164.49](https://www.ebay.com/itm/389945918228) | 2.129 (B 1 kg) | 2.088 (B 1.5 kg) | 2.384 | 255 (11%) | 296 (12%) | justo |
 | Intel Core i5-12400F | [142.99](https://www.ebay.com/itm/206675761087) | 1.873 (B 1 kg) | 1.831 (B 1.5 kg) | 2.050 | 177 (9%) | 219 (11%) | justo |
@@ -294,24 +294,24 @@ eBay nuevo: USD 136.99 con envío en EE.UU. (eBay API; vendedor computer_compone
 | Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD) | nuevo/no indica | 1.755 | -46 (-3%) | 2026-11-12 |
 
 ### Ryzen 5 9600X
-eBay nuevo: USD 164.00 con envío en EE.UU. (eBay API; vendedor hilux808 99.9%; AMD RYZEN 5 9600X PROCESSOR (100-100001405WOF) BRAND NEW SEA, 2026-11-16). Costo puesto: **Bs 2.124**/u en pedido de 2, **Bs 2.124**/u en pedido de 4.
+eBay nuevo: USD 165.00 con envío en EE.UU. (eBay API; vendedor smartbuyliquidations25 99.8%; AMD Ryzen 5 9600X Processor (Zen 5) 6-Core 3.9GHz AM5 65W CP, 2026-11-16). Costo puesto: **Bs 2.135**/u en pedido de 2, **Bs 2.135**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
-| Marketplace Cochabamba (particular) | nuevo | 2.450 | 326 (13%) | 2026-10-30 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | nuevo/no indica | 2.450 | 326 (13%) | 2026-11-12 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | nuevo/no indica | 2.500 | 376 (15%) | 2026-11-12 |
-| PC Armagedon (WhatsApp) | nuevo | 2.560 | 436 (17%) | 2026-11-13 |
-| Punto Tecnológico (WhatsApp) | nuevo | 2.750 | 626 (23%) | 2026-11-10 |
-| OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 2.750 | 626 (23%) | 2026-11-12 |
-| Marketplace Cochabamba (particular) | nuevo | 2.770 | 646 (23%) | 2026-11-03 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | nuevo/no indica | 2.770 | 646 (23%) | 2026-11-12 |
-| Cyrex Store (WhatsApp) | nuevo | 2.785 | 661 (24%) | 2026-11-13 |
-| Marketplace Cochabamba (particular) | sellado | 2.800 | 676 (24%) | 2026-11-06 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | sellado | 2.800 | 676 (24%) | 2026-11-12 |
-| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.806 | 682 (24%) | 2026-11-12 |
-| Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD) | nuevo/no indica | 2.854 | 730 (26%) | 2026-11-12 |
-| ELVYCOMP (WhatsApp) | nuevo | 3.430 | 1.306 (38%) | 2026-11-09 |
+| Marketplace Cochabamba (particular) | nuevo | 2.450 | 315 (13%) | 2026-10-30 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | nuevo/no indica | 2.450 | 315 (13%) | 2026-11-12 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | nuevo/no indica | 2.500 | 365 (15%) | 2026-11-12 |
+| PC Armagedon (WhatsApp) | nuevo | 2.560 | 425 (17%) | 2026-11-13 |
+| Punto Tecnológico (WhatsApp) | nuevo | 2.750 | 615 (22%) | 2026-11-10 |
+| OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 2.750 | 615 (22%) | 2026-11-12 |
+| Marketplace Cochabamba (particular) | nuevo | 2.770 | 635 (23%) | 2026-11-03 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | nuevo/no indica | 2.770 | 635 (23%) | 2026-11-12 |
+| Cyrex Store (WhatsApp) | nuevo | 2.785 | 649 (23%) | 2026-11-13 |
+| Marketplace Cochabamba (particular) | sellado | 2.800 | 665 (24%) | 2026-11-06 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | sellado | 2.800 | 665 (24%) | 2026-11-12 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.806 | 670 (24%) | 2026-11-12 |
+| Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD) | nuevo/no indica | 2.854 | 718 (25%) | 2026-11-12 |
+| ELVYCOMP (WhatsApp) | nuevo | 3.430 | 1.295 (38%) | 2026-11-09 |
 
 ### Ryzen 5 7600X
 eBay nuevo: USD 145.99 con envío en EE.UU. (eBay API; vendedor mavcofinds 100.0%; AMD Ryzen 5 7600X Processor CPU 6 Cores 12 Threads Socket AM, 2026-11-16). Costo puesto: **Bs 1.909**/u en pedido de 2, **Bs 1.909**/u en pedido de 4.

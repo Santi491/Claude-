@@ -9,7 +9,7 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Ryzen 9 9950X3D | nuevo | 6.132 | 9.080 | 32.5 % | 48.1 % | 30.4 % | 32.1 % | 24.9 % | 22.3 % | **traer** (aguanta el peor caso (22.3 %)) | — |
 | Ryzen 5 7600X | nuevo | 1.909 | 2.540 | 24.9 % | 33.1 % | 22.6 % | 23.5 % | 16.3 % | 12.3 % | **traer** (aguanta el peor caso (12.3 %)) | — |
 | Intel Core Ultra 7 265K | nuevo | 3.138 | 3.990 | 21.4 % | 27.2 % | 19.0 % | 20.5 % | 12.6 % | 9.0 % | **traer** (aguanta el peor caso (9.0 %)) | — |
-| Ryzen 5 9600X | nuevo | 2.124 | 2.630 | 19.3 % | 23.8 % | 16.8 % | 18.0 % | 10.0 % | 5.9 % | **traer** (aguanta el peor caso (5.9 %)) | — |
+| Ryzen 5 9600X | nuevo | 2.135 | 2.630 | 18.8 % | 23.2 % | 16.4 % | 17.5 % | 9.5 % | 5.3 % | **traer** (aguanta el peor caso (5.3 %)) | — |
 | Ryzen 7 7800X3D | nuevo | 4.044 | 4.930 | 18.0 % | 21.9 % | 15.5 % | 17.3 % | 8.7 % | 5.2 % | **traer** (aguanta el peor caso (5.2 %)) | 1 anuncio(s) de particular sin marca o configuración descartado(s) |
 | Intel Core i5-12400F | usado | 1.420 | 2.230 | 36.3 % | 57.1 % | 34.4 % | 34.8 % | 29.0 % | 25.2 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | RAM DDR4 16GB (2x8) 3200 | usado | 1.002 | 1.520 | 34.1 % | 51.7 % | 32.1 % | 31.9 % | 26.3 % | 21.6 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
