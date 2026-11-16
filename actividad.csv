@@ -831,3 +831,4 @@ fecha,hora,agente,texto
 2026-11-16,16:21,fin,"Ronda tarde: sin cambios desde la mañana. Sin ventas ni reservas nuevas (ventas.csv vacío). 4 u de Ryzen 7 7700X en camino a Santa Cruz (tramo sin rastreo); invertido Bs 10.620, stock 0. Ganancia: sin venta todavía. Dólar USDT 11,93 (16/11, CriptoYa)."
 2026-11-16,16:23,local,"Oficina: publicada v146 (datos 16:22; 19 productos, 107 documentos; captura 16:19 mkt incluida); verificar comun y oficina sin ERROR; datos de 3 dias o mas: ninguno; vivo/_ronda en false"
 2026-11-16,16:24,gerente,"aviso de fin de ronda enviado (tarde): verificar sin errores, chat al día, tarea 16-2 propuesta, libreta anotada; aviso: fila de wa con hora 16:31 adelantada (reloj ~16:20)"
+2026-11-16,16:27,local,"Apagar PC (8c): queda prendida (arrancó 13:38, no la prendió la Raspberry para la ronda, alguien la usó)"
