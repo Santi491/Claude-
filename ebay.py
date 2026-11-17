@@ -42,6 +42,9 @@ EXCLUIR = ("box only", "empty box", "caja vacía", "for parts", "not working", "
            # para repuestos o con defectos (Rastreador eBay, 17/10): nunca cuentan como precio
            "for parts", "parts only", "as is", "as-is", "untested", "not tested", "damaged", "bent pin", "missing pin",
            "read description", "no post", "does not post", "defective", "faulty", "repair")
+# código postal genérico de Miami (no es la casilla de nadie): eBay lo necesita para calcular el envío que la búsqueda
+# no trae ("envío no indicado"; era USD 0 en los cálculos y en realidad son unos USD 6; revisión de código 17/11)
+ZIP_ENVIO = "33172"
 MIN_FEEDBACK_PCT = 98.0
 MIN_FEEDBACK_SCORE = 50
 
@@ -159,11 +162,17 @@ def buscar(tok, consulta, condicion="nuevo", limite=50):
 def disponible(tok, link):
     """True si el anuncio sigue a la venta con stock; False si se vendió, terminó o está agotado;
     None si eBay no contestó (en la duda no se descarta)."""
+    return detalle(tok, link)[0]
+
+
+def detalle(tok, link):
+    """(disponible, envío en USD a Miami o None) de un anuncio, con la ficha del anuncio en eBay."""
     m = re.search(r"/itm/(\d+)", link or "")
     if not m:
-        return None
+        return None, None
     req = urllib.request.Request(f"{ITEM_URL}?legacy_item_id={m.group(1)}", headers={
-        "Authorization": f"Bearer {tok}", "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"})
+        "Authorization": f"Bearer {tok}", "X-EBAY-C-MARKETPLACE-ID": "EBAY_US",
+        "X-EBAY-C-ENDUSERCTX": f"contextualLocation=country%3DUS%2Czip%3D{ZIP_ENVIO}"})
     d = None
     for _ in range(2):   # una conexión cortada se reintenta una vez
         try:
@@ -173,25 +182,36 @@ def disponible(tok, link):
         except (OSError, http.client.HTTPException, ValueError):   # URLError, cortes y tiempos de espera
             continue
     if d is None:
-        return None
+        return None, None
+    envios = [float(o["shippingCost"]["value"]) for o in d.get("shippingOptions") or []
+              if (o.get("shippingCost") or {}).get("value") is not None]
+    envio = min(envios) if envios else None
     fin = d.get("itemEndDate")
     if fin and datetime.datetime.fromisoformat(fin.replace("Z", "+00:00")) <= datetime.datetime.now(datetime.timezone.utc):
-        return False
+        return False, envio
     for a in d.get("estimatedAvailabilities") or []:
         if a.get("estimatedAvailabilityStatus") == "OUT_OF_STOCK" or a.get("estimatedAvailableQuantity") == 0:
-            return False
-    return True
+            return False, envio
+    return True, envio
 
 
 def primer_disponible(tok, items):
-    """El más barato que sigue a la venta (devuelve el anuncio y cuántos se descartaron por vendidos o agotados)."""
-    fuera = 0
+    """El más barato que sigue a la venta, con el envío real (devuelve el anuncio y cuántos se descartaron por vendidos
+    o agotados). Un anuncio sin envío en la búsqueda se completa con la ficha: si el envío lo hace más caro que el
+    siguiente, se sigue mirando."""
+    fuera, mejor = 0, None
     for it in items[:MAX_REVISAR]:
-        if disponible(tok, it["link"]) is False:
+        if mejor and it["total_usd"] >= mejor["total_usd"]:
+            break   # están ordenados por total: los que siguen ya no pueden ser más baratos
+        ok, envio = detalle(tok, it["link"])
+        if ok is False:
             fuera += 1
             continue
-        return it, fuera
-    return None, fuera
+        if it["envio_usd"] is None and envio is not None:
+            it = dict(it, envio_usd=envio, total_usd=it["precio_usd"] + envio)
+        if mejor is None or it["total_usd"] < mejor["total_usd"]:
+            mejor = it
+    return mejor, fuera
 
 
 def fila(hoy, nombre, condicion, it):
@@ -282,7 +302,7 @@ def main():
             if fuera:
                 print(f"{nombre}: {fuera} anuncio(s) más barato(s) ya vendidos o agotados, se saltaron")
             if elegidos[nombre]:
-                resultados[nombre] = [elegidos[nombre]] + [x for x in items if x is not elegidos[nombre]]
+                resultados[nombre] = [elegidos[nombre]] + [x for x in items if x["link"] != elegidos[nombre]["link"]]
         guardar(elegidos, a.condicion)
     resultados = {k: v[: a.top] for k, v in resultados.items()}
     if a.json:
