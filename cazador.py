@@ -5,7 +5,7 @@ Lo que importa no es un precio fijo en dólares sino la DIFERENCIA con Cochabamb
 USD 600 si en Cochabamba se vende en 900"). Por eso el tope de cada producto lo calcula solo, con el mismo cálculo del Analista:
 
     tope (USD, con envío a la casilla) = el precio de eBay más alto que, puesto en Cochabamba (courier más barato, dólar USDT
-    del día, pedido de 2) y vendido 5 % debajo de la mediana local, todavía deja MARGEN_META (20 %) de margen.
+    del día, pedido de 2) y vendido 5 % debajo de la mediana local, todavía deja MARGEN_META (15 %) de margen.
 
 Si el precio de Cochabamba sube, el tope sube solo; si baja, baja. Sin precio local no hay tope (no se puede saber si conviene).
 Cuando eBay tiene un anuncio NUEVO con stock por debajo del tope, le avisa a Santi por Telegram (notificar.py) con el margen,
@@ -72,7 +72,7 @@ def topes():
         tiendas = {(f.get("fuente") or "").split("(")[0].strip().lower() for f in recientes}
         lo, hi = 0.0, 20000.0
         if margen(1, peso, tc, med)[0] < MARGEN_META:
-            fila |= {"mediana_bs": round(med), "tiendas": len(tiendas), "por_que": "ni regalado deja 20 %"}
+            fila |= {"mediana_bs": round(med), "tiendas": len(tiendas), "por_que": f"ni regalado deja {round(MARGEN_META*100)} %"}
             out.append(fila)
             continue
         for _ in range(40):   # búsqueda binaria del precio más alto que deja el margen meta

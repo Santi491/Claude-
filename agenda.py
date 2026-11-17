@@ -23,6 +23,7 @@ import os
 import re
 import sys
 from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 CERRADAS = re.compile(r"no vende|sin stock|no contactar|sin whatsapp|no sueltos|cerrad|n[uú]mero equivocado", re.I)
@@ -52,7 +53,7 @@ def fecha(s):
 
 
 def calcular(hoy=None):
-    hoy = hoy or date.today()
+    hoy = hoy or datetime.now(ZoneInfo("America/La_Paz")).date()  # hora de Bolivia: el Gerente de las 20:00 corre en la nube en UTC, donde ya es mañana (revisión 17/11)
     msgs = [m for m in leer("mensajes.csv") if m.get("canal") == "whatsapp"]
     out = {"hoy": hoy.isoformat(), "responder": [], "seguimiento": [], "esperar": [], "frias": [], "respondieron": [],
            "lista_completa": [], "lista_pedida": 0}

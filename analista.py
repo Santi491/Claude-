@@ -22,6 +22,7 @@ import re
 import statistics
 import sys
 from datetime import date, datetime
+from zoneinfo import ZoneInfo
 
 # la consola de Windows (cp1252) no puede mostrar "−" (U+2212) ni otros signos: se imprime siempre en UTF-8 (29/10)
 for _s in (sys.stdout, sys.stderr):
@@ -33,7 +34,7 @@ for _s in (sys.stdout, sys.stderr):
 import comparar as C
 
 DIR = os.path.dirname(os.path.abspath(__file__))
-HOY = date.today()
+HOY = datetime.now(ZoneInfo("America/La_Paz")).date()  # hora de Bolivia: el Gerente de las 20:00 corre en la nube en UTC, donde ya es mañana (revisión 17/11)
 SIN_DATO = ("sin confirmar", "marca sin dato", "marca no indicada", "config no indicada", "configuración no indicada", "ni marca",
             "probablemente", "no dice si")  # anuncio sin marca o sin configuración clara (un estado sin dato pero con marca sí cuenta)
 

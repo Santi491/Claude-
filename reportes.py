@@ -13,6 +13,9 @@ import csv
 import math
 import os
 from datetime import date, datetime
+from zoneinfo import ZoneInfo
+
+HOY_BO = lambda: datetime.now(ZoneInfo("America/La_Paz")).date()  # hora de Bolivia (el Gerente de las 20:00 corre en UTC)
 
 from comparar import A_TAX_DEF, B_MIN_KG, B_PASO_KG, B_USD_KG, A_USD_UNIDAD, CAJA_EXTERIOR_G, CONVIENE, JUSTO, leer, locales, oferta
 
@@ -211,7 +214,7 @@ def escribir_excel(ruta, vigilar, eeuu, cbba, fx, hoy_filas, hist):
 
     # ---------- Hoy ----------
     ws = wb.create_sheet("Hoy", 0)
-    ws["A1"] = f"¿Qué conviene traer? · {date.today().strftime('%d/%m/%Y')}"
+    ws["A1"] = f"¿Qué conviene traer? · {HOY_BO().strftime('%d/%m/%Y')}"
     ws["A1"].font = Font(name=F, bold=True, size=14)
     ws["A2"] = ("eBay: vendedor en EE.UU., ≥ 98 % de feedback, nuevo sin open box. Marketplace y Tiendas: el precio más bajo "
                 "que cuenta en Cochabamba. Costo puesto con el courier más barato, según la hoja Supuestos.")
@@ -347,7 +350,7 @@ def main():
     asegurar("openpyxl", "openpyxl", "openpyxl<3.2")
     vigilar, eeuu, cbba, fx = leer("vigilar.csv"), leer("precios-eeuu.csv"), leer("precios-cochabamba.csv"), leer("tipo-cambio.csv")
     cbba = [f for f in cbba if (f.get("precio_bs") or "").strip()]   # "agotado" sin precio: no entra en los cálculos
-    hoy = date.today().isoformat()
+    hoy = HOY_BO().isoformat()
     ultimo = max(fx, key=lambda f: f["fecha"])
     bcb, par, tc = dolar_del_dia(fx, ultimo["fecha"])
     hoy_filas = [fila_hoy(v, eeuu, cbba, bcb, par, tc) for v in vigilar]

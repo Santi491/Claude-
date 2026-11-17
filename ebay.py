@@ -26,7 +26,9 @@ import re
 import sys
 import urllib.parse
 import urllib.request
+from zoneinfo import ZoneInfo
 
+TZ = ZoneInfo("America/La_Paz")  # hora de Bolivia: el Gerente de las 20:00 corre en la nube en UTC, donde ya es mañana (revisión 17/11)
 TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
 ITEM_URL = "https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id"
@@ -222,7 +224,7 @@ def fila(hoy, nombre, condicion, it):
 
 def guardar(elegidos, condicion):
     ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "precios-eeuu.csv")
-    hoy = datetime.date.today().isoformat()
+    hoy = datetime.datetime.now(TZ).date().isoformat()
     with open(ruta, "a", encoding="utf-8", newline="") as f:
         w = csv.writer(f, lineterminator="\n")
         for nombre, it in elegidos.items():
@@ -237,7 +239,8 @@ def revisar(tok, productos):
         crudo = f.read()
     lector = csv.DictReader(crudo.splitlines())
     campos, filas = lector.fieldnames, list(lector)
-    hoy, hora = datetime.date.today().isoformat(), datetime.datetime.now().strftime("%H:%M")
+    ahora = datetime.datetime.now(TZ)
+    hoy, hora = ahora.date().isoformat(), ahora.strftime("%H:%M")
     nuevas, informe, revisados = [], [], 0
     for nombre, q in productos:
         for cond in ("nuevo", "usado"):

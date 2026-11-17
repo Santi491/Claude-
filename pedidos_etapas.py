@@ -18,6 +18,7 @@ import csv
 import os
 import sys
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 PROBAR = "--probar" in sys.argv
@@ -55,7 +56,7 @@ def fecha_de(texto):
 
 
 def main():
-    hoy = datetime.now()
+    hoy = datetime.now(ZoneInfo("America/La_Paz")).replace(tzinfo=None)  # hora de Bolivia: el Gerente de las 20:00 corre en la nube en UTC, donde ya es mañana (revisión 17/11)
     _, seg = leer("seguimiento.csv")
     cn, necesidades = leer("necesidades.csv")
     hechos = []

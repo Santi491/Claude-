@@ -11,7 +11,8 @@ import argparse
 import csv
 import math
 import os
-from datetime import date
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 CAJA_EXTERIOR_G = 300           # caja exterior + relleno del courier B
@@ -137,7 +138,7 @@ def main():
     usado, _, _ = tabla(vigilar, eeuu, cbba, "usado", a)
 
     out = [
-        f"# Comparación EE.UU. → Cochabamba ({date.today().isoformat()})", "",
+        f"# Comparación EE.UU. → Cochabamba ({datetime.now(ZoneInfo('America/La_Paz')).date().isoformat()})", "",
         f"Tipo de cambio **{a.tc:.2f} Bs/USD** · Courier B: USD {B_USD_KG}/kg, mínimo {B_MIN_KG:g} kg, saltos de {B_PASO_KG:g} kg, "
         f"+ {CAJA_EXTERIOR_G} g de caja exterior · Courier A: USD {A_USD_UNIDAD}/u + {a.tax:.0%} tax · "
         f"Aduana: {a.aduana:.0%}{' (incluida en los dos couriers)' if not a.aduana else ' extra'}.",

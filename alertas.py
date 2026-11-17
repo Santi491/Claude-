@@ -18,6 +18,9 @@ import os
 import subprocess
 import sys
 from datetime import datetime
+from zoneinfo import ZoneInfo
+
+TZ = ZoneInfo("America/La_Paz")  # hora de Bolivia: el Gerente de las 20:00 corre en la nube en UTC, donde ya es mañana (revisión 17/11)
 
 import comparar as C
 
@@ -63,7 +66,7 @@ def revisar():
                 k = f"{prod}|{cond}"
                 conviene[k] = m >= C.CONVIENE
                 if conviene[k] and not conviene_antes.get(k):
-                    nuevas.append((f"conviene|{k}|{datetime.now():%Y-%m-%d}",
+                    nuevas.append((f"conviene|{k}|{datetime.now(TZ):%Y-%m-%d}",
                                    f"✅ Ahora conviene {prod} ({cond}): +{m:.0%} · costo puesto Bs {C.bs(c2)} vs Bs {C.bs(p)} en Cochabamba"))
     if len(fx) >= 2:
         a, b = num(fx[-2]["usado"]), num(fx[-1]["usado"])
@@ -92,9 +95,9 @@ def main():
     if not probar:
         av = est.get("avisados", {})
         for k, t in nuevas:
-            av[k] = datetime.now().strftime("%Y-%m-%d %H:%M")
+            av[k] = datetime.now(TZ).strftime("%Y-%m-%d %H:%M")
         est |= {"avisados": av, "conviene": conviene, "ultimas": ([] if inicial else [t for _, t in nuevas]) or est.get("ultimas", []),
-                "revisado": datetime.now().strftime("%Y-%m-%d %H:%M")}
+                "revisado": datetime.now(TZ).strftime("%Y-%m-%d %H:%M")}
         with open(ESTADO, "w", encoding="utf-8") as f:
             json.dump(est, f, ensure_ascii=False, indent=1)
 

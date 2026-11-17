@@ -18,9 +18,10 @@ import os
 import re
 import sys
 from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 DIR = os.path.dirname(os.path.abspath(__file__))
-HOY = date.today()
+HOY = datetime.now(ZoneInfo("America/La_Paz")).date()  # hora de Bolivia: el Gerente de las 20:00 corre en la nube en UTC, donde ya es mañana (revisión 17/11)
 # 10/11 (Santi): "en camino a Bolivia" se partió en dos; del courier a Bolivia no hay rastreo (lo confirma Santi)
 ESTADOS_PEDIDO = ["comprado", "enviado", "en bodega del courier", "en camino a Santa Cruz", "en camino a Cochabamba",
                   "en Cochabamba", "entregado", "cancelado"]
@@ -317,7 +318,11 @@ def wa(R, ronda=False):
             ult_rec = max([fecha(m["fecha"]) for m in ant if m.get("direccion") == "recibido"], default=None)
             segs = [m for m in ant if m.get("direccion") == "enviado" and m.get("tipo") == "seguimiento"
                     and (not ult_rec or fecha(m["fecha"]) > ult_rec)]
-            if len(segs) >= 2:
+            # excepción (Santi, 12/11): a las frías se les manda UNA sola vez el pedido de "Lista completa"
+            lc = lambda m: (m.get("nota") or "").lower().startswith("lista completa")
+            de_t = [m for m in hoy if m["tienda"] == t and m.get("tipo") != "respuesta"]
+            unica_lc = all(lc(m) for m in de_t) and len(de_t) == 1 and not any(lc(m) for m in ant)
+            if len(segs) >= 2 and not unica_lc:
                 mal.append(t)
         (R.error if mal else R.ok)(f"mensajes a tiendas frías hoy: {', '.join(mal) if mal else 'ninguno'}")
         (R.aviso if a["responder"] else R.ok)(f"tiendas que escribieron y esperan respuesta: {len(a['responder'])}"
