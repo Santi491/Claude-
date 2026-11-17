@@ -38,9 +38,9 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Ryzen 5 9600X | [135.00](https://www.ebay.com/itm/820345401429) | 1.776 (B 1 kg) | 1.776 (B 2 kg) | 2.450 | 674 (28%) | 674 (28%) | conviene |
 | Ryzen 7 7700X | [170.00](https://www.ebay.com/itm/960185553593) | 2.193 (B 1 kg) | 2.193 (B 2 kg) | 3.000 | 807 (27%) | 807 (27%) | conviene |
 | Intel Core i5-13400 | [135.00](https://www.ebay.com/itm/147658602660) | 1.776 (B 1 kg) | 1.734 (B 1.5 kg) | 2.300 | 524 (23%) | 566 (25%) | conviene |
-| Ryzen 7 7800X3D | [270.00](https://www.ebay.com/itm/307286571358) | 3.385 (B 1 kg) | 3.385 (B 2 kg) | 4.350 | 965 (22%) | 965 (22%) | conviene |
+| Ryzen 7 7800X3D | [269.99](https://www.ebay.com/itm/227601599682) | 3.385 (B 1 kg) | 3.385 (B 2 kg) | 4.350 | 965 (22%) | 965 (22%) | conviene |
 | Ryzen 5 7500F | [109.00](https://www.ebay.com/itm/860134912522) | 1.466 (B 1 kg) | 1.466 (B 2 kg) | 1.755 | 289 (16%) | 289 (16%) | conviene |
-| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [399.99](https://www.ebay.com/itm/127667648361) | 4.935 (B 1 kg) | 4.851 (B 1 kg) | 5.800 | 865 (15%) | 949 (16%) | justo |
+| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [399.99](https://www.ebay.com/itm/900099465550) | 4.935 (B 1 kg) | 4.851 (B 1 kg) | 5.800 | 865 (15%) | 949 (16%) | justo |
 | Ryzen 9 9950X | [454.99](https://www.ebay.com/itm/257573828939) | 5.590 (B 1 kg) | 5.590 (B 2 kg) | 5.580 | -10 (-0%) | -10 (-0%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [399.00](https://www.ebay.com/itm/377593144670) | 4.923 (B 1 kg) | 4.840 (B 1 kg) | 4.500 | -423 (-9%) | -340 (-8%) | no conviene |
 | SSD NVMe 1TB | [95.00](https://www.ebay.com/itm/287648070173) | 1.299 (B 1 kg) | 1.216 (B 1 kg) | 1.100 | -199 (-18%) | -116 (-11%) | no conviene |
@@ -287,6 +287,7 @@ eBay nuevo: USD 223.98 con envío en EE.UU. (eBay API; vendedor asusparts2022 99
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 3.701 | 865 (23%) | 2026-11-12 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/887277370696710/) | sellado | 4.000 | 1.163 (29%) | 2026-10-20 |
 | Marketplace Cochabamba (particular) | nuevo sellado ("Ryzen 7 7700x Sellado"); Cochabamba | 4.000 | 1.163 (29%) | 2026-10-28 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/887277370696710/) | sellado | 4.000 | 1.163 (29%) | 2026-11-17 |
 
 ### Ryzen 5 7500F
 eBay nuevo: USD 136.99 con envío en EE.UU. (eBay API; vendedor computer_components 99.4%; AMD 100-000000597 Socket AM5 Without Cooler AMD Ryzen 5 7500, 2026-11-17). Costo puesto: **Bs 1.800**/u en pedido de 2, **Bs 1.800**/u en pedido de 4.

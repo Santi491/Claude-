@@ -15,7 +15,7 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Intel Core i5-12400F | usado | 1.418 | 2.230 | 36.4 % | 57.2 % | 34.5 % | 34.9 % | 29.1 % | 25.2 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | SSD NVMe 1TB | usado | 1.299 | 1.710 | 24.0 % | 31.6 % | 21.7 % | 22.1 % | 15.6 % | 10.9 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 7 7800X3D | usado | 3.385 | 4.180 | 19.0 % | 23.5 % | 16.6 % | 18.2 % | 10.0 % | 6.4 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
-| Ryzen 7 7700X | nuevo | 2.837 | 3.300 | 14.0 % | 16.3 % | 11.5 % | 13.0 % | 4.5 % | 0.5 % | **esperar** (el peor caso lo deja en 0.5 %) | — |
+| Ryzen 7 7700X | nuevo | 2.837 | 3.390 | 16.3 % | 19.5 % | 13.8 % | 15.3 % | 7.0 % | 3.1 % | **esperar** (el peor caso lo deja en 3.1 %) | — |
 | RAM DDR4 16GB (2x8) 3200 | nuevo | 1.359 | 1.520 | 10.6 % | 11.9 % | 7.9 % | 8.4 % | 0.1 % | -5.4 % | **esperar** (el peor caso lo deja en -5.4 %) | 1 anuncio(s) de particular sin marca o configuración descartado(s), 2 precio(s) local(es) atípico(s) (30 % bajo la mediana) descartado(s) |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | usado | 4.935 | 5.510 | 10.4 % | 11.7 % | 7.8 % | 9.8 % | 0.3 % | -3.4 % | **esperar** (el peor caso lo deja en -3.4 %) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | nuevo | 5.114 | 5.700 | 10.3 % | 11.5 % | 7.6 % | 9.7 % | 0.3 % | -3.3 % | **esperar** (el peor caso lo deja en -3.3 %) | precios recientes (14 días) de al menos 2 tiendas distintas |
@@ -48,26 +48,13 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 
 Costo = lo pagado por unidad con todo incluido (precio + envío × dólar de la compra). Rápido = 10 % de recargo sobre el costo; sugerido = 5 % bajo la mediana local; de tienda = la mediana local. Nada se ofrece a nadie sin que Santi lo diga.
 
-**Ryzen 7 7700X: 4 u, costo Bs 2.655 c/u** (real-1, real-2) · mediana local Bs 3.480 (11 precios, dólar 11.92)
+**Ryzen 7 7700X: 4 u, costo Bs 2.655 c/u** (real-1, real-2) · mediana local Bs 3.574 (12 precios, dólar 11.92)
 
 | Precio | Bs/u | Margen | Ganancia por lote |
 |---|---|---|---|
 | Rápido (piso: 10 % de recargo) | 2.921 | 9.1 % | Bs 1.064 |
-| Sugerido (5 % bajo la mediana) | 3.300 | 19.5 % | Bs 2.580 |
-| Tope (de tienda: la mediana) | 3.480 | 23.7 % | Bs 3.300 |
-
-### 7700X frente al competidor de Marketplace a Bs 3.100 (tarea 2026-11-16-6, 17/11)
-
-Costo Bs 2.655 por unidad, 4 u, dólar USDT 11,92. El suelto de Bs 3.100 (Marketplace, 16/11) **hoy ya no se ve**: el 17/11 no hay 7700X sueltos publicados en la zona, y no hay venta comprobada, así que puede haberse vendido o bajado. Los de La Paz (3.200) y Santa Cruz (3.578) no cuentan (otra ciudad). Mediana local sigue en Bs 3.480.
-
-| Precio | Ganancia/u | Margen | Recargo | Ganancia por lote (4 u) |
-|---|---|---|---|---|
-| Bs 3.000 | 345 | 11.5 % | 13.0 % | Bs 1.380 |
-| Bs 3.100 (igualar al competidor) | 445 | 14.4 % | 16.8 % | Bs 1.780 |
-| Bs 3.300 (sugerido actual) | 645 | 19.5 % | 24.3 % | Bs 2.580 |
-
-Lectura: igualar los 3.100 cuesta Bs 800 por lote contra el sugerido, y bajar a 3.000 cuesta Bs 1.200 y deja el margen apenas sobre el piso de 2.921. Sugiero mantener Bs 3.300 mientras ese competidor no aparezca, y usar 3.100 solo si Santi quiere vender rápido (sigue dejando 14 % de margen). La decisión es de Santi.
-(Sección agregada a mano: si se corre `analista.py --md` se borra y hay que repetirla.)
+| Sugerido (5 % bajo la mediana) | 3.390 | 21.7 % | Bs 2.940 |
+| Tope (de tienda: la mediana) | 3.574 | 25.7 % | Bs 3.676 |
 
 ## Segundo pedido: 3 mejores candidatos (ana-2)
 
