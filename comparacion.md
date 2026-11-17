@@ -67,6 +67,7 @@ eBay nuevo: USD 325.00 con envío en EE.UU. (eBay API; vendedor ginormous228 100
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo | 4.350 | 309 (7%) | 2026-11-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=7800x3d) | nuevo | 4.350 | 309 (7%) | 2026-11-17 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | estado sin dato; Cochabamba | 4.400 | 359 (8%) | 2026-11-10 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | usado/no indica | 4.400 | 359 (8%) | 2026-11-11 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/29029553683371087/) | usado (como nuevo) | 4.400 | 359 (8%) | 2026-11-16 |
@@ -88,6 +89,7 @@ eBay nuevo: USD 325.00 con envío en EE.UU. (eBay API; vendedor ginormous228 100
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo/sin dato; Cochabamba | 5.390 | 1.349 (25%) | 2026-11-03 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sin dato; Cochabamba (Socket AM5) | 5.390 | 1.349 (25%) | 2026-11-06 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo/no indica | 5.390 | 1.349 (25%) | 2026-11-12 |
+| Marketplace Cochabamba (tienda) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=7800x3d) | no indica | 5.390 | 1.349 (25%) | 2026-11-17 |
 | Viadata Computadoras (WhatsApp) · [ver](https://www.facebook.com/computadorascochabamba/) | nuevo OEM (solo el chip) | 5.500 | 1.459 (27%) | 2026-10-12 |
 | OverCity (WhatsApp) | nuevo OEM (solo el chip) | 5.500 | 1.459 (27%) | 2026-10-13 |
 | Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | BOX (según foto de su web; USD 480) | 5.664 | 1.623 (29%) | 2026-10-12 |
@@ -306,11 +308,13 @@ eBay nuevo: USD 164.00 con envío en EE.UU. (eBay API; vendedor hilux808 99.9%; 
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 2.750 | 628 (23%) | 2026-11-12 |
 | Marketplace Cochabamba (particular) | nuevo | 2.770 | 648 (23%) | 2026-11-03 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | nuevo/no indica | 2.770 | 648 (23%) | 2026-11-12 |
+| Marketplace Cochabamba (tienda) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | nuevo | 2.770 | 648 (23%) | 2026-11-17 |
 | Cyrex Store (WhatsApp) | nuevo | 2.785 | 663 (24%) | 2026-11-13 |
 | Marketplace Cochabamba (particular) | sellado | 2.800 | 678 (24%) | 2026-11-06 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | sellado | 2.800 | 678 (24%) | 2026-11-12 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.806 | 684 (24%) | 2026-11-12 |
 | Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD) | nuevo/no indica | 2.854 | 732 (26%) | 2026-11-12 |
+| Marketplace Quillacollo (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | sellado | 2.900 | 778 (27%) | 2026-11-17 |
 | ELVYCOMP (WhatsApp) | nuevo | 3.430 | 1.308 (38%) | 2026-11-09 |
 
 ### Ryzen 5 7600X

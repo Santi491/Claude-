@@ -321,3 +321,22 @@ fecha,producto,fuente,ciudad,anuncios,nuevos,desaparecidos,precio_min_bs,precio_
 2026-11-16,Ryzen 5 9600X,marketplace,Cochabamba,3,0,0,2450,2500,"3 sueltos: 2.450 chip, 2.500 (Tiquipaya, fuera de zona) y 2.800 caja sellada; interés medio"
 2026-11-16,Ryzen 5 7600X,marketplace,Cochabamba,0,0,0,,,ninguno suelto; sin señal
 2026-11-16,Ryzen 9 9950X3D,marketplace,Cochabamba,1,0,0,,,1 a Gratis (relleno); sin precio útil
+2026-11-17,Ryzen 5 5600,marketplace,Cochabamba,0,0,0,,,ninguno suelto (solo 5600G en PC o combos); sin señal
+2026-11-17,Ryzen 7 5700X3D,marketplace,Cochabamba,0,0,0,,,ninguno suelto (hay 5800X3D box a 4.900 y uno a Bs 1 de relleno); sin señal
+2026-11-17,Ryzen 5 7600,marketplace,Cochabamba,0,0,0,,,"ninguno suelto (8600G, 8500G, otros); sin señal"
+2026-11-17,Ryzen 7 7800X3D,marketplace,Cochabamba,4,2,1,4350,4400,"4 sueltos en Cochabamba: 4.350 nuevo, 4.400, 5.190 y 5.390 (Santa Cruz 4.300 no cuenta); nuevos vs 16/11: 4.350 y 5.390; el de 4.800 sellado no se vio hoy (no es venta comprobada); interés medio, sin demanda confirmada"
+2026-11-17,Ryzen 9 9950X,marketplace,Cochabamba,0,0,0,,,"ninguno suelto en Cochabamba (solo OEM a Bs 1 de relleno; los demás son La Paz, Potosí, Santa Cruz); sin señal"
+2026-11-17,Intel Core i5-12400F,marketplace,Cochabamba,0,0,0,,,"solo 1 a Bs 1 (relleno), PC armadas y combos de actualización 7.280-7.870; sin precio útil"
+2026-11-17,Intel Core i5-13400,marketplace,Cochabamba,0,0,0,,,ninguno suelto (solo generaciones viejas y un i5 14400 a 2.700 que es otro modelo); sin señal
+2026-11-17,Intel Core i5-14400F,marketplace,Cochabamba,0,0,0,,,ninguno suelto (i5 14400 a 2.700 es otro modelo; combo 5.290 con placa y RAM); sin señal
+2026-11-17,Intel Core Ultra 7 265K,marketplace,Cochabamba,1,0,0,4200,4200,"1 con precio en el título (4.200, caja sellada; el campo dice Gratis; el 16/11 se anotó 4.250) y 1 a Bs 1 de relleno; sin demanda confirmada"
+2026-11-17,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,marketplace,Cochabamba,0,0,0,,,"ningún kit 2x16 5600 Corsair; solo módulos sueltos de 16GB (Fury 5600 gratis/relleno, Apacer 2.570); sin precio útil"
+2026-11-17,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,marketplace,Cochabamba,0,0,1,,,"el kit a 5.800 del 16/11 no se vio hoy (no es venta comprobada); hoy solo módulos sueltos de 16GB (RS 6000 a 3.300, 6200 a 3.000)"
+2026-11-17,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,0,0,0,,,ningún kit 2x8 visto; 16GB en un módulo de 1.100 a 1.350 (varios) y 8GB de 400 a 690; interés bajo
+2026-11-17,SSD NVMe 1TB,marketplace,Cochabamba,2,0,0,1300,1400,Crucial P3 1TB a 1.300 y M.2 NVMe 1TB a 1.500 (otro M.2 a 1.500 sin capacidad); el Samsung 9100 PRO del 16/11 no salió hoy; conteo parcial
+2026-11-17,SSD NVMe 2TB,marketplace,Cochabamba,0,0,1,,,ningún NVMe interno de 2TB (solo externos/portátiles 1.250-2.290); el Samsung 9100 PRO 2TB a 5.100 del 16/11 no se vio hoy; conteo parcial
+2026-11-17,Ryzen 7 7700X,marketplace,Cochabamba,0,0,1,,,"ningún 7700X suelto en Cochabamba en 3 búsquedas (7700x, ryzen 7 7700x, procesador ryzen 7 am5) ni en el grupo de partes de PC; el suelto de 3.100 del 16/11 ya no se ve (no es venta comprobada); otras ciudades: La Paz 3.200 sellado y Santa Cruz 3.578 (no cuentan); nuestros 7700X (sugerido 3.300) sin competidor local hoy"
+2026-11-17,Ryzen 5 7500F,marketplace,Cochabamba,0,0,0,,,ninguno suelto (solo PC armada a 13.800 repetida); sin señal
+2026-11-17,Ryzen 5 9600X,marketplace,Cochabamba,4,1,0,2450,2635,"4 sueltos: 2.450 chip, 2.500 (Tiquipaya, fuera de zona), 2.770 oferta (nuevo hoy) y 2.900 sellado caja original (Quillacollo); interés medio"
+2026-11-17,Ryzen 5 7600X,marketplace,Cochabamba,0,0,0,,,ninguno suelto; sin señal
+2026-11-17,Ryzen 9 9950X3D,marketplace,Cochabamba,0,0,0,,,solo 1 a Gratis y 1 a Bs 1 de relleno; sin precio útil

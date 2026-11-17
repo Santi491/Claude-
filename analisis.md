@@ -56,6 +56,19 @@ Costo = lo pagado por unidad con todo incluido (precio + envío × dólar de la 
 | Sugerido (5 % bajo la mediana) | 3.300 | 19.5 % | Bs 2.580 |
 | Tope (de tienda: la mediana) | 3.480 | 23.7 % | Bs 3.300 |
 
+### 7700X frente al competidor de Marketplace a Bs 3.100 (tarea 2026-11-16-6, 17/11)
+
+Costo Bs 2.655 por unidad, 4 u, dólar USDT 11,92. El suelto de Bs 3.100 (Marketplace, 16/11) **hoy ya no se ve**: el 17/11 no hay 7700X sueltos publicados en la zona, y no hay venta comprobada, así que puede haberse vendido o bajado. Los de La Paz (3.200) y Santa Cruz (3.578) no cuentan (otra ciudad). Mediana local sigue en Bs 3.480.
+
+| Precio | Ganancia/u | Margen | Recargo | Ganancia por lote (4 u) |
+|---|---|---|---|---|
+| Bs 3.000 | 345 | 11.5 % | 13.0 % | Bs 1.380 |
+| Bs 3.100 (igualar al competidor) | 445 | 14.4 % | 16.8 % | Bs 1.780 |
+| Bs 3.300 (sugerido actual) | 645 | 19.5 % | 24.3 % | Bs 2.580 |
+
+Lectura: igualar los 3.100 cuesta Bs 800 por lote contra el sugerido, y bajar a 3.000 cuesta Bs 1.200 y deja el margen apenas sobre el piso de 2.921. Sugiero mantener Bs 3.300 mientras ese competidor no aparezca, y usar 3.100 solo si Santi quiere vender rápido (sigue dejando 14 % de margen). La decisión es de Santi.
+(Sección agregada a mano: si se corre `analista.py --md` se borra y hay que repetirla.)
+
 ## Segundo pedido: 3 mejores candidatos (ana-2)
 
 Solo nuevos, sin el 7700X (ya comprado), ordenados por margen en el peor caso. La decisión es de Santi; nada se compra ni se ofrece.

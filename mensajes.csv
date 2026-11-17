@@ -558,3 +558,13 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
 2026-11-16,16:16,whatsapp,COMPU CELL SYSTEM,enviado,respuesta,,agradece; sin escribir al contacto compartido
 2026-11-16,16:15,whatsapp,NPC Technology,enviado,nuevo,,chat nuevo modelo 1 (¿venden componentes de PC?); respondió automática
 2026-11-16,16:15,whatsapp,STORE BOLIVIA,enviado,nuevo,,chat nuevo modelo 1 (¿venden componentes de PC?)
+2026-11-16,16:18,whatsapp,STORE BOLIVIA,recibido,respuesta,no,"no vende componentes (""no case"", ""nada de eso""); cuenta de empresa"
+2026-11-16,16:20,whatsapp,Ovni Express Cbba,recibido,respuesta,no,"pasa el contacto de otra empresa (Jhonny Computadoras) con ""comunícate a este número""; no es respuesta a la lista; no se escribió a ese contacto (lo decide Santi)"
+2026-11-16,16:24,whatsapp,Compuland,recibido,respuesta,no,"5 mensajes sueltos: ""Nunca me confirmó"", ""Qué piezas"", ""Quiere"", ""Yo le mandé"", ""Las que puedo traer"" (parece que pregunta qué piezas queremos); sin precios"
+2026-11-17,08:56,whatsapp,Compumas Bolivia,recibido,respuesta,no,no venden partes (arman y cotizan PCs; ya dicho el 03/11); sin precio
+2026-11-17,10:38,whatsapp,Compuland,enviado,respuesta,,"contesta que sirven todas las de la lista, por unidad, nuevas selladas y en cuánto tiempo llegan"
+2026-11-17,10:38,whatsapp,Legion Emporium,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (hoy respondió su auto-respuesta con catálogo taplink, sin precios)"
+2026-11-17,10:39,whatsapp,Centro PC,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (fría: mensaje único, sin seguimiento después)"
+2026-11-17,10:39,whatsapp,ECOM (Economic Computers),enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (fría: mensaje único, sin seguimiento después)"
+2026-11-17,10:39,whatsapp,SYSCITY,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (fría: mensaje único, sin seguimiento después)"
+2026-11-17,10:39,whatsapp,PC Gaming Forge,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (fría: mensaje único, sin seguimiento después)"
