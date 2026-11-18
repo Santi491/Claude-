@@ -32,7 +32,7 @@ v-8,2,ebay,Sumar las mejores ofertas para el segundo pedido,entregable,1,,,,
 v-9,2,gerente,"Cada día: interesados, ventas y unidades que quedan. Meta del equipo: vender las 4 unidades en 7 días como mucho y conseguir 3 precios de venta comprobados",entregable,1,,,,
 wa-3,1,wa,"Pedir la lista completa a todas las tiendas que faltan, incluidas las frías: una sola vez y sin seguimiento",acumulado,77,2026-11-22,wa_lista_pedida,,Santi 18/11 (plan 2026-11-18-30)
 mkt-4,1,mkt,Barrido de tiendas por redes cada 2 semanas (idea 21); el tiempo libre va a buscar compradores (cli-2),entregable,1,2026-11-22,,,Santi 18/11
-ana-3,1,ana,"Precio final de venta del 7700X: piso, precio sugerido y cuánto bajar si no se mueve (escalera por días), en analisis.md",entregable,1,2026-11-21,,,Santi 18/11: para fijar el precio en 5 minutos el día que lleguen
-ana-4,1,ana,"Los 3 mejores candidatos para el segundo pedido, con cuánta plata hace falta para cada uno, en analisis.md (decide Santi)",entregable,1,2026-11-22,,,
+ana-3,1,ana,"Precio final de venta del 7700X: piso, precio sugerido y cuánto bajar si no se mueve (escalera por días), en analisis.md",entregable,1,2026-11-21,,hecho,"analisis.md 18/11: piso Bs 2.930, publicar 3.300, escalera -100 por semana hasta el piso (decide Santi)"
+ana-4,1,ana,"Los 3 mejores candidatos para el segundo pedido, con cuánta plata hace falta para cada uno, en analisis.md (decide Santi)",entregable,1,2026-11-22,,hecho,"analisis.md 18/11: SSD 2TB (con reserva Gen3), 7800X3D, 9950X3D con plata para 2 u (decide Santi)"
 ped-3,1,pedidos,Avisarle a Santi el reclamo a eBay del primer pedido antes del 26/11 y anotar lo que decida,entregable,1,2026-11-24,,,
 ger-2,1,gerente,"Cada día, decirle a Santi qué falta para la venta del 7700X y qué le recomienda hacer",diario,1,2026-11-22,,,

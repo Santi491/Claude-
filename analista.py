@@ -74,6 +74,14 @@ def es_mayorista(cond):
 def referencia_local(loc_todos, cond):
     """Los precios de Cochabamba que cuentan para un producto y su condición (la usa también cazador.py)."""
     faltan = []
+    # un anuncio cuenta UNA sola vez aunque se haya vuelto a ver en varias rondas (idea 23, Santi 18/11):
+    # clave = el link del anuncio (Marketplace /item/) o, si no, tienda + precio; se queda con la fila más reciente
+    unicos = {}
+    for f in sorted(loc_todos, key=lambda f: f.get("fecha") or ""):
+        url = (f.get("url") or "")
+        clave = url if "/item/" in url else ((f.get("fuente") or "").strip().lower(), num(f.get("precio_bs")))
+        unicos[clave] = f
+    loc_todos = [f for f in loc_todos if any(f is g for g in unicos.values())]
     loc = loc_todos
     if cond == "usado":
         # un usado se vende como usado: se compara con usados de Cochabamba; si no hay, con nuevos y nunca se recomienda "traer"
@@ -227,20 +235,54 @@ def segundo_pedido(a):
     c = [f for f in a["productos"] if f["condicion"] == "nuevo" and f["recomendacion"] in ("traer", "esperar")
          and not f["producto"].startswith("Ryzen 7 7700X") and (f["escenarios_margen_pct"]["peor caso"] or -1) >= 5]
     c.sort(key=lambda f: -(f["escenarios_margen_pct"]["peor caso"] or -999))
-    L = ["", "## Segundo pedido: 3 mejores candidatos (ana-2)", "",
+    L = ["", "## Segundo pedido: 3 mejores candidatos (ana-2, ana-4)", "",
          "Solo nuevos, sin el 7700X (ya comprado), ordenados por margen en el peor caso. La decisión es de Santi; nada se compra ni se ofrece.", "",
-         "| # | Producto | Costo Bs/u | Venta sugerida | Ganancia/u | Margen | Peor caso | Estado |", "|---|---|---|---|---|---|---|---|"]
+         "| # | Producto | Costo Bs/u | Plata para 2 u (Bs / USD) | Venta sugerida | Ganancia/u | Margen | Peor caso | Estado |", "|---|---|---|---|---|---|---|---|---|"]
     for i, f in enumerate(c[:3], 1):
         est = "traer" if f["recomendacion"] == "traer" else "esperar: " + ", ".join(f["faltan"] or [f["por_que"]])
-        L.append(f"| {i} | {f['producto']} | {C.bs(f['costo_bs'])} | {C.bs(f['precio_sugerido_bs'])} | {C.bs(f['ganancia_bs'])} | "
+        L.append(f"| {i} | {f['producto']} | {C.bs(f['costo_bs'])} | {C.bs(f['costo_bs'] * 2)} / {round(f['costo_bs'] * 2 / a['tc'])} | {C.bs(f['precio_sugerido_bs'])} | {C.bs(f['ganancia_bs'])} | "
                  f"{f['margen_pct']} % | {f['escenarios_margen_pct']['peor caso']} % | {est} |")
+    L.append("")
+    L.append("Plata = costo por unidad × 2 (pedido por defecto; con 4 u el courier B baja el costo por unidad). "
+             "Ojo: el SSD NVMe 2TB sale de un Leven Gen3 sin marca de eBay y los locales son Gen4 de marca; con un Gen4 de marca (WD SN770) "
+             "el margen cae a ~11 % y el peor caso a ~-3 % (cálculo del 16/11): no lo des por firme sin decidir cuál se compara. "
+             "El 9950X3D tiene solo 2 tiendas locales y es la compra más grande.")
+    return "\n".join(L) + "\n"
+
+
+def precio_final_7700x(a):
+    """ana-3: precio final de venta del 7700X (stock real): piso, sugerido y escalera de bajadas por días."""
+    EXCL = ("vendido", "cancelad", "devuelto", "perdido")
+    u = bs = 0.0
+    for r in C.leer("pedidos.csv"):
+        cant, usd, tcp = num(r.get("cantidad")), num(r.get("precio_usd")), num(r.get("tc")) or a["tc"]
+        if r.get("producto") != "Ryzen 7 7700X" or not cant or usd is None or not tcp or any(x in (r.get("estado") or "").lower() for x in EXCL):
+            continue
+        u += cant
+        bs += cant * (usd + (num(r.get("envio_usd")) or 0)) * tcp
+    ref = next((f for f in a["productos"] if f["producto"] == "Ryzen 7 7700X" and f["condicion"] == "nuevo" and f.get("mejor_local_bs")), None)
+    if not u or not ref:
+        return ""
+    costo = bs / u
+    piso = math.ceil(costo * 1.10 / 10) * 10
+    sug = 3300  # precio que ya fijó Santi para publicar (mkt); el script da 5 % bajo la mediana
+    escalera = [("Días 0 a 6 (publicar)", sug), ("Días 7 a 13: si no hubo mensajes", sug - 100),
+                ("Días 14 a 20: igualar al suelto más barato de Marketplace", sug - 200), ("Días 21 a 27", sug - 300), ("Día 28: piso, no bajar más", piso)]
+    L = ["", "## Precio final de venta del Ryzen 7 7700X (ana-3)", "",
+         f"{u:g} u, costo Bs {C.bs(round(costo))} c/u (pedidos.csv, todo incluido). Mediana local Bs {C.bs(ref['mejor_local_bs'])} "
+         f"({ref['precios_locales']} precios distintos, un anuncio cuenta una vez). El script sugiere Bs {C.bs(ref['precio_sugerido_bs'])} (5 % bajo la mediana); "
+         f"el sugerido para publicar es Bs {C.bs(sug)}, 4 % bajo las tiendas más baratas con garantía. **Piso: Bs {C.bs(piso)}** (10 % de recargo sobre el costo, "
+         "margen 9 %): por debajo no se vende. La decisión del precio es de Santi.", "",
+         "| Cuándo | Precio Bs/u | Margen | Ganancia por lote |", "|---|---|---|---|"]
+    for nom, pv in escalera:
+        L.append(f"| {nom} | {C.bs(pv)} | {(pv - costo) / pv * 100:.1f} % | Bs {C.bs(round((pv - costo) * u))} |")
     return "\n".join(L) + "\n"
 
 
 def main():
     a = analizar()
     if "--md" in sys.argv:
-        open(os.path.join(DIR, "analisis.md"), "w", encoding="utf-8").write(md(a) + stock_real(a) + segundo_pedido(a))
+        open(os.path.join(DIR, "analisis.md"), "w", encoding="utf-8").write(md(a) + stock_real(a) + precio_final_7700x(a) + segundo_pedido(a))
         print("analisis.md escrito")
     print(json.dumps(a, ensure_ascii=False, indent=1) if "--json" in sys.argv else texto(a))
 

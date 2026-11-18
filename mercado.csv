@@ -297,3 +297,13 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-17,Ryzen 7 9800X3D,cpu,5690,Bs,5690,no indica,Marketplace Cochabamba (particular),marketplace,sí,también 5.899 y 6.700 sellado
 2026-11-17,Ryzen 7 8700G,cpu,3450,Bs,3450,no indica,Marketplace Cochabamba (particular),marketplace,sí,AM5
 2026-11-17,Ryzen 7 5700X,cpu,2550,Bs,2550,no indica,Marketplace Cochabamba (particular),marketplace,sí,también 2.540 oferta
+2026-11-18,Ryzen 7 7700X3D,cpu,4400,Bs,4400,no indica,NPC Technology,whatsapp,sí,18/11 10:49 WhatsApp; 7700X3D (no es el 7700X)
+2026-11-18,Ultra 5 245KF,cpu,2810,Bs,2810,no indica,Punto Tecnológico / Supermall,web,no,web puntotecnologic.com 18/11: figura Agotado
+2026-11-18,Ryzen 7 Pro 5755GE,cpu,2760,Bs,2760,no indica,Punto Tecnológico / Supermall,web,sí,web puntotecnologic.com 18/11: figura Disponible
+2026-11-18,Core i3-14100,cpu,2050,Bs,2050,no indica,Punto Tecnológico / Supermall,web,sí,web puntotecnologic.com 18/11: figura Disponible
+2026-11-18,Intel Core i5-14400F,cpu,2360,Bs,2360,no indica,Punto Tecnológico / Supermall,web,sí,web 18/11; primera vez en la lista
+2026-11-18,Intel Core i7-14700F,cpu,5210,Bs,5210,no indica,Punto Tecnológico / Supermall,web,sí,web 18/11
+2026-11-18,Intel Core i7-14700,cpu,5010,Bs,5010,no indica,Punto Tecnológico / Supermall,web,sí,web 18/11; la web dice Chip (sin caja); stock bajo
+2026-11-18,Intel Core Ultra 5 225F,cpu,2510,Bs,2510,oem,Punto Tecnológico / Supermall,web,sí,web 18/11; sube de Bs 2.270 (12/11)
+2026-11-18,Intel Core Ultra 5 225,cpu,2760,Bs,2760,no indica,Punto Tecnológico / Supermall,web,sí,web 18/11; sube de Bs 2.470 (12/11)
+2026-11-18,Kingston NV3 500GB,ssd,1320,Bs,1320,no indica,Punto Tecnológico / Supermall,web,sí,web 18/11; M.2 NVMe; primera vez en la lista

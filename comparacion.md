@@ -11,7 +11,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Ryzen 5 7600X | [145.99](https://www.ebay.com/itm/137926619063) | 1.910 (B 1 kg) | 1.910 (B 2 kg) | 2.550 | 640 (25%) | 640 (25%) | conviene |
 | Intel Core Ultra 7 265K | [239.00](https://www.ebay.com/itm/287733023578) | 3.021 (B 1 kg) | 2.979 (B 1.5 kg) | 3.950 | 929 (24%) | 971 (25%) | conviene |
 | SSD NVMe 2TB | [185.00](https://www.ebay.com/itm/377593610877) | 2.376 (B 1 kg) | 2.292 (B 1 kg) | 3.100 | 724 (23%) | 808 (26%) | conviene |
-| Intel Core i5-14400F | [152.99](https://www.ebay.com/itm/126275456933) | 1.994 (B 1 kg) | 1.952 (B 1.5 kg) | 2.384 | 390 (16%) | 432 (18%) | conviene |
+| Intel Core i5-14400F | [152.99](https://www.ebay.com/itm/126275456933) | 1.994 (B 1 kg) | 1.952 (B 1.5 kg) | 2.360 | 366 (16%) | 408 (17%) | conviene |
 | Ryzen 7 7800X3D | [299.99](https://www.ebay.com/itm/900100004373) | 3.749 (B 1 kg) | 3.749 (B 2 kg) | 4.350 | 601 (14%) | 601 (14%) | justo |
 | Ryzen 5 9600X | [164.00](https://www.ebay.com/itm/227617555151) | 2.125 (B 1 kg) | 2.125 (B 2 kg) | 2.450 | 325 (13%) | 325 (13%) | justo |
 | Ryzen 7 7700X | [223.98](https://www.ebay.com/itm/267042355650) | 2.841 (B 1 kg) | 2.841 (B 2 kg) | 3.000 | 159 (5%) | 159 (5%) | justo |
@@ -29,11 +29,10 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs | Ganancia 2 u | Ganancia 4 u | Estado |
 |---|---|---|---|---|---|---|---|
 | Ryzen 5 7600 | [115.99](https://www.ebay.com/itm/407361322642) | 1.552 (B 1 kg) | 1.552 (B 2 kg) | 2.800 | 1.248 (45%) | 1.248 (45%) | conviene |
-| Ryzen 5 7600X | [121.06](https://www.ebay.com/itm/820345431508) | 1.613 (B 1 kg) | 1.613 (B 2 kg) | 2.550 | 937 (37%) | 937 (37%) | conviene |
 | Ryzen 9 9950X3D | [512.99](https://www.ebay.com/itm/198750337032) | 6.292 (B 1 kg) | 6.292 (B 2 kg) | 9.560 | 3.268 (34%) | 3.268 (34%) | conviene |
-| SSD NVMe 2TB | [159.99](https://www.ebay.com/itm/366815237356) | 2.077 (B 1 kg) | 1.994 (B 1 kg) | 3.100 | 1.023 (33%) | 1.106 (36%) | conviene |
 | Intel Core Ultra 7 265K | [214.95](https://www.ebay.com/itm/198798405271) | 2.734 (B 1 kg) | 2.692 (B 1.5 kg) | 3.950 | 1.216 (31%) | 1.258 (32%) | conviene |
-| Intel Core i5-14400F | [129.99](https://www.ebay.com/itm/267839691195) | 1.719 (B 1 kg) | 1.677 (B 1.5 kg) | 2.384 | 665 (28%) | 707 (30%) | conviene |
+| Ryzen 5 7600X | [139.99](https://www.ebay.com/itm/327094285155) | 1.839 (B 1 kg) | 1.839 (B 2 kg) | 2.550 | 711 (28%) | 711 (28%) | conviene |
+| Intel Core i5-14400F | [129.99](https://www.ebay.com/itm/880129817766) | 1.719 (B 1 kg) | 1.677 (B 1.5 kg) | 2.360 | 641 (27%) | 683 (29%) | conviene |
 | Ryzen 7 7700X | [170.00](https://www.ebay.com/itm/960185553593) | 2.197 (B 1 kg) | 2.197 (B 2 kg) | 3.000 | 803 (27%) | 803 (27%) | conviene |
 | Ryzen 5 9600X | [141.06](https://www.ebay.com/itm/820345401429) | 1.851 (B 1 kg) | 1.851 (B 2 kg) | 2.450 | 599 (24%) | 599 (24%) | conviene |
 | Intel Core i5-12400F | [116.74](https://www.ebay.com/itm/198790623774) | 1.561 (B 1 kg) | 1.519 (B 1.5 kg) | 2.050 | 489 (24%) | 531 (26%) | conviene |
@@ -107,6 +106,7 @@ eBay nuevo: USD 489.99 con envío en EE.UU. (eBay API; vendedor nycbst 99.7%; AM
 | MSR Computers (web; fecha de actualización desconocida) · [ver](https://msrcomputers.framer.website/) | nuevo | 5.580 | -438 (-8%) | 2026-10-11 |
 | Tienda Supermall (WhatsApp) · [ver](https://www.facebook.com/marketplace/item/1292124363069503/) | nuevo OEM (garantía 6 meses) | 6.140 | 122 (2%) | 2026-10-12 |
 | Punto Tecnológico / Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | nuevo | 6.140 | 122 (2%) | 2026-11-12 |
+| Punto Tecnológico / Supermall (web) · [ver](https://puntotecnologic.com/categories/procesadores) | nuevo | 6.140 | 122 (2%) | 2026-11-18 |
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | estado sin dato (\"en stock\") | 6.150 | 132 (2%) | 2026-11-03 |
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 6.150 | 132 (2%) | 2026-11-12 |
 
@@ -130,6 +130,7 @@ eBay nuevo: USD 152.99 con envío en EE.UU. (eBay API; vendedor antonline 99.4%;
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
+| Punto Tecnológico / Supermall (web) · [ver](https://puntotecnologic.com/categories/procesadores) | nuevo | 2.360 | 366 (16%) | 2026-11-18 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo OEM (web: USD 202 a la tasa de la tienda, 11,80; hay otra publicación del mismo a USD 215) | 2.384 | 390 (16%) | 2026-10-16 |
 | Cyrex Store (WhatsApp) | nuevo | 2.394 | 400 (17%) | 2026-11-13 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | oem | 2.412 | 418 (17%) | 2026-11-12 |
@@ -196,6 +197,7 @@ eBay nuevo: USD 104.99 con envío en EE.UU. (eBay API; vendedor deal_ez 100.0%; 
 | Compucenter (WhatsApp) · [ver](https://compucenter.store/) | nuevo (Corsair Vengeance RGB DDR4 16GB 3600; no dice si es 2x8; Bs 2.560 con factura) | 2.150 | 729 (34%) | 2026-10-12 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/memoria-ram) | disponible (web; Corsair Vengeance RGB Pro TUF Gaming 2x8 3200) | 2.160 | 739 (34%) | 2026-10-12 |
 | Punto Tecnológico / Supermall (web) · [ver](https://www.puntotecnologic.com/categories/memoria-ram) | nuevo | 2.160 | 739 (34%) | 2026-11-12 |
+| Punto Tecnológico / Supermall (web) · [ver](https://puntotecnologic.com/categories/memoria-ram) | nuevo | 2.160 | 739 (34%) | 2026-11-18 |
 
 ### SSD NVMe 1TB
 eBay nuevo: USD 139.99 con envío en EE.UU. (eBay API; vendedor netac-official-store 99.9%; Netac 1TB SSD 3D NAND NVMe PCIe Gen3×4 M.2 2280 Internal Sol, 2026-11-18). Costo puesto: **Bs 1.839**/u en pedido de 2, **Bs 1.755**/u en pedido de 4.
@@ -247,6 +249,7 @@ eBay nuevo: USD 139.99 con envío en EE.UU. (eBay API; vendedor netac-official-s
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; WD SN3000 M.2 1TB) | 2.060 | 221 (11%) | 2026-10-12 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/27971414262519546/) | estado sin dato (WD Green SN3000 1TB) | 2.060 | 221 (11%) | 2026-10-22 |
 | Punto Tecnológico / Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | nuevo | 2.060 | 221 (11%) | 2026-11-12 |
+| Punto Tecnológico / Supermall (web) · [ver](https://puntotecnologic.com/categories/disco-solido) | nuevo | 2.060 | 221 (11%) | 2026-11-18 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; Kingston NV3 M.2 1TB) | 2.152 | 313 (15%) | 2026-10-12 |
 | TecnoGamer Bolivia (web) · [ver](https://www.tecnogamer.com.bo/categoria/discos-solidos-m-2/) | Kingston NV3 1TB NVMe; estado sin dato | 2.215 | 376 (17%) | 2026-11-04 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/2891757594521096/) | Lexar NM790 1TB con disipador (estado sin dato) | 2.500 | 661 (26%) | 2026-10-19 |
@@ -270,6 +273,7 @@ eBay nuevo: USD 185.00 con envío en EE.UU. (eBay API; vendedor honestdeals 99.5
 | ELVYCOMP (WhatsApp) | nuevo/sellado | 4.880 | 2.504 (51%) | 2026-11-10 |
 | Punto Tecnológico (WhatsApp) | nuevo | 5.860 | 3.484 (59%) | 2026-11-12 |
 | Punto Tecnológico / Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | nuevo | 5.860 | 3.484 (59%) | 2026-11-12 |
+| Punto Tecnológico / Supermall (web) · [ver](https://puntotecnologic.com/categories/disco-solido) | nuevo | 5.860 | 3.484 (59%) | 2026-11-18 |
 
 ### Ryzen 7 7700X
 eBay nuevo: USD 223.98 con envío en EE.UU. (eBay API; vendedor asusparts2022 99.9%; AMD Ryzen 7 7700X - Zen 4 8-Core 4.5 GHz - Socket AM5 - 105W, 2026-11-18). Costo puesto: **Bs 2.841**/u en pedido de 2, **Bs 2.841**/u en pedido de 4.
@@ -316,6 +320,7 @@ eBay nuevo: USD 164.00 con envío en EE.UU. (eBay API; vendedor hilux808 99.9%; 
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.806 | 681 (24%) | 2026-11-12 |
 | Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD) | nuevo/no indica | 2.854 | 728 (26%) | 2026-11-12 |
 | Marketplace Quillacollo (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | sellado | 2.900 | 775 (27%) | 2026-11-17 |
+| NPC Technology (WhatsApp) | no indica | 3.200 | 1.075 (34%) | 2026-11-18 |
 | ELVYCOMP (WhatsApp) | nuevo | 3.430 | 1.305 (38%) | 2026-11-09 |
 
 ### Ryzen 5 7600X
@@ -325,8 +330,10 @@ eBay nuevo: USD 145.99 con envío en EE.UU. (eBay API; vendedor mavcofinds 100.0
 |---|---|---|---|---|
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 2.550 | 640 (25%) | 2026-11-12 |
 | Punto Tecnológico / Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | nuevo | 2.560 | 650 (25%) | 2026-11-12 |
+| Punto Tecnológico / Supermall (web) · [ver](https://puntotecnologic.com/categories/procesadores) | nuevo | 2.560 | 650 (25%) | 2026-11-18 |
 | Cyrex Store América (WhatsApp) | nuevo | 2.678 | 767 (29%) | 2026-11-04 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.686 | 776 (29%) | 2026-11-12 |
+| NPC Technology (WhatsApp) | no indica | 3.000 | 1.090 (36%) | 2026-11-18 |
 | Viadata Computadoras (WhatsApp) | nuevo | 3.300 | 1.390 (42%) | 2026-10-20 |
 
 ### Ryzen 9 9950X3D
