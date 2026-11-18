@@ -26,9 +26,10 @@ struct Pantalla<C: View, B: View>: View {
     var titulo: String
     var contenido: C
     var barra: B
+    var inline = false
     @EnvironmentObject var store: Store
-    init(titulo: String, @ViewBuilder contenido: () -> C, @ViewBuilder barra: () -> B) {
-        self.titulo = titulo; self.contenido = contenido(); self.barra = barra()
+    init(titulo: String, inline: Bool = false, @ViewBuilder contenido: () -> C, @ViewBuilder barra: () -> B) {
+        self.titulo = titulo; self.inline = inline; self.contenido = contenido(); self.barra = barra()
     }
     var body: some View {
         NavigationStack {
@@ -56,6 +57,7 @@ struct Pantalla<C: View, B: View>: View {
             .navigationDestination(for: Pedido.self) { PedidoDetalle(pedido: $0) }
             .navigationDestination(for: Producto.self) { ProductoDetalle(p: $0) }
             .navigationTitle(titulo)
+            .navigationBarTitleDisplayMode(inline ? .inline : .large)
             .toolbar { ToolbarItemGroup(placement: .topBarTrailing) { barra } }
             .toolbarBackground(Tema.fondo, for: .navigationBar)
         }
@@ -82,5 +84,5 @@ struct MiniSerie: View {
 }
 
 extension Pantalla where B == EmptyView {
-    init(titulo: String, @ViewBuilder contenido: () -> C) { self.init(titulo: titulo, contenido: contenido, barra: { EmptyView() }) }
+    init(titulo: String, inline: Bool = false, @ViewBuilder contenido: () -> C) { self.init(titulo: titulo, inline: inline, contenido: contenido, barra: { EmptyView() }) }
 }

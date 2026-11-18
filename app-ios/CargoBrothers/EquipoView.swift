@@ -224,12 +224,21 @@ struct AgenteView: View {
 
     func demanda(_ d: Datos) -> some View {
         Tarjeta(titulo: "Qué se mueve en Marketplace", icono: "chart.bar") {
-            let l = (d.demanda ?? []).sorted { ($0.puntaje ?? 0) > ($1.puntaje ?? 0) }.prefix(10)
-            Chart(Array(l)) { x in
-                BarMark(x: .value("anuncios", x.anuncios ?? 0), y: .value("producto", x.producto.replacingOccurrences(of: "Corsair Vengeance RGB ", with: "")))
-                    .foregroundStyle(Tema.bronce)
+            let l = (d.demanda ?? []).sorted { ($0.anuncios ?? 0) > ($1.anuncios ?? 0) }.prefix(10)
+            let tope = max(l.compactMap(\.anuncios).max() ?? 1, 1)
+            Text("Anuncios activos en Cochabamba (promedio de los últimos días)").font(.caption).foregroundStyle(Tema.gris)
+            ForEach(Array(l)) { x in
+                VStack(alignment: .leading, spacing: 3) {
+                    HStack {
+                        Text(x.producto.replacingOccurrences(of: "Corsair Vengeance RGB ", with: "")).font(.caption).lineLimit(1)
+                        Spacer()
+                        Text(F.num(x.anuncios, 1)).font(.caption.monospacedDigit().weight(.semibold))
+                    }
+                    GeometryReader { g in
+                        Capsule().fill(Tema.bronce).frame(width: max(4, g.size.width * CGFloat((x.anuncios ?? 0) / tope)), height: 6)
+                    }.frame(height: 6)
+                }
             }
-            .frame(height: CGFloat(max(l.count, 1)) * 26 + 20)
             ForEach(Array(l.prefix(5))) { x in
                 Text("\(x.producto): \(x.lectura)\(x.precio_bs.map { " · último \(F.bs($0))" } ?? "")").font(.caption).foregroundStyle(Tema.gris)
             }

@@ -25,8 +25,40 @@ enum Ruta {
 struct MapaRuta: View {
     var pedidos: [Pedido]
     var alto: CGFloat = 280
+    @State private var completo = false
     var body: some View {
-        Map(initialPosition: .automatic, interactionModes: [.pan, .zoom]) {
+        mapa
+            .frame(height: alto)
+            .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).stroke(Tema.linea))
+            .overlay(alignment: .topTrailing) {
+                Button { completo = true } label: {
+                    Image(systemName: "arrow.up.left.and.arrow.down.right").font(.subheadline.weight(.semibold))
+                        .padding(9).background(.ultraThinMaterial, in: Circle())
+                }.padding(10)
+            }
+            .fullScreenCover(isPresented: $completo) {
+                ZStack(alignment: .topTrailing) {
+                    mapa.ignoresSafeArea()
+                    Button { completo = false } label: {
+                        Image(systemName: "xmark").font(.headline).padding(12).background(.ultraThinMaterial, in: Circle())
+                    }.padding(.trailing, 16).padding(.top, 8)
+                    VStack(alignment: .leading, spacing: 4) {
+                        ForEach(pedidos) { p in Text("\(p.producto) · \(p.estado)").font(.caption.weight(.semibold)) }
+                        HStack(spacing: 10) {
+                            Label("recorrido", systemImage: "line.diagonal").foregroundStyle(Tema.bronce)
+                            Label("lo que falta", systemImage: "ellipsis").foregroundStyle(Tema.bronce.opacity(0.7))
+                        }.font(.caption2)
+                    }
+                    .padding(12).background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading).padding(16).padding(.bottom, 10)
+                }
+                .preferredColorScheme(.dark)
+            }
+    }
+
+    var mapa: some View {
+        Map(initialPosition: .automatic, interactionModes: .all) {
             ForEach(pedidos) { p in
                 let t = Ruta.tramos(p)
                 if t.hecho.count > 1 { MapPolyline(coordinates: t.hecho).stroke(Tema.bronce, lineWidth: 4) }
@@ -49,9 +81,6 @@ struct MapaRuta: View {
             }
         }
         .mapStyle(.standard(elevation: .flat, pointsOfInterest: .excludingAll))
-        .frame(height: alto)
-        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).stroke(Tema.linea))
     }
     func punto(_ c: Color) -> some View { Circle().fill(c).frame(width: 12, height: 12).overlay(Circle().stroke(.black, lineWidth: 2)) }
 }
@@ -61,7 +90,7 @@ struct PedidosView: View {
     @State private var filtro = ""
     @State private var seccion = 0
     var body: some View {
-        Pantalla(titulo: ["Pedidos", "Anuncios", "Clientes", "Tiendas"][seccion]) {
+        Pantalla(titulo: ["Pedidos", "Anuncios", "Clientes", "Tiendas"][seccion], inline: true) {
             Picker("", selection: $seccion) { Text("Pedidos").tag(0); Text("Anuncios").tag(1); Text("Clientes").tag(2); Text("Tiendas").tag(3) }
                 .pickerStyle(.segmented)
             if seccion == 1 { AnunciosView() }

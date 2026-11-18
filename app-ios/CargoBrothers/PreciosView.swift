@@ -1,32 +1,116 @@
 import SwiftUI
 import Charts
 
-/// Precio por día: eBay (nuevo y usado, pasados a Bs con el dólar de hoy) contra lo más barato de Cochabamba.
+/// Historial de precio: hoy contra ayer, 7, 15 o 30 días (Santi 18/11). eBay (nuevo y usado) contra lo más barato de Cochabamba.
 struct GraficoPrecio: View {
     var h: [Hist]
     var tc: Double
     @State private var verBs = true
+    @State private var dias = 30
+    @State private var detalle = false
+
+    static let fmt: DateFormatter = { let f = DateFormatter(); f.dateFormat = "yyyy-MM-dd"; f.timeZone = TimeZone(identifier: "America/La_Paz"); return f }()
+    func fecha(_ s: String) -> Date { GraficoPrecio.fmt.date(from: s) ?? .distantPast }
+    var tramo: [Hist] {
+        let desde = Date().addingTimeInterval(-Double(dias) * 86400)
+        return h.filter { fecha($0.fecha) >= desde }
+    }
+    func local(_ x: Hist) -> Double? { [x.mkt, x.tienda].compactMap { $0 }.min() }
+    func bs(_ v: Double?) -> Double? { v.map { verBs ? $0 * tc : $0 } }
+
     var body: some View {
-        Tarjeta(titulo: "Precio por día", icono: "chart.xyaxis.line") {
-            Picker("", selection: $verBs) { Text("En Bs").tag(true); Text("eBay en USD").tag(false) }.pickerStyle(.segmented)
-            Chart {
-                ForEach(h) { x in
-                    let d = F.dia(x.fecha)
-                    if let v = x.nuevo { LineMark(x: .value("día", d), y: .value("p", verBs ? v * tc : v), series: .value("", "eBay nuevo")).foregroundStyle(Tema.bronce) }
-                    if let v = x.usado { LineMark(x: .value("día", d), y: .value("p", verBs ? v * tc : v), series: .value("", "eBay usado")).foregroundStyle(Tema.bronce.opacity(0.45)).lineStyle(StrokeStyle(lineWidth: 1.5, dash: [4, 3])) }
-                    if verBs, let v = [x.mkt, x.tienda].compactMap({ $0 }).min() { LineMark(x: .value("día", d), y: .value("p", v), series: .value("", "Cochabamba")).foregroundStyle(Tema.verde) }
+        Tarjeta(titulo: "Historial de precio", icono: "chart.xyaxis.line") {
+            Picker("", selection: $dias) { Text("1 día").tag(1); Text("7 días").tag(7); Text("15 días").tag(15); Text("30 días").tag(30) }.pickerStyle(.segmented)
+            if dias == 1 { hoyContraAyer } else {
+                Picker("", selection: $verBs) { Text("Todo en Bs").tag(true); Text("eBay en USD").tag(false) }.pickerStyle(.segmented)
+                if tramo.count < 2 { Text("Pocos datos en este rango.").font(.footnote).foregroundStyle(Tema.gris) }
+                else {
+                    Chart {
+                        ForEach(tramo) { x in
+                            let d = fecha(x.fecha)
+                            if let v = bs(x.nuevo) { LineMark(x: .value("día", d), y: .value("p", v), series: .value("", "eBay nuevo")).foregroundStyle(Tema.bronce)
+                                PointMark(x: .value("día", d), y: .value("p", v)).foregroundStyle(Tema.bronce).symbolSize(14) }
+                            if let v = bs(x.usado) { LineMark(x: .value("día", d), y: .value("p", v), series: .value("", "eBay usado")).foregroundStyle(Tema.bronce.opacity(0.45)).lineStyle(StrokeStyle(lineWidth: 1.5, dash: [4, 3])) }
+                            if verBs, let v = local(x) { LineMark(x: .value("día", d), y: .value("p", v), series: .value("", "Cochabamba")).foregroundStyle(Tema.verde) }
+                        }
+                    }
+                    .chartYScale(domain: .automatic(includesZero: false))
+                    .chartXAxis { AxisMarks(values: .automatic(desiredCount: 4)) { _ in AxisGridLine(); AxisValueLabel(format: .dateTime.day().month(.defaultDigits)) } }
+                    .frame(height: 200)
+                    HStack(spacing: 12) {
+                        Label("eBay nuevo", systemImage: "circle.fill").foregroundStyle(Tema.bronce)
+                        Label("usado", systemImage: "circle.fill").foregroundStyle(Tema.bronce.opacity(0.45))
+                        if verBs { Label("Cochabamba", systemImage: "circle.fill").foregroundStyle(Tema.verde) }
+                    }.font(.caption2)
+                    resumen
                 }
+                DisclosureGroup(isExpanded: $detalle) {
+                    VStack(spacing: 6) {
+                        HStack { Text("Día").frame(width: 50, alignment: .leading); Spacer(); Text("eBay nuevo").frame(width: 82, alignment: .trailing); Text("usado").frame(width: 70, alignment: .trailing); Text("Cbba").frame(width: 66, alignment: .trailing) }
+                            .font(.caption2.weight(.bold)).foregroundStyle(Tema.bronce)
+                        ForEach(Array(tramo.reversed().enumerated()), id: \.offset) { i, x in
+                            let ant = i + 1 < tramo.count ? tramo.reversed()[i + 1] : nil
+                            HStack {
+                                Text(F.dia(x.fecha)).frame(width: 50, alignment: .leading)
+                                Spacer()
+                                celda(x.nuevo, ant?.nuevo, usd: true).frame(width: 82, alignment: .trailing)
+                                celda(x.usado, ant?.usado, usd: true).frame(width: 70, alignment: .trailing)
+                                celda(local(x), ant.flatMap(local), usd: false).frame(width: 66, alignment: .trailing)
+                            }.font(.caption.monospacedDigit())
+                        }
+                    }.padding(.top, 6)
+                } label: { Text("Ver día por día").font(.subheadline.weight(.semibold)) }
             }
-            .chartYScale(domain: .automatic(includesZero: false))
-            .chartXAxis { AxisMarks(values: .automatic(desiredCount: 4)) }
-            .frame(height: 200)
-            HStack(spacing: 12) {
-                Label("eBay nuevo", systemImage: "circle.fill").foregroundStyle(Tema.bronce)
-                Label("usado", systemImage: "circle.fill").foregroundStyle(Tema.bronce.opacity(0.45))
-                if verBs { Label("Cochabamba", systemImage: "circle.fill").foregroundStyle(Tema.verde) }
-            }.font(.caption2)
-            if verBs { Text("eBay pasado a Bs con el dólar de hoy, sin courier (para ver la tendencia).").font(.caption2).foregroundStyle(Tema.gris) }
         }
+    }
+
+    /// el número del día y una flecha si cambió respecto del día anterior (rojo = subió, verde = bajó)
+    @ViewBuilder func celda(_ v: Double?, _ a: Double?, usd: Bool) -> some View {
+        HStack(spacing: 2) {
+            if let v, let a, abs(v - a) > 0.009 { Image(systemName: v > a ? "arrow.up" : "arrow.down").font(.system(size: 8, weight: .bold)).foregroundStyle(v > a ? Tema.rojo : Tema.verde) }
+            Text(v.map { usd ? F.num($0, 0) : F.num($0, 0) } ?? "—")
+        }
+    }
+
+    var resumen: some View {
+        let n = tramo.compactMap(\.nuevo)
+        return HStack {
+            if let a = n.first, let b = n.last {
+                dato(F.usd(n.min()), "más barato")
+                dato(F.usd(n.max()), "más caro")
+                dato((b >= a ? "+" : "") + F.pct((b - a) / a * 100), "cambio eBay nuevo", b > a ? Tema.rojo : Tema.verde)
+            }
+        }
+    }
+
+    var hoyContraAyer: some View {
+        let u = h.last, a = h.count > 1 ? h[h.count - 2] : nil
+        return VStack(alignment: .leading, spacing: 8) {
+            if let u {
+                Text("\(F.dia(u.fecha)) contra \(a.map { F.dia($0.fecha) } ?? "—")").font(.caption).foregroundStyle(Tema.gris)
+                fila("eBay nuevo", F.usd(u.nuevo), u.nuevo, a?.nuevo, true)
+                fila("eBay usado", F.usd(u.usado), u.usado, a?.usado, true)
+                fila("Cochabamba (lo más barato)", F.bs(local(u)), local(u), a.flatMap(local), false)
+            } else { Text("Sin datos.").foregroundStyle(Tema.gris) }
+        }
+    }
+
+    func fila(_ t: String, _ v: String, _ x: Double?, _ y: Double?, _ usd: Bool) -> some View {
+        HStack {
+            Text(t).font(.subheadline)
+            Spacer()
+            Text(v).font(.subheadline.monospacedDigit().weight(.semibold))
+            if let x, let y, y != 0 {
+                let c = (x - y) / y * 100
+                Text(abs(c) < 0.05 ? "igual" : (c > 0 ? "+" : "") + F.pct(c)).font(.caption.monospacedDigit())
+                    .foregroundStyle(abs(c) < 0.05 ? Tema.gris : c > 0 ? Tema.rojo : Tema.verde).frame(width: 64, alignment: .trailing)
+            } else { Text("—").font(.caption).foregroundStyle(Tema.gris).frame(width: 64, alignment: .trailing) }
+        }
+    }
+
+    func dato(_ v: String, _ t: String, _ c: Color = Tema.texto) -> some View {
+        VStack(alignment: .leading, spacing: 1) { Text(v).font(.subheadline.weight(.semibold).monospacedDigit()).foregroundStyle(c); Text(t).font(.caption2).foregroundStyle(Tema.gris) }
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
