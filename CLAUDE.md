@@ -44,6 +44,8 @@ Componentes de PC: procesadores Ryzen e Intel, memorias RAM (ej. Corsair Vengean
 - **Una sola ronda a la vez.** Si `python salud.py` muestra una ronda en curso, nadie más trabaja hasta que termine.
 - **Nada de trabajo de noche ni el domingo (Santi, 10/11):** una tarea de la PC que arranca a las 21:00 o después, antes de las 8:00 o en domingo termina sin hacer nada.
 
+- `app-ios/` + `app_datos.py` (Santi, 18/11): **app nativa de iPhone** (SwiftUI, proyecto con XcodeGen: `cd app-ios && xcodegen generate`). Pestañas Hoy, Pedidos, Precios, Decidir y Equipo; widget de pantalla de inicio y el pedido en la pantalla bloqueada (Live Activity). Lee `app/datos-app.json` desde GitHub, que arma `app_datos.py` (lo llama `oficina/generar.py`) solo con lo que ya muestra la oficina. Aprobar / rechazar / "ya está resuelto" abre Telegram con `app: aprobar|rechazar|resuelta plan|idea|necesidad <id>` y el bot de la Raspberry lo aplica sin IA. El usuario del bot va en `app-ios/Local.xcconfig` (no se sube).
+
 ## Etapas y objetivos (Santi, 03/11)
 Los objetivos cambian según la etapa del negocio; `python objetivos.py [agente]` (`objetivos.csv`) dice la etapa y el avance de cada uno, medido con los CSV. Los entregables se marcan con `objetivos.py hecho <id> "nota"`. Los objetivos son por semana (lunes a domingo).
 - **Etapa 1, producto en camino (ahora):** cerrar precios, llegar a 100 tiendas contactadas y dejar la venta preparada.

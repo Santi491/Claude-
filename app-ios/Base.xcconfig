@@ -1,0 +1,4 @@
+// Ajustes comunes. El usuario del bot de Telegram va en Local.xcconfig (no se sube al repo):
+//   BOT_USUARIO = nombre_del_bot
+BOT_USUARIO =
+#include? "Local.xcconfig"
