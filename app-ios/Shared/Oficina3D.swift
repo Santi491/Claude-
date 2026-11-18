@@ -22,7 +22,7 @@ enum Oficina3D {
     static var gamma = 1.0
     /// calidad alta (Santi 18/11: "un poco más elevado el nivel de detalle"): reflejos del ambiente, sombras suaves,
     /// oclusión ambiental, desenfoque de profundidad suave, brillo en las luces y un tono cálido de cine
-    static var alta = false
+    static var alta = true
     static var brillo = 0.72
     static func srgb(_ c: [Double], _ k: Double = 1) -> CGColor {
         func f(_ x: Double) -> CGFloat { CGFloat(pow(max(0, min(1, x * k)), 1 / gamma)) }
@@ -101,7 +101,7 @@ enum Oficina3D {
         }
 
         // ---------- piezas ----------
-        let raiz = SCNNode()
+        let raiz = SCNNode(), vidrios = SCNNode()
         for n in a.nodos {
             guard let (src, idx, grupos) = fuentes[n.g] else { continue }
             var elementos: [SCNGeometryElement] = [], ms: [SCNMaterial] = []
@@ -121,12 +121,16 @@ enum Oficina3D {
             let nodo = SCNNode(geometry: geo)
             nodo.transform = matriz(n.x)
             nodo.castsShadow = n.som
-            raiz.addChildNode(nodo)
+            // lo transparente (vidrio, esmerilado) va aparte y se dibuja al final, para que se vea lo de atrás
+            if ms.contains(where: { $0.transparency < 0.99 }) { nodo.renderingOrder = 100; nodo.castsShadow = false; vidrios.addChildNode(nodo) }
+            else { raiz.addChildNode(nodo) }
         }
         // todo es fijo: se junta en pocas piezas para que el teléfono lo dibuje rápido
         let plano = raiz.flattenedClone()
         plano.name = "oficina"
         escena.rootNode.addChildNode(plano)
+        vidrios.name = "vidrios"
+        escena.rootNode.addChildNode(vidrios)
 
         // ---------- luces ----------
         for l in a.luces {
@@ -163,7 +167,8 @@ enum Oficina3D {
             nodo.light = luz
             escena.rootNode.addChildNode(nodo)
         }
-        if alta { mejorar(escena, raiz: plano) }
+        Detalle3D.ponerPuestos(en: escena.rootNode)
+        if alta { mejorar(escena, raiz: plano); mejorar(escena, raiz: vidrios, luces: false) }
         if let f = a.fondo { escena.background.contents = CGColor(srgbRed: CGFloat(f[0]), green: CGFloat(f[1]), blue: CGFloat(f[2]), alpha: 1) }
 
         // ---------- cámara: la misma vista general de la oficina web ----------
@@ -185,10 +190,10 @@ enum Oficina3D {
             cam.screenSpaceAmbientOcclusionIntensity = 1.4
             cam.screenSpaceAmbientOcclusionRadius = 0.9
             cam.screenSpaceAmbientOcclusionNormalThreshold = 0.25
-            cam.bloomIntensity = 0.55; cam.bloomThreshold = 0.75; cam.bloomBlurRadius = 10
+            cam.bloomIntensity = 0.22; cam.bloomThreshold = 1.0; cam.bloomBlurRadius = 8
             cam.contrast = 0.12; cam.saturation = 1.08
             cam.vignettingIntensity = 0.55; cam.vignettingPower = 0.8
-            cam.wantsDepthOfField = true
+            cam.wantsDepthOfField = false   // en el teléfono se mueve la cámara todo el tiempo: sin desenfoque
             cam.focusDistance = 38; cam.fStop = 4.5; cam.apertureBladeCount = 6; cam.focalBlurSampleCount = 14
             cam.colorGrading.contents = nil
             cam.exposureOffset = -0.15
@@ -215,18 +220,20 @@ enum Oficina3D {
         return ctx.makeImage()
     }
 
-    static func mejorar(_ e: SCNScene, raiz: SCNNode) {
-        if let amb = ambiente() { e.lightingEnvironment.contents = amb; e.lightingEnvironment.intensity = 0.9 }
+    static func mejorar(_ e: SCNScene, raiz: SCNNode, luces: Bool = true) {
+        if luces, let amb = ambiente() { e.lightingEnvironment.contents = amb; e.lightingEnvironment.intensity = 0.9 }
         raiz.enumerateHierarchy { n, _ in
             // vidrio de las salas: transparente de verdad (antes era un panel lechoso)
             for m in n.geometry?.materials ?? [] where m.lightingModel == .constant && m.transparency < 0.9 && m.transparency > 0.3 {
-                m.lightingModel = .physicallyBased
-                m.diffuse.contents = CGColor(srgbRed: 0.75, green: 0.82, blue: 0.86, alpha: 1)
-                m.transparency = 0.16
-                m.roughness.contents = NSNumber(value: 0.04); m.metalness.contents = NSNumber(value: 0.0)
-                m.clearCoat.contents = NSNumber(value: 1.0)
+                m.transparency = 0.35   // franja esmerilada: más suave
             }
-            for m in n.geometry?.materials ?? [] where m.lightingModel == .physicallyBased {
+            for m in n.geometry?.materials ?? [] where m.lightingModel == .physicallyBased && m.transparency < 0.5 {
+                // vidrio ahumado: casi invisible, con un leve tono (el físico en SceneKit se veía lechoso por los reflejos)
+                m.lightingModel = .constant
+                m.diffuse.contents = CGColor(srgbRed: 0.55, green: 0.62, blue: 0.68, alpha: 1)
+                m.transparency = 0.07; m.isDoubleSided = false; m.transparencyMode = .singleLayer
+            }
+            for m in n.geometry?.materials ?? [] where m.lightingModel == .physicallyBased && m.transparency >= 0.5 {
                 let r = (m.roughness.contents as? NSNumber)?.doubleValue ?? 0.7
                 let met = (m.metalness.contents as? NSNumber)?.doubleValue ?? 0
                 // superficies pulidas (mármol, bronce, cromo, vidrio): más brillo y una capa de laca
@@ -237,13 +244,13 @@ enum Oficina3D {
                 }
             }
         }
-        for n in e.rootNode.childNodes where n.light != nil {
+        for n in e.rootNode.childNodes where luces && n.light != nil {
             guard let l = n.light else { continue }
             if l.type == .directional && l.castsShadow {
                 l.shadowMapSize = CGSize(width: 4096, height: 4096); l.shadowSampleCount = 16; l.shadowRadius = 5
                 l.shadowColor = CGColor(gray: 0, alpha: 0.62)
             }
-            if l.type == .omni { l.intensity *= 1.25; l.castsShadow = false }
+            if l.type == .omni { l.intensity *= 0.9; l.castsShadow = false }
             if l.type == .ambient { l.intensity *= 0.55 }   // el ambiente ya ilumina; menos luz plana = más volumen
         }
     }

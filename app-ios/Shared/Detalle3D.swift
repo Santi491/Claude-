@@ -76,37 +76,58 @@ enum Detalle3D {
 
     /// Puesto de trabajo con detalle: escritorio de mármol negro con canto de bronce, monitor con brazo, teclado,
     /// mouse, lámpara y silla ejecutiva de cuero con base de 5 rueditas. Mira hacia -z (como los de la oficina).
-    static func puesto() -> SCNNode {
+    /// Los puestos de la sala de operaciones, en el mismo lugar que en la oficina web (STATION de oficina3d.js).
+    static let puestos: [(String, Float, Float)] = [("wa", -11, 0.6), ("gerente", -7, 0.6), ("mkt", -3, 0.6),
+        ("ebay", -11, 3.8), ("ana", -7, 3.8), ("pedidos", -3, 3.8), ("fin", -11, 7.0), ("dem", -7, 7.0), ("nube", -3, 7.0)]
+
+    /// Pone los 9 puestos con detalle. Cada uno queda como nodo "puesto-<agente>", con su silla "silla-<agente>" y sus
+    /// pantallas "pantalla-<agente>-N" (para las partes que vienen: personas sentadas y pantallas con datos en vivo).
+    static func ponerPuestos(en raiz: SCNNode) {
+        for (id, x, z) in puestos {
+            let p = puesto(dos: id == "gerente", id: id)
+            p.name = "puesto-\(id)"
+            p.position = SCNVector3(x, 0, z + 0.275)   // el centro del escritorio está 0,275 m delante del punto del puesto
+            raiz.addChildNode(p)
+        }
+    }
+
+    static func puesto(dos: Bool = false, id: String = "") -> SCNNode {
         let p = SCNNode()
+        let e = SCNNode(); e.position = SCNVector3(0, -0.0875, 0); p.addChildNode(e)   // escritorio a 0,68 m (donde teclean las animaciones)
+        let pe = e
         // escritorio
-        caja(1.8, 0.045, 0.8, r: 0.012, marmolNegro, 0, 0.745, 0, p)
-        caja(1.8, 0.012, 0.01, r: 0.004, bronce, 0, 0.738, 0.401, p)
-        for s: Float in [-1, 1] { caja(0.05, 0.72, 0.74, r: 0.012, grafito, s * 0.86, 0.36, 0, p) }
-        caja(1.62, 0.32, 0.02, r: 0.008, grafito, 0, 0.5, -0.33, p)
-        // monitor
-        caja(0.25, 0.012, 0.18, r: 0.006, cromo, 0, 0.774, -0.2, p)
-        cil(0.018, 0.32, cromo, 0, 0.93, -0.22, p)
-        let mon = caja(0.66, 0.39, 0.025, r: 0.01, plasticoNegro, 0, 1.13, -0.2, p)
-        let scr = SCNPlane(width: 0.63, height: 0.355)
-        let sm = SCNMaterial(); sm.lightingModel = .constant; sm.diffuse.contents = pantalla(); sm.emission.contents = pantalla(); sm.emission.intensity = 0.9
-        scr.materials = [sm]
-        let sn = SCNNode(geometry: scr); sn.position = SCNVector3(0, 0, 0.0135); mon.addChildNode(sn)
+        caja(1.8, 0.045, 0.8, r: 0.012, marmolNegro, 0, 0.745, 0, pe)
+        caja(1.8, 0.012, 0.01, r: 0.004, bronce, 0, 0.738, 0.401, pe)
+        for s: Float in [-1, 1] { caja(0.05, 0.72, 0.74, r: 0.012, grafito, s * 0.86, 0.36, 0, pe) }
+        caja(1.62, 0.32, 0.02, r: 0.008, grafito, 0, 0.5, -0.33, pe)
+        // monitor (el Gerente, dos)
+        for (k, (mx, rot)) in (dos ? [(Float(-0.42), Float(0.16)), (Float(0.42), Float(-0.16))] : [(Float(0), Float(0))]).enumerated() {
+            let mg = SCNNode(); mg.position = SCNVector3(mx, 0, 0); mg.eulerAngles.y = .init(rot); pe.addChildNode(mg)
+            caja(0.25, 0.012, 0.18, r: 0.006, cromo, 0, 0.774, -0.2, mg)
+            cil(0.018, 0.32, cromo, 0, 0.93, -0.22, mg)
+            let mon = caja(0.66, 0.39, 0.025, r: 0.01, plasticoNegro, 0, 1.13, -0.2, mg)
+            let scr = SCNPlane(width: 0.63, height: 0.355)
+            let img = pantalla(tono: k == 1 ? CGColor(srgbRed: 0.95, green: 0.65, blue: 0.25, alpha: 1) : CGColor(srgbRed: 0.31, green: 0.82, blue: 0.91, alpha: 1))
+            let sm = SCNMaterial(); sm.lightingModel = .constant; sm.diffuse.contents = img; sm.emission.contents = img; sm.emission.intensity = 0.9
+            scr.materials = [sm]
+            let sn = SCNNode(geometry: scr); sn.name = "pantalla-\(id)-\(k)"; sn.position = SCNVector3(0, 0, 0.0135); mon.addChildNode(sn)
+        }
         // teclado, teclas y mouse
-        let tec = caja(0.44, 0.018, 0.14, r: 0.006, plasticoNegro, -0.05, 0.775, 0.12, p)
+        let tec = caja(0.44, 0.018, 0.14, r: 0.006, plasticoNegro, -0.05, 0.775, 0.12, pe)
         let teclaG = SCNBox(width: 0.022, height: 0.008, length: 0.02, chamferRadius: 0.003); teclaG.materials = [pbr(0.12, 0.12, 0.13, rough: 0.6)]
         for f in 0..<5 { for k in 0..<17 {
             let t = SCNNode(geometry: teclaG); t.position = SCNVector3(-0.2 + Float(k) * 0.025, 0.012, -0.05 + Float(f) * 0.025); tec.addChildNode(t)
         } }
-        let mouse = capsula(0.022, 0.1, plasticoNegro, p); mouse.position = SCNVector3(0.3, 0.775, 0.13); mouse.eulerAngles.x = .pi / 2; mouse.scale = SCNVector3(1.2, 1, 0.55)
+        let mouse = capsula(0.022, 0.1, plasticoNegro, pe); mouse.position = SCNVector3(0.3, 0.775, 0.13); mouse.eulerAngles.x = .pi / 2; mouse.scale = SCNVector3(1.2, 1, 0.55)
         // lámpara de escritorio de bronce
-        cil(0.07, 0.015, bronce, 0.72, 0.775, -0.25, p)
-        let brazo = cil(0.008, 0.42, bronce, 0.72, 0.98, -0.25, p); brazo.eulerAngles.z = 0.18
-        let cab = cil(0.06, 0.06, bronce, 0.66, 1.2, -0.22, p); cab.eulerAngles.z = 1.2
+        cil(0.07, 0.015, bronce, 0.72, 0.775, -0.25, pe)
+        let brazo = cil(0.008, 0.42, bronce, 0.72, 0.98, -0.25, pe); brazo.eulerAngles.z = 0.18
+        let cab = cil(0.06, 0.06, bronce, 0.66, 1.2, -0.22, pe); cab.eulerAngles.z = 1.2
         let foco = SCNLight(); foco.type = .omni; foco.intensity = 40; foco.color = CGColor(srgbRed: 1, green: 0.85, blue: 0.62, alpha: 1)
         foco.attenuationEndDistance = 1.1; foco.attenuationFalloffExponent = 2
-        let fl = SCNNode(); fl.light = foco; fl.position = SCNVector3(0.62, 1.12, -0.2); p.addChildNode(fl)
+        let fl = SCNNode(); fl.light = foco; fl.position = SCNVector3(0.62, 1.12, -0.2); pe.addChildNode(fl)
         // silla ejecutiva
-        let silla = SCNNode(); silla.position = SCNVector3(0, 0, 0.62); p.addChildNode(silla)
+        let silla = SCNNode(); silla.name = "silla-\(id)"; silla.position = SCNVector3(0, -0.03, 0.62); p.addChildNode(silla)
         caja(0.54, 0.09, 0.52, r: 0.04, cuero, 0, 0.5, 0, silla)
         let resp = caja(0.52, 0.66, 0.08, r: 0.04, cuero, 0, 0.9, 0.25, silla); resp.eulerAngles.x = -0.12
         for f in 0..<3 { caja(0.46, 0.012, 0.012, r: 0.005, pbr(0.03, 0.03, 0.03, rough: 0.5), 0, Float(-0.18 + Double(f) * 0.18), -0.046, resp) }
@@ -126,7 +147,7 @@ enum Detalle3D {
         // aro de luz bajo el escritorio (LED cálido)
         let led = SCNBox(width: 1.6, height: 0.006, length: 0.01, chamferRadius: 0)
         let lm = SCNMaterial(); lm.lightingModel = .constant; lm.diffuse.contents = CGColor(srgbRed: 1, green: 0.82, blue: 0.55, alpha: 1); led.materials = [lm]
-        let ln = SCNNode(geometry: led); ln.position = SCNVector3(0, 0.72, 0.38); p.addChildNode(ln)
+        let ln = SCNNode(geometry: led); ln.position = SCNVector3(0, 0.72, 0.38); pe.addChildNode(ln)
         p.enumerateHierarchy { n, _ in n.castsShadow = true }
         return p
     }

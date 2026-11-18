@@ -28,6 +28,7 @@
 		77DAC811BF99D96E1EBBC59A /* Modelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1229FF333DB2EDEE5619D0DE /* Modelo.swift */; };
 		7AB9A9B73C24DF111799E0D5 /* Oficina3D in Resources */ = {isa = PBXBuildFile; fileRef = 638EF099DB456882B60C2333 /* Oficina3D */; };
 		7EDFC7D17900C3E6DFBACA18 /* MasWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323D1B098D1BCB461A1CA55 /* MasWidgets.swift */; };
+		83596903A97FDAA983B3391A /* Detalle3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140A08282DA18EB225D290E /* Detalle3D.swift */; };
 		8D35708ACBED1341CFB5C3EC /* Calculo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1B336C54BCE76DE79D8F1C /* Calculo.swift */; };
 		9CF8A07AFE7F4448FA090B4C /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853087D9A16FEB38BD9EA645 /* GitHub.swift */; };
 		A2B85026D017C40E68B6CAB5 /* Notificaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D03DF6ACA1FC4F697264724 /* Notificaciones.swift */; };
@@ -36,6 +37,7 @@
 		B9BAE4EB13071DA0EED4BEC1 /* cb-pedido.caf in Resources */ = {isa = PBXBuildFile; fileRef = AC7B9B7B601AF6355149CE55 /* cb-pedido.caf */; };
 		C6876863A89487D4F9E0C341 /* Acciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83D2B23602459B6C36474D /* Acciones.swift */; };
 		DE755E1F3EAABA3625A39443 /* Oficina3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236FFED311223CA063EA75F /* Oficina3D.swift */; };
+		E2C89FFC45286BFD5DB88E27 /* Detalle3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140A08282DA18EB225D290E /* Detalle3D.swift */; };
 		E313BFAFC4093C679D95F4C5 /* EquipoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C5D96174AE07BC40B1701 /* EquipoView.swift */; };
 		E378004B54AFE601200B489B /* Oficina3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236FFED311223CA063EA75F /* Oficina3D.swift */; };
 		EB0B203E00434695642F5CFF /* VentasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A15194E2CC3B99416EB40 /* VentasView.swift */; };
@@ -101,6 +103,7 @@
 		EB1B336C54BCE76DE79D8F1C /* Calculo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculo.swift; sourceTree = "<group>"; };
 		EBF8BDB7D79BE27222FE55F7 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		EFF1328E1C606630139551CD /* cb-oferta.caf */ = {isa = PBXFileReference; path = "cb-oferta.caf"; sourceTree = "<group>"; };
+		F140A08282DA18EB225D290E /* Detalle3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detalle3D.swift; sourceTree = "<group>"; };
 		F1972F47C18837AD9A732BF5 /* DecidirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecidirView.swift; sourceTree = "<group>"; };
 		F379D72065CE6B5BA36B6BD2 /* cb-mensaje.caf */ = {isa = PBXFileReference; path = "cb-mensaje.caf"; sourceTree = "<group>"; };
 		FB7C5D96174AE07BC40B1701 /* EquipoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipoView.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 		46A67C6200E79143C5823817 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F140A08282DA18EB225D290E /* Detalle3D.swift */,
 				1229FF333DB2EDEE5619D0DE /* Modelo.swift */,
 				9236FFED311223CA063EA75F /* Oficina3D.swift */,
 			);
@@ -312,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2C89FFC45286BFD5DB88E27 /* Detalle3D.swift in Sources */,
 				7EDFC7D17900C3E6DFBACA18 /* MasWidgets.swift in Sources */,
 				16BFA7EA601E083AA56AFB6C /* Modelo.swift in Sources */,
 				E378004B54AFE601200B489B /* Oficina3D.swift in Sources */,
@@ -329,6 +334,7 @@
 				8D35708ACBED1341CFB5C3EC /* Calculo.swift in Sources */,
 				FFF7B80627D6AACA1617FECB /* Componentes.swift in Sources */,
 				2B5AFF8346100FC0FA1A7AE1 /* DecidirView.swift in Sources */,
+				83596903A97FDAA983B3391A /* Detalle3D.swift in Sources */,
 				E313BFAFC4093C679D95F4C5 /* EquipoView.swift in Sources */,
 				36DCC1A5561A59AC5834F4E8 /* Extras.swift in Sources */,
 				65E0B88A311E66231F23F8BE /* Formularios.swift in Sources */,
