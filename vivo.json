@@ -33,9 +33,9 @@
    "hora": "16:21"
   },
   "fin": {
-   "estado": "trabajando",
-   "texto": "finanzas",
-   "hora": "16:18"
+   "estado": "terminó",
+   "texto": "sin ventas",
+   "hora": "16:21"
   }
  }
 }
