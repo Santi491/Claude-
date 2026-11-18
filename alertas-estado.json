@@ -101,7 +101,10 @@
   "conviene|Ryzen 5 7500F|usado|2026-11-17": "2026-11-17 11:55",
   "baja|Ryzen 5 9600X|usado|2026-11-17": "2026-11-17 11:55",
   "conviene|Ryzen 5 9600X|usado|2026-11-17": "2026-11-17 11:55",
-  "baja|Ryzen 5 7600X|usado|2026-11-17": "2026-11-17 11:55"
+  "baja|Ryzen 5 7600X|usado|2026-11-17": "2026-11-17 11:55",
+  "baja|Ryzen 5 7600|nuevo|2026-11-18": "2026-11-18 07:53",
+  "conviene|Intel Core i5-14400F|nuevo|2026-11-18": "2026-11-18 07:53",
+  "baja|SSD NVMe 1TB|usado|2026-11-18": "2026-11-18 07:53"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -113,7 +116,7 @@
   "Intel Core i5-12400F|nuevo": false,
   "Intel Core i5-12400F|usado": true,
   "Intel Core i5-13400|usado": true,
-  "Intel Core i5-14400F|nuevo": false,
+  "Intel Core i5-14400F|nuevo": true,
   "Intel Core i5-14400F|usado": true,
   "Intel Core Ultra 7 265K|nuevo": true,
   "Intel Core Ultra 7 265K|usado": true,
@@ -130,7 +133,7 @@
   "Ryzen 7 7700X|nuevo": false,
   "Ryzen 7 7700X|usado": true,
   "Ryzen 5 7500F|nuevo": false,
-  "Ryzen 5 7500F|usado": true,
+  "Ryzen 5 7500F|usado": false,
   "Ryzen 5 9600X|nuevo": false,
   "Ryzen 5 9600X|usado": true,
   "Ryzen 5 7600X|nuevo": true,
@@ -139,13 +142,9 @@
   "Ryzen 9 9950X3D|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 5 5600 (usado) bajó 11% en eBay: USD 134.00 → 119.00",
-  "⬇ RAM DDR4 16GB (2x8) 3200 (usado) bajó 11% en eBay: USD 69.99 → 61.99",
-  "⬇ SSD NVMe 2TB (usado) bajó 11% en eBay: USD 179.00 → 159.99",
-  "✅ Ahora conviene Ryzen 5 7500F (usado): +16% · costo puesto Bs 1.466 vs Bs 1.755 en Cochabamba",
-  "⬇ Ryzen 5 9600X (usado) bajó 21% en eBay: USD 169.98 → 135.00",
-  "✅ Ahora conviene Ryzen 5 9600X (usado): +28% · costo puesto Bs 1.776 vs Bs 2.450 en Cochabamba",
-  "⬇ Ryzen 5 7600X (usado) bajó 18% en eBay: USD 139.99 → 115.00"
+  "⬇ Ryzen 5 7600 (nuevo) bajó 14% en eBay: USD 304.97 → 261.69",
+  "✅ Ahora conviene Intel Core i5-14400F (nuevo): +16% · costo puesto Bs 1.997 vs Bs 2.384 en Cochabamba",
+  "⬇ SSD NVMe 1TB (usado) bajó 22% en eBay: USD 103.13 → 79.95"
  ],
- "revisado": "2026-11-17 16:17"
+ "revisado": "2026-11-18 07:53"
 }
