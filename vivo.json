@@ -1,17 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "15:45",
-  "fecha": "2026-11-18",
-  "hasta": "15:45"
+  "desde": "16:08",
+  "fecha": "2026-11-18"
  },
- "actualizado": "2026-11-18 15:45",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "Prueba del foquito desde la Mac (no es una ronda real)",
-   "hora": "15:45"
-  }
- }
+ "actualizado": "2026-11-18 16:08",
+ "agentes": {}
 }
