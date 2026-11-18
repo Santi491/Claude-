@@ -7,6 +7,7 @@ nunca guías, números de pedido, direcciones, teléfonos ni nombres de personas
 
     python3 app_datos.py
 """
+import csv
 import json
 import os
 import subprocess
@@ -16,6 +17,7 @@ from zoneinfo import ZoneInfo
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 SALIDA = os.path.join(DIR, "app", "datos-app.json")
+sys.path.insert(0, DIR)
 
 ETAPAS = ["comprado", "enviado", "en bodega del courier", "en camino a Santa Cruz",
           "en camino a Cochabamba", "en Cochabamba", "entregado"]
@@ -53,6 +55,84 @@ def etapa_idx(estado):
     return 0
 
 
+def leer_csv(nombre):
+    ruta = os.path.join(DIR, nombre)
+    if not os.path.exists(ruta):
+        return []
+    return list(csv.DictReader(open(ruta, encoding="utf-8-sig")))
+
+
+def extras(D, caz):
+    """Lo que usan las pantallas de cada agente, la calculadora y la venta (Santi, 18/11)."""
+    import comparar as C
+    topes = {t["producto"]: t for t in caz.get("topes", [])}
+    cats = {p["name"]: p.get("cat", "") for p in D.get("productos", [])}
+    vig = []
+    for v in leer_csv("vigilar.csv"):
+        t = topes.get(v["producto"], {})
+        vig.append({"producto": v["producto"], "cat": cats.get(v["producto"], ""),
+                    "peso_g": num(v.get("peso_g_con_caja")) or 350, "mediana_bs": t.get("mediana_bs"), "tope_usd": t.get("tope_usd")})
+    # historial de precios por producto (de historial/historial.csv): último mes
+    hist = {}
+    for f in leer_csv("historial/historial.csv"):
+        hist.setdefault(f["Producto"], []).append({"fecha": f["Fecha"], "nuevo": num(f.get("eBay nuevo USD")),
+                                                    "usado": num(f.get("eBay usado USD")),
+                                                    "mkt": num(f.get("Marketplace Bs")), "tienda": num(f.get("Tiendas Bs"))})
+    hist = {k: sorted(v, key=lambda x: x["fecha"])[-45:] for k, v in hist.items()}
+    # precios de Cochabamba de cada producto (lo que ve la oficina): para la competencia en la venta
+    locales = {}
+    for p in D.get("productos", []):
+        locales[p["name"]] = [{"bs": l.get("bs"), "src": l.get("src", ""), "vendedor": l.get("vendedor", ""),
+                               "estado": l.get("estado", ""), "fecha": l.get("fecha", ""), "url": l.get("url", ""),
+                               "cuenta": "no cuenta" not in (l.get("estado") or "")} for l in p.get("local", [])]
+    met = (D.get("metricas") or [{}])[-1]
+    ag = D.get("agenda") or {}
+    whatsapp = {
+        "tiendas_total": num(met.get("tiendas_total")), "contactadas_7d": num(met.get("tiendas_contactadas_7d")),
+        "respondieron_7d": num(met.get("tiendas_respondieron_7d")), "tasa_7d": num(met.get("tasa_respuesta_7d")),
+        "lista_pedida": ag.get("lista_pedida"), "lista_faltan": len(ag.get("lista_completa") or []),
+        "seguimiento": [x["tienda"] for x in ag.get("seguimiento") or []],
+        "responder": [x["tienda"] for x in ag.get("responder") or []],
+        "frias": len(ag.get("frias") or []), "respondieron": len(ag.get("respondieron") or []),
+        "serie": [{"fecha": m["fecha"], "nuevos": num(m.get("chats_nuevos")) or 0, "respuestas": num(m.get("respuestas")) or 0,
+                   "con_precio": num(m.get("respuestas_con_precio")) or 0} for m in (D.get("metricas") or [])[-21:]],
+    }
+    dem = D.get("demanda") or {}
+    demanda = [{"producto": d["producto"], "anuncios": d.get("anuncios_prom"), "nuevos": d.get("nuevos"),
+                "desaparecidos": d.get("desaparecidos"), "precio_bs": d.get("precio_ultimo_bs"),
+                "tendencia": d.get("tendencia_precio"), "lectura": d.get("lectura", ""), "puntaje": d.get("puntaje")}
+               for d in dem.get("productos", []) if d.get("vigilado")]
+    docs = [{"titulo": d.get("titulo", ""), "tipo": d.get("tipo", ""), "fecha": d.get("fecha", ""), "url": d.get("url", ""),
+             "carpeta": d.get("carpeta", "")} for d in D.get("documentos", []) if d.get("url")]
+    docs.sort(key=lambda d: d["fecha"], reverse=True)
+    informes = sorted([{"fecha": i["fecha"], "tipo": i.get("tipo", ""), "url": i.get("url", "")}
+                       for i in D.get("informes_gerente", []) if i.get("url")], key=lambda i: i["fecha"], reverse=True)
+    memoria = [{"id": m["id"], "tipo": m.get("tipo", ""), "resumen": m.get("resumen", ""), "vence": m.get("vence", ""),
+                "fecha": m.get("fecha", "")} for m in D.get("memoria", []) if m.get("estado") == "abierta"]
+    chat = [{"id": c["id"], "fecha": c["fecha"], "hora": c.get("hora", ""), "de": c["de"], "para": c["para"],
+             "texto": c.get("texto", "")} for c in D.get("chat", [])[-150:]]
+    salud14 = (D.get("salud") or {}).get("semana") or []
+    fin = D.get("finanzas", {})
+    fin_prod = [{"producto": p["producto"], "comprado": p.get("comprado"), "en_camino": p.get("en_camino"),
+                 "en_stock": p.get("en_stock"), "vendido": p.get("vendido"), "costo_unitario_bs": p.get("costo_unitario_bs"),
+                 "ganancia_bs": p.get("ganancia_bs")} for p in fin.get("productos", [])]
+    rec = [r for r in leer_csv("recomendaciones.csv")]
+    if rec:
+        ult = max(r["fecha"] + " " + r.get("hora", "") for r in rec)
+        rec = [{"texto": r["texto"], "por_que": r.get("por_que", ""), "accion": r.get("accion", "")}
+               for r in rec if r["fecha"] + " " + r.get("hora", "") == ult]
+        rec_cuando = ult
+    else:
+        rec_cuando = ""
+    return {
+        "vigilar": vig, "historial": hist, "locales": locales, "whatsapp": whatsapp, "demanda": demanda,
+        "documentos": docs[:40], "informes": informes[:30], "memoria": memoria, "chat": chat, "salud14": salud14,
+        "finanzas_productos": fin_prod, "recomendaciones": rec, "recomendaciones_cuando": rec_cuando,
+        "constantes": {"b_usd_kg": C.B_USD_KG, "b_min_kg": C.B_MIN_KG, "b_paso_kg": C.B_PASO_KG,
+                       "caja_g": C.CAJA_EXTERIOR_G, "a_usd": C.A_USD_UNIDAD, "a_tax": C.A_TAX_DEF},
+    }
+
+
 def main():
     D = leer_oficina()
     hoy = datetime.now(ZoneInfo("America/La_Paz"))
@@ -65,15 +145,18 @@ def main():
             "id": p["id"], "producto": p["producto"], "cantidad": int(num(p.get("cantidad")) or 1),
             "estado": p.get("estado", ""), "etapa": etapa_idx(p.get("estado")), "etapas": ETAPAS,
             "fecha_compra": p.get("fecha_compra", ""), "actualizado": p.get("actualizado", ""),
+            "tienda": p.get("tienda", ""), "courier": p.get("courier", ""),
             "eventos": [{"fecha": e["fecha"], "hora": e.get("hora", ""), "lugar": e.get("lugar", ""),
-                         "evento": e.get("evento", "")} for e in p.get("eventos", [])],
+                         "evento": e.get("evento", ""), "lat": num(e.get("lat")), "lon": num(e.get("lon"))}
+                        for e in p.get("eventos", [])],
         })
 
     fx = D.get("dolar", [])
     ult = fx[-1] if fx else {}
     dolar = {"usado": num(ult.get("usado")), "oficial": num(ult.get("oficial")),
              "paralelo": num(ult.get("paralelo_venta")), "fecha": ult.get("fecha", ""),
-             "serie": [{"fecha": f["fecha"], "valor": num(f.get("usado"))} for f in fx[-30:] if num(f.get("usado"))]}
+             "serie": [{"fecha": f["fecha"], "valor": num(f.get("usado")), "oficial": num(f.get("oficial")),
+                        "paralelo": num(f.get("paralelo_venta"))} for f in fx[-45:] if num(f.get("usado"))]}
 
     productos = []
     for a in analisis():
@@ -139,6 +222,7 @@ def main():
         "equipo": sorted(equipo, key=lambda e: e["cuando"], reverse=True), "objetivos": objetivos, "salud": salud,
         "alertas": alertas or [],
     }
+    out.update(extras(D, caz))
     os.makedirs(os.path.dirname(SALIDA), exist_ok=True)
     json.dump(out, open(SALIDA, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"app/datos-app.json: {len(productos)} productos, {len(pedidos)} pedidos, {len(decidir)} por decidir")
