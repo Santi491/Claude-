@@ -259,6 +259,7 @@ struct AgenteView: View {
 
     func nube(_ d: Datos) -> some View {
         Tarjeta(titulo: "Documentos", icono: "folder") {
+            NavigationLink { ArchivoView() } label: { Label("Abrir el archivo: informes, catálogos y capturas", systemImage: "archivebox").font(.subheadline.weight(.semibold)) }
             ForEach((d.documentos ?? []).prefix(15)) { x in
                 if let u = URL(string: x.url) {
                     Link(destination: u) {

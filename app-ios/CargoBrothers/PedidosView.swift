@@ -59,9 +59,15 @@ struct MapaRuta: View {
 struct PedidosView: View {
     @EnvironmentObject var store: Store
     @State private var filtro = ""
+    @State private var seccion = 0
     var body: some View {
-        Pantalla(titulo: "Pedidos") {
-            if let d = store.datos {
+        Pantalla(titulo: ["Pedidos", "Anuncios", "Clientes", "Tiendas"][seccion]) {
+            Picker("", selection: $seccion) { Text("Pedidos").tag(0); Text("Anuncios").tag(1); Text("Clientes").tag(2); Text("Tiendas").tag(3) }
+                .pickerStyle(.segmented)
+            if seccion == 1 { AnunciosView() }
+            else if seccion == 2 { ClientesView() }
+            else if seccion == 3 { TiendasView() }
+            else if let d = store.datos {
                 let productos = Array(Set(d.pedidos.map(\.producto))).sorted()
                 let visibles = d.pedidos.filter { filtro.isEmpty || $0.producto == filtro }
                 if d.pedidos.isEmpty { Text("Sin pedidos todavía.").foregroundStyle(Tema.gris) }

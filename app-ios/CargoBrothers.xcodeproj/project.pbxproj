@@ -24,6 +24,7 @@
 		9CF8A07AFE7F4448FA090B4C /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853087D9A16FEB38BD9EA645 /* GitHub.swift */; };
 		C6876863A89487D4F9E0C341 /* Acciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83D2B23602459B6C36474D /* Acciones.swift */; };
 		E313BFAFC4093C679D95F4C5 /* EquipoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C5D96174AE07BC40B1701 /* EquipoView.swift */; };
+		EB0B203E00434695642F5CFF /* VentasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A15194E2CC3B99416EB40 /* VentasView.swift */; };
 		FFF7B80627D6AACA1617FECB /* Componentes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1258C8E2E618C28407F90222 /* Componentes.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		11C131FA598268FF87C0C103 /* CargoWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CargoWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1229FF333DB2EDEE5619D0DE /* Modelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelo.swift; sourceTree = "<group>"; };
 		1258C8E2E618C28407F90222 /* Componentes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Componentes.swift; sourceTree = "<group>"; };
+		2C2A15194E2CC3B99416EB40 /* VentasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentasView.swift; sourceTree = "<group>"; };
 		3B37864CBDDB4B818CB0FE26 /* Fotos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Fotos.xcassets; sourceTree = "<group>"; };
 		3C83D2B23602459B6C36474D /* Acciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acciones.swift; sourceTree = "<group>"; };
 		3F307845EB1BA3750F894444 /* Formularios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formularios.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				A959C99911657117CA0FBF04 /* Info.plist */,
 				6B85EC49E114571E35BAB5B5 /* PedidosView.swift */,
 				AB966AC3E3A469EA59DF573A /* PreciosView.swift */,
+				2C2A15194E2CC3B99416EB40 /* VentasView.swift */,
 				E055386B3C14F3F8100EA3BB /* VentaView.swift */,
 			);
 			path = CargoBrothers;
@@ -262,6 +265,7 @@
 				39C530296CE27EC849C77BF4 /* PedidosView.swift in Sources */,
 				314806A88F36DBF1740EE171 /* PreciosView.swift in Sources */,
 				22BAB56C8D0DB99F575D74B8 /* VentaView.swift in Sources */,
+				EB0B203E00434695642F5CFF /* VentasView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,9 @@ import ActivityKit
 // Datos que arma app_datos.py en el repo (app/datos-app.json). Salen del mismo filtro de privacidad que la oficina.
 enum Fuente {
     static let url = URL(string: "https://raw.githubusercontent.com/Santi491/Claude-/claude/agente-independiente-s3uc8z/app/datos-app.json")!
+    static func raw(_ ruta: String) -> URL? {
+        URL(string: "https://raw.githubusercontent.com/Santi491/Claude-/claude/agente-independiente-s3uc8z/" + (ruta.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ruta))
+    }
     static var cache: URL {
         FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0].appendingPathComponent("datos-app.json")
     }
@@ -56,7 +59,27 @@ struct Datos: Codable {
     var recomendaciones: [Recomendacion]?
     var recomendaciones_cuando: String?
     var constantes: Constantes?
+    var clientes: [Cliente]?
+    var publicaciones: [Publicacion]?
+    var tiendas: [TiendaInfo]?
+    var informes_nube: [InformeNube]?
+    var catalogos: [Catalogo]?
+    var capturas: [Captura]?
 }
+
+struct Cliente: Codable, Identifiable, Hashable { var tienda: String; var grupo: String; var prioridad: String; var por_que: String; var productos: String
+    var precio_ref_bs: Double?; var proximo_paso: String; var actualizado: String; var id: String { tienda }
+    var letra: String { String(grupo.prefix(1)) }
+    var orden: Int { if let r = proximo_paso.range(of: #"Orden (\d+)"#, options: .regularExpression) { return Int(proximo_paso[r].dropFirst(6)) ?? 999 }; return 999 } }
+struct Publicacion: Codable, Identifiable, Hashable { var fecha: String; var hora: String; var producto: String; var accion: String; var precio_bs: String
+    var cantidad: String; var titulo: String; var clics: String; var mensajes: String; var notas: String; var id: String { fecha + hora + producto + accion } }
+struct PrecioTienda: Codable, Identifiable, Hashable { var fecha: String; var producto: String; var precio_bs: Double?; var estado: String; var id: String { fecha + producto + String(precio_bs ?? 0) } }
+struct TiendaInfo: Codable, Identifiable, Hashable { var id: String; var tienda: String; var ciudad: String; var estado: String; var vende: String; var ultima: String
+    var enviados: Int; var recibidos: Int; var con_precio: Int; var ultimo_mensaje: String; var grupo: String; var precios: [PrecioTienda] }
+struct InformeNube: Codable, Identifiable, Hashable { var fecha: String; var ruta: String; var id: String { ruta } }
+struct Catalogo: Codable, Identifiable, Hashable { var fecha: String; var tienda: String; var canal: String; var formato: String; var descripcion: String
+    var productos: String; var precios: String; var ruta: String; var id: String { fecha + tienda + formato + descripcion.prefix(20) } }
+struct Captura: Codable, Identifiable, Hashable { var fecha: String; var hora: String; var agente: String; var descripcion: String; var ruta: String; var id: String { ruta } }
 
 struct Vigilado: Codable, Identifiable, Hashable { var producto: String; var cat: String; var peso_g: Double; var mediana_bs: Double?; var tope_usd: Double?; var id: String { producto } }
 struct Hist: Codable, Identifiable, Hashable { var fecha: String; var nuevo: Double?; var usado: Double?; var mkt: Double?; var tienda: Double?; var id: String { fecha } }

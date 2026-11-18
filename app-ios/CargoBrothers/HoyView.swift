@@ -36,6 +36,7 @@ struct HoyView: View {
                 Text("Datos de \(F.dia(d.generado)) a las \(d.generado.suffix(5))").font(.caption).foregroundStyle(Tema.gris)
             }
         } barra: {
+            NavigationLink { ArchivoView() } label: { Image(systemName: "archivebox") }
             Button { hoja = .ajustes } label: { Image(systemName: "gearshape") }
             Menu {
                 Button { hoja = .compra } label: { Label("Registrar compra", systemImage: "cart.badge.plus") }

@@ -193,6 +193,7 @@ struct TareaForm: View {
     @EnvironmentObject var store: Store
     @Environment(\.dismiss) var cerrar
     var agenteInicial = "wa"
+    var tareaInicial = ""
     @State private var agente = ""
     @State private var tarea = ""
     @State private var prioridad = "alta"
@@ -226,7 +227,7 @@ struct TareaForm: View {
                     .disabled(tarea.trimmingCharacters(in: .whitespaces).isEmpty)
             }
         }
-        .onAppear { if agente.isEmpty { agente = agenteInicial } }
+        .onAppear { if agente.isEmpty { agente = agenteInicial; tarea = tareaInicial } }
     }
 }
 
