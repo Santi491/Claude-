@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-18"
  },
- "actualizado": "2026-11-18 16:18",
+ "actualizado": "2026-11-18 16:21",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -28,9 +28,9 @@
    "hora": "16:18"
   },
   "ana": {
-   "estado": "trabajando",
-   "texto": "recalcular con precios nuevos",
-   "hora": "16:18"
+   "estado": "terminó",
+   "texto": "recalculado; dedupe 7700X",
+   "hora": "16:21"
   },
   "fin": {
    "estado": "trabajando",
