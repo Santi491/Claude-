@@ -289,6 +289,11 @@ def main():
     with open(os.path.join(OFI, "datos.js"), "w", encoding="utf-8") as f:
         f.write("window.DATOS = " + json.dumps(datos, ensure_ascii=False) + ";\n")
     print(f"oficina/datos.js: {len(productos)} productos, {len(mov)} movimientos, {len(docs)} documentos")
+    try:   # datos de la app de iPhone (app/datos-app.json, Santi 18/11); si falla, la oficina igual queda hecha
+        import app_datos
+        app_datos.main()
+    except Exception as e:  # noqa: BLE001
+        print(f"app/datos-app.json NO SE HIZO: {e}")
 
 
 if __name__ == "__main__":

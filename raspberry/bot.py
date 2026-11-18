@@ -780,8 +780,53 @@ def cmd_salud():
     return "Salud del equipo hoy:\n" + "\n".join(f"{icono.get(v['estado'], v['estado'])} {v.get('nombre', k)}: {v['estado']}" for k, v in e.items())
 
 
+def cmd_app(accion, tipo, ref):
+    """Decisiones que Santi manda desde la app de iPhone (18/11): 'app: aprobar plan 2026-11-16-1', 'app: rechazar idea 22',
+    'app: resuelta necesidad 46'. Van por id exacto, sin IA (a diferencia de 'apruebo 3', vale para cualquier fecha)."""
+    actualizar_repo()
+    sello = "App " + ahora().strftime("%d/%m %H:%M")
+    if tipo == "plan":
+        campos, filas = leer_csv("plan.csv")
+        f = next((f for f in filas if f["id"] == ref), None)
+        if not f:
+            return f"No encontré la tarea {ref} en el plan."
+        if f["estado"] != "propuesto":
+            return f"La tarea {ref} ya estaba {f['estado']}."
+        f["estado"], f["decision"] = ("aprobado" if accion == "aprobar" else "rechazado"), sello
+        escribir_csv("plan.csv", campos, filas)
+        hecho = f"tarea {ref} {f['estado']}"
+    elif tipo == "idea":
+        campos, filas = leer_csv("ideas.csv")
+        i = int(ref) - 1 if ref.isdigit() else -1
+        if not 0 <= i < len(filas):
+            return f"No encontré la idea {ref}."
+        f = filas[i]
+        if f["estado"] != "propuesta":
+            return f"La idea {ref} ya estaba {f['estado']}."
+        f["estado"], f["decision"] = ("aprobada" if accion == "aprobar" else "rechazada"), sello
+        escribir_csv("ideas.csv", campos, filas)
+        hecho = f"idea {ref} {f['estado']}"
+    else:
+        campos, filas = leer_csv("necesidades.csv")
+        i = int(ref) - 1 if ref.isdigit() else -1
+        if not 0 <= i < len(filas):
+            return f"No encontré la necesidad {ref}."
+        f = filas[i]
+        if f["estado"] != "abierta":
+            return f"La necesidad {ref} ya estaba {f['estado']}."
+        f["estado"], f["resuelto"] = "resuelta", ahora().strftime("%Y-%m-%d") + " (Santi, app)"
+        escribir_csv("necesidades.csv", campos, filas)
+        hecho = f"necesidad {ref} resuelta"
+    anotar_actividad(f"App de iPhone (Raspberry): {hecho}")
+    ok = subir(f"App: {hecho} (Santi)", extra=("ideas.csv",))
+    return f"Listo, {hecho}." + ("" if ok else " Ojo: no pude subirlo a GitHub; lo reintento en el próximo cambio.")
+
+
 def atender(texto, estado):
     t = simple(texto)
+    m = re.fullmatch(r"app:\s*(aprobar|rechazar|resuelta)\s+(plan|idea|necesidad)\s+([\w-]+)", t)
+    if m:
+        return cmd_app(*m.groups())
     if t in ("ayuda", "/start", "/ayuda", "help", "?"):
         return AYUDA
     if t in ("necesidades", "/necesidades", "que necesitan", "que falta", "que le falta al equipo"):
