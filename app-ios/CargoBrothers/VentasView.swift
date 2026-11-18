@@ -40,14 +40,14 @@ struct ClientesView: View {
         Button { withAnimation { grupo = v } } label: {
             Text("\(t) (\(cuenta(v)))").font(.caption.weight(.semibold)).padding(.horizontal, 10).padding(.vertical, 6)
                 .background(grupo == v ? c.opacity(0.9) : Tema.fondo, in: Capsule())
-                .foregroundStyle(grupo == v ? .black : Tema.texto).overlay(Capsule().stroke(Tema.linea))
+                .foregroundStyle(grupo == v ? Tema.sobreAcento : Tema.texto).overlay(Capsule().stroke(Tema.linea))
         }
     }
 
     func tarjeta(_ c: Cliente) -> some View {
         Tarjeta {
             HStack(alignment: .firstTextBaseline) {
-                if c.orden < 999 { Text("\(c.orden)").font(.caption.weight(.bold)).frame(width: 24, height: 24).background(Tema.bronce, in: Circle()).foregroundStyle(.black) }
+                if c.orden < 999 { Text("\(c.orden)").font(.caption.weight(.bold)).frame(width: 24, height: 24).background(Tema.bronce, in: Circle()).foregroundStyle(Tema.sobreAcento) }
                 Text(c.tienda).font(.headline)
                 Spacer()
                 Chip(texto: c.prioridad, color: c.prioridad == "alta" ? Tema.verde : c.prioridad == "media" ? Tema.ambar : Tema.gris)
@@ -73,7 +73,7 @@ struct AnunciosView: View {
                     Text("Marketplace publica cuando fijes el precio y dejes las fotos en la PC (Documents\\fotos-publicar). Después acá ves cada anuncio: precio, días en línea, clics, mensajes e interesados.")
                         .font(.footnote).foregroundStyle(Tema.gris)
                     Button { venta = true } label: { Label("Preparar la venta", systemImage: "tag").frame(maxWidth: .infinity).padding(.vertical, 4) }
-                        .buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(.black)
+                        .buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(Tema.sobreAcento)
                 }
             } else {
                 ForEach(Dictionary(grouping: pubs, by: \.producto).sorted { $0.key < $1.key }, id: \.key) { prod, l in
@@ -104,7 +104,7 @@ struct AnunciosView: View {
             }
             competencia
         }
-        .sheet(isPresented: $venta) { NavigationStack { PrepararVentaView() }.environmentObject(store).preferredColorScheme(.dark).tint(Tema.bronce) }
+        .sheet(isPresented: $venta) { NavigationStack { PrepararVentaView() }.environmentObject(store).preferredColorScheme(Tema.esquema).tint(Tema.bronce) }
     }
 
     @ViewBuilder var competencia: some View {
@@ -162,7 +162,7 @@ struct TiendasView: View {
                     ForEach(TiendasView.filtros, id: \.0) { f in
                         Button { withAnimation { filtro = f.0 } } label: {
                             Text(f.1).font(.caption.weight(.semibold)).padding(.horizontal, 10).padding(.vertical, 6)
-                                .background(filtro == f.0 ? Tema.bronce : Tema.tarjeta, in: Capsule()).foregroundStyle(filtro == f.0 ? .black : Tema.texto)
+                                .background(filtro == f.0 ? Tema.bronce : Tema.tarjeta, in: Capsule()).foregroundStyle(filtro == f.0 ? Tema.sobreAcento : Tema.texto)
                         }
                     }
                 }
@@ -240,7 +240,7 @@ struct TiendaDetalle: View {
             }.padding(16)
         }
         .background(Tema.fondo).navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $tarea) { NavigationStack { TareaForm(agenteInicial: "wa", tareaInicial: "\(nombre): ") }.environmentObject(store).preferredColorScheme(.dark).tint(Tema.bronce) }
+        .sheet(isPresented: $tarea) { NavigationStack { TareaForm(agenteInicial: "wa", tareaInicial: "\(nombre): ") }.environmentObject(store).preferredColorScheme(Tema.esquema).tint(Tema.bronce) }
     }
     func dato(_ v: String, _ t: String) -> some View {
         VStack(alignment: .leading, spacing: 1) { Text(v).font(.headline.monospacedDigit()); Text(t).font(.caption2).foregroundStyle(Tema.gris) }.frame(maxWidth: .infinity, alignment: .leading)
@@ -259,7 +259,7 @@ struct ArchivoView: View {
                         ForEach(Array(["Informes", "Catálogos", "Capturas", "Gerente", "Movimientos"].enumerated()), id: \.offset) { i, t in
                             Button { withAnimation { cajon = i } } label: {
                                 Text(t).font(.subheadline.weight(.semibold)).padding(.horizontal, 12).padding(.vertical, 7)
-                                    .background(cajon == i ? Tema.bronce : Tema.tarjeta, in: Capsule()).foregroundStyle(cajon == i ? .black : Tema.texto)
+                                    .background(cajon == i ? Tema.bronce : Tema.tarjeta, in: Capsule()).foregroundStyle(cajon == i ? Tema.sobreAcento : Tema.texto)
                             }
                         }
                     }

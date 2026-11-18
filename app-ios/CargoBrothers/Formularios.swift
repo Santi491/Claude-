@@ -259,6 +259,9 @@ struct AjustesView: View {
             } header: { Text("Clave de GitHub") } footer: {
                 Text("Créala en GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens: solo el repo Claude-, permiso Contents en Read and write, vence en 1 año. Si pierdes el celular, bórrala en GitHub y deja de servir al instante.")
             }
+            Section("Apariencia") {
+                NavigationLink { AparienciaView() } label: { Label("Modo, colores y fondo", systemImage: "paintpalette") }
+            }
             Section("Seguridad") {
                 Toggle("Pedir Face ID al abrir la app", isOn: $bloqueo)
             }

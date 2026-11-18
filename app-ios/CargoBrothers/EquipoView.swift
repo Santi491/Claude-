@@ -26,7 +26,7 @@ struct Salud14: View {
     static let partes = [("nube", "Nube 7:52"), ("manana", "PC 10:30"), ("pc", "PC 16:00"), ("gerente", "Gerente 20:00")]
     static func color(_ e: String) -> Color {
         switch e { case "ok", "cubierta", "arreglado": return Tema.verde
-        case "no toca", "pendiente", "en curso", "": return Color.white.opacity(0.10)
+        case "no toca", "pendiente", "en curso", "": return Tema.suave
         case "alerta": return Tema.ambar
         default: return Tema.rojo }
     }
@@ -131,7 +131,7 @@ struct AgenteView: View {
                         }
                         HStack {
                             NavigationLink { ChatView(agente: agente) } label: { Label("Escribirle", systemImage: "bubble.left.and.bubble.right").frame(maxWidth: .infinity).padding(.vertical, 4) }
-                                .buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(.black)
+                                .buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(Tema.sobreAcento)
                             Button { tarea = true } label: { Label("Encargar", systemImage: "checklist").frame(maxWidth: .infinity).padding(.vertical, 4) }
                                 .buttonStyle(.bordered)
                         }
@@ -147,7 +147,7 @@ struct AgenteView: View {
         }
         .background(Tema.fondo).navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $tarea) {
-            NavigationStack { TareaForm(agenteInicial: agente) }.environmentObject(store).preferredColorScheme(.dark).tint(Tema.bronce)
+            NavigationStack { TareaForm(agenteInicial: agente) }.environmentObject(store).preferredColorScheme(Tema.esquema).tint(Tema.bronce)
         }
     }
 
@@ -336,11 +336,11 @@ struct ChatView: View {
                     Text("\(Equipo.nombre(m.de)) → \(Equipo.nombre(m.para))").font(.caption2.weight(.semibold)).foregroundStyle(Tema.bronce)
                 }
                 Text(m.texto).font(.subheadline)
-                Text("\(F.dia(m.fecha)) \(m.hora)").font(.caption2).foregroundStyle(mio ? .black.opacity(0.6) : Tema.gris)
+                Text("\(F.dia(m.fecha)) \(m.hora)").font(.caption2).foregroundStyle(mio ? Tema.sobreAcento.opacity(0.6) : Tema.gris)
             }
             .padding(10)
             .background(mio ? Tema.bronce : Tema.tarjeta, in: RoundedRectangle(cornerRadius: 16))
-            .foregroundStyle(mio ? .black : Tema.texto)
+            .foregroundStyle(mio ? Tema.sobreAcento : Tema.texto)
             if !mio { Spacer(minLength: 40) }
         }
     }

@@ -11,6 +11,9 @@ let TAREA_FONDO = "com.cargobrothers.oficina.refresh"
 struct CargoBrothersApp: App {
     @StateObject private var store = Store.compartido
     @Environment(\.scenePhase) private var fase
+    @AppStorage("tema_modo") private var modo = "sistema"
+    @AppStorage("tema_acento") private var acento = "bronce"
+    @AppStorage("tema_fondo") private var fondo = "grafito"
 
     init() {
         UNUserNotificationCenter.current().delegate = DelegadoAvisos.compartido
@@ -34,8 +37,9 @@ struct CargoBrothersApp: App {
         WindowGroup {
             RaizView()
                 .environmentObject(store)
-                .preferredColorScheme(.dark)
+                .preferredColorScheme(Tema.esquema)
                 .tint(Tema.bronce)
+                .id("\(modo)-\(acento)-\(fondo)")   // al cambiar la apariencia, la app se vuelve a dibujar con los colores nuevos
         }
         .onChange(of: fase) { _, f in
             if f == .background { Novedades.programar(); store.bloquearSiCorresponde(); store.pararReloj() }
@@ -231,10 +235,10 @@ struct Bloqueo: View {
         ZStack {
             Tema.fondo.ignoresSafeArea()
             VStack(spacing: 22) {
-                Image("Logo").resizable().scaledToFit().frame(width: 120)
+                Image("Logo").resizable().renderingMode(.template).scaledToFit().foregroundStyle(Tema.texto).frame(width: 120)
                 Text("Cargo Brothers").font(.title2.weight(.semibold))
                 Button { Task { await store.desbloquear() } } label: { Label("Abrir con Face ID", systemImage: "faceid").padding(.horizontal, 10) }
-                    .buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(.black)
+                    .buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(Tema.sobreAcento)
             }
         }
         .task { await store.desbloquear() }

@@ -53,7 +53,7 @@ struct MapaRuta: View {
                     .padding(12).background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14))
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading).padding(16).padding(.bottom, 10)
                 }
-                .preferredColorScheme(.dark)
+                .preferredColorScheme(Tema.esquema)
             }
     }
 
@@ -70,7 +70,7 @@ struct MapaRuta: View {
                     Annotation(p.producto, coordinate: ahora) {
                         ZStack {
                             Circle().fill(Tema.bronce.opacity(0.25)).frame(width: 34, height: 34)
-                            Image(systemName: "shippingbox.fill").font(.caption).foregroundStyle(.black)
+                            Image(systemName: "shippingbox.fill").font(.caption).foregroundStyle(Tema.sobreAcento)
                                 .frame(width: 24, height: 24).background(Tema.bronce, in: Circle())
                         }
                     }
@@ -145,7 +145,7 @@ struct PedidosView: View {
         Button { withAnimation { filtro = v } } label: {
             Text(t).font(.subheadline.weight(.semibold)).padding(.horizontal, 12).padding(.vertical, 7)
                 .background(filtro == v ? Tema.bronce : Tema.tarjeta, in: Capsule())
-                .foregroundStyle(filtro == v ? .black : Tema.texto)
+                .foregroundStyle(filtro == v ? Tema.sobreAcento : Tema.texto)
                 .overlay(Capsule().stroke(Tema.linea))
         }
     }
@@ -172,7 +172,7 @@ struct PedidoDetalle: View {
                 if !pedido.entregado {
                     HStack(spacing: 10) {
                         Button { hoja = .etapa } label: { Label("Avisar cómo va", systemImage: "mappin.and.ellipse").frame(maxWidth: .infinity).padding(.vertical, 6) }
-                            .buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(.black)
+                            .buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(Tema.sobreAcento)
                         Button { store.seguir(pedido) } label: {
                             Label(store.siguiendo(pedido) ? "Quitar" : "Pantalla bloqueada", systemImage: store.siguiendo(pedido) ? "lock.slash" : "lock.iphone")
                                 .frame(maxWidth: .infinity).padding(.vertical, 6)
@@ -187,9 +187,9 @@ struct PedidoDetalle: View {
                     ForEach(Array(pedido.etapas.enumerated()), id: \.offset) { i, e in
                         HStack(spacing: 12) {
                             ZStack {
-                                Circle().fill(i <= pedido.etapa ? Tema.bronce : Color.white.opacity(0.1)).frame(width: 22, height: 22)
-                                if i < pedido.etapa { Image(systemName: "checkmark").font(.caption2.weight(.bold)).foregroundStyle(.black) }
-                                if i == pedido.etapa { Circle().fill(.black).frame(width: 8, height: 8) }
+                                Circle().fill(i <= pedido.etapa ? Tema.bronce : Tema.suave).frame(width: 22, height: 22)
+                                if i < pedido.etapa { Image(systemName: "checkmark").font(.caption2.weight(.bold)).foregroundStyle(Tema.sobreAcento) }
+                                if i == pedido.etapa { Circle().fill(Tema.sobreAcento).frame(width: 8, height: 8) }
                             }
                             Text(e.prefix(1).uppercased() + e.dropFirst())
                                 .font(i == pedido.etapa ? .headline : .subheadline)
@@ -219,7 +219,7 @@ struct PedidoDetalle: View {
             NavigationStack {
                 if h == .etapa { EtapaForm(pedidoInicial: pedido) } else { PrepararVentaView() }
             }
-            .environmentObject(store).preferredColorScheme(.dark).tint(Tema.bronce)
+            .environmentObject(store).preferredColorScheme(Tema.esquema).tint(Tema.bronce)
         }
     }
 }

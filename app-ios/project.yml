@@ -47,7 +47,11 @@ targets:
   CargoWidgets:
     type: app-extension
     platform: iOS
-    sources: [Widgets, Shared]
+    sources:
+      - Widgets
+      - Shared
+      - path: Fotos.xcassets
+        optional: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.cargobrothers.oficina.widgets

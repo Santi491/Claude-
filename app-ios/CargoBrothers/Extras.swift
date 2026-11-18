@@ -74,7 +74,7 @@ struct LibretaView: View {
                     Text("Abiertas (\((store.datos?.libreta ?? []).filter { $0.estado == "abierta" }.count))").tag(false)
                     Text("Cerradas").tag(true)
                 }.pickerStyle(.segmented)
-                Button { anotar = true } label: { Label("Anotar", systemImage: "plus") }.buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(.black)
+                Button { anotar = true } label: { Label("Anotar", systemImage: "plus") }.buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(Tema.sobreAcento)
             }
             ForEach(notas) { n in
                 VStack(alignment: .leading, spacing: 3) {
@@ -93,7 +93,7 @@ struct LibretaView: View {
             }
             if notas.isEmpty { Text(verCerradas ? "Nada cerrado todavía." : "Nada abierto.").font(.footnote).foregroundStyle(Tema.gris) }
         }
-        .sheet(isPresented: $anotar) { NavigationStack { AnotarForm() }.environmentObject(store).preferredColorScheme(.dark).tint(Tema.bronce) }
+        .sheet(isPresented: $anotar) { NavigationStack { AnotarForm() }.environmentObject(store).preferredColorScheme(Tema.esquema).tint(Tema.bronce) }
     }
 }
 

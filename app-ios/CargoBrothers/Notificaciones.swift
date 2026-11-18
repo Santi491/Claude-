@@ -363,7 +363,7 @@ struct NotificacionesView: View {
                             Button { importarPara = t } label: { Label("Mío", systemImage: "folder").lineLimit(1).frame(maxWidth: .infinity) }
                                 .buttonStyle(.bordered)
                             Button { Task { await Avisador.ejemplo(t, store.datos) } } label: { Label("Probar", systemImage: "bell.badge").lineLimit(1).frame(maxWidth: .infinity) }
-                                .buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(.black)
+                                .buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(Tema.sobreAcento)
                         }
                         .font(.footnote.weight(.semibold)).controlSize(.small).labelStyle(.titleAndIcon)
                     }

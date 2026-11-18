@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import UIKit
 #if canImport(ActivityKit)
 import ActivityKit
 #endif
@@ -213,16 +214,53 @@ struct Salud: Codable, Identifiable, Hashable {
 }
 
 // ---------- Marca: grafito, mármol negro y bronce, como la oficina ----------
+/// Colores de la app: cambian solos entre claro y oscuro (UIColor dinámico) y el acento lo elige Santi (Ajustes → Apariencia).
 enum Tema {
-    static let fondo = Color(red: 0.055, green: 0.055, blue: 0.06)
-    static let tarjeta = Color(red: 0.105, green: 0.105, blue: 0.115)
-    static let linea = Color.white.opacity(0.08)
-    static let bronce = Color(red: 0.79, green: 0.64, blue: 0.36)
-    static let texto = Color(red: 0.93, green: 0.93, blue: 0.94)
-    static let gris = Color(red: 0.6, green: 0.61, blue: 0.64)
-    static let verde = Color(red: 0.36, green: 0.77, blue: 0.56)
-    static let ambar = Color(red: 0.95, green: 0.65, blue: 0.25)
-    static let rojo = Color(red: 0.93, green: 0.45, blue: 0.45)
+    static func dyn(_ oscuro: UIColor, _ claro: UIColor) -> Color {
+        Color(UIColor { $0.userInterfaceStyle == .light ? claro : oscuro })
+    }
+    static func rgb(_ r: Double, _ g: Double, _ b: Double) -> UIColor { UIColor(red: r, green: g, blue: b, alpha: 1) }
+
+    /// acentos para elegir: nombre, color en oscuro, color en claro
+    static let acentos: [(String, String, UIColor, UIColor)] = [
+        ("bronce", "Bronce", rgb(0.79, 0.64, 0.36), rgb(0.62, 0.47, 0.20)),
+        ("oro", "Oro", rgb(0.93, 0.76, 0.32), rgb(0.72, 0.55, 0.10)),
+        ("cobre", "Cobre", rgb(0.85, 0.50, 0.32), rgb(0.70, 0.36, 0.18)),
+        ("esmeralda", "Esmeralda", rgb(0.30, 0.78, 0.58), rgb(0.10, 0.55, 0.38)),
+        ("zafiro", "Zafiro", rgb(0.42, 0.62, 0.95), rgb(0.18, 0.40, 0.80)),
+        ("amatista", "Amatista", rgb(0.70, 0.55, 0.95), rgb(0.48, 0.32, 0.78)),
+        ("rubi", "Rubí", rgb(0.92, 0.40, 0.48), rgb(0.75, 0.20, 0.30)),
+        ("plata", "Plata", rgb(0.78, 0.80, 0.84), rgb(0.40, 0.42, 0.46)),
+    ]
+    /// fondos para elegir en oscuro: grafito (el de siempre), negro puro o azul noche
+    static let fondos: [(String, String, UIColor, UIColor)] = [
+        ("grafito", "Grafito", rgb(0.055, 0.055, 0.06), rgb(0.105, 0.105, 0.115)),
+        ("negro", "Negro", rgb(0, 0, 0), rgb(0.085, 0.085, 0.09)),
+        ("noche", "Azul noche", rgb(0.04, 0.06, 0.10), rgb(0.08, 0.11, 0.17)),
+    ]
+    static var acentoID: String { UserDefaults.standard.string(forKey: "tema_acento") ?? "bronce" }
+    static var fondoID: String { UserDefaults.standard.string(forKey: "tema_fondo") ?? "grafito" }
+    private static var acento: (UIColor, UIColor) { let a = acentos.first { $0.0 == acentoID } ?? acentos[0]; return (a.2, a.3) }
+    private static var base: (UIColor, UIColor) { let f = fondos.first { $0.0 == fondoID } ?? fondos[0]; return (f.2, f.3) }
+
+    static var fondo: Color { dyn(base.0, rgb(0.955, 0.95, 0.94)) }
+    static var tarjeta: Color { dyn(base.1, rgb(1, 1, 1)) }
+    static var linea: Color { dyn(UIColor.white.withAlphaComponent(0.08), UIColor.black.withAlphaComponent(0.08)) }
+    static var bronce: Color { dyn(acento.0, acento.1) }
+    static var texto: Color { dyn(rgb(0.93, 0.93, 0.94), rgb(0.10, 0.10, 0.11)) }
+    static var gris: Color { dyn(rgb(0.6, 0.61, 0.64), rgb(0.42, 0.43, 0.46)) }
+    static var verde: Color { dyn(rgb(0.36, 0.77, 0.56), rgb(0.10, 0.55, 0.32)) }
+    static var ambar: Color { dyn(rgb(0.95, 0.65, 0.25), rgb(0.75, 0.45, 0.02)) }
+    static var rojo: Color { dyn(rgb(0.93, 0.45, 0.45), rgb(0.75, 0.18, 0.20)) }
+    /// texto encima del color de acento (botones llenos)
+    static var sobreAcento: Color { dyn(.black, .white) }
+    /// relleno suave (barras vacías, círculos apagados)
+    static var suave: Color { dyn(UIColor.white.withAlphaComponent(0.12), UIColor.black.withAlphaComponent(0.08)) }
+
+    /// modo elegido: sistema, claro u oscuro
+    static var esquema: ColorScheme? {
+        switch UserDefaults.standard.string(forKey: "tema_modo") ?? "sistema" { case "claro": return .light; case "oscuro": return .dark; default: return nil }
+    }
 
     static func color(recomendacion r: String) -> Color {
         switch r { case "traer": return verde; case "esperar": return ambar; case "no traer": return rojo; default: return gris }
@@ -275,7 +313,7 @@ struct Pasos: View {
     var body: some View {
         HStack(spacing: 4) {
             ForEach(0..<max(total, 1), id: \.self) { i in
-                Capsule().fill(i <= etapa ? Tema.bronce : Color.white.opacity(0.12)).frame(height: alto)
+                Capsule().fill(i <= etapa ? Tema.bronce : Tema.suave).frame(height: alto)
             }
         }
     }

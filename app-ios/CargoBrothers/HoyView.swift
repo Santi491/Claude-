@@ -2,7 +2,7 @@ import SwiftUI
 import Charts
 
 enum Hoja: String, Identifiable {
-    case compra, venta, etapa, calculadora, tarea, ajustes, prepararVenta
+    case compra, venta, etapa, calculadora, tarea, ajustes, prepararVenta, buscar
     var id: String { rawValue }
 }
 
@@ -20,7 +20,7 @@ struct HoyView: View {
                 if let p = principal(d), p.etapa >= 5, !p.entregado || (d.finanzas.unidades_en_stock ?? 0) > 0 {
                     Button { hoja = .prepararVenta } label: {
                         Label("Preparar la venta del \(p.producto)", systemImage: "tag").frame(maxWidth: .infinity).padding(.vertical, 6)
-                    }.buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(.black)
+                    }.buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(Tema.sobreAcento)
                 }
                 HStack(spacing: 12) {
                     NavigationLink { DolarView() } label: { tarjetaDolar(d) }.buttonStyle(.plain)
@@ -37,6 +37,7 @@ struct HoyView: View {
                 Text("Datos de \(F.dia(d.generado)) a las \(d.generado.suffix(5))").font(.caption).foregroundStyle(Tema.gris)
             }
         } barra: {
+            Button { hoja = .buscar } label: { Image(systemName: "magnifyingglass") }
             NavigationLink { ArchivoView() } label: { Image(systemName: "archivebox") }
             Button { hoja = .ajustes } label: { Image(systemName: "gearshape") }
             Menu {
@@ -59,10 +60,11 @@ struct HoyView: View {
                 case .tarea: TareaForm()
                 case .ajustes: AjustesView()
                 case .prepararVenta: PrepararVentaView()
+                case .buscar: BuscadorView()
                 }
             }
             .environmentObject(store)
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(Tema.esquema)
             .tint(Tema.bronce)
         }
     }
@@ -71,7 +73,7 @@ struct HoyView: View {
 
     func encabezado(_ d: Datos) -> some View {
         HStack(spacing: 14) {
-            Image("Logo").resizable().scaledToFit().frame(width: 52, height: 52)
+            Image("Logo").resizable().renderingMode(.template).scaledToFit().foregroundStyle(Tema.texto).frame(width: 52, height: 52)
             VStack(alignment: .leading, spacing: 2) {
                 Text("ETAPA \(d.etapa.numero ?? 1)").font(.caption.weight(.bold)).tracking(1.5).foregroundStyle(Tema.bronce)
                 Text(d.etapa.nombre.prefix(1).uppercased() + d.etapa.nombre.dropFirst()).font(.title3.weight(.semibold))

@@ -6,6 +6,9 @@ import ActivityKit
 struct CargoWidgets: WidgetBundle {
     var body: some Widget {
         ResumenWidget()
+        CazadorWidget()
+        DolarWidget()
+        GerenteWidget()
         PedidoLiveActivity()
     }
 }
