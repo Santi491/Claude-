@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-18"
  },
- "actualizado": "2026-11-18 16:17",
+ "actualizado": "2026-11-18 16:18",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -23,9 +23,9 @@
    "hora": "16:17"
   },
   "pedidos": {
-   "estado": "trabajando",
-   "texto": "rastreo de pedidos",
-   "hora": "16:17"
+   "estado": "terminó",
+   "texto": "sin cambios",
+   "hora": "16:18"
   }
  }
 }
