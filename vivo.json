@@ -6,5 +6,11 @@
   "fecha": "2026-11-18"
  },
  "actualizado": "2026-11-18 15:45",
- "agentes": {}
+ "agentes": {
+  "wa": {
+   "estado": "trabajando",
+   "texto": "Prueba del foquito desde la Mac (no es una ronda real)",
+   "hora": "15:45"
+  }
+ }
 }
