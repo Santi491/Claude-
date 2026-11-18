@@ -196,37 +196,82 @@ struct HoyView: View {
     }
 }
 
-// ---------- Dólar ----------
+// ---------- Dólar: hoy y el historial por rangos (1, 7, 15 y 30 días) ----------
 struct DolarView: View {
     @EnvironmentObject var store: Store
+    @State private var dias = 30
+    @State private var detalle = false
+
+    func fecha(_ s: String) -> Date { GraficoPrecio.fmt.date(from: s) ?? .distantPast }
+
     var body: some View {
         ScrollView {
             if let d = store.datos {
+                let tramo = d.dolar.serie.filter { fecha($0.fecha) >= Date().addingTimeInterval(-Double(dias) * 86400) }
                 VStack(spacing: 14) {
-                    Tarjeta(titulo: "Hoy", icono: "dollarsign.circle") {
+                    Tarjeta(titulo: "Hoy · \(F.dia(d.dolar.fecha))", icono: "dollarsign.circle") {
                         HStack {
                             dato("USDT (el de los cálculos)", d.dolar.usado, Tema.bronce)
                             dato("Paralelo", d.dolar.paralelo, Tema.texto)
                             dato("Oficial", d.dolar.oficial, Tema.gris)
                         }
                     }
-                    Tarjeta(titulo: "Últimos días", icono: "chart.xyaxis.line") {
-                        let s = d.dolar.serie
-                        Chart {
-                            ForEach(s) { p in
-                                if let v = p.valor { LineMark(x: .value("día", F.dia(p.fecha)), y: .value("Bs", v), series: .value("", "USDT")).foregroundStyle(Tema.bronce) }
-                                if let v = p.paralelo { LineMark(x: .value("día", F.dia(p.fecha)), y: .value("Bs", v), series: .value("", "Paralelo")).foregroundStyle(Tema.texto.opacity(0.6)) }
-                                if let v = p.oficial { LineMark(x: .value("día", F.dia(p.fecha)), y: .value("Bs", v), series: .value("", "Oficial")).foregroundStyle(Tema.gris).lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 3])) }
+                    Tarjeta(titulo: "Historial", icono: "chart.xyaxis.line") {
+                        Picker("", selection: $dias) { Text("1 día").tag(1); Text("7 días").tag(7); Text("15 días").tag(15); Text("30 días").tag(30) }
+                            .pickerStyle(.segmented)
+                        if dias == 1 { hoyContraAyer(d.dolar.serie) }
+                        else if tramo.count < 2 { Text("Pocos datos en este rango.").font(.footnote).foregroundStyle(Tema.gris) }
+                        else {
+                            Chart {
+                                ForEach(tramo) { p in
+                                    let f = fecha(p.fecha)
+                                    if let v = p.valor { LineMark(x: .value("día", f), y: .value("Bs", v), series: .value("", "USDT")).foregroundStyle(Tema.bronce)
+                                        PointMark(x: .value("día", f), y: .value("Bs", v)).foregroundStyle(Tema.bronce).symbolSize(12) }
+                                    if let v = p.paralelo { LineMark(x: .value("día", f), y: .value("Bs", v), series: .value("", "Paralelo")).foregroundStyle(Tema.texto.opacity(0.6)) }
+                                    if let v = p.oficial { LineMark(x: .value("día", f), y: .value("Bs", v), series: .value("", "Oficial")).foregroundStyle(Tema.gris).lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 3])) }
+                                }
+                            }
+                            .chartYScale(domain: .automatic(includesZero: false))
+                            .chartXAxis { AxisMarks(values: .automatic(desiredCount: 4)) { _ in AxisGridLine(); AxisValueLabel(format: .dateTime.day().month(.defaultDigits)) } }
+                            .frame(height: 220)
+                            HStack(spacing: 14) {
+                                Label("USDT", systemImage: "circle.fill").foregroundStyle(Tema.bronce)
+                                Label("Paralelo", systemImage: "circle.fill").foregroundStyle(Tema.texto.opacity(0.6))
+                                Label("Oficial", systemImage: "circle.fill").foregroundStyle(Tema.gris)
+                            }.font(.caption)
+                            let u = tramo.compactMap(\.valor)
+                            if let a = u.first, let b = u.last {
+                                HStack {
+                                    dato("más bajo", u.min(), Tema.verde)
+                                    dato("más alto", u.max(), Tema.rojo)
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text((b >= a ? "+" : "") + F.pct((b - a) / a * 100)).font(.title3.weight(.semibold).monospacedDigit()).foregroundStyle(b > a ? Tema.rojo : Tema.verde)
+                                        Text("cambio del USDT").font(.caption2).foregroundStyle(Tema.gris)
+                                    }.frame(maxWidth: .infinity, alignment: .leading)
+                                }
+                                Text(b > a ? "El dólar subió en el período: lo que compramos en eBay nos sale más caro." : "El dólar bajó o se mantuvo en el período: buen momento para comprar en eBay.")
+                                    .font(.caption).foregroundStyle(Tema.gris)
                             }
                         }
-                        .chartYScale(domain: .automatic(includesZero: false))
-                        .chartXAxis { AxisMarks(values: .automatic(desiredCount: 5)) }
-                        .frame(height: 220)
-                        HStack(spacing: 14) {
-                            Label("USDT", systemImage: "circle.fill").foregroundStyle(Tema.bronce)
-                            Label("Paralelo", systemImage: "circle.fill").foregroundStyle(Tema.texto.opacity(0.6))
-                            Label("Oficial", systemImage: "circle.fill").foregroundStyle(Tema.gris)
-                        }.font(.caption)
+                        if dias > 1 {
+                            DisclosureGroup(isExpanded: $detalle) {
+                                VStack(spacing: 6) {
+                                    HStack { Text("Día").frame(width: 50, alignment: .leading); Spacer(); Text("USDT").frame(width: 70, alignment: .trailing); Text("Paralelo").frame(width: 70, alignment: .trailing); Text("Oficial").frame(width: 60, alignment: .trailing) }
+                                        .font(.caption2.weight(.bold)).foregroundStyle(Tema.bronce)
+                                    let r = Array(tramo.reversed())
+                                    ForEach(Array(r.enumerated()), id: \.offset) { i, p in
+                                        let ant = i + 1 < r.count ? r[i + 1] : nil
+                                        HStack {
+                                            Text(F.dia(p.fecha)).frame(width: 50, alignment: .leading)
+                                            Spacer()
+                                            celda(p.valor, ant?.valor).frame(width: 70, alignment: .trailing)
+                                            celda(p.paralelo, ant?.paralelo).frame(width: 70, alignment: .trailing)
+                                            celda(p.oficial, ant?.oficial).frame(width: 60, alignment: .trailing)
+                                        }.font(.caption.monospacedDigit())
+                                    }
+                                }.padding(.top, 6)
+                            } label: { Text("Ver día por día").font(.subheadline.weight(.semibold)) }
+                        }
                     }
                     Text("Todo lo que está en dólares se calcula con el USDT para comprar (Binance P2P). El oficial y el paralelo son solo para comparar.")
                         .font(.caption).foregroundStyle(Tema.gris)
@@ -235,9 +280,40 @@ struct DolarView: View {
         }
         .background(Tema.fondo).navigationTitle("Dólar")
     }
+
+    func hoyContraAyer(_ s: [Punto]) -> some View {
+        let u = s.last, a = s.count > 1 ? s[s.count - 2] : nil
+        return VStack(alignment: .leading, spacing: 8) {
+            Text("\(F.dia(u?.fecha ?? "")) contra \(F.dia(a?.fecha ?? ""))").font(.caption).foregroundStyle(Tema.gris)
+            fila("USDT (cálculos)", u?.valor, a?.valor)
+            fila("Paralelo", u?.paralelo, a?.paralelo)
+            fila("Oficial", u?.oficial, a?.oficial)
+        }
+    }
+
+    func fila(_ t: String, _ x: Double?, _ y: Double?) -> some View {
+        HStack {
+            Text(t).font(.subheadline)
+            Spacer()
+            Text(F.num(x)).font(.subheadline.monospacedDigit().weight(.semibold))
+            if let x, let y, y != 0 {
+                let c = (x - y) / y * 100
+                Text(abs(c) < 0.05 ? "igual" : (c > 0 ? "+" : "") + F.pct(c)).font(.caption.monospacedDigit())
+                    .foregroundStyle(abs(c) < 0.05 ? Tema.gris : c > 0 ? Tema.rojo : Tema.verde).frame(width: 64, alignment: .trailing)
+            } else { Text("—").font(.caption).foregroundStyle(Tema.gris).frame(width: 64, alignment: .trailing) }
+        }
+    }
+
+    @ViewBuilder func celda(_ v: Double?, _ a: Double?) -> some View {
+        HStack(spacing: 2) {
+            if let v, let a, abs(v - a) > 0.004 { Image(systemName: v > a ? "arrow.up" : "arrow.down").font(.system(size: 8, weight: .bold)).foregroundStyle(v > a ? Tema.rojo : Tema.verde) }
+            Text(F.num(v))
+        }
+    }
+
     func dato(_ t: String, _ v: Double?, _ c: Color) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(F.num(v)).font(.title2.weight(.semibold).monospacedDigit()).foregroundStyle(c)
+            Text(F.num(v)).font(.title3.weight(.semibold).monospacedDigit()).foregroundStyle(c)
             Text(t).font(.caption2).foregroundStyle(Tema.gris)
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
