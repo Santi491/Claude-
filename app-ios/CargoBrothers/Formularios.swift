@@ -244,7 +244,6 @@ struct AjustesView: View {
             Section {
                 if store.hayClave {
                     Label("Clave guardada en el llavero del iPhone", systemImage: "checkmark.seal.fill").foregroundStyle(Tema.verde)
-                    NavigationLink("Sincronización") { SincView() }
                     Button("Probar la clave") { Task { probando = true; estado = await GitHub.probar() ?? "Funciona: la app puede leer y guardar."; probando = false } }
                     Button("Borrar la clave", role: .destructive) { Llavero.borrar(); store.objectWillChange.send(); estado = "Clave borrada." }
                 } else {
@@ -264,11 +263,10 @@ struct AjustesView: View {
                 Toggle("Pedir Face ID al abrir la app", isOn: $bloqueo)
             }
             Section("Avisos") {
-                Button("Activar avisos") { Novedades.pedirPermiso() }
-                Text("La app revisa en segundo plano cada tanto y te avisa de ofertas del cazador, cambios del pedido, decisiones nuevas y mensajes del equipo. Puede llegar con algunos minutos de atraso.")
-                    .font(.footnote).foregroundStyle(Tema.gris)
+                NavigationLink { NotificacionesView() } label: { Label("Notificaciones", systemImage: "bell.badge") }
             }
             Section("Datos") {
+                NavigationLink { SincView() } label: { Label("Sincronización", systemImage: "arrow.triangle.2.circlepath") }
                 if let d = store.datos { Text("Última actualización: \(F.dia(d.generado)) \(d.generado.suffix(5))") }
                 Text("Se leen de GitHub (app/datos-app.json), que arma cada ronda. Lo que guardas desde la app va directo a los archivos del equipo.")
                     .font(.footnote).foregroundStyle(Tema.gris)

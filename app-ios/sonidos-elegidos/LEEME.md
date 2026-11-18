@@ -1,7 +1,6 @@
 # Sonidos de las notificaciones (elegidos por Santi el 18/11)
 
-Originales, sintetizados con `hacer.py` (versión 2: cada nota se desvanece sola, sin cortes). Todavía NO están en la app:
-Santi pidió esperar para seguir con las notificaciones.
+Originales, sintetizados con `hacer.py` (versión 2: cada nota se desvanece sola, sin cortes). Desde el 18/11 (tarde) están en la app: `app-ios/CargoBrothers/Sonidos/cb-*.caf` y `Notificaciones.swift`.
 
 | Aviso | Archivo | Opción elegida |
 |---|---|---|

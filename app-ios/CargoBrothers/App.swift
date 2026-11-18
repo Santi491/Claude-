@@ -9,16 +9,21 @@ let TAREA_FONDO = "com.cargobrothers.oficina.refresh"
 
 @main
 struct CargoBrothersApp: App {
-    @StateObject private var store = Store()
+    @StateObject private var store = Store.compartido
     @Environment(\.scenePhase) private var fase
 
     init() {
+        UNUserNotificationCenter.current().delegate = DelegadoAvisos.compartido
+        Avisador.registrarCategorias()
         // avisos en segundo plano sin la cuenta paga de Apple: iOS despierta la app cada tanto y ella compara los datos
         BGTaskScheduler.shared.register(forTaskWithIdentifier: TAREA_FONDO, using: nil) { tarea in
             Novedades.programar()
             let t = Task {
                 let (d, ok) = await Fuente.cargar(token: Llavero.token)
-                if ok, let d { await Novedades.revisar(d, avisar: true) }
+                if ok, let d { await Avisador.revisar(d, avisar: true) }
+                let v = await Fuente.vivo(token: Llavero.token)
+                let antes = UserDefaults.standard.data(forKey: "nov_vivo").flatMap { try? JSONDecoder().decode(Vivo.self, from: $0) }
+                if let v { await Avisador.ronda(antes: antes, ahora: v); UserDefaults.standard.set(try? JSONEncoder().encode(v), forKey: "nov_vivo") }
                 tarea.setTaskCompleted(success: ok)
             }
             tarea.expirationHandler = { t.cancel() }
@@ -41,6 +46,7 @@ struct CargoBrothersApp: App {
 
 @MainActor
 final class Store: ObservableObject {
+    static let compartido = Store()
     @Published var datos: Datos?
     @Published var enLinea = true
     @Published var cargando = false
@@ -67,7 +73,8 @@ final class Store: ObservableObject {
                 guard let self else { return }
                 let v = await Fuente.vivo(token: Llavero.token)
                 let antes = self.vivo?.enCurso ?? false
-                if let v { self.vivo = v }
+                if let v, self.vivo != nil { await Avisador.ronda(antes: self.vivo, ahora: v) }
+                if let v { self.vivo = v; UserDefaults.standard.set(try? JSONEncoder().encode(v), forKey: "nov_vivo") }
                 if antes && !(v?.enCurso ?? false) { await self.refrescar() }   // terminó la ronda: datos nuevos
                 try? await Task.sleep(for: .seconds((self.vivo?.enCurso ?? false) ? 30 : 120))
             }
@@ -94,7 +101,7 @@ final class Store: ObservableObject {
             let ids = Set((d.chat ?? []).map { $0.de + $0.texto })
             enviadosChat.removeAll { ids.contains($0.de + $0.texto) }
             await actualizarActividades(d)
-            await Novedades.revisar(d, avisar: false)
+            await Avisador.revisar(d, avisar: false)
             WidgetCenter.shared.reloadAllTimelines()
         }
     }
@@ -189,40 +196,6 @@ enum Novedades {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in }
     }
 
-    static func revisar(_ d: Datos, avisar: Bool) async {
-        let ud = UserDefaults.standard
-        let primera = ud.object(forKey: "nov_ofertas") == nil
-        let ofertas = Set(d.cazador.topes.filter(\.bajo_tope).map(\.producto))
-        let estados = Dictionary(uniqueKeysWithValues: d.pedidos.filter { !$0.esPrueba }.map { ($0.id, $0.estado) })
-        let decidir = Set(d.decidir.map(\.id))
-        let chat = Set((d.chat ?? []).filter { $0.para == "santi" }.map(\.id))
-        defer {
-            ud.set(Array(ofertas), forKey: "nov_ofertas"); ud.set(estados, forKey: "nov_estados")
-            ud.set(Array(decidir), forKey: "nov_decidir"); ud.set(Array(chat), forKey: "nov_chat")
-        }
-        guard avisar, !primera else { return }
-        var msgs: [(String, String)] = []
-        let o0 = Set(ud.stringArray(forKey: "nov_ofertas") ?? [])
-        for p in ofertas.subtracting(o0) {
-            if let t = d.cazador.topes.first(where: { $0.producto == p }) {
-                msgs.append(("Oferta en eBay: \(p)", "\(F.usd(t.hoy_usd)), bajo nuestro tope de \(F.usd(t.tope_usd)). Mira el margen en Precios."))
-            }
-        }
-        let e0 = ud.dictionary(forKey: "nov_estados") as? [String: String] ?? [:]
-        var vistos = Set<String>()
-        for p in d.pedidos where !p.esPrueba && e0[p.id] != nil && e0[p.id] != p.estado && !vistos.contains(p.producto + p.estado) {
-            vistos.insert(p.producto + p.estado)
-            msgs.append(("Pedido: \(p.producto)", "Ahora está: \(p.estado)."))
-        }
-        let nd = decidir.subtracting(Set(ud.stringArray(forKey: "nov_decidir") ?? [])).count
-        if nd > 0 { msgs.append(("El equipo espera tu decisión", nd == 1 ? "Hay una cosa nueva por decidir." : "Hay \(nd) cosas nuevas por decidir.")) }
-        let nc = chat.subtracting(Set(ud.stringArray(forKey: "nov_chat") ?? [])).count
-        if nc > 0 { msgs.append(("Mensajes del equipo", nc == 1 ? "Tienes un mensaje nuevo." : "Tienes \(nc) mensajes nuevos.")) }
-        for (t, b) in msgs.prefix(4) {
-            let c = UNMutableNotificationContent(); c.title = t; c.body = b; c.sound = .default
-            try? await UNUserNotificationCenter.current().add(UNNotificationRequest(identifier: UUID().uuidString, content: c, trigger: nil))
-        }
-    }
 }
 
 struct RaizView: View {

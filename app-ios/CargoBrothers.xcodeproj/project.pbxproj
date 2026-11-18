@@ -10,6 +10,7 @@
 		024D314FECBD41121D26B449 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6273E57DB7F514097317CA /* App.swift */; };
 		050F0AED04949A6C445E6F64 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8BDB7D79BE27222FE55F7 /* Widgets.swift */; };
 		16BFA7EA601E083AA56AFB6C /* Modelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1229FF333DB2EDEE5619D0DE /* Modelo.swift */; };
+		1C6A428B8A439B80981DF850 /* cb-decision.caf in Resources */ = {isa = PBXBuildFile; fileRef = C1E7BC6E4A520F297C8E5938 /* cb-decision.caf */; };
 		22BAB56C8D0DB99F575D74B8 /* VentaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E055386B3C14F3F8100EA3BB /* VentaView.swift */; };
 		2B5AFF8346100FC0FA1A7AE1 /* DecidirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1972F47C18837AD9A732BF5 /* DecidirView.swift */; };
 		314806A88F36DBF1740EE171 /* PreciosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB966AC3E3A469EA59DF573A /* PreciosView.swift */; };
@@ -18,14 +19,21 @@
 		3D93E0F03A86622F2B3DF443 /* HoyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59127BEB2EE9C2570661CC34 /* HoyView.swift */; };
 		51AA2C0CBC367C84AD9D98F3 /* CargoWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 11C131FA598268FF87C0C103 /* CargoWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5430657223D8DCA1FCE22859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */; };
+		658F89D2843EBDDF51517647 /* cb-mensaje.caf in Resources */ = {isa = PBXBuildFile; fileRef = F379D72065CE6B5BA36B6BD2 /* cb-mensaje.caf */; };
 		65E0B88A311E66231F23F8BE /* Formularios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F307845EB1BA3750F894444 /* Formularios.swift */; };
 		6D63ACEE01AD2D04B1633EF8 /* Fotos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37864CBDDB4B818CB0FE26 /* Fotos.xcassets */; };
 		77DAC811BF99D96E1EBBC59A /* Modelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1229FF333DB2EDEE5619D0DE /* Modelo.swift */; };
 		8D35708ACBED1341CFB5C3EC /* Calculo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1B336C54BCE76DE79D8F1C /* Calculo.swift */; };
 		9CF8A07AFE7F4448FA090B4C /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853087D9A16FEB38BD9EA645 /* GitHub.swift */; };
+		A2B85026D017C40E68B6CAB5 /* Notificaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D03DF6ACA1FC4F697264724 /* Notificaciones.swift */; };
+		B712A01E0981A3ECD5BB0738 /* cb-gerente.caf in Resources */ = {isa = PBXBuildFile; fileRef = B03F1620C032AB23EFC753E3 /* cb-gerente.caf */; };
+		B71A6E92DBFF4D45EA34DBF9 /* cb-oferta.caf in Resources */ = {isa = PBXBuildFile; fileRef = EFF1328E1C606630139551CD /* cb-oferta.caf */; };
+		B9BAE4EB13071DA0EED4BEC1 /* cb-pedido.caf in Resources */ = {isa = PBXBuildFile; fileRef = AC7B9B7B601AF6355149CE55 /* cb-pedido.caf */; };
 		C6876863A89487D4F9E0C341 /* Acciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83D2B23602459B6C36474D /* Acciones.swift */; };
 		E313BFAFC4093C679D95F4C5 /* EquipoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C5D96174AE07BC40B1701 /* EquipoView.swift */; };
 		EB0B203E00434695642F5CFF /* VentasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A15194E2CC3B99416EB40 /* VentasView.swift */; };
+		F5DACBDB7BFDA38034F338AE /* cb-venta.caf in Resources */ = {isa = PBXBuildFile; fileRef = B1C6ECB443A010EBF412B184 /* cb-venta.caf */; };
+		F61C8953A3A4FF979E1A1B85 /* cb-ronda.caf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD41044CA17447A60A6FED /* cb-ronda.caf */; };
 		FFF7B80627D6AACA1617FECB /* Componentes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1258C8E2E618C28407F90222 /* Componentes.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,22 +72,44 @@
 		4C6273E57DB7F514097317CA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		59127BEB2EE9C2570661CC34 /* HoyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoyView.swift; sourceTree = "<group>"; };
 		6B85EC49E114571E35BAB5B5 /* PedidosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosView.swift; sourceTree = "<group>"; };
+		7D03DF6ACA1FC4F697264724 /* Notificaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificaciones.swift; sourceTree = "<group>"; };
 		853087D9A16FEB38BD9EA645 /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9178CBA57C8D6EBA5763BB7A /* Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
 		A959C99911657117CA0FBF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB966AC3E3A469EA59DF573A /* PreciosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreciosView.swift; sourceTree = "<group>"; };
+		AC7B9B7B601AF6355149CE55 /* cb-pedido.caf */ = {isa = PBXFileReference; path = "cb-pedido.caf"; sourceTree = "<group>"; };
+		B03F1620C032AB23EFC753E3 /* cb-gerente.caf */ = {isa = PBXFileReference; path = "cb-gerente.caf"; sourceTree = "<group>"; };
+		B1C6ECB443A010EBF412B184 /* cb-venta.caf */ = {isa = PBXFileReference; path = "cb-venta.caf"; sourceTree = "<group>"; };
 		BB04B8EF0EE76840DB01B130 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		C1E7BC6E4A520F297C8E5938 /* cb-decision.caf */ = {isa = PBXFileReference; path = "cb-decision.caf"; sourceTree = "<group>"; };
+		CFDD41044CA17447A60A6FED /* cb-ronda.caf */ = {isa = PBXFileReference; path = "cb-ronda.caf"; sourceTree = "<group>"; };
 		D7BD44D0FC4004978F31E952 /* CargoBrothers.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CargoBrothers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E055386B3C14F3F8100EA3BB /* VentaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentaView.swift; sourceTree = "<group>"; };
 		E0EC8E9B13C35881B2DA1798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB1B336C54BCE76DE79D8F1C /* Calculo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculo.swift; sourceTree = "<group>"; };
 		EBF8BDB7D79BE27222FE55F7 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
+		EFF1328E1C606630139551CD /* cb-oferta.caf */ = {isa = PBXFileReference; path = "cb-oferta.caf"; sourceTree = "<group>"; };
 		F1972F47C18837AD9A732BF5 /* DecidirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecidirView.swift; sourceTree = "<group>"; };
+		F379D72065CE6B5BA36B6BD2 /* cb-mensaje.caf */ = {isa = PBXFileReference; path = "cb-mensaje.caf"; sourceTree = "<group>"; };
 		FB7C5D96174AE07BC40B1701 /* EquipoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		2039539F66FCD6E92726F1C7 /* Sonidos */ = {
+			isa = PBXGroup;
+			children = (
+				C1E7BC6E4A520F297C8E5938 /* cb-decision.caf */,
+				B03F1620C032AB23EFC753E3 /* cb-gerente.caf */,
+				F379D72065CE6B5BA36B6BD2 /* cb-mensaje.caf */,
+				EFF1328E1C606630139551CD /* cb-oferta.caf */,
+				AC7B9B7B601AF6355149CE55 /* cb-pedido.caf */,
+				CFDD41044CA17447A60A6FED /* cb-ronda.caf */,
+				B1C6ECB443A010EBF412B184 /* cb-venta.caf */,
+			);
+			path = Sonidos;
+			sourceTree = "<group>";
+		};
 		46A67C6200E79143C5823817 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,10 +151,12 @@
 				853087D9A16FEB38BD9EA645 /* GitHub.swift */,
 				59127BEB2EE9C2570661CC34 /* HoyView.swift */,
 				A959C99911657117CA0FBF04 /* Info.plist */,
+				7D03DF6ACA1FC4F697264724 /* Notificaciones.swift */,
 				6B85EC49E114571E35BAB5B5 /* PedidosView.swift */,
 				AB966AC3E3A469EA59DF573A /* PreciosView.swift */,
 				2C2A15194E2CC3B99416EB40 /* VentasView.swift */,
 				E055386B3C14F3F8100EA3BB /* VentaView.swift */,
+				2039539F66FCD6E92726F1C7 /* Sonidos */,
 			);
 			path = CargoBrothers;
 			sourceTree = "<group>";
@@ -236,6 +268,13 @@
 			files = (
 				5430657223D8DCA1FCE22859 /* Assets.xcassets in Resources */,
 				6D63ACEE01AD2D04B1633EF8 /* Fotos.xcassets in Resources */,
+				1C6A428B8A439B80981DF850 /* cb-decision.caf in Resources */,
+				B712A01E0981A3ECD5BB0738 /* cb-gerente.caf in Resources */,
+				658F89D2843EBDDF51517647 /* cb-mensaje.caf in Resources */,
+				B71A6E92DBFF4D45EA34DBF9 /* cb-oferta.caf in Resources */,
+				B9BAE4EB13071DA0EED4BEC1 /* cb-pedido.caf in Resources */,
+				F61C8953A3A4FF979E1A1B85 /* cb-ronda.caf in Resources */,
+				F5DACBDB7BFDA38034F338AE /* cb-venta.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +305,7 @@
 				9CF8A07AFE7F4448FA090B4C /* GitHub.swift in Sources */,
 				3D93E0F03A86622F2B3DF443 /* HoyView.swift in Sources */,
 				77DAC811BF99D96E1EBBC59A /* Modelo.swift in Sources */,
+				A2B85026D017C40E68B6CAB5 /* Notificaciones.swift in Sources */,
 				39C530296CE27EC849C77BF4 /* PedidosView.swift in Sources */,
 				314806A88F36DBF1740EE171 /* PreciosView.swift in Sources */,
 				22BAB56C8D0DB99F575D74B8 /* VentaView.swift in Sources */,
