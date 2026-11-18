@@ -11,6 +11,11 @@
    "estado": "terminó",
    "texto": "7 de 10 listas, NPC pasó precios",
    "hora": "16:13"
+  },
+  "mkt": {
+   "estado": "trabajando",
+   "texto": "Marketplace y clientes potenciales",
+   "hora": "16:13"
   }
  }
 }
