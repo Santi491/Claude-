@@ -17,6 +17,7 @@
 		314806A88F36DBF1740EE171 /* PreciosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB966AC3E3A469EA59DF573A /* PreciosView.swift */; };
 		36DCC1A5561A59AC5834F4E8 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178CBA57C8D6EBA5763BB7A /* Extras.swift */; };
 		39C530296CE27EC849C77BF4 /* PedidosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B85EC49E114571E35BAB5B5 /* PedidosView.swift */; };
+		3B28B35A80139004BFDCD06D /* OficinaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA99B998CF8A3ED19B22031 /* OficinaView.swift */; };
 		3D93E0F03A86622F2B3DF443 /* HoyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59127BEB2EE9C2570661CC34 /* HoyView.swift */; };
 		51AA2C0CBC367C84AD9D98F3 /* CargoWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 11C131FA598268FF87C0C103 /* CargoWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5430657223D8DCA1FCE22859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		6D63ACEE01AD2D04B1633EF8 /* Fotos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37864CBDDB4B818CB0FE26 /* Fotos.xcassets */; };
 		71392DCDE12266458E3D97F0 /* Fotos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37864CBDDB4B818CB0FE26 /* Fotos.xcassets */; };
 		77DAC811BF99D96E1EBBC59A /* Modelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1229FF333DB2EDEE5619D0DE /* Modelo.swift */; };
+		7AB9A9B73C24DF111799E0D5 /* Oficina3D in Resources */ = {isa = PBXBuildFile; fileRef = 638EF099DB456882B60C2333 /* Oficina3D */; };
 		7EDFC7D17900C3E6DFBACA18 /* MasWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323D1B098D1BCB461A1CA55 /* MasWidgets.swift */; };
 		8D35708ACBED1341CFB5C3EC /* Calculo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1B336C54BCE76DE79D8F1C /* Calculo.swift */; };
 		9CF8A07AFE7F4448FA090B4C /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853087D9A16FEB38BD9EA645 /* GitHub.swift */; };
@@ -33,7 +35,9 @@
 		B71A6E92DBFF4D45EA34DBF9 /* cb-oferta.caf in Resources */ = {isa = PBXBuildFile; fileRef = EFF1328E1C606630139551CD /* cb-oferta.caf */; };
 		B9BAE4EB13071DA0EED4BEC1 /* cb-pedido.caf in Resources */ = {isa = PBXBuildFile; fileRef = AC7B9B7B601AF6355149CE55 /* cb-pedido.caf */; };
 		C6876863A89487D4F9E0C341 /* Acciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83D2B23602459B6C36474D /* Acciones.swift */; };
+		DE755E1F3EAABA3625A39443 /* Oficina3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236FFED311223CA063EA75F /* Oficina3D.swift */; };
 		E313BFAFC4093C679D95F4C5 /* EquipoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C5D96174AE07BC40B1701 /* EquipoView.swift */; };
+		E378004B54AFE601200B489B /* Oficina3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236FFED311223CA063EA75F /* Oficina3D.swift */; };
 		EB0B203E00434695642F5CFF /* VentasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A15194E2CC3B99416EB40 /* VentasView.swift */; };
 		F5DACBDB7BFDA38034F338AE /* cb-venta.caf in Resources */ = {isa = PBXBuildFile; fileRef = B1C6ECB443A010EBF412B184 /* cb-venta.caf */; };
 		F61C8953A3A4FF979E1A1B85 /* cb-ronda.caf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD41044CA17447A60A6FED /* cb-ronda.caf */; };
@@ -72,14 +76,17 @@
 		3B37864CBDDB4B818CB0FE26 /* Fotos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Fotos.xcassets; sourceTree = "<group>"; };
 		3C83D2B23602459B6C36474D /* Acciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acciones.swift; sourceTree = "<group>"; };
 		3F307845EB1BA3750F894444 /* Formularios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formularios.swift; sourceTree = "<group>"; };
+		4BA99B998CF8A3ED19B22031 /* OficinaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OficinaView.swift; sourceTree = "<group>"; };
 		4C6273E57DB7F514097317CA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		5323D1B098D1BCB461A1CA55 /* MasWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasWidgets.swift; sourceTree = "<group>"; };
 		59127BEB2EE9C2570661CC34 /* HoyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoyView.swift; sourceTree = "<group>"; };
+		638EF099DB456882B60C2333 /* Oficina3D */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Oficina3D; path = CargoBrothers/Oficina3D; sourceTree = SOURCE_ROOT; };
 		6B85EC49E114571E35BAB5B5 /* PedidosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosView.swift; sourceTree = "<group>"; };
 		7D03DF6ACA1FC4F697264724 /* Notificaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificaciones.swift; sourceTree = "<group>"; };
 		853087D9A16FEB38BD9EA645 /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9178CBA57C8D6EBA5763BB7A /* Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
+		9236FFED311223CA063EA75F /* Oficina3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oficina3D.swift; sourceTree = "<group>"; };
 		A959C99911657117CA0FBF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB966AC3E3A469EA59DF573A /* PreciosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreciosView.swift; sourceTree = "<group>"; };
 		AC7B9B7B601AF6355149CE55 /* cb-pedido.caf */ = {isa = PBXFileReference; path = "cb-pedido.caf"; sourceTree = "<group>"; };
@@ -119,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				1229FF333DB2EDEE5619D0DE /* Modelo.swift */,
+				9236FFED311223CA063EA75F /* Oficina3D.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -159,6 +167,7 @@
 				59127BEB2EE9C2570661CC34 /* HoyView.swift */,
 				A959C99911657117CA0FBF04 /* Info.plist */,
 				7D03DF6ACA1FC4F697264724 /* Notificaciones.swift */,
+				4BA99B998CF8A3ED19B22031 /* OficinaView.swift */,
 				6B85EC49E114571E35BAB5B5 /* PedidosView.swift */,
 				AB966AC3E3A469EA59DF573A /* PreciosView.swift */,
 				2C2A15194E2CC3B99416EB40 /* VentasView.swift */,
@@ -172,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				3B37864CBDDB4B818CB0FE26 /* Fotos.xcassets */,
+				638EF099DB456882B60C2333 /* Oficina3D */,
 				9D593D04AB5A26CD5B86B328 /* app-ios */,
 				CB20DE933ECEC8C11A16BCD5 /* CargoBrothers */,
 				46A67C6200E79143C5823817 /* Shared */,
@@ -276,6 +286,7 @@
 			files = (
 				5430657223D8DCA1FCE22859 /* Assets.xcassets in Resources */,
 				6D63ACEE01AD2D04B1633EF8 /* Fotos.xcassets in Resources */,
+				7AB9A9B73C24DF111799E0D5 /* Oficina3D in Resources */,
 				1C6A428B8A439B80981DF850 /* cb-decision.caf in Resources */,
 				B712A01E0981A3ECD5BB0738 /* cb-gerente.caf in Resources */,
 				658F89D2843EBDDF51517647 /* cb-mensaje.caf in Resources */,
@@ -303,6 +314,7 @@
 			files = (
 				7EDFC7D17900C3E6DFBACA18 /* MasWidgets.swift in Sources */,
 				16BFA7EA601E083AA56AFB6C /* Modelo.swift in Sources */,
+				E378004B54AFE601200B489B /* Oficina3D.swift in Sources */,
 				050F0AED04949A6C445E6F64 /* Widgets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +336,8 @@
 				3D93E0F03A86622F2B3DF443 /* HoyView.swift in Sources */,
 				77DAC811BF99D96E1EBBC59A /* Modelo.swift in Sources */,
 				A2B85026D017C40E68B6CAB5 /* Notificaciones.swift in Sources */,
+				DE755E1F3EAABA3625A39443 /* Oficina3D.swift in Sources */,
+				3B28B35A80139004BFDCD06D /* OficinaView.swift in Sources */,
 				39C530296CE27EC849C77BF4 /* PedidosView.swift in Sources */,
 				314806A88F36DBF1740EE171 /* PreciosView.swift in Sources */,
 				22BAB56C8D0DB99F575D74B8 /* VentaView.swift in Sources */,

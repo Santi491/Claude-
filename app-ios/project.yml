@@ -19,7 +19,11 @@ targets:
     type: application
     platform: iOS
     sources:
-      - CargoBrothers
+      - path: CargoBrothers
+        excludes: [Oficina3D/**]
+      - path: CargoBrothers/Oficina3D
+        type: folder
+        buildPhase: resources
       - Shared
       - path: Fotos.xcassets
         optional: true

@@ -51,9 +51,22 @@ struct Salud14: View {
 
 struct EquipoView: View {
     @EnvironmentObject var store: Store
+    @State private var oficina = false
     var body: some View {
         Pantalla(titulo: "Equipo") {
             if let d = store.datos {
+                Button { oficina = true } label: {
+                    HStack(spacing: 12) {
+                        Image(systemName: "building.2.crop.circle.fill").font(.system(size: 34)).foregroundStyle(Tema.bronce)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Entrar a la oficina").font(.headline).foregroundStyle(Tema.texto)
+                            Text("La oficina 3D, en tu iPhone").font(.caption).foregroundStyle(Tema.gris)
+                        }
+                        Spacer()
+                        Image(systemName: "chevron.right").foregroundStyle(Tema.gris)
+                    }
+                    .padding(14).background(Tema.tarjeta, in: RoundedRectangle(cornerRadius: 18)).overlay(RoundedRectangle(cornerRadius: 18).stroke(Tema.bronce.opacity(0.4)))
+                }.buttonStyle(.plain)
                 LuzVivo()
                 if store.vivo?.enCurso == true { EquipoEnVivo() }
                 let hechos = d.objetivos.filter { $0.progreso >= 1 }.count
@@ -73,6 +86,7 @@ struct EquipoView: View {
                 }
             }
         }
+        .fullScreenCover(isPresented: $oficina) { OficinaView().environmentObject(store) }
     }
 
     func orden(_ d: Datos) -> [Agente] {
