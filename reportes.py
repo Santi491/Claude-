@@ -115,42 +115,27 @@ def escribir_csv(ruta, columnas, filas):
 
 
 def escribir_pdf(ruta, filas, hoy, tc, bcb, par):
-    from reportlab.lib import colors
-    from reportlab.lib.pagesizes import A4, landscape
-    from reportlab.lib.styles import getSampleStyleSheet
-    from reportlab.lib.units import mm
-    from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
-
-    st = getSampleStyleSheet()
-    doc = SimpleDocTemplate(ruta, pagesize=landscape(A4), leftMargin=10 * mm, rightMargin=10 * mm,
-                            topMargin=10 * mm, bottomMargin=10 * mm, title=f"Importación Cochabamba {hoy}")
+    """PDF en Python puro (pdf_simple.py): sale igual en la nube, la PC y la Mac, sin instalar nada (Santi, 18/11)."""
+    from pdf_simple import tabla_pdf
     f2 = lambda x, d=2: "" if x is None else f"{x:,.{d}f}".replace(",", "X").replace(".", ",").replace("X", ".")
     cols = ["Producto", "Tipo", "eBay nuevo USD", "Envío", "eBay usado USD", "Marketplace Bs", "Tiendas Bs",
             "Dólar BCB", "Dólar paralelo", "Courier /u USD", "Costo puesto Bs", "Mejor local Bs", "Ganancia /u Bs",
             "Margen", "Estado"]
-    data = [cols]
-    for r in filas:
-        data.append([Paragraph(r["Producto"], st["BodyText"].clone("p", fontSize=7, leading=8)), r["Tipo"],
-                     f2(r["eBay nuevo USD"]), f2(r["Envío EE.UU. USD"]), f2(r["eBay usado USD"]),
+    data, fondos = [], {}
+    color = {"Conviene": "#DDF1E6", "Justo": "#F6EBCB", "No conviene": "#F6DEDE"}
+    for i, r in enumerate(filas):
+        data.append([r["Producto"], r["Tipo"], f2(r["eBay nuevo USD"]), f2(r["Envío EE.UU. USD"]), f2(r["eBay usado USD"]),
                      f2(r["Marketplace Bs"], 0), f2(r["Tiendas Bs"], 0), f2(r["Dólar BCB"]), f2(r["Dólar paralelo"]),
                      f2(r.get("Courier /u USD")), f2(r.get("Costo puesto Bs"), 0), f2(r["Mejor local Bs"], 0),
                      f2(r.get("Ganancia /u Bs"), 0), "" if r.get("Margen") is None else f"{r['Margen'] * 100:.0f} %",
-                     r["Estado"]])
-    t = Table(data, repeatRows=1, colWidths=[52 * mm] + [None] * (len(cols) - 1))
-    estilo = [("FONT", (0, 0), (-1, -1), "Helvetica", 7), ("FONT", (0, 0), (-1, 0), "Helvetica-Bold", 6.5),
-              ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#15212B")), ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-              ("ALIGN", (2, 0), (-2, -1), "RIGHT"), ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-              ("LINEBELOW", (0, 0), (-1, -1), 0.3, colors.HexColor("#D9DFE5"))]
-    color = {"Conviene": "#DDF1E6", "Justo": "#F6EBCB", "No conviene": "#F6DEDE"}
-    for i, r in enumerate(filas, 1):
+                     r["Estado"] or ""])
         if r["Estado"] in color:
-            estilo.append(("BACKGROUND", (-1, i), (-1, i), colors.HexColor(color[r["Estado"]])))
-    t.setStyle(TableStyle(estilo))
+            fondos[(i, len(cols) - 1)] = color[r["Estado"]]
     nota = (f"Dólar BCB {f2(bcb)} · paralelo {f2(par)} · cálculos con {f2(tc)} Bs/USD. Pedido de {UNIDADES} unidades, "
             "courier más barato (B: USD 28/kg, mín. 1 kg, saltos de 0,5 kg + 300 g de caja; A: USD 10/u + 7 % tax). "
             "Aduana: incluida en los dos couriers (no se suma). Estado: conviene ≥ 15 %, justo 5–15 %, no conviene < 5 % sobre el mejor precio local.")
-    doc.build([Paragraph(f"Importación EE.UU. → Cochabamba · {hoy}", st["Title"]), Paragraph(nota, st["BodyText"]),
-               Spacer(1, 4 * mm), t])
+    tabla_pdf(ruta, f"Importación EE.UU. a Cochabamba · {hoy}", nota, cols, data,
+              [52, 10] + [None] * 12 + [20], alinear="LL" + "R" * 12 + "L", fondos=fondos)
 
 
 def escribir_excel(ruta, vigilar, eeuu, cbba, fx, hoy_filas, hist):
@@ -346,7 +331,6 @@ def asegurar(modulo, *paquetes):
 
 
 def main():
-    asegurar("reportlab", "reportlab", "reportlab<4.1")
     asegurar("openpyxl", "openpyxl", "openpyxl<3.2")
     vigilar, eeuu, cbba, fx = leer("vigilar.csv"), leer("precios-eeuu.csv"), leer("precios-cochabamba.csv"), leer("tipo-cambio.csv")
     cbba = [f for f in cbba if (f.get("precio_bs") or "").strip()]   # "agotado" sin precio: no entra en los cálculos
@@ -363,8 +347,8 @@ def main():
     faltan = []   # si falta una librería (pasa en la nube), se hace lo demás igual y se dice qué faltó
     try:
         escribir_pdf(os.path.join(HIST, f"{hoy}.pdf"), hoy_filas, hoy, tc, bcb, par)
-    except ImportError as e:
-        faltan.append(f"PDF ({e.name or e}: pip install --user reportlab)")
+    except Exception as e:  # noqa: BLE001  (no debería pasar: no usa librerías)
+        faltan.append(f"PDF ({e})")
     hcols = ["Fecha", "Producto", "Tipo", "eBay nuevo USD", "eBay usado USD", "Marketplace Bs", "Tiendas Bs", "Dólar BCB",
              "Dólar paralelo", "Link del producto", "Fecha anterior", "Δ eBay nuevo USD", "Δ eBay usado USD", "Δ Marketplace Bs", "Δ Tiendas Bs"]
     escribir_csv(os.path.join(HIST, "historial.csv"), hcols, hist)
