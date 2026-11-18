@@ -21,6 +21,11 @@
    "estado": "terminó",
    "texto": "web Punto: 60 productos, 15 precios",
    "hora": "16:17"
+  },
+  "pedidos": {
+   "estado": "trabajando",
+   "texto": "rastreo de pedidos",
+   "hora": "16:17"
   }
  }
 }
