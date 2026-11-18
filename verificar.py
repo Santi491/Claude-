@@ -293,7 +293,29 @@ def wa(R, ronda=False):
             R.aviso(f"mensajes.csv línea {i}: la tienda '{m.get('tienda')}' no está en tiendas-cochabamba.csv con ese nombre")
         if re.search(r"\b\d{8}\b|\+591|carnet|\bnit\b", m.get("nota", ""), re.I):
             R.error(f"mensajes.csv línea {i}: la nota parece tener un teléfono o un dato personal")
+        # texto (Santi, 17/11): solo lo que escribió André, nunca lo de la tienda, y sin datos privados
+        if m.get("texto") and m.get("direccion") != "enviado":
+            R.error(f"mensajes.csv línea {i}: 'texto' es solo para nuestros mensajes; lo de la tienda va resumido en la nota")
+        if re.search(r"\b\d{8}\b|\+591|carnet|\bnit\b", m.get("texto") or "", re.I):
+            R.error(f"mensajes.csv línea {i}: el texto parece tener un teléfono o un dato personal")
     hoy = [m for m in de_hoy(msgs) if m.get("canal") == "whatsapp" and m.get("direccion") == "enviado"]
+    # André no manda el mismo texto a varias tiendas (Santi, 17/11: que suene a persona, no a plantilla)
+    textos = [re.sub(r"\W+", " ", (m.get("texto") or "").lower()).strip() for m in hoy]
+    copiados = sorted({t[:60] for t in textos if t and textos.count(t) >= 3})
+    (R.aviso if copiados else R.ok)(f"mensajes iguales a 3 o más tiendas hoy: {len(copiados) if copiados else 'ninguno'}")
+    sin_texto = sum(1 for m in hoy if not m.get("texto"))
+    (R.aviso if sin_texto else R.ok)(f"mensajes de hoy sin el texto de André guardado: {sin_texto}")
+    # links, fotos y catálogos que mandaron las tiendas y nadie abrió (Santi, 17/11: se abren en el mismo turno)
+    try:
+        import memoria_wa
+        cats = memoria_wa.leer("catalogos.csv")
+        pend = [m for m in msgs if m.get("direccion") == "recibido" and memoria_wa.PENDIENTE.search(m.get("nota") or "")
+                and not memoria_wa.revisado(m, cats) and fecha(m.get("fecha")) and fecha(m["fecha"]) < HOY
+                and (HOY - fecha(m["fecha"])).days <= 21]
+        (R.aviso if pend else R.ok)("links, fotos o catálogos sin revisar de días anteriores: "
+                                    + (", ".join(sorted({m["tienda"] for m in pend})) if pend else "ninguno"))
+    except Exception as e:
+        R.aviso(f"memoria_wa.py falla: {e}")
     nuevos = sum(1 for m in hoy if m.get("tipo") == "nuevo")
     _, plan = leer("plan.csv")
     tope = 10

@@ -1,578 +1,578 @@
-fecha,hora,canal,tienda,direccion,tipo,con_precio,nota
-2026-10-13,09:43,whatsapp,Compucenter,recibido,respuesta,no,importa directo desde Miami; no busca proveedores
-2026-10-13,10:16,whatsapp,OverCity,enviado,nuevo,,consulta de precios grupo A
-2026-10-13,10:17,whatsapp,OverCity,recibido,respuesta,no,tiene los 3 productos; pregunta si solo busca esos
-2026-10-13,10:18,whatsapp,Legion Emporium,enviado,nuevo,,consulta de precios grupo A
-2026-10-13,10:18,whatsapp,Legion Emporium,recibido,automatica,no,catálogo y sucursales
-2026-10-13,10:19,whatsapp,OverCity,enviado,seguimiento,,pide el precio de cada producto
-2026-10-13,10:20,whatsapp,PC Morgana,enviado,nuevo,,consulta de precios grupo A
-2026-10-13,10:21,whatsapp,Centro PC,enviado,nuevo,,consulta de precios grupo A
-2026-10-13,10:25,whatsapp,Computer World,enviado,nuevo,,consulta de precios grupo B
-2026-10-13,10:26,whatsapp,4 Gamers,enviado,nuevo,,consulta de precios grupo B
-2026-10-13,10:26,whatsapp,4 Gamers,recibido,automatica,no,
-2026-10-13,10:27,whatsapp,PortatiComps,enviado,nuevo,,consulta de precios grupo B
-2026-10-13,10:28,whatsapp,Distribuidora DyD,enviado,nuevo,,consulta de precios grupo B
-2026-10-13,10:32,whatsapp,Soft Computers,enviado,nuevo,,consulta de precios grupo A (aviso IA de Meta aceptado)
-2026-10-13,10:38,whatsapp,Soft Computers,recibido,respuesta,sí,i5-14400F Bs 2.500; memorias solo DDR4
-2026-10-13,15:43,whatsapp,OverCity,recibido,respuesta,sí,7800X3D OEM Bs 5.500
-2026-10-13,15:44,whatsapp,OverCity,recibido,respuesta,sí,"i5-14400F OEM Bs 2.460; Corsair DDR5 agotada, tiene Apacer y XPG"
-2026-10-13,16:17,whatsapp,OverCity,enviado,respuesta,,"pide precio XPG DDR5 32GB 6000, precio por 2 o 4 y garantía"
-2026-10-13,16:17,whatsapp,Soft Computers,enviado,respuesta,,"pregunta si el 14400F es caja u OEM, si tiene 7800X3D y precio DDR4 16GB 3200"
-2026-10-13,11:35,messenger,Vendedor Marketplace (7800X3D sellado),recibido,respuesta,no,ya vendió los serie 9000; solo le queda el 7800X3D
-2026-10-13,16:22,messenger,Vendedor Marketplace (7800X3D sellado),enviado,respuesta,,"pregunta si es nuevo sellado en caja, precio final y si cambia llevando 2"
-2026-10-13,16:17,whatsapp,Soft Computers,recibido,respuesta,no,el i5-14400F es OEM
-2026-10-13,16:36,whatsapp,OverCity,recibido,respuesta,sí,"garantía 3 meses; XPG Lancer RGB DDR5 32GB (2x16) 6000 CL30 Bs 6.840"
-2026-10-13,17:27,whatsapp,OverCity,enviado,respuesta,,pregunta descuento llevando 2 del 7800X3D o del 14400F
-2026-10-13,16:30,messenger,Vendedor Marketplace (7800X3D sellado),recibido,respuesta,sí,"sellado de fábrica AMD, último en stock; Bs 4.800 ya con rebaja; dice que acepta ofertas (no se oferta)"
-2026-10-13,17:31,whatsapp,Hardware Technology,enviado,nuevo,,"consulta Ryzen 5 5600 y 5700X3D, precio por 2"
-2026-10-13,17:35,whatsapp,OverCity,recibido,respuesta,sí,i5-14400F Bs 2.460 es su precio mínimo
-2026-10-13,17:36,whatsapp,OverCity,recibido,respuesta,sí,7800X3D en caja sellada Bs 5.350
-2026-10-13,17:39,whatsapp,OverCity,enviado,respuesta,,agradece la información (sin compromiso)
-2026-10-13,17:44,whatsapp,OverCity,recibido,respuesta,no,"""Un gusto"" (cierre)"
-2026-10-14,10:46,whatsapp,Gamer Store Cbba,enviado,seguimiento,,un solo recordatorio (sin respuesta desde el 11/10)
-2026-10-14,10:46,whatsapp,Geek Store Bolivia,enviado,seguimiento,,un solo recordatorio (sin respuesta desde el 11/10)
-2026-10-14,10:46,whatsapp,Geek Store Bolivia,recibido,automatica,no,bienvenida con horario y link de su tienda kyte
-2026-10-14,10:46,whatsapp,SMART CUBE,enviado,seguimiento,,"recordatorio (el 12/10 dijo ""reviso"")"
-2026-10-14,10:47,whatsapp,TecnoGamer Bolivia,enviado,seguimiento,,un solo recordatorio (sin respuesta desde el 12/10)
-2026-10-14,10:47,whatsapp,T&T Todo en Tecnología,enviado,seguimiento,,un solo recordatorio (sin respuesta desde el 12/10)
-2026-10-14,10:47,whatsapp,TecnoGamer Bolivia,recibido,respuesta,no,no venden componentes internos
-2026-10-14,10:48,whatsapp,TecnoGamer Bolivia,enviado,respuesta,,agradece
-2026-10-14,10:56,messenger,Vendedora Marketplace (Corsair DDR5 RS),enviado,seguimiento,,un solo recordatorio: si sigue disponible y si es nueva en caja
-2026-10-14,10:56,whatsapp,PC Factor,enviado,nuevo,,"consulta Ryzen 5 7600, Ryzen 5 5600 y DDR5 32GB, precio por 2"
-2026-10-14,10:56,whatsapp,Crazy Store,enviado,nuevo,,"consulta 7800X3D, i5-14400F y Corsair DDR5 32GB 6000, precio por 2"
-2026-10-14,10:58,whatsapp,Crazy Store,recibido,respuesta,no,"solo les llegan algunos productos cuando los encuentran de oferta; tienen un solo procesador"
-2026-10-14,10:59,whatsapp,Crazy Store,enviado,respuesta,,pregunta cuál procesador tienen y si tienen memoria DDR5
-2026-10-14,10:59,whatsapp,Crazy Store,recibido,respuesta,sí,"Intel Core i9-14900K nuevo Bs 6.013 o USD 499 (no está en la lista)"
-2026-10-14,10:59,whatsapp,Crazy Store,recibido,respuesta,sí,"el i9-14900K ""hasta en 5.700"" (rebaja ofrecida por ellos; no se negocia)"
-2026-10-14,11:00,whatsapp,Crazy Store,enviado,respuesta,,agradece sin compromiso (está cotizando otros modelos)
-2026-10-14,13:07,whatsapp,PC Factor,recibido,respuesta,no,pregunta si solo busca esas piezas; enviará cotización
-2026-10-14,15:00,whatsapp,PC Factor,recibido,respuesta,sí,"solo tienen RAM DDR5 16GB a USD 320 c/u"
-2026-10-14,12:07,whatsapp,Geek Store Bolivia,recibido,respuesta,no,"solo tienen Ryzen 7 7700X; DDR5 Corsair no, sí otras marcas"
-2026-10-14,11:01,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,pasan el contacto de su número corporativo (Esteban Arce)
-2026-10-14,11:18,whatsapp,Crazy Store,recibido,respuesta,no,cortesía
-2026-10-14,11:32,whatsapp,SMART CUBE,recibido,respuesta,sí,"7800X3D Bs 5.890 facturado; i5-14400F Bs 3.080; DDR5 16GB Apacer 6000 Bs 3.650"
-2026-10-15,10:37,whatsapp,PC Factor,enviado,respuesta,,pregunta marca y velocidad de la DDR5 16GB y garantía
-2026-10-15,10:37,whatsapp,Geek Store Bolivia,enviado,respuesta,,pregunta precio del 7700X y marca/precio de DDR5 32GB
-2026-10-15,10:37,whatsapp,SMART CUBE,enviado,respuesta,,pregunta precio por 2 y garantía
-2026-10-15,10:37,whatsapp,SMART CUBE,recibido,automatica,no,mensaje automático de atención
-2026-10-15,10:38,whatsapp,SMART CUBE,recibido,respuesta,sí,"nuevos, caja sellada; rebajan Bs 50 c/u llevando 2"
-2026-10-15,10:38,whatsapp,T&T Todo en Tecnología,enviado,nuevo,,"número corporativo que pasó T&T: consulta i5-14400F, i5-12400F y Corsair DDR5 32GB 6000, precio por 2"
-2026-10-15,10:38,whatsapp,OverCity,enviado,seguimiento,,consulta Ryzen 5 7600 e i5-12400F (tarea 2026-10-14-9)
-2026-10-15,10:39,whatsapp,SMART CUBE,enviado,respuesta,,agradece sin compromiso
-2026-10-15,10:39,whatsapp,SMART CUBE,recibido,respuesta,no,cortesía
-2026-10-15,10:39,whatsapp,Display Importadora,enviado,seguimiento,,un solo recordatorio (7800X3D y 7600)
-2026-10-15,10:39,whatsapp,Distribuidora DyD,enviado,seguimiento,,"un solo recordatorio (7600, 265K, SSD 2TB)"
-2026-10-15,10:40,whatsapp,PC Morgana,enviado,seguimiento,,"un solo recordatorio (7800X3D, 14400F, DDR5)"
-2026-10-15,10:40,whatsapp,Centro PC,enviado,seguimiento,,un solo recordatorio (7800X3D o 14400F)
-2026-10-15,10:40,whatsapp,Computer World,enviado,seguimiento,,un solo recordatorio (7600 o SSD 2TB)
-2026-10-15,10:41,whatsapp,PortatiComps,enviado,seguimiento,,un solo recordatorio (Ryzen o SSD 2TB)
-2026-10-15,10:41,whatsapp,Hardware Technology,enviado,seguimiento,,un solo recordatorio (5600 o 5700X3D)
-2026-10-15,10:43,whatsapp,PC Factor,recibido,respuesta,no,audio (no se pudo escuchar)
-2026-10-15,10:44,whatsapp,OverCity,recibido,respuesta,sí,Ryzen 5 7600 OEM Bs 2.800
-2026-10-15,10:45,whatsapp,ECOM (Economic Computers),enviado,nuevo,,"consulta Ryzen 5 7600, i5-12400F y DDR5 32GB, precio por 2"
-2026-10-15,10:46,whatsapp,OverCity,enviado,respuesta,,pregunta si tienen el i5-12400F
-2026-10-15,10:46,whatsapp,PC Factor,enviado,respuesta,,pide el audio por escrito
-2026-10-15,10:47,whatsapp,NF Evolution,enviado,nuevo,,"consulta 7800X3D, i5-14400F y Corsair DDR5 32GB 6000, precio por 2"
-2026-10-15,10:46,whatsapp,NF Evolution,recibido,respuesta,no,solo venden tarjetas de video
-2026-10-15,10:46,whatsapp,Shopping PC,enviado,nuevo,,"consulta 7600, 7800X3D y 14400F, precio por 2"
-2026-10-15,10:46,whatsapp,Shopping PC,recibido,automatica,no,bienvenida
-2026-10-15,10:46,whatsapp,PC Factor,recibido,respuesta,no,no hay más memorias; le queda 1
-2026-10-15,10:47,whatsapp,PC Factor,enviado,respuesta,,agradece
-2026-10-15,10:50,whatsapp,Hardware Technology,recibido,respuesta,no,no tienen 5600 ni 5700X3D
-2026-10-15,10:52,whatsapp,Hardware Technology,enviado,respuesta,,agradece
-2026-10-15,10:52,whatsapp,NF Evolution,enviado,respuesta,,agradece
-2026-10-15,10:52,whatsapp,PCBOX,enviado,nuevo,,"consulta SSD NVMe 1TB/2TB y Ryzen 5 7600"
-2026-10-15,10:52,whatsapp,PCBOX,recibido,automatica,no,bienvenida
-2026-10-15,10:52,whatsapp,PCBOX,recibido,respuesta,no,no tienen stock disponible
-2026-10-15,10:52,whatsapp,PC Morgana,recibido,respuesta,no,no les está llegando
-2026-10-15,10:53,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,"Corsair DDR5 agotada; ofrecen solo el procesador"
-2026-10-15,10:53,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,pregunta precio de 14400F y 12400F y por 2
-2026-10-15,10:53,whatsapp,Shopping PC,recibido,respuesta,no,"dicen que tienen; preguntan de dónde escribo"
-2026-10-15,10:54,whatsapp,Shopping PC,enviado,respuesta,,"responde Cochabamba (cotizando para armar PCs) y pide precios"
-2026-10-15,10:54,whatsapp,PCBOX,enviado,respuesta,,agradece
-2026-10-15,10:54,whatsapp,PC Morgana,enviado,respuesta,,agradece
-2026-10-15,10:55,whatsapp,T&T Todo en Tecnología,recibido,respuesta,sí,"i5-12400F OEM + cooler Bs 2.260; i5-14400F OEM + cooler Bs 2.750; Bs 20 menos llevando 2"
-2026-10-15,10:56,whatsapp,Distribuidora DyD,recibido,respuesta,no,número equivocado
-2026-10-15,11:05,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,pregunta garantía
-2026-10-15,11:05,whatsapp,Distribuidora DyD,enviado,respuesta,,se disculpa; no se le escribe más
-2026-10-15,11:03,whatsapp,Computer World,recibido,respuesta,no,pregunta si es de Cochabamba y si es uso personal o tienda
-2026-10-15,11:17,whatsapp,Shopping PC,recibido,respuesta,sí,"mandó lista de precios en PDF (componentes para armado); sin factura y al por mayor"
-2026-10-15,11:25,whatsapp,Geek Store Bolivia,recibido,respuesta,sí,"Ryzen 7 7700X Bs 3.480; DDR5 16GB Kingston Fury Bs 2.900 c/u"
-2026-10-15,13:00,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,garantía de 6 meses en los procesadores
-2026-10-15,17:50,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,agradece el dato de la garantía
-2026-10-15,17:50,whatsapp,Geek Store Bolivia,enviado,respuesta,,pregunta velocidad de la Fury DDR5 y si el 7700X es sellado con garantía
-2026-10-15,17:50,whatsapp,Geek Store Bolivia,recibido,automatica,no,bienvenida
-2026-10-15,17:50,whatsapp,Shopping PC,enviado,respuesta,,agradece la lista y pregunta si son nuevos con garantía
-2026-10-15,17:51,whatsapp,Computer World,enviado,respuesta,,"responde Cochabamba, cotizando para armar PCs; pide precio de 7600 o SSD 2TB"
-2026-10-15,17:51,whatsapp,Compucenter,enviado,respuesta,,cierre cordial (no busca proveedores)
-2026-10-15,17:52,whatsapp,Soft Computers,enviado,seguimiento,,"pregunta precio de Ryzen 5 7600 e i5-12400F (tarea 2026-10-15-14)"
-2026-10-15,18:10,whatsapp,Shopping PC,recibido,respuesta,no,garantía solo de prueba
-2026-10-15,17:54,whatsapp,Soft Computers,recibido,respuesta,no,"solo tienen el i5-14400F (no 7600 ni 12400F)"
-2026-10-15,17:57,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,cierre cordial (otro número de la tienda)
-2026-10-16,09:25,whatsapp,MSR Computers,recibido,respuesta,no,"responde ""No"" a la consulta del lunes; no se le escribe más"
-2026-10-16,13:37,whatsapp,Shopping PC,enviado,respuesta,,"pregunta si manejan Ryzen 5 7600 / 7 7800X3D y SSD 2TB (no están en la lista)"
-2026-10-16,13:38,whatsapp,Soft Computers,enviado,respuesta,,pregunta precio del i5-14400F llevando 2
-2026-10-16,13:41,whatsapp,Gamer Store Cbba,enviado,seguimiento,,segundo y último seguimiento (7600 o Corsair DDR5)
-2026-10-16,13:40,whatsapp,Soft Computers,recibido,respuesta,sí,i5-14400F OEM Bs 2.500 c/u también llevando 2
-2026-10-16,13:43,whatsapp,Shopping PC,recibido,respuesta,no,"solo tienen lo de la lista (sin Ryzen ni SSD 2TB)"
-2026-10-16,13:45,whatsapp,Soft Computers,enviado,respuesta,,agradece
-2026-10-16,13:46,whatsapp,Shopping PC,enviado,respuesta,,agradece
-2026-10-16,13:49,whatsapp,Punto Tecnológico,enviado,nuevo,,"chat nuevo: Ryzen 5 7600, 7800X3D y Corsair DDR5 32GB, precio por 2 o 4"
-2026-10-16,13:49,whatsapp,Punto Tecnológico,recibido,automatica,no,bienvenida
-2026-10-16,13:50,whatsapp,Punto Tecnológico,recibido,respuesta,no,"saluda y dice que en un momento envía los precios"
-2026-10-16,14:12,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"cotización en imagen: Ryzen 5 7600 OEM Bs 2.850; DDR5 32GB 2x16 Nox Tuf Bs 5.960; nuevos, garantía 6 meses"
-2026-10-16,17:24,whatsapp,Gamer Store Cbba,recibido,respuesta,sí,"solo tiene Ryzen 5 7600X; combo B650M + 7600X + Samsung DDR5 16GB a Bs 5.900; sueltos: 7600X USD 175, placa USD 145, RAM 16GB USD 210"
-2026-10-17,11:50,whatsapp,Gamer Store Cbba,enviado,respuesta,,"repregunta: 7600X en Bs, precio por 2, si es sellado con garantía"
-2026-10-17,11:50,whatsapp,Punto Tecnológico,enviado,respuesta,,agradece cotización; pregunta 7800X3D y precio del 7600 por 2
-2026-10-17,11:51,whatsapp,ECOM (Economic Computers),enviado,seguimiento,,primer seguimiento (7600 o DDR5)
-2026-10-17,11:51,whatsapp,Display Importadora,enviado,seguimiento,,segundo y último seguimiento (SSD 2TB o Ryzen 7000)
-2026-10-17,11:52,whatsapp,Centro PC,enviado,seguimiento,,segundo y último seguimiento (procesadores sueltos)
-2026-10-17,11:53,whatsapp,PortatiComps,enviado,seguimiento,,segundo y último seguimiento (7600 o 265K)
-2026-10-17,11:54,whatsapp,PC Armagedon,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y DDR5 32GB, precio por 2"
-2026-10-17,11:54,whatsapp,PC Armagedon,recibido,automatica,no,"bienvenida (PC, portátiles y accesorios; lunes a sábado 8:30)"
-2026-10-17,12:30,whatsapp,Punto Tecnológico,recibido,respuesta,no,"los precios ya son los mínimos (sin rebaja por 2); 7800X3D sin stock; 9800X3D sí tienen"
-2026-10-17,13:43,whatsapp,Punto Tecnológico,enviado,respuesta,,"agradece; pregunta precio del 9800X3D, si es nuevo con garantía"
-2026-10-17,13:46,whatsapp,TECH COCHA,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y Corsair DDR5 32GB, precio por 2"
-2026-10-17,13:46,whatsapp,TECH COCHA,recibido,automatica,no,"bienvenida (servicio técnico a domicilio; manda su Facebook)"
-2026-10-17,13:48,whatsapp,ADN Gamer Store,enviado,nuevo,,"chat nuevo: 7800X3D o 7600, nuevos con garantía"
-2026-10-17,14:02,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"9800X3D Bs 6.000, nuevo en caja sellada, garantía 6 meses (no está en vigilar.csv)"
-2026-10-17,14:15,whatsapp,PC Armagedon,recibido,respuesta,no,"pregunta si busca solo 2 piezas o una PC completa"
-2026-10-17,16:07,whatsapp,PC Armagedon,recibido,respuesta,sí,"combo Ryzen 5 7600 + 16GB DDR5 5600 HKC: Bs 6.050 (no da el procesador suelto)"
-2026-10-17,16:12,whatsapp,PC Armagedon,enviado,respuesta,,"solo piezas sueltas; pregunta el 7600 solo, precio por 2, nuevo con garantía"
-2026-10-17,16:13,whatsapp,Punto Tecnológico,enviado,respuesta,,"agradece el precio del 9800X3D"
-2026-10-17,16:12,whatsapp,Legion Emporium,enviado,seguimiento,,"primer seguimiento (7800X3D o i5-14400F; su catálogo es todo a cotizar)"
-2026-10-17,16:15,whatsapp,4 Gamers,enviado,seguimiento,,"primer seguimiento (Ryzen 5 7600, precio de uno)"
-2026-10-19,10:40,whatsapp,Gamer Store Cbba,recibido,respuesta,no,"solo les queda un 7600X y lo venden en combo; sin precio nuevo"
-2026-10-19,10:40,whatsapp,Gamer Store Cbba,enviado,respuesta,,agradece y cierra cordial
-2026-10-19,10:40,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,agradece el contacto de su línea corporativa
-2026-10-19,10:41,whatsapp,ADN Gamer Store,enviado,seguimiento,,primer seguimiento (7800X3D o 7600)
-2026-10-19,10:44,whatsapp,ECOM (Economic Computers),enviado,seguimiento,,segundo y último seguimiento (7600 o DDR5 32GB)
-2026-10-19,10:47,whatsapp,4 Gamers,enviado,seguimiento,,segundo y último seguimiento (7600 o SSD NVMe 1TB)
-2026-10-19,10:51,whatsapp,Legion Emporium,enviado,seguimiento,,segundo y último seguimiento (7600 o DDR5 32GB)
-2026-10-19,10:52,whatsapp,Geek Store Bolivia,enviado,respuesta,,pregunta precio Ryzen 5 5600 y Ryzen 7 5700X3D (tarea 17-10)
-2026-10-19,10:59,whatsapp,Tienda de Computadoras Quillacollo,enviado,nuevo,,chat nuevo: ¿venden CPU y RAM sueltos? 7600 y DDR5 32GB; pregunta envío a Cochabamba
-2026-10-19,11:02,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,enviado,nuevo,,"chat nuevo: precio 7600 y DDR5 32GB, nuevos con garantía"
-2026-10-19,11:05,whatsapp,Pc Soluciones Importaciones,enviado,nuevo,,"chat nuevo: 7800X3D o 7600 sueltos, nuevo con garantía"
-2026-10-19,11:08,whatsapp,Cocotech - Sucursal América,enviado,nuevo,,"chat nuevo: 7600 o i5-14400F sueltos, precio y garantía"
-2026-10-19,11:12,whatsapp,Importadora Ardunel - Quillacollo,enviado,nuevo,,"chat nuevo: CPU y DDR5 sueltos, 7600 y 32GB; pregunta envío a Cochabamba"
-2026-10-19,11:05,whatsapp,Tienda de Computadoras Quillacollo,recibido,automatica,no,saludo automático (DJ COMPUTER)
-2026-10-19,11:08,whatsapp,Cocotech - Sucursal América,recibido,automatica,no,saludo automático
-2026-10-19,16:08,whatsapp,OverCity,enviado,respuesta,,tarea 2026-10-19-1: pide precio del Core Ultra 7 265K (no KF) y si el Ryzen 5 7600 de Bs 2.800 sigue vigente
-2026-10-19,16:09,whatsapp,OverCity,recibido,respuesta,sí,confirma Ryzen 5 7600 aún a Bs 2.800 (OEM)
-2026-10-19,16:10,whatsapp,OverCity,recibido,respuesta,sí,Core Ultra 7 265K OEM Bs 4.100
-2026-10-19,16:10,whatsapp,OverCity,enviado,respuesta,,pregunta garantía del 265K
-2026-10-19,16:10,whatsapp,OverCity,recibido,respuesta,sí,todos los componentes tienen garantía de 3 meses
-2026-10-19,16:14,whatsapp,OverCity,enviado,respuesta,,agradece; solo cotizando
-2026-10-19,16:08,whatsapp,Viadata Computadoras,enviado,respuesta,,tarea 2026-10-19-1: pide precio del Core Ultra 7 265K (no KF) y del Ryzen 5 7600 con garantía
-2026-10-19,16:09,whatsapp,Viadata Computadoras,recibido,respuesta,no,saludo (buenas tardes); todavía sin precios
-2026-10-19,11:29,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,recibido,respuesta,no,no tienen Ryzen 5 7600 ni DDR5 32GB
-2026-10-19,11:41,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,recibido,respuesta,sí,a pedido ofrece solo el procesador Ryzen 5 7500F (sin cooler) Bs 2.190
-2026-10-19,16:08,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,enviado,respuesta,,pregunta si el 7500F es nuevo con garantía y pide aviso si llega el 265K
-2026-10-19,11:24,whatsapp,Cocotech - Sucursal América,recibido,respuesta,no,no tienen el Ryzen 5 7600 ni el i5-14400F
-2026-10-19,11:32,whatsapp,Geek Store Bolivia,recibido,respuesta,no,no tienen Ryzen 5 5600 ni 5700X3D
-2026-10-19,11:13,whatsapp,Importadora Ardunel - Quillacollo,recibido,respuesta,no,no tienen esos productos
-2026-10-19,12:24,whatsapp,Pc Soluciones Importaciones,recibido,respuesta,no,"responde ""Se. Lo veo"" (sin precio)"
-2026-10-19,12:41,whatsapp,ADN Gamer Store,recibido,respuesta,no,"dice ""si ahora le respondo"" (aviso que contestará; sin precio)"
-2026-10-20,10:52,whatsapp,Viadata Computadoras,recibido,respuesta,sí,Core Ultra 7 265 (no K) BOX Bs 6.160 y Ryzen 5 7600X BOX Bs 3.300 (no son de vigilar)
-2026-10-20,10:55,whatsapp,Viadata Computadoras,enviado,respuesta,,pregunta 7600 sin X 265K y 5600 o 5700X3D (tarea 20-3) y garantía de los BOX
-2026-10-20,10:45,whatsapp,Viadata Computadoras,recibido,respuesta,sí,"Ryzen 7 5700 BOX pocas unidades en tránsito a Bs 2.400 en preventa, garantía 3 meses (no es de vigilar); no tienen 7600 sin X ni 265K"
-2026-10-20,16:05,whatsapp,Geek Store Bolivia,enviado,seguimiento,,"tarea 2026-10-20-8: confirma si el Ryzen 7 7700X (Bs 3.480 del 15/10) es nuevo sellado con garantía, stock, precio por 2 y 4 y si hay usado"
-2026-10-20,16:05,whatsapp,Geek Store Bolivia,recibido,automatica,no,saludo automático (atiende lun–sáb 9:00–19:00); sin respuesta real todavía
-2026-10-20,16:05,whatsapp,Punto Tecnológico,enviado,seguimiento,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (precio por 1, 2 y 4, sellado, garantía, usado)"
-2026-10-20,16:05,whatsapp,T&T Todo en Tecnología,enviado,seguimiento,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (precio por 1, 2 y 4, sellado, garantía); antes solo habían pasado su línea corporativa"
-2026-10-20,16:05,whatsapp,Shopping PC,enviado,seguimiento,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (disponible, precio por 1, 2 y 4, sellado)"
-2026-10-20,16:06,whatsapp,OverCity,enviado,respuesta,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (precio por 1, 2 y 4, caja u OEM, garantía)"
-2026-10-20,16:06,whatsapp,OverCity,recibido,respuesta,no,Ryzen 7 7700X AGOTADO
-2026-10-20,16:06,whatsapp,OverCity,recibido,respuesta,sí,"escribe ""Ryzen 7 7700X3D a 4700 Bs"" (modelo dudoso, probablemente 7800X3D; sin confirmar)"
-2026-10-20,16:07,whatsapp,OverCity,enviado,respuesta,,"pregunta si el de Bs 4.700 es el 7800X3D, OEM o caja, garantía, y si el 7700X llega pronto"
-2026-10-20,16:12,whatsapp,Shopping PC,recibido,respuesta,no,"Ryzen 7 7700X: ""no tenemos"" (sin precio)"
-2026-10-20,16:13,whatsapp,Punto Tecnológico,recibido,respuesta,no,"""Buenas tardes"" y ""Ahora reviso"" (consulta 7700X; sin precio todavía)"
-2026-10-20,16:13,whatsapp,OverCity,recibido,respuesta,no,"repite ""RYZEN 7 7700X3D BOX A 4700BS"" con foto de la caja (V-Cache); no aclara si es 7800X3D ni la garantía; modelo sin confirmar, no se anota precio"
-2026-10-21,10:37,whatsapp,OverCity,enviado,respuesta,,pregunta si el de Bs 4.700 es el 7800X3D y si tienen Ryzen 5 7500F (tarea 21-2)
-2026-10-21,10:37,whatsapp,OverCity,recibido,respuesta,no,"aclara que no es el 7800X3D, es el 7700X3D (Bs 4.700 en caja, modelo fuera de vigilar)"
-2026-10-21,10:38,whatsapp,OverCity,recibido,respuesta,no,Ryzen 5 7500F agotado
-2026-10-20,17:53,whatsapp,Geek Store Bolivia,recibido,respuesta,sí,"Ryzen 7 7700X es nuevo caja sellada, unas 10 unidades, solo nuevos en caja (leído 21/10, llegó la tarde del 20/10)"
-2026-10-20,17:55,whatsapp,Geek Store Bolivia,recibido,respuesta,sí,llevando 4 unidades rebajan el 7700X a Bs 3.450 (leído 21/10)
-2026-10-21,10:37,whatsapp,Geek Store Bolivia,enviado,respuesta,,agradece; pregunta por Ryzen 5 7500F y garantía de procesadores
-2026-10-21,10:38,whatsapp,Shopping PC,enviado,respuesta,,pregunta por el Ryzen 5 7500F (ya habían dicho que no tienen 7700X)
-2026-10-21,10:38,whatsapp,ADN Gamer Store,enviado,respuesta,,"responde a su ""si ahora le respondo""; pide confirmar 7600 o 7500F y precio"
-2026-10-21,10:39,whatsapp,Pc Soluciones Importaciones,enviado,respuesta,,"responde a su ""Se. Lo veo""; suma pregunta por 7500F"
-2026-10-21,10:40,whatsapp,COMPUTING,enviado,nuevo,,"chat nuevo: pregunta Ryzen 5 7600 o 7500F, precio por 1 y 2, nuevo con garantía"
-2026-10-21,10:40,whatsapp,COMPUTING,recibido,automatica,no,saludo automático
-2026-10-21,10:41,whatsapp,COMPUTING,recibido,respuesta,no,no tienen stock
-2026-10-21,10:40,whatsapp,ENIGMA TECH,enviado,nuevo,,chat nuevo: pregunta Ryzen 7 7700X o 7500F
-2026-10-21,10:40,whatsapp,ENIGMA TECH,recibido,automatica,no,respuesta automática de otro negocio (restaurante de ramen): número de Google Maps no es de la tienda
-2026-10-21,10:41,whatsapp,Esteban Arce,enviado,nuevo,,"chat nuevo: pregunta DDR5 32GB, SSD NVMe 1TB y Ryzen sueltos"
-2026-10-21,10:41,whatsapp,Accesorios Master Pc,enviado,nuevo,,"chat nuevo: pregunta procesadores Ryzen/Intel y DDR5, precio y garantía"
-2026-10-21,10:42,whatsapp,Nerd Tecnologias,enviado,nuevo,,chat nuevo: pregunta si venden componentes; Ryzen 5 7600 y SSD NVMe 1TB
-2026-10-21,10:43,whatsapp,Pc Soluciones Importaciones,recibido,respuesta,no,"""Ok"" (acusa recibo; sin precio todavía)"
-2026-10-21,10:46,whatsapp,Shopping PC,recibido,respuesta,no,"Ryzen 5 7500F: no tienen; solo ofrecen Ryzen 5 3600 (USD 90) y Ryzen 7 8700G (USD 350), ninguno de vigilar"
-2026-10-21,10:47,whatsapp,Geek Store Bolivia,recibido,respuesta,no,sin 7500F: ofrece directamente el Ryzen 5 8400F (link de su tienda web; no es de vigilar); no contestó la garantía
-2026-10-21,11:11,whatsapp,Accesorios Master Pc,recibido,respuesta,no,no tienen componentes para armar PC (no vende CPU/RAM)
-2026-10-21,11:37,whatsapp,ADN Gamer Store,recibido,respuesta,sí,Ryzen 7 7800X3D USD 520; en Ryzen 5 solo tiene 7600X USD 245 y 8400F USD 220 (OEM USD 190)
-2026-10-21,16:09,whatsapp,OverCity,enviado,respuesta,,agradece por avisar del 7500F agotado y aclarar el modelo
-2026-10-21,16:10,whatsapp,Punto Tecnológico,enviado,respuesta,,"recordatorio amable: pide aviso del Ryzen 7 7700X (llevaba ""Ahora reviso"" desde el 20/10)"
-2026-10-21,16:11,whatsapp,ADN Gamer Store,enviado,respuesta,,"pregunta si el 7800X3D de USD 520 es nuevo en caja, meses de garantía y rebaja por 2"
-2026-10-22,13:05,whatsapp,Geek Store Bolivia,enviado,respuesta,,"pregunta precio del 8400F, nuevo sellado, meses de garantía y precio por 2 (modelo no es de vigilar; ofrecido por ellos)"
-2026-10-22,13:05,whatsapp,Shopping PC,enviado,respuesta,,agradece aviso (sin 7500F/7700X); pide que avisen si les llega
-2026-10-22,13:05,whatsapp,Pc Soluciones Importaciones,enviado,respuesta,,"insiste en si tienen 7800X3D, 7600 o 7500F y precio de uno (solo contestó Ok)"
-2026-10-22,13:05,whatsapp,Tienda de Computadoras Quillacollo,enviado,respuesta,,pide que lo atienda una persona: Ryzen 7600/7500F y envío a Cochabamba (solo había automática DJ COMPUTER)
-2026-10-22,13:05,whatsapp,T&T Todo en Tecnología,enviado,seguimiento,,seguimiento corto por el Ryzen 7 7700X (consulta del martes 20/10 sin respuesta)
-2026-10-22,13:16,whatsapp,TechMax Computers Cbba,enviado,nuevo,,"chat nuevo: consulta componentes (7600, SSD 1TB); número de su bio de Instagram"
-2026-10-22,13:18,whatsapp,"PC Com (distribuidora, Huyustus)",enviado,nuevo,,chat nuevo: confirma que es la tienda y consulta 7600/DDR5 32GB; número de post de tercero
-2026-10-21,16:36,whatsapp,ADN Gamer Store,recibido,respuesta,sí,"7800X3D USD 520 ""es el precio"" (sin rebaja por 2) a TC 11,85; ""si es box"" (nuevo en caja); garantía sin dato (leído 22/10)"
-2026-10-21,16:11,whatsapp,Punto Tecnológico,recibido,respuesta,no,"sobre el 7700X: ""solo tuviese el 9700x"" y ""7700x3d"" (sin precio; leído 22/10)"
-2026-10-22,13:36,whatsapp,"PC Com (distribuidora, Huyustus)",recibido,respuesta,no,"""No solo laptops"" (ambiguo: no queda claro si vende procesadores/RAM de escritorio)"
-2026-10-22,13:50,whatsapp,TechMax Computers Cbba,recibido,respuesta,no,se les acabaron los componentes; solo tienen Intel i9 14900K y un Core Ultra 7 (sin precio)
-2026-10-22,14:13,whatsapp,Shopping PC,recibido,respuesta,no,"""esta bien"" (respuesta al agradecimiento; sin datos)"
-2026-10-22,16:11,whatsapp,ADN Gamer Store,enviado,respuesta,,agradece y pregunta meses de garantía del 7800X3D
-2026-10-22,16:12,whatsapp,TechMax Computers Cbba,enviado,respuesta,,pregunta precio del Core Ultra 7 que tienen y si es nuevo con garantía
-2026-10-22,16:13,whatsapp,"PC Com (distribuidora, Huyustus)",enviado,respuesta,,pide aclarar si venden procesadores/RAM de escritorio o solo laptops
-2026-10-22,16:25,whatsapp,Punto Tecnológico,enviado,respuesta,,"pregunta precio del 9700X, nuevo y garantía"
-2026-10-22,16:22,whatsapp,Geek Store Bolivia,recibido,respuesta,no,7700X es caja sellada original; garantía de 30 días (leído 23/10)
-2026-10-22,16:22,whatsapp,ADN Gamer Store,recibido,respuesta,no,"garantía del 7800X3D: de tienda, 6 meses (leído 23/10)"
-2026-10-22,17:21,whatsapp,"PC Com (distribuidora, Huyustus)",recibido,respuesta,no,solo laptops (no vende procesadores/RAM de escritorio; leído 23/10)
-2026-10-22,16:14,whatsapp,TechMax Computers Cbba,recibido,respuesta,sí,"Core Ultra 7 (modelo sin confirmar) Bs 4.300; sin garantía, traído de EEUU (leído 23/10)"
-2026-10-23,12:45,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,mensaje eliminado por la tienda (sin datos)
-2026-10-23,13:03,whatsapp,Shopping PC,enviado,respuesta,,responde a su 'esta bien': agradece y cierra cordial (tarea 22-6)
-2026-10-23,13:04,whatsapp,Geek Store Bolivia,enviado,respuesta,,agradece garantía; pregunta precio SSD NVMe 1TB y 2TB nuevo con garantía (tarea 22-3)
-2026-10-23,13:04,whatsapp,Geek Store Bolivia,recibido,automatica,no,saludo automático (horario lun-sáb 9 a 19)
-2026-10-23,13:04,whatsapp,Viadata Computadoras,enviado,respuesta,,segunda cotización: Ryzen 7 7700X y SSD NVMe 1TB/2TB (tarea 22-3)
-2026-10-23,13:04,whatsapp,ADN Gamer Store,enviado,respuesta,,agradece garantía; pregunta por Ryzen 7 7700X y SSD NVMe 1TB/2TB (tarea 22-3)
-2026-10-23,13:04,whatsapp,TechMax Computers Cbba,enviado,respuesta,,pregunta si el Core Ultra 7 es el 265K
-2026-10-23,13:04,whatsapp,"PC Com (distribuidora, Huyustus)",enviado,respuesta,,agradece aclaración (solo laptops); no se escribe más
-2026-10-23,13:05,whatsapp,Esteban Arce,enviado,seguimiento,,seguimiento corto (2 días sin respuesta; 1.º seguimiento) (tarea 22-6)
-2026-10-23,13:05,whatsapp,Nerd Tecnologias,enviado,seguimiento,,seguimiento corto (2 días sin respuesta; 1.º seguimiento) (tarea 22-6)
-2026-10-23,13:05,whatsapp,Cyrex Store,enviado,respuesta,,segunda cotización: Ryzen 7 7700X caja (precio por 1 y 2) y SSD NVMe 1TB/2TB (tarea 22-3)
-2026-10-23,13:05,whatsapp,Nerd Tecnologias,recibido,respuesta,no,"solo servicio técnico de computadoras, laptops e impresoras (no vende componentes)"
-2026-10-23,13:06,whatsapp,Nerd Tecnologias,enviado,respuesta,,agradece y cierra cordial
-2026-10-23,16:10,whatsapp,Cyrex Store,recibido,respuesta,sí,"13:09 mandó foto del Ryzen 7 7700X BOX a Bs 3.673,50 (""Sería ese""; ""Solo nos queda uno""); sin garantía ni SSD (leído 23/10 16:09)"
-2026-10-23,16:10,whatsapp,Cyrex Store,enviado,respuesta,,agradece la foto y pregunta meses de garantía del 7700X y si tienen SSD NVMe 1TB/2TB
-2026-10-23,16:11,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,pide reenviar el mensaje eliminado y pregunta si tienen el Ryzen 7 7700X y a cuánto
-2026-10-23,16:11,whatsapp,Nerd Tecnologias,recibido,respuesta,sí,13:42 pasó precios que le dio un colega: Ryzen 5 7600 Bs 2.700 y M.2 1TB Bs 1.600 (leído 23/10 16:11; no es stock propio)
-2026-10-23,16:11,whatsapp,Nerd Tecnologias,enviado,respuesta,,"agradece y pregunta si son nuevos con garantía, si el M.2 es NVMe y si hay stock"
-2026-10-23,16:11,whatsapp,TechMax Computers Cbba,recibido,respuesta,sí,14:16 aclaró que el Core Ultra 7 es el 270K (no el 265K) (leído 23/10)
-2026-10-23,16:11,whatsapp,TechMax Computers Cbba,enviado,respuesta,,agradece y cierra
-2026-10-23,16:11,whatsapp,Esteban Arce,recibido,respuesta,no,"13:59 mensaje reenviado: no están disponibles, aún no llegan (leído 23/10)"
-2026-10-23,16:11,whatsapp,Esteban Arce,enviado,respuesta,,agradece y cierra
-2026-10-23,16:16,whatsapp,PC FALCON,enviado,respuesta,,"chat nuevo (mensaje 2): precio 7800X3D, Ryzen 5 7600 y SSD NVMe 1TB; por 2 o 4; nuevo sellado y garantía"
-2026-10-23,16:17,whatsapp,Viadata Computadoras,recibido,respuesta,no,"""No tengo"" (respuesta al 7700X y SSD NVMe 1TB/2TB; leído 23/10 PC; no se contesta)"
-2026-10-23,16:12,whatsapp,Nerd Tecnologias,recibido,respuesta,no,"""se lo consulto"" y luego pregunta cuántas unidades piensa comprar (a la pregunta de nuevos/garantía/NVMe/stock del M.2 1TB y 7600; leído 24/10 23:xx PC; sin precio nuevo)"
-2026-10-23,16:16,whatsapp,TechMax Computers Cbba,recibido,respuesta,no,"""me avisas nomás si te interesa"" (respuesta a nuestro cierre; sin datos; leído 24/10 PC)"
-2026-10-22,13:06,whatsapp,Tienda de Computadoras Quillacollo,recibido,automatica,no,segundo saludo automático DJ COMPUTER (sigue sin persona; leído 24/10 PC)
-2026-10-26,11:53,whatsapp,Nerd Tecnologias,enviado,respuesta,,responde cuántas unidades: solo cotizando precio y stock; repregunta nuevos/garantía/NVMe (tarea 25-1)
-2026-10-26,11:54,whatsapp,PC FALCON,enviado,seguimiento,,seguimiento corto (7800X3D y SSD NVMe 1TB; 3 días sin respuesta)
-2026-10-26,11:54,whatsapp,Punto Tecnológico,enviado,seguimiento,,seguimiento corto (precio 9700X y SSD NVMe 1TB)
-2026-10-26,11:54,whatsapp,Pc Soluciones Importaciones,enviado,seguimiento,,seguimiento corto (7800X3D o SSD NVMe 1TB)
-2026-10-26,16:09,whatsapp,Nerd Tecnologias,recibido,respuesta,no,"11:58 ""Está bien le informo"" y 12:47 ""solo disponible un procesador"" (sin modelo ni precio)"
-2026-10-26,16:10,whatsapp,Nerd Tecnologias,enviado,respuesta,,"pregunta cuál procesador tiene, precio, nuevo y garantía"
-2026-10-26,16:09,whatsapp,Punto Tecnológico,recibido,respuesta,sí,12:05 Ryzen 7 9700X OEM Bs 3.680 y SSD 1TB SN3000 Bs 2.000
-2026-10-26,16:11,whatsapp,Punto Tecnológico,enviado,respuesta,,"agradece y pregunta si el SN3000 es NVMe, nuevo y con garantía, y garantía del 9700X OEM"
-2026-10-26,16:09,whatsapp,Pc Soluciones Importaciones,recibido,respuesta,no,"11:55 ""no tenemos de esos modelos"" (7800X3D y SSD NVMe 1TB)"
-2026-10-26,16:12,whatsapp,Pc Soluciones Importaciones,enviado,respuesta,,agradece y cierra cordial
-2026-10-26,16:59,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"""Garantía de 6 meses"" y ""Si es nvme"" (SSD SN3000 1TB NVMe; la garantía no aclara si es del SSD o del 9700X; leído 27/10 Mac)"
-2026-10-27,12:15,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si la garantía de 6 meses cubre 9700X y SSD y si ambos son nuevos
-2026-10-26,16:16,whatsapp,Nerd Tecnologias,recibido,respuesta,no,"vuelve a preguntar cuántas unidades se buscan (leído 27/10 Mac)"
-2026-10-27,12:15,whatsapp,Nerd Tecnologias,enviado,respuesta,,"responde que sigue cotizando sin cantidad definida; pide cuál procesador tienen y su precio"
-2026-10-28,10:33,whatsapp,Punto Tecnológico,recibido,respuesta,no,"""Si"" (12:16 de ayer): la garantía de 6 meses cubre 9700X y SSD, ambos nuevos"
-2026-10-28,10:33,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si tienen 5700X3D o 7500F y a cuánto
-2026-10-28,10:35,whatsapp,PC FALCON,enviado,seguimiento,,segundo seguimiento (7800X3D y SSD NVMe 1TB)
-2026-10-28,19:42,whatsapp,PC FALCON,recibido,respuesta,no,"""Stock agotado, más adelante tendremos y lo estaremos publicando"" (7800X3D y SSD NVMe 1TB); sin precio"
-2026-10-28,19:42,whatsapp,Punto Tecnológico,recibido,respuesta,no,"""ninguno por ahora"" (5700X3D y 7500F) y ofrece el 8400F (sin precio)"
-2026-10-28,19:42,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta precio del 8400F si es nuevo con garantía y precio por 2
-2026-10-29,10:38,whatsapp,City Of Gamers,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y Corsair DDR5 32GB, nuevos con garantía"
-2026-10-29,10:38,whatsapp,Soft Computers,enviado,seguimiento,,"pregunta Ryzen 5 5600, 5700X3D y 7500F (tarea 2026-10-28-2)"
-2026-10-30,10:41,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"8400F Bs 1.620 ""y sería con piezas"" (ambiguo; 8400F no está en vigilar.csv)"
-2026-10-30,10:41,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si los Bs 1.620 son el procesador solo nuevo con garantía y qué significa con piezas
-2026-10-30,10:44,whatsapp,Soft Computers,recibido,respuesta,no,"solo tiene el Ryzen 7 5700G (no vigilado) y el i5-14400F; sin 5600/5700X3D/7500F"
-2026-10-30,10:44,whatsapp,City Of Gamers,recibido,respuesta,no,"no cuenta con esos productos por el momento"
-2026-10-30,10:46,whatsapp,TECH COCHA,enviado,seguimiento,,seguimiento: 7600 o 7700X y precio
-2026-10-30,10:43,whatsapp,SYSCITY,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y Corsair DDR5 32GB, por 2, nuevos con garantía"
-2026-10-30,10:45,whatsapp,i-Trendy,enviado,nuevo,,"chat nuevo: Ryzen 7 7800X3D e i5-14400F"
-2026-10-30,10:45,whatsapp,i-Trendy,recibido,respuesta,no,"no tienen procesadores por el momento, solo gráficas"
-2026-10-30,10:45,whatsapp,Global PC,enviado,nuevo,,"chat nuevo: SSD NVMe 1TB y RAM DDR5 32GB (número aparece como Import PC)"
-2026-10-30,10:46,whatsapp,Global PC,recibido,respuesta,no,"solo laptops y fundas por el momento; ofrece catálogo (no abierto)"
-2026-10-30,10:46,whatsapp,COMPUTADORAS & REPUESTOS CBBA,enviado,nuevo,,"intento de chat nuevo: el número no está en WhatsApp"
-2026-10-30,10:46,whatsapp,INAV Computación,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 e i5-12400F"
-2026-10-30,10:46,whatsapp,INAV Computación,recibido,automatica,no,"saludo automático (laptops, todo en uno, tablets)"
-2026-10-30,10:44,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"8400F Bs 1.620 solo el procesador (""placa y ram"" aparte); nuevo/garantía sin confirmar"
-2026-10-30,10:48,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si el 8400F es nuevo con garantía 6 meses
-2026-10-30,16:10,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"8400F Bs 1.620 solo el procesador; confirma nuevo y garantía 6 meses (""si""); 8400F no está en vigilar.csv"
-2026-10-30,16:10,whatsapp,INAV Computación,recibido,respuesta,no,no vende accesorios de PC (10:50)
-2026-10-30,16:11,whatsapp,Tienda de Computadoras Quillacollo,enviado,seguimiento,,seguimiento: ¿pudieron ver la consulta de Ryzen 7600/7500F? (solo había automáticas DJ COMPUTER)
-2026-10-30,16:14,whatsapp,IPcenter,enviado,nuevo,,chat nuevo: Ryzen 5 7600 y Corsair DDR5 32GB
-2026-10-30,16:16,whatsapp,Comcell Corp (Cochabamba),enviado,nuevo,,intento de chat nuevo: el número no está en WhatsApp
-2026-10-30,16:17,whatsapp,BLADTHOR,enviado,nuevo,,intento de chat nuevo: el número no está en WhatsApp
-2026-10-30,16:18,whatsapp,Compumas Bolivia,enviado,nuevo,,chat nuevo: Ryzen 5 7600 y SSD NVMe 1TB
-2026-10-30,16:19,whatsapp,Creative Technology,enviado,nuevo,,chat nuevo: Ryzen 5 7600 y DDR5 32GB
-2026-11-02,12:00,whatsapp,IPcenter,recibido,respuesta,no,"pregunta si es para PC (recibido 30/10 16:18)"
-2026-11-02,12:01,whatsapp,IPcenter,enviado,respuesta,,"confirma que es para armar PC; repregunta Ryzen 5 7600 y Corsair DDR5 32GB"
-2026-11-02,12:01,whatsapp,Tienda de Computadoras Quillacollo,recibido,respuesta,no,"agotado partes de PC; les llega a fines de noviembre"
-2026-11-02,12:01,whatsapp,Tienda de Computadoras Quillacollo,enviado,respuesta,,agradece
-2026-11-02,12:02,whatsapp,Soft Computers,enviado,respuesta,,agradece
-2026-11-03,10:37,whatsapp,TECH COCHA,enviado,seguimiento,,2º seguimiento (7600)
-2026-11-03,10:37,whatsapp,Compumas Bolivia,enviado,seguimiento,,seguimiento (7600 y SSD 1TB)
-2026-11-03,10:38,whatsapp,SYSCITY,enviado,seguimiento,,seguimiento (7600)
-2026-11-03,10:38,whatsapp,Creative Technology,enviado,seguimiento,,seguimiento (7600 y DDR5)
-2026-11-03,10:39,whatsapp,EdsonBIT Electronica,enviado,nuevo,,"chat nuevo: CPU/RAM sueltos, Ryzen 5 7600 y 5600"
-2026-11-03,10:40,whatsapp,EQUIPAMIENTO MODERNO S.R.L.,enviado,nuevo,,"chat nuevo: componentes, 7600 y 5700X3D"
-2026-11-03,11:34,whatsapp,Creative Technology,recibido,respuesta,no,"respondió: saludo automático y luego ""no cuento con memorias en Ryzen por el momento"" (sin Ryzen 7600 ni DDR5)"
-2026-11-03,10:47,whatsapp,EQUIPAMIENTO MODERNO S.R.L.,recibido,respuesta,no,un compañero atenderá ese número (la persona está fuera); sin precio todavía
-2026-11-03,10:46,whatsapp,EdsonBIT Electronica,recibido,respuesta,no,"respuesta ambigua (""Ekibocado"", parece ""equivocado""); sin precio"
-2026-11-03,10:41,whatsapp,Compumas Bolivia,recibido,respuesta,no,no vende partes; solo cotiza PCs armadas con partes nuevas; se presenta como Werner (nombre de pila de la tienda)
-2026-11-04,11:28,whatsapp,Creative Technology,enviado,respuesta,,"agradece; pregunta si tienen SSD NVMe 2TB o algun procesador (Ryzen 5 5600 o Intel i5)"
-2026-11-04,11:29,whatsapp,EdsonBIT Electronica,enviado,respuesta,,"pide aclarar si fue numero equivocado o si venden componentes de PC"
-2026-11-04,11:29,whatsapp,EQUIPAMIENTO MODERNO S.R.L.,enviado,respuesta,,"saludo a Edwin (el companero) y consulta Ryzen 5 7600 y precio"
-2026-11-04,11:29,whatsapp,Soft Computers,enviado,seguimiento,,"seguimiento corto: SSD NVMe 2TB o Ryzen 5 7600"
-2026-11-04,11:30,whatsapp,City Of Gamers,enviado,respuesta,,agradece (no tiene esos productos)
-2026-11-04,11:30,whatsapp,Global PC,enviado,respuesta,,agradece (solo laptops y fundas); sin insistir
-2026-11-04,11:31,whatsapp,OverCity,enviado,seguimiento,,"cotiza Ryzen 5 7600 y SSD NVMe 2TB: precio, nuevo y garantia (tarea 2026-11-03-2)"
-2026-11-04,11:31,whatsapp,Punto Tecnológico,enviado,seguimiento,,"cotiza SSD NVMe 2TB y confirma Ryzen 5 7600 (Bs 2.850 del 16/10): nuevo y garantia (tarea 2026-11-03-2)"
-2026-11-04,11:32,whatsapp,i2C Electronics,enviado,nuevo,,"chat nuevo: procesadores/RAM/SSD sueltos, Ryzen 5 7600 y SSD NVMe 2TB"
-2026-11-04,11:32,whatsapp,i2C Electronics,recibido,automatica,no,saludo automatico (sin precio)
-2026-11-04,11:33,whatsapp,KANG MIN ELECTRONICS,enviado,nuevo,,"chat nuevo: componentes de PC, Ryzen 5 7600 y SSD NVMe 2TB"
-2026-11-04,11:33,whatsapp,KANG MIN ELECTRONICS,recibido,automatica,no,"saludo automatico (se presenta como Jeonja Technology); sin precio"
-2026-11-04,11:33,whatsapp,COMPUMUNDOHIPERMEGARED,enviado,nuevo,,"chat nuevo: componentes sueltos, Ryzen 5 7600 y SSD 2TB"
-2026-11-04,11:34,whatsapp,EMPRESEL Electrónica,enviado,nuevo,,"chat nuevo: procesadores/SSD, Ryzen 5 7600 y SSD NVMe 2TB"
-2026-11-04,11:42,whatsapp,PC Gaming Forge,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y SSD NVMe 2TB, precio por 1/2/4, sellado y garantia"
-2026-11-04,11:42,whatsapp,PC Gaming Forge,recibido,automatica,no,"saludo automatico (se presenta como Pc Gaming Forge); sin precio"
-2026-11-04,11:46,whatsapp,CRISTECNOLOGY,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y SSD NVMe 2TB, precio por 1/2/4, sellado y garantia"
-2026-11-04,11:46,whatsapp,CRISTECNOLOGY,recibido,automatica,no,"saludo automatico: se presenta como INNOVA TECH COCHABAMBA (laptops y accesorios; equipos nuevos, garantia real); nombre distinto al de Google Maps, posible mismo negocio con otro nombre; sin precio"
-2026-11-04,11:49,whatsapp,Cyrex Store América,enviado,nuevo,,"chat nuevo (sucursal Av. América, numero distinto al de Cyrex Store): Ryzen 5 7600 y SSD NVMe 2TB, precio por 1/2/4, sellado y garantia"
-2026-11-04,11:53,whatsapp,Orange Computer,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y SSD NVMe 2TB, precio por 1/2/4, sellado y garantia"
-2026-11-04,11:57,whatsapp,HooperBolivia,enviado,nuevo,,"chat nuevo: pregunta si venden componentes de PC (mensaje 1)"
-2026-11-04,14:52,whatsapp,KANG MIN ELECTRONICS,recibido,respuesta,no,responde que trabajan más con sistemas ERP y CRM: no vende componentes; sin precio
-2026-11-04,16:14,whatsapp,KANG MIN ELECTRONICS,enviado,respuesta,,"agradece, sin insistir"
-2026-11-04,14:47,whatsapp,HooperBolivia,recibido,respuesta,no,"pregunta ""de qué departamento son?""; sin precio"
-2026-11-04,16:14,whatsapp,HooperBolivia,enviado,respuesta,,"responde que son de Cochabamba, cotizan para armar PCs; repregunta si venden procesadores, RAM o SSD sueltos"
-2026-11-04,13:33,whatsapp,Punto Tecnológico,recibido,respuesta,sí,SSD NVMe 2TB Hiksemi Future Bs 3.800; Ryzen 5 7600 sigue a Bs 2.850; ambos con garantía de 6 meses
-2026-11-04,16:13,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si el SSD Hiksemi 2TB y el Ryzen son nuevos sellados y si hay precio por 2 SSD
-2026-11-04,12:41,whatsapp,Orange Computer,recibido,respuesta,sí,"solo tiene SSD NVMe 1TB a Bs 1.550 ""precio por mayor""; vienen sellados; sin Ryzen 5 7600 ni SSD 2TB confirmados"
-2026-11-04,16:13,whatsapp,Orange Computer,enviado,respuesta,,pregunta garantía del SSD 1TB y si tienen procesadores (Ryzen 5 7600 u otro Ryzen 5)
-2026-11-04,15:43,whatsapp,Cyrex Store América,recibido,respuesta,sí,"manda fotos de su web: solo tiene el Ryzen 5 7600X (Bs 2.677,50) y SSD WD Green 2TB SATA III (Bs 2.201,50); todos sus productos son nuevos; consulta con su encargado y pregunta cuántos necesito"
-2026-11-04,16:12,whatsapp,Cyrex Store América,enviado,respuesta,,"aclara que solo cotiza (precio por 1, 2 y 4); pide confirmar el 7600X y si tienen SSD NVMe 2TB"
-2026-11-04,11:45,whatsapp,COMPUMUNDOHIPERMEGARED,recibido,respuesta,no,"no tiene esas partes: solo mouse, teclado y fuentes de poder"
-2026-11-04,16:15,whatsapp,COMPUMUNDOHIPERMEGARED,enviado,respuesta,,"agradece, sin insistir"
-2026-11-04,11:40,whatsapp,Soft Computers,recibido,respuesta,sí,solo M.2 1TB Crucial E100 5000 MB/s a Bs 1.950; sin SSD 2TB ni Ryzen 5 7600
-2026-11-04,16:15,whatsapp,Soft Computers,enviado,respuesta,,agradece y pide aviso si les llega SSD 2TB o Ryzen 5 7600
-2026-11-04,11:38,whatsapp,i2C Electronics,recibido,respuesta,no,"""no tenemos en stock"""
-2026-11-04,16:15,whatsapp,i2C Electronics,enviado,respuesta,,"agradece, sin insistir"
-2026-11-04,11:34,whatsapp,EMPRESEL Electrónica,recibido,respuesta,no,"""buen día no"" (no tiene)"
-2026-11-04,16:15,whatsapp,EMPRESEL Electrónica,enviado,respuesta,,"agradece, sin insistir"
-2026-11-04,16:26,whatsapp,Orange Computer,recibido,respuesta,no,"no tienen procesadores; el SSD NVMe 1TB tiene garantia de 6 meses; sin precio nuevo"
-2026-11-04,16:29,whatsapp,Cyrex Store América,recibido,respuesta,no,"no tiene SSD NVMe de 2TB, solo de 1TB; sin precio nuevo"
-2026-11-04,16:17,whatsapp,Punto Tecnológico,recibido,respuesta,no,"dice que los precios que da ya estan con descuento y que ambos son nuevos y con garantia (no aclaro sellado ni precio por 2)"
-2026-11-04,16:36,whatsapp,Cyrex Store América,enviado,respuesta,,"agradece, sin insistir"
-2026-11-04,16:36,whatsapp,Orange Computer,enviado,respuesta,,"agradece la info del SSD 1TB y su garantia"
-2026-11-04,16:36,whatsapp,Punto Tecnológico,enviado,respuesta,,"pregunta si el Ryzen 5 7600 viene sellado en caja u OEM y si por 2 se mantiene Bs 2.850 c/u (tarea 2026-11-04-1)"
-2026-11-04,16:37,whatsapp,Tecnología GabBoss,enviado,nuevo,,"chat nuevo (T091, Quillacollo): pregunta si venden componentes sueltos (mensaje 1)"
-2026-11-04,16:37,whatsapp,Tecnología GabBoss,recibido,automatica,no,"respuesta de IA de Meta (cuenta de empresa): vende RAM DDR3, SSD, procesadores Intel 4ta gen, placas H81, mantenimiento; sin precio"
-2026-11-04,16:38,whatsapp,Tecnología GabBoss,enviado,respuesta,,"pregunta si tienen SSD NVMe 2TB o Ryzen 5 7600, precio y garantia"
-2026-11-04,16:45,whatsapp,Punto Tecnológico,recibido,respuesta,si,"ofrece Ryzen 5 9600X OEM a Bs 2.750 (no vigilado); dice ""veré si me dejan vender solo procesador"" (sin aclarar sellado/OEM ni precio por 2 del 7600; espera su respuesta)"
-2026-11-04,16:39,whatsapp,Tecnología GabBoss,recibido,automatica,si,"IA de Meta: no tiene SSD NVMe 2TB ni Ryzen 5 7600; catálogo: SSD 512GB Netac Bs 830, SSD 240GB American Bs 520, i5 4590 Bs 400 (equipo viejo, no vigilado); sin garantía en ficha"
-2026-11-04,18:10,whatsapp,Tecnología GabBoss,enviado,respuesta,,"agradece, solo cotizando, sin insistir"
-2026-11-05,10:54,whatsapp,Punto Tecnológico,enviado,respuesta,,"agradece el 9600X y repregunta si el Ryzen 5 7600 viene sellado u OEM (tarea 2026-11-04-1/6)"
-2026-11-05,10:55,whatsapp,SYSCITY,enviado,seguimiento,,"seguimiento corto: Ryzen 5 7600 o SSD NVMe 2TB"
-2026-11-05,10:56,whatsapp,BitCate,enviado,nuevo,,"chat nuevo (T092, Quillacollo): pregunta si venden componentes sueltos (mensaje 1)"
-2026-11-05,16:10,whatsapp,HC store,enviado,nuevo,,"chat nuevo (T093): componentes sueltos, Ryzen 5 7600 y SSD NVMe 2TB, precio, nuevo y garantía (tarea 2026-11-04-1)"
-2026-11-05,16:10,whatsapp,HC store,recibido,automatica,no,"bienvenida automática: solo ofrece televisores y lavadoras; sin componentes de PC"
-2026-11-05,16:40,messenger,vendedor M.2 512GB (Marketplace),recibido,respuesta,no,"respondió 14:39 ""Sí. ¿Te interesa?"" a la pregunta de disponibilidad; sin precio todavía; no se pudo contestar: el permiso automático rechazó enviar el mensaje desde Messenger; queda para la próxima ronda o para Santi"
-2026-11-05,18:09,whatsapp,Pop Store Cbba,enviado,nuevo,,"chat nuevo (T094): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2; tienda de accesorios, puede no vender componentes)"
-2026-11-05,18:11,whatsapp,Dr. Compu,enviado,nuevo,,"chat nuevo (T096, Quillacollo): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2)"
-2026-11-05,18:12,whatsapp,Accesorios Technology,enviado,nuevo,,"chat nuevo (T097, Quillacollo): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2)"
-2026-11-05,18:14,whatsapp,SS Electrónica Cbba - Quillacollo,enviado,nuevo,,"chat nuevo (T098, Quillacollo): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2)"
-2026-11-05,18:16,whatsapp,Smash Games,enviado,nuevo,,"chat nuevo (T099, Quillacollo): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2; tienda de videojuegos)"
-2026-11-05,18:18,whatsapp,ELVYCOMP,enviado,nuevo,,"chat nuevo (T095, Quillacollo): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2)"
-2026-11-05,18:19,whatsapp,TECH - Mantenimiento de Computadoras,enviado,nuevo,,"chat nuevo (T100): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2; servicio técnico, puede armar PC)"
-2026-11-05,18:20,whatsapp,Dr. Compu,recibido,respuesta,no,"respondió ""Número equivocado""; el celular de Maps no es de la tienda; sin precio, no se repite"
-2026-11-05,18:18,whatsapp,ELVYCOMP,recibido,automatica,no,"bienvenida automática (""¿Cómo podemos ayudarte?""); la consulta de precios ya estaba enviada; esperar respuesta humana"
-2026-11-06,13:04,whatsapp,TECH - Mantenimiento de Computadoras,recibido,respuesta,no,"responde (05/11 21:29): solo equipos armados, no sueltos; en la Esteban Arce se encuentran; sin precio"
-2026-11-06,13:04,whatsapp,TECH - Mantenimiento de Computadoras,enviado,respuesta,,"agradece la información, sin insistir"
-2026-11-06,13:05,whatsapp,Smash Games,recibido,respuesta,no,"responde (05/11): no vende nada de o para PC, gaming center de consolas; no se repite"
-2026-11-06,13:05,whatsapp,PC Gaming Forge,enviado,seguimiento,,"seguimiento 1 (sin respuesta humana, solo automático): pregunta si pudieron ver Ryzen 5 7600 y SSD NVMe 2TB"
-2026-11-06,13:06,whatsapp,CRISTECNOLOGY,enviado,seguimiento,,seguimiento 1 (solo automático de INNOVA TECH): pregunta si tienen Ryzen 5 7600 o SSD NVMe 2TB
-2026-11-06,13:00,whatsapp,Tecnología GabBoss,recibido,automatica,no,"05/11 respuesta ""Entendido, gracias por cotizar"" (cierre de la conversación; ya había dicho que no tiene 7600 ni SSD 2TB); no se hace seguimiento"
-2026-11-06,16:11,whatsapp,Tienda Garage en Línea,enviado,nuevo,,"chat nuevo (T090): componentes sueltos, Ryzen 5 7600 y SSD NVMe 2TB, precio por 1 y 2, sellado y garantía (tarea 2026-11-04-1; en WhatsApp se ve como Biomedico)"
-2026-11-06,16:12,whatsapp,Tienda Garage en Línea,recibido,automatica,no,"bienvenida automática de Servicio Técnico BIOMEDICO (cuenta de empresa)"
-2026-11-06,16:12,whatsapp,Tienda Garage en Línea,recibido,respuesta,no,"responde ""No disculpe"": no tiene componentes sueltos; sin precio"
-2026-11-06,16:15,whatsapp,Tienda Garage en Línea,enviado,respuesta,,"agradece la respuesta, sin insistir"
-2026-11-06,16:14,whatsapp,INTEGRAL TU-PC,enviado,nuevo,,"chat nuevo (T101): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2, sellado y garantía (tarea 2026-11-04-1)"
-2026-11-06,16:16,whatsapp,Microworld,enviado,nuevo,,"chat nuevo (T102): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2, sellado y garantía (tarea 2026-11-04-1)"
-2026-11-06,16:16,whatsapp,Microworld,recibido,automatica,no,"bienvenida automática con horarios y link a su catálogo de WhatsApp (enlace, no archivo; no se abrió); la consulta de precios ya estaba enviada; esperar respuesta humana"
-2026-11-06,16:19,whatsapp,COMPU-X,enviado,nuevo,,"chat nuevo (T103): precio Ryzen 5 7600 y SSD NVMe 2TB, por 1 y 2, sellado y garantía (tarea 2026-11-04-1)"
-2026-11-06,16:22,messenger,vendedor M.2 512GB (Marketplace),enviado,respuesta,,"pide precio, marca/modelo y si es nuevo o usado (sin ofertar)"
-2026-11-06,16:26,messenger,vendedor disco M.2 NVMe Apacer (Marketplace),recibido,respuesta,sí,"respondió jueves: solo queda el de 512GB a Bs 970 (precio publicado, sin nuevo/usado)"
-2026-11-06,16:27,messenger,vendedor disco M.2 NVMe Apacer (Marketplace),enviado,respuesta,,"pregunta si es nuevo o usado y si es PCIe 3.0 o 4.0"
-2026-11-06,16:29,messenger,vendedor M.2 NVMe 256GB (Marketplace),recibido,respuesta,sí,"Bs 450 por el 256GB (ya respondido el 05/11); sin más preguntas, no se contesta"
-2026-11-06,16:30,messenger,vendedor memoria M.2 256GB Hiksemi (Marketplace),recibido,respuesta,sí,"Bs 660 por el 256GB, disponible (jueves); información completa, no se contesta"
-2026-11-09,15:53,whatsapp,CRISTECNOLOGY,recibido,respuesta,no,"nota de voz de 17 s (06/11 17:49, INNOVA TECH) que no se puede escuchar; no se anota contenido"
-2026-11-09,15:53,whatsapp,CRISTECNOLOGY,enviado,respuesta,,pide que lo escriba (no escuchamos audios) y repite Ryzen 5 7600 y SSD NVMe 2TB: precio y sellado
-2026-11-09,15:54,whatsapp,Punto Tecnológico,enviado,seguimiento,,seguimiento 2: sellado en caja u OEM del Ryzen 5 7600 y precio llevando 2 (tarea 2026-11-06-1)
-2026-11-09,15:54,whatsapp,BitCate,enviado,seguimiento,,seguimiento 1: si venden procesadores o SSD sueltos
-2026-11-09,15:54,whatsapp,HC store,enviado,seguimiento,,seguimiento 1 (solo automática de TV/lavadoras): pregunta si manejan Ryzen o SSD NVMe
-2026-11-09,15:55,whatsapp,Pop Store Cbba,enviado,seguimiento,,seguimiento 1: Ryzen 5 7600 y SSD NVMe 2TB (tarea 2026-11-06-2)
-2026-11-09,15:55,whatsapp,ELVYCOMP,enviado,seguimiento,,"seguimiento 1 (solo automática): Ryzen 5 7600 y SSD NVMe 2TB, precio"
-2026-11-09,15:55,whatsapp,Accesorios Technology,enviado,seguimiento,,seguimiento 1: Ryzen 5 7600 y SSD NVMe 2TB
-2026-11-09,15:55,whatsapp,PC Gaming Forge,enviado,seguimiento,,seguimiento 2 (solo automática): Ryzen 5 7600 y SSD NVMe 2TB
-2026-11-09,15:55,whatsapp,INTEGRAL TU-PC,enviado,seguimiento,,seguimiento 1: precio Ryzen 5 7600 y SSD NVMe 2TB (tarea 2026-11-06-2)
-2026-11-09,15:55,whatsapp,Microworld,enviado,seguimiento,,seguimiento 1: precio Ryzen 5 7600 y SSD NVMe 2TB (tarea 2026-11-06-2)
-2026-11-09,15:55,whatsapp,COMPU-X,enviado,seguimiento,,seguimiento 1: Ryzen 5 7600 y SSD NVMe 2TB (tarea 2026-11-06-2)
-2026-11-09,16:08,messenger,vendedor disco M.2 NVMe Apacer (Marketplace),recibido,respuesta,sí,"512GB nuevo, PCIe 3.0, Bs 970 (viernes); información completa, no se contesta"
-2026-11-09,16:08,messenger,vendedor M.2 512GB (Marketplace),recibido,respuesta,sí,"dice que es usada (viernes); información completa, no se contesta"
-2026-11-09,16:09,messenger,vendedor disco sólido 1TB Kingston (Marketplace),recibido,respuesta,sí,"Bs 900 por el 1TB (viernes); el vendedor lo marcó vendido el 06/11 (cuenta como venta declarada por el vendedor, sin NVMe confirmado)"
-2026-11-09,16:09,messenger,vendedor discos sólidos 240GB (Marketplace),recibido,respuesta,no,"pregunta en qué capacidad; es de 240GB (no es producto nuestro), no se contesta"
-2026-11-09,16:12,whatsapp,Accesorios Technology,recibido,respuesta,no,"'No señor' (no tiene Ryzen 5 7600 ni SSD NVMe 2TB); cerrado, no se contesta"
-2026-11-09,16:42,whatsapp,Microworld,recibido,automatica,no,"segunda respuesta automática (horarios, delivery, catálogo de WhatsApp Business); sin precio"
-2026-11-09,16:43,whatsapp,INTEGRAL TU-PC,recibido,respuesta,sí,"'con 1 TB tengo, 6900 bs, HP Ryzen 5, RAM 8 GB, almacenamiento 1 TB' (es una laptop, no producto vigilado); no dio 7600 ni NVMe 2TB; un audio 16:43 no escuchado"
-2026-11-09,16:49,whatsapp,ELVYCOMP,recibido,respuesta,sí,Corsair MP600 PRO LPX 2TB PCIe 4 NVMe Bs 4.880; procesador solo serie 9000: Ryzen 5 9600X Bs 3.430 (no vigilado); sin 7600
-2026-11-09,18:04,whatsapp,BitCate,recibido,respuesta,no,"'por momento solo estamos realizando mantenimiento completo a equipos' (no vende sueltos); cerrado, no se contesta"
-2026-11-10,09:27,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"tres mensajes: 'Sin stock' (Ryzen 5 7600), '9600x oem', 'nuevos'; el 7600 está agotado; sigue SSD Hiksemi 2TB Bs 3.800 del 04/11"
-2026-11-10,13:09,whatsapp,ELVYCOMP,enviado,respuesta,,"pregunta si el Corsair MP600 PRO LPX 2TB es nuevo sellado, con garantía, y si por 2 baja el precio"
-2026-11-10,13:10,whatsapp,INTEGRAL TU-PC,enviado,respuesta,,"aclara que busca solo SSD NVMe 2TB y Ryzen 5 7600 sueltos, sin equipo"
-2026-11-10,13:11,whatsapp,SS Electrónica Cbba - Quillacollo,enviado,seguimiento,,seguimiento 1: Ryzen 5 7600 o SSD NVMe 2TB
-2026-11-10,13:12,whatsapp,Compuland,enviado,nuevo,,"chat nuevo (T104): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2, nuevo sellado y garantía (mensaje 2; tarea 2026-11-09-1)"
-2026-11-10,13:11,whatsapp,Compuland,recibido,automatica,no,"respuesta automática: tienda 100% en línea, entregas, pago contra entrega; pide marca/modelo (ya los dimos); sin precio"
-2026-11-10,13:13,whatsapp,Importadora ITA,enviado,nuevo,,"chat nuevo (T105): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2, nuevo sellado y garantía (mensaje 2; tarea 2026-11-09-1)"
-2026-11-10,13:13,whatsapp,Importadora ITA,recibido,automatica,no,"respuesta automática con invitación a un grupo de WhatsApp (equipos americanos, 100 equipos esta semana); no se une; sin precio"
-2026-11-10,16:20,whatsapp,ELVYCOMP,recibido,respuesta,sí,"Corsair MP600 PRO LPX 2TB: nuevo sellado; garantía de marca no existe en Bolivia (solo cambio por falla de fábrica); por 2 unidades se puede rebajar el precio final (sin monto); la venta es con previa reserva (no se reserva)"
-2026-11-10,16:21,whatsapp,ELVYCOMP,enviado,respuesta,,"agradece, pregunta cuánto quedaría cada uno llevando 2 y si tienen Ryzen 5 5600, 5700X3D o 7500F y a qué precio (tarea 2026-11-09-3)"
-2026-11-10,16:22,whatsapp,Importadora ITA,recibido,respuesta,no,"'no tuviera componentes de PC y NVMe de 2TB no tengo, solo de 1TB'; cerrado, no se contesta"
-2026-11-10,16:24,whatsapp,Punto Tecnológico,enviado,respuesta,,"pregunta si el SSD Hiksemi 2TB viene sellado y su precio llevando 2, y si tienen Ryzen 5 5600, 5700X3D o 7500F (tarea 2026-11-09-3)"
-2026-11-11,10:06,whatsapp,Punto Tecnológico,recibido,respuesta,no,'Ryzen 7 5800X3D en stock; Hiksemi 2TB agotado; solo me queda en Samsung' (sin precios; no dijo nada de 5600/5700X3D/7500F)
-2026-11-11,10:39,whatsapp,Punto Tecnológico,enviado,respuesta,,"pregunta modelo y precio del Samsung 2TB, precio y si es sellado el 5800X3D, y si tienen 5600, 5700X3D o 7500F (tarea 2026-11-10-2)"
-2026-11-11,10:39,whatsapp,HC store,enviado,seguimiento,,"seguimiento: pregunta si tienen Ryzen 5 5600, 5700X3D o 7500F y precio (tarea 2026-11-10-2)"
-2026-11-11,10:39,whatsapp,Pop Store Cbba,enviado,seguimiento,,"seguimiento: pregunta si manejan Ryzen 5 5600, 5700X3D o 7500F y precio (tarea 2026-11-10-2)"
-2026-11-11,10:40,whatsapp,COMPU-X,enviado,seguimiento,,"seguimiento: pregunta si tienen Ryzen 5 5600, 5700X3D o 7500F y precio (tarea 2026-11-10-2)"
-2026-11-11,10:41,whatsapp,ELVYCOMP,recibido,respuesta,no,"ya leído: 'solamente Ryzen serie 9000, las otras no tengo a la venta' (5600, 5700X3D y 7500F sin stock); no se contesta más"
-2026-11-11,10:43,whatsapp,Punto Tecnológico,recibido,respuesta,no,"2 fotos (10:42; Samsung 2TB y 5800X3D, precio no leído) y ""5600, 570x3d y 7500f sin stock""; los 3 procesadores vigilados sin stock"
-2026-11-11,16:10,whatsapp,Punto Tecnológico,enviado,respuesta,,agradece las fotos y pide por escrito modelo y precio del Samsung 2TB y precio/sellado del 5800X3D (tarea 2026-11-11-1)
-2026-11-11,16:11,whatsapp,COMPU CELL SYSTEM,enviado,nuevo,,"chat nuevo: pregunta si venden componentes sueltos y precio de Ryzen 5 5600, 5700X3D, 7500F y SSD NVMe 2TB, nuevos y garantía (tarea 2026-11-11-1)"
-2026-11-12,10:37,whatsapp,Compuland,enviado,seguimiento,,seguimiento: responde a su respuesta automática (pide marca/modelo) con Ryzen 5 7600 y SSD NVMe 2TB nuevos; pide precio (tarea 2026-11-11-9)
-2026-11-12,10:38,whatsapp,SS Electrónica Cbba - Quillacollo,enviado,seguimiento,,seguimiento 2 corto: si manejan Ryzen o SSD NVMe (tarea 2026-11-11-9)
-2026-11-12,10:38,whatsapp,Microworld,enviado,seguimiento,,seguimiento 2 (antes solo respuestas automáticas): pide Ryzen 5 7600 y SSD NVMe 2TB sueltos y precio (tarea 2026-11-11-9)
-2026-11-12,10:36,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"11/11 16:49 contesta ""Nuevos y sellados"" (a la pregunta de sellado); fotos del 11/11 leídas: SSD Samsung 9100 Pro 2TB Bs 5.860 y Ryzen 7 5800X3D Bs 4.960"
-2026-11-12,10:36,whatsapp,COMPU CELL SYSTEM,recibido,respuesta,no,"11/11 16:12 compartió el contacto de otra persona/empresa y dijo ""ahí habla él, tiene""; no se le escribió a ese contacto (no es la tienda; decide Santi)"
-2026-11-12,16:13,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,enviado,seguimiento,,"reconfirma Ryzen 5 7500F a Bs 2.190 (del 19/10), nuevo y con garantía (tarea 2026-11-12-1)"
-2026-11-12,16:13,whatsapp,Digital Hardware Bolivia,enviado,nuevo,,"chat nuevo (T107, Sacaba): precio y garantía de Ryzen 5 5600, 5700X3D, 7500F, i5-13400 y SSD NVMe 2TB, nuevos sellados (tarea 2026-11-12-1)"
-2026-11-12,16:13,whatsapp,Gamer Store Cbba,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-12,16:14,whatsapp,SMART CUBE,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-12,16:14,whatsapp,Cyrex Store,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-12,16:14,whatsapp,Geek Store Bolivia,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-12,16:15,whatsapp,T&T Todo en Tecnología,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-12,16:15,whatsapp,Viadata Computadoras,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-12,16:15,whatsapp,Soft Computers,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-12,16:16,whatsapp,OverCity,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-12,16:16,whatsapp,PC Factor,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-12,16:16,whatsapp,Crazy Store,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-12,16:15,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,recibido,respuesta,no,"Ryzen 5 7500F agotado (""buenas tardes, agotado""); el Bs 2.190 del 19/10 ya no vale"
-2026-11-12,16:14,whatsapp,Geek Store Bolivia,recibido,automatica,no,"saludo automático con su catálogo web (Kyte, precios en USD) y horario; link por revisar (catálogo web)"
-2026-11-12,16:16,whatsapp,Viadata Computadoras,recibido,respuesta,no,"""No estamos armando equipos"" (respuesta a la lista completa); sin precio"
-2026-11-12,16:16,whatsapp,Cyrex Store,recibido,respuesta,no,"contesta ""buenas"" y manda 2 fotos (parece su lista) a la lista completa; fotos sin leer en esta ronda (sin capturas)"
-2026-11-13,10:36,whatsapp,Microworld,recibido,respuesta,sí,"12/11 17:57: dice tener los dos; SSD Kingston SNV3S 2TB Bs 4.147,20 y Ryzen 5 7600X3D BOX Bs 4.406,40 (7600X3D a mercado.csv); su catálogo de WhatsApp Business por revisar"
-2026-11-13,10:37,whatsapp,Microworld,enviado,respuesta,,"agradece y pregunta por el Ryzen 5 7600 o 7600X, el SSD NVMe 1TB, sellado y garantía (tarea 2026-11-12-11)"
-2026-11-13,10:36,whatsapp,Digital Hardware Bolivia,recibido,respuesta,no,"12/11 16:18: ""Ok"", ""Buenas tardes"" y ""Necesita una cotización de esos equipos verdad?""; sin precio"
-2026-11-13,10:37,whatsapp,Digital Hardware Bolivia,enviado,respuesta,,"confirma que sí: precio de cada producto, nuevo sellado y garantía (tarea 2026-11-12-11)"
-2026-11-13,10:36,whatsapp,Viadata Computadoras,enviado,respuesta,,"responde a ""no estamos armando equipos"": aclara que busca componentes sueltos y pide su lista de precios (tarea 2026-11-12-11)"
-2026-11-13,10:36,whatsapp,SMART CUBE,recibido,automatica,no,12/11 17:51 segundo saludo automático (nueva dirección zona norte); sin precio
-2026-11-13,10:38,whatsapp,Cyrex Store,recibido,respuesta,sí,"12/11 16:16 fotos leídas: Ryzen 5 9600X BOX Bs 2.784,75 y SSD Kingston NV3 1TB Gen4 Bs 1.884,15; hoy 10:39 garantía 3 meses; fotos: SSD Crucial P310 2TB Gen4 Bs 4.088,25 y i5-14400F OEM Bs 2.393,70"
-2026-11-13,10:38,whatsapp,Cyrex Store,enviado,respuesta,,"pregunta garantía del 9600X y si tiene SSD NVMe 2TB, i5-13400 o 14400F (tarea 2026-11-12-11); ya respondió todo"
-2026-11-13,10:36,whatsapp,Punto Tecnológico,enviado,seguimiento,,"Lista completa (Santi 12/11): agradece y pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (tareas 2026-11-12-11 y 2026-11-12-5)"
-2026-11-13,10:40,whatsapp,Shopping PC,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,10:41,whatsapp,PC Armagedon,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista; aclarado que son piezas sueltas"
-2026-11-13,10:41,whatsapp,ADN Gamer Store,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,10:42,whatsapp,TechMax Computers Cbba,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,10:42,whatsapp,Cyrex Store América,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,10:42,whatsapp,Orange Computer,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,10:42,whatsapp,ELVYCOMP,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,10:43,whatsapp,INTEGRAL TU-PC,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista; solo piezas sueltas"
-2026-11-13,10:43,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,enviado,respuesta,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,10:42,whatsapp,COMPU CELL SYSTEM,enviado,respuesta,,agradece el contacto y pregunta si ellos tienen componentes sueltos o lista de precios (tarea 2026-11-12-11)
-2026-11-13,10:40,whatsapp,Compuland,recibido,respuesta,no,"13/11 10:39-10:40: tienda 100 % en línea; componentes de alta gama a pedido, llegarían el 30/12 a Cochabamba; sin precios"
-2026-11-13,10:43,whatsapp,Compuland,enviado,respuesta,,"agradece, aclara que solo cotiza y pide precio del Ryzen 5 7600 y SSD NVMe 2TB, sellado y garantía; sin aceptar nada (tarea 2026-11-12-11)"
-2026-11-13,11:18,whatsapp,PC Armagedon,recibido,respuesta,sí,"precios: Ryzen 5 9600X OEM Bs 2.560, i5-12400F OEM Bs 2.050, Core Ultra 7 265K OEM Bs 4.010, SSD NVMe 1TB Kingston NV3 Bs 1.800 (respuesta a la lista completa)"
-2026-11-13,11:22,whatsapp,TechMax Computers Cbba,recibido,respuesta,no,no cuentan con los productos de la lista por el momento (respuesta a la lista completa)
-2026-11-13,11:28,whatsapp,Orange Computer,recibido,respuesta,no,"Sacaba: no tienen procesadores ni RAM de la lista (""en la ciudad vas a encontrar""; no son comercial en Sacaba); solo el SSD 1TB ya anotado el 04/11"
-2026-11-13,15:23,whatsapp,Microworld,recibido,respuesta,no,"""No contamos"": sin Ryzen 5 7600/7600X ni SSD NVMe 1TB (respuesta del 13/11 10:37); 16:13 pregunta de qué empresa escribe"
-2026-11-13,10:50,whatsapp,Cyrex Store América,recibido,respuesta,no,"manda el link de su web (cyrexstore.com, la misma de Cyrex Store, ya revisada en catálogos 12/11); sin precios nuevos"
-2026-11-13,10:47,whatsapp,Punto Tecnológico,recibido,respuesta,no,"manda el link de su web (puntotecnologic.com, ya revisada 12/11) y saluda; sin precios nuevos"
-2026-11-13,10:45,whatsapp,Shopping PC,recibido,respuesta,sí,"reenvía listas mayoristas del 09/11 (PDF: componentes para armado, portátiles, toner, impresoras) y aviso de tipo de cambio 12; del PDF de componentes solo se pudo leer en el visor (no se bajó)"
-2026-11-13,16:12,whatsapp,Shopping PC,enviado,respuesta,,agradece la lista y pregunta si el SSD Kingston NV3 1TB viene sellado y qué garantía
-2026-11-13,16:13,whatsapp,Shopping PC,recibido,respuesta,sí,"SSD NV3 1TB viene sellado de fábrica, garantía de fábrica; ""por nosotros la garantía es de prueba"""
-2026-11-13,16:12,whatsapp,PC Armagedon,enviado,respuesta,,"agradece los precios y pregunta garantía del 9600X, 12400F y SSD, y si tienen SSD NVMe 2TB"
-2026-11-13,16:12,whatsapp,Microworld,enviado,respuesta,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (tras su ""no contamos"")"
-2026-11-13,16:13,whatsapp,Microworld,recibido,respuesta,no,pregunta de qué empresa le escribe
-2026-11-13,16:15,whatsapp,Microworld,enviado,respuesta,,aclara que no es empresa: asistente que cotiza para André para armar PCs; sin datos personales
-2026-11-13,16:17,whatsapp,Electro-TTS,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,16:18,whatsapp,PC Morgana,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,16:19,whatsapp,Computer World,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,16:20,whatsapp,Hardware Technology,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,16:21,whatsapp,PCBOX,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,16:22,whatsapp,Tienda de Computadoras Quillacollo,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,16:23,whatsapp,Pc Soluciones Importaciones,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,16:25,whatsapp,Cocotech - Sucursal América,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,16:26,whatsapp,Importadora Ardunel - Quillacollo,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-13,16:18,whatsapp,Microworld,recibido,respuesta,no,"pide que no se le escriba como ""André"" a menos que sea licitación: ""mejor no me envía formalmente al correo electrónico"" (dio un correo); no se escribe a correos (necesidad para Santi)"
-2026-11-13,16:19,whatsapp,Microworld,enviado,respuesta,,"agradece; solo cotiza por WhatsApp, sin compromiso; sin dar datos ni escribir al correo"
-2026-11-13,16:17,whatsapp,Cocotech - Sucursal América,recibido,automatica,no,"respuesta automática de empresa (""¿Cómo podemos ayudarte?"")"
-2026-11-13,16:27,whatsapp,Shopping PC,enviado,respuesta,,agradece la información
-2026-11-13,16:28,whatsapp,Punto Tecnológico,enviado,respuesta,,agradece el link
-2026-11-13,16:29,whatsapp,TechMax Computers Cbba,enviado,respuesta,,agradece el aviso
-2026-11-13,16:30,whatsapp,Cyrex Store América,enviado,respuesta,,agradece el link
-2026-11-13,16:31,whatsapp,Orange Computer,enviado,respuesta,,agradece la información
-2026-11-13,16:30,whatsapp,PC Armagedon,recibido,respuesta,sí,"garantía 3 meses (9600X, 12400F y SSD); no tienen SSD NVMe 2TB (""M.2 2TB NO QUEDA"", 19:22)"
-2026-11-13,16:20,whatsapp,Hardware Technology,recibido,respuesta,no,no vende partes internas de PC por el momento (respuesta a la lista completa)
-2026-11-13,16:29,whatsapp,PC Morgana,recibido,respuesta,no,"sin stock (""no tengo"") de la lista; menciona catálogo digital y que pasen por la tienda; sin link ni archivo visible"
-2026-11-13,16:31,whatsapp,Computer World,recibido,respuesta,no,"no vende componentes: trabaja con portátiles, accesorios y repuestos para portátiles (respuesta a la lista completa)"
-2026-11-13,17:07,whatsapp,Digital Hardware Bolivia,recibido,respuesta,no,sin stock en su almacén; les llega la semana siguiente (sin precios)
-2026-11-13,17:42,whatsapp,Orange Computer,recibido,respuesta,no,"pulgar arriba (sin dato nuevo); antes: sin procesadores, ""en la ciudad vas a encontrar, no es comercial en Sacaba"""
-2026-11-13,17:50,whatsapp,Cocotech - Sucursal América,recibido,respuesta,no,"""no tenemos"" (respuesta a la lista completa)"
-2026-11-14,18:26,whatsapp,Shopping PC,enviado,respuesta,,"pide la lista de precios en foto o Excel (el PDF no se baja del visor), con 5600, 5700X3D, 7500F, i5-13400 y DDR5 32GB 5600"
-2026-11-16,10:38,whatsapp,Shopping PC,recibido,respuesta,no,"sin stock: ""No tenemos los productos que está necesitando"" (5600, 5700X3D, 7500F, i5-13400, DDR5 32GB 5600) tras pedirle la lista en foto/Excel"
-2026-11-16,10:40,whatsapp,PC Armagedon,enviado,respuesta,,agradece la garantía de 3 meses
-2026-11-16,10:41,whatsapp,Tienda de Computadoras Quillacollo,enviado,seguimiento,,¿pudieron ver la lista que les pasé? (único seguimiento a la lista completa)
-2026-11-16,10:42,whatsapp,COMPUTING,recibido,respuesta,no,"""Buen día no estimado sin stock"": sin stock (respuesta a la lista completa)"
-2026-11-16,10:43,whatsapp,Orange Computer,recibido,respuesta,no,"solo un pulgar arriba (13/11, sin dato); no se escribe"
-2026-11-16,10:44,whatsapp,COMPUTING,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,10:45,whatsapp,PC FALCON,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,10:47,whatsapp,City Of Gamers,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,10:49,whatsapp,IPcenter,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,10:51,whatsapp,Creative Technology,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,10:53,whatsapp,EdsonBIT Electronica,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,10:55,whatsapp,EQUIPAMIENTO MODERNO S.R.L.,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,10:57,whatsapp,i2C Electronics,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,10:59,whatsapp,Esteban Arce,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,11:01,whatsapp,HooperBolivia,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,16:10,whatsapp,Tienda de Computadoras Quillacollo,recibido,respuesta,no,"contestó al seguimiento: por ahora no tienen partes de PC, solo laptops"
-2026-11-16,16:10,whatsapp,Tienda de Computadoras Quillacollo,enviado,respuesta,,agradece el aviso; no se vuelve a pedir
-2026-11-16,16:11,whatsapp,i2C Electronics,recibido,respuesta,no,"contestó a la lista completa: ""No vendemos computadoras""; no se escribe más"
-2026-11-16,16:11,whatsapp,Compumas Bolivia,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,16:12,whatsapp,i-Trendy,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (el 30/10 dijo que no tiene procesadores; solo respondió su automática)"
-2026-11-16,16:12,whatsapp,Ovni Express Cbba,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,16:13,whatsapp,Click Importadora Cochabamba,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,16:13,whatsapp,Click Importadora Cochabamba,recibido,respuesta,no,"mandó link a su web (importadoraclick.store.link): solo PCs completas, monitores, mini PC y workstations usados; sin procesadores, RAM ni SSD sueltos"
-2026-11-16,16:13,whatsapp,SpartanComputer Cbba,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,16:13,whatsapp,SpartanComputer Cbba,recibido,automatica,no,"automática con link a su tienda online (spartantech.store, web); sin precio; pendiente que Catálogos la revise"
-2026-11-16,16:14,whatsapp,Compuland,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,16:14,whatsapp,COMPU CELL SYSTEM,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista"
-2026-11-16,16:15,whatsapp,COMPU CELL SYSTEM,recibido,respuesta,no,"compartió el contacto de PC Armagedon (ya es tienda nuestra) y dijo ""enseguida te mandará los costos"" (de PC Armagedon, no suyos)"
-2026-11-16,16:16,whatsapp,COMPU CELL SYSTEM,enviado,respuesta,,agradece; sin escribir al contacto compartido
-2026-11-16,16:15,whatsapp,NPC Technology,enviado,nuevo,,chat nuevo modelo 1 (¿venden componentes de PC?); respondió automática
-2026-11-16,16:15,whatsapp,STORE BOLIVIA,enviado,nuevo,,chat nuevo modelo 1 (¿venden componentes de PC?)
-2026-11-16,16:18,whatsapp,STORE BOLIVIA,recibido,respuesta,no,"no vende componentes (""no case"", ""nada de eso""); cuenta de empresa"
-2026-11-16,16:20,whatsapp,Ovni Express Cbba,recibido,respuesta,no,"pasa el contacto de otra empresa (Jhonny Computadoras) con ""comunícate a este número""; no es respuesta a la lista; no se escribió a ese contacto (lo decide Santi)"
-2026-11-16,16:24,whatsapp,Compuland,recibido,respuesta,no,"5 mensajes sueltos: ""Nunca me confirmó"", ""Qué piezas"", ""Quiere"", ""Yo le mandé"", ""Las que puedo traer"" (parece que pregunta qué piezas queremos); sin precios"
-2026-11-17,08:56,whatsapp,Compumas Bolivia,recibido,respuesta,no,no venden partes (arman y cotizan PCs; ya dicho el 03/11); sin precio
-2026-11-17,10:38,whatsapp,Compuland,enviado,respuesta,,"contesta que sirven todas las de la lista, por unidad, nuevas selladas y en cuánto tiempo llegan"
-2026-11-17,10:38,whatsapp,Legion Emporium,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (hoy respondió su auto-respuesta con catálogo taplink, sin precios)"
-2026-11-17,10:39,whatsapp,Centro PC,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (fría: mensaje único, sin seguimiento después)"
-2026-11-17,10:39,whatsapp,ECOM (Economic Computers),enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (fría: mensaje único, sin seguimiento después)"
-2026-11-17,10:39,whatsapp,SYSCITY,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (fría: mensaje único, sin seguimiento después)"
-2026-11-17,10:39,whatsapp,PC Gaming Forge,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (fría: mensaje único, sin seguimiento después)"
-2026-11-17,16:09,whatsapp,Legion Emporium,recibido,automatica,no,"10:39: respuesta automática con link a su catálogo taplink y ubicaciones (ya anotada); sin precios; chat sin leer revisado, nada nuevo"
-2026-11-17,16:10,whatsapp,CRISTECNOLOGY,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (sin respuesta desde la nota de voz del 06/11; no es fría)"
-2026-11-17,16:10,whatsapp,Compucenter,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (antes dio precio de DDR4 16GB 3600 el 12/10; no es fría)"
-2026-11-17,16:10,whatsapp,Tienda Supermall (Marketplace),enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (antes dio precios de procesadores el 12/10)"
-2026-11-17,16:10,whatsapp,Tienda Supermall (Marketplace),recibido,automatica,no,"respuesta automática de Punto tecnológico Supermall (""en breve estaremos respondiendo""); sin precio"
-2026-11-17,16:11,whatsapp,Digital Hardware Bolivia,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (dijo 13/11 que sin stock y que les llega la semana siguiente; se le pregunta por lo que llegue)"
-2026-11-17,16:11,whatsapp,PC Components Bolivia,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (Santa Cruz, referencia nacional; dio precios el 12/10)"
-2026-11-17,16:11,whatsapp,PC Components Bolivia,recibido,automatica,no,respuesta automática (PCs armadas y accesorios gamer); sin precio
+fecha,hora,canal,tienda,direccion,tipo,con_precio,nota,texto
+2026-10-13,09:43,whatsapp,Compucenter,recibido,respuesta,no,importa directo desde Miami; no busca proveedores,
+2026-10-13,10:16,whatsapp,OverCity,enviado,nuevo,,consulta de precios grupo A,
+2026-10-13,10:17,whatsapp,OverCity,recibido,respuesta,no,tiene los 3 productos; pregunta si solo busca esos,
+2026-10-13,10:18,whatsapp,Legion Emporium,enviado,nuevo,,consulta de precios grupo A,
+2026-10-13,10:18,whatsapp,Legion Emporium,recibido,automatica,no,catálogo y sucursales,
+2026-10-13,10:19,whatsapp,OverCity,enviado,seguimiento,,pide el precio de cada producto,
+2026-10-13,10:20,whatsapp,PC Morgana,enviado,nuevo,,consulta de precios grupo A,
+2026-10-13,10:21,whatsapp,Centro PC,enviado,nuevo,,consulta de precios grupo A,
+2026-10-13,10:25,whatsapp,Computer World,enviado,nuevo,,consulta de precios grupo B,
+2026-10-13,10:26,whatsapp,4 Gamers,enviado,nuevo,,consulta de precios grupo B,
+2026-10-13,10:26,whatsapp,4 Gamers,recibido,automatica,no,,
+2026-10-13,10:27,whatsapp,PortatiComps,enviado,nuevo,,consulta de precios grupo B,
+2026-10-13,10:28,whatsapp,Distribuidora DyD,enviado,nuevo,,consulta de precios grupo B,
+2026-10-13,10:32,whatsapp,Soft Computers,enviado,nuevo,,consulta de precios grupo A (aviso IA de Meta aceptado),
+2026-10-13,10:38,whatsapp,Soft Computers,recibido,respuesta,sí,i5-14400F Bs 2.500; memorias solo DDR4,
+2026-10-13,15:43,whatsapp,OverCity,recibido,respuesta,sí,7800X3D OEM Bs 5.500,
+2026-10-13,15:44,whatsapp,OverCity,recibido,respuesta,sí,"i5-14400F OEM Bs 2.460; Corsair DDR5 agotada, tiene Apacer y XPG",
+2026-10-13,16:17,whatsapp,OverCity,enviado,respuesta,,"pide precio XPG DDR5 32GB 6000, precio por 2 o 4 y garantía",
+2026-10-13,16:17,whatsapp,Soft Computers,enviado,respuesta,,"pregunta si el 14400F es caja u OEM, si tiene 7800X3D y precio DDR4 16GB 3200",
+2026-10-13,11:35,messenger,Vendedor Marketplace (7800X3D sellado),recibido,respuesta,no,ya vendió los serie 9000; solo le queda el 7800X3D,
+2026-10-13,16:22,messenger,Vendedor Marketplace (7800X3D sellado),enviado,respuesta,,"pregunta si es nuevo sellado en caja, precio final y si cambia llevando 2",
+2026-10-13,16:17,whatsapp,Soft Computers,recibido,respuesta,no,el i5-14400F es OEM,
+2026-10-13,16:36,whatsapp,OverCity,recibido,respuesta,sí,garantía 3 meses; XPG Lancer RGB DDR5 32GB (2x16) 6000 CL30 Bs 6.840,
+2026-10-13,17:27,whatsapp,OverCity,enviado,respuesta,,pregunta descuento llevando 2 del 7800X3D o del 14400F,
+2026-10-13,16:30,messenger,Vendedor Marketplace (7800X3D sellado),recibido,respuesta,sí,"sellado de fábrica AMD, último en stock; Bs 4.800 ya con rebaja; dice que acepta ofertas (no se oferta)",
+2026-10-13,17:31,whatsapp,Hardware Technology,enviado,nuevo,,"consulta Ryzen 5 5600 y 5700X3D, precio por 2",
+2026-10-13,17:35,whatsapp,OverCity,recibido,respuesta,sí,i5-14400F Bs 2.460 es su precio mínimo,
+2026-10-13,17:36,whatsapp,OverCity,recibido,respuesta,sí,7800X3D en caja sellada Bs 5.350,
+2026-10-13,17:39,whatsapp,OverCity,enviado,respuesta,,agradece la información (sin compromiso),
+2026-10-13,17:44,whatsapp,OverCity,recibido,respuesta,no,"""Un gusto"" (cierre)",
+2026-10-14,10:46,whatsapp,Gamer Store Cbba,enviado,seguimiento,,un solo recordatorio (sin respuesta desde el 11/10),
+2026-10-14,10:46,whatsapp,Geek Store Bolivia,enviado,seguimiento,,un solo recordatorio (sin respuesta desde el 11/10),
+2026-10-14,10:46,whatsapp,Geek Store Bolivia,recibido,automatica,no,bienvenida con horario y link de su tienda kyte,
+2026-10-14,10:46,whatsapp,SMART CUBE,enviado,seguimiento,,"recordatorio (el 12/10 dijo ""reviso"")",
+2026-10-14,10:47,whatsapp,TecnoGamer Bolivia,enviado,seguimiento,,un solo recordatorio (sin respuesta desde el 12/10),
+2026-10-14,10:47,whatsapp,T&T Todo en Tecnología,enviado,seguimiento,,un solo recordatorio (sin respuesta desde el 12/10),
+2026-10-14,10:47,whatsapp,TecnoGamer Bolivia,recibido,respuesta,no,no venden componentes internos,
+2026-10-14,10:48,whatsapp,TecnoGamer Bolivia,enviado,respuesta,,agradece,
+2026-10-14,10:56,messenger,Vendedora Marketplace (Corsair DDR5 RS),enviado,seguimiento,,un solo recordatorio: si sigue disponible y si es nueva en caja,
+2026-10-14,10:56,whatsapp,PC Factor,enviado,nuevo,,"consulta Ryzen 5 7600, Ryzen 5 5600 y DDR5 32GB, precio por 2",
+2026-10-14,10:56,whatsapp,Crazy Store,enviado,nuevo,,"consulta 7800X3D, i5-14400F y Corsair DDR5 32GB 6000, precio por 2",
+2026-10-14,10:58,whatsapp,Crazy Store,recibido,respuesta,no,solo les llegan algunos productos cuando los encuentran de oferta; tienen un solo procesador,
+2026-10-14,10:59,whatsapp,Crazy Store,enviado,respuesta,,pregunta cuál procesador tienen y si tienen memoria DDR5,
+2026-10-14,10:59,whatsapp,Crazy Store,recibido,respuesta,sí,Intel Core i9-14900K nuevo Bs 6.013 o USD 499 (no está en la lista),
+2026-10-14,10:59,whatsapp,Crazy Store,recibido,respuesta,sí,"el i9-14900K ""hasta en 5.700"" (rebaja ofrecida por ellos; no se negocia)",
+2026-10-14,11:00,whatsapp,Crazy Store,enviado,respuesta,,agradece sin compromiso (está cotizando otros modelos),
+2026-10-14,13:07,whatsapp,PC Factor,recibido,respuesta,no,pregunta si solo busca esas piezas; enviará cotización,
+2026-10-14,15:00,whatsapp,PC Factor,recibido,respuesta,sí,solo tienen RAM DDR5 16GB a USD 320 c/u,
+2026-10-14,12:07,whatsapp,Geek Store Bolivia,recibido,respuesta,no,"solo tienen Ryzen 7 7700X; DDR5 Corsair no, sí otras marcas",
+2026-10-14,11:01,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,pasan el contacto de su número corporativo (Esteban Arce),
+2026-10-14,11:18,whatsapp,Crazy Store,recibido,respuesta,no,cortesía,
+2026-10-14,11:32,whatsapp,SMART CUBE,recibido,respuesta,sí,7800X3D Bs 5.890 facturado; i5-14400F Bs 3.080; DDR5 16GB Apacer 6000 Bs 3.650,
+2026-10-15,10:37,whatsapp,PC Factor,enviado,respuesta,,pregunta marca y velocidad de la DDR5 16GB y garantía,
+2026-10-15,10:37,whatsapp,Geek Store Bolivia,enviado,respuesta,,pregunta precio del 7700X y marca/precio de DDR5 32GB,
+2026-10-15,10:37,whatsapp,SMART CUBE,enviado,respuesta,,pregunta precio por 2 y garantía,
+2026-10-15,10:37,whatsapp,SMART CUBE,recibido,automatica,no,mensaje automático de atención,
+2026-10-15,10:38,whatsapp,SMART CUBE,recibido,respuesta,sí,"nuevos, caja sellada; rebajan Bs 50 c/u llevando 2",
+2026-10-15,10:38,whatsapp,T&T Todo en Tecnología,enviado,nuevo,,"número corporativo que pasó T&T: consulta i5-14400F, i5-12400F y Corsair DDR5 32GB 6000, precio por 2",
+2026-10-15,10:38,whatsapp,OverCity,enviado,seguimiento,,consulta Ryzen 5 7600 e i5-12400F (tarea 2026-10-14-9),
+2026-10-15,10:39,whatsapp,SMART CUBE,enviado,respuesta,,agradece sin compromiso,
+2026-10-15,10:39,whatsapp,SMART CUBE,recibido,respuesta,no,cortesía,
+2026-10-15,10:39,whatsapp,Display Importadora,enviado,seguimiento,,un solo recordatorio (7800X3D y 7600),
+2026-10-15,10:39,whatsapp,Distribuidora DyD,enviado,seguimiento,,"un solo recordatorio (7600, 265K, SSD 2TB)",
+2026-10-15,10:40,whatsapp,PC Morgana,enviado,seguimiento,,"un solo recordatorio (7800X3D, 14400F, DDR5)",
+2026-10-15,10:40,whatsapp,Centro PC,enviado,seguimiento,,un solo recordatorio (7800X3D o 14400F),
+2026-10-15,10:40,whatsapp,Computer World,enviado,seguimiento,,un solo recordatorio (7600 o SSD 2TB),
+2026-10-15,10:41,whatsapp,PortatiComps,enviado,seguimiento,,un solo recordatorio (Ryzen o SSD 2TB),
+2026-10-15,10:41,whatsapp,Hardware Technology,enviado,seguimiento,,un solo recordatorio (5600 o 5700X3D),
+2026-10-15,10:43,whatsapp,PC Factor,recibido,respuesta,no,audio (no se pudo escuchar),
+2026-10-15,10:44,whatsapp,OverCity,recibido,respuesta,sí,Ryzen 5 7600 OEM Bs 2.800,
+2026-10-15,10:45,whatsapp,ECOM (Economic Computers),enviado,nuevo,,"consulta Ryzen 5 7600, i5-12400F y DDR5 32GB, precio por 2",
+2026-10-15,10:46,whatsapp,OverCity,enviado,respuesta,,pregunta si tienen el i5-12400F,
+2026-10-15,10:46,whatsapp,PC Factor,enviado,respuesta,,pide el audio por escrito,
+2026-10-15,10:47,whatsapp,NF Evolution,enviado,nuevo,,"consulta 7800X3D, i5-14400F y Corsair DDR5 32GB 6000, precio por 2",
+2026-10-15,10:46,whatsapp,NF Evolution,recibido,respuesta,no,solo venden tarjetas de video,
+2026-10-15,10:46,whatsapp,Shopping PC,enviado,nuevo,,"consulta 7600, 7800X3D y 14400F, precio por 2",
+2026-10-15,10:46,whatsapp,Shopping PC,recibido,automatica,no,bienvenida,
+2026-10-15,10:46,whatsapp,PC Factor,recibido,respuesta,no,no hay más memorias; le queda 1,
+2026-10-15,10:47,whatsapp,PC Factor,enviado,respuesta,,agradece,
+2026-10-15,10:50,whatsapp,Hardware Technology,recibido,respuesta,no,no tienen 5600 ni 5700X3D,
+2026-10-15,10:52,whatsapp,Hardware Technology,enviado,respuesta,,agradece,
+2026-10-15,10:52,whatsapp,NF Evolution,enviado,respuesta,,agradece,
+2026-10-15,10:52,whatsapp,PCBOX,enviado,nuevo,,consulta SSD NVMe 1TB/2TB y Ryzen 5 7600,
+2026-10-15,10:52,whatsapp,PCBOX,recibido,automatica,no,bienvenida,
+2026-10-15,10:52,whatsapp,PCBOX,recibido,respuesta,no,no tienen stock disponible,
+2026-10-15,10:52,whatsapp,PC Morgana,recibido,respuesta,no,no les está llegando,
+2026-10-15,10:53,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,Corsair DDR5 agotada; ofrecen solo el procesador,
+2026-10-15,10:53,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,pregunta precio de 14400F y 12400F y por 2,
+2026-10-15,10:53,whatsapp,Shopping PC,recibido,respuesta,no,dicen que tienen; preguntan de dónde escribo,
+2026-10-15,10:54,whatsapp,Shopping PC,enviado,respuesta,,responde Cochabamba (cotizando para armar PCs) y pide precios,
+2026-10-15,10:54,whatsapp,PCBOX,enviado,respuesta,,agradece,
+2026-10-15,10:54,whatsapp,PC Morgana,enviado,respuesta,,agradece,
+2026-10-15,10:55,whatsapp,T&T Todo en Tecnología,recibido,respuesta,sí,i5-12400F OEM + cooler Bs 2.260; i5-14400F OEM + cooler Bs 2.750; Bs 20 menos llevando 2,
+2026-10-15,10:56,whatsapp,Distribuidora DyD,recibido,respuesta,no,número equivocado,
+2026-10-15,11:05,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,pregunta garantía,
+2026-10-15,11:05,whatsapp,Distribuidora DyD,enviado,respuesta,,se disculpa; no se le escribe más,
+2026-10-15,11:03,whatsapp,Computer World,recibido,respuesta,no,pregunta si es de Cochabamba y si es uso personal o tienda,
+2026-10-15,11:17,whatsapp,Shopping PC,recibido,respuesta,sí,mandó lista de precios en PDF (componentes para armado); sin factura y al por mayor,
+2026-10-15,11:25,whatsapp,Geek Store Bolivia,recibido,respuesta,sí,Ryzen 7 7700X Bs 3.480; DDR5 16GB Kingston Fury Bs 2.900 c/u,
+2026-10-15,13:00,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,garantía de 6 meses en los procesadores,
+2026-10-15,17:50,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,agradece el dato de la garantía,
+2026-10-15,17:50,whatsapp,Geek Store Bolivia,enviado,respuesta,,pregunta velocidad de la Fury DDR5 y si el 7700X es sellado con garantía,
+2026-10-15,17:50,whatsapp,Geek Store Bolivia,recibido,automatica,no,bienvenida,
+2026-10-15,17:50,whatsapp,Shopping PC,enviado,respuesta,,agradece la lista y pregunta si son nuevos con garantía,
+2026-10-15,17:51,whatsapp,Computer World,enviado,respuesta,,"responde Cochabamba, cotizando para armar PCs; pide precio de 7600 o SSD 2TB",
+2026-10-15,17:51,whatsapp,Compucenter,enviado,respuesta,,cierre cordial (no busca proveedores),
+2026-10-15,17:52,whatsapp,Soft Computers,enviado,seguimiento,,pregunta precio de Ryzen 5 7600 e i5-12400F (tarea 2026-10-15-14),
+2026-10-15,18:10,whatsapp,Shopping PC,recibido,respuesta,no,garantía solo de prueba,
+2026-10-15,17:54,whatsapp,Soft Computers,recibido,respuesta,no,solo tienen el i5-14400F (no 7600 ni 12400F),
+2026-10-15,17:57,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,cierre cordial (otro número de la tienda),
+2026-10-16,09:25,whatsapp,MSR Computers,recibido,respuesta,no,"responde ""No"" a la consulta del lunes; no se le escribe más",
+2026-10-16,13:37,whatsapp,Shopping PC,enviado,respuesta,,pregunta si manejan Ryzen 5 7600 / 7 7800X3D y SSD 2TB (no están en la lista),
+2026-10-16,13:38,whatsapp,Soft Computers,enviado,respuesta,,pregunta precio del i5-14400F llevando 2,
+2026-10-16,13:41,whatsapp,Gamer Store Cbba,enviado,seguimiento,,segundo y último seguimiento (7600 o Corsair DDR5),
+2026-10-16,13:40,whatsapp,Soft Computers,recibido,respuesta,sí,i5-14400F OEM Bs 2.500 c/u también llevando 2,
+2026-10-16,13:43,whatsapp,Shopping PC,recibido,respuesta,no,solo tienen lo de la lista (sin Ryzen ni SSD 2TB),
+2026-10-16,13:45,whatsapp,Soft Computers,enviado,respuesta,,agradece,
+2026-10-16,13:46,whatsapp,Shopping PC,enviado,respuesta,,agradece,
+2026-10-16,13:49,whatsapp,Punto Tecnológico,enviado,nuevo,,"chat nuevo: Ryzen 5 7600, 7800X3D y Corsair DDR5 32GB, precio por 2 o 4",
+2026-10-16,13:49,whatsapp,Punto Tecnológico,recibido,automatica,no,bienvenida,
+2026-10-16,13:50,whatsapp,Punto Tecnológico,recibido,respuesta,no,saluda y dice que en un momento envía los precios,
+2026-10-16,14:12,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"cotización en imagen: Ryzen 5 7600 OEM Bs 2.850; DDR5 32GB 2x16 Nox Tuf Bs 5.960; nuevos, garantía 6 meses",
+2026-10-16,17:24,whatsapp,Gamer Store Cbba,recibido,respuesta,sí,"solo tiene Ryzen 5 7600X; combo B650M + 7600X + Samsung DDR5 16GB a Bs 5.900; sueltos: 7600X USD 175, placa USD 145, RAM 16GB USD 210",
+2026-10-17,11:50,whatsapp,Gamer Store Cbba,enviado,respuesta,,"repregunta: 7600X en Bs, precio por 2, si es sellado con garantía",
+2026-10-17,11:50,whatsapp,Punto Tecnológico,enviado,respuesta,,agradece cotización; pregunta 7800X3D y precio del 7600 por 2,
+2026-10-17,11:51,whatsapp,ECOM (Economic Computers),enviado,seguimiento,,primer seguimiento (7600 o DDR5),
+2026-10-17,11:51,whatsapp,Display Importadora,enviado,seguimiento,,segundo y último seguimiento (SSD 2TB o Ryzen 7000),
+2026-10-17,11:52,whatsapp,Centro PC,enviado,seguimiento,,segundo y último seguimiento (procesadores sueltos),
+2026-10-17,11:53,whatsapp,PortatiComps,enviado,seguimiento,,segundo y último seguimiento (7600 o 265K),
+2026-10-17,11:54,whatsapp,PC Armagedon,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y DDR5 32GB, precio por 2",
+2026-10-17,11:54,whatsapp,PC Armagedon,recibido,automatica,no,"bienvenida (PC, portátiles y accesorios; lunes a sábado 8:30)",
+2026-10-17,12:30,whatsapp,Punto Tecnológico,recibido,respuesta,no,los precios ya son los mínimos (sin rebaja por 2); 7800X3D sin stock; 9800X3D sí tienen,
+2026-10-17,13:43,whatsapp,Punto Tecnológico,enviado,respuesta,,"agradece; pregunta precio del 9800X3D, si es nuevo con garantía",
+2026-10-17,13:46,whatsapp,TECH COCHA,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y Corsair DDR5 32GB, precio por 2",
+2026-10-17,13:46,whatsapp,TECH COCHA,recibido,automatica,no,bienvenida (servicio técnico a domicilio; manda su Facebook),
+2026-10-17,13:48,whatsapp,ADN Gamer Store,enviado,nuevo,,"chat nuevo: 7800X3D o 7600, nuevos con garantía",
+2026-10-17,14:02,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"9800X3D Bs 6.000, nuevo en caja sellada, garantía 6 meses (no está en vigilar.csv)",
+2026-10-17,14:15,whatsapp,PC Armagedon,recibido,respuesta,no,pregunta si busca solo 2 piezas o una PC completa,
+2026-10-17,16:07,whatsapp,PC Armagedon,recibido,respuesta,sí,combo Ryzen 5 7600 + 16GB DDR5 5600 HKC: Bs 6.050 (no da el procesador suelto),
+2026-10-17,16:12,whatsapp,PC Armagedon,enviado,respuesta,,"solo piezas sueltas; pregunta el 7600 solo, precio por 2, nuevo con garantía",
+2026-10-17,16:13,whatsapp,Punto Tecnológico,enviado,respuesta,,agradece el precio del 9800X3D,
+2026-10-17,16:12,whatsapp,Legion Emporium,enviado,seguimiento,,primer seguimiento (7800X3D o i5-14400F; su catálogo es todo a cotizar),
+2026-10-17,16:15,whatsapp,4 Gamers,enviado,seguimiento,,"primer seguimiento (Ryzen 5 7600, precio de uno)",
+2026-10-19,10:40,whatsapp,Gamer Store Cbba,recibido,respuesta,no,solo les queda un 7600X y lo venden en combo; sin precio nuevo,
+2026-10-19,10:40,whatsapp,Gamer Store Cbba,enviado,respuesta,,agradece y cierra cordial,
+2026-10-19,10:40,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,agradece el contacto de su línea corporativa,
+2026-10-19,10:41,whatsapp,ADN Gamer Store,enviado,seguimiento,,primer seguimiento (7800X3D o 7600),
+2026-10-19,10:44,whatsapp,ECOM (Economic Computers),enviado,seguimiento,,segundo y último seguimiento (7600 o DDR5 32GB),
+2026-10-19,10:47,whatsapp,4 Gamers,enviado,seguimiento,,segundo y último seguimiento (7600 o SSD NVMe 1TB),
+2026-10-19,10:51,whatsapp,Legion Emporium,enviado,seguimiento,,segundo y último seguimiento (7600 o DDR5 32GB),
+2026-10-19,10:52,whatsapp,Geek Store Bolivia,enviado,respuesta,,pregunta precio Ryzen 5 5600 y Ryzen 7 5700X3D (tarea 17-10),
+2026-10-19,10:59,whatsapp,Tienda de Computadoras Quillacollo,enviado,nuevo,,chat nuevo: ¿venden CPU y RAM sueltos? 7600 y DDR5 32GB; pregunta envío a Cochabamba,
+2026-10-19,11:02,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,enviado,nuevo,,"chat nuevo: precio 7600 y DDR5 32GB, nuevos con garantía",
+2026-10-19,11:05,whatsapp,Pc Soluciones Importaciones,enviado,nuevo,,"chat nuevo: 7800X3D o 7600 sueltos, nuevo con garantía",
+2026-10-19,11:08,whatsapp,Cocotech - Sucursal América,enviado,nuevo,,"chat nuevo: 7600 o i5-14400F sueltos, precio y garantía",
+2026-10-19,11:12,whatsapp,Importadora Ardunel - Quillacollo,enviado,nuevo,,"chat nuevo: CPU y DDR5 sueltos, 7600 y 32GB; pregunta envío a Cochabamba",
+2026-10-19,11:05,whatsapp,Tienda de Computadoras Quillacollo,recibido,automatica,no,saludo automático (DJ COMPUTER),
+2026-10-19,11:08,whatsapp,Cocotech - Sucursal América,recibido,automatica,no,saludo automático,
+2026-10-19,16:08,whatsapp,OverCity,enviado,respuesta,,tarea 2026-10-19-1: pide precio del Core Ultra 7 265K (no KF) y si el Ryzen 5 7600 de Bs 2.800 sigue vigente,
+2026-10-19,16:09,whatsapp,OverCity,recibido,respuesta,sí,confirma Ryzen 5 7600 aún a Bs 2.800 (OEM),
+2026-10-19,16:10,whatsapp,OverCity,recibido,respuesta,sí,Core Ultra 7 265K OEM Bs 4.100,
+2026-10-19,16:10,whatsapp,OverCity,enviado,respuesta,,pregunta garantía del 265K,
+2026-10-19,16:10,whatsapp,OverCity,recibido,respuesta,sí,todos los componentes tienen garantía de 3 meses,
+2026-10-19,16:14,whatsapp,OverCity,enviado,respuesta,,agradece; solo cotizando,
+2026-10-19,16:08,whatsapp,Viadata Computadoras,enviado,respuesta,,tarea 2026-10-19-1: pide precio del Core Ultra 7 265K (no KF) y del Ryzen 5 7600 con garantía,
+2026-10-19,16:09,whatsapp,Viadata Computadoras,recibido,respuesta,no,saludo (buenas tardes); todavía sin precios,
+2026-10-19,11:29,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,recibido,respuesta,no,no tienen Ryzen 5 7600 ni DDR5 32GB,
+2026-10-19,11:41,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,recibido,respuesta,sí,a pedido ofrece solo el procesador Ryzen 5 7500F (sin cooler) Bs 2.190,
+2026-10-19,16:08,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,enviado,respuesta,,pregunta si el 7500F es nuevo con garantía y pide aviso si llega el 265K,
+2026-10-19,11:24,whatsapp,Cocotech - Sucursal América,recibido,respuesta,no,no tienen el Ryzen 5 7600 ni el i5-14400F,
+2026-10-19,11:32,whatsapp,Geek Store Bolivia,recibido,respuesta,no,no tienen Ryzen 5 5600 ni 5700X3D,
+2026-10-19,11:13,whatsapp,Importadora Ardunel - Quillacollo,recibido,respuesta,no,no tienen esos productos,
+2026-10-19,12:24,whatsapp,Pc Soluciones Importaciones,recibido,respuesta,no,"responde ""Se. Lo veo"" (sin precio)",
+2026-10-19,12:41,whatsapp,ADN Gamer Store,recibido,respuesta,no,"dice ""si ahora le respondo"" (aviso que contestará; sin precio)",
+2026-10-20,10:52,whatsapp,Viadata Computadoras,recibido,respuesta,sí,Core Ultra 7 265 (no K) BOX Bs 6.160 y Ryzen 5 7600X BOX Bs 3.300 (no son de vigilar),
+2026-10-20,10:55,whatsapp,Viadata Computadoras,enviado,respuesta,,pregunta 7600 sin X 265K y 5600 o 5700X3D (tarea 20-3) y garantía de los BOX,
+2026-10-20,10:45,whatsapp,Viadata Computadoras,recibido,respuesta,sí,"Ryzen 7 5700 BOX pocas unidades en tránsito a Bs 2.400 en preventa, garantía 3 meses (no es de vigilar); no tienen 7600 sin X ni 265K",
+2026-10-20,16:05,whatsapp,Geek Store Bolivia,enviado,seguimiento,,"tarea 2026-10-20-8: confirma si el Ryzen 7 7700X (Bs 3.480 del 15/10) es nuevo sellado con garantía, stock, precio por 2 y 4 y si hay usado",
+2026-10-20,16:05,whatsapp,Geek Store Bolivia,recibido,automatica,no,saludo automático (atiende lun–sáb 9:00–19:00); sin respuesta real todavía,
+2026-10-20,16:05,whatsapp,Punto Tecnológico,enviado,seguimiento,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (precio por 1, 2 y 4, sellado, garantía, usado)",
+2026-10-20,16:05,whatsapp,T&T Todo en Tecnología,enviado,seguimiento,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (precio por 1, 2 y 4, sellado, garantía); antes solo habían pasado su línea corporativa",
+2026-10-20,16:05,whatsapp,Shopping PC,enviado,seguimiento,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (disponible, precio por 1, 2 y 4, sellado)",
+2026-10-20,16:06,whatsapp,OverCity,enviado,respuesta,,"tarea 2026-10-20-8: consulta Ryzen 7 7700X (precio por 1, 2 y 4, caja u OEM, garantía)",
+2026-10-20,16:06,whatsapp,OverCity,recibido,respuesta,no,Ryzen 7 7700X AGOTADO,
+2026-10-20,16:06,whatsapp,OverCity,recibido,respuesta,sí,"escribe ""Ryzen 7 7700X3D a 4700 Bs"" (modelo dudoso, probablemente 7800X3D; sin confirmar)",
+2026-10-20,16:07,whatsapp,OverCity,enviado,respuesta,,"pregunta si el de Bs 4.700 es el 7800X3D, OEM o caja, garantía, y si el 7700X llega pronto",
+2026-10-20,16:12,whatsapp,Shopping PC,recibido,respuesta,no,"Ryzen 7 7700X: ""no tenemos"" (sin precio)",
+2026-10-20,16:13,whatsapp,Punto Tecnológico,recibido,respuesta,no,"""Buenas tardes"" y ""Ahora reviso"" (consulta 7700X; sin precio todavía)",
+2026-10-20,16:13,whatsapp,OverCity,recibido,respuesta,no,"repite ""RYZEN 7 7700X3D BOX A 4700BS"" con foto de la caja (V-Cache); no aclara si es 7800X3D ni la garantía; modelo sin confirmar, no se anota precio",
+2026-10-21,10:37,whatsapp,OverCity,enviado,respuesta,,pregunta si el de Bs 4.700 es el 7800X3D y si tienen Ryzen 5 7500F (tarea 21-2),
+2026-10-21,10:37,whatsapp,OverCity,recibido,respuesta,no,"aclara que no es el 7800X3D, es el 7700X3D (Bs 4.700 en caja, modelo fuera de vigilar)",
+2026-10-21,10:38,whatsapp,OverCity,recibido,respuesta,no,Ryzen 5 7500F agotado,
+2026-10-20,17:53,whatsapp,Geek Store Bolivia,recibido,respuesta,sí,"Ryzen 7 7700X es nuevo caja sellada, unas 10 unidades, solo nuevos en caja (leído 21/10, llegó la tarde del 20/10)",
+2026-10-20,17:55,whatsapp,Geek Store Bolivia,recibido,respuesta,sí,llevando 4 unidades rebajan el 7700X a Bs 3.450 (leído 21/10),
+2026-10-21,10:37,whatsapp,Geek Store Bolivia,enviado,respuesta,,agradece; pregunta por Ryzen 5 7500F y garantía de procesadores,
+2026-10-21,10:38,whatsapp,Shopping PC,enviado,respuesta,,pregunta por el Ryzen 5 7500F (ya habían dicho que no tienen 7700X),
+2026-10-21,10:38,whatsapp,ADN Gamer Store,enviado,respuesta,,"responde a su ""si ahora le respondo""; pide confirmar 7600 o 7500F y precio",
+2026-10-21,10:39,whatsapp,Pc Soluciones Importaciones,enviado,respuesta,,"responde a su ""Se. Lo veo""; suma pregunta por 7500F",
+2026-10-21,10:40,whatsapp,COMPUTING,enviado,nuevo,,"chat nuevo: pregunta Ryzen 5 7600 o 7500F, precio por 1 y 2, nuevo con garantía",
+2026-10-21,10:40,whatsapp,COMPUTING,recibido,automatica,no,saludo automático,
+2026-10-21,10:41,whatsapp,COMPUTING,recibido,respuesta,no,no tienen stock,
+2026-10-21,10:40,whatsapp,ENIGMA TECH,enviado,nuevo,,chat nuevo: pregunta Ryzen 7 7700X o 7500F,
+2026-10-21,10:40,whatsapp,ENIGMA TECH,recibido,automatica,no,respuesta automática de otro negocio (restaurante de ramen): número de Google Maps no es de la tienda,
+2026-10-21,10:41,whatsapp,Esteban Arce,enviado,nuevo,,"chat nuevo: pregunta DDR5 32GB, SSD NVMe 1TB y Ryzen sueltos",
+2026-10-21,10:41,whatsapp,Accesorios Master Pc,enviado,nuevo,,"chat nuevo: pregunta procesadores Ryzen/Intel y DDR5, precio y garantía",
+2026-10-21,10:42,whatsapp,Nerd Tecnologias,enviado,nuevo,,chat nuevo: pregunta si venden componentes; Ryzen 5 7600 y SSD NVMe 1TB,
+2026-10-21,10:43,whatsapp,Pc Soluciones Importaciones,recibido,respuesta,no,"""Ok"" (acusa recibo; sin precio todavía)",
+2026-10-21,10:46,whatsapp,Shopping PC,recibido,respuesta,no,"Ryzen 5 7500F: no tienen; solo ofrecen Ryzen 5 3600 (USD 90) y Ryzen 7 8700G (USD 350), ninguno de vigilar",
+2026-10-21,10:47,whatsapp,Geek Store Bolivia,recibido,respuesta,no,sin 7500F: ofrece directamente el Ryzen 5 8400F (link de su tienda web; no es de vigilar); no contestó la garantía,
+2026-10-21,11:11,whatsapp,Accesorios Master Pc,recibido,respuesta,no,no tienen componentes para armar PC (no vende CPU/RAM),
+2026-10-21,11:37,whatsapp,ADN Gamer Store,recibido,respuesta,sí,Ryzen 7 7800X3D USD 520; en Ryzen 5 solo tiene 7600X USD 245 y 8400F USD 220 (OEM USD 190),
+2026-10-21,16:09,whatsapp,OverCity,enviado,respuesta,,agradece por avisar del 7500F agotado y aclarar el modelo,
+2026-10-21,16:10,whatsapp,Punto Tecnológico,enviado,respuesta,,"recordatorio amable: pide aviso del Ryzen 7 7700X (llevaba ""Ahora reviso"" desde el 20/10)",
+2026-10-21,16:11,whatsapp,ADN Gamer Store,enviado,respuesta,,"pregunta si el 7800X3D de USD 520 es nuevo en caja, meses de garantía y rebaja por 2",
+2026-10-22,13:05,whatsapp,Geek Store Bolivia,enviado,respuesta,,"pregunta precio del 8400F, nuevo sellado, meses de garantía y precio por 2 (modelo no es de vigilar; ofrecido por ellos)",
+2026-10-22,13:05,whatsapp,Shopping PC,enviado,respuesta,,agradece aviso (sin 7500F/7700X); pide que avisen si les llega,
+2026-10-22,13:05,whatsapp,Pc Soluciones Importaciones,enviado,respuesta,,"insiste en si tienen 7800X3D, 7600 o 7500F y precio de uno (solo contestó Ok)",
+2026-10-22,13:05,whatsapp,Tienda de Computadoras Quillacollo,enviado,respuesta,,pide que lo atienda una persona: Ryzen 7600/7500F y envío a Cochabamba (solo había automática DJ COMPUTER),
+2026-10-22,13:05,whatsapp,T&T Todo en Tecnología,enviado,seguimiento,,seguimiento corto por el Ryzen 7 7700X (consulta del martes 20/10 sin respuesta),
+2026-10-22,13:16,whatsapp,TechMax Computers Cbba,enviado,nuevo,,"chat nuevo: consulta componentes (7600, SSD 1TB); número de su bio de Instagram",
+2026-10-22,13:18,whatsapp,"PC Com (distribuidora, Huyustus)",enviado,nuevo,,chat nuevo: confirma que es la tienda y consulta 7600/DDR5 32GB; número de post de tercero,
+2026-10-21,16:36,whatsapp,ADN Gamer Store,recibido,respuesta,sí,"7800X3D USD 520 ""es el precio"" (sin rebaja por 2) a TC 11,85; ""si es box"" (nuevo en caja); garantía sin dato (leído 22/10)",
+2026-10-21,16:11,whatsapp,Punto Tecnológico,recibido,respuesta,no,"sobre el 7700X: ""solo tuviese el 9700x"" y ""7700x3d"" (sin precio; leído 22/10)",
+2026-10-22,13:36,whatsapp,"PC Com (distribuidora, Huyustus)",recibido,respuesta,no,"""No solo laptops"" (ambiguo: no queda claro si vende procesadores/RAM de escritorio)",
+2026-10-22,13:50,whatsapp,TechMax Computers Cbba,recibido,respuesta,no,se les acabaron los componentes; solo tienen Intel i9 14900K y un Core Ultra 7 (sin precio),
+2026-10-22,14:13,whatsapp,Shopping PC,recibido,respuesta,no,"""esta bien"" (respuesta al agradecimiento; sin datos)",
+2026-10-22,16:11,whatsapp,ADN Gamer Store,enviado,respuesta,,agradece y pregunta meses de garantía del 7800X3D,
+2026-10-22,16:12,whatsapp,TechMax Computers Cbba,enviado,respuesta,,pregunta precio del Core Ultra 7 que tienen y si es nuevo con garantía,
+2026-10-22,16:13,whatsapp,"PC Com (distribuidora, Huyustus)",enviado,respuesta,,pide aclarar si venden procesadores/RAM de escritorio o solo laptops,
+2026-10-22,16:25,whatsapp,Punto Tecnológico,enviado,respuesta,,"pregunta precio del 9700X, nuevo y garantía",
+2026-10-22,16:22,whatsapp,Geek Store Bolivia,recibido,respuesta,no,7700X es caja sellada original; garantía de 30 días (leído 23/10),
+2026-10-22,16:22,whatsapp,ADN Gamer Store,recibido,respuesta,no,"garantía del 7800X3D: de tienda, 6 meses (leído 23/10)",
+2026-10-22,17:21,whatsapp,"PC Com (distribuidora, Huyustus)",recibido,respuesta,no,solo laptops (no vende procesadores/RAM de escritorio; leído 23/10),
+2026-10-22,16:14,whatsapp,TechMax Computers Cbba,recibido,respuesta,sí,"Core Ultra 7 (modelo sin confirmar) Bs 4.300; sin garantía, traído de EEUU (leído 23/10)",
+2026-10-23,12:45,whatsapp,T&T Todo en Tecnología,recibido,respuesta,no,mensaje eliminado por la tienda (sin datos),
+2026-10-23,13:03,whatsapp,Shopping PC,enviado,respuesta,,responde a su 'esta bien': agradece y cierra cordial (tarea 22-6),
+2026-10-23,13:04,whatsapp,Geek Store Bolivia,enviado,respuesta,,agradece garantía; pregunta precio SSD NVMe 1TB y 2TB nuevo con garantía (tarea 22-3),
+2026-10-23,13:04,whatsapp,Geek Store Bolivia,recibido,automatica,no,saludo automático (horario lun-sáb 9 a 19),
+2026-10-23,13:04,whatsapp,Viadata Computadoras,enviado,respuesta,,segunda cotización: Ryzen 7 7700X y SSD NVMe 1TB/2TB (tarea 22-3),
+2026-10-23,13:04,whatsapp,ADN Gamer Store,enviado,respuesta,,agradece garantía; pregunta por Ryzen 7 7700X y SSD NVMe 1TB/2TB (tarea 22-3),
+2026-10-23,13:04,whatsapp,TechMax Computers Cbba,enviado,respuesta,,pregunta si el Core Ultra 7 es el 265K,
+2026-10-23,13:04,whatsapp,"PC Com (distribuidora, Huyustus)",enviado,respuesta,,agradece aclaración (solo laptops); no se escribe más,
+2026-10-23,13:05,whatsapp,Esteban Arce,enviado,seguimiento,,seguimiento corto (2 días sin respuesta; 1.º seguimiento) (tarea 22-6),
+2026-10-23,13:05,whatsapp,Nerd Tecnologias,enviado,seguimiento,,seguimiento corto (2 días sin respuesta; 1.º seguimiento) (tarea 22-6),
+2026-10-23,13:05,whatsapp,Cyrex Store,enviado,respuesta,,segunda cotización: Ryzen 7 7700X caja (precio por 1 y 2) y SSD NVMe 1TB/2TB (tarea 22-3),
+2026-10-23,13:05,whatsapp,Nerd Tecnologias,recibido,respuesta,no,"solo servicio técnico de computadoras, laptops e impresoras (no vende componentes)",
+2026-10-23,13:06,whatsapp,Nerd Tecnologias,enviado,respuesta,,agradece y cierra cordial,
+2026-10-23,16:10,whatsapp,Cyrex Store,recibido,respuesta,sí,"13:09 mandó foto del Ryzen 7 7700X BOX a Bs 3.673,50 (""Sería ese""; ""Solo nos queda uno""); sin garantía ni SSD (leído 23/10 16:09)",
+2026-10-23,16:10,whatsapp,Cyrex Store,enviado,respuesta,,agradece la foto y pregunta meses de garantía del 7700X y si tienen SSD NVMe 1TB/2TB,
+2026-10-23,16:11,whatsapp,T&T Todo en Tecnología,enviado,respuesta,,pide reenviar el mensaje eliminado y pregunta si tienen el Ryzen 7 7700X y a cuánto,
+2026-10-23,16:11,whatsapp,Nerd Tecnologias,recibido,respuesta,sí,13:42 pasó precios que le dio un colega: Ryzen 5 7600 Bs 2.700 y M.2 1TB Bs 1.600 (leído 23/10 16:11; no es stock propio),
+2026-10-23,16:11,whatsapp,Nerd Tecnologias,enviado,respuesta,,"agradece y pregunta si son nuevos con garantía, si el M.2 es NVMe y si hay stock",
+2026-10-23,16:11,whatsapp,TechMax Computers Cbba,recibido,respuesta,sí,14:16 aclaró que el Core Ultra 7 es el 270K (no el 265K) (leído 23/10),
+2026-10-23,16:11,whatsapp,TechMax Computers Cbba,enviado,respuesta,,agradece y cierra,
+2026-10-23,16:11,whatsapp,Esteban Arce,recibido,respuesta,no,"13:59 mensaje reenviado: no están disponibles, aún no llegan (leído 23/10)",
+2026-10-23,16:11,whatsapp,Esteban Arce,enviado,respuesta,,agradece y cierra,
+2026-10-23,16:16,whatsapp,PC FALCON,enviado,respuesta,,"chat nuevo (mensaje 2): precio 7800X3D, Ryzen 5 7600 y SSD NVMe 1TB; por 2 o 4; nuevo sellado y garantía",
+2026-10-23,16:17,whatsapp,Viadata Computadoras,recibido,respuesta,no,"""No tengo"" (respuesta al 7700X y SSD NVMe 1TB/2TB; leído 23/10 PC; no se contesta)",
+2026-10-23,16:12,whatsapp,Nerd Tecnologias,recibido,respuesta,no,"""se lo consulto"" y luego pregunta cuántas unidades piensa comprar (a la pregunta de nuevos/garantía/NVMe/stock del M.2 1TB y 7600; leído 24/10 23:xx PC; sin precio nuevo)",
+2026-10-23,16:16,whatsapp,TechMax Computers Cbba,recibido,respuesta,no,"""me avisas nomás si te interesa"" (respuesta a nuestro cierre; sin datos; leído 24/10 PC)",
+2026-10-22,13:06,whatsapp,Tienda de Computadoras Quillacollo,recibido,automatica,no,segundo saludo automático DJ COMPUTER (sigue sin persona; leído 24/10 PC),
+2026-10-26,11:53,whatsapp,Nerd Tecnologias,enviado,respuesta,,responde cuántas unidades: solo cotizando precio y stock; repregunta nuevos/garantía/NVMe (tarea 25-1),
+2026-10-26,11:54,whatsapp,PC FALCON,enviado,seguimiento,,seguimiento corto (7800X3D y SSD NVMe 1TB; 3 días sin respuesta),
+2026-10-26,11:54,whatsapp,Punto Tecnológico,enviado,seguimiento,,seguimiento corto (precio 9700X y SSD NVMe 1TB),
+2026-10-26,11:54,whatsapp,Pc Soluciones Importaciones,enviado,seguimiento,,seguimiento corto (7800X3D o SSD NVMe 1TB),
+2026-10-26,16:09,whatsapp,Nerd Tecnologias,recibido,respuesta,no,"11:58 ""Está bien le informo"" y 12:47 ""solo disponible un procesador"" (sin modelo ni precio)",
+2026-10-26,16:10,whatsapp,Nerd Tecnologias,enviado,respuesta,,"pregunta cuál procesador tiene, precio, nuevo y garantía",
+2026-10-26,16:09,whatsapp,Punto Tecnológico,recibido,respuesta,sí,12:05 Ryzen 7 9700X OEM Bs 3.680 y SSD 1TB SN3000 Bs 2.000,
+2026-10-26,16:11,whatsapp,Punto Tecnológico,enviado,respuesta,,"agradece y pregunta si el SN3000 es NVMe, nuevo y con garantía, y garantía del 9700X OEM",
+2026-10-26,16:09,whatsapp,Pc Soluciones Importaciones,recibido,respuesta,no,"11:55 ""no tenemos de esos modelos"" (7800X3D y SSD NVMe 1TB)",
+2026-10-26,16:12,whatsapp,Pc Soluciones Importaciones,enviado,respuesta,,agradece y cierra cordial,
+2026-10-26,16:59,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"""Garantía de 6 meses"" y ""Si es nvme"" (SSD SN3000 1TB NVMe; la garantía no aclara si es del SSD o del 9700X; leído 27/10 Mac)",
+2026-10-27,12:15,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si la garantía de 6 meses cubre 9700X y SSD y si ambos son nuevos,
+2026-10-26,16:16,whatsapp,Nerd Tecnologias,recibido,respuesta,no,vuelve a preguntar cuántas unidades se buscan (leído 27/10 Mac),
+2026-10-27,12:15,whatsapp,Nerd Tecnologias,enviado,respuesta,,responde que sigue cotizando sin cantidad definida; pide cuál procesador tienen y su precio,
+2026-10-28,10:33,whatsapp,Punto Tecnológico,recibido,respuesta,no,"""Si"" (12:16 de ayer): la garantía de 6 meses cubre 9700X y SSD, ambos nuevos",
+2026-10-28,10:33,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si tienen 5700X3D o 7500F y a cuánto,
+2026-10-28,10:35,whatsapp,PC FALCON,enviado,seguimiento,,segundo seguimiento (7800X3D y SSD NVMe 1TB),
+2026-10-28,19:42,whatsapp,PC FALCON,recibido,respuesta,no,"""Stock agotado, más adelante tendremos y lo estaremos publicando"" (7800X3D y SSD NVMe 1TB); sin precio",
+2026-10-28,19:42,whatsapp,Punto Tecnológico,recibido,respuesta,no,"""ninguno por ahora"" (5700X3D y 7500F) y ofrece el 8400F (sin precio)",
+2026-10-28,19:42,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta precio del 8400F si es nuevo con garantía y precio por 2,
+2026-10-29,10:38,whatsapp,City Of Gamers,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y Corsair DDR5 32GB, nuevos con garantía",
+2026-10-29,10:38,whatsapp,Soft Computers,enviado,seguimiento,,"pregunta Ryzen 5 5600, 5700X3D y 7500F (tarea 2026-10-28-2)",
+2026-10-30,10:41,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"8400F Bs 1.620 ""y sería con piezas"" (ambiguo; 8400F no está en vigilar.csv)",
+2026-10-30,10:41,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si los Bs 1.620 son el procesador solo nuevo con garantía y qué significa con piezas,
+2026-10-30,10:44,whatsapp,Soft Computers,recibido,respuesta,no,solo tiene el Ryzen 7 5700G (no vigilado) y el i5-14400F; sin 5600/5700X3D/7500F,
+2026-10-30,10:44,whatsapp,City Of Gamers,recibido,respuesta,no,no cuenta con esos productos por el momento,
+2026-10-30,10:46,whatsapp,TECH COCHA,enviado,seguimiento,,seguimiento: 7600 o 7700X y precio,
+2026-10-30,10:43,whatsapp,SYSCITY,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y Corsair DDR5 32GB, por 2, nuevos con garantía",
+2026-10-30,10:45,whatsapp,i-Trendy,enviado,nuevo,,chat nuevo: Ryzen 7 7800X3D e i5-14400F,
+2026-10-30,10:45,whatsapp,i-Trendy,recibido,respuesta,no,"no tienen procesadores por el momento, solo gráficas",
+2026-10-30,10:45,whatsapp,Global PC,enviado,nuevo,,chat nuevo: SSD NVMe 1TB y RAM DDR5 32GB (número aparece como Import PC),
+2026-10-30,10:46,whatsapp,Global PC,recibido,respuesta,no,solo laptops y fundas por el momento; ofrece catálogo (no abierto),
+2026-10-30,10:46,whatsapp,COMPUTADORAS & REPUESTOS CBBA,enviado,nuevo,,intento de chat nuevo: el número no está en WhatsApp,
+2026-10-30,10:46,whatsapp,INAV Computación,enviado,nuevo,,chat nuevo: Ryzen 5 7600 e i5-12400F,
+2026-10-30,10:46,whatsapp,INAV Computación,recibido,automatica,no,"saludo automático (laptops, todo en uno, tablets)",
+2026-10-30,10:44,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"8400F Bs 1.620 solo el procesador (""placa y ram"" aparte); nuevo/garantía sin confirmar",
+2026-10-30,10:48,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si el 8400F es nuevo con garantía 6 meses,
+2026-10-30,16:10,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"8400F Bs 1.620 solo el procesador; confirma nuevo y garantía 6 meses (""si""); 8400F no está en vigilar.csv",
+2026-10-30,16:10,whatsapp,INAV Computación,recibido,respuesta,no,no vende accesorios de PC (10:50),
+2026-10-30,16:11,whatsapp,Tienda de Computadoras Quillacollo,enviado,seguimiento,,seguimiento: ¿pudieron ver la consulta de Ryzen 7600/7500F? (solo había automáticas DJ COMPUTER),
+2026-10-30,16:14,whatsapp,IPcenter,enviado,nuevo,,chat nuevo: Ryzen 5 7600 y Corsair DDR5 32GB,
+2026-10-30,16:16,whatsapp,Comcell Corp (Cochabamba),enviado,nuevo,,intento de chat nuevo: el número no está en WhatsApp,
+2026-10-30,16:17,whatsapp,BLADTHOR,enviado,nuevo,,intento de chat nuevo: el número no está en WhatsApp,
+2026-10-30,16:18,whatsapp,Compumas Bolivia,enviado,nuevo,,chat nuevo: Ryzen 5 7600 y SSD NVMe 1TB,
+2026-10-30,16:19,whatsapp,Creative Technology,enviado,nuevo,,chat nuevo: Ryzen 5 7600 y DDR5 32GB,
+2026-11-02,12:00,whatsapp,IPcenter,recibido,respuesta,no,pregunta si es para PC (recibido 30/10 16:18),
+2026-11-02,12:01,whatsapp,IPcenter,enviado,respuesta,,confirma que es para armar PC; repregunta Ryzen 5 7600 y Corsair DDR5 32GB,
+2026-11-02,12:01,whatsapp,Tienda de Computadoras Quillacollo,recibido,respuesta,no,agotado partes de PC; les llega a fines de noviembre,
+2026-11-02,12:01,whatsapp,Tienda de Computadoras Quillacollo,enviado,respuesta,,agradece,
+2026-11-02,12:02,whatsapp,Soft Computers,enviado,respuesta,,agradece,
+2026-11-03,10:37,whatsapp,TECH COCHA,enviado,seguimiento,,2º seguimiento (7600),
+2026-11-03,10:37,whatsapp,Compumas Bolivia,enviado,seguimiento,,seguimiento (7600 y SSD 1TB),
+2026-11-03,10:38,whatsapp,SYSCITY,enviado,seguimiento,,seguimiento (7600),
+2026-11-03,10:38,whatsapp,Creative Technology,enviado,seguimiento,,seguimiento (7600 y DDR5),
+2026-11-03,10:39,whatsapp,EdsonBIT Electronica,enviado,nuevo,,"chat nuevo: CPU/RAM sueltos, Ryzen 5 7600 y 5600",
+2026-11-03,10:40,whatsapp,EQUIPAMIENTO MODERNO S.R.L.,enviado,nuevo,,"chat nuevo: componentes, 7600 y 5700X3D",
+2026-11-03,11:34,whatsapp,Creative Technology,recibido,respuesta,no,"respondió: saludo automático y luego ""no cuento con memorias en Ryzen por el momento"" (sin Ryzen 7600 ni DDR5)",
+2026-11-03,10:47,whatsapp,EQUIPAMIENTO MODERNO S.R.L.,recibido,respuesta,no,un compañero atenderá ese número (la persona está fuera); sin precio todavía,
+2026-11-03,10:46,whatsapp,EdsonBIT Electronica,recibido,respuesta,no,"respuesta ambigua (""Ekibocado"", parece ""equivocado""); sin precio",
+2026-11-03,10:41,whatsapp,Compumas Bolivia,recibido,respuesta,no,no vende partes; solo cotiza PCs armadas con partes nuevas; se presenta como Werner (nombre de pila de la tienda),
+2026-11-04,11:28,whatsapp,Creative Technology,enviado,respuesta,,agradece; pregunta si tienen SSD NVMe 2TB o algun procesador (Ryzen 5 5600 o Intel i5),
+2026-11-04,11:29,whatsapp,EdsonBIT Electronica,enviado,respuesta,,pide aclarar si fue numero equivocado o si venden componentes de PC,
+2026-11-04,11:29,whatsapp,EQUIPAMIENTO MODERNO S.R.L.,enviado,respuesta,,saludo a Edwin (el companero) y consulta Ryzen 5 7600 y precio,
+2026-11-04,11:29,whatsapp,Soft Computers,enviado,seguimiento,,seguimiento corto: SSD NVMe 2TB o Ryzen 5 7600,
+2026-11-04,11:30,whatsapp,City Of Gamers,enviado,respuesta,,agradece (no tiene esos productos),
+2026-11-04,11:30,whatsapp,Global PC,enviado,respuesta,,agradece (solo laptops y fundas); sin insistir,
+2026-11-04,11:31,whatsapp,OverCity,enviado,seguimiento,,"cotiza Ryzen 5 7600 y SSD NVMe 2TB: precio, nuevo y garantia (tarea 2026-11-03-2)",
+2026-11-04,11:31,whatsapp,Punto Tecnológico,enviado,seguimiento,,cotiza SSD NVMe 2TB y confirma Ryzen 5 7600 (Bs 2.850 del 16/10): nuevo y garantia (tarea 2026-11-03-2),
+2026-11-04,11:32,whatsapp,i2C Electronics,enviado,nuevo,,"chat nuevo: procesadores/RAM/SSD sueltos, Ryzen 5 7600 y SSD NVMe 2TB",
+2026-11-04,11:32,whatsapp,i2C Electronics,recibido,automatica,no,saludo automatico (sin precio),
+2026-11-04,11:33,whatsapp,KANG MIN ELECTRONICS,enviado,nuevo,,"chat nuevo: componentes de PC, Ryzen 5 7600 y SSD NVMe 2TB",
+2026-11-04,11:33,whatsapp,KANG MIN ELECTRONICS,recibido,automatica,no,saludo automatico (se presenta como Jeonja Technology); sin precio,
+2026-11-04,11:33,whatsapp,COMPUMUNDOHIPERMEGARED,enviado,nuevo,,"chat nuevo: componentes sueltos, Ryzen 5 7600 y SSD 2TB",
+2026-11-04,11:34,whatsapp,EMPRESEL Electrónica,enviado,nuevo,,"chat nuevo: procesadores/SSD, Ryzen 5 7600 y SSD NVMe 2TB",
+2026-11-04,11:42,whatsapp,PC Gaming Forge,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y SSD NVMe 2TB, precio por 1/2/4, sellado y garantia",
+2026-11-04,11:42,whatsapp,PC Gaming Forge,recibido,automatica,no,saludo automatico (se presenta como Pc Gaming Forge); sin precio,
+2026-11-04,11:46,whatsapp,CRISTECNOLOGY,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y SSD NVMe 2TB, precio por 1/2/4, sellado y garantia",
+2026-11-04,11:46,whatsapp,CRISTECNOLOGY,recibido,automatica,no,"saludo automatico: se presenta como INNOVA TECH COCHABAMBA (laptops y accesorios; equipos nuevos, garantia real); nombre distinto al de Google Maps, posible mismo negocio con otro nombre; sin precio",
+2026-11-04,11:49,whatsapp,Cyrex Store América,enviado,nuevo,,"chat nuevo (sucursal Av. América, numero distinto al de Cyrex Store): Ryzen 5 7600 y SSD NVMe 2TB, precio por 1/2/4, sellado y garantia",
+2026-11-04,11:53,whatsapp,Orange Computer,enviado,nuevo,,"chat nuevo: Ryzen 5 7600 y SSD NVMe 2TB, precio por 1/2/4, sellado y garantia",
+2026-11-04,11:57,whatsapp,HooperBolivia,enviado,nuevo,,chat nuevo: pregunta si venden componentes de PC (mensaje 1),
+2026-11-04,14:52,whatsapp,KANG MIN ELECTRONICS,recibido,respuesta,no,responde que trabajan más con sistemas ERP y CRM: no vende componentes; sin precio,
+2026-11-04,16:14,whatsapp,KANG MIN ELECTRONICS,enviado,respuesta,,"agradece, sin insistir",
+2026-11-04,14:47,whatsapp,HooperBolivia,recibido,respuesta,no,"pregunta ""de qué departamento son?""; sin precio",
+2026-11-04,16:14,whatsapp,HooperBolivia,enviado,respuesta,,"responde que son de Cochabamba, cotizan para armar PCs; repregunta si venden procesadores, RAM o SSD sueltos",
+2026-11-04,13:33,whatsapp,Punto Tecnológico,recibido,respuesta,sí,SSD NVMe 2TB Hiksemi Future Bs 3.800; Ryzen 5 7600 sigue a Bs 2.850; ambos con garantía de 6 meses,
+2026-11-04,16:13,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si el SSD Hiksemi 2TB y el Ryzen son nuevos sellados y si hay precio por 2 SSD,
+2026-11-04,12:41,whatsapp,Orange Computer,recibido,respuesta,sí,"solo tiene SSD NVMe 1TB a Bs 1.550 ""precio por mayor""; vienen sellados; sin Ryzen 5 7600 ni SSD 2TB confirmados",
+2026-11-04,16:13,whatsapp,Orange Computer,enviado,respuesta,,pregunta garantía del SSD 1TB y si tienen procesadores (Ryzen 5 7600 u otro Ryzen 5),
+2026-11-04,15:43,whatsapp,Cyrex Store América,recibido,respuesta,sí,"manda fotos de su web: solo tiene el Ryzen 5 7600X (Bs 2.677,50) y SSD WD Green 2TB SATA III (Bs 2.201,50); todos sus productos son nuevos; consulta con su encargado y pregunta cuántos necesito",
+2026-11-04,16:12,whatsapp,Cyrex Store América,enviado,respuesta,,"aclara que solo cotiza (precio por 1, 2 y 4); pide confirmar el 7600X y si tienen SSD NVMe 2TB",
+2026-11-04,11:45,whatsapp,COMPUMUNDOHIPERMEGARED,recibido,respuesta,no,"no tiene esas partes: solo mouse, teclado y fuentes de poder",
+2026-11-04,16:15,whatsapp,COMPUMUNDOHIPERMEGARED,enviado,respuesta,,"agradece, sin insistir",
+2026-11-04,11:40,whatsapp,Soft Computers,recibido,respuesta,sí,solo M.2 1TB Crucial E100 5000 MB/s a Bs 1.950; sin SSD 2TB ni Ryzen 5 7600,
+2026-11-04,16:15,whatsapp,Soft Computers,enviado,respuesta,,agradece y pide aviso si les llega SSD 2TB o Ryzen 5 7600,
+2026-11-04,11:38,whatsapp,i2C Electronics,recibido,respuesta,no,"""no tenemos en stock""",
+2026-11-04,16:15,whatsapp,i2C Electronics,enviado,respuesta,,"agradece, sin insistir",
+2026-11-04,11:34,whatsapp,EMPRESEL Electrónica,recibido,respuesta,no,"""buen día no"" (no tiene)",
+2026-11-04,16:15,whatsapp,EMPRESEL Electrónica,enviado,respuesta,,"agradece, sin insistir",
+2026-11-04,16:26,whatsapp,Orange Computer,recibido,respuesta,no,no tienen procesadores; el SSD NVMe 1TB tiene garantia de 6 meses; sin precio nuevo,
+2026-11-04,16:29,whatsapp,Cyrex Store América,recibido,respuesta,no,"no tiene SSD NVMe de 2TB, solo de 1TB; sin precio nuevo",
+2026-11-04,16:17,whatsapp,Punto Tecnológico,recibido,respuesta,no,dice que los precios que da ya estan con descuento y que ambos son nuevos y con garantia (no aclaro sellado ni precio por 2),
+2026-11-04,16:36,whatsapp,Cyrex Store América,enviado,respuesta,,"agradece, sin insistir",
+2026-11-04,16:36,whatsapp,Orange Computer,enviado,respuesta,,agradece la info del SSD 1TB y su garantia,
+2026-11-04,16:36,whatsapp,Punto Tecnológico,enviado,respuesta,,pregunta si el Ryzen 5 7600 viene sellado en caja u OEM y si por 2 se mantiene Bs 2.850 c/u (tarea 2026-11-04-1),
+2026-11-04,16:37,whatsapp,Tecnología GabBoss,enviado,nuevo,,"chat nuevo (T091, Quillacollo): pregunta si venden componentes sueltos (mensaje 1)",
+2026-11-04,16:37,whatsapp,Tecnología GabBoss,recibido,automatica,no,"respuesta de IA de Meta (cuenta de empresa): vende RAM DDR3, SSD, procesadores Intel 4ta gen, placas H81, mantenimiento; sin precio",
+2026-11-04,16:38,whatsapp,Tecnología GabBoss,enviado,respuesta,,"pregunta si tienen SSD NVMe 2TB o Ryzen 5 7600, precio y garantia",
+2026-11-04,16:45,whatsapp,Punto Tecnológico,recibido,respuesta,si,"ofrece Ryzen 5 9600X OEM a Bs 2.750 (no vigilado); dice ""veré si me dejan vender solo procesador"" (sin aclarar sellado/OEM ni precio por 2 del 7600; espera su respuesta)",
+2026-11-04,16:39,whatsapp,Tecnología GabBoss,recibido,automatica,si,"IA de Meta: no tiene SSD NVMe 2TB ni Ryzen 5 7600; catálogo: SSD 512GB Netac Bs 830, SSD 240GB American Bs 520, i5 4590 Bs 400 (equipo viejo, no vigilado); sin garantía en ficha",
+2026-11-04,18:10,whatsapp,Tecnología GabBoss,enviado,respuesta,,"agradece, solo cotizando, sin insistir",
+2026-11-05,10:54,whatsapp,Punto Tecnológico,enviado,respuesta,,agradece el 9600X y repregunta si el Ryzen 5 7600 viene sellado u OEM (tarea 2026-11-04-1/6),
+2026-11-05,10:55,whatsapp,SYSCITY,enviado,seguimiento,,seguimiento corto: Ryzen 5 7600 o SSD NVMe 2TB,
+2026-11-05,10:56,whatsapp,BitCate,enviado,nuevo,,"chat nuevo (T092, Quillacollo): pregunta si venden componentes sueltos (mensaje 1)",
+2026-11-05,16:10,whatsapp,HC store,enviado,nuevo,,"chat nuevo (T093): componentes sueltos, Ryzen 5 7600 y SSD NVMe 2TB, precio, nuevo y garantía (tarea 2026-11-04-1)",
+2026-11-05,16:10,whatsapp,HC store,recibido,automatica,no,bienvenida automática: solo ofrece televisores y lavadoras; sin componentes de PC,
+2026-11-05,16:40,messenger,vendedor M.2 512GB (Marketplace),recibido,respuesta,no,"respondió 14:39 ""Sí. ¿Te interesa?"" a la pregunta de disponibilidad; sin precio todavía; no se pudo contestar: el permiso automático rechazó enviar el mensaje desde Messenger; queda para la próxima ronda o para Santi",
+2026-11-05,18:09,whatsapp,Pop Store Cbba,enviado,nuevo,,"chat nuevo (T094): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2; tienda de accesorios, puede no vender componentes)",
+2026-11-05,18:11,whatsapp,Dr. Compu,enviado,nuevo,,"chat nuevo (T096, Quillacollo): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2)",
+2026-11-05,18:12,whatsapp,Accesorios Technology,enviado,nuevo,,"chat nuevo (T097, Quillacollo): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2)",
+2026-11-05,18:14,whatsapp,SS Electrónica Cbba - Quillacollo,enviado,nuevo,,"chat nuevo (T098, Quillacollo): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2)",
+2026-11-05,18:16,whatsapp,Smash Games,enviado,nuevo,,"chat nuevo (T099, Quillacollo): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2; tienda de videojuegos)",
+2026-11-05,18:18,whatsapp,ELVYCOMP,enviado,nuevo,,"chat nuevo (T095, Quillacollo): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2)",
+2026-11-05,18:19,whatsapp,TECH - Mantenimiento de Computadoras,enviado,nuevo,,"chat nuevo (T100): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2 y 4, nuevo sellado y garantía (mensaje 2; servicio técnico, puede armar PC)",
+2026-11-05,18:20,whatsapp,Dr. Compu,recibido,respuesta,no,"respondió ""Número equivocado""; el celular de Maps no es de la tienda; sin precio, no se repite",
+2026-11-05,18:18,whatsapp,ELVYCOMP,recibido,automatica,no,"bienvenida automática (""¿Cómo podemos ayudarte?""); la consulta de precios ya estaba enviada; esperar respuesta humana",
+2026-11-06,13:04,whatsapp,TECH - Mantenimiento de Computadoras,recibido,respuesta,no,"responde (05/11 21:29): solo equipos armados, no sueltos; en la Esteban Arce se encuentran; sin precio",
+2026-11-06,13:04,whatsapp,TECH - Mantenimiento de Computadoras,enviado,respuesta,,"agradece la información, sin insistir",
+2026-11-06,13:05,whatsapp,Smash Games,recibido,respuesta,no,"responde (05/11): no vende nada de o para PC, gaming center de consolas; no se repite",
+2026-11-06,13:05,whatsapp,PC Gaming Forge,enviado,seguimiento,,"seguimiento 1 (sin respuesta humana, solo automático): pregunta si pudieron ver Ryzen 5 7600 y SSD NVMe 2TB",
+2026-11-06,13:06,whatsapp,CRISTECNOLOGY,enviado,seguimiento,,seguimiento 1 (solo automático de INNOVA TECH): pregunta si tienen Ryzen 5 7600 o SSD NVMe 2TB,
+2026-11-06,13:00,whatsapp,Tecnología GabBoss,recibido,automatica,no,"05/11 respuesta ""Entendido, gracias por cotizar"" (cierre de la conversación; ya había dicho que no tiene 7600 ni SSD 2TB); no se hace seguimiento",
+2026-11-06,16:11,whatsapp,Tienda Garage en Línea,enviado,nuevo,,"chat nuevo (T090): componentes sueltos, Ryzen 5 7600 y SSD NVMe 2TB, precio por 1 y 2, sellado y garantía (tarea 2026-11-04-1; en WhatsApp se ve como Biomedico)",
+2026-11-06,16:12,whatsapp,Tienda Garage en Línea,recibido,automatica,no,bienvenida automática de Servicio Técnico BIOMEDICO (cuenta de empresa),
+2026-11-06,16:12,whatsapp,Tienda Garage en Línea,recibido,respuesta,no,"responde ""No disculpe"": no tiene componentes sueltos; sin precio",
+2026-11-06,16:15,whatsapp,Tienda Garage en Línea,enviado,respuesta,,"agradece la respuesta, sin insistir",
+2026-11-06,16:14,whatsapp,INTEGRAL TU-PC,enviado,nuevo,,"chat nuevo (T101): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2, sellado y garantía (tarea 2026-11-04-1)",
+2026-11-06,16:16,whatsapp,Microworld,enviado,nuevo,,"chat nuevo (T102): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2, sellado y garantía (tarea 2026-11-04-1)",
+2026-11-06,16:16,whatsapp,Microworld,recibido,automatica,no,"bienvenida automática con horarios y link a su catálogo de WhatsApp (enlace, no archivo; no se abrió); la consulta de precios ya estaba enviada; esperar respuesta humana",
+2026-11-06,16:19,whatsapp,COMPU-X,enviado,nuevo,,"chat nuevo (T103): precio Ryzen 5 7600 y SSD NVMe 2TB, por 1 y 2, sellado y garantía (tarea 2026-11-04-1)",
+2026-11-06,16:22,messenger,vendedor M.2 512GB (Marketplace),enviado,respuesta,,"pide precio, marca/modelo y si es nuevo o usado (sin ofertar)",
+2026-11-06,16:26,messenger,vendedor disco M.2 NVMe Apacer (Marketplace),recibido,respuesta,sí,"respondió jueves: solo queda el de 512GB a Bs 970 (precio publicado, sin nuevo/usado)",
+2026-11-06,16:27,messenger,vendedor disco M.2 NVMe Apacer (Marketplace),enviado,respuesta,,pregunta si es nuevo o usado y si es PCIe 3.0 o 4.0,
+2026-11-06,16:29,messenger,vendedor M.2 NVMe 256GB (Marketplace),recibido,respuesta,sí,"Bs 450 por el 256GB (ya respondido el 05/11); sin más preguntas, no se contesta",
+2026-11-06,16:30,messenger,vendedor memoria M.2 256GB Hiksemi (Marketplace),recibido,respuesta,sí,"Bs 660 por el 256GB, disponible (jueves); información completa, no se contesta",
+2026-11-09,15:53,whatsapp,CRISTECNOLOGY,recibido,respuesta,no,"nota de voz de 17 s (06/11 17:49, INNOVA TECH) que no se puede escuchar; no se anota contenido",
+2026-11-09,15:53,whatsapp,CRISTECNOLOGY,enviado,respuesta,,pide que lo escriba (no escuchamos audios) y repite Ryzen 5 7600 y SSD NVMe 2TB: precio y sellado,
+2026-11-09,15:54,whatsapp,Punto Tecnológico,enviado,seguimiento,,seguimiento 2: sellado en caja u OEM del Ryzen 5 7600 y precio llevando 2 (tarea 2026-11-06-1),
+2026-11-09,15:54,whatsapp,BitCate,enviado,seguimiento,,seguimiento 1: si venden procesadores o SSD sueltos,
+2026-11-09,15:54,whatsapp,HC store,enviado,seguimiento,,seguimiento 1 (solo automática de TV/lavadoras): pregunta si manejan Ryzen o SSD NVMe,
+2026-11-09,15:55,whatsapp,Pop Store Cbba,enviado,seguimiento,,seguimiento 1: Ryzen 5 7600 y SSD NVMe 2TB (tarea 2026-11-06-2),
+2026-11-09,15:55,whatsapp,ELVYCOMP,enviado,seguimiento,,"seguimiento 1 (solo automática): Ryzen 5 7600 y SSD NVMe 2TB, precio",
+2026-11-09,15:55,whatsapp,Accesorios Technology,enviado,seguimiento,,seguimiento 1: Ryzen 5 7600 y SSD NVMe 2TB,
+2026-11-09,15:55,whatsapp,PC Gaming Forge,enviado,seguimiento,,seguimiento 2 (solo automática): Ryzen 5 7600 y SSD NVMe 2TB,
+2026-11-09,15:55,whatsapp,INTEGRAL TU-PC,enviado,seguimiento,,seguimiento 1: precio Ryzen 5 7600 y SSD NVMe 2TB (tarea 2026-11-06-2),
+2026-11-09,15:55,whatsapp,Microworld,enviado,seguimiento,,seguimiento 1: precio Ryzen 5 7600 y SSD NVMe 2TB (tarea 2026-11-06-2),
+2026-11-09,15:55,whatsapp,COMPU-X,enviado,seguimiento,,seguimiento 1: Ryzen 5 7600 y SSD NVMe 2TB (tarea 2026-11-06-2),
+2026-11-09,16:08,messenger,vendedor disco M.2 NVMe Apacer (Marketplace),recibido,respuesta,sí,"512GB nuevo, PCIe 3.0, Bs 970 (viernes); información completa, no se contesta",
+2026-11-09,16:08,messenger,vendedor M.2 512GB (Marketplace),recibido,respuesta,sí,"dice que es usada (viernes); información completa, no se contesta",
+2026-11-09,16:09,messenger,vendedor disco sólido 1TB Kingston (Marketplace),recibido,respuesta,sí,"Bs 900 por el 1TB (viernes); el vendedor lo marcó vendido el 06/11 (cuenta como venta declarada por el vendedor, sin NVMe confirmado)",
+2026-11-09,16:09,messenger,vendedor discos sólidos 240GB (Marketplace),recibido,respuesta,no,"pregunta en qué capacidad; es de 240GB (no es producto nuestro), no se contesta",
+2026-11-09,16:12,whatsapp,Accesorios Technology,recibido,respuesta,no,"'No señor' (no tiene Ryzen 5 7600 ni SSD NVMe 2TB); cerrado, no se contesta",
+2026-11-09,16:42,whatsapp,Microworld,recibido,automatica,no,"segunda respuesta automática (horarios, delivery, catálogo de WhatsApp Business); sin precio",
+2026-11-09,16:43,whatsapp,INTEGRAL TU-PC,recibido,respuesta,sí,"'con 1 TB tengo, 6900 bs, HP Ryzen 5, RAM 8 GB, almacenamiento 1 TB' (es una laptop, no producto vigilado); no dio 7600 ni NVMe 2TB; un audio 16:43 no escuchado",
+2026-11-09,16:49,whatsapp,ELVYCOMP,recibido,respuesta,sí,Corsair MP600 PRO LPX 2TB PCIe 4 NVMe Bs 4.880; procesador solo serie 9000: Ryzen 5 9600X Bs 3.430 (no vigilado); sin 7600,
+2026-11-09,18:04,whatsapp,BitCate,recibido,respuesta,no,"'por momento solo estamos realizando mantenimiento completo a equipos' (no vende sueltos); cerrado, no se contesta",
+2026-11-10,09:27,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"tres mensajes: 'Sin stock' (Ryzen 5 7600), '9600x oem', 'nuevos'; el 7600 está agotado; sigue SSD Hiksemi 2TB Bs 3.800 del 04/11",
+2026-11-10,13:09,whatsapp,ELVYCOMP,enviado,respuesta,,"pregunta si el Corsair MP600 PRO LPX 2TB es nuevo sellado, con garantía, y si por 2 baja el precio",
+2026-11-10,13:10,whatsapp,INTEGRAL TU-PC,enviado,respuesta,,"aclara que busca solo SSD NVMe 2TB y Ryzen 5 7600 sueltos, sin equipo",
+2026-11-10,13:11,whatsapp,SS Electrónica Cbba - Quillacollo,enviado,seguimiento,,seguimiento 1: Ryzen 5 7600 o SSD NVMe 2TB,
+2026-11-10,13:12,whatsapp,Compuland,enviado,nuevo,,"chat nuevo (T104): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2, nuevo sellado y garantía (mensaje 2; tarea 2026-11-09-1)",
+2026-11-10,13:11,whatsapp,Compuland,recibido,automatica,no,"respuesta automática: tienda 100% en línea, entregas, pago contra entrega; pide marca/modelo (ya los dimos); sin precio",
+2026-11-10,13:13,whatsapp,Importadora ITA,enviado,nuevo,,"chat nuevo (T105): precio Ryzen 5 7600 y SSD NVMe 2TB, por 2, nuevo sellado y garantía (mensaje 2; tarea 2026-11-09-1)",
+2026-11-10,13:13,whatsapp,Importadora ITA,recibido,automatica,no,"respuesta automática con invitación a un grupo de WhatsApp (equipos americanos, 100 equipos esta semana); no se une; sin precio",
+2026-11-10,16:20,whatsapp,ELVYCOMP,recibido,respuesta,sí,Corsair MP600 PRO LPX 2TB: nuevo sellado; garantía de marca no existe en Bolivia (solo cambio por falla de fábrica); por 2 unidades se puede rebajar el precio final (sin monto); la venta es con previa reserva (no se reserva),
+2026-11-10,16:21,whatsapp,ELVYCOMP,enviado,respuesta,,"agradece, pregunta cuánto quedaría cada uno llevando 2 y si tienen Ryzen 5 5600, 5700X3D o 7500F y a qué precio (tarea 2026-11-09-3)",
+2026-11-10,16:22,whatsapp,Importadora ITA,recibido,respuesta,no,"'no tuviera componentes de PC y NVMe de 2TB no tengo, solo de 1TB'; cerrado, no se contesta",
+2026-11-10,16:24,whatsapp,Punto Tecnológico,enviado,respuesta,,"pregunta si el SSD Hiksemi 2TB viene sellado y su precio llevando 2, y si tienen Ryzen 5 5600, 5700X3D o 7500F (tarea 2026-11-09-3)",
+2026-11-11,10:06,whatsapp,Punto Tecnológico,recibido,respuesta,no,'Ryzen 7 5800X3D en stock; Hiksemi 2TB agotado; solo me queda en Samsung' (sin precios; no dijo nada de 5600/5700X3D/7500F),
+2026-11-11,10:39,whatsapp,Punto Tecnológico,enviado,respuesta,,"pregunta modelo y precio del Samsung 2TB, precio y si es sellado el 5800X3D, y si tienen 5600, 5700X3D o 7500F (tarea 2026-11-10-2)",
+2026-11-11,10:39,whatsapp,HC store,enviado,seguimiento,,"seguimiento: pregunta si tienen Ryzen 5 5600, 5700X3D o 7500F y precio (tarea 2026-11-10-2)",
+2026-11-11,10:39,whatsapp,Pop Store Cbba,enviado,seguimiento,,"seguimiento: pregunta si manejan Ryzen 5 5600, 5700X3D o 7500F y precio (tarea 2026-11-10-2)",
+2026-11-11,10:40,whatsapp,COMPU-X,enviado,seguimiento,,"seguimiento: pregunta si tienen Ryzen 5 5600, 5700X3D o 7500F y precio (tarea 2026-11-10-2)",
+2026-11-11,10:41,whatsapp,ELVYCOMP,recibido,respuesta,no,"ya leído: 'solamente Ryzen serie 9000, las otras no tengo a la venta' (5600, 5700X3D y 7500F sin stock); no se contesta más",
+2026-11-11,10:43,whatsapp,Punto Tecnológico,recibido,respuesta,no,"2 fotos (10:42; Samsung 2TB y 5800X3D, precio no leído) y ""5600, 570x3d y 7500f sin stock""; los 3 procesadores vigilados sin stock",
+2026-11-11,16:10,whatsapp,Punto Tecnológico,enviado,respuesta,,agradece las fotos y pide por escrito modelo y precio del Samsung 2TB y precio/sellado del 5800X3D (tarea 2026-11-11-1),
+2026-11-11,16:11,whatsapp,COMPU CELL SYSTEM,enviado,nuevo,,"chat nuevo: pregunta si venden componentes sueltos y precio de Ryzen 5 5600, 5700X3D, 7500F y SSD NVMe 2TB, nuevos y garantía (tarea 2026-11-11-1)",
+2026-11-12,10:37,whatsapp,Compuland,enviado,seguimiento,,seguimiento: responde a su respuesta automática (pide marca/modelo) con Ryzen 5 7600 y SSD NVMe 2TB nuevos; pide precio (tarea 2026-11-11-9),
+2026-11-12,10:38,whatsapp,SS Electrónica Cbba - Quillacollo,enviado,seguimiento,,seguimiento 2 corto: si manejan Ryzen o SSD NVMe (tarea 2026-11-11-9),
+2026-11-12,10:38,whatsapp,Microworld,enviado,seguimiento,,seguimiento 2 (antes solo respuestas automáticas): pide Ryzen 5 7600 y SSD NVMe 2TB sueltos y precio (tarea 2026-11-11-9),
+2026-11-12,10:36,whatsapp,Punto Tecnológico,recibido,respuesta,sí,"11/11 16:49 contesta ""Nuevos y sellados"" (a la pregunta de sellado); fotos del 11/11 leídas: SSD Samsung 9100 Pro 2TB Bs 5.860 y Ryzen 7 5800X3D Bs 4.960",
+2026-11-12,10:36,whatsapp,COMPU CELL SYSTEM,recibido,respuesta,no,"11/11 16:12 compartió el contacto de otra persona/empresa y dijo ""ahí habla él, tiene""; no se le escribió a ese contacto (no es la tienda; decide Santi)",
+2026-11-12,16:13,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,enviado,seguimiento,,"reconfirma Ryzen 5 7500F a Bs 2.190 (del 19/10), nuevo y con garantía (tarea 2026-11-12-1)",
+2026-11-12,16:13,whatsapp,Digital Hardware Bolivia,enviado,nuevo,,"chat nuevo (T107, Sacaba): precio y garantía de Ryzen 5 5600, 5700X3D, 7500F, i5-13400 y SSD NVMe 2TB, nuevos sellados (tarea 2026-11-12-1)",
+2026-11-12,16:13,whatsapp,Gamer Store Cbba,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-12,16:14,whatsapp,SMART CUBE,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-12,16:14,whatsapp,Cyrex Store,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-12,16:14,whatsapp,Geek Store Bolivia,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-12,16:15,whatsapp,T&T Todo en Tecnología,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-12,16:15,whatsapp,Viadata Computadoras,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-12,16:15,whatsapp,Soft Computers,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-12,16:16,whatsapp,OverCity,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-12,16:16,whatsapp,PC Factor,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-12,16:16,whatsapp,Crazy Store,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-12,16:15,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,recibido,respuesta,no,"Ryzen 5 7500F agotado (""buenas tardes, agotado""); el Bs 2.190 del 19/10 ya no vale",
+2026-11-12,16:14,whatsapp,Geek Store Bolivia,recibido,automatica,no,"saludo automático con su catálogo web (Kyte, precios en USD) y horario; link por revisar (catálogo web)",
+2026-11-12,16:16,whatsapp,Viadata Computadoras,recibido,respuesta,no,"""No estamos armando equipos"" (respuesta a la lista completa); sin precio",
+2026-11-12,16:16,whatsapp,Cyrex Store,recibido,respuesta,no,"contesta ""buenas"" y manda 2 fotos (parece su lista) a la lista completa; fotos sin leer en esta ronda (sin capturas)",
+2026-11-13,10:36,whatsapp,Microworld,recibido,respuesta,sí,"12/11 17:57: dice tener los dos; SSD Kingston SNV3S 2TB Bs 4.147,20 y Ryzen 5 7600X3D BOX Bs 4.406,40 (7600X3D a mercado.csv); su catálogo de WhatsApp Business por revisar",
+2026-11-13,10:37,whatsapp,Microworld,enviado,respuesta,,"agradece y pregunta por el Ryzen 5 7600 o 7600X, el SSD NVMe 1TB, sellado y garantía (tarea 2026-11-12-11)",
+2026-11-13,10:36,whatsapp,Digital Hardware Bolivia,recibido,respuesta,no,"12/11 16:18: ""Ok"", ""Buenas tardes"" y ""Necesita una cotización de esos equipos verdad?""; sin precio",
+2026-11-13,10:37,whatsapp,Digital Hardware Bolivia,enviado,respuesta,,"confirma que sí: precio de cada producto, nuevo sellado y garantía (tarea 2026-11-12-11)",
+2026-11-13,10:36,whatsapp,Viadata Computadoras,enviado,respuesta,,"responde a ""no estamos armando equipos"": aclara que busca componentes sueltos y pide su lista de precios (tarea 2026-11-12-11)",
+2026-11-13,10:36,whatsapp,SMART CUBE,recibido,automatica,no,12/11 17:51 segundo saludo automático (nueva dirección zona norte); sin precio,
+2026-11-13,10:38,whatsapp,Cyrex Store,recibido,respuesta,sí,"12/11 16:16 fotos leídas: Ryzen 5 9600X BOX Bs 2.784,75 y SSD Kingston NV3 1TB Gen4 Bs 1.884,15; hoy 10:39 garantía 3 meses; fotos: SSD Crucial P310 2TB Gen4 Bs 4.088,25 y i5-14400F OEM Bs 2.393,70",
+2026-11-13,10:38,whatsapp,Cyrex Store,enviado,respuesta,,"pregunta garantía del 9600X y si tiene SSD NVMe 2TB, i5-13400 o 14400F (tarea 2026-11-12-11); ya respondió todo",
+2026-11-13,10:36,whatsapp,Punto Tecnológico,enviado,seguimiento,,"Lista completa (Santi 12/11): agradece y pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (tareas 2026-11-12-11 y 2026-11-12-5)",
+2026-11-13,10:40,whatsapp,Shopping PC,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,10:41,whatsapp,PC Armagedon,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista; aclarado que son piezas sueltas",
+2026-11-13,10:41,whatsapp,ADN Gamer Store,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,10:42,whatsapp,TechMax Computers Cbba,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,10:42,whatsapp,Cyrex Store América,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,10:42,whatsapp,Orange Computer,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,10:42,whatsapp,ELVYCOMP,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,10:43,whatsapp,INTEGRAL TU-PC,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista; solo piezas sueltas",
+2026-11-13,10:43,whatsapp,SYSTEMS HARDWARE & SOFTWARE SOLUTIONS,enviado,respuesta,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,10:42,whatsapp,COMPU CELL SYSTEM,enviado,respuesta,,agradece el contacto y pregunta si ellos tienen componentes sueltos o lista de precios (tarea 2026-11-12-11),
+2026-11-13,10:40,whatsapp,Compuland,recibido,respuesta,no,"13/11 10:39-10:40: tienda 100 % en línea; componentes de alta gama a pedido, llegarían el 30/12 a Cochabamba; sin precios",
+2026-11-13,10:43,whatsapp,Compuland,enviado,respuesta,,"agradece, aclara que solo cotiza y pide precio del Ryzen 5 7600 y SSD NVMe 2TB, sellado y garantía; sin aceptar nada (tarea 2026-11-12-11)",
+2026-11-13,11:18,whatsapp,PC Armagedon,recibido,respuesta,sí,"precios: Ryzen 5 9600X OEM Bs 2.560, i5-12400F OEM Bs 2.050, Core Ultra 7 265K OEM Bs 4.010, SSD NVMe 1TB Kingston NV3 Bs 1.800 (respuesta a la lista completa)",
+2026-11-13,11:22,whatsapp,TechMax Computers Cbba,recibido,respuesta,no,no cuentan con los productos de la lista por el momento (respuesta a la lista completa),
+2026-11-13,11:28,whatsapp,Orange Computer,recibido,respuesta,no,"Sacaba: no tienen procesadores ni RAM de la lista (""en la ciudad vas a encontrar""; no son comercial en Sacaba); solo el SSD 1TB ya anotado el 04/11",
+2026-11-13,15:23,whatsapp,Microworld,recibido,respuesta,no,"""No contamos"": sin Ryzen 5 7600/7600X ni SSD NVMe 1TB (respuesta del 13/11 10:37); 16:13 pregunta de qué empresa escribe",
+2026-11-13,10:50,whatsapp,Cyrex Store América,recibido,respuesta,no,"manda el link de su web (cyrexstore.com, la misma de Cyrex Store, ya revisada en catálogos 12/11); sin precios nuevos",
+2026-11-13,10:47,whatsapp,Punto Tecnológico,recibido,respuesta,no,"manda el link de su web (puntotecnologic.com, ya revisada 12/11) y saluda; sin precios nuevos",
+2026-11-13,10:45,whatsapp,Shopping PC,recibido,respuesta,sí,"reenvía listas mayoristas del 09/11 (PDF: componentes para armado, portátiles, toner, impresoras) y aviso de tipo de cambio 12; del PDF de componentes solo se pudo leer en el visor (no se bajó)",
+2026-11-13,16:12,whatsapp,Shopping PC,enviado,respuesta,,agradece la lista y pregunta si el SSD Kingston NV3 1TB viene sellado y qué garantía,
+2026-11-13,16:13,whatsapp,Shopping PC,recibido,respuesta,sí,"SSD NV3 1TB viene sellado de fábrica, garantía de fábrica; ""por nosotros la garantía es de prueba""",
+2026-11-13,16:12,whatsapp,PC Armagedon,enviado,respuesta,,"agradece los precios y pregunta garantía del 9600X, 12400F y SSD, y si tienen SSD NVMe 2TB",
+2026-11-13,16:12,whatsapp,Microworld,enviado,respuesta,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (tras su ""no contamos"")",
+2026-11-13,16:13,whatsapp,Microworld,recibido,respuesta,no,pregunta de qué empresa le escribe,
+2026-11-13,16:15,whatsapp,Microworld,enviado,respuesta,,aclara que no es empresa: asistente que cotiza para André para armar PCs; sin datos personales,
+2026-11-13,16:17,whatsapp,Electro-TTS,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,16:18,whatsapp,PC Morgana,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,16:19,whatsapp,Computer World,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,16:20,whatsapp,Hardware Technology,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,16:21,whatsapp,PCBOX,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,16:22,whatsapp,Tienda de Computadoras Quillacollo,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,16:23,whatsapp,Pc Soluciones Importaciones,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,16:25,whatsapp,Cocotech - Sucursal América,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,16:26,whatsapp,Importadora Ardunel - Quillacollo,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-13,16:18,whatsapp,Microworld,recibido,respuesta,no,"pide que no se le escriba como ""André"" a menos que sea licitación: ""mejor no me envía formalmente al correo electrónico"" (dio un correo); no se escribe a correos (necesidad para Santi)",
+2026-11-13,16:19,whatsapp,Microworld,enviado,respuesta,,"agradece; solo cotiza por WhatsApp, sin compromiso; sin dar datos ni escribir al correo",
+2026-11-13,16:17,whatsapp,Cocotech - Sucursal América,recibido,automatica,no,"respuesta automática de empresa (""¿Cómo podemos ayudarte?"")",
+2026-11-13,16:27,whatsapp,Shopping PC,enviado,respuesta,,agradece la información,
+2026-11-13,16:28,whatsapp,Punto Tecnológico,enviado,respuesta,,agradece el link,
+2026-11-13,16:29,whatsapp,TechMax Computers Cbba,enviado,respuesta,,agradece el aviso,
+2026-11-13,16:30,whatsapp,Cyrex Store América,enviado,respuesta,,agradece el link,
+2026-11-13,16:31,whatsapp,Orange Computer,enviado,respuesta,,agradece la información,
+2026-11-13,16:30,whatsapp,PC Armagedon,recibido,respuesta,sí,"garantía 3 meses (9600X, 12400F y SSD); no tienen SSD NVMe 2TB (""M.2 2TB NO QUEDA"", 19:22)",
+2026-11-13,16:20,whatsapp,Hardware Technology,recibido,respuesta,no,no vende partes internas de PC por el momento (respuesta a la lista completa),
+2026-11-13,16:29,whatsapp,PC Morgana,recibido,respuesta,no,"sin stock (""no tengo"") de la lista; menciona catálogo digital y que pasen por la tienda; sin link ni archivo visible",
+2026-11-13,16:31,whatsapp,Computer World,recibido,respuesta,no,"no vende componentes: trabaja con portátiles, accesorios y repuestos para portátiles (respuesta a la lista completa)",
+2026-11-13,17:07,whatsapp,Digital Hardware Bolivia,recibido,respuesta,no,sin stock en su almacén; les llega la semana siguiente (sin precios),
+2026-11-13,17:42,whatsapp,Orange Computer,recibido,respuesta,no,"pulgar arriba (sin dato nuevo); antes: sin procesadores, ""en la ciudad vas a encontrar, no es comercial en Sacaba""",
+2026-11-13,17:50,whatsapp,Cocotech - Sucursal América,recibido,respuesta,no,"""no tenemos"" (respuesta a la lista completa)",
+2026-11-14,18:26,whatsapp,Shopping PC,enviado,respuesta,,"pide la lista de precios en foto o Excel (el PDF no se baja del visor), con 5600, 5700X3D, 7500F, i5-13400 y DDR5 32GB 5600",
+2026-11-16,10:38,whatsapp,Shopping PC,recibido,respuesta,no,"sin stock: ""No tenemos los productos que está necesitando"" (5600, 5700X3D, 7500F, i5-13400, DDR5 32GB 5600) tras pedirle la lista en foto/Excel",
+2026-11-16,10:40,whatsapp,PC Armagedon,enviado,respuesta,,agradece la garantía de 3 meses,
+2026-11-16,10:41,whatsapp,Tienda de Computadoras Quillacollo,enviado,seguimiento,,¿pudieron ver la lista que les pasé? (único seguimiento a la lista completa),
+2026-11-16,10:42,whatsapp,COMPUTING,recibido,respuesta,no,"""Buen día no estimado sin stock"": sin stock (respuesta a la lista completa)",
+2026-11-16,10:43,whatsapp,Orange Computer,recibido,respuesta,no,"solo un pulgar arriba (13/11, sin dato); no se escribe",
+2026-11-16,10:44,whatsapp,COMPUTING,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,10:45,whatsapp,PC FALCON,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,10:47,whatsapp,City Of Gamers,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,10:49,whatsapp,IPcenter,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,10:51,whatsapp,Creative Technology,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,10:53,whatsapp,EdsonBIT Electronica,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,10:55,whatsapp,EQUIPAMIENTO MODERNO S.R.L.,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,10:57,whatsapp,i2C Electronics,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,10:59,whatsapp,Esteban Arce,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,11:01,whatsapp,HooperBolivia,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,16:10,whatsapp,Tienda de Computadoras Quillacollo,recibido,respuesta,no,"contestó al seguimiento: por ahora no tienen partes de PC, solo laptops",
+2026-11-16,16:10,whatsapp,Tienda de Computadoras Quillacollo,enviado,respuesta,,agradece el aviso; no se vuelve a pedir,
+2026-11-16,16:11,whatsapp,i2C Electronics,recibido,respuesta,no,"contestó a la lista completa: ""No vendemos computadoras""; no se escribe más",
+2026-11-16,16:11,whatsapp,Compumas Bolivia,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,16:12,whatsapp,i-Trendy,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (el 30/10 dijo que no tiene procesadores; solo respondió su automática)",
+2026-11-16,16:12,whatsapp,Ovni Express Cbba,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,16:13,whatsapp,Click Importadora Cochabamba,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,16:13,whatsapp,Click Importadora Cochabamba,recibido,respuesta,no,"mandó link a su web (importadoraclick.store.link): solo PCs completas, monitores, mini PC y workstations usados; sin procesadores, RAM ni SSD sueltos",
+2026-11-16,16:13,whatsapp,SpartanComputer Cbba,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,16:13,whatsapp,SpartanComputer Cbba,recibido,automatica,no,"automática con link a su tienda online (spartantech.store, web); sin precio; pendiente que Catálogos la revise",
+2026-11-16,16:14,whatsapp,Compuland,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,16:14,whatsapp,COMPU CELL SYSTEM,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista",
+2026-11-16,16:15,whatsapp,COMPU CELL SYSTEM,recibido,respuesta,no,"compartió el contacto de PC Armagedon (ya es tienda nuestra) y dijo ""enseguida te mandará los costos"" (de PC Armagedon, no suyos)",
+2026-11-16,16:16,whatsapp,COMPU CELL SYSTEM,enviado,respuesta,,agradece; sin escribir al contacto compartido,
+2026-11-16,16:15,whatsapp,NPC Technology,enviado,nuevo,,chat nuevo modelo 1 (¿venden componentes de PC?); respondió automática,
+2026-11-16,16:15,whatsapp,STORE BOLIVIA,enviado,nuevo,,chat nuevo modelo 1 (¿venden componentes de PC?),
+2026-11-16,16:18,whatsapp,STORE BOLIVIA,recibido,respuesta,no,"no vende componentes (""no case"", ""nada de eso""); cuenta de empresa",
+2026-11-16,16:20,whatsapp,Ovni Express Cbba,recibido,respuesta,no,"pasa el contacto de otra empresa (Jhonny Computadoras) con ""comunícate a este número""; no es respuesta a la lista; no se escribió a ese contacto (lo decide Santi)",
+2026-11-16,16:24,whatsapp,Compuland,recibido,respuesta,no,"5 mensajes sueltos: ""Nunca me confirmó"", ""Qué piezas"", ""Quiere"", ""Yo le mandé"", ""Las que puedo traer"" (parece que pregunta qué piezas queremos); sin precios",
+2026-11-17,08:56,whatsapp,Compumas Bolivia,recibido,respuesta,no,no venden partes (arman y cotizan PCs; ya dicho el 03/11); sin precio,
+2026-11-17,10:38,whatsapp,Compuland,enviado,respuesta,,"contesta que sirven todas las de la lista, por unidad, nuevas selladas y en cuánto tiempo llegan",
+2026-11-17,10:38,whatsapp,Legion Emporium,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (hoy respondió su auto-respuesta con catálogo taplink, sin precios)",
+2026-11-17,10:39,whatsapp,Centro PC,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (fría: mensaje único, sin seguimiento después)",
+2026-11-17,10:39,whatsapp,ECOM (Economic Computers),enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (fría: mensaje único, sin seguimiento después)",
+2026-11-17,10:39,whatsapp,SYSCITY,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (fría: mensaje único, sin seguimiento después)",
+2026-11-17,10:39,whatsapp,PC Gaming Forge,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (fría: mensaje único, sin seguimiento después)",
+2026-11-17,16:09,whatsapp,Legion Emporium,recibido,automatica,no,"10:39: respuesta automática con link a su catálogo taplink y ubicaciones (ya anotada); sin precios; chat sin leer revisado, nada nuevo",
+2026-11-17,16:10,whatsapp,CRISTECNOLOGY,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (sin respuesta desde la nota de voz del 06/11; no es fría)",
+2026-11-17,16:10,whatsapp,Compucenter,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (antes dio precio de DDR4 16GB 3600 el 12/10; no es fría)",
+2026-11-17,16:10,whatsapp,Tienda Supermall (Marketplace),enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (antes dio precios de procesadores el 12/10)",
+2026-11-17,16:10,whatsapp,Tienda Supermall (Marketplace),recibido,automatica,no,"respuesta automática de Punto tecnológico Supermall (""en breve estaremos respondiendo""); sin precio",
+2026-11-17,16:11,whatsapp,Digital Hardware Bolivia,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (dijo 13/11 que sin stock y que les llega la semana siguiente; se le pregunta por lo que llegue)",
+2026-11-17,16:11,whatsapp,PC Components Bolivia,enviado,seguimiento,,"Lista completa (Santi 12/11): pide precio de toda vigilar.csv, nuevo y sellado, o su catálogo/lista (Santa Cruz, referencia nacional; dio precios el 12/10)",
+2026-11-17,16:11,whatsapp,PC Components Bolivia,recibido,automatica,no,respuesta automática (PCs armadas y accesorios gamer); sin precio,
