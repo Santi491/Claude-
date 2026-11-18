@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-18"
  },
- "actualizado": "2026-11-18 16:15",
+ "actualizado": "2026-11-18 16:17",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -18,9 +18,9 @@
    "hora": "16:15"
   },
   "cat": {
-   "estado": "trabajando",
-   "texto": "web de Supermall y catálogos",
-   "hora": "16:15"
+   "estado": "terminó",
+   "texto": "web Punto: 60 productos, 15 precios",
+   "hora": "16:17"
   }
  }
 }
