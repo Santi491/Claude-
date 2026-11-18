@@ -16,6 +16,11 @@
    "estado": "terminó",
    "texto": "7700X siguen 2, 8 grupos para clientes",
    "hora": "16:15"
+  },
+  "cat": {
+   "estado": "trabajando",
+   "texto": "web de Supermall y catálogos",
+   "hora": "16:15"
   }
  }
 }
