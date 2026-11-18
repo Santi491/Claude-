@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-18 13:03",
+ "generado": "2026-11-18 14:23",
  "etapa": {
   "numero": 1,
   "nombre": "producto en camino"
@@ -887,24 +887,6 @@
  "decidir": [
   {
    "tipo": "plan",
-   "ref": "2026-11-18-30",
-   "agente": "gerente",
-   "fecha": "2026-11-18",
-   "titulo": "Santi: decidir si se manda una sola vez la lista completa a las tiendas frías o se da por cumplida la 17-2 con lo enviado",
-   "detalle": "18/11: lista completa quedó en 2 de 10 en la ronda de la mañana; las frías tienen 2 o 3 seguimientos sin respuesta y la regla es no escribirles sin que Santi lo pida",
-   "plazo": "2026-11-22"
-  },
-  {
-   "tipo": "idea",
-   "ref": "23",
-   "agente": "ana",
-   "fecha": "2026-11-17",
-   "titulo": "Que referencia_local() en analista.py y cazador.py cuente cada anuncio una sola vez en los 30 días (dedupe por URL o fuente+precio)",
-   "detalle": "Un anuncio sellado de 7700X a Bs 4.000 entra 3 veces (filas 20/10, 28/10 y 17/11): sube la mediana de 3.480 a 3.574 y el tope del Cazador del 7700X a USD 234 (sin repetición ~228); el script sugería 3.390 contra los 3.300 reales",
-   "plazo": ""
-  },
-  {
-   "tipo": "plan",
    "ref": "2026-11-16-1",
    "agente": "local",
    "fecha": "2026-11-16",
@@ -923,66 +905,12 @@
   },
   {
    "tipo": "plan",
-   "ref": "2026-11-16-7",
-   "agente": "gerente",
-   "fecha": "2026-11-16",
-   "titulo": "Santi: decidir la idea 21 del Analista de demanda: el barrido de tiendas por redes pasa a cada 2 semanas (ya no da tiendas) y Marketplace usa ese tiempo en clientes potenciales (objetivo cli-2, sin ofrecer nada)",
-   "detalle": "Barridos: últimas 5 rondas completas con 1, 1, 0, 1 y 0 tiendas nuevas; 109 tiendas en la lista y 3 por contactar; cli-2 vencido el 15/11",
-   "plazo": "2026-11-22"
-  },
-  {
-   "tipo": "idea",
-   "ref": "21",
-   "agente": "dem",
-   "fecha": "2026-11-16",
-   "titulo": "Dar por agotado el barrido de tiendas por redes y pasar a otro canal (por ejemplo, vendedores de tienda dentro de Marketplace o preguntar a las tiendas que respondieron quién más vende)",
-   "detalle": "Barrido semanal 16/11 en Maps (5 búsquedas), TikTok (5), Facebook páginas (1), Marketplace (vendedores) e Instagram (sin resultados): 0 tiendas nuevas; los últimos 4 rondas completas (12/11 mañana y tarde, 13/11 mañana y tarde) dieron 1, 1, 0 y 1 y hoy 0; la lista tiene 109 tiendas",
-   "plazo": ""
-  },
-  {
-   "tipo": "idea",
-   "ref": "22",
-   "agente": "ana",
-   "fecha": "2026-11-16",
-   "titulo": "Agregar Intel Core Ultra 9 285K a vigilar.csv (candidato de mercado.csv)",
-   "detalle": "En Cochabamba lo tienen 5 tiendas a una mediana de Bs 8.310; en eBay nuevo USD 479.99: margen 25.3 % y peor caso 14.0 % (mismo cálculo del Analista). Falta medir la demanda con Marketplace antes de comprar.",
-   "plazo": ""
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-15-1",
-   "agente": "gerente",
-   "fecha": "2026-11-15",
-   "titulo": "Santi: fijar los objetivos de la semana 16-22/11 (todos vencieron el 15/11). Propuesta: WhatsApp pide la lista completa a las 43 tiendas que faltan y consigue 10 tiendas con precio; Marketplace, barrido del lunes con 3 tiendas nuevas como meta; Analista, 15 productos con precio firme; el resto igual",
-   "detalle": "objetivos.py 15/11: wa-1b 83/85, mkt-1b 29/30 y wa-2 7/10 cerraron sin llegar; 3 tiendas con número por contactar; ana-1b 13/8, cat-1 99/10 y dem-1 5/5 cumplidos",
-   "plazo": "2026-11-24"
-  },
-  {
-   "tipo": "plan",
    "ref": "2026-11-14-4",
    "agente": "local",
    "fecha": "2026-11-14",
    "titulo": "Arreglar la coordinación de la PC: cuando la Ronda de la tarde arranca y hay pedido-pc.json del vigilante, que la ronda tome el pedido y lo borre (hoy se cedieron el trabajo una a la otra); y revisar por qué la tarea de las 16:00 arrancó a las 18:06 con la PC prendida desde las 14:43",
    "detalle": "actividad.csv 14/11 18:07: Ronda de la tarde y Pedidos del Gerente no trabajaron; la ronda ligera salió recién a las 18:22 (vigilante la relanzó a las 18:00)",
    "plazo": "2026-11-18"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-13-21",
-   "agente": "gerente",
-   "fecha": "2026-11-13",
-   "titulo": "Santi: decidir si le mandamos a Microworld una cotización formal por correo (pidió que sea por su correo) o lo dejamos solo en WhatsApp",
-   "detalle": "necesidades.csv fila 46: Microworld tiene Kingston 2TB a Bs 4.147 y 7600X3D a Bs 4.406; escribir a un correo necesita a Santi",
-   "plazo": "2026-11-18"
-  },
-  {
-   "tipo": "necesidad",
-   "ref": "46",
-   "agente": "wa",
-   "fecha": "2026-11-13",
-   "titulo": "Decidir si se le manda una cotización formal por correo a Microworld (pidió que sea por su correo, que está en el chat de WhatsApp; no escribimos a correos sin Santi)",
-   "detalle": "Microworld tiene Kingston SNV3S 2TB Bs 4.147 y 7600X3D Bs 4.406 pero no 7600 ni SSD 1TB; solo con correo formal seguiría cotizando",
-   "plazo": ""
   },
   {
    "tipo": "necesidad",
@@ -1013,6 +941,22 @@
   }
  ],
  "equipo": [
+  {
+   "agente": "gerente",
+   "nombre": "Gerente",
+   "acciones": 22,
+   "serie": [
+    6,
+    3,
+    2,
+    1,
+    3,
+    5,
+    2
+   ],
+   "ultima": "Con Santi (Mac): objetivos 16-22/11 cargados (wa-3 lista completa también a frías una vez, wa-2 meta 5, cli-1 al 21, cli-2, mkt-4 barrido cada 2 semanas, ana-3 precio final 7700X, ana-4 segundo pedido, ped-3 reclamo eBay",
+   "cuando": "2026-11-18 14:25"
+  },
   {
    "agente": "mkt",
    "nombre": "Marketplace",
@@ -1060,22 +1004,6 @@
    ],
    "ultima": "Santi avisó (Mac) que los 4 Ryzen 7 7700X llegaron a Santa Cruz: real-1 y real-2 pasan a 'en camino a Cochabamba'; seguimiento con escala en Santa Cruz; necesidad 43 y tarea 11-11-13 cerradas",
    "cuando": "2026-11-18 11:42"
-  },
-  {
-   "agente": "gerente",
-   "nombre": "Gerente",
-   "acciones": 21,
-   "serie": [
-    6,
-    3,
-    2,
-    1,
-    3,
-    5,
-    1
-   ],
-   "ultima": "Fin de ronda mañana: verificar.py todo sin errores; chat contestado; tarea 17-3 cerrada; 17-2 sigue para la tarde; propuesta nueva 18-30 (frías) para Santi; mensaje a Santi enviado",
-   "cuando": "2026-11-18 10:53"
   },
   {
    "agente": "fin",
@@ -1160,63 +1088,15 @@
  ],
  "objetivos": [
   {
-   "id": "wa-1a",
-   "agente": "wa",
-   "nombre": "WhatsApp",
-   "objetivo": "Llegar a 78 tiendas contactadas (distintas; incluye las 55 de antes del 03/11)",
-   "meta": "78",
-   "avance": 90,
-   "hasta": "2026-11-08",
-   "cumplido": true,
-   "vencido": false,
-   "estado": ""
-  },
-  {
-   "id": "wa-1b",
-   "agente": "wa",
-   "nombre": "WhatsApp",
-   "objetivo": "Llegar a 85 tiendas contactadas (distintas; incluye las 55 de antes del 03/11)",
-   "meta": "85",
-   "avance": 90,
-   "hasta": "2026-11-15",
-   "cumplido": true,
-   "vencido": false,
-   "estado": ""
-  },
-  {
    "id": "wa-2",
    "agente": "wa",
    "nombre": "WhatsApp",
-   "objetivo": "10 tiendas distintas con precio cada semana; primero los productos sin dato",
-   "meta": "10",
+   "objetivo": "5 tiendas distintas con precio cada semana; primero los productos sin dato",
+   "meta": "5",
    "avance": 0,
-   "hasta": "2026-11-15",
+   "hasta": "2026-11-22",
    "cumplido": false,
    "vencido": false,
-   "estado": ""
-  },
-  {
-   "id": "mkt-1a",
-   "agente": "mkt",
-   "nombre": "Marketplace",
-   "objetivo": "25 tiendas nuevas con celular (Cochabamba; Quillacollo o Sacaba)",
-   "meta": "25",
-   "avance": 29,
-   "hasta": "2026-11-08",
-   "cumplido": true,
-   "vencido": false,
-   "estado": ""
-  },
-  {
-   "id": "mkt-1b",
-   "agente": "mkt",
-   "nombre": "Marketplace",
-   "objetivo": "30 tiendas nuevas con celular (Cochabamba; Quillacollo o Sacaba)",
-   "meta": "30",
-   "avance": 29,
-   "hasta": "2026-11-15",
-   "cumplido": false,
-   "vencido": true,
    "estado": ""
   },
   {
@@ -1226,22 +1106,10 @@
    "objetivo": "Seguir cada 7700X publicado en la zona (precio y días en línea) en cada ronda completa",
    "meta": "5",
    "avance": 4,
-   "hasta": "2026-11-15",
+   "hasta": "2026-11-22",
    "cumplido": false,
    "vencido": false,
    "estado": ""
-  },
-  {
-   "id": "mkt-3",
-   "agente": "mkt",
-   "nombre": "Marketplace",
-   "objetivo": "Dejar en borrador-anuncios.md el anuncio del 7700X (sin precio, sin publicar) y 10 grupos de venta de la zona",
-   "meta": "1",
-   "avance": null,
-   "hasta": "2026-11-08",
-   "cumplido": true,
-   "vencido": false,
-   "estado": "hecho"
   },
   {
    "id": "cat-1",
@@ -1250,22 +1118,10 @@
    "objetivo": "Catálogos: 10 precios de nuestra lista cada semana",
    "meta": "10",
    "avance": 0,
-   "hasta": "2026-11-15",
+   "hasta": "2026-11-22",
    "cumplido": false,
    "vencido": false,
    "estado": ""
-  },
-  {
-   "id": "cat-2",
-   "agente": "mkt",
-   "nombre": "Marketplace",
-   "objetivo": "Catálogos: revisar una vez la web o el catálogo de todas las tiendas que tengan",
-   "meta": "1",
-   "avance": null,
-   "hasta": "2026-11-15",
-   "cumplido": true,
-   "vencido": false,
-   "estado": "hecho"
   },
   {
    "id": "dem-1",
@@ -1274,7 +1130,7 @@
    "objetivo": "Contar la demanda en todas las rondas completas (5 días por semana)",
    "meta": "5",
    "avance": 3,
-   "hasta": "2026-11-15",
+   "hasta": "2026-11-22",
    "cumplido": false,
    "vencido": false,
    "estado": ""
@@ -1286,19 +1142,19 @@
    "objetivo": "Ranking semanal de los 5 productos que más se mueven (demanda.py) en actividad.csv",
    "meta": "1",
    "avance": null,
-   "hasta": "2026-11-15",
-   "cumplido": true,
+   "hasta": "2026-11-22",
+   "cumplido": false,
    "vencido": false,
-   "estado": "hecho"
+   "estado": ""
   },
   {
    "id": "ebay-1",
    "agente": "ebay",
    "nombre": "Rastreador eBay",
-   "objetivo": "16 de 16 productos con precio real de eBay cada día",
-   "meta": "16",
+   "objetivo": "19 de 19 productos con precio real de eBay cada día",
+   "meta": "19",
    "avance": 19,
-   "hasta": "2026-11-15",
+   "hasta": "2026-11-22",
    "cumplido": true,
    "vencido": false,
    "estado": ""
@@ -1310,46 +1166,10 @@
    "objetivo": "Mediana de ventas completadas de los 5 mejores productos cada semana (tipo vendido)",
    "meta": "5",
    "avance": 5,
-   "hasta": "2026-11-15",
+   "hasta": "2026-11-22",
    "cumplido": true,
    "vencido": false,
    "estado": ""
-  },
-  {
-   "id": "ana-1a",
-   "agente": "ana",
-   "nombre": "Analista",
-   "objetivo": "5 de 16 productos con precio firme (2 o más fuentes en 14 días)",
-   "meta": "5",
-   "avance": 13,
-   "hasta": "2026-11-08",
-   "cumplido": true,
-   "vencido": false,
-   "estado": ""
-  },
-  {
-   "id": "ana-1b",
-   "agente": "ana",
-   "nombre": "Analista",
-   "objetivo": "8 de 16 productos con precio firme (2 o más fuentes en 14 días)",
-   "meta": "8",
-   "avance": 13,
-   "hasta": "2026-11-15",
-   "cumplido": true,
-   "vencido": false,
-   "estado": ""
-  },
-  {
-   "id": "ana-2",
-   "agente": "ana",
-   "nombre": "Analista",
-   "objetivo": "Piso, precio sugerido y tope del 7700X y los 3 mejores candidatos para el segundo pedido, en analisis.md (la decisión es de Santi)",
-   "meta": "1",
-   "avance": null,
-   "hasta": "2026-11-08",
-   "cumplido": true,
-   "vencido": false,
-   "estado": "hecho"
   },
   {
    "id": "ped-1",
@@ -1358,7 +1178,7 @@
    "objetivo": "Revisar todas las guías activas en cada ronda y avisar el mismo día si se mueven",
    "meta": "100",
    "avance": 100,
-   "hasta": "2026-11-15",
+   "hasta": "2026-11-22",
    "cumplido": true,
    "vencido": false,
    "estado": ""
@@ -1370,22 +1190,10 @@
    "objetivo": "Anotar los días reales de puerta a puerta de cada pedido cuando llegue",
    "meta": "1",
    "avance": null,
-   "hasta": "2026-11-15",
+   "hasta": "2026-11-22",
    "cumplido": false,
-   "vencido": true,
-   "estado": ""
-  },
-  {
-   "id": "fin-1",
-   "agente": "fin",
-   "nombre": "Finanzas",
-   "objetivo": "Costo real por unidad, punto de equilibrio y cuánta plata vuelve para el segundo pedido",
-   "meta": "1",
-   "avance": null,
-   "hasta": "2026-11-08",
-   "cumplido": true,
    "vencido": false,
-   "estado": "hecho"
+   "estado": ""
   },
   {
    "id": "ger-1",
@@ -1394,7 +1202,7 @@
    "objetivo": "Contarle a Santi cada lunes el avance de cada objetivo y avisarle cuando cambie la etapa",
    "meta": "1",
    "avance": null,
-   "hasta": "2026-11-15",
+   "hasta": "2026-11-22",
    "cumplido": false,
    "vencido": false,
    "estado": ""
@@ -1406,9 +1214,9 @@
    "objetivo": "Clientes potenciales con Marketplace: calificar las tiendas del grupo E en clientes-potenciales.csv y ordenar A y B por a quién ofrecer primero (sin ofrecer nada todavía)",
    "meta": "1",
    "avance": null,
-   "hasta": "2026-11-15",
+   "hasta": "2026-11-21",
    "cumplido": false,
-   "vencido": true,
+   "vencido": false,
    "estado": ""
   },
   {
@@ -1418,9 +1226,81 @@
    "objetivo": "Clientes potenciales con WhatsApp: encontrar 10 grupos y compradores de la zona que buscan componentes; personas sin nombres ni datos en el repo (a Santi, solo por notificar.py)",
    "meta": "1",
    "avance": null,
-   "hasta": "2026-11-15",
+   "hasta": "2026-11-22",
    "cumplido": false,
-   "vencido": true,
+   "vencido": false,
+   "estado": ""
+  },
+  {
+   "id": "wa-3",
+   "agente": "wa",
+   "nombre": "WhatsApp",
+   "objetivo": "Pedir la lista completa a todas las tiendas que faltan, incluidas las frías: una sola vez y sin seguimiento",
+   "meta": "77",
+   "avance": 59,
+   "hasta": "2026-11-22",
+   "cumplido": false,
+   "vencido": false,
+   "estado": ""
+  },
+  {
+   "id": "mkt-4",
+   "agente": "mkt",
+   "nombre": "Marketplace",
+   "objetivo": "Barrido de tiendas por redes cada 2 semanas (idea 21); el tiempo libre va a buscar compradores (cli-2)",
+   "meta": "1",
+   "avance": null,
+   "hasta": "2026-11-22",
+   "cumplido": false,
+   "vencido": false,
+   "estado": ""
+  },
+  {
+   "id": "ana-3",
+   "agente": "ana",
+   "nombre": "Analista",
+   "objetivo": "Precio final de venta del 7700X: piso, precio sugerido y cuánto bajar si no se mueve (escalera por días), en analisis.md",
+   "meta": "1",
+   "avance": null,
+   "hasta": "2026-11-21",
+   "cumplido": false,
+   "vencido": false,
+   "estado": ""
+  },
+  {
+   "id": "ana-4",
+   "agente": "ana",
+   "nombre": "Analista",
+   "objetivo": "Los 3 mejores candidatos para el segundo pedido, con cuánta plata hace falta para cada uno, en analisis.md (decide Santi)",
+   "meta": "1",
+   "avance": null,
+   "hasta": "2026-11-22",
+   "cumplido": false,
+   "vencido": false,
+   "estado": ""
+  },
+  {
+   "id": "ped-3",
+   "agente": "pedidos",
+   "nombre": "Pedidos",
+   "objetivo": "Avisarle a Santi el reclamo a eBay del primer pedido antes del 26/11 y anotar lo que decida",
+   "meta": "1",
+   "avance": null,
+   "hasta": "2026-11-24",
+   "cumplido": false,
+   "vencido": false,
+   "estado": ""
+  },
+  {
+   "id": "ger-2",
+   "agente": "gerente",
+   "nombre": "Gerente",
+   "objetivo": "Cada día, decirle a Santi qué falta para la venta del 7700X y qué le recomienda hacer",
+   "meta": "1",
+   "avance": null,
+   "hasta": "2026-11-22",
+   "cumplido": false,
+   "vencido": false,
    "estado": ""
   }
  ],

@@ -60,8 +60,17 @@ def medidas(hoy):
         "ebay_productos_ultimo_dia": len({x["producto"] for x in ee if x["fecha"] == ult and x.get("tipo") == "real"}),
         "ebay_vendidos_semana": len({x["producto"] for x in ee if x["fecha"] >= lunes and x.get("tipo") == "vendido"}),
         "ana_firmes": sum(1 for p in vig if len(fuentes(p)) >= 2),
+        "wa_lista_pedida": _lista_pedida(),
         "ped_al_dia_pct": round(100 * sum(1 for p in act if (p.get("actualizado") or "")[:10] >= dia) / len(act)) if act else 100,
     }
+
+
+def _lista_pedida():
+    try:
+        import agenda
+        return agenda.calcular()["lista_pedida"]
+    except Exception:  # noqa: BLE001
+        return None
 
 
 def etapa():
@@ -76,12 +85,15 @@ def calcular(ver=None, agente=None, hoy=None):
     """Etapa y avance de cada objetivo (lo usan main y la oficina, oficina/generar.py)."""
     hoy = hoy or datetime.now(ZoneInfo("America/La_Paz")).date().isoformat()
     med, salida, e = medidas(hoy), [], etapa()
+    lunes = (datetime.fromisoformat(hoy) - timedelta(days=datetime.fromisoformat(hoy).weekday())).date().isoformat()
     for f in leer("objetivos.csv"):
-        if (agente and f["agente"] != agente) or str(ver or e) not in f["etapa"]:
+        if (agente and f["agente"] != agente) or str(ver or e) not in f["etapa"] or f["estado"] == "cerrado":
             continue
         av = med.get(f["medida"]) if f["medida"] else None
         meta = int(f["meta"])
         cumplido = f["estado"] == "hecho" or (av is not None and av >= meta)
+        if cumplido and f["hasta"] and f["hasta"] < lunes:   # cumplido en una semana anterior: ya no se muestra
+            continue
         salida.append({**f, "avance": av, "cumplido": cumplido, "vencido": not cumplido and f["tipo"] in ("acumulado", "entregable") and f["hasta"] and f["hasta"] < hoy})
     return {"etapa": e, "nombre": ETAPAS[e], "objetivos": salida,
             "por_contactar": sum(1 for t in leer("tiendas-cochabamba.csv") if t.get("whatsapp") and t.get("estado_contacto", "").startswith("sin contactar"))}
