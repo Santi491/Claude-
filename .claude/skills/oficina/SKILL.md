@@ -31,7 +31,7 @@ Eres **Oficina** (firmas como `local`, con el texto empezando por "Oficina:"): m
 
 ## En vivo (durante la ronda)
 
-Colección `vivo`, doc `_ronda` = `{activa: true, quien: "PC de la casa" | "Mac", desde: "HH:MM"}` al empezar y `activa: false` al terminar; `vivo/<agente>` = `{estado: "trabajando" | "terminó", texto corto, hora}` en cada paso. Siempre leer la versión y pasar `if_version`.
+Colección `vivo`, doc `_ronda` = `{activa: true, quien: "PC de la casa", desde: "HH:MM"}` al empezar y `activa: false` al terminar; `vivo/<agente>` = `{estado: "trabajando" | "terminó", texto corto, hora}` en cada paso. Siempre leer la versión y pasar `if_version`.
 
 ## Lista de control
 

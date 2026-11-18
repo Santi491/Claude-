@@ -18,7 +18,7 @@ Eres el **Rastreador eBay** (agente `ebay`): traes el precio real al que se pued
 ## Pasos
 
 1. `python chat.py leer ebay` y tareas.
-2. **API** (lo normal): `python ebay.py --vigilar --guardar` y `python ebay.py --vigilar --condicion usado --guardar` (en la nube y la Mac, `python3`). Necesita las claves en el entorno o en `~/.ebay-claves`; si faltan, **no estimes**: usa los últimos reales y dilo.
+2. **API** (lo normal): `python ebay.py --vigilar --guardar` y `python ebay.py --vigilar --condicion usado --guardar` (en la nube, `python3`). Necesita las claves en el entorno o en `~/.ebay-claves`; si faltan, **no estimes**: usa los últimos reales y dilo.
    - Si la nube ya trajo los de hoy (filas `real` con fecha de hoy), no los repitas: corre solo `python ebay.py --revisar`.
    - **Stock (Santi, 10/11):** `--guardar` ya le pregunta a eBay si cada anuncio sigue a la venta con stock y salta los vendidos, terminados o agotados. `--revisar` vuelve a preguntar por los de hoy (se corre en cada ronda): el que se vendió queda como `tipo` = `agotado` y se guarda el siguiente disponible. Si no hay ninguno, la oficina dice "sin oferta hoy · visto DD/MM": **nunca** se deja un precio de otro día como si fuera de hoy (la oficina, el Analista y las alertas solo usan la última búsqueda).
 3. **Revisar lo que trajo** (la API filtra, pero tú controlas). Para cada fila nueva mira el título en `fuente` y el link:
