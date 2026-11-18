@@ -16,3 +16,15 @@ con SceneKit (`Shared/Oficina3D.swift`, corre igual en la Mac para sacar fotos s
 3. Copiar `salida/*` a `app-ios/CargoBrothers/Oficina3D/` (se empaqueta como carpeta).
 
 Cada vez que cambie la oficina web, se vuelve a exportar. Ajustes de luz: `Oficina3D.brillo` (0.72) y la exposición de la cámara.
+
+## Parte 2 (personas): estado al 18/11 noche
+- Hecho: los 9 puestos con más detalle (`Shared/Detalle3D.swift`) en su lugar, calidad alta activada, vidrio real.
+- En curso: `Shared/Personas3D.swift` (lector de personas con esqueleto) y `exportar-personas.js` (exporta los modelos de
+  `personas/*.json` del artifact con sus animaciones grabadas a 30 cuadros). Problema: los archivos de personas vienen del
+  GLTFExporter con cadenas de huesos duplicadas y escalas ×100 encadenadas; ni la fórmula de skinning ni `boneTransform`
+  de three dan posiciones razonables fuera del render de la web, así que el cuerpo sale en escala/posición equivocada.
+- Próxima sesión, opciones: (a) convertir los .json de personas a .gltf/.glb y pasarlos por Reality Converter (app gratis
+  de Apple, la descarga Santi) para obtener .usdz con esqueleto y animaciones; (b) leer el glTF original con su jerarquía
+  completa (sin aplanar) e incluir los nodos padre no-hueso con sus escalas; (c) grabar las matrices finales que usa el
+  shader (`skeleton.boneMatrices` después de `renderer.render`) en vez de recalcularlas.
+- Los datos de personas (~28 MB comprimidos) NO van al repo: son de Mixamo y el repo es público (igual que en la oficina web).
