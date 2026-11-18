@@ -13,6 +13,7 @@
 		22BAB56C8D0DB99F575D74B8 /* VentaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E055386B3C14F3F8100EA3BB /* VentaView.swift */; };
 		2B5AFF8346100FC0FA1A7AE1 /* DecidirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1972F47C18837AD9A732BF5 /* DecidirView.swift */; };
 		314806A88F36DBF1740EE171 /* PreciosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB966AC3E3A469EA59DF573A /* PreciosView.swift */; };
+		36DCC1A5561A59AC5834F4E8 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178CBA57C8D6EBA5763BB7A /* Extras.swift */; };
 		39C530296CE27EC849C77BF4 /* PedidosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B85EC49E114571E35BAB5B5 /* PedidosView.swift */; };
 		3D93E0F03A86622F2B3DF443 /* HoyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59127BEB2EE9C2570661CC34 /* HoyView.swift */; };
 		51AA2C0CBC367C84AD9D98F3 /* CargoWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 11C131FA598268FF87C0C103 /* CargoWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -65,6 +66,7 @@
 		6B85EC49E114571E35BAB5B5 /* PedidosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosView.swift; sourceTree = "<group>"; };
 		853087D9A16FEB38BD9EA645 /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9178CBA57C8D6EBA5763BB7A /* Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
 		A959C99911657117CA0FBF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB966AC3E3A469EA59DF573A /* PreciosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreciosView.swift; sourceTree = "<group>"; };
 		BB04B8EF0EE76840DB01B130 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				1258C8E2E618C28407F90222 /* Componentes.swift */,
 				F1972F47C18837AD9A732BF5 /* DecidirView.swift */,
 				FB7C5D96174AE07BC40B1701 /* EquipoView.swift */,
+				9178CBA57C8D6EBA5763BB7A /* Extras.swift */,
 				3F307845EB1BA3750F894444 /* Formularios.swift */,
 				853087D9A16FEB38BD9EA645 /* GitHub.swift */,
 				59127BEB2EE9C2570661CC34 /* HoyView.swift */,
@@ -258,6 +261,7 @@
 				FFF7B80627D6AACA1617FECB /* Componentes.swift in Sources */,
 				2B5AFF8346100FC0FA1A7AE1 /* DecidirView.swift in Sources */,
 				E313BFAFC4093C679D95F4C5 /* EquipoView.swift in Sources */,
+				36DCC1A5561A59AC5834F4E8 /* Extras.swift in Sources */,
 				65E0B88A311E66231F23F8BE /* Formularios.swift in Sources */,
 				9CF8A07AFE7F4448FA090B4C /* GitHub.swift in Sources */,
 				3D93E0F03A86622F2B3DF443 /* HoyView.swift in Sources */,

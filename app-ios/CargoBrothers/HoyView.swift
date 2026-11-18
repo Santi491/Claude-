@@ -13,6 +13,7 @@ struct HoyView: View {
     var body: some View {
         Pantalla(titulo: "Cargo Brothers") {
             if let d = store.datos {
+                NavigationLink { ScrollView { EquipoEnVivo().padding(16) }.background(Tema.fondo).navigationTitle("En vivo") } label: { LuzVivo() }.buttonStyle(.plain)
                 encabezado(d)
                 if let r = d.recomendaciones, !r.isEmpty { tarjetaGerente(r, cuando: d.recomendaciones_cuando ?? "") }
                 if let p = principal(d) { NavigationLink(value: p) { tarjetaPedido(p) }.buttonStyle(.plain) }
@@ -66,7 +67,7 @@ struct HoyView: View {
         }
     }
 
-    func principal(_ d: Datos) -> Pedido? { d.pedidos.filter { !$0.entregado }.max { $0.cantidad < $1.cantidad } ?? d.pedidos.last }
+    func principal(_ d: Datos) -> Pedido? { let r = d.pedidos.filter { !$0.esPrueba }; return r.filter { !$0.entregado }.max { $0.cantidad < $1.cantidad } ?? r.last }
 
     func encabezado(_ d: Datos) -> some View {
         HStack(spacing: 14) {

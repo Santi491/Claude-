@@ -52,7 +52,7 @@ struct ResumenVista: View {
 
     @ViewBuilder var principal: some View {
         if let d = e.datos {
-            let p = d.pedidos.filter { !$0.entregado }.max { $0.cantidad < $1.cantidad }
+            let p = d.pedidos.filter { !$0.entregado && !$0.esPrueba }.max { $0.cantidad < $1.cantidad }
             let bajo = d.cazador.topes.filter(\.bajo_tope).count
             HStack(alignment: .top, spacing: 14) {
                 VStack(alignment: .leading, spacing: 5) {
@@ -97,7 +97,7 @@ struct Bloqueada: View {
     var familia: WidgetFamily
     var body: some View {
         let d = e.datos
-        let p = d?.pedidos.filter { !$0.entregado }.max { $0.cantidad < $1.cantidad }
+        let p = d?.pedidos.filter { !$0.entregado && !$0.esPrueba }.max { $0.cantidad < $1.cantidad }
         switch familia {
         case .accessoryInline:
             Text("USDT \(F.num(d?.dolar.usado)) · \(p.map { $0.estado } ?? "sin pedidos")")

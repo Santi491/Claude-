@@ -12,7 +12,7 @@ import json
 import os
 import subprocess
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 DIR = os.path.dirname(os.path.abspath(__file__))
@@ -161,7 +161,53 @@ def extras(D, caz):
                  "ruta": "oficina/" + c["archivo"]} for c in leer_csv("oficina/capturas.csv")
                 if c.get("archivo") and os.path.exists(os.path.join(DIR, "oficina", c["archivo"])) and c.get("agente") != "wa"]
     capturas.sort(key=lambda c: c["fecha"] + c["hora"], reverse=True)
+    # ---------- decisiones ya tomadas (vista "Decididas"), últimos 30 días ----------
+    hace30 = (datetime.now(ZoneInfo("America/La_Paz")) - timedelta(days=30)).strftime("%Y-%m-%d")
+    decididas = []
+    for f in D.get("plan", []):
+        if f.get("estado") in ("aprobado", "rechazado", "hecho") and (f.get("fecha_propuesta") or f.get("fecha_para", "")) >= hace30:
+            decididas.append({"tipo": "plan", "ref": f["id"], "agente": f.get("agente", ""), "titulo": f.get("tarea", ""),
+                              "estado": f["estado"], "decision": f.get("decision", ""), "fecha": f.get("fecha_para", "")})
+    for f in D.get("ideas", []):
+        if f.get("estado") in ("aprobada", "rechazada", "hecha"):
+            decididas.append({"tipo": "idea", "ref": str(f["id"]), "agente": f.get("agente", ""), "titulo": f.get("idea", ""),
+                              "estado": f["estado"], "decision": f.get("decision", ""), "fecha": f.get("fecha", "")})
+    for f in D.get("necesidades_resueltas", []):
+        if (f.get("resuelto") or "")[:10] >= hace30:
+            decididas.append({"tipo": "necesidad", "ref": str(f["id"]), "agente": f.get("agente", ""), "titulo": f.get("necesita", ""),
+                              "estado": "resuelta", "decision": f.get("resuelto", ""), "fecha": f.get("fecha", "")})
+    decididas.sort(key=lambda d: d["fecha"], reverse=True)
+    # ---------- la libreta del Gerente completa (abiertas y cerradas) ----------
+    libreta = [{"id": m["id"], "fecha": m.get("fecha", ""), "tipo": m.get("tipo", ""), "fuente": m.get("fuente", ""),
+                "resumen": m.get("resumen", ""), "vence": m.get("vence", ""), "estado": m.get("estado", ""), "cerrado": m.get("cerrado", "")}
+               for m in D.get("memoria", [])]
+    # ---------- estado de cuenta: cada precio que cambió (últimos 400 movimientos) ----------
+    movimientos = [{"fecha": m["fecha"], "tipo": m.get("tipo", ""), "producto": m.get("producto", ""), "concepto": m.get("concepto", ""),
+                    "detalle": (m.get("detalle") or "")[:140], "valor": m.get("valor"), "antes": m.get("antes"), "moneda": m.get("moneda", "")}
+                   for m in D.get("movimientos", [])][-400:]
+    # ---------- tabla completa de productos (como la de la oficina) ----------
+    tabla = []
+    for p in D.get("productos", []):
+        def tot(o):
+            return round((o.get("usd") or 0) + (o.get("ship") or 0), 2) if o and o.get("usd") else None
+        cuentan = [l for l in p.get("local", []) if l.get("bs") and "no cuenta" not in (l.get("estado") or "")]
+        mk = [l["bs"] for l in cuentan if l.get("src") == "mkt"]
+        ti = [l["bs"] for l in cuentan if l.get("src") != "mkt"]
+        tabla.append({"producto": p["name"], "cat": p.get("cat", ""), "peso_g": p.get("g") or 350,
+                      "nuevo_usd": tot(p.get("nw")), "usado_usd": tot(p.get("us")),
+                      "mkt_bs": min(mk) if mk else None, "tienda_bs": min(ti) if ti else None,
+                      "nuevo_link": (p.get("nw") or {}).get("url", ""), "usado_link": (p.get("us") or {}).get("url", "")})
+    # ---------- sincronización ----------
+    ses = leer_csv("sesiones.csv")
+    rondas = [x for x in ses if "ronda" in (x.get("tipo") or "") and x.get("fin")]
+    publ = [a for a in D.get("actividad", []) if a.get("agente") == "local" and "publicad" in (a.get("texto") or "").lower()]
+    sinc = {"ultima_ronda": (f"{rondas[-1]['fecha']} {rondas[-1].get('fin', '')}" if rondas else ""),
+            "ultima_ronda_quien": rondas[-1].get("quien", "") if rondas else "",
+            "oficina_publicada": (f"{publ[-1]['fecha']} {publ[-1].get('hora', '')}" if publ else ""),
+            "armado_por": "GitHub (automático)" if os.environ.get("GITHUB_ACTIONS") else "una ronda o sesión",
+            "armado": datetime.now(ZoneInfo("America/La_Paz")).strftime("%Y-%m-%d %H:%M")}
     return {
+        "decididas": decididas[:120], "libreta": libreta, "movimientos": movimientos, "tabla": tabla, "sincronizacion": sinc,
         "clientes": clientes, "publicaciones": publicaciones, "tiendas": tiendas,
         "informes_nube": inf_nube, "catalogos": catalogos, "capturas": capturas[:30],
         "vigilar": vig, "historial": hist, "locales": locales, "whatsapp": whatsapp, "demanda": demanda,
@@ -178,9 +224,8 @@ def main():
 
     pedidos = []
     for p in D.get("pedidos", []):
-        if p.get("prueba"):
-            continue
         pedidos.append({
+            "prueba": bool(p.get("prueba")),
             "id": p["id"], "producto": p["producto"], "cantidad": int(num(p.get("cantidad")) or 1),
             "estado": p.get("estado", ""), "etapa": etapa_idx(p.get("estado")), "etapas": ETAPAS,
             "fecha_compra": p.get("fecha_compra", ""), "actualizado": p.get("actualizado", ""),
@@ -223,7 +268,8 @@ def main():
     for f in D.get("plan", []):
         if f.get("estado") == "propuesto":
             decidir.append({"tipo": "plan", "ref": f["id"], "agente": f.get("agente", ""), "fecha": f.get("fecha_propuesta", ""),
-                            "titulo": f.get("tarea", ""), "detalle": f.get("motivo", ""), "plazo": f.get("plazo", "")})
+                            "titulo": f.get("tarea", ""), "detalle": f.get("motivo", ""), "plazo": f.get("plazo", ""),
+                            "fecha_para": f.get("fecha_para", "")})
     for f in D.get("ideas", []):
         if f.get("estado") == "propuesta":
             decidir.append({"tipo": "idea", "ref": str(f["id"]), "agente": f.get("agente", ""), "fecha": f.get("fecha", ""),

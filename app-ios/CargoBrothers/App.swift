@@ -17,7 +17,7 @@ struct CargoBrothersApp: App {
         BGTaskScheduler.shared.register(forTaskWithIdentifier: TAREA_FONDO, using: nil) { tarea in
             Novedades.programar()
             let t = Task {
-                let (d, ok) = await Fuente.cargar()
+                let (d, ok) = await Fuente.cargar(token: Llavero.token)
                 if ok, let d { await Novedades.revisar(d, avisar: true) }
                 tarea.setTaskCompleted(success: ok)
             }
@@ -33,8 +33,8 @@ struct CargoBrothersApp: App {
                 .tint(Tema.bronce)
         }
         .onChange(of: fase) { _, f in
-            if f == .background { Novedades.programar(); store.bloquearSiCorresponde() }
-            if f == .active { Task { await store.refrescar() } }
+            if f == .background { Novedades.programar(); store.bloquearSiCorresponde(); store.pararReloj() }
+            if f == .active { Task { await store.refrescar() }; store.empezarReloj() }
         }
     }
 }
@@ -48,14 +48,42 @@ final class Store: ObservableObject {
     @Published var aviso: String?
     @Published var bloqueada = UserDefaults.standard.object(forKey: "bloqueo") as? Bool ?? true
     @Published var enviadosChat: [Mensaje] = []
+    @Published var vivo: Vivo?
+    /// lo que se guardó desde este iPhone (para la pantalla de Sincronización): texto y fecha-hora de Bolivia
+    @Published var acciones: [[String: String]] = (UserDefaults.standard.array(forKey: "acciones") as? [[String: String]]) ?? []
+    private var reloj: Task<Void, Never>?
+
+    func anotarAccion(_ t: String) {
+        acciones.insert(["texto": t, "cuando": F.bo("yyyy-MM-dd HH:mm")], at: 0)
+        acciones = Array(acciones.prefix(40))
+        UserDefaults.standard.set(acciones, forKey: "acciones")
+    }
+
+    /// mira si hay ronda en curso: cada 30 s mientras hay una (para el foquito rojo), cada 2 min si no
+    func empezarReloj() {
+        reloj?.cancel()
+        reloj = Task { [weak self] in
+            while !Task.isCancelled {
+                guard let self else { return }
+                let v = await Fuente.vivo(token: Llavero.token)
+                let antes = self.vivo?.enCurso ?? false
+                if let v { self.vivo = v }
+                if antes && !(v?.enCurso ?? false) { await self.refrescar() }   // terminó la ronda: datos nuevos
+                try? await Task.sleep(for: .seconds((self.vivo?.enCurso ?? false) ? 30 : 120))
+            }
+        }
+    }
+    func pararReloj() { reloj?.cancel() }
     /// Decisiones guardadas desde esta app que todavía no se ven en los datos.
     @Published var enviadas: [String: String] = (UserDefaults.standard.dictionary(forKey: "enviadas") as? [String: String]) ?? [:]
 
-    init() { Task { await refrescar() } }
+    init() { Task { await refrescar() }; empezarReloj() }
 
     func refrescar() async {
         cargando = true
-        let (d, online) = await Fuente.cargar()
+        async let v = Fuente.vivo(token: Llavero.token)
+        let (d, online) = await Fuente.cargar(token: Llavero.token)
+        if let v = await v { vivo = v }
         if let d { datos = d }
         enLinea = online
         cargando = false
@@ -135,7 +163,7 @@ final class Store: ObservableObject {
 
     /// Los pedidos con el mismo producto, fecha y estado son un solo paquete (por ejemplo 3 + 1 unidades).
     func totalUnidades(_ p: Pedido) -> Int {
-        (datos?.pedidos ?? []).filter { $0.producto == p.producto && $0.estado == p.estado && $0.fecha_compra == p.fecha_compra }
+        (datos?.pedidos ?? []).filter { $0.producto == p.producto && $0.estado == p.estado && $0.fecha_compra == p.fecha_compra && $0.esPrueba == p.esPrueba }
             .reduce(0) { $0 + $1.cantidad }
     }
 
@@ -165,7 +193,7 @@ enum Novedades {
         let ud = UserDefaults.standard
         let primera = ud.object(forKey: "nov_ofertas") == nil
         let ofertas = Set(d.cazador.topes.filter(\.bajo_tope).map(\.producto))
-        let estados = Dictionary(uniqueKeysWithValues: d.pedidos.map { ($0.id, $0.estado) })
+        let estados = Dictionary(uniqueKeysWithValues: d.pedidos.filter { !$0.esPrueba }.map { ($0.id, $0.estado) })
         let decidir = Set(d.decidir.map(\.id))
         let chat = Set((d.chat ?? []).filter { $0.para == "santi" }.map(\.id))
         defer {
@@ -182,7 +210,7 @@ enum Novedades {
         }
         let e0 = ud.dictionary(forKey: "nov_estados") as? [String: String] ?? [:]
         var vistos = Set<String>()
-        for p in d.pedidos where e0[p.id] != nil && e0[p.id] != p.estado && !vistos.contains(p.producto + p.estado) {
+        for p in d.pedidos where !p.esPrueba && e0[p.id] != nil && e0[p.id] != p.estado && !vistos.contains(p.producto + p.estado) {
             vistos.insert(p.producto + p.estado)
             msgs.append(("Pedido: \(p.producto)", "Ahora está: \(p.estado)."))
         }

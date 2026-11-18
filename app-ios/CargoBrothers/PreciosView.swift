@@ -117,9 +117,11 @@ struct GraficoPrecio: View {
 struct PreciosView: View {
     @EnvironmentObject var store: Store
     @State private var filtro = "traer"
+    @State private var tabla = false
     var body: some View {
-        Pantalla(titulo: "Precios") {
-            if let d = store.datos {
+        Pantalla(titulo: tabla ? "Tabla de precios" : "Precios") {
+            if tabla { TablaProductos() }
+            else if let d = store.datos {
                 Picker("Filtro", selection: $filtro) {
                     Text("Traer").tag("traer"); Text("Esperar").tag("esperar"); Text("Todos").tag("todos"); Text("Cazador").tag("cazador")
                 }
@@ -134,6 +136,8 @@ struct PreciosView: View {
                     ForEach(lista) { p in NavigationLink(value: p) { fila(p) }.buttonStyle(.plain) }
                 }
             }
+        } barra: {
+            Button { withAnimation { tabla.toggle() } } label: { Image(systemName: tabla ? "rectangle.grid.1x2" : "tablecells") }
         }
     }
 

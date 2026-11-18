@@ -54,6 +54,8 @@ struct EquipoView: View {
     var body: some View {
         Pantalla(titulo: "Equipo") {
             if let d = store.datos {
+                LuzVivo()
+                if store.vivo?.enCurso == true { EquipoEnVivo() }
                 let hechos = d.objetivos.filter { $0.progreso >= 1 }.count
                 Tarjeta(titulo: "Objetivos de la semana", icono: "target") {
                     HStack(alignment: .firstTextBaseline) {
@@ -250,14 +252,7 @@ struct AgenteView: View {
             if let r = d.recomendaciones, !r.isEmpty {
                 Tarjeta(titulo: "Lo que te recomienda", icono: "lightbulb") { ForEach(r) { Text("• " + $0.texto).font(.subheadline) } }
             }
-            Tarjeta(titulo: "Su libreta (pendiente)", icono: "book.closed") {
-                ForEach((d.memoria ?? []).suffix(12).reversed()) { n in
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(n.resumen).font(.footnote)
-                        Text("\(n.tipo) · \(F.dia(n.fecha))\(n.vence.isEmpty ? "" : " · vence \(F.dia(n.vence))")").font(.caption2).foregroundStyle(Tema.gris)
-                    }
-                }
-            }
+            LibretaView()
             Tarjeta(titulo: "Informes diarios", icono: "doc.text") {
                 ForEach((d.informes ?? []).prefix(10)) { i in
                     if let u = URL(string: i.url) { Link(destination: u) { HStack { Text("Informe \(i.tipo) del \(F.dia(i.fecha))"); Spacer(); Image(systemName: "arrow.up.right.square") } }.font(.subheadline) }

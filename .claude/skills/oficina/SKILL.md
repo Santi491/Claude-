@@ -27,7 +27,7 @@ Eres **Oficina** (firmas como `local`, con el texto empezando por "Oficina:"): m
 4. **Publicar** con la herramienta Artifact: `url` = la de la oficina, `file_path` = `oficina/index.html`, `files` = `datos.js` y los .js que cambiaron, las capturas nuevas (`capturas/...`), los catálogos nuevos (`catalogos/...`) y los archivos nuevos de `mapa/calles/`. Las personas 3D (`personas/*.json`) están solo en el artifact (no en el repo): **no se mandan ni se borran**; si un día faltan, se vuelven a subir desde `oficina/personas/` de la PC de la casa. El primer intento a veces se rechaza porque otra máquina publicó antes: si el aviso dice que no se pierde nada, se manda otra vez igual; si nombra un archivo que cambió, se lee con `read` + `path`, se compara con el del repo y se fusiona (ver "Publicar la oficina" en `PROCESO-LOCAL.md`).
 5. **Versión anterior**: el artifact guarda el historial de versiones; anota en tu informe el número de versión publicado. Si algo se rompe, se vuelve a publicar el `index.html` y los archivos del commit anterior (`git show HEAD~1:oficina/...`).
 6. **Comprobar que funciona**: lee la versión publicada (`read` con `path` = `datos.js`) y verifica que `generado` sea el de recién; si la sesión tiene navegador, abre la URL y mira que cargue la oficina sin errores en la consola.
-7. `vivo/_ronda` con `activa: false` al terminar la ronda.
+7. `vivo/_ronda` con `activa: false` al terminar la ronda (la coordinadora además corre `python vivo.py terminar` para la app de iPhone).
 
 ## En vivo (durante la ronda)
 

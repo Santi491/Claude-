@@ -97,14 +97,16 @@ struct PedidosView: View {
             else if seccion == 2 { ClientesView() }
             else if seccion == 3 { TiendasView() }
             else if let d = store.datos {
-                let productos = Array(Set(d.pedidos.map(\.producto))).sorted()
-                let visibles = d.pedidos.filter { filtro.isEmpty || $0.producto == filtro }
+                let reales = d.pedidos.filter { !$0.esPrueba }
+                let productos = Array(Set(reales.map(\.producto))).sorted()
+                let visibles = filtro == "__pruebas" ? d.pedidos.filter(\.esPrueba) : reales.filter { filtro.isEmpty || $0.producto == filtro }
                 if d.pedidos.isEmpty { Text("Sin pedidos todavía.").foregroundStyle(Tema.gris) }
                 else {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             chip("Todos", "")
                             ForEach(productos, id: \.self) { chip($0, $0) }
+                            if d.pedidos.contains(where: \.esPrueba) { chip("Pruebas", "__pruebas") }
                         }
                     }
                     let enCamino = visibles.filter { !$0.entregado }
@@ -115,8 +117,11 @@ struct PedidosView: View {
                         Tarjeta {
                             HStack {
                                 VStack(alignment: .leading, spacing: 4) {
-                                    Text("\(p.cantidad) × \(p.producto)").font(.headline)
-                                    Text("Comprado el \(F.dia(p.fecha_compra))").font(.caption).foregroundStyle(Tema.gris)
+                                    HStack {
+                                        Text("\(p.cantidad) × \(p.producto)").font(.headline)
+                                        if p.esPrueba { Chip(texto: "PRUEBA", color: Tema.ambar) }
+                                    }
+                                    Text("Comprado el \(F.dia(p.fecha_compra))\(p.esPrueba ? " · no cuenta para el negocio" : "")").font(.caption).foregroundStyle(Tema.gris)
                                 }
                                 Spacer()
                                 Image(systemName: "chevron.right").foregroundStyle(Tema.gris)

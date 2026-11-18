@@ -1,0 +1,32 @@
+# Datos de la app de iPhone al minuto (Santi, 18/11): cada vez que algo cambia en la rama (una ronda, la app, la oficina
+# o una sesión con Claude), GitHub rearma app/datos-app.json y lo deja solo en la rama `app-datos`, de donde lo lee la app.
+# Va a otra rama para no chocar nunca con los commits de las rondas. Gratis (repo público).
+name: Datos de la app
+on:
+  push:
+    branches: [claude/agente-independiente-s3uc8z]
+    paths-ignore: [vivo.json]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: datos-app
+  cancel-in-progress: true
+jobs:
+  datos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Armar los datos
+        env:
+          TZ: America/La_Paz
+        run: python3 oficina/generar.py
+      - name: Subir a la rama app-datos
+        run: |
+          mkdir -p /tmp/salida && cp app/datos-app.json /tmp/salida/
+          cd /tmp/salida
+          git init -q -b app-datos
+          git -c user.name="Cargo Brothers" -c user.email="actions@users.noreply.github.com" add datos-app.json
+          git -c user.name="Cargo Brothers" -c user.email="actions@users.noreply.github.com" commit -qm "Datos de la app ($(TZ=America/La_Paz date '+%d/%m %H:%M'))"
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" app-datos

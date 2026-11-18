@@ -2,15 +2,43 @@ import SwiftUI
 
 struct DecidirView: View {
     @EnvironmentObject var store: Store
+    @State private var vista = 0
     var body: some View {
         Pantalla(titulo: "Decidir") {
             if let d = store.datos {
-                Text("Lo que apruebes o rechaces va al Gerente por Telegram: se abre el chat con el mensaje listo y solo tocas Enviar. La Raspberry lo anota en unos minutos.")
-                    .font(.footnote).foregroundStyle(Tema.gris).frame(maxWidth: .infinity, alignment: .leading)
-                if d.decidir.isEmpty {
-                    ContentUnavailableView("Nada pendiente", systemImage: "checkmark.seal", description: Text("El equipo no espera ninguna decisión tuya."))
+                let vencidas = d.decidir.filter(\.vencida), pendientes = d.decidir.filter { !$0.vencida }
+                Picker("", selection: $vista) {
+                    Text("Por decidir (\(pendientes.count))").tag(0); Text("Vencidas (\(vencidas.count))").tag(1); Text("Decididas").tag(2)
+                }.pickerStyle(.segmented)
+                switch vista {
+                case 0:
+                    Text("Lo que apruebes o rechaces queda guardado al instante y el equipo lo hace en su próxima ronda.")
+                        .font(.footnote).foregroundStyle(Tema.gris).frame(maxWidth: .infinity, alignment: .leading)
+                    if pendientes.isEmpty {
+                        ContentUnavailableView("Nada pendiente", systemImage: "checkmark.seal", description: Text("El equipo no espera ninguna decisión tuya."))
+                    }
+                    ForEach(pendientes) { item in tarjeta(item) }
+                case 1:
+                    Text("Tareas cuya fecha ya pasó sin decisión: apruébalas si todavía sirven o recházalas para limpiar.")
+                        .font(.footnote).foregroundStyle(Tema.gris).frame(maxWidth: .infinity, alignment: .leading)
+                    if vencidas.isEmpty { ContentUnavailableView("Nada vencido", systemImage: "calendar.badge.checkmark") }
+                    ForEach(vencidas) { item in tarjeta(item) }
+                default:
+                    Text("Lo decidido en los últimos 30 días: en la app, la oficina, por Telegram o en el Doc.")
+                        .font(.footnote).foregroundStyle(Tema.gris).frame(maxWidth: .infinity, alignment: .leading)
+                    ForEach(d.decididas ?? []) { x in
+                        Tarjeta {
+                            HStack {
+                                Chip(texto: etiqueta(x.tipo), color: Tema.bronce)
+                                Chip(texto: x.estado, color: ["aprobado", "aprobada", "hecho", "hecha", "resuelta"].contains(x.estado) ? Tema.verde : Tema.rojo)
+                                Spacer()
+                                Text(F.dia(x.fecha)).font(.caption).foregroundStyle(Tema.gris)
+                            }
+                            Text(x.titulo).font(.subheadline).lineLimit(3)
+                            Text("\(nombre(x.agente))\(x.decision.isEmpty ? "" : " · \(x.decision)")").font(.caption).foregroundStyle(Tema.gris).lineLimit(2)
+                        }
+                    }
                 }
-                ForEach(d.decidir) { item in tarjeta(item) }
             }
         }
     }

@@ -254,8 +254,16 @@ struct ArchivoView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 12) {
-                Picker("", selection: $cajon) { Text("Informes").tag(0); Text("Catálogos").tag(1); Text("Capturas").tag(2); Text("Gerente").tag(3) }
-                    .pickerStyle(.segmented)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(Array(["Informes", "Catálogos", "Capturas", "Gerente", "Movimientos"].enumerated()), id: \.offset) { i, t in
+                            Button { withAnimation { cajon = i } } label: {
+                                Text(t).font(.subheadline.weight(.semibold)).padding(.horizontal, 12).padding(.vertical, 7)
+                                    .background(cajon == i ? Tema.bronce : Tema.tarjeta, in: Capsule()).foregroundStyle(cajon == i ? .black : Tema.texto)
+                            }
+                        }
+                    }
+                }
                 switch cajon {
                 case 0:
                     ForEach(store.datos?.informes_nube ?? []) { i in
@@ -279,6 +287,8 @@ struct ArchivoView: View {
                             }.buttonStyle(.plain)
                         }
                     }
+                case 4:
+                    MovimientosView()
                 default:
                     ForEach(store.datos?.informes ?? []) { i in
                         if let u = URL(string: i.url) { Link(destination: u) { fila("doc.text.fill", "Informe \(i.tipo) del Gerente", "\(F.dia(i.fecha)) · se abre en Google Docs") } .buttonStyle(.plain) }

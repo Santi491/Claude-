@@ -6,29 +6,60 @@ import ActivityKit
 
 // Datos que arma app_datos.py en el repo (app/datos-app.json). Salen del mismo filtro de privacidad que la oficina.
 enum Fuente {
-    static let url = URL(string: "https://raw.githubusercontent.com/Santi491/Claude-/claude/agente-independiente-s3uc8z/app/datos-app.json")!
-    static func raw(_ ruta: String) -> URL? {
-        URL(string: "https://raw.githubusercontent.com/Santi491/Claude-/claude/agente-independiente-s3uc8z/" + (ruta.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ruta))
-    }
+    static let repo = "Santi491/Claude-"
+    static let rama = "claude/agente-independiente-s3uc8z"
+    /// los datos los arma GitHub al minuto de cada cambio y los deja en la rama app-datos (.github/workflows/datos-app.yml)
+    static let url = URL(string: "https://raw.githubusercontent.com/\(repo)/app-datos/datos-app.json")!
+    static let urlRespaldo = URL(string: "https://raw.githubusercontent.com/\(repo)/\(rama)/app/datos-app.json")!
     static var cache: URL {
         FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0].appendingPathComponent("datos-app.json")
     }
+    static func raw(_ ruta: String) -> URL? {
+        URL(string: "https://raw.githubusercontent.com/\(repo)/\(rama)/" + (ruta.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ruta))
+    }
 
-    /// Baja los datos de GitHub; si no hay internet, usa la última copia guardada.
-    static func cargar() async -> (Datos?, Bool) {
-        var req = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20)
-        req.setValue("no-cache", forHTTPHeaderField: "Cache-Control")
-        if let (data, resp) = try? await URLSession.shared.data(for: req),
-           (resp as? HTTPURLResponse)?.statusCode == 200,
-           let d = try? JSONDecoder().decode(Datos.self, from: data) {
-            try? data.write(to: cache)
-            return (d, true)
+    /// Con la clave de GitHub lee por la API (siempre lo último); sin clave, por raw (GitHub lo guarda hasta 5 minutos).
+    static func bajar(_ ruta: String, rama r: String, token: String?) async -> Data? {
+        if let token, !token.isEmpty, var c = URLComponents(string: "https://api.github.com/repos/\(repo)/contents/\(ruta)") {
+            c.queryItems = [URLQueryItem(name: "ref", value: r)]
+            var q = URLRequest(url: c.url!, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20)
+            q.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            q.setValue("application/vnd.github.raw+json", forHTTPHeaderField: "Accept")
+            if let (d, resp) = try? await URLSession.shared.data(for: q), (resp as? HTTPURLResponse)?.statusCode == 200 { return d }
         }
-        if let data = try? Data(contentsOf: cache), let d = try? JSONDecoder().decode(Datos.self, from: data) {
-            return (d, false)
+        guard let u = URL(string: "https://raw.githubusercontent.com/\(repo)/\(r)/\(ruta)") else { return nil }
+        let q = URLRequest(url: u, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20)
+        if let (d, resp) = try? await URLSession.shared.data(for: q), (resp as? HTTPURLResponse)?.statusCode == 200 { return d }
+        return nil
+    }
+
+    /// Baja los datos (rama app-datos; si todavía no existe, los de la rama del equipo); sin internet, la última copia.
+    static func cargar(token: String? = nil) async -> (Datos?, Bool) {
+        for (ruta, r) in [("datos-app.json", "app-datos"), ("app/datos-app.json", rama)] {
+            if let data = await bajar(ruta, rama: r, token: token), let d = try? JSONDecoder().decode(Datos.self, from: data) {
+                try? data.write(to: cache)
+                return (d, true)
+            }
         }
+        if let data = try? Data(contentsOf: cache), let d = try? JSONDecoder().decode(Datos.self, from: data) { return (d, false) }
         return (nil, false)
     }
+
+    static func vivo(token: String?) async -> Vivo? {
+        guard let d = await bajar("vivo.json", rama: rama, token: token) else { return nil }
+        return try? JSONDecoder().decode(Vivo.self, from: d)
+    }
+}
+
+/// vivo.json: la ronda en curso y qué hace cada agente (lo escribe vivo.py desde la ronda)
+struct Vivo: Codable {
+    struct Ronda: Codable { var activa: Bool?; var quien: String?; var desde: String?; var hasta: String?; var fecha: String? }
+    struct Ag: Codable, Hashable { var estado: String; var texto: String; var hora: String }
+    var ronda: Ronda?
+    var agentes: [String: Ag]?
+    var actualizado: String?
+    /// activa y de hoy (una ronda que quedó "activa" de ayer no cuenta)
+    var enCurso: Bool { (ronda?.activa ?? false) && (ronda?.fecha ?? "") == F.bo("yyyy-MM-dd") }
 }
 
 struct Datos: Codable {
@@ -65,7 +96,18 @@ struct Datos: Codable {
     var informes_nube: [InformeNube]?
     var catalogos: [Catalogo]?
     var capturas: [Captura]?
+    var decididas: [Decidida]?
+    var libreta: [NotaLibreta]?
+    var movimientos: [Movimiento]?
+    var tabla: [FilaTabla]?
+    var sincronizacion: Sinc?
 }
+
+struct Decidida: Codable, Identifiable, Hashable { var tipo: String; var ref: String; var agente: String; var titulo: String; var estado: String; var decision: String; var fecha: String; var id: String { tipo + ref } }
+struct NotaLibreta: Codable, Identifiable, Hashable { var id: String; var fecha: String; var tipo: String; var fuente: String; var resumen: String; var vence: String; var estado: String; var cerrado: String }
+struct Movimiento: Codable, Hashable { var fecha: String; var tipo: String; var producto: String; var concepto: String; var detalle: String; var valor: Double?; var antes: Double?; var moneda: String }
+struct FilaTabla: Codable, Identifiable, Hashable { var producto: String; var cat: String; var peso_g: Double; var nuevo_usd: Double?; var usado_usd: Double?; var mkt_bs: Double?; var tienda_bs: Double?; var nuevo_link: String; var usado_link: String; var id: String { producto } }
+struct Sinc: Codable { var ultima_ronda: String; var ultima_ronda_quien: String; var oficina_publicada: String; var armado_por: String; var armado: String }
 
 struct Cliente: Codable, Identifiable, Hashable { var tienda: String; var grupo: String; var prioridad: String; var por_que: String; var productos: String
     var precio_ref_bs: Double?; var proximo_paso: String; var actualizado: String; var id: String { tienda }
@@ -118,6 +160,8 @@ struct Pedido: Codable, Identifiable, Hashable {
     var eventos: [Evento]
     var tienda: String?
     var courier: String?
+    var prueba: Bool?
+    var esPrueba: Bool { prueba ?? id.hasPrefix("prueba") }
     var entregado: Bool { etapa >= etapas.count - 1 }
 }
 
@@ -143,7 +187,9 @@ struct Cazador: Codable { var meta: Double?; var topes: [Tope] }
 struct Decision: Codable, Identifiable, Hashable {
     var tipo: String; var ref: String; var agente: String; var fecha: String
     var titulo: String; var detalle: String; var plazo: String
+    var fecha_para: String?
     var id: String { tipo + ref }
+    var vencida: Bool { tipo == "plan" && !(fecha_para ?? "").isEmpty && (fecha_para ?? "") < F.bo("yyyy-MM-dd") && (plazo.isEmpty || plazo < F.bo("yyyy-MM-dd")) }
 }
 
 struct Agente: Codable, Identifiable, Hashable {

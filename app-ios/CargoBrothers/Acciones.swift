@@ -46,7 +46,8 @@ extension Store {
         defer { guardando = false }
         do {
             try await trabajo()
-            aviso = "Guardado: \(titulo). El equipo lo ve en su próxima ronda."
+            anotarAccion(titulo)
+            aviso = "Guardado: \(titulo). En un minuto se ve en la app; el equipo lo toma en su próxima ronda."
             Task { try? await Task.sleep(for: .seconds(8)); await refrescar() }
             return true
         } catch {
@@ -204,6 +205,20 @@ extension Store {
                                     "prioridad": prioridad, "plazo": fp, "meta": "", "obligatoria": obligatoria ? "sí" : ""])
             }
             try await actividad("tarea para \(agente): \(t0.prefix(80))")
+        }
+    }
+
+    // ---------- anotar en la libreta del Gerente (memoria-gerente.csv) ----------
+    func anotarLibreta(_ texto: String, tipo: String, vence: Date?) async -> Bool {
+        let t0 = texto.trimmingCharacters(in: .whitespacesAndNewlines)
+        return await guardar("nota en la libreta del Gerente") { [self] in
+            try await GitHub.modificar("memoria-gerente.csv", mensaje: "App: Santi anota en la libreta del Gerente") { t in
+                let csv = try CSV(t)
+                let n = csv.registros.compactMap { Int(csv.dic($0)["id"] ?? "") }.max() ?? 0
+                return csv.agregar(["id": String(n + 1), "fecha": self.hoy, "hora": self.hora, "fuente": "santi", "tipo": tipo,
+                                    "resumen": t0, "vence": vence.map { F.bo("yyyy-MM-dd", $0) } ?? "", "estado": "abierta", "cerrado": ""])
+            }
+            try await actividad("nota en la libreta del Gerente (\(tipo))")
         }
     }
 

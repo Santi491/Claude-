@@ -244,6 +244,7 @@ struct AjustesView: View {
             Section {
                 if store.hayClave {
                     Label("Clave guardada en el llavero del iPhone", systemImage: "checkmark.seal.fill").foregroundStyle(Tema.verde)
+                    NavigationLink("Sincronización") { SincView() }
                     Button("Probar la clave") { Task { probando = true; estado = await GitHub.probar() ?? "Funciona: la app puede leer y guardar."; probando = false } }
                     Button("Borrar la clave", role: .destructive) { Llavero.borrar(); store.objectWillChange.send(); estado = "Clave borrada." }
                 } else {
@@ -281,6 +282,7 @@ struct AjustesView: View {
 // ---------- Calculadora ----------
 struct CalculadoraView: View {
     @EnvironmentObject var store: Store
+    @State private var modo = 0
     @State private var producto = ""
     @State private var usd = ""
     @State private var envio = ""
@@ -293,6 +295,16 @@ struct CalculadoraView: View {
 
     var body: some View {
         Form {
+            Picker("", selection: $modo) { Text("Un producto").tag(0); Text("Varios en una caja").tag(1) }.pickerStyle(.segmented)
+                .listRowBackground(Color.clear)
+            if modo == 1 { CajaView() } else { unProducto }
+        }
+        .navigationTitle("¿Cuánto me sale?").navigationBarTitleDisplayMode(.inline)
+        .toolbar { BotonCerrar() }
+        .onAppear { if tc.isEmpty, let u = store.datos?.dolar.usado { tc = F.num(u) } }
+    }
+
+    @ViewBuilder var unProducto: some View {
             Section("Producto") {
                 Picker("Producto", selection: $producto) {
                     Text("Otro").tag("")
@@ -331,10 +343,6 @@ struct CalculadoraView: View {
                     }
                 }
             }
-        }
-        .navigationTitle("¿Cuánto me sale?").navigationBarTitleDisplayMode(.inline)
-        .toolbar { BotonCerrar() }
-        .onAppear { if tc.isEmpty, let u = store.datos?.dolar.usado { tc = F.num(u) } }
     }
 
     var calculo: Calculo? {
