@@ -1,7 +1,10 @@
 {
  "ronda": {
-  "activa": false,
-  "hasta": "15:39"
+  "activa": true,
+  "quien": "PC de la casa",
+  "desde": "15:45",
+  "fecha": "2026-11-18"
  },
- "actualizado": "2026-11-18 15:39"
+ "actualizado": "2026-11-18 15:45",
+ "agentes": {}
 }
