@@ -26,6 +26,11 @@
    "estado": "terminó",
    "texto": "sin cambios",
    "hora": "16:18"
+  },
+  "ana": {
+   "estado": "trabajando",
+   "texto": "recalcular con precios nuevos",
+   "hora": "16:18"
   }
  }
 }
