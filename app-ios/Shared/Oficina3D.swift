@@ -20,6 +20,9 @@ enum Oficina3D {
 
     /// colores de three.js (lineales) a sRGB, como los muestra la oficina web
     static var gamma = 1.0
+    /// calidad alta (Santi 18/11: "un poco más elevado el nivel de detalle"): reflejos del ambiente, sombras suaves,
+    /// oclusión ambiental, desenfoque de profundidad suave, brillo en las luces y un tono cálido de cine
+    static var alta = false
     static var brillo = 0.72
     static func srgb(_ c: [Double], _ k: Double = 1) -> CGColor {
         func f(_ x: Double) -> CGFloat { CGFloat(pow(max(0, min(1, x * k)), 1 / gamma)) }
@@ -160,6 +163,7 @@ enum Oficina3D {
             nodo.light = luz
             escena.rootNode.addChildNode(nodo)
         }
+        if alta { mejorar(escena, raiz: plano) }
         if let f = a.fondo { escena.background.contents = CGColor(srgbRed: CGFloat(f[0]), green: CGFloat(f[1]), blue: CGFloat(f[2]), alpha: 1) }
 
         // ---------- cámara: la misma vista general de la oficina web ----------
@@ -177,6 +181,70 @@ enum Oficina3D {
         ncam.position = SCNVector3(23, 26, 33)
         ncam.look(at: SCNVector3(5, 0, 1.5))
         escena.rootNode.addChildNode(ncam)
+        if alta {
+            cam.screenSpaceAmbientOcclusionIntensity = 1.4
+            cam.screenSpaceAmbientOcclusionRadius = 0.9
+            cam.screenSpaceAmbientOcclusionNormalThreshold = 0.25
+            cam.bloomIntensity = 0.55; cam.bloomThreshold = 0.75; cam.bloomBlurRadius = 10
+            cam.contrast = 0.12; cam.saturation = 1.08
+            cam.vignettingIntensity = 0.55; cam.vignettingPower = 0.8
+            cam.wantsDepthOfField = true
+            cam.focusDistance = 38; cam.fStop = 4.5; cam.apertureBladeCount = 6; cam.focalBlurSampleCount = 14
+            cam.colorGrading.contents = nil
+            cam.exposureOffset = -0.15
+        }
         return escena
+    }
+
+    /// Mapa de ambiente hecho en código (equirectangular): techo cálido con tiras de luz, paredes oscuras y piso de mármol.
+    /// Le da reflejos reales al mármol, al bronce, al vidrio y a las pantallas.
+    static func ambiente() -> CGImage? {
+        let w = 1024, h = 512
+        guard let ctx = CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: 0, space: CGColorSpace(name: CGColorSpace.sRGB)!,
+                                  bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return nil }
+        let grad = CGGradient(colorsSpace: CGColorSpace(name: CGColorSpace.sRGB)!, colors: [
+            CGColor(srgbRed: 0.10, green: 0.10, blue: 0.11, alpha: 1), CGColor(srgbRed: 0.42, green: 0.37, blue: 0.31, alpha: 1),
+            CGColor(srgbRed: 0.18, green: 0.18, blue: 0.19, alpha: 1), CGColor(srgbRed: 0.55, green: 0.52, blue: 0.48, alpha: 1)] as CFArray,
+                              locations: [0, 0.42, 0.55, 1])!
+        ctx.drawLinearGradient(grad, start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: h), options: [])
+        // tiras de luz LED del techo y ventanas altas
+        ctx.setFillColor(CGColor(srgbRed: 1, green: 0.95, blue: 0.86, alpha: 1))
+        for i in 0..<9 { ctx.fill(CGRect(x: 40 + i * 110, y: h - 70, width: 70, height: 10)) }
+        ctx.setFillColor(CGColor(srgbRed: 0.75, green: 0.82, blue: 0.95, alpha: 0.9))
+        for i in 0..<6 { ctx.fill(CGRect(x: 60 + i * 160, y: h / 2 + 40, width: 110, height: 26)) }
+        return ctx.makeImage()
+    }
+
+    static func mejorar(_ e: SCNScene, raiz: SCNNode) {
+        if let amb = ambiente() { e.lightingEnvironment.contents = amb; e.lightingEnvironment.intensity = 0.9 }
+        raiz.enumerateHierarchy { n, _ in
+            // vidrio de las salas: transparente de verdad (antes era un panel lechoso)
+            for m in n.geometry?.materials ?? [] where m.lightingModel == .constant && m.transparency < 0.9 && m.transparency > 0.3 {
+                m.lightingModel = .physicallyBased
+                m.diffuse.contents = CGColor(srgbRed: 0.75, green: 0.82, blue: 0.86, alpha: 1)
+                m.transparency = 0.16
+                m.roughness.contents = NSNumber(value: 0.04); m.metalness.contents = NSNumber(value: 0.0)
+                m.clearCoat.contents = NSNumber(value: 1.0)
+            }
+            for m in n.geometry?.materials ?? [] where m.lightingModel == .physicallyBased {
+                let r = (m.roughness.contents as? NSNumber)?.doubleValue ?? 0.7
+                let met = (m.metalness.contents as? NSNumber)?.doubleValue ?? 0
+                // superficies pulidas (mármol, bronce, cromo, vidrio): más brillo y una capa de laca
+                if r < 0.35 || met > 0.5 {
+                    m.roughness.contents = NSNumber(value: max(0.06, r * 0.7))
+                    m.clearCoat.contents = NSNumber(value: met > 0.5 ? 0.2 : 0.6)
+                    m.clearCoatRoughness.contents = NSNumber(value: 0.08)
+                }
+            }
+        }
+        for n in e.rootNode.childNodes where n.light != nil {
+            guard let l = n.light else { continue }
+            if l.type == .directional && l.castsShadow {
+                l.shadowMapSize = CGSize(width: 4096, height: 4096); l.shadowSampleCount = 16; l.shadowRadius = 5
+                l.shadowColor = CGColor(gray: 0, alpha: 0.62)
+            }
+            if l.type == .omni { l.intensity *= 1.25; l.castsShadow = false }
+            if l.type == .ambient { l.intensity *= 0.55 }   // el ambiente ya ilumina; menos luz plana = más volumen
+        }
     }
 }
