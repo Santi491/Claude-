@@ -1,11 +1,12 @@
 {
  "ronda": {
-  "activa": true,
+  "activa": false,
   "quien": "PC de la casa",
   "desde": "16:08",
-  "fecha": "2026-11-18"
+  "fecha": "2026-11-18",
+  "hasta": "16:24"
  },
- "actualizado": "2026-11-18 16:21",
+ "actualizado": "2026-11-18 16:24",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -38,9 +39,14 @@
    "hora": "16:21"
   },
   "oficina": {
-   "estado": "trabajando",
-   "texto": "regenerar y publicar la oficina",
-   "hora": "16:21"
+   "estado": "terminó",
+   "texto": "oficina v151 publicada",
+   "hora": "16:23"
+  },
+  "gerente": {
+   "estado": "terminó",
+   "texto": "aviso de fin de ronda enviado",
+   "hora": "16:24"
   }
  }
 }
