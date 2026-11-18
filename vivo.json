@@ -36,6 +36,11 @@
    "estado": "terminó",
    "texto": "sin ventas",
    "hora": "16:21"
+  },
+  "oficina": {
+   "estado": "trabajando",
+   "texto": "regenerar y publicar la oficina",
+   "hora": "16:21"
   }
  }
 }
