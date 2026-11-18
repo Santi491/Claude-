@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-18"
  },
- "actualizado": "2026-11-18 16:13",
+ "actualizado": "2026-11-18 16:15",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -13,9 +13,9 @@
    "hora": "16:13"
   },
   "mkt": {
-   "estado": "trabajando",
-   "texto": "Marketplace y clientes potenciales",
-   "hora": "16:13"
+   "estado": "terminó",
+   "texto": "7700X siguen 2, 8 grupos para clientes",
+   "hora": "16:15"
   }
  }
 }
