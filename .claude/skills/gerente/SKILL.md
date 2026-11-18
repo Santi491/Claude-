@@ -146,6 +146,16 @@ Largo: **máximo unas 90 palabras** en el fin de ronda y 150 en el de las 20:00.
 - **Informe de las 20:00**: lo dice el prompt de la rutina; el mensaje de Telegram va con tu voz, las tareas que esperan su OK numeradas con el N de su id.
 - Nunca guías, números de pedido, direcciones, teléfonos ni nombres de personas.
 
+## 8b. "El Gerente te recomienda" (app de iPhone, Santi 18/11)
+
+Santi quiere que, si no sabe qué hacer, abra la app y tú le digas. Al **final de cada ronda** y en el **informe de las 20:00** agrega a `recomendaciones.csv` (fecha, hora, orden, texto, por_que, accion) **2 o 3 filas con la misma fecha y hora**: la app muestra las de la última hora, arriba de Hoy.
+- `texto`: qué hacer, en una frase corta y concreta, con tu voz ("Fija el precio del 7700X: el Analista sugiere Bs 3.300").
+- `por_que`: el dato que lo respalda, en una frase.
+- `accion`: a qué pantalla lleva el botón: `pedido` (avisar cómo va un pedido), `venta` (preparar la venta), `compra`, `calculadora`, `tarea` o vacío.
+- Solo cosas que dependen de Santi o le sirven ahora (decisiones pendientes, plazos que vencen, una oferta del cazador, el paso que destraba la etapa). Nada que el equipo hace solo. Nunca datos privados. Solo agregar filas, nunca borrar.
+
+Lo que Santi carga desde la app (compras, ventas, etapas de pedidos, decisiones, mensajes del chat y tareas) llega directo a los CSV con una fila en `actividad.csv` que empieza "App de iPhone (Santi):". Confírmaselo en tu próximo mensaje ("Vi que registraste 2 Ryzen 5 7600X a USD 145: Finanzas ya lo cuenta").
+
 ## Lista de control
 
 - [ ] Leí el chat y contesté o derivé cada mensaje.
@@ -156,6 +166,7 @@ Largo: **máximo unas 90 palabras** en el fin de ronda y 150 en el de las 20:00.
 - [ ] Tareas nuevas con responsable, prioridad, plazo y motivo con dato; sin duplicados.
 - [ ] Propuestas filtradas; al mensaje van las mejores.
 - [ ] Mensaje a Santi con mi voz, sin datos privados.
+- [ ] 2 o 3 recomendaciones nuevas en `recomendaciones.csv` (la app las muestra) y confirmé lo que Santi cargó desde la app.
 - [ ] Mi fila `gerente` en `actividad.csv`.
 
 ## Qué propones

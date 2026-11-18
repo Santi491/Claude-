@@ -36,7 +36,7 @@ struct ResumenWidget: Widget {
         }
         .configurationDisplayName("Cargo Brothers")
         .description("El pedido, el dólar y las ofertas del cazador.")
-        .supportedFamilies([.systemSmall, .systemMedium])
+        .supportedFamilies([.systemSmall, .systemMedium, .accessoryRectangular, .accessoryInline, .accessoryCircular])
     }
 }
 
@@ -44,6 +44,13 @@ struct ResumenVista: View {
     var e: Entrada
     @Environment(\.widgetFamily) var familia
     var body: some View {
+        switch familia {
+        case .accessoryRectangular, .accessoryInline, .accessoryCircular: Bloqueada(e: e, familia: familia)
+        default: principal
+        }
+    }
+
+    @ViewBuilder var principal: some View {
         if let d = e.datos {
             let p = d.pedidos.filter { !$0.entregado }.max { $0.cantidad < $1.cantidad }
             let bajo = d.cazador.topes.filter(\.bajo_tope).count
@@ -80,6 +87,31 @@ struct ResumenVista: View {
             }
         } else {
             Text("Cargo Brothers\nsin datos").font(.caption).foregroundStyle(Tema.gris)
+        }
+    }
+}
+
+// ---------- Widgets chicos de la pantalla bloqueada (al lado de la hora) ----------
+struct Bloqueada: View {
+    var e: Entrada
+    var familia: WidgetFamily
+    var body: some View {
+        let d = e.datos
+        let p = d?.pedidos.filter { !$0.entregado }.max { $0.cantidad < $1.cantidad }
+        switch familia {
+        case .accessoryInline:
+            Text("USDT \(F.num(d?.dolar.usado)) · \(p.map { $0.estado } ?? "sin pedidos")")
+        case .accessoryCircular:
+            Gauge(value: Double((p?.etapa ?? 0) + 1), in: 0...Double(p?.etapas.count ?? 7)) {
+                Image(systemName: "shippingbox.fill")
+            } currentValueLabel: { Text("\((p?.etapa ?? 0) + 1)") }
+            .gaugeStyle(.accessoryCircularCapacity)
+        default:
+            VStack(alignment: .leading, spacing: 2) {
+                Text(p.map { "\($0.producto)" } ?? "Cargo Brothers").font(.headline).widgetAccentable()
+                Text(p?.estado ?? "sin pedidos en camino").font(.caption)
+                Text("USDT \(F.num(d?.dolar.usado)) · \(d?.cazador.topes.filter(\.bajo_tope).count ?? 0) ofertas").font(.caption2)
+            }
         }
     }
 }

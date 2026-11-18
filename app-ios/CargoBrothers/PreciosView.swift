@@ -1,4 +1,34 @@
 import SwiftUI
+import Charts
+
+/// Precio por día: eBay (nuevo y usado, pasados a Bs con el dólar de hoy) contra lo más barato de Cochabamba.
+struct GraficoPrecio: View {
+    var h: [Hist]
+    var tc: Double
+    @State private var verBs = true
+    var body: some View {
+        Tarjeta(titulo: "Precio por día", icono: "chart.xyaxis.line") {
+            Picker("", selection: $verBs) { Text("En Bs").tag(true); Text("eBay en USD").tag(false) }.pickerStyle(.segmented)
+            Chart {
+                ForEach(h) { x in
+                    let d = F.dia(x.fecha)
+                    if let v = x.nuevo { LineMark(x: .value("día", d), y: .value("p", verBs ? v * tc : v), series: .value("", "eBay nuevo")).foregroundStyle(Tema.bronce) }
+                    if let v = x.usado { LineMark(x: .value("día", d), y: .value("p", verBs ? v * tc : v), series: .value("", "eBay usado")).foregroundStyle(Tema.bronce.opacity(0.45)).lineStyle(StrokeStyle(lineWidth: 1.5, dash: [4, 3])) }
+                    if verBs, let v = [x.mkt, x.tienda].compactMap({ $0 }).min() { LineMark(x: .value("día", d), y: .value("p", v), series: .value("", "Cochabamba")).foregroundStyle(Tema.verde) }
+                }
+            }
+            .chartYScale(domain: .automatic(includesZero: false))
+            .chartXAxis { AxisMarks(values: .automatic(desiredCount: 4)) }
+            .frame(height: 200)
+            HStack(spacing: 12) {
+                Label("eBay nuevo", systemImage: "circle.fill").foregroundStyle(Tema.bronce)
+                Label("usado", systemImage: "circle.fill").foregroundStyle(Tema.bronce.opacity(0.45))
+                if verBs { Label("Cochabamba", systemImage: "circle.fill").foregroundStyle(Tema.verde) }
+            }.font(.caption2)
+            if verBs { Text("eBay pasado a Bs con el dólar de hoy, sin courier (para ver la tendencia).").font(.caption2).foregroundStyle(Tema.gris) }
+        }
+    }
+}
 
 struct PreciosView: View {
     @EnvironmentObject var store: Store
@@ -61,6 +91,7 @@ struct PreciosView: View {
 
 struct ProductoDetalle: View {
     var p: Producto
+    @EnvironmentObject var store: Store
     var body: some View {
         ScrollView {
             VStack(spacing: 14) {
@@ -78,6 +109,7 @@ struct ProductoDetalle: View {
                     fila("Margen", F.pct(p.margen), Tema.color(recomendacion: p.recomendacion))
                     fila("Peor caso", F.pct(p.peor))
                 }
+                if let h = store.datos?.historial?[p.producto], h.count > 1 { GraficoPrecio(h: h, tc: store.datos?.dolar.usado ?? 12) }
                 if let u = URL(string: p.link), !p.link.isEmpty {
                     Link(destination: u) { Label("Ver el anuncio en eBay", systemImage: "arrow.up.right.square").frame(maxWidth: .infinity).padding(.vertical, 6) }
                         .buttonStyle(.bordered)

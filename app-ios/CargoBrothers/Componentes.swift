@@ -22,10 +22,14 @@ struct Tarjeta<C: View>: View {
     }
 }
 
-struct Pantalla<C: View>: View {
+struct Pantalla<C: View, B: View>: View {
     var titulo: String
-    @ViewBuilder var contenido: C
+    var contenido: C
+    var barra: B
     @EnvironmentObject var store: Store
+    init(titulo: String, @ViewBuilder contenido: () -> C, @ViewBuilder barra: () -> B) {
+        self.titulo = titulo; self.contenido = contenido(); self.barra = barra()
+    }
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -52,6 +56,7 @@ struct Pantalla<C: View>: View {
             .navigationDestination(for: Pedido.self) { PedidoDetalle(pedido: $0) }
             .navigationDestination(for: Producto.self) { ProductoDetalle(p: $0) }
             .navigationTitle(titulo)
+            .toolbar { ToolbarItemGroup(placement: .topBarTrailing) { barra } }
             .toolbarBackground(Tema.fondo, for: .navigationBar)
         }
     }
@@ -74,4 +79,8 @@ struct MiniSerie: View {
         }
         .chartXAxis(.hidden).chartYAxis(.hidden)
     }
+}
+
+extension Pantalla where B == EmptyView {
+    init(titulo: String, @ViewBuilder contenido: () -> C) { self.init(titulo: titulo, contenido: contenido, barra: { EmptyView() }) }
 }

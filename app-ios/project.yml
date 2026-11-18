@@ -18,7 +18,11 @@ targets:
   CargoBrothers:
     type: application
     platform: iOS
-    sources: [CargoBrothers, Shared]
+    sources:
+      - CargoBrothers
+      - Shared
+      - path: Fotos.xcassets
+        optional: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.cargobrothers.oficina
@@ -35,6 +39,8 @@ targets:
         NSSupportsLiveActivities: true
         NSFaceIDUsageDescription: Para confirmar que eres tú antes de aprobar o rechazar.
         LSApplicationQueriesSchemes: [tg]
+        UIBackgroundModes: [fetch]
+        BGTaskSchedulerPermittedIdentifiers: [com.cargobrothers.oficina.refresh]
         BotUsuario: $(BOT_USUARIO)
     dependencies:
       - target: CargoWidgets

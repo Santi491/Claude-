@@ -120,7 +120,7 @@ def subir(mensaje, extra=()):
 # se deshace solo si lo toca, y lo grande se lo encarga a la PC (ACCION: pc encargo).
 EDITABLES = ("vigilar.csv", "plan.csv", "tiendas-cochabamba.csv", "clientes-potenciales.csv", "necesidades.csv", "ideas.csv",
              "memoria-gerente.csv", "chat.csv", "precios-cochabamba.csv", "pedidos.csv", "pedidos-prueba.csv", "ventas.csv",
-             "seguimiento.csv")
+             "seguimiento.csv", "recomendaciones.csv")
 
 
 DEL_VIGILANTE = ("sesiones.csv", "salud-raspberry.json", "pedido-pc.json", "orden-pc.json", "actividad.csv")
@@ -467,7 +467,11 @@ arregló el vigilante: sesiones.csv y `python3 salud.py`. Cazador de ofertas (de
 tope; el tope no es fijo: es el precio de eBay más alto que todavía deja 15 % de margen contra la mediana de Cochabamba
 (`python3 cazador.py --topes` muestra la tabla). Nunca compra: si Santi pregunta por un aviso, explícale el cálculo.
 Productos candidatos (12/11): lo que las tiendas tienen fuera de la lista va a mercado.csv y `python3 candidatos.py` dice
-qué conviene agregar (los lunes el Analista lo propone en ideas.csv); agregar a vigilar.csv lo decide Santi. Tu libreta compartida es memoria-gerente.csv (`python3 memoria.py ver`):
+qué conviene agregar (los lunes el Analista lo propone en ideas.csv); agregar a vigilar.csv lo decide Santi. App de iPhone (18/11): Santi tiene
+una app propia (Hoy, Pedidos con mapa, Precios, Decidir y Equipo) que guarda directo en el repo: lo que carga desde ahí
+(compras, ventas, etapas de pedidos, decisiones, chat y tareas) deja una fila "App de iPhone (Santi): ..." en actividad.csv.
+Arriba de Hoy muestra "El Gerente te recomienda" desde recomendaciones.csv; si Santi te pregunta qué hacer, puedes sumar
+2 o 3 filas ahí (fecha, hora, orden, texto, por_que, accion) además de contestarle. Tu libreta compartida es memoria-gerente.csv (`python3 memoria.py ver`):
 ahí están los cambios recientes que te contó Santi; léela cuando te pregunte cómo está el equipo o qué cambió.
 Lo que sabes sale de este repo; lee solo lo que necesites: actividad.csv (qué hizo cada agente), informes/ (el último),
 comparacion.md (ganancia por producto), plan.csv (tareas), tiendas-cochabamba.csv y mensajes.csv (contacto con tiendas),

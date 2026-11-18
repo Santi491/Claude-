@@ -41,14 +41,45 @@ struct Datos: Codable {
     var objetivos: [Objetivo]
     var salud: [Salud]
     var alertas: [String]
+    // pantallas de cada agente, calculadora y venta (18/11); opcionales para leer datos viejos
+    var vigilar: [Vigilado]?
+    var historial: [String: [Hist]]?
+    var locales: [String: [Local]]?
+    var whatsapp: WhatsApp?
+    var demanda: [Demanda]?
+    var documentos: [Documento]?
+    var informes: [Informe]?
+    var memoria: [Nota]?
+    var chat: [Mensaje]?
+    var salud14: [[String: String]]?
+    var finanzas_productos: [FinProducto]?
+    var recomendaciones: [Recomendacion]?
+    var recomendaciones_cuando: String?
+    var constantes: Constantes?
 }
 
+struct Vigilado: Codable, Identifiable, Hashable { var producto: String; var cat: String; var peso_g: Double; var mediana_bs: Double?; var tope_usd: Double?; var id: String { producto } }
+struct Hist: Codable, Identifiable, Hashable { var fecha: String; var nuevo: Double?; var usado: Double?; var mkt: Double?; var tienda: Double?; var id: String { fecha } }
+struct Local: Codable, Identifiable, Hashable { var bs: Double?; var src: String; var vendedor: String; var estado: String; var fecha: String; var url: String; var cuenta: Bool; var id: String { vendedor + fecha + String(bs ?? 0) } }
+struct SerieWA: Codable, Identifiable, Hashable { var fecha: String; var nuevos: Double; var respuestas: Double; var con_precio: Double; var id: String { fecha } }
+struct WhatsApp: Codable { var tiendas_total: Double?; var contactadas_7d: Double?; var respondieron_7d: Double?; var tasa_7d: Double?
+    var lista_pedida: Int?; var lista_faltan: Int?; var seguimiento: [String]; var responder: [String]; var frias: Int?; var respondieron: Int?; var serie: [SerieWA] }
+struct Demanda: Codable, Identifiable, Hashable { var producto: String; var anuncios: Double?; var nuevos: Double?; var desaparecidos: Double?; var precio_bs: Double?; var tendencia: Double?; var lectura: String; var puntaje: Double?; var id: String { producto } }
+struct Documento: Codable, Identifiable, Hashable { var titulo: String; var tipo: String; var fecha: String; var url: String; var carpeta: String; var id: String { url } }
+struct Informe: Codable, Identifiable, Hashable { var fecha: String; var tipo: String; var url: String; var id: String { url } }
+struct Nota: Codable, Identifiable, Hashable { var id: String; var tipo: String; var resumen: String; var vence: String; var fecha: String }
+struct Mensaje: Codable, Identifiable, Hashable { var id: String; var fecha: String; var hora: String; var de: String; var para: String; var texto: String }
+struct FinProducto: Codable, Identifiable, Hashable { var producto: String; var comprado: Double?; var en_camino: Double?; var en_stock: Double?; var vendido: Double?; var costo_unitario_bs: Double?; var ganancia_bs: Double?; var id: String { producto } }
+struct Recomendacion: Codable, Identifiable, Hashable { var texto: String; var por_que: String; var accion: String; var id: String { texto } }
+struct Constantes: Codable { var b_usd_kg: Double; var b_min_kg: Double; var b_paso_kg: Double; var caja_g: Double; var a_usd: Double; var a_tax: Double }
+
 struct Etapa: Codable { var numero: Int?; var nombre: String }
-struct Punto: Codable, Identifiable { var fecha: String; var valor: Double?; var id: String { fecha } }
+struct Punto: Codable, Identifiable { var fecha: String; var valor: Double?; var oficial: Double?; var paralelo: Double?; var id: String { fecha } }
 struct Dolar: Codable { var usado: Double?; var oficial: Double?; var paralelo: Double?; var fecha: String; var serie: [Punto] }
 
 struct Evento: Codable, Identifiable, Hashable {
     var fecha: String; var hora: String; var lugar: String; var evento: String
+    var lat: Double?; var lon: Double?
     var id: String { fecha + hora + evento }
 }
 
@@ -62,6 +93,8 @@ struct Pedido: Codable, Identifiable, Hashable {
     var fecha_compra: String
     var actualizado: String
     var eventos: [Evento]
+    var tienda: String?
+    var courier: String?
     var entregado: Bool { etapa >= etapas.count - 1 }
 }
 
@@ -127,6 +160,14 @@ enum Tema {
     }
 }
 
+enum Equipo {
+    static let nombres = ["gerente": "Gerente", "wa": "WhatsApp", "mkt": "Marketplace", "ebay": "Rastreador eBay", "ana": "Analista",
+                          "pedidos": "Pedidos", "fin": "Finanzas", "dem": "Analista de demanda", "nube": "Informe diario",
+                          "local": "Oficina", "santi": "Santi"]
+    static let orden = ["gerente", "wa", "mkt", "ebay", "ana", "pedidos", "fin", "dem", "nube"]
+    static func nombre(_ a: String) -> String { nombres[a] ?? a }
+}
+
 enum F {
     static func bs(_ v: Double?) -> String {
         guard let v else { return "—" }
@@ -144,6 +185,11 @@ enum F {
     static func num(_ v: Double?, _ dec: Int = 2) -> String {
         guard let v else { return "—" }
         return String(format: "%.\(dec)f", v).replacingOccurrences(of: ".", with: ",")
+    }
+    static var ahoraBO: Date { Date() }
+    static func bo(_ formato: String, _ d: Date = Date()) -> String {
+        let f = DateFormatter(); f.locale = Locale(identifier: "es_BO"); f.timeZone = TimeZone(identifier: "America/La_Paz"); f.dateFormat = formato
+        return f.string(from: d)
     }
     /// "2026-11-18" -> "18/11"
     static func dia(_ s: String) -> String {

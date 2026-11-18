@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.cargobrothers.oficina.refresh</string>
+	</array>
 	<key>BotUsuario</key>
 	<string>$(BOT_USUARIO)</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -30,6 +34,10 @@
 	<string>Para confirmar que eres tú antes de aprobar o rechazar.</string>
 	<key>NSSupportsLiveActivities</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>
