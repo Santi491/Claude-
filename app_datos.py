@@ -124,7 +124,46 @@ def extras(D, caz):
         rec_cuando = ult
     else:
         rec_cuando = ""
+    # ---------- ventas: clientes potenciales, nuestros anuncios y tiendas (Santi, 18/11) ----------
+    clientes = [{"tienda": c["tienda"], "grupo": c.get("grupo", ""), "prioridad": c.get("prioridad", ""),
+                 "por_que": c.get("por_que", ""), "productos": c.get("productos_interes", ""),
+                 "precio_ref_bs": num(c.get("precio_referencia_bs")), "proximo_paso": c.get("proximo_paso", ""),
+                 "actualizado": c.get("actualizado", "")} for c in leer_csv("clientes-potenciales.csv")]
+    publicaciones = [{k: f.get(k, "") for k in ("fecha", "hora", "producto", "accion", "precio_bs", "cantidad", "titulo",
+                                                "clics", "mensajes", "notas")} for f in leer_csv("publicaciones.csv")]
+    msj = leer_csv("mensajes.csv")
+    pcb = leer_csv("precios-cochabamba.csv")
+    cli = {c["tienda"].lower(): c for c in clientes}
+    tiendas = []
+    for t in leer_csv("tiendas-cochabamba.csv"):   # sin teléfono, dirección ni notas (pueden traer números)
+        n = t["tienda"]
+        mm = [m for m in msj if m.get("tienda") == n]
+        pr = [{"fecha": x["fecha"], "producto": x["producto"], "precio_bs": num(x.get("precio_bs")), "estado": x.get("estado", "")}
+              for x in pcb if (x.get("fuente") or "").lower().startswith(n.lower()) and num(x.get("precio_bs"))]
+        c = cli.get(n.lower(), {})
+        tiendas.append({"id": t.get("id", ""), "tienda": n, "ciudad": t.get("ciudad", ""), "estado": t.get("estado_contacto", ""),
+                        "vende": t.get("vende_componentes", ""), "ultima": t.get("ultima_consulta", ""),
+                        "enviados": sum(1 for m in mm if m.get("direccion") == "enviado"),
+                        "recibidos": sum(1 for m in mm if m.get("direccion") == "recibido"),
+                        "con_precio": sum(1 for m in mm if (m.get("con_precio") or "").startswith("s")),
+                        "ultimo_mensaje": max((m["fecha"] for m in mm), default=""),
+                        "grupo": c.get("grupo", ""), "precios": sorted(pr, key=lambda x: x["fecha"], reverse=True)[:12]})
+    # ---------- documentos para leer dentro de la app ----------
+    import glob
+    inf_nube = [{"fecha": os.path.basename(f)[:10], "ruta": "informes/" + os.path.basename(f)}
+                for f in sorted(glob.glob(os.path.join(DIR, "informes", "20??-??-??.md")), reverse=True)[:30]]
+    catalogos = [{"fecha": c["fecha"], "tienda": c["tienda"], "canal": c.get("canal", ""), "formato": c.get("formato", ""),
+                  "descripcion": c.get("descripcion", ""), "productos": c.get("productos", ""), "precios": c.get("precios_anotados", ""),
+                  "ruta": ("oficina/" + c["archivo"]) if c.get("archivo") and os.path.exists(os.path.join(DIR, "oficina", c["archivo"])) else ""}
+                 for c in leer_csv("catalogos.csv")]
+    catalogos.sort(key=lambda c: c["fecha"], reverse=True)
+    capturas = [{"fecha": c["fecha"], "hora": c.get("hora", ""), "agente": c.get("agente", ""), "descripcion": c.get("descripcion", ""),
+                 "ruta": "oficina/" + c["archivo"]} for c in leer_csv("oficina/capturas.csv")
+                if c.get("archivo") and os.path.exists(os.path.join(DIR, "oficina", c["archivo"])) and c.get("agente") != "wa"]
+    capturas.sort(key=lambda c: c["fecha"] + c["hora"], reverse=True)
     return {
+        "clientes": clientes, "publicaciones": publicaciones, "tiendas": tiendas,
+        "informes_nube": inf_nube, "catalogos": catalogos, "capturas": capturas[:30],
         "vigilar": vig, "historial": hist, "locales": locales, "whatsapp": whatsapp, "demanda": demanda,
         "documentos": docs[:40], "informes": informes[:30], "memoria": memoria, "chat": chat, "salud14": salud14,
         "finanzas_productos": fin_prod, "recomendaciones": rec, "recomendaciones_cuando": rec_cuando,

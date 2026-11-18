@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-18 14:52",
+ "generado": "2026-11-18 15:08",
  "etapa": {
   "numero": 1,
   "nombre": "producto en camino"
@@ -1480,6 +1480,3757 @@
   "⬇ Ryzen 5 7600 (nuevo) bajó 14% en eBay: USD 304.97 → 261.69",
   "✅ Ahora conviene Intel Core i5-14400F (nuevo): +16% · costo puesto Bs 1.997 vs Bs 2.384 en Cochabamba",
   "⬇ SSD NVMe 1TB (usado) bajó 22% en eBay: USD 103.13 → 79.95"
+ ],
+ "clientes": [
+  {
+   "tienda": "Ovni Express Cbba",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "alta",
+   "por_que": "Respondió que no tiene producto y pidió que le avisen si llegan CPU o RAM DDR5",
+   "productos": "CPU y RAM DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 2 de 22 para ofrecer (pidió que le avisen si llegan CPU o DDR5; hoy pasó otro contacto) · Solo observar; cuando haya costos reales de envío, es de las primeras para ofrecer",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Click Importadora Cochabamba",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "alta",
+   "por_que": "Mayorista de computadoras; respondió \"Sin stock\" para 7600, 5700X3D y Corsair DDR5 6000",
+   "productos": "Ryzen 5 7600 · Ryzen 7 5700X3D · DDR5 32GB 6000",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 4 de 22 para ofrecer (mayorista sin 7600, 5700X3D ni DDR5 6000) · Solo observar; ofrecer cuando haya costos reales",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "SpartanComputer Cbba",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "alta",
+   "por_que": "No tenía ninguno de los componentes pedidos (5600, 5700X3D, Corsair DDR5 6000); tiene catálogo en WhatsApp",
+   "productos": "Ryzen 5 5600 · Ryzen 7 5700X3D · DDR5 32GB 6000",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 5 de 22 para ofrecer (sin 5600, 5700X3D ni DDR5 6000; tiene catálogo) · Solo observar; ofrecer cuando haya costos reales",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Soft Computers",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "media",
+   "por_que": "Vende CPU pero en RAM solo tiene DDR4: no tiene DDR5",
+   "productos": "RAM DDR5 32GB",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 9 de 22 para ofrecer (vende CPU; sin SSD 2TB ni DDR5 32GB) · Solo observar; posible cliente de DDR5",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "OverCity",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "prioridad": "media",
+   "por_que": "Vende CPU OEM y en caja; la Corsair DDR5 se le agotó (ofrece XPG/Apacer); 7800X3D sellado 5.350 y OEM 5.500; i5-14400F 2.460 es su mínimo",
+   "productos": "Corsair DDR5 32GB 6000 · 7800X3D",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar; le serviría la Corsair DDR5 que no consigue",
+   "actualizado": "2026-10-13"
+  },
+  {
+   "tienda": "Tienda Supermall (Punto Tecnológico)",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "prioridad": "media",
+   "por_que": "Vende procesadores sueltos; el 265K solo lo tiene en Santa Cruz",
+   "productos": "Core Ultra 7 265K · 7800X3D",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar; el 265K le falta en Cochabamba",
+   "actualizado": "2026-10-13"
+  },
+  {
+   "tienda": "Cyrex Store",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "prioridad": "media",
+   "por_que": "Tienda con web de hardware gamer; precios altos (7800X3D BOX 5.664, 14400F OEM 2.537)",
+   "productos": "7800X3D · i5-14400F · DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar; si nuestro costo queda por debajo, es candidata",
+   "actualizado": "2026-10-13"
+  },
+  {
+   "tienda": "Viadata Computadoras",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "prioridad": "baja",
+   "por_que": "Vende procesadores sueltos OEM y en caja (7800X3D 5.500, 5600X 2.500, 265KF 5.200); tiene proveedor",
+   "productos": "7800X3D · 265K",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar",
+   "actualizado": "2026-10-13"
+  },
+  {
+   "tienda": "Gamer Store Cbba",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "prioridad": "alta",
+   "por_que": "Arma PCs gamer y vende combos; respondió el 16/10: solo tiene 7600X (USD 175) y combo AM5 Bs 5.900; le falta stock de la lista",
+   "productos": "CPU AM4/AM5 · DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 1 de 22 para ofrecer (arma PCs y combos, le falta stock de la lista) · Esperar precio en Bs; candidata fuerte por volumen",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "MSR Computers",
+   "grupo": "D · No apuntar",
+   "prioridad": "baja",
+   "por_que": "No vende sueltos ni por cantidad, pero arma PCs: podría comprar para sus armados. El 16/10 contestó \"No\" cuando se le preguntó si le interesaba que le pasemos precios",
+   "productos": "CPU · RAM",
+   "precio_ref_bs": null,
+   "proximo_paso": "No escribirle más",
+   "actualizado": "2026-10-16"
+  },
+  {
+   "tienda": "Legion Emporium",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "prioridad": "media",
+   "por_que": "\"High-performance PC builds\"; 3 sucursales; catálogo sin precios (todo a cotizar)",
+   "productos": "Ryzen 7000/9000 · DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 10 de 22 para ofrecer (3 sucursales y arma PCs, pero todo 'cotizar' y no responde) · Esperar respuesta a la consulta",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Geek Store Bolivia",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "prioridad": "media",
+   "por_que": "Arma PC gamer; respondió que solo tiene Ryzen 7 7700X y DDR5 de otras marcas (no Corsair)",
+   "productos": "CPU · RAM",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 8 de 22 para ofrecer (arma PC gamer; tiene 7700X y 7500F, le falta 7600/7800X3D/SSD 2TB) · Esperar precio del 7700X",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "PC Components Bolivia",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "prioridad": "baja",
+   "por_que": "Arma PCs; es de otra ciudad (referencia); Corsair DDR5 6000 a 6.800",
+   "productos": "DDR5 32GB 6000 · NVMe",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 22 de 22 para ofrecer (otra ciudad: solo referencia de precios) · Solo referencia de precios",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "SMART CUBE",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "prioridad": "media",
+   "por_que": "Vende procesadores y RAM sueltos con factura: 7800X3D 5.890, 14400F 3.080, DDR5 16GB Apacer 3.650; rebaja Bs 50 por 2",
+   "productos": "7800X3D · 14400F · DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar",
+   "actualizado": "2026-10-15"
+  },
+  {
+   "tienda": "TecnoGamer Bolivia",
+   "grupo": "D · No apuntar",
+   "prioridad": "baja",
+   "por_que": "No venden componentes internos (respondió el 14/10); periféricos y monitores",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Nada",
+   "actualizado": "2026-10-14"
+  },
+  {
+   "tienda": "Display Importadora",
+   "grupo": "E · Por calificar",
+   "prioridad": "media",
+   "por_que": "sigue E: 3 mensajes sin entrega (un solo check, número probable inactivo); sin dato",
+   "productos": "7800X3D · 7600 · NVMe 2TB",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar otro número o su Facebook",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "T&T Todo en Tecnología",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "prioridad": "baja",
+   "por_que": "Vende procesadores OEM con cooler: 12400F 2.260 y 14400F 2.750 (Bs 20 menos por 2); Corsair DDR5 agotada",
+   "productos": "14400F · 12400F · DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar",
+   "actualizado": "2026-10-15"
+  },
+  {
+   "tienda": "Distribuidora DyD",
+   "grupo": "D · No apuntar por ahora",
+   "prioridad": "media",
+   "por_que": "El número de Google Maps es equivocado (no es la distribuidora)",
+   "productos": "7600 · 265K · NVMe 2TB",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar el número correcto",
+   "actualizado": "2026-10-15"
+  },
+  {
+   "tienda": "PC Morgana",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "baja",
+   "por_que": "Respondió que no le está llegando 7800X3D, 14400F ni DDR5",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 19 de 22 para ofrecer (sin 7800X3D, 14400F ni DDR5) · Solo observar",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Centro PC",
+   "grupo": "E · Por calificar",
+   "prioridad": "baja",
+   "por_que": "sigue E: sin respuesta a 3 mensajes; 17/11 lista completa",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Esperar respuesta",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Computer World",
+   "grupo": "D · No apuntar",
+   "prioridad": "baja",
+   "por_que": "13/11 respondió a la lista: no vende componentes, solo portátiles, accesorios y repuestos de portátiles",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "No escribir más",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "4 Gamers",
+   "grupo": "E · Por calificar",
+   "prioridad": "media",
+   "por_que": "sigue E: solo respuesta automática (13/10); sin dato de qué vende",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Esperar respuesta",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "PortatiComps",
+   "grupo": "E · Por calificar",
+   "prioridad": "baja",
+   "por_que": "sigue E: sin respuesta a 3 mensajes",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Esperar respuesta",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Hardware Technology",
+   "grupo": "D · No apuntar por ahora",
+   "prioridad": "baja",
+   "por_que": "Vende equipos armados HP/AIO; no tiene 5600 ni 5700X3D",
+   "productos": "5600 · 5700X3D",
+   "precio_ref_bs": null,
+   "proximo_paso": "Nada",
+   "actualizado": "2026-10-15"
+  },
+  {
+   "tienda": "PC Factor",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "baja",
+   "por_que": "Solo tenía RAM DDR5 16GB (USD 320) y le queda 1; no tiene procesadores de la lista",
+   "productos": "7600 · 5600 · DDR5 32GB",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 18 de 22 para ofrecer (solo DDR5 16GB; sin procesadores) · Solo observar",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Electro-TTS",
+   "grupo": "E · Por calificar",
+   "prioridad": "baja",
+   "por_que": "sigue E: solo \"No case\" (15/10), no queda claro si vende",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Compucenter",
+   "grupo": "D · No apuntar por ahora",
+   "prioridad": "baja",
+   "por_que": "Importa directo desde Miami y dijo que no busca proveedores",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "No ofrecer",
+   "actualizado": "2026-10-13"
+  },
+  {
+   "tienda": "Computer Magic Bolivia",
+   "grupo": "D · No apuntar por ahora",
+   "prioridad": "baja",
+   "por_que": "No vende procesadores ni RAM",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "No ofrecer",
+   "actualizado": "2026-10-13"
+  },
+  {
+   "tienda": "CompuMasters Bolivia",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "prioridad": "media",
+   "por_que": "Su web vende CPU y RAM DDR4/DDR5, pero el número no tiene WhatsApp",
+   "productos": "CPU · RAM",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar otro número o su Facebook",
+   "actualizado": "2026-10-13"
+  },
+  {
+   "tienda": "sYsbol Store",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "prioridad": "baja",
+   "por_que": "Web con RAM y procesadores; número sin WhatsApp",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar otro número",
+   "actualizado": "2026-10-13"
+  },
+  {
+   "tienda": "TiendasClick",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "prioridad": "baja",
+   "por_que": "Componentes electrónicos (Google Maps); número sin WhatsApp",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar otro número",
+   "actualizado": "2026-10-13"
+  },
+  {
+   "tienda": "Concordex Computer",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "prioridad": "baja",
+   "por_que": "Electrónica (Google Maps); número sin WhatsApp",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar otro número",
+   "actualizado": "2026-10-13"
+  },
+  {
+   "tienda": "Importadora Fusión",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "prioridad": "baja",
+   "por_que": "Accesorios informáticos (Google Maps); número sin WhatsApp",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar otro número",
+   "actualizado": "2026-10-13"
+  },
+  {
+   "tienda": "Crazy Store",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "baja",
+   "por_que": "Solo les llegan algunos productos cuando los encuentran de oferta (hoy un solo procesador: i9-14900K Bs 6.013); tienda grande (11,8 mil seguidores) que además trae productos de EE.UU. (posible competencia)",
+   "productos": "7800X3D · i5-14400F · Corsair DDR5 6000",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 21 de 22 para ofrecer (trae de EE.UU., posible competencia) · Solo observar; cuando haya costos reales de envío, evaluar",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "ECOM (Economic Computers)",
+   "grupo": "E · Por calificar",
+   "prioridad": "baja",
+   "por_que": "sigue E: sin respuesta a 3 mensajes; 17/11 lista completa",
+   "productos": "7600 · 12400F · DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "Esperar respuesta",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Shopping PC",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "prioridad": "media",
+   "por_que": "Mayorista con mucho stock (40 i5-14400, 146 SSD NV3 1TB) y lista en USD sin factura; garantía solo de prueba. No tiene Ryzen 7000/7800X3D ni Corsair DDR5",
+   "productos": "Ryzen 7000 · 7800X3D · Corsair DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar; es referencia de precio mayorista (posible competencia)",
+   "actualizado": "2026-10-15"
+  },
+  {
+   "tienda": "NF Evolution",
+   "grupo": "D · No apuntar por ahora",
+   "prioridad": "baja",
+   "por_que": "Solo vende tarjetas de video",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Nada",
+   "actualizado": "2026-10-15"
+  },
+  {
+   "tienda": "PCBOX",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "baja",
+   "por_que": "Servicio de informática; respondió que no tiene stock disponible",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 20 de 22 para ofrecer (servicio de informática sin stock) · Solo observar",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "MI PC",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "prioridad": "media",
+   "por_que": "Tienda de informática en Gold Center con buenas opiniones de precios; solo teléfono fijo",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar celular en Facebook",
+   "actualizado": "2026-10-15"
+  },
+  {
+   "tienda": "Punto Tecnológico",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "prioridad": "media",
+   "por_que": "Mayorista en la Esteban Arce (Tecnocenter); cotizó Ryzen 5 7600 OEM Bs 2.850 y DDR5 Nox Tuf, garantía 6 meses",
+   "productos": "Ryzen 5 7600, 7800X3D, Corsair DDR5 32GB",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar; esperar 7800X3D y precio por 2",
+   "actualizado": "2026-10-17"
+  },
+  {
+   "tienda": "PC Calderon",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "prioridad": "baja",
+   "por_que": "Tienda de accesorios informáticos en la Esteban Arze; su número no tiene WhatsApp",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar contacto por Facebook si hace falta",
+   "actualizado": "2026-10-16"
+  },
+  {
+   "tienda": "PC Armagedon",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "prioridad": "alta",
+   "por_que": "12/11 arma PCs (pregunta si es PC completa; da combo 7600+DDR5 Bs 6.050)",
+   "productos": "Ryzen 5 7600, DDR5 32GB",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 6 de 22 para ofrecer (arma PCs; compite con 265K 4.010 y 9600X 2.560) · Candidata para ofrecer cuando Santi apruebe",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "TECH COCHA",
+   "grupo": "E · Por calificar",
+   "prioridad": "baja",
+   "por_que": "sigue E, probable D: solo automática de servicio técnico a domicilio; esperar respuesta a la lista",
+   "productos": "CPU y RAM DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "Esperar su respuesta",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "ADN Gamer Store",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "prioridad": "media",
+   "por_que": "12/11 vende 7800X3D USD 520 y Ryzen 5 7600X/8400F, con garantía de tienda: revende CPU",
+   "productos": "CPU",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar; compararía precio",
+   "actualizado": "2026-11-12"
+  },
+  {
+   "tienda": "Gamer Factory Bolivia",
+   "grupo": "F · Sin WhatsApp",
+   "prioridad": "baja",
+   "por_que": "Tienda de accesorios en el Gold Center; Google Maps no tiene teléfono",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscarla en Facebook o Instagram",
+   "actualizado": "2026-10-17"
+  },
+  {
+   "tienda": "COMPUTING",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "baja",
+   "por_que": "Tienda de informática en Totora; respondió 'no tenemos stock' (21/10) por 7600/7500F",
+   "productos": "CPU",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 15 de 22 para ofrecer (sin stock de 7600/7500F (21/10) y 17/11 sin stock) · Esperar nuevo stock; no insistir",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Esteban Arce",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "media",
+   "por_que": "Tienda/reparación en C. Esteban Arze; 23/10 reenvió: 'no están disponibles, aún no llegan' (DDR5, SSD, Ryzen)",
+   "productos": "RAM DDR5, SSD, CPU",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 13 de 22 para ofrecer (sin stock de DDR5, SSD y Ryzen (23/10)) · Esperar nuevo stock; no insistir",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Accesorios Master Pc",
+   "grupo": "D · No apuntar",
+   "prioridad": "baja",
+   "por_que": "12/11 no tiene componentes para armar PC (no vende CPU/RAM)",
+   "productos": "CPU, RAM DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "No escribir más",
+   "actualizado": "2026-11-12"
+  },
+  {
+   "tienda": "Nerd Tecnologias",
+   "grupo": "D · No apuntar (no vende CPU/RAM)",
+   "prioridad": "baja",
+   "por_que": "Solo servicio técnico de computadoras, laptops e impresoras (respondió 23/10)",
+   "productos": "CPU, SSD",
+   "precio_ref_bs": null,
+   "proximo_paso": "No escribir más",
+   "actualizado": "2026-10-23"
+  },
+  {
+   "tienda": "Cocotech - Sucursal América",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "baja",
+   "por_que": "Respondió 'no tenemos' (19/10) por Ryzen 5 7600 e i5-14400F",
+   "productos": "CPU",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 16 de 22 para ofrecer (sin 7600 ni 14400F (19/10)) · Esperar nuevo stock; no insistir",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Importadora Ardunel - Quillacollo",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "baja",
+   "por_que": "Respondió 'no tuviera esos productos' (19/10) por 7600 y DDR5 32GB; Quillacollo",
+   "productos": "CPU, RAM DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 17 de 22 para ofrecer (sin 7600 ni DDR5 (19/10)) · Esperar nuevo stock; no insistir",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "TechMax Computers Cbba",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "media",
+   "por_que": "22/10: 'se nos acabaron los componentes'; solo i9 14900K y Core Ultra 7 270K (Bs 4.300, sin garantía, traído de EEUU); 23/10 aclaró que no es el 265K",
+   "productos": "CPU",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 12 de 22 para ofrecer (sin componentes; es particular sin garantía) · Observar; es particular sin garantía",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Compubol",
+   "grupo": "F · Sin WhatsApp",
+   "prioridad": "baja",
+   "por_que": "Encontrada 29/10 sin WhatsApp a la vista (Google Maps + TikTok)",
+   "productos": "CPU, RAM",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar celular o mensaje directo por la red; no escribir hasta tenerlo",
+   "actualizado": "2026-10-29"
+  },
+  {
+   "tienda": "Importadora TangoSoft S.R.L.",
+   "grupo": "F · Sin WhatsApp",
+   "prioridad": "baja",
+   "por_que": "Encontrada 29/10 sin WhatsApp a la vista (Google Maps)",
+   "productos": "CPU, RAM",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar celular o mensaje directo por la red; no escribir hasta tenerlo",
+   "actualizado": "2026-10-29"
+  },
+  {
+   "tienda": "Evolucion Digital",
+   "grupo": "F · Sin WhatsApp",
+   "prioridad": "baja",
+   "por_que": "Encontrada 29/10 sin WhatsApp a la vista (Google Maps)",
+   "productos": "CPU, RAM",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar celular o mensaje directo por la red; no escribir hasta tenerlo",
+   "actualizado": "2026-10-29"
+  },
+  {
+   "tienda": "Grupo SERCOMEX",
+   "grupo": "F · Sin WhatsApp",
+   "prioridad": "baja",
+   "por_que": "Encontrada 29/10 sin WhatsApp a la vista (Google Maps)",
+   "productos": "CPU, RAM",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar celular o mensaje directo por la red; no escribir hasta tenerlo",
+   "actualizado": "2026-10-29"
+  },
+  {
+   "tienda": "Componentes PC",
+   "grupo": "F · Sin WhatsApp",
+   "prioridad": "baja",
+   "por_que": "Encontrada 29/10 sin WhatsApp a la vista (Facebook)",
+   "productos": "CPU, RAM",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar celular o mensaje directo por la red; no escribir hasta tenerlo",
+   "actualizado": "2026-10-29"
+  },
+  {
+   "tienda": "Pc Master Cochabamba",
+   "grupo": "F · Sin WhatsApp",
+   "prioridad": "baja",
+   "por_que": "Encontrada 29/10 sin WhatsApp a la vista (Facebook)",
+   "productos": "CPU, RAM",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar celular o mensaje directo por la red; no escribir hasta tenerlo",
+   "actualizado": "2026-10-29"
+  },
+  {
+   "tienda": "Technology upper fix",
+   "grupo": "F · Sin WhatsApp",
+   "prioridad": "baja",
+   "por_que": "Encontrada 29/10 sin WhatsApp a la vista (Facebook)",
+   "productos": "CPU, RAM",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar celular o mensaje directo por la red; no escribir hasta tenerlo",
+   "actualizado": "2026-10-29"
+  },
+  {
+   "tienda": "Comcell Corp (Cochabamba)",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "prioridad": "baja",
+   "por_que": "Accesorios informáticos (Google Maps); número sin WhatsApp",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar otro número",
+   "actualizado": "2026-10-30"
+  },
+  {
+   "tienda": "BLADTHOR",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "prioridad": "baja",
+   "por_que": "Tienda de informática (Google Maps); número sin WhatsApp",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar otro número",
+   "actualizado": "2026-10-30"
+  },
+  {
+   "tienda": "IPcenter",
+   "grupo": "E · Por calificar",
+   "prioridad": "media",
+   "por_que": "sigue E: 02/11 preguntó si era para PC; sin dato de qué vende",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Esperar respuesta",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Compumas Bolivia",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "prioridad": "alta",
+   "por_que": "03/11 respondió: no vende partes, arma y cotiza PCs nuevas",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 3 de 22 para ofrecer (arma y cotiza PCs nuevas (no vende partes)) · Sin ofrecer nada; evaluar con Marketplace",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Creative Technology",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "media",
+   "por_que": "03/11 respondió: sin Ryzen ni DDR5 por ahora",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 11 de 22 para ofrecer (sin Ryzen ni DDR5 (03/11)) · Sin ofrecer nada; revisar más adelante",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "i2C Electronics",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "alta",
+   "por_que": "12/11 respondió \"no tenemos en stock\" (sin Ryzen/SSD)",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 7 de 22 para ofrecer (sin 7600 ni SSD 2TB (el SSD 2TB es lo de mayor margen)) · Posible cliente; observar",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "KANG MIN ELECTRONICS",
+   "grupo": "D · No apuntar",
+   "prioridad": "baja",
+   "por_que": "12/11 trabaja con sistemas ERP y CRM: no vende componentes",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "No escribir más",
+   "actualizado": "2026-11-12"
+  },
+  {
+   "tienda": "COMPUMUNDOHIPERMEGARED",
+   "grupo": "D · No apuntar",
+   "prioridad": "baja",
+   "por_que": "12/11 solo mouse, teclado y fuentes: no vende CPU/RAM/SSD",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "No apuntar",
+   "actualizado": "2026-11-12"
+  },
+  {
+   "tienda": "EMPRESEL Electrónica",
+   "grupo": "E · Por calificar",
+   "prioridad": "media",
+   "por_que": "sigue E: 04/11 solo \"no\" a 7600 y SSD 2TB; electrónica general, sin dato de qué vende",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Esperar respuesta",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "All Electric",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "prioridad": "baja",
+   "por_que": "Google Maps (tienda de informatica Quillacollo); el numero no tiene WhatsApp (04/11)",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Buscar otro numero o su Facebook",
+   "actualizado": "2026-11-04"
+  },
+  {
+   "tienda": "PC Gaming Forge",
+   "grupo": "E · Por calificar",
+   "prioridad": "media",
+   "por_que": "sigue E: solo automática; 17/11 lista completa",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Esperar respuesta",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "CRISTECNOLOGY",
+   "grupo": "E · Por calificar",
+   "prioridad": "media",
+   "por_que": "sigue E, probable D: la automática dice laptops y accesorios (INNOVA TECH); nota de voz sin escuchar",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Esperar respuesta; confirmar nombre",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Cyrex Store América",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "prioridad": "media",
+   "por_que": "12/11 vende 7600X Bs 2.677,50 y WD Green 2TB SATA; sin SSD NVMe 2TB: revende con poco stock",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar",
+   "actualizado": "2026-11-12"
+  },
+  {
+   "tienda": "Orange Computer",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "prioridad": "media",
+   "por_que": "12/11 mayorista: SSD NVMe 1TB Bs 1.550 sellado; sin procesadores",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar; compararía SSD",
+   "actualizado": "2026-11-12"
+  },
+  {
+   "tienda": "HooperBolivia",
+   "grupo": "E · Por calificar",
+   "prioridad": "baja",
+   "por_que": "sigue E: solo preguntó de qué departamento son",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Esperar respuesta; verificar si vende componentes",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "TECH - Mantenimiento de Computadoras",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "prioridad": "baja",
+   "por_que": "06/11 solo vende equipos armados, no componentes sueltos",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Orden 14 de 22 para ofrecer (solo equipos armados, no componentes) · No escribir más por componentes; posible cliente de armados (sin ofrecer nada)",
+   "actualizado": "2026-11-17"
+  },
+  {
+   "tienda": "Smash Games",
+   "grupo": "D · No apuntar",
+   "prioridad": "baja",
+   "por_que": "06/11 gaming center de consolas, no vende nada de PC",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "No escribir más",
+   "actualizado": "2026-11-06"
+  },
+  {
+   "tienda": "STORE BOLIVIA",
+   "grupo": "D · No apuntar",
+   "prioridad": "baja",
+   "por_que": "16/11 respondió \"no case / nada de eso\": no vende componentes",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "No escribir más",
+   "actualizado": "2026-11-17"
+  }
+ ],
+ "publicaciones": [],
+ "tiendas": [
+  {
+   "id": "T001",
+   "tienda": "CompuMasters Bolivia",
+   "ciudad": "Cochabamba",
+   "estado": "número sin WhatsApp",
+   "vende": "sí (web: CPU Intel/AMD; RAM DDR4/DDR5; SSD)",
+   "ultima": "2026-10-11",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "precios": []
+  },
+  {
+   "id": "T002",
+   "tienda": "sYsbol Store",
+   "ciudad": "Cochabamba",
+   "estado": "número sin WhatsApp",
+   "vende": "sí (web: RAM y procesadores)",
+   "ultima": "2026-10-11",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "precios": []
+  },
+  {
+   "id": "T003",
+   "tienda": "Compucenter",
+   "ciudad": "Cochabamba (solo online)",
+   "estado": "respondió",
+   "vende": "sí (web: RAM)",
+   "ultima": "2026-11-18",
+   "enviados": 3,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-18",
+   "grupo": "D · No apuntar por ahora",
+   "precios": [
+    {
+     "fecha": "2026-10-12",
+     "producto": "RAM DDR4 16GB (2x8) 3200",
+     "precio_bs": 2150.0,
+     "estado": "nuevo (Corsair Vengeance RGB DDR4 16GB 3600; no dice si es 2x8; Bs 2.560 con factura)"
+    }
+   ]
+  },
+  {
+   "id": "T004",
+   "tienda": "MSR Computers",
+   "ciudad": "Cochabamba",
+   "estado": "no vende sueltos; no contactar",
+   "vende": "no sueltos (respondió: \"No vendemos sueltos. Y menos por cantidad\")",
+   "ultima": "2026-10-16",
+   "enviados": 0,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-16",
+   "grupo": "D · No apuntar",
+   "precios": [
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 7 7800X3D",
+     "precio_bs": 4900.0,
+     "estado": "no cuenta: MSR no vende sueltos (referencia web; condición sin dato)"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 9 9950X",
+     "precio_bs": 5580.0,
+     "estado": "no cuenta: MSR no vende sueltos (referencia web; condición sin dato)"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 9 9950X3D",
+     "precio_bs": 7600.0,
+     "estado": "no cuenta: MSR no vende sueltos (referencia web; condición sin dato)"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Intel Core i5-12400F",
+     "precio_bs": 1800.0,
+     "estado": "no cuenta: MSR no vende sueltos (referencia web; condición sin dato)"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Intel Core i5-13400",
+     "precio_bs": 2300.0,
+     "estado": "no cuenta: MSR no vende sueltos (referencia web; condición sin dato)"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Intel Core i5-14400F",
+     "precio_bs": 2250.0,
+     "estado": "no cuenta: MSR no vende sueltos (referencia web; condición sin dato)"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Intel Core Ultra 7 265K",
+     "precio_bs": 3950.0,
+     "estado": "no cuenta: MSR no vende sueltos (referencia web; condición sin dato)"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 5 9600X",
+     "precio_bs": 2600.0,
+     "estado": "no cuenta: MSR no vende sueltos (referencia web; condición sin dato)"
+    },
+    {
+     "fecha": "2026-11-10",
+     "producto": "Ryzen 9 9950X",
+     "precio_bs": 5580.0,
+     "estado": "no cuenta: MSR no vende sueltos (referencia web; condición sin dato)"
+    },
+    {
+     "fecha": "2026-11-10",
+     "producto": "Intel Core i5-12400F",
+     "precio_bs": 1800.0,
+     "estado": "no cuenta: MSR no vende sueltos (referencia web; condición sin dato)"
+    },
+    {
+     "fecha": "2026-11-10",
+     "producto": "Intel Core i5-13400",
+     "precio_bs": 2300.0,
+     "estado": "no cuenta: MSR no vende sueltos (referencia web; condición sin dato)"
+    },
+    {
+     "fecha": "2026-11-10",
+     "producto": "Intel Core i5-14400F",
+     "precio_bs": 2250.0,
+     "estado": "no cuenta: MSR no vende sueltos (referencia web; condición sin dato)"
+    }
+   ]
+  },
+  {
+   "id": "T005",
+   "tienda": "Gamer Store Cbba",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "sí (Facebook: combos Mobo+CPU+RAM; arma PCs gamer)",
+   "ultima": "2026-11-12",
+   "enviados": 5,
+   "recibidos": 2,
+   "con_precio": 1,
+   "ultimo_mensaje": "2026-11-12",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "precios": [
+    {
+     "fecha": "2026-10-16",
+     "producto": "Ryzen 5 7600",
+     "precio_bs": 2067.0,
+     "estado": "nuevo (es el 7600X; USD 175 a 11,81; solo referencia; no cuenta)"
+    }
+   ]
+  },
+  {
+   "id": "T006",
+   "tienda": "SMART CUBE",
+   "ciudad": "Cochabamba (Zona Norte)",
+   "estado": "respondió",
+   "vende": "sí (7800X3D, 14400F, DDR5 Apacer)",
+   "ultima": "2026-11-12",
+   "enviados": 4,
+   "recibidos": 5,
+   "con_precio": 2,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "precios": [
+    {
+     "fecha": "2026-10-15",
+     "producto": "Ryzen 7 7800X3D",
+     "precio_bs": 5890.0,
+     "estado": "nuevo sellado, facturado; llevando 2 rebajan Bs 50 c/u (Bs 5.840)"
+    },
+    {
+     "fecha": "2026-10-15",
+     "producto": "Intel Core i5-14400F",
+     "precio_bs": 3080.0,
+     "estado": "nuevo sellado; llevando 2 rebajan Bs 50 c/u (Bs 3.030)"
+    },
+    {
+     "fecha": "2026-10-15",
+     "producto": "RAM DDR5 16GB 6000 (Apacer NOX)",
+     "precio_bs": 3650.0,
+     "estado": "nuevo (Apacer NOX DDR5 16GB 6000: otra marca y capacidad; solo referencia; no cuenta)"
+    }
+   ]
+  },
+  {
+   "id": "T007",
+   "tienda": "PC Components Bolivia",
+   "ciudad": "Santa Cruz",
+   "estado": "referencia (otra ciudad); respondió",
+   "vende": "sí (DDR5 32GB 6000 RGB, NVMe)",
+   "ultima": "2026-11-17",
+   "enviados": 1,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-17",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "precios": [
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 7 7800X3D",
+     "precio_bs": 5100.0,
+     "estado": "no cuenta: tienda de Santa Cruz (referencia); estado sin dato"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 9 9950X",
+     "precio_bs": 7950.0,
+     "estado": "no cuenta: tienda de Santa Cruz (referencia); OEM"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 9 9950X3D",
+     "precio_bs": 10500.0,
+     "estado": "no cuenta: tienda de Santa Cruz (referencia); estado sin dato"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Intel Core i5-12400F",
+     "precio_bs": 2350.0,
+     "estado": "no cuenta: tienda de Santa Cruz (referencia); estado sin dato"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Intel Core Ultra 7 265K",
+     "precio_bs": 4550.0,
+     "estado": "no cuenta: tienda de Santa Cruz (referencia); estado sin dato"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 7 7700X",
+     "precio_bs": 3550.0,
+     "estado": "no cuenta: tienda de Santa Cruz (referencia); estado sin dato"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 5 7600X",
+     "precio_bs": 2650.0,
+     "estado": "no cuenta: tienda de Santa Cruz (referencia); estado sin dato"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 5 9600X",
+     "precio_bs": 2700.0,
+     "estado": "no cuenta: tienda de Santa Cruz (referencia); estado sin dato"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "RAM DDR4 16GB (2x8) 3200",
+     "precio_bs": 1630.0,
+     "estado": "no cuenta: tienda de Santa Cruz (referencia); HyperX Fury 16GB 2x8 3200 D4; estado sin dato"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
+     "precio_bs": 7800.0,
+     "estado": "no cuenta: tienda de Santa Cruz (referencia); la web dice \"CORSAIR 32GB 2X16 6000MHZ RGB DDR5\" sin decir Vengeance; estado sin dato"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 1750.0,
+     "estado": "no cuenta: tienda de Santa Cruz (referencia); Eloca 1TB 7100MB/s PCIe 4.0 (también Puskill NVMe 1TB Bs 1.750, Kingston NV3 1TB Bs 1.870); estado sin dato"
+    },
+    {
+     "fecha": "2026-11-04",
+     "producto": "Ryzen 5 7500F",
+     "precio_bs": 2100.0,
+     "estado": "no cuenta: OEM, tienda de Santa Cruz (referencia)"
+    }
+   ]
+  },
+  {
+   "id": "T008",
+   "tienda": "Cyrex Store",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "sí (web: hardware y componentes gamer)",
+   "ultima": "2026-11-13",
+   "enviados": 4,
+   "recibidos": 3,
+   "con_precio": 2,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "precios": [
+    {
+     "fecha": "2026-11-13",
+     "producto": "Ryzen 5 9600X",
+     "precio_bs": 2784.75,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-13",
+     "producto": "Intel Core i5-14400F",
+     "precio_bs": 2393.7,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-13",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 1884.15,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-13",
+     "producto": "SSD NVMe 2TB",
+     "precio_bs": 4088.25,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 7 7800X3D",
+     "precio_bs": 5731.2,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 5 7600X",
+     "precio_bs": 2686.5,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 7 7700X",
+     "precio_bs": 3701.4,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 5 9600X",
+     "precio_bs": 2805.9,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Intel Core i5-12400F",
+     "precio_bs": 2292.5,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Intel Core i5-12400F",
+     "precio_bs": 2053.7,
+     "estado": "oem"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Intel Core i5-14400F",
+     "precio_bs": 2411.9,
+     "estado": "oem"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "RAM DDR4 16GB (2x8) 3200",
+     "precio_bs": 1731.3,
+     "estado": "nuevo/no indica"
+    }
+   ]
+  },
+  {
+   "id": "T009",
+   "tienda": "Geek Store Bolivia",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "probable (Facebook: PC gamer y repuestos informáticos)",
+   "ultima": "2026-11-12",
+   "enviados": 9,
+   "recibidos": 12,
+   "con_precio": 3,
+   "ultimo_mensaje": "2026-11-12",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "precios": [
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 5 7500F",
+     "precio_bs": 1755.2,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 5 9600X",
+     "precio_bs": 2853.7,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 7 7700X",
+     "precio_bs": 3462.6,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 1898.5,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-10-21",
+     "producto": "Ryzen 7 7700X",
+     "precio_bs": 3480.0,
+     "estado": "nuevo sellado (caja)"
+    },
+    {
+     "fecha": "2026-10-15",
+     "producto": "Ryzen 7 7700X",
+     "precio_bs": 3480.0,
+     "estado": "sin confirmar si es sellado (se preguntó)"
+    },
+    {
+     "fecha": "2026-10-15",
+     "producto": "Kingston Fury DDR5 16GB (1 módulo)",
+     "precio_bs": 2900.0,
+     "estado": "otra marca; velocidad por confirmar (no es la Corsair 32GB 2x16)"
+    },
+    {
+     "fecha": "2026-10-14",
+     "producto": "Intel Core i5-14400F",
+     "precio_bs": 2953.0,
+     "estado": "disponible (web; es el i5-14400 con gráficos, no el F; precio USD 249 en la web, a Bs 11,86; solo referencia; no cuenta)"
+    }
+   ]
+  },
+  {
+   "id": "T010",
+   "tienda": "Ovni Express Cbba",
+   "ciudad": "Cochabamba",
+   "estado": "sin stock",
+   "vende": "probable (Google Maps: venta de componentes y accesorios)",
+   "ultima": "2026-11-16",
+   "enviados": 1,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": []
+  },
+  {
+   "id": "T011",
+   "tienda": "TiendasClick",
+   "ciudad": "Cochabamba",
+   "estado": "número sin WhatsApp",
+   "vende": "por verificar (Google Maps: componentes electrónicos)",
+   "ultima": "2026-10-11",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "precios": []
+  },
+  {
+   "id": "T012",
+   "tienda": "Computer Magic Bolivia",
+   "ciudad": "Cochabamba",
+   "estado": "no vende CPU/RAM",
+   "vende": "no (respondió: \"procesadores y ram para pcs no tenemos\")",
+   "ultima": "2026-10-12",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "D · No apuntar por ahora",
+   "precios": []
+  },
+  {
+   "id": "T013",
+   "tienda": "Concordex Computer",
+   "ciudad": "Cochabamba",
+   "estado": "número sin WhatsApp",
+   "vende": "por verificar (Google Maps: electrónica)",
+   "ultima": "2026-10-11",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "precios": []
+  },
+  {
+   "id": "T014",
+   "tienda": "TecnoGamer Bolivia",
+   "ciudad": "Cochabamba",
+   "estado": "no vende CPU/RAM",
+   "vende": "no (no venden componentes internos)",
+   "ultima": "2026-10-14",
+   "enviados": 2,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-14",
+   "grupo": "D · No apuntar",
+   "precios": [
+    {
+     "fecha": "2026-11-04",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 2215.0,
+     "estado": "Kingston NV3 1TB NVMe; estado sin dato"
+    }
+   ]
+  },
+  {
+   "id": "T015",
+   "tienda": "Electro-TTS",
+   "ciudad": "Cochabamba",
+   "estado": "respondió (dudoso)",
+   "vende": "por verificar (Google Maps: componentes electrónicos)",
+   "ultima": "2026-11-13",
+   "enviados": 1,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "E · Por calificar",
+   "precios": []
+  },
+  {
+   "id": "T016",
+   "tienda": "Tienda Supermall (Marketplace)",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "sí (Marketplace: procesadores sueltos 7800X3D, 9950X, 265K, 9600X; 6 meses de garantía)",
+   "ultima": "2026-11-17",
+   "enviados": 1,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-17",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T017",
+   "tienda": "Click Importadora Cochabamba",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: mayorista de computadoras)",
+   "ultima": "2026-11-16",
+   "enviados": 1,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": []
+  },
+  {
+   "id": "T018",
+   "tienda": "Display Importadora",
+   "ciudad": "Cochabamba",
+   "estado": "esperando respuesta",
+   "vende": "por verificar (Google Maps: tienda de informática)",
+   "ultima": "2026-10-17",
+   "enviados": 2,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-17",
+   "grupo": "E · Por calificar",
+   "precios": []
+  },
+  {
+   "id": "T019",
+   "tienda": "T&T Todo en Tecnología",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: comercio electrónico)",
+   "ultima": "2026-11-12",
+   "enviados": 10,
+   "recibidos": 6,
+   "con_precio": 1,
+   "ultimo_mensaje": "2026-11-12",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "precios": [
+    {
+     "fecha": "2026-10-15",
+     "producto": "Intel Core i5-12400F",
+     "precio_bs": 2260.0,
+     "estado": "OEM con cooler Intel; Bs 20 menos c/u llevando 2"
+    },
+    {
+     "fecha": "2026-10-15",
+     "producto": "Intel Core i5-14400F",
+     "precio_bs": 2750.0,
+     "estado": "OEM con cooler Intel; Bs 20 menos c/u llevando 2"
+    }
+   ]
+  },
+  {
+   "id": "T020",
+   "tienda": "Viadata Computadoras",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "sí (procesadores sueltos OEM y en caja)",
+   "ultima": "2026-11-13",
+   "enviados": 5,
+   "recibidos": 5,
+   "con_precio": 2,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "precios": [
+    {
+     "fecha": "2026-10-20",
+     "producto": "Ryzen 5 7600X",
+     "precio_bs": 3300.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-10-12",
+     "producto": "Ryzen 7 7800X3D",
+     "precio_bs": 5500.0,
+     "estado": "nuevo OEM (solo el chip)"
+    },
+    {
+     "fecha": "2026-10-12",
+     "producto": "Ryzen 5 5600",
+     "precio_bs": 2500.0,
+     "estado": "nuevo OEM (es el 5600X, no el 5600; solo referencia; no cuenta)"
+    },
+    {
+     "fecha": "2026-10-12",
+     "producto": "Intel Core Ultra 7 265K",
+     "precio_bs": 5200.0,
+     "estado": "nuevo en caja (es el 265KF, sin gráficos integrados; solo referencia; no cuenta)"
+    }
+   ]
+  },
+  {
+   "id": "T021",
+   "tienda": "SpartanComputer Cbba",
+   "ciudad": "Cochabamba",
+   "estado": "sin stock",
+   "vende": "por verificar (tiene catálogo en WhatsApp)",
+   "ultima": "2026-11-16",
+   "enviados": 1,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": []
+  },
+  {
+   "id": "T022",
+   "tienda": "Importadora Fusión",
+   "ciudad": "Cochabamba",
+   "estado": "número sin WhatsApp",
+   "vende": "por verificar (Google Maps: accesorios informáticos)",
+   "ultima": "2026-10-12",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "precios": []
+  },
+  {
+   "id": "T023",
+   "tienda": "Soft Computers",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "sí (CPU; RAM solo DDR4)",
+   "ultima": "2026-11-12",
+   "enviados": 10,
+   "recibidos": 6,
+   "con_precio": 3,
+   "ultimo_mensaje": "2026-11-12",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": [
+    {
+     "fecha": "2026-11-04",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 1950.0,
+     "estado": "sin dato"
+    },
+    {
+     "fecha": "2026-10-16",
+     "producto": "Intel Core i5-14400F",
+     "precio_bs": 2500.0,
+     "estado": "nuevo OEM; mismo precio por unidad llevando 2"
+    },
+    {
+     "fecha": "2026-10-13",
+     "producto": "Intel Core i5-14400F",
+     "precio_bs": 2500.0,
+     "estado": "nuevo OEM"
+    }
+   ]
+  },
+  {
+   "id": "T024",
+   "tienda": "Distribuidora DyD",
+   "ciudad": "Cochabamba",
+   "estado": "no contactar (número equivocado)",
+   "vende": "por verificar (Google Maps)",
+   "ultima": "2026-10-15",
+   "enviados": 3,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-15",
+   "grupo": "D · No apuntar por ahora",
+   "precios": []
+  },
+  {
+   "id": "T025",
+   "tienda": "OverCity",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "sí (CPU OEM; RAM Apacer y XPG)",
+   "ultima": "2026-11-12",
+   "enviados": 16,
+   "recibidos": 16,
+   "con_precio": 10,
+   "ultimo_mensaje": "2026-11-12",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "precios": [
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 5 7600",
+     "precio_bs": 2850.0,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 5 7600X",
+     "precio_bs": 2550.0,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 5 9600X",
+     "precio_bs": 2750.0,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 9 9950X",
+     "precio_bs": 6150.0,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 9 9950X3D",
+     "precio_bs": 9570.0,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Intel Core i5-12400F",
+     "precio_bs": 2250.0,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Intel Core Ultra 7 265K",
+     "precio_bs": 4220.0,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-11-03",
+     "producto": "Ryzen 5 7600",
+     "precio_bs": 2850.0,
+     "estado": "estado sin dato (\\\"últimas unidades\\\")"
+    },
+    {
+     "fecha": "2026-11-03",
+     "producto": "Intel Core i5-12400F",
+     "precio_bs": 2250.0,
+     "estado": "estado sin dato (\\\"en stock\\\")"
+    },
+    {
+     "fecha": "2026-11-03",
+     "producto": "Intel Core Ultra 7 265K",
+     "precio_bs": 4170.0,
+     "estado": "estado sin dato (\\\"últimas unidades\\\")"
+    },
+    {
+     "fecha": "2026-11-03",
+     "producto": "Ryzen 9 9950X",
+     "precio_bs": 6150.0,
+     "estado": "estado sin dato (\\\"en stock\\\")"
+    },
+    {
+     "fecha": "2026-11-03",
+     "producto": "Ryzen 9 9950X3D",
+     "precio_bs": 12580.0,
+     "estado": "no cuenta: es el 9950X3D2 (otro modelo; OverCity copia el catálogo de Punto con Bs 10 menos: 12.590 menos 10; su 9950X3D es Bs 9.570 el 12/11; corregido 13/11)"
+    }
+   ]
+  },
+  {
+   "id": "T026",
+   "tienda": "Legion Emporium",
+   "ciudad": "Cochabamba",
+   "estado": "esperando respuesta",
+   "vende": "probable (Google Maps: tienda de informática)",
+   "ultima": "2026-11-17",
+   "enviados": 4,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-17",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "precios": []
+  },
+  {
+   "id": "T027",
+   "tienda": "PC Morgana",
+   "ciudad": "Cochabamba",
+   "estado": "sin stock",
+   "vende": "probable (Google Maps: accesorios para computadoras)",
+   "ultima": "2026-11-13",
+   "enviados": 4,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": []
+  },
+  {
+   "id": "T028",
+   "tienda": "Centro PC",
+   "ciudad": "Cochabamba",
+   "estado": "esperando respuesta",
+   "vende": "por verificar (Google Maps: tienda de informática)",
+   "ultima": "2026-11-17",
+   "enviados": 4,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-17",
+   "grupo": "E · Por calificar",
+   "precios": []
+  },
+  {
+   "id": "T029",
+   "tienda": "Computer World",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: accesorios informáticos)",
+   "ultima": "2026-11-13",
+   "enviados": 4,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "D · No apuntar",
+   "precios": []
+  },
+  {
+   "id": "T030",
+   "tienda": "4 Gamers",
+   "ciudad": "Cochabamba",
+   "estado": "esperando respuesta",
+   "vende": "por verificar (Google Maps: accesorios informáticos)",
+   "ultima": "2026-10-19",
+   "enviados": 3,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-19",
+   "grupo": "E · Por calificar",
+   "precios": []
+  },
+  {
+   "id": "T031",
+   "tienda": "PortatiComps",
+   "ciudad": "Cochabamba",
+   "estado": "esperando respuesta",
+   "vende": "por verificar (Google Maps: tienda de electrónica)",
+   "ultima": "2026-10-17",
+   "enviados": 3,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-17",
+   "grupo": "E · Por calificar",
+   "precios": []
+  },
+  {
+   "id": "T032",
+   "tienda": "Hardware Technology",
+   "ciudad": "Cochabamba",
+   "estado": "sin stock",
+   "vende": "por verificar (Facebook: vende equipos HP/AIO)",
+   "ultima": "2026-11-13",
+   "enviados": 4,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "D · No apuntar por ahora",
+   "precios": []
+  },
+  {
+   "id": "T033",
+   "tienda": "PC Factor",
+   "ciudad": "Quillacollo",
+   "estado": "respondió",
+   "vende": "poco (solo le queda 1 RAM DDR5 16GB)",
+   "ultima": "2026-11-12",
+   "enviados": 5,
+   "recibidos": 4,
+   "con_precio": 1,
+   "ultimo_mensaje": "2026-11-12",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": [
+    {
+     "fecha": "2026-10-15",
+     "producto": "RAM DDR5 16GB",
+     "precio_bs": 3792.0,
+     "estado": "nuevo (USD 320 c/u a Bs 11,85; marca y velocidad por confirmar; solo referencia; no cuenta)"
+    }
+   ]
+  },
+  {
+   "id": "T034",
+   "tienda": "Crazy Store",
+   "ciudad": "Cochabamba",
+   "estado": "sin stock",
+   "vende": "sí, pocos productos (Facebook: vendió i9-14900K; web crazystore.com.bo sin CPU/RAM, más celulares y accesorios; también ofrece servicio de importación desde EE.UU.)",
+   "ultima": "2026-11-12",
+   "enviados": 4,
+   "recibidos": 4,
+   "con_precio": 2,
+   "ultimo_mensaje": "2026-11-12",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": [
+    {
+     "fecha": "2026-11-13",
+     "producto": "Intel Core i9-14900K",
+     "precio_bs": 5973.0,
+     "estado": "no cuenta: no es producto de vigilar; nuevo (USD 499 × 11,97 del 13/11; la web muestra Bs 5.988)"
+    },
+    {
+     "fecha": "2026-10-14",
+     "producto": "Intel Core i9-14900K",
+     "precio_bs": 6013.0,
+     "estado": "nuevo (no está en vigilar.csv; USD 499 o Bs 6.013, rebaja ofrecida hasta Bs 5.700; solo referencia; no cuenta)"
+    }
+   ]
+  },
+  {
+   "id": "T035",
+   "tienda": "ECOM (Economic Computers)",
+   "ciudad": "Cochabamba",
+   "estado": "esperando respuesta",
+   "vende": "por verificar (Google Maps: accesorios informáticos, vende PCs económicas)",
+   "ultima": "2026-11-17",
+   "enviados": 4,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-17",
+   "grupo": "E · Por calificar",
+   "precios": []
+  },
+  {
+   "id": "T036",
+   "tienda": "NF Evolution",
+   "ciudad": "Cochabamba",
+   "estado": "no vende CPU/RAM",
+   "vende": "no (solo tarjetas de video)",
+   "ultima": "2026-10-15",
+   "enviados": 2,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-15",
+   "grupo": "D · No apuntar por ahora",
+   "precios": []
+  },
+  {
+   "id": "T037",
+   "tienda": "Shopping PC",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "sí (web: procesadores; dice que tiene)",
+   "ultima": "2026-11-16",
+   "enviados": 13,
+   "recibidos": 11,
+   "con_precio": 3,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "precios": [
+    {
+     "fecha": "2026-11-13",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 1771.56,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-10-15",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 1754.0,
+     "estado": "nuevo (Kingston NV3 1TB; lista mayorista USD 148 del 12/10, sin factura; 146 en stock)"
+    },
+    {
+     "fecha": "2026-10-15",
+     "producto": "Intel Core i5-14400F",
+     "precio_bs": 2785.0,
+     "estado": "nuevo en caja (es el i5-14400 BOX con gráficos, no el F; lista mayorista USD 235, sin factura; solo referencia; no cuenta)"
+    },
+    {
+     "fecha": "2026-10-15",
+     "producto": "RAM DDR4 16GB (2x8) 3200",
+     "precio_bs": 1778.0,
+     "estado": "nuevo (Kingston 16GB DDR4 3200, un módulo, no kit 2x8; lista mayorista USD 150; no cuenta)"
+    },
+    {
+     "fecha": "2026-10-15",
+     "producto": "RAM DDR4 16GB (2x8) 3200",
+     "precio_bs": 1600.0,
+     "estado": "nuevo (Musking Redline 16GB DDR4 3200, un módulo, no kit 2x8; lista mayorista USD 135; no cuenta)"
+    },
+    {
+     "fecha": "2026-10-15",
+     "producto": "SSD NVMe 2TB",
+     "precio_bs": 2726.0,
+     "estado": "no cuenta: otro modelo (Crucial BX500 2TB es SATA, no NVMe; nuevo; lista mayorista USD 230 × 11,85 del 12/10, sin factura; 35 en stock; garantía solo de prueba; solo referencia)"
+    }
+   ]
+  },
+  {
+   "id": "T038",
+   "tienda": "PCBOX",
+   "ciudad": "Cochabamba",
+   "estado": "sin stock",
+   "vende": "por verificar (servicio de informática)",
+   "ultima": "2026-11-13",
+   "enviados": 3,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": []
+  },
+  {
+   "id": "T039",
+   "tienda": "MI PC",
+   "ciudad": "Cochabamba",
+   "estado": "sin WhatsApp (solo teléfono fijo)",
+   "vende": "por verificar (tienda de informática, buenas opiniones de precios)",
+   "ultima": "",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "precios": []
+  },
+  {
+   "id": "T040",
+   "tienda": "Punto Tecnológico",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "sí (cotización: Ryzen 5 7600 OEM, DDR5 Nox Tuf)",
+   "ultima": "2026-11-13",
+   "enviados": 24,
+   "recibidos": 22,
+   "con_precio": 11,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "precios": [
+    {
+     "fecha": "2026-11-12",
+     "producto": "SSD NVMe 2TB",
+     "precio_bs": 5860.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 9 9950X3D",
+     "precio_bs": 12590.0,
+     "estado": "no cuenta: es el 9950X3D2 Box (otro modelo; corregido 13/11 por pedido del Analista); el 9950X3D de Punto es Bs 9.560"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 5 7600X",
+     "precio_bs": 2560.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 9 9950X",
+     "precio_bs": 6140.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Ryzen 9 9950X3D",
+     "precio_bs": 9560.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Intel Core Ultra 7 265K",
+     "precio_bs": 4210.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "RAM DDR4 16GB (2x8) 3200",
+     "precio_bs": 2160.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
+     "precio_bs": 7160.0,
+     "estado": "no cuenta: la web dice \"32 Gb (16x2) 6000 Ddr5 Rgb\" de Corsair sin decir Vengeance"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 2060.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-12",
+     "producto": "SSD NVMe 2TB",
+     "precio_bs": 5860.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-10",
+     "producto": "Ryzen 5 9600X",
+     "precio_bs": 2750.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-04",
+     "producto": "Ryzen 5 7600",
+     "precio_bs": 2850.0,
+     "estado": "sin dato"
+    }
+   ]
+  },
+  {
+   "id": "T041",
+   "tienda": "PC Calderon",
+   "ciudad": "Cochabamba",
+   "estado": "número sin WhatsApp",
+   "vende": "por verificar (Google Maps: accesorios informáticos)",
+   "ultima": "2026-10-16",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "precios": []
+  },
+  {
+   "id": "T042",
+   "tienda": "PC Armagedon",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "sí (Google Maps: tienda de informática, arma PCs)",
+   "ultima": "2026-11-16",
+   "enviados": 5,
+   "recibidos": 5,
+   "con_precio": 3,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "precios": [
+    {
+     "fecha": "2026-11-13",
+     "producto": "Ryzen 5 9600X",
+     "precio_bs": 2560.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-13",
+     "producto": "Intel Core i5-12400F",
+     "precio_bs": 2050.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-13",
+     "producto": "Intel Core Ultra 7 265K",
+     "precio_bs": 4010.0,
+     "estado": "nuevo"
+    },
+    {
+     "fecha": "2026-11-13",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 1800.0,
+     "estado": "nuevo"
+    }
+   ]
+  },
+  {
+   "id": "T043",
+   "tienda": "TECH COCHA",
+   "ciudad": "Cochabamba",
+   "estado": "esperando respuesta",
+   "vende": "por verificar (Google Maps: accesorios informáticos; servicio técnico)",
+   "ultima": "2026-11-03",
+   "enviados": 3,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-03",
+   "grupo": "E · Por calificar",
+   "precios": []
+  },
+  {
+   "id": "T044",
+   "tienda": "ADN Gamer Store",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: accesorios informáticos gamer)",
+   "ultima": "2026-11-13",
+   "enviados": 7,
+   "recibidos": 4,
+   "con_precio": 2,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "precios": [
+    {
+     "fecha": "2026-10-22",
+     "producto": "Ryzen 7 7800X3D",
+     "precio_bs": 6162.0,
+     "estado": "nuevo en caja (box); garantía sin dato (se preguntó)"
+    },
+    {
+     "fecha": "2026-10-21",
+     "producto": "Ryzen 7 7800X3D",
+     "precio_bs": 6193.0,
+     "estado": "nuevo (estado y garantía sin confirmar; se preguntó)"
+    },
+    {
+     "fecha": "2026-10-21",
+     "producto": "Ryzen 5 7600",
+     "precio_bs": 2918.0,
+     "estado": "nuevo (es el 7600X, no el 7600; USD 245 × 11,91; solo referencia; no cuenta)"
+    }
+   ]
+  },
+  {
+   "id": "T045",
+   "tienda": "Gamer Factory Bolivia",
+   "ciudad": "Cochabamba",
+   "estado": "número sin WhatsApp",
+   "vende": "por verificar (Google Maps: accesorios informáticos)",
+   "ultima": "2026-10-17",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp",
+   "precios": []
+  },
+  {
+   "id": "T046",
+   "tienda": "Tienda de Computadoras Quillacollo",
+   "ciudad": "Quillacollo",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: mayorista de computadoras)",
+   "ultima": "2026-11-16",
+   "enviados": 7,
+   "recibidos": 4,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T047",
+   "tienda": "SYSTEMS HARDWARE & SOFTWARE SOLUTIONS",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: tienda de informática)",
+   "ultima": "2026-11-13",
+   "enviados": 4,
+   "recibidos": 3,
+   "con_precio": 1,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T048",
+   "tienda": "Pc Soluciones Importaciones",
+   "ciudad": "Cochabamba",
+   "estado": "sin stock",
+   "vende": "por verificar (Google Maps: soporte informático; nombre de importadora)",
+   "ultima": "2026-11-13",
+   "enviados": 6,
+   "recibidos": 3,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T049",
+   "tienda": "Cocotech - Sucursal América",
+   "ciudad": "Cochabamba",
+   "estado": "sin stock",
+   "vende": "por verificar (Google Maps: servicio de informática)",
+   "ultima": "2026-11-13",
+   "enviados": 2,
+   "recibidos": 4,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": []
+  },
+  {
+   "id": "T050",
+   "tienda": "Importadora Ardunel - Quillacollo",
+   "ciudad": "Quillacollo",
+   "estado": "sin stock",
+   "vende": "por verificar (Google Maps: comercio/importadora)",
+   "ultima": "2026-11-13",
+   "enviados": 2,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": []
+  },
+  {
+   "id": "T051",
+   "tienda": "COMPUTING",
+   "ciudad": "Cochabamba",
+   "estado": "sin stock",
+   "vende": "por verificar (Google Maps: tienda de informática)",
+   "ultima": "2026-11-16",
+   "enviados": 2,
+   "recibidos": 3,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": []
+  },
+  {
+   "id": "T052",
+   "tienda": "ENIGMA TECH",
+   "ciudad": "Cochabamba",
+   "estado": "número equivocado",
+   "vende": "por verificar (Google Maps: accesorios informáticos)",
+   "ultima": "2026-10-21",
+   "enviados": 1,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-21",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T053",
+   "tienda": "Esteban Arce",
+   "ciudad": "Cochabamba",
+   "estado": "consultada",
+   "vende": "por verificar (Google Maps: reparación y venta de computadoras)",
+   "ultima": "2026-11-18",
+   "enviados": 5,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-18",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": []
+  },
+  {
+   "id": "T054",
+   "tienda": "Accesorios Master Pc",
+   "ciudad": "Cochabamba",
+   "estado": "no vende CPU/RAM",
+   "vende": "por verificar (Google Maps: accesorios informáticos)",
+   "ultima": "2026-10-21",
+   "enviados": 1,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-21",
+   "grupo": "D · No apuntar",
+   "precios": []
+  },
+  {
+   "id": "T055",
+   "tienda": "Nerd Tecnologias",
+   "ciudad": "Cochabamba",
+   "estado": "no vende CPU/RAM",
+   "vende": "por verificar (Google Maps: servicio técnico y seguridad electrónica)",
+   "ultima": "2026-10-26",
+   "enviados": 7,
+   "recibidos": 5,
+   "con_precio": 1,
+   "ultimo_mensaje": "2026-10-27",
+   "grupo": "D · No apuntar (no vende CPU/RAM)",
+   "precios": [
+    {
+     "fecha": "2026-10-23",
+     "producto": "Ryzen 5 7600",
+     "precio_bs": 2700.0,
+     "estado": "no cuenta: precio de segunda mano (lo consultó a un colega); estado y garantía sin confirmar"
+    },
+    {
+     "fecha": "2026-10-23",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 1600.0,
+     "estado": "no cuenta: precio de segunda mano (colega); marca y tipo sin confirmar (\"M2 de 1 tera\")"
+    }
+   ]
+  },
+  {
+   "id": "T056",
+   "tienda": "TechMax Computers Cbba",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Instagram: computadoras, periféricos y artículos gamer)",
+   "ultima": "2026-11-13",
+   "enviados": 6,
+   "recibidos": 5,
+   "con_precio": 2,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": [
+    {
+     "fecha": "2026-10-23",
+     "producto": "Intel Core Ultra 7 265K",
+     "precio_bs": 4300.0,
+     "estado": "no cuenta: es el Core Ultra 7 270K (no el 265K); sin garantía, traído de EEUU"
+    },
+    {
+     "fecha": "2026-10-22",
+     "producto": "Intel Core Ultra 7 265K",
+     "precio_bs": 4300.0,
+     "estado": "no cuenta: modelo sin confirmar (dijo 'Core Ultra 7'; se preguntó si es el 265K); sin garantía, traído de EEUU; estado 'perfecto estado'"
+    }
+   ]
+  },
+  {
+   "id": "T057",
+   "tienda": "PC Com (distribuidora, Huyustus)",
+   "ciudad": "Cochabamba",
+   "estado": "no vende CPU/RAM",
+   "vende": "por verificar (la mencionan como distribuidora de PC con \"tiendas asociadas\")",
+   "ultima": "2026-10-23",
+   "enviados": 3,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-23",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T058",
+   "tienda": "PC FALCON",
+   "ciudad": "Cochabamba",
+   "estado": "sin stock",
+   "vende": "por verificar (Facebook: \"Tienda líder en ordenadores gaming y estaciones de trabajo de alta gama\"; 94% recomendado; Mall Cochabamba pasillo B)",
+   "ultima": "2026-11-16",
+   "enviados": 4,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T059",
+   "tienda": "City Of Gamers",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (TikTok cityofgamersbo: importadora, repuestos y pantallas; no se ven componentes de PC)",
+   "ultima": "2026-11-16",
+   "enviados": 3,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T060",
+   "tienda": "Compumas Bolivia",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "no: solo PCs armadas",
+   "ultima": "2026-11-17",
+   "enviados": 3,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-17",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "precios": []
+  },
+  {
+   "id": "T061",
+   "tienda": "INAV Computación",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: tienda de informática; laptops)",
+   "ultima": "2026-10-30",
+   "enviados": 1,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-30",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T062",
+   "tienda": "BLADTHOR",
+   "ciudad": "Cochabamba",
+   "estado": "sin WhatsApp",
+   "vende": "por verificar (Google Maps: tienda de informática; vende laptops)",
+   "ultima": "2026-10-30",
+   "enviados": 1,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-30",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "precios": []
+  },
+  {
+   "id": "T063",
+   "tienda": "i-Trendy",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: accesorios informáticos; Instagram: Ryzen, DDR4, RTX)",
+   "ultima": "2026-11-16",
+   "enviados": 2,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T064",
+   "tienda": "Comcell Corp (Cochabamba)",
+   "ciudad": "Cochabamba",
+   "estado": "sin WhatsApp",
+   "vende": "por verificar (Google Maps: accesorios informáticos)",
+   "ultima": "2026-10-30",
+   "enviados": 1,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-30",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "precios": []
+  },
+  {
+   "id": "T065",
+   "tienda": "SYSCITY",
+   "ciudad": "Cochabamba",
+   "estado": "consultada",
+   "vende": "por verificar (Instagram: nuevos componentes para PC; tienda virtual)",
+   "ultima": "2026-11-17",
+   "enviados": 4,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-17",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T066",
+   "tienda": "IPcenter",
+   "ciudad": "Cochabamba",
+   "estado": "consultada",
+   "vende": "por verificar (Google Maps: local en Gold Center)",
+   "ultima": "2026-11-18",
+   "enviados": 4,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-18",
+   "grupo": "E · Por calificar",
+   "precios": []
+  },
+  {
+   "id": "T067",
+   "tienda": "Creative Technology",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "sin stock",
+   "ultima": "2026-11-16",
+   "enviados": 4,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": []
+  },
+  {
+   "id": "T068",
+   "tienda": "Global PC",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: mayorista de computadoras)",
+   "ultima": "2026-11-18",
+   "enviados": 3,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-18",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T069",
+   "tienda": "EdsonBIT Electronica",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: accesorios informáticos)",
+   "ultima": "2026-11-16",
+   "enviados": 3,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T070",
+   "tienda": "EQUIPAMIENTO MODERNO S.R.L.",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: accesorios informáticos; tiene web)",
+   "ultima": "2026-11-16",
+   "enviados": 3,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T071",
+   "tienda": "iPlace Bolivia",
+   "ciudad": "Cochabamba",
+   "estado": "sin contactar",
+   "vende": "por verificar (Google Maps: tienda de informática; probable Apple)",
+   "ultima": "",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T072",
+   "tienda": "i2C Electronics",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: electrónica; tiene web)",
+   "ultima": "2026-11-16",
+   "enviados": 3,
+   "recibidos": 3,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "A · Sin stock (les falta producto)",
+   "precios": []
+  },
+  {
+   "id": "T073",
+   "tienda": "COMPUTADORAS & REPUESTOS CBBA",
+   "ciudad": "Cochabamba",
+   "estado": "sin WhatsApp",
+   "vende": "por verificar (Facebook: grupo y página de compra-venta de equipos y componentes; 5,3 mil seguidores)",
+   "ultima": "2026-10-30",
+   "enviados": 1,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-10-30",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T074",
+   "tienda": "Compubol",
+   "ciudad": "Cochabamba",
+   "estado": "sin WhatsApp (buscar celular)",
+   "vende": "por verificar (Google Maps: electrónica; TikTok: laptops)",
+   "ultima": "",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp",
+   "precios": []
+  },
+  {
+   "id": "T075",
+   "tienda": "Importadora TangoSoft S.R.L.",
+   "ciudad": "Cochabamba",
+   "estado": "sin WhatsApp (buscar celular)",
+   "vende": "por verificar (Google Maps: tienda de informática)",
+   "ultima": "",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp",
+   "precios": []
+  },
+  {
+   "id": "T076",
+   "tienda": "Evolucion Digital",
+   "ciudad": "Cochabamba",
+   "estado": "sin WhatsApp (buscar celular)",
+   "vende": "por verificar (Google Maps: tienda de informática)",
+   "ultima": "",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp",
+   "precios": []
+  },
+  {
+   "id": "T077",
+   "tienda": "Grupo SERCOMEX",
+   "ciudad": "Cochabamba",
+   "estado": "sin WhatsApp (buscar celular)",
+   "vende": "por verificar (Google Maps: tienda de informática; tiene web)",
+   "ultima": "",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp",
+   "precios": []
+  },
+  {
+   "id": "T078",
+   "tienda": "Componentes PC",
+   "ciudad": "Cochabamba",
+   "estado": "sin WhatsApp (buscar celular)",
+   "vende": "por verificar (Facebook: productos tecnológicos para hogar y oficina; 233 seguidores)",
+   "ultima": "",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp",
+   "precios": []
+  },
+  {
+   "id": "T079",
+   "tienda": "Pc Master Cochabamba",
+   "ciudad": "Cochabamba",
+   "estado": "sin WhatsApp (buscar celular)",
+   "vende": "por verificar (Facebook: venta de artículos de computación solo Cochabamba; 2 seguidores)",
+   "ultima": "",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp",
+   "precios": []
+  },
+  {
+   "id": "T080",
+   "tienda": "Technology upper fix",
+   "ciudad": "Cochabamba",
+   "estado": "sin WhatsApp (buscar celular)",
+   "vende": "por verificar (Facebook: venta de equipos de computación; 5 seguidores)",
+   "ultima": "",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp",
+   "precios": []
+  },
+  {
+   "id": "T081",
+   "tienda": "KANG MIN ELECTRONICS",
+   "ciudad": "Sacaba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: tienda de informática)",
+   "ultima": "2026-11-04",
+   "enviados": 2,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-04",
+   "grupo": "D · No apuntar",
+   "precios": []
+  },
+  {
+   "id": "T082",
+   "tienda": "COMPUMUNDOHIPERMEGARED",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: accesorios informáticos)",
+   "ultima": "2026-11-04",
+   "enviados": 2,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-04",
+   "grupo": "D · No apuntar",
+   "precios": []
+  },
+  {
+   "id": "T083",
+   "tienda": "EMPRESEL Electrónica",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: electrónica general, 4.1 con 56 opiniones)",
+   "ultima": "2026-11-04",
+   "enviados": 2,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-04",
+   "grupo": "E · Por calificar",
+   "precios": []
+  },
+  {
+   "id": "T084",
+   "tienda": "All Electric",
+   "ciudad": "Quillacollo",
+   "estado": "sin WhatsApp",
+   "vende": "por verificar (Google Maps: tienda de informática)",
+   "ultima": "2026-11-04",
+   "enviados": 0,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "",
+   "grupo": "F · Sin WhatsApp (buscar otro contacto)",
+   "precios": []
+  },
+  {
+   "id": "T085",
+   "tienda": "PC Gaming Forge",
+   "ciudad": "Quillacollo",
+   "estado": "consultada",
+   "vende": "por verificar (respondio automatico; esperar precio)",
+   "ultima": "2026-11-17",
+   "enviados": 4,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-17",
+   "grupo": "E · Por calificar",
+   "precios": []
+  },
+  {
+   "id": "T086",
+   "tienda": "CRISTECNOLOGY",
+   "ciudad": "Quillacollo",
+   "estado": "consultada",
+   "vende": "por verificar (Google Maps: mayorista de computadoras)",
+   "ultima": "2026-11-17",
+   "enviados": 4,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-17",
+   "grupo": "E · Por calificar",
+   "precios": []
+  },
+  {
+   "id": "T087",
+   "tienda": "Cyrex Store América",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: tienda de informática; sucursal de Cyrex Store)",
+   "ultima": "2026-11-13",
+   "enviados": 5,
+   "recibidos": 3,
+   "con_precio": 1,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "precios": [
+    {
+     "fecha": "2026-11-04",
+     "producto": "Ryzen 5 7600X",
+     "precio_bs": 2677.5,
+     "estado": "nuevo"
+    }
+   ]
+  },
+  {
+   "id": "T088",
+   "tienda": "Orange Computer",
+   "ciudad": "Sacaba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: mayorista de computadoras)",
+   "ultima": "2026-11-13",
+   "enviados": 6,
+   "recibidos": 6,
+   "con_precio": 1,
+   "ultimo_mensaje": "2026-11-18",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "precios": [
+    {
+     "fecha": "2026-11-04",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 1550.0,
+     "estado": "sellado"
+    },
+    {
+     "fecha": "2026-11-04",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 1550.0,
+     "estado": "sellado"
+    }
+   ]
+  },
+  {
+   "id": "T089",
+   "tienda": "HooperBolivia",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (TikTok: equipos de computación, 37K seguidores)",
+   "ultima": "2026-11-16",
+   "enviados": 3,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "E · Por calificar",
+   "precios": []
+  },
+  {
+   "id": "T090",
+   "tienda": "Tienda Garage en Línea",
+   "ciudad": "Cochabamba",
+   "estado": "número equivocado",
+   "vende": "por verificar (Google Maps: cíber/venta de todo; sin dato de componentes)",
+   "ultima": "2026-11-06",
+   "enviados": 2,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-06",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T091",
+   "tienda": "Tecnología GabBoss",
+   "ciudad": "Quillacollo",
+   "estado": "consultada",
+   "vende": "sí (WhatsApp: RAM DDR3, SSD, Intel 4ta gen; equipo viejo)",
+   "ultima": "2026-11-04",
+   "enviados": 3,
+   "recibidos": 3,
+   "con_precio": 1,
+   "ultimo_mensaje": "2026-11-06",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T092",
+   "tienda": "BitCate",
+   "ciudad": "Quillacollo",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: reparación de ordenadores)",
+   "ultima": "2026-11-10",
+   "enviados": 2,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-09",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T093",
+   "tienda": "HC store",
+   "ciudad": "Cochabamba",
+   "estado": "consultada",
+   "vende": "por verificar (Google Maps: tienda de electrónica)",
+   "ultima": "2026-11-11",
+   "enviados": 3,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-11",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T094",
+   "tienda": "Pop Store Cbba",
+   "ciudad": "Cochabamba",
+   "estado": "consultada",
+   "vende": "por verificar (Instagram: accesorios móviles y de PC; catálogo en WhatsApp)",
+   "ultima": "2026-11-11",
+   "enviados": 3,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-11",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T095",
+   "tienda": "ELVYCOMP",
+   "ciudad": "Quillacollo",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: tienda de informática)",
+   "ultima": "2026-11-13",
+   "enviados": 5,
+   "recibidos": 4,
+   "con_precio": 2,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "",
+   "precios": [
+    {
+     "fecha": "2026-11-10",
+     "producto": "SSD NVMe 2TB",
+     "precio_bs": 4880.0,
+     "estado": "nuevo/sellado sin confirmar"
+    },
+    {
+     "fecha": "2026-11-10",
+     "producto": "SSD NVMe 2TB",
+     "precio_bs": 4880.0,
+     "estado": "nuevo/sellado"
+    },
+    {
+     "fecha": "2026-11-09",
+     "producto": "Ryzen 5 9600X",
+     "precio_bs": 3430.0,
+     "estado": "nuevo"
+    }
+   ]
+  },
+  {
+   "id": "T096",
+   "tienda": "Dr. Compu",
+   "ciudad": "Quillacollo",
+   "estado": "número equivocado",
+   "vende": "por verificar (Google Maps: accesorios informáticos)",
+   "ultima": "2026-11-05",
+   "enviados": 1,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-05",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T097",
+   "tienda": "Accesorios Technology",
+   "ciudad": "Quillacollo",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: tienda de electrónica)",
+   "ultima": "2026-11-10",
+   "enviados": 2,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-09",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T098",
+   "tienda": "SS Electrónica Cbba - Quillacollo",
+   "ciudad": "Quillacollo",
+   "estado": "consultada",
+   "vende": "no (web 06/11: electrónica para proyectos; sin SSD, RAM ni procesadores)",
+   "ultima": "2026-11-12",
+   "enviados": 3,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-12",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T099",
+   "tienda": "Smash Games",
+   "ciudad": "Quillacollo",
+   "estado": "respondió",
+   "vende": "no (gaming center de consolas; no vende nada de/para PC)",
+   "ultima": "2026-11-05",
+   "enviados": 1,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-06",
+   "grupo": "D · No apuntar",
+   "precios": []
+  },
+  {
+   "id": "T100",
+   "tienda": "TECH - Mantenimiento de Computadoras",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "no (solo equipos armados, no sueltos; dice que se encuentran en la Esteban Arce)",
+   "ultima": "2026-11-05",
+   "enviados": 2,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-06",
+   "grupo": "B · Arman PCs (consumen componentes)",
+   "precios": []
+  },
+  {
+   "id": "T101",
+   "tienda": "INTEGRAL TU-PC",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: tienda de accesorios informáticos)",
+   "ultima": "2026-11-13",
+   "enviados": 4,
+   "recibidos": 1,
+   "con_precio": 1,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T102",
+   "tienda": "Microworld",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: tienda de accesorios informáticos; tiene TikTok)",
+   "ultima": "2026-11-13",
+   "enviados": 7,
+   "recibidos": 6,
+   "con_precio": 1,
+   "ultimo_mensaje": "2026-11-13",
+   "grupo": "",
+   "precios": [
+    {
+     "fecha": "2026-11-13",
+     "producto": "SSD NVMe 2TB",
+     "precio_bs": 4147.2,
+     "estado": "nuevo"
+    }
+   ]
+  },
+  {
+   "id": "T103",
+   "tienda": "COMPU-X",
+   "ciudad": "Cochabamba",
+   "estado": "consultada",
+   "vende": "por verificar (Google Maps: tienda de informática, 4,5 con 10 opiniones)",
+   "ultima": "2026-11-11",
+   "enviados": 3,
+   "recibidos": 0,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-11",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T104",
+   "tienda": "Compuland",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (Instagram: PCs de marca, laptops y gaming gear; entrega a domicilio en Cochabamba)",
+   "ultima": "2026-11-17",
+   "enviados": 5,
+   "recibidos": 3,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-17",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T105",
+   "tienda": "Importadora ITA",
+   "ciudad": "Cochabamba",
+   "estado": "consultada",
+   "vende": "por verificar (Instagram: laptops, proyectores, drones y audio; importan de EE.UU.; no se vio hardware de PC)",
+   "ultima": "2026-11-18",
+   "enviados": 2,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-18",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T106",
+   "tienda": "COMPU CELL SYSTEM",
+   "ciudad": "Quillacollo",
+   "estado": "respondió",
+   "vende": "por verificar (WhatsApp: se preguntó 5600, 5700X3D, 7500F, SSD 2TB; sin respuesta aún)",
+   "ultima": "2026-11-16",
+   "enviados": 4,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T107",
+   "tienda": "Digital Hardware Bolivia",
+   "ciudad": "Sacaba",
+   "estado": "respondió",
+   "vende": "por verificar (Google Maps: tienda de hardware; sin catálogo visto)",
+   "ultima": "2026-11-17",
+   "enviados": 3,
+   "recibidos": 2,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-17",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T108",
+   "tienda": "NPC Technology",
+   "ciudad": "Cochabamba",
+   "estado": "respondió",
+   "vende": "por verificar (TikTok: tienda de computadoras y laptops gamer; cotización y armado de PC)",
+   "ultima": "2026-11-18",
+   "enviados": 2,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-18",
+   "grupo": "",
+   "precios": []
+  },
+  {
+   "id": "T109",
+   "tienda": "STORE BOLIVIA",
+   "ciudad": "Cochabamba",
+   "estado": "no vende CPU/RAM",
+   "vende": "por verificar (Google Maps: tienda de electrónica general, 3,8 con 8 opiniones; sin catálogo visto)",
+   "ultima": "2026-11-17",
+   "enviados": 1,
+   "recibidos": 1,
+   "con_precio": 0,
+   "ultimo_mensaje": "2026-11-16",
+   "grupo": "D · No apuntar",
+   "precios": []
+  }
+ ],
+ "informes_nube": [
+  {
+   "fecha": "2026-11-18",
+   "ruta": "informes/2026-11-18.md"
+  },
+  {
+   "fecha": "2026-11-17",
+   "ruta": "informes/2026-11-17.md"
+  },
+  {
+   "fecha": "2026-11-16",
+   "ruta": "informes/2026-11-16.md"
+  },
+  {
+   "fecha": "2026-11-15",
+   "ruta": "informes/2026-11-15.md"
+  },
+  {
+   "fecha": "2026-11-14",
+   "ruta": "informes/2026-11-14.md"
+  },
+  {
+   "fecha": "2026-11-13",
+   "ruta": "informes/2026-11-13.md"
+  },
+  {
+   "fecha": "2026-11-12",
+   "ruta": "informes/2026-11-12.md"
+  },
+  {
+   "fecha": "2026-11-11",
+   "ruta": "informes/2026-11-11.md"
+  },
+  {
+   "fecha": "2026-11-10",
+   "ruta": "informes/2026-11-10.md"
+  },
+  {
+   "fecha": "2026-11-09",
+   "ruta": "informes/2026-11-09.md"
+  },
+  {
+   "fecha": "2026-11-08",
+   "ruta": "informes/2026-11-08.md"
+  },
+  {
+   "fecha": "2026-11-07",
+   "ruta": "informes/2026-11-07.md"
+  },
+  {
+   "fecha": "2026-11-06",
+   "ruta": "informes/2026-11-06.md"
+  },
+  {
+   "fecha": "2026-11-05",
+   "ruta": "informes/2026-11-05.md"
+  },
+  {
+   "fecha": "2026-11-04",
+   "ruta": "informes/2026-11-04.md"
+  },
+  {
+   "fecha": "2026-11-03",
+   "ruta": "informes/2026-11-03.md"
+  },
+  {
+   "fecha": "2026-11-02",
+   "ruta": "informes/2026-11-02.md"
+  },
+  {
+   "fecha": "2026-11-01",
+   "ruta": "informes/2026-11-01.md"
+  },
+  {
+   "fecha": "2026-10-31",
+   "ruta": "informes/2026-10-31.md"
+  },
+  {
+   "fecha": "2026-10-29",
+   "ruta": "informes/2026-10-29.md"
+  },
+  {
+   "fecha": "2026-10-28",
+   "ruta": "informes/2026-10-28.md"
+  },
+  {
+   "fecha": "2026-10-27",
+   "ruta": "informes/2026-10-27.md"
+  },
+  {
+   "fecha": "2026-10-26",
+   "ruta": "informes/2026-10-26.md"
+  },
+  {
+   "fecha": "2026-10-25",
+   "ruta": "informes/2026-10-25.md"
+  },
+  {
+   "fecha": "2026-10-24",
+   "ruta": "informes/2026-10-24.md"
+  },
+  {
+   "fecha": "2026-10-23",
+   "ruta": "informes/2026-10-23.md"
+  },
+  {
+   "fecha": "2026-10-22",
+   "ruta": "informes/2026-10-22.md"
+  },
+  {
+   "fecha": "2026-10-21",
+   "ruta": "informes/2026-10-21.md"
+  },
+  {
+   "fecha": "2026-10-20",
+   "ruta": "informes/2026-10-20.md"
+  },
+  {
+   "fecha": "2026-10-19",
+   "ruta": "informes/2026-10-19.md"
+  }
+ ],
+ "catalogos": [
+  {
+   "fecha": "2026-11-16",
+   "tienda": "SpartanComputer Cbba",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web spartantech.store (WooCommerce; inicio, categoría Hardware y Componentes y búsquedas ryzen, intel core, procesador, ram, ddr, ssd, nvme, memoria): tienda de laptops (Bs 3.573 a 9.775), PCs armadas, proyectores, audio, TV y accesorios; Hardware y Componentes tiene solo 2 productos (pasta térmica Cooler Master y similar); sin procesadores, RAM ni SSD sueltos",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-13",
+   "tienda": "Crazy Store",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web crazystore.com.bo (inicio y catálogo; USD): tienda de celulares, audio y accesorios Apple/Sony; único componente de PC el Intel Core i9-14900K nuevo USD 499 (Bs 5.988 en la web); sin Ryzen, RAM ni SSD; el buscador de la web redirige al inicio",
+   "productos": "1",
+   "precios": "1",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-12",
+   "tienda": "Punto Tecnológico / Supermall",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web puntotecnologic.com/categories/procesadores (respondió 12/11 por WhatsApp): 20 procesadores (Ryzen 5 5500 Bs 1.440 a 9950X3D2 Bs 12.590; 7600X Bs 2.560, 8400F Bs 1.680, 7700X3D Bs 4.760, 5800X3D Bs 4.960); sin 5600, 5700X3D, 7500F, i5-13400 ni 7600",
+   "productos": "20",
+   "precios": "4",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-12",
+   "tienda": "Cyrex Store",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web cyrexstore.com/tienda?category=procesadores (USD): 39 procesadores, 24 visibles (5600X OEM USD 175, 5700X OEM 200, i5-13400F OEM USD 188, 7700X BOX 310, 7600X BOX 225); sin 5600, 5700X3D, 7500F ni i5-13400 (el 13400F es otro modelo); buscador por URL no filtra",
+   "productos": "24",
+   "precios": "4",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-12",
+   "tienda": "PC Components Bolivia",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web pccomponents-bo.com/productos (Santa Cruz): 36 procesadores (Ryzen 5 3500X OEM Bs 1.250 a 9950X3D Bs 10.500), 15 RAM (DDR4 8GB Bs 850 a Corsair DDR5 32GB 2x16 6000 Bs 7.800) y 19 SSD (240GB Bs 530 a Kingston 4TB Bs 7.800; NVMe 1TB desde Bs 1.750); sin 5600, 5700X3D, 7500F (el OEM de Bs 2.100 del 04/11 ya no está), 7600, i5-13400 ni SSD 2TB",
+   "productos": "70",
+   "precios": "17",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-12",
+   "tienda": "Cyrex Store",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web cyrexstore.com/tienda (USD, categorías procesadores, memoria-ram y almacenamiento, página completa): 39 procesadores (Ryzen 3 3200G OEM USD 75 a 9850X3D USD 555), 23 RAM (DDR4 8GB USD 65 a DDR5 16GB USD 270) y 25 SSD (240GB USD 50 a 4TB USD 720; NVMe 1TB desde USD 155; Samsung 990 Pro 1TB y una RAM Puskill agotados); sin 5600, 5700X3D, 7500F, 7600 ni i5-13400 (el 13400F es otro modelo)",
+   "productos": "87",
+   "precios": "15",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-12",
+   "tienda": "Punto Tecnológico / Supermall",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web puntotecnologic.com (categorías procesadores, memoria-ram y disco-solido): 20 procesadores (Ryzen 5 5500 Bs 1.440 a 9950X3D2 Bs 12.590), 20 RAM (DDR4 8GB Bs 750 a Corsair DDR5 32GB 6000 Bs 7.160) y 18 SSD (240GB Bs 460 a Samsung 9100 Pro 2TB Bs 5.860; NVMe 1TB desde Bs 2.060); sin 5600, 5700X3D, 7500F ni i5-13400",
+   "productos": "58",
+   "precios": "13",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-12",
+   "tienda": "OverCity",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "overcitygaming.com/categorias/procesadores (buscador y categoría completa, 40 procesadores; Ryzen 5 3200G Bs 1.145 a Ultra 9 285K Bs 8.320, Ryzen 5 7600 Bs 2.850 con \"Últimas unidades\"); RAM y SSD no tiene (11/11)",
+   "productos": "40",
+   "precios": "13",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-12",
+   "tienda": "MSR Computers",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "msrcomputers.framer.website/comps/procesadores (3 clics en Cargar más hasta el final): 36 procesadores (Athlon 3000G Bs 785 a Ultra 9 285K Bs 8.500; Ryzen 9 9950X3D Bs 7.600, 7800X3D Bs 4.900, i5-13400 Bs 2.300, 9600X Bs 2.600); la web no tiene RAM ni SSD",
+   "productos": "36",
+   "precios": "14",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-12",
+   "tienda": "Geek Store Bolivia",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "catálogo Kyte geek-store-bolivia.kyte.site (el que mandó por WhatsApp hoy; USD, con descuentos de 2 a 10 por ciento): 12 procesadores (Ryzen 3 3200G USD 99,99 a 7700X USD 290; 7500F BOX USD 147; 9600X USD 239), 4 RAM (DDR4 8GB USD 60 a DDR5 32GB USD 433) y 7 SSD (A400 240GB USD 70 a WD Blue M.2 SATA 2TB USD 247; NVMe 1TB Kingston NV3 USD 159)",
+   "productos": "23",
+   "precios": "12",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-11",
+   "tienda": "OverCity",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "overcitygaming.com (buscador público, 11/11): búsquedas \"ssd\", \"nvme\", \"ddr5\" y \"2tb\" solo devuelven laptops y una workstation armada (Bs 6.570 a 49.070); no vende SSD ni RAM sueltos; el menú trae Procesadores, Mouse, Accesorios, Fuentes y Refrigeración líquida",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-11",
+   "tienda": "Legion Emporium",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "sites.google.com/view/legiongamerstore (Componentes internos: Procesadores AMD/Intel, Placas, RAM, Almacenamientos, etc.): carruseles de imágenes de producto (Ryzen 5 5600GT, Ryzen 7 4750G, Core i7-14700, SSD 980 NVMe) sin ningún precio; la subpágina de SSD NVMe da 404; se cotiza todo por WhatsApp",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-10",
+   "tienda": "MSR Computers",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "msrcomputers.framer.website/comps/procesadores (se leyó con Cargar más hasta el final): 36 procesadores (Ryzen 3 3200G Bs 840 a Ultra 9 285K Bs 8.500; 7800X3D Bs 4.900, 9950X Bs 5.580, i5-14400F Bs 2.250, i5-12400F Bs 1.800, i5-13400 Bs 2.300, 265K Bs 3.950); Ryzen 7 7700 (sin X) Bs 2.850 y 5700X Bs 2.550; sin 7700X, 7600, 5600, 7500F ni 5700X3D",
+   "productos": "36",
+   "precios": "6",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-10",
+   "tienda": "Microworld",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "catálogo de WhatsApp Business (wa.me/c/…; se vio en WhatsApp Web sin iniciar sesión ni instalar nada): 11 artículos (webcam Logitech C270, receptor HDMI, kit de desarmadores, parlantes Creative, disco externo 2TB Toshiba USB, adaptadores, hub USB, ventiladores para laptop, laptop HP EliteBook 830 G7); sin procesadores, RAM ni SSD NVMe; casi todos a Bs 0,00 (sin precio)",
+   "productos": "11",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-09",
+   "tienda": "SS Electrónica Cbba - Quillacollo",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "sselectronica.com: categorías Informática (cables, adaptadores y conectores, Bs 2 a 98), Electrónica, Energía, Seguridad, etc.; búsqueda \"ssd\" sin resultados; no vende SSD, RAM ni procesadores",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-09",
+   "tienda": "Dr. Compu",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "Dr. Compu Quillacollo (sitio = página de Facebook, sin login abierto; buscador público): reparación de computadoras, laptops, netbooks, impresoras y sistemas; sin catálogo ni precios",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-06",
+   "tienda": "Dr. Compu",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "su \"web\" en Google Maps es una página de Facebook (Quillacollo): reparación de computadoras, laptops e impresoras y sistemas; sin catálogo de componentes",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-06",
+   "tienda": "SS Electrónica Cbba - Quillacollo",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web sselectronica.com: tienda de electrónica para proyectos (resistencias Bs 0,25, Arduino Bs 110, motores, placas); búsquedas \"ssd\" sin resultados y \"memoria\" solo EEPROM y Arduino",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-04",
+   "tienda": "PC Components Bolivia",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web pccomponents-bo.com/productos (Santa Cruz, envía a todo el país): 36 procesadores (Ryzen 5 5600X OEM Bs 2.350 a 9950X3D Bs 10.500; 7500F OEM Bs 2.100; 7700X Bs 3.550; 7600X Bs 2.650) y 19 SSD (240GB a 4TB; 1TB desde Bs 1.400); sin Ryzen 5 7600 ni SSD de 2TB",
+   "productos": "55",
+   "precios": "5",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-04",
+   "tienda": "TecnoGamer Bolivia",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web tecnogamer.com.bo: catálogo de periféricos y componentes; categoría Discos sólidos M.2 con 2 SSD (Kingston NV3 500GB Bs 1.785, 1TB Bs 2.215); la categoría de procesadores no existe (404)",
+   "productos": "2",
+   "precios": "2",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-03",
+   "tienda": "Punto Tecnológico / Supermall",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web puntotecnologic.com/categories/procesadores: 21 procesadores (Ryzen 5 5500 Bs 1.440 a 9950X3D2 Bs 12.590); sin Ryzen 5 5600, 7 5700X3D, 5 7500F ni 5 7600 (solo 5800X3D Bs 4.960, 7700X3D Bs 4.760, otros modelos)",
+   "productos": "21",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-03",
+   "tienda": "Cyrex Store",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web cyrexstore.com/tienda?category=procesadores (en USD): 23 procesadores visibles de 38; sin Ryzen 5 5600, 7 5700X3D, 5 7500F ni 5 7600 (solo 5600X OEM USD 175, 5600G, 5700X, 7600X BOX USD 225: otros modelos)",
+   "productos": "23",
+   "precios": "3",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-03",
+   "tienda": "OverCity",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web overcitygaming.com/categorias/procesadores: 41 procesadores en Bs (Ryzen 3 3200G Bs 1.145 a 9950X3D2 Bs 12.580); Ryzen 5 7600 Bs 2.850, i5-12400F Bs 2.250, Ultra 7 265K Bs 4.170, 9950X Bs 6.150; sin 5600, 5700X3D, 7500F, 7700X ni 7800X3D (solo 7700X3D y 5800X3D)",
+   "productos": "41",
+   "precios": "7",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-03",
+   "tienda": "EQUIPAMIENTO MODERNO S.R.L.",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "sin web de precios hallada (búsqueda pública): importadora y servicio técnico para empresas, perfil en Facebook y LinkedIn; sin lista de procesadores",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-03",
+   "tienda": "i2C Electronics",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web i2celectronica.com: centro de robótica educativa y electrónica (cursos, robots); no vende componentes de PC",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-03",
+   "tienda": "Grupo SERCOMEX",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "sin web con productos hallada (búsqueda pública): servicio técnico y mantenimiento de computadoras, laptops; sin componentes sueltos",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-11-03",
+   "tienda": "SYSCITY",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "sin tienda online hallada: solo Facebook e Instagram; Supermall PB local 18, computadoras y laptops; ya consultada por WhatsApp",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-28",
+   "tienda": "Punto Tecnológico / Supermall",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web puntotecnologic.com/categories/procesadores: 20 procesadores (Ryzen 5 5500 Bs 1.440 a 9950X3D2 Bs 12.590); sin Ryzen 5 5600, 7 5700X3D ni 5 7500F",
+   "productos": "20",
+   "precios": "1",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-28",
+   "tienda": "Shopping PC",
+   "canal": "PDF",
+   "formato": "PDF",
+   "descripcion": "revisión 28/10 del PDF del 15/10 (texto extraído del archivo): sin Ryzen 5 5600, 7 5700X3D ni 5 7500F (solo Kingston Fury DDR5 5600 MHz, no cuenta)",
+   "productos": "0",
+   "precios": "0",
+   "ruta": "oficina/catalogos/2026-10-15-shopping-pc.pdf"
+  },
+  {
+   "fecha": "2026-10-28",
+   "tienda": "Legion Emporium",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "taplink legiongamerstore.taplink.ws: solo enlaces (catálogo, sucursales, redes); sin precios, todo se cotiza por WhatsApp",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-28",
+   "tienda": "Geek Store Bolivia",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web geek-store-bolivia.kyte.site: menú de categorías cargado (sin listar productos en el texto); el 19/10 por WhatsApp dijeron que no tienen 5600 ni 5700X3D",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-21",
+   "tienda": "Cyrex Store",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web: busqueda 7500F, 5700X3D y 5600 = 0 resultados (solo 5600G OEM USD 189 y 5700X OEM USD 200, otros modelos); sin 7500F/5600/5700X3D",
+   "productos": "8",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-21",
+   "tienda": "sYsbol Store",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web sysbol.com: categoria Partes de Computadora con 2 productos (repuestos de laptop); sin procesadores",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-21",
+   "tienda": "CompuMasters Bolivia",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web compumasterbol.com: sin precios de procesadores sueltos, solo paquetes de PC",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-21",
+   "tienda": "Compucenter",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web compucenter.store: solo laptops y equipos; sin procesadores sueltos",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-20",
+   "tienda": "Geek Store Bolivia",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web geek-store-bolivia.kyte.site (catálogo Kyte, en USD): 11 procesadores (Ryzen 3 3200G a i5-12600K, USD 96 a 240); no lista el Ryzen 7 7700X suelto (solo dentro de PCs armadas)",
+   "productos": "11",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-20",
+   "tienda": "Cyrex Store",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web cyrexstore.com: Ryzen 7 7700X BOX USD 310 (≈ Bs 3.667 al 11,83) con garantía real; otros procesadores de la misma página: 5700 BOX USD 185, 9600X BOX USD 235, i5-12400F BOX 185, Ultra 5 245KF 248",
+   "productos": "7",
+   "precios": "1",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-20",
+   "tienda": "Punto Tecnológico / Supermall",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web puntotecnologic.com: solo coolers, RAM, monitores, almacenamiento y periféricos; ningún procesador en la lista visible",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-20",
+   "tienda": "MSR Computers",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web msrcomputers.framer.website: 3 procesadores (Ryzen 9 9950X Bs 5.580, i5-13400 Bs 2.300, Core Ultra 7 265K Bs 3.950); sin Ryzen 7",
+   "productos": "3",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-20",
+   "tienda": "CompuMasters Bolivia",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web compumasterbol.com: PCs armadas por serie desde Bs 2.000 y Ryzen 7 5800X nombrado sin precio; no lista el 7700X",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-20",
+   "tienda": "Shopping PC",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web shoppingpc.com.bo: sin precios y sin procesadores de escritorio visibles hoy; el catálogo PDF del 15/10 (pdftotext -raw) tampoco trae 7700X (solo 8700G USD 350)",
+   "productos": "0",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-19",
+   "tienda": "Shopping PC",
+   "canal": "web",
+   "formato": "WEB",
+   "descripcion": "web shoppingpc.com.bo: catálogo sin precios (Ver más/Contáctenos); 3 procesadores (8700G, i7-9700K, Ryzen 5 3600) y 5 SSD (Kingston NV3 500GB/1TB, Crucial BX500 2TB SATA, Kingston 960GB/240GB SATA); ninguno es 7600 ni NVMe 2TB; ECOM (laptops, catálogo solo por WhatsApp) y PCBOX (reparación, sin tienda web) sin precios públicos",
+   "productos": "8",
+   "precios": "0",
+   "ruta": ""
+  },
+  {
+   "fecha": "2026-10-15",
+   "tienda": "Shopping PC",
+   "canal": "whatsapp",
+   "formato": "PDF",
+   "descripcion": "lista mayorista en USD del 12/10, sin factura: procesadores, placas, RAM, SSD, tarjetas de video, monitores y accesorios",
+   "productos": "105",
+   "precios": "5",
+   "ruta": "oficina/catalogos/2026-10-15-shopping-pc.pdf"
+  }
+ ],
+ "capturas": [
+  {
+   "fecha": "2026-11-17",
+   "hora": "16:14",
+   "agente": "mkt",
+   "descripcion": "Marketplace de Cochabamba: búsqueda \"7700x\" de la ronda de la tarde 17/11 (PC)",
+   "ruta": "oficina/capturas/2026-11-17-1614-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-16",
+   "hora": "16:19",
+   "agente": "mkt",
+   "descripcion": "Web de SpartanComputer (spartantech.store): búsqueda \"ssd\" que solo devuelve laptops; sin componentes sueltos",
+   "ruta": "oficina/capturas/2026-11-16-1619-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-16",
+   "hora": "10:51",
+   "agente": "mkt",
+   "descripcion": "Marketplace de Cochabamba: búsqueda \"ryzen 7 7700x\" del barrido del lunes 16/11 (PC)",
+   "ruta": "oficina/capturas/2026-11-16-1051-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-12",
+   "hora": "16:34",
+   "agente": "mkt",
+   "descripcion": "MSR Computers web: lista de procesadores completa (36) tras Cargar más; ronda PC 12/11",
+   "ruta": "oficina/capturas/2026-11-12-1650-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-12",
+   "hora": "11:15",
+   "agente": "mkt",
+   "descripcion": "Punto Tecnológico web: categoría procesadores (sin 5600, 5700X3D ni 7500F); ronda PC 12/11",
+   "ruta": "oficina/capturas/2026-11-12-1115-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-12",
+   "hora": "11:00",
+   "agente": "mkt",
+   "descripcion": "Marketplace de Cochabamba: búsqueda del Ryzen 7 7700x (1 suelto nuevo a 3.100 de hace 10 semanas, 3 PC armadas; sin chats ni personas); ronda PC 12/11",
+   "ruta": "oficina/capturas/2026-11-12-1100-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-11",
+   "hora": "10:45",
+   "agente": "mkt",
+   "descripcion": "Google Maps: tiendas de computación del centro comercial Supermall (TikTok dio error; se buscó por centros comerciales); sin personas ni chats; ronda PC 11/11",
+   "ruta": "oficina/capturas/2026-11-11-1100-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-10",
+   "hora": "13:22",
+   "agente": "mkt",
+   "descripcion": "MSR Computers web: lista de procesadores (tras Cargar más, 36 productos); ronda cubre mac PC 10/11",
+   "ruta": "oficina/capturas/2026-11-10-1322-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-10",
+   "hora": "13:18",
+   "agente": "mkt",
+   "descripcion": "Marketplace de Cochabamba: búsqueda del Ryzen 7 7700x (ninguno suelto, 3 PC armadas; sin chats ni personas); ronda cubre mac PC 10/11",
+   "ruta": "oficina/capturas/2026-11-10-1318-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-09",
+   "hora": "16:13",
+   "agente": "mkt",
+   "descripcion": "SS Electrónica Cochabamba web: categoría Informática (solo cables y adaptadores, Bs 2 a 98); ronda PC 09/11",
+   "ruta": "oficina/capturas/2026-11-09-1613-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-09",
+   "hora": "16:07",
+   "agente": "mkt",
+   "descripcion": "Marketplace de Cochabamba: búsqueda del Ryzen 7 7800X3D (sin chats ni personas); ronda PC 09/11",
+   "ruta": "oficina/capturas/2026-11-09-1607-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-04",
+   "hora": "12:10",
+   "agente": "mkt",
+   "descripcion": "PC Components Bolivia web: procesadores (36, 7500F OEM Bs 2.100); Catalogos ronda PC 04/11",
+   "ruta": "oficina/capturas/2026-11-04-1210-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-04",
+   "hora": "11:39",
+   "agente": "mkt",
+   "descripcion": "Google Maps: busqueda \"computacion Sacaba\" para tiendas nuevas (sin chats ni personas); ronda PC 04/11",
+   "ruta": "oficina/capturas/2026-11-04-1139-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-03",
+   "hora": "16:42",
+   "agente": "mkt",
+   "descripcion": "OverCity web: categoria procesadores (41 productos, Ryzen 5 7600 Bs 2.850); Catalogos ronda tarde PC 03/11",
+   "ruta": "oficina/capturas/2026-11-03-1700-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-03",
+   "hora": "16:38",
+   "agente": "mkt",
+   "descripcion": "Google Maps: búsqueda \"computacion Sacaba\" para tiendas nuevas (sin chats ni personas); ronda tarde PC 03/11",
+   "ruta": "oficina/capturas/2026-11-03-1638-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-03",
+   "hora": "10:48",
+   "agente": "mkt",
+   "descripcion": "Marketplace Cochabamba: resultados de busqueda ryzen 7 7700x (sin chats ni nombres); ronda mañana Mac 03/11",
+   "ruta": "oficina/capturas/2026-11-03-1045-mkt.jpg"
+  },
+  {
+   "fecha": "2026-11-03",
+   "hora": "10:46",
+   "agente": "mkt",
+   "descripcion": "Cyrex Store web: categoria procesadores (38 productos, sin 5600/5700X3D/7500F); Catalogos ronda mañana Mac 03/11",
+   "ruta": "oficina/capturas/2026-11-03-1046-mkt.jpg"
+  },
+  {
+   "fecha": "2026-10-30",
+   "hora": "16:14",
+   "agente": "mkt",
+   "descripcion": "Google Maps: mapa de la búsqueda hardware pc gamer ensamblaje cochabamba (solo mapa, sin teléfonos ni datos de personas); ronda tarde PC 30/10",
+   "ruta": "oficina/capturas/2026-10-30-1640-mkt.png"
+  },
+  {
+   "fecha": "2026-10-30",
+   "hora": "13:09",
+   "agente": "mkt",
+   "descripcion": "Google Maps: mapa de la búsqueda 'componentes pc cochabamba' (solo mapa, sin teléfonos ni datos de personas); ronda cubre mac PC 30/10",
+   "ruta": "oficina/capturas/2026-10-30-1309-mkt.png"
+  },
+  {
+   "fecha": "2026-10-29",
+   "hora": "11:30",
+   "agente": "mkt",
+   "descripcion": "Facebook páginas: búsqueda de tiendas de computadoras en Cochabamba (sin chats ni números)",
+   "ruta": "oficina/capturas/2026-10-29-1130-mkt.jpg"
+  },
+  {
+   "fecha": "2026-10-28",
+   "hora": "19:44",
+   "agente": "mkt",
+   "descripcion": "Marketplace Cochabamba: búsqueda SSD NVMe 1TB (resultados recientes, sin datos de personas); ronda tarde PC 28/10",
+   "ruta": "oficina/capturas/2026-10-28-2005-mkt.jpg"
+  },
+  {
+   "fecha": "2026-10-28",
+   "hora": "11:06",
+   "agente": "mkt",
+   "descripcion": "Punto Tecnológico (web): categoría procesadores; sin 5600, 5700X3D ni 7500F",
+   "ruta": "oficina/capturas/2026-10-28-1105-catalogos.jpg"
+  },
+  {
+   "fecha": "2026-10-28",
+   "hora": "10:45",
+   "agente": "mkt",
+   "descripcion": "Marketplace Cochabamba: busqueda Ryzen 5 5600 (sin anuncios exactos)",
+   "ruta": "oficina/capturas/2026-10-28-1045-mkt.jpg"
+  },
+  {
+   "fecha": "2026-10-27",
+   "hora": "16:33",
+   "agente": "mkt",
+   "descripcion": "Marketplace Cochabamba: búsqueda Ryzen 7 7800X3D (resultados, sin datos de personas); ronda Mac 27/10",
+   "ruta": "oficina/capturas/2026-10-27-1633-mkt.jpg"
+  },
+  {
+   "fecha": "2026-10-26",
+   "hora": "12:11",
+   "agente": "mkt",
+   "descripcion": "Marketplace Cochabamba: búsqueda Ryzen 7 7800X3D (pantalla cargando, sin datos de personas); ronda Mac 26/10",
+   "ruta": "oficina/capturas/2026-10-26-1130-mkt.jpg"
+  },
+  {
+   "fecha": "2026-10-23",
+   "hora": "13:13",
+   "agente": "mkt",
+   "descripcion": "Marketplace Cochabamba: búsqueda Ryzen 7 5700X3D (resultados, sin datos de personas); ronda PC 23/10",
+   "ruta": "oficina/capturas/2026-10-23-1313-mkt.jpg"
+  },
+  {
+   "fecha": "2026-10-22",
+   "hora": "13:14",
+   "agente": "mkt",
+   "descripcion": "Marketplace Cochabamba: búsqueda Ryzen 7 7800X3D (resultados, sin datos de personas); ronda PC 22/10",
+   "ruta": "oficina/capturas/2026-10-22-1314-mkt.jpg"
+  },
+  {
+   "fecha": "2026-10-21",
+   "hora": "16:14",
+   "agente": "mkt",
+   "descripcion": "Marketplace Cochabamba: busqueda de Ryzen 7 7700X por fecha (tarde)",
+   "ruta": "oficina/capturas/2026-10-21-1614-mkt.jpg"
+  },
+  {
+   "fecha": "2026-10-21",
+   "hora": "10:48",
+   "agente": "mkt",
+   "descripcion": "Cyrex Store (web): búsqueda Ryzen; sin 7500F, 5600 ni 5700X3D",
+   "ruta": "oficina/capturas/2026-10-21-1048-mkt.jpg"
+  },
+  {
+   "fecha": "2026-10-21",
+   "hora": "10:46",
+   "agente": "mkt",
+   "descripcion": "Marketplace Cochabamba: búsqueda Ryzen 5 7500F (resultados, sin datos de personas)",
+   "ruta": "oficina/capturas/2026-10-21-1046-mkt.jpg"
+  }
  ],
  "vigilar": [
   {
