@@ -262,6 +262,7 @@ struct VistaSCN: UIViewRepresentable {
         v.preferredFramesPerSecond = 60
         v.pointOfView = escena.rootNode.childNode(withName: "camara", recursively: false)
         v.allowsCameraControl = false
+        v.showsStatistics = UserDefaults.standard.bool(forKey: "oficina_fps")
         v.delegate = context.coordinator
         v.isPlaying = true
         if let cam = v.pointOfView?.camera { cam.projectionDirection = .horizontal; cam.fieldOfView = 62 }

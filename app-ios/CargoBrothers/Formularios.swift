@@ -238,6 +238,7 @@ struct AjustesView: View {
     @State private var estado: String?
     @State private var probando = false
     @AppStorage("bloqueo") private var bloqueo = true
+    @AppStorage("oficina_fps") private var fps = false
 
     var body: some View {
         Form {
@@ -264,6 +265,11 @@ struct AjustesView: View {
             }
             Section("Seguridad") {
                 Toggle("Pedir Face ID al abrir la app", isOn: $bloqueo)
+            }
+            Section {
+                Toggle("Mostrar FPS en la oficina 3D", isOn: $fps)
+            } header: { Text("Oficina 3D") } footer: {
+                Text("Abajo de la oficina aparecen los cuadros por segundo (fps) y cuánto tarda cada cuadro. 60 es lo ideal; menos de 30 se nota trabado.")
             }
             Section("Avisos") {
                 NavigationLink { NotificacionesView() } label: { Label("Notificaciones", systemImage: "bell.badge") }
