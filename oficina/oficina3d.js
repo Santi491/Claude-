@@ -233,7 +233,7 @@
   // planta de lujo: maceta alta de mármol con aro de bronce y un arbolito con varias copas
   function plantaLujo(x, z, alto) {
     const g = new THREE.Group(); g.position.set(x, 0, z); scene.add(g); alto = alto || 1;
-    cyl(0.3, 0.22, 0.85, marmolCalido, 0, 0.425, 0, g, 24); cyl(0.31, 0.31, 0.04, bronce, 0, 0.8, 0, g, 24); cyl(0.27, 0.27, 0.02, M(0x2a2018), 0, 0.84, 0, g, 20);
+    cyl(0.3, 0.22, 0.85, marmolCalido, 0, 0.425, 0, g, 24); cyl(0.31, 0.31, 0.04, bronce, 0, 0.8, 0, g, 24); cyl(0.27, 0.27, 0.02, M(0x2a2018), 0, 0.852, 0, g, 20);   // (19/11) 1 cm arriba del borde: si no, se pisa con la tapa de la maceta y titila
     cyl(0.03, 0.045, 1.1 * alto, M(0x4a3426, { roughness: .9 }), 0, 0.85 + 0.55 * alto, 0, g, 8);
     const hoja = [M(0x2f5a3c, { roughness: .8, flatShading: true }), M(0x3e6e47, { roughness: .8, flatShading: true }), M(0x264a32, { roughness: .8, flatShading: true })];
     [[0, 2.05, 0, .42], [.24, 1.82, .1, .3], [-.22, 1.86, -.08, .32], [.06, 1.66, -.24, .26], [-.1, 1.7, .24, .27], [.16, 2.25, -.1, .25]].forEach(([hx, hy, hz, r], i) => {

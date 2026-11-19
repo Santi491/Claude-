@@ -208,7 +208,7 @@ enum Oficina3D {
         // ---------- cámara: la misma vista general de la oficina web ----------
         let cam = SCNCamera()
         cam.fieldOfView = 38
-        cam.zNear = 0.1; cam.zFar = 220
+        cam.zNear = 0.25; cam.zFar = 160   // (19/11) más precisión de profundidad: con 0,1 las piezas muy juntas titilaban
         cam.wantsHDR = true
         cam.exposureOffset = -0.25
         cam.wantsExposureAdaptation = false
