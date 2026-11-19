@@ -16,6 +16,11 @@
    "estado": "trabajando",
    "texto": "Prueba: revisando el paquete",
    "hora": "01:04"
+  },
+  "ana": {
+   "estado": "esperando",
+   "texto": "Prueba: espera precios",
+   "hora": "01:04"
   }
  }
 }
