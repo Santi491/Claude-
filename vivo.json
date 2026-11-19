@@ -1,19 +1,20 @@
 {
  "ronda": {
-  "activa": true,
+  "activa": false,
   "quien": "PC de la casa",
   "desde": "01:04",
-  "fecha": "2026-11-19"
+  "fecha": "2026-11-19",
+  "hasta": "01:09"
  },
- "actualizado": "2026-11-19 01:04",
+ "actualizado": "2026-11-19 01:09",
  "agentes": {
   "wa": {
-   "estado": "trabajando",
+   "estado": "terminó",
    "texto": "Prueba: leyendo chats sin leer",
    "hora": "01:04"
   },
   "pedidos": {
-   "estado": "trabajando",
+   "estado": "terminó",
    "texto": "Prueba: revisando el paquete",
    "hora": "01:04"
   },
