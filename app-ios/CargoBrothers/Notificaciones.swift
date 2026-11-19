@@ -303,27 +303,37 @@ enum Avisador {
 final class DelegadoAvisos: NSObject, UNUserNotificationCenterDelegate {
     static let compartido = DelegadoAvisos()
 
-    func userNotificationCenter(_ c: UNUserNotificationCenter, willPresent n: UNNotification) async -> UNNotificationPresentationOptions {
-        [.banner, .list, .sound]
+    // (19/11) con las versiones "async" iOS terminaba la respuesta fuera del hilo principal y la app se cerraba al tocar
+    // un aviso: ahora todo corre en el hilo principal y se avisa a iOS al final, también ahí
+    func userNotificationCenter(_ c: UNUserNotificationCenter, willPresent n: UNNotification,
+                                withCompletionHandler listo: @escaping (UNNotificationPresentationOptions) -> Void) {
+        listo([.banner, .list, .sound])
     }
 
-    func userNotificationCenter(_ c: UNUserNotificationCenter, didReceive r: UNNotificationResponse) async {
-        let info = r.notification.request.content.userInfo as? [String: String] ?? [:]
-        switch r.actionIdentifier {
-        case "EBAY":
-            if let s = info["url"], let u = URL(string: s) { await MainActor.run { UIApplication.shared.open(u) } }
-        case "APROBAR", "RECHAZAR":
-            guard let t = info["dtipo"], let ref = info["ref"] else { return }
-            let d = Decision(tipo: t, ref: ref, agente: "", fecha: "", titulo: info["titulo"] ?? "", detalle: "", plazo: "")
-            await Store.compartido.decidirDirecto(d, accion: t == "necesidad" ? "resuelta" : (r.actionIdentifier == "APROBAR" ? "aprobar" : "rechazar"))
-        case "RESPONDER":
-            if let t = r as? UNTextInputNotificationResponse, let ag = info["agente"], info["ejemplo"] == nil {
-                _ = await Store.compartido.escribir(a: ag, t.userText)
+    func userNotificationCenter(_ c: UNUserNotificationCenter, didReceive r: UNNotificationResponse,
+                                withCompletionHandler listo: @escaping () -> Void) {
+        // solo los datos de texto (un aviso puede traer otras cosas, como "aps")
+        var info: [String: String] = [:]
+        for (k, v) in r.notification.request.content.userInfo { if let k = k as? String, let v = v as? String { info[k] = v } }
+        let accion = r.actionIdentifier
+        let texto = (r as? UNTextInputNotificationResponse)?.userText
+        Task { @MainActor in
+            switch accion {
+            case "EBAY":
+                if let s = info["url"], let u = URL(string: s) { await UIApplication.shared.open(u) }
+            case "APROBAR", "RECHAZAR":
+                if let t = info["dtipo"], let ref = info["ref"] {
+                    let d = Decision(tipo: t, ref: ref, agente: "", fecha: "", titulo: info["titulo"] ?? "", detalle: "", plazo: "")
+                    await Store.compartido.decidirDirecto(d, accion: t == "necesidad" ? "resuelta" : (accion == "APROBAR" ? "aprobar" : "rechazar"))
+                }
+            case "RESPONDER":
+                if let texto, let ag = info["agente"], info["ejemplo"] == nil { _ = await Store.compartido.escribir(a: ag, texto) }
+            case UNNotificationDefaultActionIdentifier:
+                // tocar el aviso: abre el lugar justo (el pedido, el producto, la decisión o el chat)
+                Store.compartido.destino = Destino.de(info)
+            default: break
             }
-        case UNNotificationDefaultActionIdentifier:
-            // tocar el aviso: abre el lugar justo (el pedido, el producto, la decisión o el chat)
-            await MainActor.run { Store.compartido.destino = Destino.de(info) }
-        default: break
+            listo()
         }
     }
 }

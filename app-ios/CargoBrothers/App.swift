@@ -230,7 +230,7 @@ struct RaizView: View {
             EquipoView().tabItem { Label("Equipo", systemImage: "person.3") }.tag(4)
         }
         // aviso tocado: la pestaña que corresponde y, si es un pedido, un producto o un chat, se abre directo
-        .onChange(of: store.destino) { _, d in
+        .onReceive(store.$destino) { d in   // también si el aviso llegó antes de que se dibujara la pantalla
             guard let d else { return }
             pestana = d.pestana
             switch d { case .pedido, .producto, .chat: hoja = d; default: break }
