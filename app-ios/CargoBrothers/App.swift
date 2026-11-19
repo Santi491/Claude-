@@ -15,6 +15,8 @@ struct CargoBrothersApp: App {
     @AppStorage("tema_modo") private var modo = "sistema"
     @AppStorage("tema_acento") private var acento = "bronce"
     @AppStorage("tema_fondo") private var fondo = "grafito"
+    @AppStorage("tema_acento_hex") private var hexA = "#C9A45C"
+    @AppStorage("tema_fondo_hex") private var hexF = "#0E0E10"
 
     init() {
         UNUserNotificationCenter.current().delegate = DelegadoAvisos.compartido
@@ -40,7 +42,7 @@ struct CargoBrothersApp: App {
                 .environmentObject(store)
                 .preferredColorScheme(Tema.esquema)
                 .tint(Tema.bronce)
-                .id("\(modo)-\(acento)-\(fondo)")   // al cambiar la apariencia, la app se vuelve a dibujar con los colores nuevos
+                .id("\(modo)-\(acento)-\(fondo)-\(hexA)-\(hexF)")   // al cambiar la apariencia, la app se vuelve a dibujar con los colores nuevos
         }
         .onChange(of: fase) { _, f in
             if f == .background { Novedades.programar(); store.bloquearSiCorresponde(); store.pararReloj() }

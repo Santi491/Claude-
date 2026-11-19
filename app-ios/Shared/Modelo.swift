@@ -240,8 +240,38 @@ enum Tema {
     ]
     static var acentoID: String { UserDefaults.standard.string(forKey: "tema_acento") ?? "bronce" }
     static var fondoID: String { UserDefaults.standard.string(forKey: "tema_fondo") ?? "grafito" }
-    private static var acento: (UIColor, UIColor) { let a = acentos.first { $0.0 == acentoID } ?? acentos[0]; return (a.2, a.3) }
-    private static var base: (UIColor, UIColor) { let f = fondos.first { $0.0 == fondoID } ?? fondos[0]; return (f.2, f.3) }
+    private static var acento: (UIColor, UIColor) { colAcento(acentoID, UserDefaults.standard.string(forKey: "tema_acento_hex")) }
+    private static var base: (UIColor, UIColor) { colFondo(fondoID, UserDefaults.standard.string(forKey: "tema_fondo_hex")) }
+
+    // ---------- colores propios (Santi, 19/11): cualquier color o un código #RRGGBB ----------
+    static func hex(_ s: String?) -> UIColor? {
+        guard var t = s?.trimmingCharacters(in: .whitespaces).uppercased() else { return nil }
+        if t.hasPrefix("#") { t.removeFirst() }
+        guard t.count == 6, let v = UInt32(t, radix: 16) else { return nil }
+        return rgb(Double((v >> 16) & 255) / 255, Double((v >> 8) & 255) / 255, Double(v & 255) / 255)
+    }
+    static func hex(de c: UIColor) -> String {
+        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        c.getRed(&r, green: &g, blue: &b, alpha: &a)
+        return String(format: "#%02X%02X%02X", Int((max(0, min(1, r)) * 255).rounded()), Int((max(0, min(1, g)) * 255).rounded()), Int((max(0, min(1, b)) * 255).rounded()))
+    }
+    /// el mismo color un poco más claro (k > 0) u oscuro (k < 0)
+    static func mezclar(_ c: UIColor, _ k: CGFloat) -> UIColor {
+        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        c.getRed(&r, green: &g, blue: &b, alpha: &a)
+        let f: (CGFloat) -> CGFloat = { k > 0 ? $0 + (1 - $0) * k : $0 * (1 + k) }
+        return UIColor(red: f(r), green: f(g), blue: f(b), alpha: 1)
+    }
+    /// acento (oscuro, claro): uno de la lista o el propio (en modo día, un poco más oscuro para que se lea)
+    static func colAcento(_ id: String, _ hx: String?) -> (UIColor, UIColor) {
+        if id == "propio", let c = hex(hx) { return (c, mezclar(c, -0.22)) }
+        let a = acentos.first { $0.0 == id } ?? acentos[0]; return (a.2, a.3)
+    }
+    /// fondo de noche (fondo, tarjeta): uno de la lista o el propio (las tarjetas, un poco más claras)
+    static func colFondo(_ id: String, _ hx: String?) -> (UIColor, UIColor) {
+        if id == "propio", let c = hex(hx) { return (c, mezclar(c, 0.06)) }
+        let f = fondos.first { $0.0 == id } ?? fondos[0]; return (f.2, f.3)
+    }
 
     static var fondo: Color { dyn(base.0, rgb(0.955, 0.95, 0.94)) }
     static var tarjeta: Color { dyn(base.1, rgb(1, 1, 1)) }
