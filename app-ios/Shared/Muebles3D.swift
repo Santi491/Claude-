@@ -45,7 +45,10 @@ enum Muebles3D {
                 var hacia = SIMD3<Float>(repeating: 0); hacia[ax] = sg
                 if simd_dot(n, hacia) < 0 { n = -n }
                 pos.append(SCNVector3(p.x, p.y, p.z)); nor.append(SCNVector3(n.x, n.y, n.z)); ps.append(p)
-                uv.append(CGPoint(x: CGFloat(p[au] * 2.4), y: CGFloat(p[av] * 2.4)))
+                // textura proyectada según hacia dónde mira cada punto (en las curvas no se estira ni hace vetas)
+                let an = abs(n); let eje = an.x >= an.y && an.x >= an.z ? 0 : (an.y >= an.z ? 1 : 2)
+                let (ua, va) = eje == 0 ? (2, 1) : (eje == 1 ? (0, 2) : (0, 1))
+                uv.append(CGPoint(x: CGFloat(p[ua] * 2.4), y: CGFloat(p[va] * 2.4)))
             } }
             for i in 0..<seg { for j in 0..<seg {
                 let k = base + UInt32(i * n1 + j), k2 = k + UInt32(n1)
