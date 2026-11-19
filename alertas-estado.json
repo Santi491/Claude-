@@ -104,16 +104,19 @@
   "baja|Ryzen 5 7600X|usado|2026-11-17": "2026-11-17 11:55",
   "baja|Ryzen 5 7600|nuevo|2026-11-18": "2026-11-18 07:53",
   "conviene|Intel Core i5-14400F|nuevo|2026-11-18": "2026-11-18 07:53",
-  "baja|SSD NVMe 1TB|usado|2026-11-18": "2026-11-18 07:53"
+  "baja|SSD NVMe 1TB|usado|2026-11-18": "2026-11-18 07:53",
+  "baja|Ryzen 5 7600|usado|2026-11-19": "2026-11-19 07:53",
+  "baja|Intel Core i5-12400F|nuevo|2026-11-19": "2026-11-19 07:53",
+  "conviene|Intel Core i5-12400F|nuevo|2026-11-19": "2026-11-19 07:53",
+  "conviene|SSD NVMe 2TB|usado|2026-11-19": "2026-11-19 07:53"
  },
  "conviene": {
-  "Ryzen 5 7600|nuevo": false,
   "Ryzen 5 7600|usado": true,
   "Ryzen 7 7800X3D|nuevo": false,
   "Ryzen 7 7800X3D|usado": true,
   "Ryzen 9 9950X|nuevo": false,
   "Ryzen 9 9950X|usado": false,
-  "Intel Core i5-12400F|nuevo": false,
+  "Intel Core i5-12400F|nuevo": true,
   "Intel Core i5-12400F|usado": true,
   "Intel Core i5-13400|usado": true,
   "Intel Core i5-14400F|nuevo": true,
@@ -129,6 +132,7 @@
   "SSD NVMe 1TB|nuevo": false,
   "SSD NVMe 1TB|usado": false,
   "SSD NVMe 2TB|nuevo": true,
+  "SSD NVMe 2TB|usado": true,
   "Ryzen 7 7700X|nuevo": false,
   "Ryzen 7 7700X|usado": true,
   "Ryzen 5 7500F|nuevo": false,
@@ -141,9 +145,10 @@
   "Ryzen 9 9950X3D|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 5 7600 (nuevo) bajó 14% en eBay: USD 304.97 → 261.69",
-  "✅ Ahora conviene Intel Core i5-14400F (nuevo): +16% · costo puesto Bs 1.997 vs Bs 2.384 en Cochabamba",
-  "⬇ SSD NVMe 1TB (usado) bajó 22% en eBay: USD 103.13 → 79.95"
+  "⬇ Ryzen 5 7600 (usado) bajó 14% en eBay: USD 115.99 → 99.99",
+  "⬇ Intel Core i5-12400F (nuevo) bajó 15% en eBay: USD 149.99 → 127.99",
+  "✅ Ahora conviene Intel Core i5-12400F (nuevo): +17% · costo puesto Bs 1.697 vs Bs 2.050 en Cochabamba",
+  "✅ Ahora conviene SSD NVMe 2TB (usado): +35% · costo puesto Bs 2.019 vs Bs 3.100 en Cochabamba"
  ],
- "revisado": "2026-11-18 16:22"
+ "revisado": "2026-11-19 07:53"
 }
