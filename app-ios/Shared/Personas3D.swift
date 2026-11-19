@@ -125,9 +125,14 @@ enum Personas3D {
         var dx: Float = 0, dz: Float = 0
         if sentadas.contains(nombre), let ref = c.m.anims["sentado"] {
             let cs = centros(c, a), cr = centros(c, ref)
-            let ys = cs.map(\.1).sorted(), yMed = ys[ys.count / 2]
-            cuadros = cuadros.filter { abs(cs[$0].1 - yMed) < 0.2 }   // fuera los cuadros de pie
-            if cuadros.count < 2 { cuadros = Array(0..<N) }
+            // algunas (el café de Mixamo) empiezan caminando ~2 m y sentándose: se arranca desde el primer cuadro en que ya
+            // está sentado donde termina (mitad final de la animación), así no repite el "sentarse" en cada vuelta
+            let fin = cs[(N / 2)...]
+            func med(_ v: [Float]) -> Float { let o = v.sorted(); return o[o.count / 2] }
+            let fx = med(fin.map(\.0)), fy = med(fin.map(\.1)), fz = med(fin.map(\.2))
+            if let ini = cs.indices.first(where: { abs(cs[$0].1 - fy) < 0.1 && hypot(cs[$0].0 - fx, cs[$0].2 - fz) < 0.2 }), ini > 0 {
+                cuadros = Array(ini..<N)
+            }
             let mx = cuadros.map { cs[$0].0 }.sorted()[cuadros.count / 2], mz = cuadros.map { cs[$0].2 }.sorted()[cuadros.count / 2]
             let rx = cr.map(\.0).reduce(0, +) / Float(cr.count), rz = cr.map(\.2).reduce(0, +) / Float(cr.count)
             dx = mx - rx; dz = mz - rz

@@ -10,7 +10,6 @@ struct OficinaView: View {
     @State private var escena: SCNScene?
     @State private var error: String?
     @State private var vista = 0
-    @StateObject private var marcas = Marcas()
     @State private var elegido: String?
     @State private var vida: Comportamiento?
     @State private var junta = false
@@ -21,8 +20,7 @@ struct OficinaView: View {
         ZStack(alignment: .top) {
             Color(red: 0.07, green: 0.078, blue: 0.09).ignoresSafeArea()
             if let escena {
-                VistaSCN(escena: escena, vista: vista, marcas: marcas, enfocar: manejando ? nil : elegido, manejo: santi, manejando: manejando) { elegido = $0 }.ignoresSafeArea()
-                Etiquetas(marcas: marcas) { elegido = $0 }.environmentObject(store).ignoresSafeArea()
+                VistaSCN(escena: escena, vista: vista, store: store, enfocar: manejando ? nil : elegido, manejo: santi, manejando: manejando) { elegido = $0 }.ignoresSafeArea()
             }
             else if let error { Text(error).foregroundStyle(.white).padding() }
             else { ProgressView("Armando la oficina…").tint(.white).foregroundStyle(.white) }
@@ -79,7 +77,7 @@ struct OficinaView: View {
                         m.abrirAgente = { id in elegido = id }
                         santi = m
                     }
-                    c.empezar()
+                    // sin reloj propio: la vista 3D los mueve en cada cuadro, junto con la cámara y las etiquetas
                 }
                 Vivo3D.aplicar(e, store)
             } else { error = "No pude armar la oficina." }
@@ -89,45 +87,23 @@ struct OficinaView: View {
 
 struct Elegido: Identifiable { let id: String }
 
-/// Dónde cae en pantalla la cabeza de cada agente (lo actualiza la vista 3D unas 20 veces por segundo)
-final class Marcas: ObservableObject {
-    struct Marca: Equatable { var punto: CGPoint; var visible: Bool; var distancia: Float }
-    @Published var puntos: [String: Marca] = [:]
-}
-
-/// Etiquetas redondas con foto, como en la idea que eligió Santi: foto, punto de estado y qué hace
-struct Etiquetas: View {
-    @ObservedObject var marcas: Marcas
-    @EnvironmentObject var store: Store
-    var tocar: (String) -> Void
-
+/// Etiqueta redonda con foto, como en la idea que eligió Santi: foto, punto de estado y qué hace.
+/// `nivel`: 0 solo la foto (de lejos o cuando hay otro al lado), 1 con el nombre, 2 también con lo que hace.
+/// La vista 3D las mueve sola en cada cuadro (UIKit), así van pegadas a cada persona.
+struct EtiquetaVista: View {
+    let id: String
+    let nivel: Int
+    @ObservedObject var store: Store
+    var tocar: () -> Void
     var body: some View {
-        ZStack(alignment: .topLeading) {
-            Color.clear.frame(maxWidth: .infinity, maxHeight: .infinity).allowsHitTesting(false)
-            ForEach(orden, id: \.self) { id in
-                if let m = marcas.puntos[id], m.visible {
-                    Button { tocar(id) } label: { etiqueta(id, distancia: apretados.contains(id) ? 99 : m.distancia).fixedSize().contentShape(Capsule()) }
-                        .buttonStyle(.plain)
-                        .position(x: m.punto.x, y: m.punto.y - 18)
-                }
-            }
-        }
-    }
-
-    /// los más lejanos se dibujan primero (los cercanos quedan encima)
-    var orden: [String] { marcas.puntos.keys.sorted { (marcas.puntos[$0]?.distancia ?? 0) > (marcas.puntos[$1]?.distancia ?? 0) } }
-
-    /// los que tienen a otro al lado (en la junta, en el sofá) muestran solo la foto, para que no se tapen los nombres
-    var apretados: Set<String> {
-        let v = marcas.puntos.filter(\.value.visible)
-        return Set(v.keys.filter { a in v.contains { b in b.key != a && abs(b.value.punto.x - v[a]!.punto.x) < 150 && abs(b.value.punto.y - v[a]!.punto.y) < 40 } })
+        Button(action: tocar) { etiqueta(id, nivel: nivel).fixedSize().contentShape(Capsule()) }.buttonStyle(.plain)
     }
 
     /// de lejos solo la foto con su punto de estado; más cerca, el nombre; bien cerca, también lo que hace
-    @ViewBuilder func etiqueta(_ id: String, distancia: Float) -> some View {
+    @ViewBuilder func etiqueta(_ id: String, nivel: Int) -> some View {
         let e = EstadoAgente.de(id, store)
         let bronce = Color(red: 0.79, green: 0.64, blue: 0.36)
-        if distancia > 22 {
+        if nivel == 0 {
             Avatar(agente: id, tam: 26)
                 .overlay(alignment: .bottomTrailing) { Circle().fill(e.color).frame(width: 9, height: 9).overlay(Circle().stroke(.black, lineWidth: 1.5)) }
                 .shadow(color: .black.opacity(0.5), radius: 3, y: 1)
@@ -136,7 +112,7 @@ struct Etiquetas: View {
                 Avatar(agente: id, tam: 28)
                 Circle().fill(e.color).frame(width: 7, height: 7)
                 Text(Equipo.nombre(id)).font(.system(size: 11.5, weight: .semibold))
-                if distancia < 12, !e.texto.isEmpty {
+                if nivel == 2, !e.texto.isEmpty {
                     Text("· " + e.texto).font(.system(size: 11)).foregroundStyle(.white.opacity(0.65)).lineLimit(1).frame(maxWidth: 130, alignment: .leading)
                 }
             }
@@ -169,6 +145,7 @@ struct EstadoAgente {
 struct FichaAgente: View {
     var agente: String
     @EnvironmentObject var store: Store
+    @Environment(\.dismiss) private var cerrarFicha
     @State private var tarea = false
 
     var body: some View {
@@ -198,6 +175,15 @@ struct FichaAgente: View {
             }
             .background(Tema.fondo)
             .toolbar(.hidden, for: .navigationBar)
+            // X para cerrar (Santi, 19/11: con el iPhone echado la ficha tapa toda la pantalla)
+            .overlay(alignment: .topTrailing) {
+                Button { cerrarFicha() } label: {
+                    Image(systemName: "xmark").font(.subheadline.weight(.bold)).foregroundStyle(.white.opacity(0.85))
+                        .frame(width: 32, height: 32).background(Color.white.opacity(0.12), in: Circle())
+                }
+                .padding(.top, 14).padding(.trailing, 16)
+                .accessibilityLabel("Cerrar")
+            }
         }
         .sheet(isPresented: $tarea) { NavigationStack { TareaForm(agenteInicial: agente) }.environmentObject(store) }
     }
@@ -246,7 +232,7 @@ struct FichaAgente: View {
 struct VistaSCN: UIViewRepresentable {
     let escena: SCNScene
     var vista: Int
-    var marcas: Marcas
+    var store: Store
     var enfocar: String?
     var manejo: Manejo?
     var manejando: Bool
@@ -266,7 +252,7 @@ struct VistaSCN: UIViewRepresentable {
         if let cam = v.pointOfView?.camera { cam.projectionDirection = .horizontal; cam.fieldOfView = 62 }
         Calidad.actual.aplicar(v)
         let co = context.coordinator
-        co.vista = v; co.marcas = marcas; co.elegir = elegir
+        co.vista = v; co.store = store; co.elegir = elegir
         let pan = UIPanGestureRecognizer(target: co, action: #selector(Coord.arrastrar(_:))); pan.maximumNumberOfTouches = 1
         let pel = UIPinchGestureRecognizer(target: co, action: #selector(Coord.pellizcar(_:)))
         let rot = UIRotationGestureRecognizer(target: co, action: #selector(Coord.rotar(_:)))
@@ -280,7 +266,7 @@ struct VistaSCN: UIViewRepresentable {
 
     func updateUIView(_ v: SCNView, context: Context) {
         let co = context.coordinator
-        co.marcas = marcas; co.elegir = elegir; co.manejo = manejo
+        co.elegir = elegir; co.manejo = manejo
         if v.bounds.size.width > 0 { co.tamano = v.bounds.size }
         if manejando != co.manejando {
             co.manejando = manejando
@@ -301,7 +287,7 @@ struct VistaSCN: UIViewRepresentable {
     final class Coord: NSObject, SCNSceneRendererDelegate, UIGestureRecognizerDelegate {
         var ultima = 0; var enfocado: String?; var manejando = false
         weak var vista: SCNView?
-        var marcas: Marcas?
+        weak var store: Store?
         var elegir: ((String) -> Void)?
         weak var manejo: Manejo?
 
@@ -327,6 +313,9 @@ struct VistaSCN: UIViewRepresentable {
         @MainActor @objc func tic(_ l: CADisplayLink) {
             guard vista?.window != nil else { if vista == nil { l.invalidate() }; return }
             let dt = Float(ultimoT == 0 ? 1.0 / 60 : min(0.05, l.timestamp - ultimoT)); ultimoT = l.timestamp
+            // todo en el mismo cuadro: primero los agentes (y la cámara de Santi), después la cámara, al final las etiquetas
+            Vivo3D.vida?.paso(l.timestamp)
+            defer { etiquetas() }
             guard !manejando else { return }
             if simd_length(vel) > 0.01 { objD = limitar(objD + vel * dt); vel *= exp(-dt * 3.2) } else { vel = .zero }
             let k = 1 - exp(-dt * 9)
@@ -420,28 +409,57 @@ struct VistaSCN: UIViewRepresentable {
             volar(a: limitar(p), dist: dist > 12 ? 9 : 24)
         }
 
-        private var ultimoCalculo: TimeInterval = 0
-        /// tamaño de la pantalla (se guarda desde el hilo principal; leerlo desde el de dibujo con sync trababa todo)
+        /// tamaño de la pantalla
         var tamano = CGSize(width: 400, height: 870)
 
-        /// unas 20 veces por segundo: dónde cae en pantalla la cabeza de cada agente
-        func renderer(_ r: SCNSceneRenderer, updateAtTime t: TimeInterval) {
-            guard t - ultimoCalculo > 0.05, let cam = r.pointOfView, let marcas else { return }
-            ultimoCalculo = t
-            var out: [String: Marcas.Marca] = [:]
-            let tam = tamano
+        // ---------- etiquetas: vistas de UIKit encima de la 3D, movidas en cada cuadro ----------
+        private var tarjetas: [String: (h: UIHostingController<EtiquetaVista>, nivel: Int)] = [:]
+        private var refresco = 0
+        @MainActor func etiquetas() {
+            guard let v = vista, let store, let cam = v.pointOfView else { return }
+            let b = v.bounds
+            refresco += 1
+            let renovar = refresco % 60 == 0   // una vez por segundo se rehace el contenido (estado, qué hace)
+            var pts: [(String, CGPoint, Float, Bool)] = []
+            let cp = cam.position
             for (id, x, z) in Detalle3D.puestos + [("santi", Manejo.SILLA.0, Manejo.SILLA.1)] {
-                let base = r.scene?.rootNode.childNode(withName: "persona-\(id)", recursively: false)
+                let base = v.scene?.rootNode.childNode(withName: "persona-\(id)", recursively: false)
+                guard base != nil || id != "santi" else { continue }
                 let cabeza = base.map { SCNVector3($0.position.x, 1.55, $0.position.z) } ?? SCNVector3(x, 1.5, z + 0.9)
-                let p = r.projectPoint(cabeza)
-                let cp = cam.presentation.position
+                let p = v.projectPoint(cabeza)
                 let d = SCNVector3(cabeza.x - cp.x, cabeza.y - cp.y, cabeza.z - cp.z)
-                let dist = sqrt(d.x * d.x + d.y * d.y + d.z * d.z)
-                let visible = p.z > 0 && p.z < 1 && p.x > -40 && p.y > 40 && Double(p.x) < Double(tam.width) + 40 && Double(p.y) < Double(tam.height) - 20
-                out[id] = .init(punto: CGPoint(x: CGFloat(p.x), y: CGFloat(p.y)), visible: visible, distancia: Float(dist))
+                let dist = Float(sqrt(d.x * d.x + d.y * d.y + d.z * d.z))
+                let vis = p.z > 0 && p.z < 1 && p.x > -40 && p.y > 40 && CGFloat(p.x) < b.width + 40 && CGFloat(p.y) < b.height - 20
+                pts.append((id, CGPoint(x: CGFloat(p.x), y: CGFloat(p.y)), dist, vis))
             }
-            DispatchQueue.main.async { if marcas.puntos != out { marcas.puntos = out } }
+            CATransaction.begin(); CATransaction.setDisableActions(true)
+            for (id, pt, dist, vis) in pts {
+                // con otro al lado (junta, sofá): solo la foto, para que no se tapen los nombres
+                let junto = pts.contains { $0.0 != id && $0.3 && abs($0.1.x - pt.x) < 150 && abs($0.1.y - pt.y) < 40 }
+                let nivel = (dist > 22 || junto) ? 0 : dist < 12 ? 2 : 1
+                var t = tarjetas[id]
+                if t == nil {
+                    let h = UIHostingController(rootView: EtiquetaVista(id: id, nivel: nivel, store: store) { [weak self] in self?.elegir?(id) })
+                    h.view.backgroundColor = .clear
+                    if #available(iOS 16.4, *) { h.safeAreaRegions = [] }
+                    v.addSubview(h.view)
+                    t = (h, -1)
+                }
+                guard var tt = t else { continue }
+                if tt.nivel != nivel || renovar {
+                    tt.h.rootView = EtiquetaVista(id: id, nivel: nivel, store: store) { [weak self] in self?.elegir?(id) }
+                    tt.h.view.bounds.size = tt.h.sizeThatFits(in: CGSize(width: 400, height: 80))
+                    tt.nivel = nivel
+                }
+                tarjetas[id] = tt
+                tt.h.view.isHidden = !vis
+                tt.h.view.center = CGPoint(x: pt.x, y: pt.y - 18)
+                tt.h.view.layer.zPosition = CGFloat(-dist)   // los cercanos quedan encima
+            }
+            CATransaction.commit()
         }
+
+        func renderer(_ r: SCNSceneRenderer, updateAtTime t: TimeInterval) {}
 
         /// tocar el cuerpo de un agente o su escritorio lo elige
         @MainActor @objc func tocar(_ g: UITapGestureRecognizer) {
@@ -549,21 +567,23 @@ struct ControlesSanti: View {
         if manejo.manejando {
             VStack {
                 Spacer()
-                if let o = manejo.opcion {
-                    Button { manejo.usarOpcion() } label: {
-                        Text(o.texto).font(.subheadline.weight(.semibold)).lineLimit(1)
-                            .padding(.horizontal, 16).padding(.vertical, 10)
-                            .background(o.activa ? Color(red: 0.95, green: 0.65, blue: 0.25) : Color.gray.opacity(0.5), in: Capsule())
-                            .foregroundStyle(Color(red: 0.06, green: 0.06, blue: 0.06))
-                            .shadow(color: .black.opacity(0.45), radius: 8, y: 4)
-                    }
-                    .disabled(!o.activa)
-                    .padding(.bottom, 8)
-                    .transition(.opacity)
-                }
                 HStack(alignment: .bottom) {
                     Joystick { manejo.joy = $0 }
-                    Spacer()
+                    Spacer(minLength: 8)
+                    // lo que hay cerca: chico y abajo, entre el joystick y Correr (Santi, 19/11: "que no salga en toda la cara")
+                    if let o = manejo.opcion {
+                        Button { manejo.usarOpcion() } label: {
+                            Text(o.texto).font(.footnote.weight(.semibold)).lineLimit(2).multilineTextAlignment(.center)
+                                .padding(.horizontal, 12).padding(.vertical, 7)
+                                .background(o.activa ? Color(red: 0.95, green: 0.65, blue: 0.25) : Color.gray.opacity(0.5), in: Capsule())
+                                .foregroundStyle(Color(red: 0.06, green: 0.06, blue: 0.06))
+                                .shadow(color: .black.opacity(0.4), radius: 5, y: 2)
+                        }
+                        .disabled(!o.activa)
+                        .padding(.bottom, 22)
+                        .transition(.opacity)
+                        Spacer(minLength: 8)
+                    }
                     Button { manejo.corriendo.toggle() } label: {
                         VStack(spacing: 3) {
                             Image(systemName: "figure.run").font(.title2.weight(.semibold))

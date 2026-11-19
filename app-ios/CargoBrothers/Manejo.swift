@@ -17,7 +17,7 @@ final class Manejo: ObservableObject {
 
     @Published var manejando = false
     @Published var opcion: Opcion?
-    /// botón de correr (Santi, 19/11): más rápido y con la animación de caminar acelerada
+    /// botón de correr (Santi, 19/11): más rápido y con la animación de correr de Mixamo
     @Published var corriendo = false
     /// el joystick: x a la derecha, y hacia abajo, de -1 a 1
     var joy = CGVector.zero
@@ -31,7 +31,7 @@ final class Manejo: ObservableObject {
 
     private var anim = ""
     /// lo que está haciendo (sentado, en la cinta…): dónde estaba antes y en qué fase va
-    private struct Accion { var clave: String; var previo: SCNVector3; var asiento: (Float, Float, Float)?; var fase = ""; var t: Double = 0; var anim: String; var silla = false }
+    private struct Accion { var clave: String; var previo: SCNVector3; var asiento: (Float, Float, Float)?; var fase = ""; var t: Double = 0; var anim: String; var silla = false; var dur: Double = 0 }
     private var accion: Accion?
     private var opciones: [String: () -> Void] = [:]
     private var saludo: (id: String, t: Double)?
@@ -52,7 +52,6 @@ final class Manejo: ObservableObject {
     private func poner(_ n: String, bucle: Bool = true) {
         guard n != anim || !bucle else { return }
         anim = n
-        if n == "correr" { Personas3D.animar(nodo, "caminar", carpeta: carpeta, desfase: 0, bucle: true, fundido: 0.2, velocidad: 1.8); return }
         Personas3D.animar(nodo, n, carpeta: carpeta, desfase: 0, bucle: bucle, fundido: 0.3)
     }
 
@@ -92,7 +91,7 @@ final class Manejo: ObservableObject {
             var dr = atan2(mx, mz) - Float(nodo.eulerAngles.y); dr = atan2(sin(dr), cos(dr))
             nodo.eulerAngles.y += .init(dr * min(1, Float(dt) * 12))
             poner(corriendo ? "correr" : "caminar")
-        } else { poner("quieto") }
+        } else if saludo == nil { poner("quieto") }
         actualizarOpcion()
         seguir(dt)
     }
@@ -131,7 +130,7 @@ final class Manejo: ObservableObject {
             if mejor == nil || k < mejor!.d { mejor = (k, Opcion(texto: txt, activa: activa, clave: txt), f) }
         }
         if let a = accion {
-            let txt = a.asiento != nil || a.silla ? "Pararte" : "Dejar de " + (a.anim == "cinta" ? "correr" : "entrenar")
+            let txt = a.asiento != nil || a.silla ? "Pararte" : a.anim == "beber" ? "Dejar el café" : "Dejar de " + (a.anim == "cinta" ? "correr" : "entrenar")
             publicar(Opcion(texto: txt, activa: true, clave: txt), terminar); return
         }
         let s = (Float(nodo.position.x), Float(nodo.position.z))
@@ -145,6 +144,8 @@ final class Manejo: ObservableObject {
             }
         }
         add(d(Self.SILLA.0, Self.SILLA.1), 1.3, "Sentarte en tu silla", extra: -0.3) { [weak self] in self?.sentarEnTuSilla() }
+        // la barra de café (como la tecla E de la oficina web): toma de pie, con la animación de tomar de Mixamo
+        add(d(23.2, -8.3), 1.7, "Tomar un café") { [weak self] in self?.tomarCafe() }
         for (k, L) in Comportamiento.LUGAR {
             guard let txt = Self.TEXTO[k] else { continue }
             let c = Self.CENTRO[k] ?? (L.x, L.z), libre = !ocupados.contains(k)
@@ -195,9 +196,15 @@ final class Manejo: ObservableObject {
         accion = Accion(clave: "silla", previo: nodo.position, anim: "teclear", silla: true)
         sentarEnSuSilla()
     }
+    private func tomarCafe() {
+        accion = Accion(clave: "cafe", previo: nodo.position, t: 6, anim: "beber", dur: 6)
+        nodo.eulerAngles.y = .pi   // mirando a la barra
+        poner("beber", bucle: false)
+    }
     private func avanzarAccion(_ dt: Double) {
         guard var a = accion else { return }
         a.t -= dt
+        if a.dur > 0, a.fase == "", a.t <= 0 { accion = nil; poner("quieto"); return }
         if a.fase == "sentandose", a.t <= 0, let s = a.asiento {
             let f = Comportamiento.adelante(s.2)
             nodo.position = SCNVector3(s.0 - Comportamiento.RETRO * f.0, 0, s.1 - Comportamiento.RETRO * f.1)
@@ -223,10 +230,11 @@ final class Manejo: ObservableObject {
         guard let a = vida?.agentes[id] else { return }
         let dx = Float(nodo.position.x - a.nodo.position.x), dz = Float(nodo.position.z - a.nodo.position.z)
         a.nodo.eulerAngles.y = .init(atan2(dx, dz))
-        vida?.reproducir(a, "hablar", bucle: true)
-        a.tAnim = 5
+        vida?.reproducir(a, "saludar", bucle: false)   // le hace señas y después sigue con lo suyo
+        a.tAnim = 3.2
         nodo.eulerAngles.y = .init(atan2(-dx, -dz))
-        saludo = (id, 5)
+        poner("saludar", bucle: false)
+        saludo = (id, 3)
         abrirAgente(id)
     }
 }

@@ -21,7 +21,7 @@ enum Calidad: String, CaseIterable, Identifiable {
 
     @MainActor func aplicar(_ v: SCNView) {
         v.preferredFramesPerSecond = fps
-        v.antialiasingMode = self == .alta ? .multisampling4X : self == .equilibrada ? .multisampling2X : .none
+        v.antialiasingMode = self == .bateria ? .multisampling2X : .multisampling4X   // con menos, los bordes finos titilan
         if let cam = v.pointOfView?.camera, self != .alta {
             cam.screenSpaceAmbientOcclusionIntensity = 0
             if self == .bateria { cam.bloomIntensity = 0; cam.vignettingIntensity = 0 }

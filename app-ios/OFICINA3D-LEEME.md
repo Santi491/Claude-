@@ -42,3 +42,8 @@ Sentados: `Personas3D.dzSentado = 0.95` m desde el punto del puesto. Animaciones
 pesas, cinta, sentarse, pararse, a_teclear, de_teclear, cafe, celular, pensar, estirarse, reir_sentado, reunion.
 
 **Ojo al exportar la oficina de nuevo (19/11):** la oficina web tiene personas simples de respaldo (el "Gerente caminante" de camisa amarilla, las sentadas y la de Santi) que solo se esconden cuando cargan los personajes de Mixamo. Si al exportar quedan visibles, salen como un muñeco fijo en la nave: hay que esconderlas antes de exportar o sacarlas de `oficina.json` (el 19/11 se sacaron los nodos 1158 a 1168, el caminante junto al puesto de Finanzas).
+
+**Animaciones nuevas (19/11):** correr (Running.fbx, con el avance sacado: `TRANS.correr = "lineal"`), beber (Drinking.fbx, de pie)
+y saludar (Waving.fbx), 20 en total. Ojo: la exportación desde FBX deja `mat.mapa` vacío (las texturas de Mixamo no cargan en
+Chrome sin GPU): después de comprimir hay que copiar el `mat` de cada malla de los JSON anteriores (mismas mallas, mismo orden),
+si no las personas salen grises.

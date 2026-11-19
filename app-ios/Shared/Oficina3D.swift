@@ -80,6 +80,8 @@ enum Oficina3D {
                 s.diffuse.contents = srgb(m.color)
             }
             s.diffuse.mipFilter = .linear
+            // sin esto las texturas finas (hojas de las plantas, tierra de las macetas) titilan al mover la cámara (Santi, 19/11)
+            s.diffuse.maxAnisotropy = 8; s.emission.mipFilter = .linear; s.multiply.mipFilter = .linear
             if !basico {
                 s.roughness.contents = NSNumber(value: m.rough)
                 s.metalness.contents = NSNumber(value: m.metal)
