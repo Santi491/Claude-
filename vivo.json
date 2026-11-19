@@ -6,5 +6,11 @@
   "fecha": "2026-11-19"
  },
  "actualizado": "2026-11-19 01:04",
- "agentes": {}
+ "agentes": {
+  "wa": {
+   "estado": "trabajando",
+   "texto": "Prueba: leyendo chats sin leer",
+   "hora": "01:04"
+  }
+ }
 }
