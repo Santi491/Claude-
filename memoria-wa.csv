@@ -1,7 +1,9 @@
 id,tienda,actualizado,tono,sabe,proxima
-T108,NPC Technology,2026-11-18,"suelto, responde en horas aunque se demoró por problemas con su WhatsApp","vende cases; tiene Ryzen 7600X (Bs 3.000), 9600X (3.200), 7700X3D (4.400); RAM Corsair agotada",esperar garantía/sellado y precio por 2; después preguntar SSD NVMe
+T108,NPC Technology,2026-11-19,suelto; contesta con notas de voz (no se escuchan: pedir texto),"vende cases; Ryzen 7600X Bs 3.000, 9600X 3.200, 7700X3D 4.400; RAM Corsair agotada","esperar su texto sobre sellado, garantía y precio por 2; después preguntar SSD NVMe"
 T003,Compucenter,2026-11-18,"formal, responde al día siguiente",17/11: solo equipos de escritorio ensamblados HP y DELL; no vende sueltos; importa directo,no escribir más salvo que Santi lo pida (no vende componentes sueltos)
-T105,Importadora ITA,2026-11-18,responde en pocos minutos,"NVMe 1TB nuevo sellado, dice que quizá se acabaron; sin 2TB",esperar que confirme marca y precio del 1TB; no escribir antes de mañana
-T068,Global PC,2026-11-18,"formal, responde rápido",solo laptops y fundas; sin Ryzen ni NVMe; actualiza stock en unas 3 semanas,no escribir hasta dentro de 3 semanas (~09/12)
+T105,Importadora ITA,2026-11-19,"responde en minutos, informal (dice 'case'); se olvidó de revisar y se disculpó","NVMe 1TB Crucial E100 Bs 1.850, el último en stock; sin 2TB; no vende componentes de PC en general",esperar garantía; preguntar solo si les llegan más NVMe
+T068,Global PC,2026-11-19,"formal, responde rápido",solo laptops y fundas; sin Ryzen ni NVMe; actualiza stock en unas 3 semanas,no escribir hasta ~09/12
 T088,Orange Computer,2026-11-18,"corto, responde con emojis",Sacaba: sin procesadores ni RAM; solo SSD 1TB (04/11),no escribir más salvo que Santi lo pida
-T107,Digital Hardware Bolivia,2026-11-18,"responde corto (Ok, Muy bien)","sin stock en almacén, le llega mercadería esta semana",esperar su respuesta a la lista del 17/11; no insistir
+T107,Digital Hardware Bolivia,2026-11-19,"responde corto (Ok, Muy bien)","sin stock en almacén, le llega mercadería esta semana",esperar que avise cuando llegue; no escribir antes de ~24/11
+T016,Tienda Supermall (Marketplace),2026-11-19,responde por la tarde; catálogo web; respuesta automática primero,catálogo en puntotecnologic.com (revisado 18/11); 6 meses de garantía; 265K solo en Santa Cruz,esperar respuesta sobre 9600X y NVMe; no pedir otra vez la lista
+T091,Tecnología GabBoss,2026-11-19,"responde con IA de Meta (automática), cierra rápido","equipo viejo y segunda mano: SSD 512GB Netac Bs 830, 240GB Bs 520, RAM DDR3 8GB Bs 230; sin NVMe 1TB/2TB ni DDR5",no escribir: no tiene nada de lo que buscamos (D probable)

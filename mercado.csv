@@ -307,3 +307,8 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-18,Intel Core Ultra 5 225F,cpu,2510,Bs,2510,oem,Punto Tecnológico / Supermall,web,sí,web 18/11; sube de Bs 2.270 (12/11)
 2026-11-18,Intel Core Ultra 5 225,cpu,2760,Bs,2760,no indica,Punto Tecnológico / Supermall,web,sí,web 18/11; sube de Bs 2.470 (12/11)
 2026-11-18,Kingston NV3 500GB,ssd,1320,Bs,1320,no indica,Punto Tecnológico / Supermall,web,sí,web 18/11; M.2 NVMe; primera vez en la lista
+2026-11-19,SSD 512GB Netac,ssd,830,Bs,830,usado,Tecnología GabBoss,whatsapp,sí,WhatsApp 19/11 (IA de Meta); segunda mano
+2026-11-19,SSD 240GB American,ssd,520,Bs,520,usado,Tecnología GabBoss,whatsapp,sí,WhatsApp 19/11 (IA de Meta); segunda mano
+2026-11-19,RAM DDR3 8GB,ram,230,Bs,230,usado,Tecnología GabBoss,whatsapp,sí,WhatsApp 19/11 (IA de Meta); segunda mano
+2026-11-19,Intel Core i5-13400,cpu,2300,Bs,2300,nuevo,MSR Computers,web,no,Web 19/11; MSR no vende sueltos (referencia); la web no muestra stock
+2026-11-19,Apacer Nox DDR5 32GB 5200,ram,5560,Bs,5560,nuevo,Punto Tecnológico / Supermall,web,sí,Web 19/11; 5200 MHz (el enlace dice 6000: por confirmar); Disponible; también versión Bs 6.010 stock bajo
