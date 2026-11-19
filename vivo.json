@@ -1,52 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "16:08",
-  "fecha": "2026-11-18",
-  "hasta": "16:24"
+  "desde": "01:04",
+  "fecha": "2026-11-19"
  },
- "actualizado": "2026-11-18 16:24",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "7 de 10 listas, NPC pasó precios",
-   "hora": "16:13"
-  },
-  "mkt": {
-   "estado": "terminó",
-   "texto": "7700X siguen 2, 8 grupos para clientes",
-   "hora": "16:15"
-  },
-  "cat": {
-   "estado": "terminó",
-   "texto": "web Punto: 60 productos, 15 precios",
-   "hora": "16:17"
-  },
-  "pedidos": {
-   "estado": "terminó",
-   "texto": "sin cambios",
-   "hora": "16:18"
-  },
-  "ana": {
-   "estado": "terminó",
-   "texto": "recalculado; dedupe 7700X",
-   "hora": "16:21"
-  },
-  "fin": {
-   "estado": "terminó",
-   "texto": "sin ventas",
-   "hora": "16:21"
-  },
-  "oficina": {
-   "estado": "terminó",
-   "texto": "oficina v151 publicada",
-   "hora": "16:23"
-  },
-  "gerente": {
-   "estado": "terminó",
-   "texto": "aviso de fin de ronda enviado",
-   "hora": "16:24"
-  }
- }
+ "actualizado": "2026-11-19 01:04",
+ "agentes": {}
 }
