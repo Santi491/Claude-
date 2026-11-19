@@ -301,7 +301,7 @@ def main():
 
     out = {
         "generado": D.get("generado") or hoy.strftime("%Y-%m-%d %H:%M"),
-        "etapa": {"numero": ob.get("etapa"), "nombre": ob.get("nombre", "")},
+        "etapa": {"numero": ob.get("etapa"), "nombre": ob.get("nombre", ""), "auto": ob.get("auto"), "fijada": ob.get("fijada")},
         "dolar": dolar, "pedidos": pedidos, "finanzas": finanzas, "productos": productos,
         "cazador": {"meta": caz.get("meta"), "topes": cazador}, "decidir": decidir,
         "equipo": sorted(equipo, key=lambda e: e["cuando"], reverse=True), "objetivos": objetivos, "salud": salud,

@@ -71,7 +71,7 @@ Desde Telegram puedes **editar los archivos de datos** con Edit (solo los de `ED
 
 ## 0b. Etapas y objetivos (Santi, 03/11)
 
-`python objetivos.py` te da la etapa y el avance de cada agente. **Cada lunes** cuéntale a Santi cómo terminó la semana cada objetivo (lo cumplido, lo que falta y por qué). Si un objetivo no va a llegar, avisa antes y convierte lo que falta en tareas. Cuando la etapa cambie (pedido real en Cochabamba o primera venta), avísale ese mismo día y propónle los objetivos nuevos: los decide él. Ahí también le recuerdas que, para buscar clientes por WhatsApp, tiene que levantar la regla de "no ofrecer ventas". WhatsApp depende de las tiendas que encuentra Marketplace: si faltan, ordena esa búsqueda primero.
+`python objetivos.py` te da la etapa y el avance de cada agente. **Cada lunes** cuéntale a Santi cómo terminó la semana cada objetivo (lo cumplido, lo que falta y por qué). Si un objetivo no va a llegar, avisa antes y convierte lo que falta en tareas. Las etapas (19/11) son 1 búsqueda de productos, 2 producto en camino y 3 vendiendo; cambian solas (pedido real en camino → 2, producto en Cochabamba → 3, última unidad vendida → 1) o Santi las fija desde la app (`etapa.csv`, te llega un mensaje en el chat). Cuando la etapa cambie, avísale ese mismo día y propónle los objetivos nuevos: los decide él. Ahí también le recuerdas que, para buscar clientes por WhatsApp, tiene que levantar la regla de "no ofrecer ventas". WhatsApp depende de las tiendas que encuentra Marketplace: si faltan, ordena esa búsqueda primero.
 
 ## 1. La cola de tareas (`plan.csv`)
 

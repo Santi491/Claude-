@@ -26,7 +26,7 @@ for _s in (sys.stdout, sys.stderr):
 DIR = os.path.dirname(os.path.abspath(__file__))
 ARCH = os.path.join(DIR, "objetivos.csv")
 BASE_TIENDAS = 80   # T080 era la última tienda cuando empezaron los objetivos (03/11)
-ETAPAS = {1: "producto en camino", 2: "producto en mano", 3: "vendiendo"}
+ETAPAS = {1: "búsqueda de productos", 2: "producto en camino", 3: "vendiendo"}   # (Santi, 19/11)
 
 
 def leer(n):
@@ -73,12 +73,39 @@ def _lista_pedida():
         return None
 
 
-def etapa():
-    if any(v.get("estado", "vendida") in ("vendida", "") for v in leer("ventas.csv")):
+LLEGADOS = ("en Cochabamba", "entregado")
+EN_CAMINO = ("comprado", "enviado", "en bodega del courier", "en camino a Santa Cruz", "en camino a Cochabamba")
+
+
+def etapa_auto():
+    """Etapas (Santi, 19/11): 3 vendiendo si hay producto en Cochabamba sin vender; 2 producto en camino si hay un pedido
+    real comprado que todavía no llegó; 1 búsqueda de productos si no hay nada en camino ni por vender. Cuando se vende la
+    última unidad vuelve sola a 1 (o a 2 si ya hay otro pedido en camino)."""
+    ped = leer("pedidos.csv")
+    def n(x):
+        try:
+            return int(float(x or 0))
+        except ValueError:
+            return 0
+    llegadas = sum(n(p.get("cantidad")) for p in ped if p.get("estado") in LLEGADOS)
+    vendidas = sum(n(v.get("cantidad")) for v in leer("ventas.csv") if (v.get("estado") or "vendida") in ("vendida", "reservada"))
+    if llegadas - vendidas > 0:
         return 3
-    if any(p.get("estado") in ("en Cochabamba", "entregado") for p in leer("pedidos.csv")):
+    if any(p.get("estado") in EN_CAMINO for p in ped):
         return 2
     return 1
+
+
+def etapa_fijada():
+    """Si Santi eligió una etapa a mano (app o Telegram), la última fila de etapa.csv manda; "auto" vuelve a la regla."""
+    filas = leer("etapa.csv") if os.path.exists(os.path.join(DIR, "etapa.csv")) else []
+    if filas and (filas[-1].get("etapa") or "auto") in ("1", "2", "3"):
+        return int(filas[-1]["etapa"])
+    return None
+
+
+def etapa():
+    return etapa_fijada() or etapa_auto()
 
 
 def calcular(ver=None, agente=None, hoy=None):

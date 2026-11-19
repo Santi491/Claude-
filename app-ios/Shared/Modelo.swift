@@ -139,7 +139,15 @@ struct FinProducto: Codable, Identifiable, Hashable { var producto: String; var 
 struct Recomendacion: Codable, Identifiable, Hashable { var texto: String; var por_que: String; var accion: String; var id: String { texto } }
 struct Constantes: Codable { var b_usd_kg: Double; var b_min_kg: Double; var b_paso_kg: Double; var caja_g: Double; var a_usd: Double; var a_tax: Double }
 
-struct Etapa: Codable { var numero: Int?; var nombre: String }
+struct Etapa: Codable {
+    var numero: Int?; var nombre: String
+    /// la que da la regla automática y la que fijó Santi a mano (nil = automática)
+    var auto: Int?; var fijada: Int?
+    static let nombres = [1: "Búsqueda de productos", 2: "Producto en camino", 3: "Vendiendo"]
+    static let detalle = [1: "No hay pedido en camino ni producto por vender: precios, tiendas nuevas, catálogos y proponer el próximo pedido.",
+                          2: "Hay un pedido comprado que todavía no llegó: seguir el envío, cerrar el precio y dejar la venta preparada.",
+                          3: "El producto está en Cochabamba: publicar, ofrecer y vender todo en 7 días como mucho, y medir."]
+}
 struct Punto: Codable, Identifiable { var fecha: String; var valor: Double?; var oficial: Double?; var paralelo: Double?; var id: String { fecha } }
 struct Dolar: Codable { var usado: Double?; var oficial: Double?; var paralelo: Double?; var fecha: String; var serie: [Punto] }
 

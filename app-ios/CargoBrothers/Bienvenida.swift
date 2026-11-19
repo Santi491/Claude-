@@ -1,8 +1,8 @@
 import SwiftUI
 import UserNotifications
 
-/// Pantalla de bienvenida (propuesta, 19/11): la primera vez que se abre la app. Tres pasos: qué es, la clave de GitHub
-/// y los avisos. TODAVÍA NO SE MUESTRA SOLA: Santi la ve primero en una foto (se abre con el argumento -bienvenida).
+/// Pantalla de bienvenida (Santi la aprobó el 19/11): sale sola la primera vez que se abre la app. Tres pasos: qué es,
+/// la clave de GitHub y los avisos. Para volver a verla: abrir la app con el argumento -bienvenida.
 struct Bienvenida: View {
     @EnvironmentObject var store: Store
     var listo: () -> Void = {}

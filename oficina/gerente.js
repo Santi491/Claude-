@@ -495,7 +495,7 @@
   /* ---------- Objetivos (Santi, 12/11): la etapa del negocio, el avance de cada agente con su foto y su rendimiento de 7 días ---------- */
   const OBJ = D.objetivos || null;
   const OB_ORDEN = ["wa", "mkt", "ana", "ebay", "pedidos", "fin", "dem", "gerente"];
-  const OB_ETAPA_TXT = { 1: "Pedido en camino: cerrar precios, contactar tiendas y dejar la venta lista", 2: "Producto en mano: publicar y vender las 4 unidades en 7 días", 3: "Vendiendo: medir precio y velocidad, decidir el segundo pedido" };
+  const OB_ETAPA_TXT = { 1: "Búsqueda de productos: precios, tiendas nuevas, catálogos y proponer el próximo pedido", 2: "Producto en camino: seguir el envío, cerrar el precio y dejar la venta preparada", 3: "Vendiendo: publicar, ofrecer y vender todo en 7 días; medir a cuánto y en cuánto se vende" };   // (Santi, 19/11)
   function obCifra(o) { return o.avance != null ? `${o.avance}/${o.meta}` : o.cumplido ? "hecho" : "pendiente"; }
   function obColor(o) { return o.cumplido ? C.green : o.vencido ? C.red : C.amber; }
   function obPct(o) { return o.cumplido ? 100 : o.avance != null ? Math.max(3, Math.min(100, Math.round(100 * o.avance / Math.max(1, +o.meta)))) : 4; }
@@ -525,7 +525,7 @@
     const sig = OBJ.siguiente || [];
     return `<div class="gp-kpis">${kpi("Etapa", OBJ.etapa + " de 3", esc(OBJ.nombre))}${kpi("Objetivos cumplidos", hechos + " de " + os.length, venc ? `<span style="color:${C.red}">${venc} vencido${venc > 1 ? "s" : ""}</span>` : "ninguno vencido")}${kpi("Próximo cierre", prox ? dm(prox) : "–", faltan != null ? (faltan === 0 ? "hoy" : `faltan ${faltan} día${faltan > 1 ? "s" : ""}`) : "")}${kpi("Tiendas por contactar", OBJ.por_contactar, "con número, sin escribir")}</div>
       <div class="gp-box w12"><h4>En qué etapa está el negocio</h4><div class="ob-step">${step}</div>
-        <p class="gp-note">La etapa cambia sola: pasa a 2 cuando un pedido real llega a Cochabamba y a 3 con la primera venta. Los objetivos son por semana (lunes a domingo); cambiar una meta lo decides tú.</p></div>
+        <p class="gp-note">La etapa cambia sola: 2 cuando hay un pedido real en camino, 3 cuando el producto llega a Cochabamba y vuelve a 1 al vender la última unidad. Santi también la puede fijar a mano desde la app (Hoy → la etapa). Los objetivos son por semana (lunes a domingo); cambiar una meta lo decides tú.</p></div>
       <div class="gp-box w12"><h4>El equipo</h4><div class="ob-grid">${ags.map(card).join("")}</div>
         <p class="gp-note">Anillo: objetivos cumplidos de la etapa. Barras: verde cumplido, ámbar en curso, rojo vencido. Columnas doradas: acciones anotadas cada día en actividad.csv.</p></div>
       ${sig.length ? `<div class="gp-box w12"><details class="ob-next"><summary>Lo que viene en la etapa ${OBJ.etapa + 1} (${sig.length} objetivos, arrancan solos)</summary><ul>${sig.map(o => `<li><b style="color:var(--o-ink)">${esc(QN[o.agente] || o.agente)}</b> · ${esc(o.objetivo)}</li>`).join("")}</ul></details></div>` : ""}`;

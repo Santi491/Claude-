@@ -12,6 +12,8 @@ enum Op: Codable, Hashable {
     case chat(agente: String, texto: String)
     case tarea(agente: String, tarea: String, prioridad: String, fecha: String, obligatoria: Bool, motivo: String)
     case libreta(texto: String, tipo: String, vence: String)
+    /// etapa del negocio fijada a mano: "1", "2", "3" o "auto"
+    case etapaNegocio(String)
 }
 
 struct Pendiente: Codable, Identifiable, Hashable {
@@ -55,6 +57,7 @@ extension Store {
         switch op {
         case .decision(let d, _): enviadas[d.id] = nil; UserDefaults.standard.set(enviadas, forKey: "enviadas")
         case .chat(_, let texto): if let k = enviadosChat.lastIndex(where: { $0.texto == texto }) { enviadosChat.remove(at: k) }
+        case .etapaNegocio: etapaLocal = nil
         default: break
         }
     }

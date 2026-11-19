@@ -1,8 +1,10 @@
 {
- "generado": "2026-11-19 10:47",
+ "generado": "2026-11-19 13:49",
  "etapa": {
-  "numero": 1,
-  "nombre": "producto en camino"
+  "numero": 2,
+  "nombre": "producto en camino",
+  "auto": 2,
+  "fijada": null
  },
  "dolar": {
   "usado": 11.93,
@@ -781,7 +783,7 @@
    "margen": 38.0,
    "peor": 26.1,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/198806282731"
   },
   {
@@ -794,7 +796,7 @@
    "margen": 34.5,
    "peor": 22.8,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/147685557214"
   },
   {
@@ -807,7 +809,7 @@
    "margen": 30.1,
    "peor": 18.0,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/198790623774"
   },
   {
@@ -820,7 +822,7 @@
    "margen": 19.3,
    "peor": 6.6,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/336905110914"
   },
   {
@@ -1015,7 +1017,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
    "link": ""
   },
   {
@@ -1041,7 +1043,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
    "link": ""
   },
   {
@@ -1054,7 +1056,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": ""
   },
   {
@@ -1067,7 +1069,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": ""
   },
   {
@@ -1334,6 +1336,16 @@
  },
  "decidir": [
   {
+   "tipo": "plan",
+   "ref": "2026-11-19-1",
+   "agente": "wa",
+   "fecha": "2026-11-19",
+   "titulo": "Marcar HC store como \"no vende componentes\" en su ficha y dejar de incluirla en listas y seguimientos",
+   "detalle": "WhatsApp 19/11: 2 seguimientos sin respuesta y ya está fría; propone marcarla no vende (cambio de ficha de tienda: necesita OK de Santi)",
+   "plazo": "2026-11-26",
+   "fecha_para": "2026-11-20"
+  },
+  {
    "tipo": "necesidad",
    "ref": "50",
    "agente": "pedidos",
@@ -1354,22 +1366,12 @@
   },
   {
    "tipo": "plan",
-   "ref": "2026-11-18-35",
-   "agente": "fin",
-   "fecha": "2026-11-18",
-   "titulo": "Aclarar con Santi el costo por unidad del 7700X (Bs 2.655 en la libreta contra Bs 2.700 en finanzas) y dejar un solo valor en pedidos.csv",
-   "detalle": "Finanzas 18/11: duda sin resolver; afecta margen y piso del precio",
-   "plazo": "2026-11-22",
-   "fecha_para": "2026-11-19"
-  },
-  {
-   "tipo": "plan",
    "ref": "2026-11-16-1",
    "agente": "local",
    "fecha": "2026-11-16",
    "titulo": "Ampliar verificar.py para que avise el plazo de reclamo a eBay también cuando el pedido está en camino a Santa Cruz (y en cualquier etapa antes de entregado, salvo bodega del courier)",
    "detalle": "Pedidos 16/11 (chat): los 2 pedidos de 7700X están en camino a Santa Cruz, el plazo de reclamo vence el 26/11 y hoy verificar.py solo avisa en comprado y enviado; es cambio de código",
-   "plazo": "2026-11-19",
+   "plazo": "2026-11-25",
    "fecha_para": "2026-11-17"
   },
   {
@@ -1454,6 +1456,22 @@
    ],
    "ultima": "Demanda parcial (7700X, 7800X3D, SSD 1TB y 2TB; los otros 15 productos no se recontaron hoy) y demanda.py corrido. Ranking semanal top 5: 1 SSD NVMe 1TB (4,3 anuncios, se van 2,0/sem), 2 Ryzen 7 7800X3D (3,1; 2,5/sem), 3",
    "cuando": "2026-11-19 11:00"
+  },
+  {
+   "agente": "gerente",
+   "nombre": "Gerente",
+   "acciones": 19,
+   "serie": [
+    3,
+    2,
+    1,
+    3,
+    5,
+    4,
+    1
+   ],
+   "ultima": "Ronda mañana: chat contestado (6), verificar sin errores; cerradas 3 tareas (16-7, 18-32, 18-35), 16-1 reprogramada, propuesta wa 19-1 (HC store no vende) y 3 recomendaciones; 6 propuestas esperan a Santi; aviso de fin d",
+   "cuando": "2026-11-19 10:50"
   },
   {
    "agente": "fin",
@@ -1550,22 +1568,6 @@
    ],
    "ultima": "Revisión diaria hecha: dólar USDT 11,95 (oficial 11,68, paralelo 11,96/11,98), Excel, PDF, copia del día e informe",
    "cuando": "2026-11-19 07:58"
-  },
-  {
-   "agente": "gerente",
-   "nombre": "Gerente",
-   "acciones": 18,
-   "serie": [
-    3,
-    2,
-    1,
-    3,
-    5,
-    4,
-    0
-   ],
-   "ultima": "Informe diario 18/11 en Drive; 5 tareas propuestas (5 auto por rutina, 1 reprogramada); chat contestado (2 mensajes); libreta: 1 compromiso anotado; verificar.py sin errores",
-   "cuando": "2026-11-18 20:17"
   }
  ],
  "objetivos": [
@@ -1796,7 +1798,7 @@
   {
    "parte": "manana",
    "nombre": "PC · ronda 10:30",
-   "estado": "en curso",
+   "estado": "ok",
    "hora": "10:30"
   },
   {
@@ -1848,8 +1850,8 @@
    "ref": "2026-11-18-32",
    "agente": "gerente",
    "titulo": "Recordar a Santi el reclamo a eBay de los 2 pedidos de 7700X (vence 26/11): revisar el pedido antes y avisarnos si llega algo mal",
-   "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "estado": "hecho",
+   "decision": "auto (rutina) · hecho 19/11: recordatorio del reclamo eBay (26/11) enviado a Santi en el aviso de fin de ronda",
    "fecha": "2026-11-19"
   },
   {
@@ -1859,6 +1861,15 @@
    "titulo": "En --revisar buscar un SSD NVMe 2TB Gen4 de marca (Kingston, WD, Samsung, Crucial) para comparar con los Gen4 locales; el Leven Gen3 no es comparable",
    "estado": "aprobado",
    "decision": "auto (rutina)",
+   "fecha": "2026-11-19"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-18-35",
+   "agente": "fin",
+   "titulo": "Aclarar con Santi el costo por unidad del 7700X (Bs 2.655 en la libreta contra Bs 2.700 en finanzas) y dejar un solo valor en pedidos.csv",
+   "estado": "hecho",
+   "decision": "auto (rutina) · cerrada 19/11 (Gerente): no hay contradicción; Bs 2.655 es el promedio ponderado (3 u a 2.700 y 1 u a 2.520), Finanzas lo confirma",
    "fecha": "2026-11-19"
   },
   {
@@ -1911,8 +1922,8 @@
    "ref": "2026-11-16-7",
    "agente": "gerente",
    "titulo": "Santi: decidir la idea 21 del Analista de demanda: el barrido de tiendas por redes pasa a cada 2 semanas (ya no da tiendas) y Marketplace usa ese tiempo en clientes potenciales (objetivo cli-2, sin ofrecer nada)",
-   "estado": "aprobado",
-   "decision": "Santi 18/11 (Mac, con el Gerente): barrido cada 2 semanas, tiempo a cli-2",
+   "estado": "hecho",
+   "decision": "Santi 18/11 (Mac, con el Gerente): barrido cada 2 semanas, tiempo a cli-2 · cerrada por Gerente 19/11 (decisión ya tomada y aplicada)",
    "fecha": "2026-11-18"
   },
   {
@@ -2895,15 +2906,6 @@
    "estado": "hecho",
    "decision": "Mac 05/11 11:42: UPS sin movimiento nuevo (entregado 27/10 en Doral); USPS, GOFO y SpeedX sin movimiento nuevo; la salida a Bolivia sigue sin guía del courier B (ya en necesidades.csv)",
    "fecha": "2026-11-05"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-04-6",
-   "agente": "wa",
-   "titulo": "Contestar a Punto Tecnológico (escribió y espera respuesta), hacer los seguimientos que marque agenda.py y buscar números nuevos solo dentro del tope; si no queda ninguno, avisar a Santi por el chat",
-   "estado": "hecho",
-   "decision": "auto (rutina); 05/11 wa: respondido Punto + seguimiento SYSCITY + 1 chat nuevo",
-   "fecha": "2026-11-05"
   }
  ],
  "libreta": [
@@ -3554,8 +3556,8 @@
    "fuente": "ronda",
    "resumen": "Lunes 16/11 AM: Santi debe decidir 15-1 (objetivos semana 16-22/11), 11-13 (si llegaron los 7700X), 7700X a Bs 3.100 y 16-1 (verificar.py plazo en camino a Santa Cruz); recordarle el 19/11 la alerta del reclamo eBay (26/11)",
    "vence": "2026-11-19",
-   "estado": "abierta",
-   "cerrado": ""
+   "estado": "cumplida",
+   "cerrado": "19/11 10:49: Recordado a Santi el 19/11 en el aviso de fin de ronda (reclamo eBay 26/11, precio y fotos del 7700X)"
   },
   {
    "id": "66",
@@ -3634,6 +3636,16 @@
    "fuente": "2000",
    "resumen": "Mañana 19/11: recordarle a Santi el reclamo a eBay de los 7700X (vence 26/11) y pedirle precio y fotos del 7700X",
    "vence": "2026-11-19",
+   "estado": "cumplida",
+   "cerrado": "19/11 10:49: Recordado a Santi el 19/11 en el aviso de fin de ronda"
+  },
+  {
+   "id": "74",
+   "fecha": "2026-11-19",
+   "tipo": "compromiso",
+   "fuente": "ronda",
+   "resumen": "Si Santi no decide el reclamo a eBay de los 7700X antes, volver a recordárselo el 23/11 (vence 26/11)",
+   "vence": "2026-11-23",
    "estado": "abierta",
    "cerrado": ""
   }
@@ -7852,11 +7864,11 @@
   }
  ],
  "sincronizacion": {
-  "ultima_ronda": "2026-11-19 10:35",
+  "ultima_ronda": "2026-11-19 10:49",
   "ultima_ronda_quien": "pc",
-  "oficina_publicada": "2026-11-18 17:05",
+  "oficina_publicada": "2026-11-19 10:55",
   "armado_por": "una ronda o sesión",
-  "armado": "2026-11-19 10:47"
+  "armado": "2026-11-19 13:49"
  },
  "clientes": [
   {
@@ -20203,13 +20215,6 @@
    "fecha": "2026-11-15"
   },
   {
-   "id": "65",
-   "tipo": "compromiso",
-   "resumen": "Lunes 16/11 AM: Santi debe decidir 15-1 (objetivos semana 16-22/11), 11-13 (si llegaron los 7700X), 7700X a Bs 3.100 y 16-1 (verificar.py plazo en camino a Santa Cruz); recordarle el 19/11 la alerta del reclamo eBay (26/11)",
-   "vence": "2026-11-19",
-   "fecha": "2026-11-16"
-  },
-  {
    "id": "66",
    "tipo": "dato",
    "resumen": "16/11 tarde (PC): wa 88/85, 47 de 73 con lista completa pedida, 2 chats nuevos; mkt 0 tiendas nuevas (109 en lista, 3 por contactar; propone bajar la meta); analista 9600X a traer con peor caso 5,3 %; 7700X siguen en camino a Santa Cruz; verificar sin errores. Aviso: hora de la fila de wa adelantada (16:31 con reloj ~16:20)",
@@ -20259,46 +20264,14 @@
    "fecha": "2026-11-18"
   },
   {
-   "id": "73",
+   "id": "74",
    "tipo": "compromiso",
-   "resumen": "Mañana 19/11: recordarle a Santi el reclamo a eBay de los 7700X (vence 26/11) y pedirle precio y fotos del 7700X",
-   "vence": "2026-11-19",
-   "fecha": "2026-11-18"
+   "resumen": "Si Santi no decide el reclamo a eBay de los 7700X antes, volver a recordárselo el 23/11 (vence 26/11)",
+   "vence": "2026-11-23",
+   "fecha": "2026-11-19"
   }
  ],
  "chat": [
-  {
-   "id": "20261022-6",
-   "fecha": "2026-10-22",
-   "hora": "13:27",
-   "de": "gerente",
-   "para": "wa",
-   "texto": "Tarea 2026-10-22-1 (chats sin leer fuera de agenda, ronda de las 16:00) y 2026-10-22-3 (segunda cotización 7700X y SSD). Gracias por la ronda."
-  },
-  {
-   "id": "20261022-7",
-   "fecha": "2026-10-22",
-   "hora": "16:13",
-   "de": "wa",
-   "para": "gerente",
-   "texto": "Tarea 22-1 hecha: los 3 chats eran tiendas ya en agenda (Punto Tecnologico, ADN Gamer, COMPUTING). Ya anotado en mensajes.csv. 7800X3D ADN USD 520 box."
-  },
-  {
-   "id": "20261022-8",
-   "fecha": "2026-10-22",
-   "hora": "16:17",
-   "de": "pedidos",
-   "para": "gerente",
-   "texto": "Tarea 2026-10-22-2 hecha: real-1, real-2 y prueba-hermana-3 con sello de hoy; verificar.py sin ERROR. Ninguno tiene guía todavía, así que no hubo rastreo. La guía del 7700X sigue faltando (necesidad abierta para Santi)."
-  },
-  {
-   "id": "20261022-9",
-   "fecha": "2026-10-22",
-   "hora": "16:22",
-   "de": "gerente",
-   "para": "wa",
-   "texto": "Recibido, gracias. La 22-3 (segunda cotización 7700X/SSD) queda para mañana 23/10: si ninguna tienda contactada tiene 7700X, bájala a SSD y espera respuesta de Punto Tecnológico por el 9700X."
-  },
   {
    "id": "20261022-10",
    "fecha": "2026-10-22",
@@ -21466,6 +21439,38 @@
    "de": "gerente",
    "para": "pedidos",
    "texto": "Tarea 2026-11-18-39: revisar real-1 y real-2 y el reclamo a eBay del 26/11."
+  },
+  {
+   "id": "20261119-1",
+   "fecha": "2026-11-19",
+   "hora": "10:49",
+   "de": "gerente",
+   "para": "mkt",
+   "texto": "Visto lo del 7700X suelto (3.100 volvió a no aparecer; hoy solo el sellado a 4.000) y lo de las tiendas: Santi ya lo tiene. El barrido va cada 2 semanas y el tiempo pasa a clientes (cli-2). Sin precio y fotos de Santi no se publica. 20261116-1"
+  },
+  {
+   "id": "20261119-2",
+   "fecha": "2026-11-19",
+   "hora": "10:49",
+   "de": "gerente",
+   "para": "wa",
+   "texto": "Visto: no más a frías. Para hoy la agenda dice seguimiento corto a CRISTECNOLOGY; HC store la propuse a Santi como 'no vende' (tarea 2026-11-19-1, sin aprobar)."
+  },
+  {
+   "id": "20261119-3",
+   "fecha": "2026-11-19",
+   "hora": "10:49",
+   "de": "gerente",
+   "para": "ana",
+   "texto": "Recibido: 7700X publicar a 3.300 con escalera de 100 por semana y piso 2.930, y el segundo pedido (SSD 2TB, 7800X3D, 9950X3D). Lo de la mediana a 30 días quedó como tarea 2026-11-18-33 para la PC, propuesta a Santi."
+  },
+  {
+   "id": "20261119-4",
+   "fecha": "2026-11-19",
+   "hora": "10:49",
+   "de": "gerente",
+   "para": "local",
+   "texto": "Oficina v151 y v152 recibidas, sin errores. Gracias."
   }
  ],
  "salud14": [
@@ -21563,7 +21568,7 @@
   {
    "fecha": "2026-11-19",
    "nube": "ok",
-   "manana": "en curso",
+   "manana": "ok",
    "pc": "pendiente",
    "gerente": "pendiente"
   }
@@ -21581,22 +21586,22 @@
  ],
  "recomendaciones": [
   {
-   "texto": "Fija el precio del 7700X y pasa las fotos: el Analista sugiere publicar a Bs 3.300 y bajar 100 por semana",
-   "por_que": "Piso Bs 2.930; sin tu precio y fotos Marketplace no publica",
+   "texto": "Decide si reclamamos a eBay por los 7700X: el plazo vence el 26/11",
+   "por_que": "Quedan 7 días y hoy no hay reclamo abierto; después no hay vuelta atrás",
+   "accion": "pedido"
+  },
+  {
+   "texto": "Fija el precio del 7700X y pasa las fotos para publicar",
+   "por_que": "El Analista sugiere Bs 3.300 y bajar 100 por semana (piso 2.930); el suelto de 3.100 ya no aparece, solo el sellado a 4.000",
    "accion": "venta"
   },
   {
-   "texto": "Confírmame el costo por unidad del 7700X: Bs 2.655 o Bs 2.700",
-   "por_que": "De ese número salen el margen y el piso del precio",
-   "accion": "calculadora"
-  },
-  {
-   "texto": "Avísame cuando los 7700X lleguen a Cochabamba",
-   "por_que": "Con eso pasamos a la etapa 2 y arranca la venta de 7 días",
-   "accion": "pedido"
+   "texto": "Mira el segundo pedido: SSD 2TB y 7800X3D",
+   "por_que": "SSD 2TB deja 39,6 % (ojo, Gen3 sin marca); 7800X3D 26,6 % y aguanta el peor caso",
+   "accion": "compra"
   }
  ],
- "recomendaciones_cuando": "2026-11-18 20:17",
+ "recomendaciones_cuando": "2026-11-19 10:49",
  "constantes": {
   "b_usd_kg": 28,
   "b_min_kg": 1.0,

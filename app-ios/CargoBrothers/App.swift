@@ -67,6 +67,8 @@ final class Store: ObservableObject {
     @Published var toast: Toast?
     /// a dónde llevó el último aviso tocado (lo abre RaizView)
     @Published var destino: Destino?
+    /// la etapa que Santi acaba de elegir, hasta que lleguen los datos nuevos ("1"…"3" o "auto")
+    @Published var etapaLocal: String?
     /// lo que se guardó desde este iPhone (para la pantalla de Sincronización): texto y fecha-hora de Bolivia
     @Published var acciones: [[String: String]] = (UserDefaults.standard.array(forKey: "acciones") as? [[String: String]]) ?? []
     private var reloj: Task<Void, Never>?
@@ -220,6 +222,8 @@ struct RaizView: View {
     @EnvironmentObject var store: Store
     @State private var pestana = 0
     @State private var hoja: Destino?
+    // la bienvenida sale una sola vez, la primera vez que se abre la app (Santi la aprobó el 19/11)
+    @AppStorage("bienvenida_vista") private var bienvenidaVista = false
     @State private var verBienvenida = ProcessInfo.processInfo.arguments.contains("-bienvenida")
     var body: some View {
         TabView(selection: $pestana) {
@@ -247,8 +251,7 @@ struct RaizView: View {
         }
         .onChange(of: store.aviso) { _, a in if let a { store.mostrar(Toast(texto: a, tipo: a.hasPrefix("No ") || a.hasPrefix("Falta") ? .error : .info)); store.aviso = nil } }
         .overlay { if store.bloqueada { Bloqueo() } }
-        // vista previa de la bienvenida para mostrarla (todavía no sale sola la primera vez)
-        .overlay { if verBienvenida { Bienvenida { withAnimation { verBienvenida = false } }.transition(.opacity) } }
+        .overlay { if verBienvenida || !bienvenidaVista { Bienvenida { withAnimation { verBienvenida = false; bienvenidaVista = true } }.environmentObject(store).transition(.opacity) } }
         .animation(.spring(duration: 0.35), value: store.toast)
         .onAppear { Novedades.pedirPermiso() }
     }

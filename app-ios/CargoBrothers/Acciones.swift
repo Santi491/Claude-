@@ -111,6 +111,14 @@ extension Store {
         return ok
     }
 
+    /// Santi fija la etapa del negocio (o la vuelve a automática): etapa.csv manda sobre la regla (objetivos.py)
+    func fijarEtapa(_ valor: String) async -> Bool {
+        let n = Int(valor).flatMap { Etapa.nombres[$0] }
+        let ok = guardar(n.map { "etapa \(valor) · \($0)" } ?? "etapa automática", .etapaNegocio(valor))
+        if ok { etapaLocal = valor }
+        return ok
+    }
+
     // ---------- lo que de verdad se escribe en GitHub (lo corre la cola, con la fecha y hora de cuando Santi lo hizo) ----------
     func ejecutar(_ op: Op, hoy: String, hora: String, sello: String) async throws {
         switch op {
@@ -213,6 +221,22 @@ extension Store {
                                     "prioridad": prioridad, "plazo": fp, "meta": "", "obligatoria": obligatoria ? "sí" : ""])
             }
             try await actividad("tarea para \(agente): \(t0.prefix(80))", hoy, hora)
+        case .etapaNegocio(let valor):
+            let nombre = Int(valor).flatMap { Etapa.nombres[$0] }
+            let txt = nombre.map { "etapa \(valor) (\($0))" } ?? "etapa automática"
+            try await GitHub.modificar("etapa.csv", mensaje: "App: Santi fija la \(txt)") { t in
+                try CSV(t).agregar(["fecha": hoy, "hora": hora, "etapa": valor, "quien": "santi", "nota": "desde la app de iPhone"])
+            }
+            try await actividad("fijó la \(txt) del negocio", hoy, hora)
+            try await GitHub.modificar("chat.csv", mensaje: "App: aviso de etapa al Gerente") { t in
+                let csv = try CSV(t)
+                let pref = hoy.replacingOccurrences(of: "-", with: "") + "-"
+                let k = csv.registros.compactMap { r -> Int? in let id = csv.dic(r)["id"] ?? ""; return id.hasPrefix(pref) ? Int(id.dropFirst(pref.count)) : nil }.max() ?? 0
+                let texto = nombre.map { "Pasé el negocio a la etapa \(valor) (\($0)) desde la app. Ajustá el foco del equipo a esa etapa." }
+                    ?? "Volví la etapa a automática desde la app (la decide la regla de los pedidos)."
+                return csv.agregar(["id": pref + String(k + 1), "fecha": hoy, "hora": hora, "de": "santi", "para": "gerente",
+                                    "texto": texto, "ref": "", "estado": "nuevo", "respuesta_a": ""])
+            }
         case .libreta(let t0, let tipo, let vence):
             try await GitHub.modificar("memoria-gerente.csv", mensaje: "App: Santi anota en la libreta del Gerente") { t in
                 let csv = try CSV(t)

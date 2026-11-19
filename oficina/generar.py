@@ -255,7 +255,7 @@ def main():
         _rend[_k] = {"acciones": len(_mias), "serie": [sum(a["fecha"] == d for a in _mias) for d in _dias],
                      "ultima": {"fecha": _ult["fecha"], "hora": _ult.get("hora", ""), "texto": _ult.get("texto", "")[:220]} if _ult else None,
                      "kpis": _extra.get(_k, [])}
-    objetivos_d = {"etapa": _o["etapa"], "nombre": _o["nombre"], "por_contactar": _o["por_contactar"], "objetivos": _o["objetivos"],
+    objetivos_d = {"etapa": _o["etapa"], "nombre": _o["nombre"], "auto": _obj.etapa_auto(), "fijada": _obj.etapa_fijada(), "por_contactar": _o["por_contactar"], "objetivos": _o["objetivos"],
                    "etapas": _obj.ETAPAS, "dias": _dias, "rendimiento": _rend,
                    "siguiente": _obj.calcular(_o["etapa"] + 1)["objetivos"] if _o["etapa"] < 3 else []}
     datos = {"generado": datetime.now(ZoneInfo("America/La_Paz")).strftime("%Y-%m-%d %H:%M"), "productos": productos, "movimientos": mov,

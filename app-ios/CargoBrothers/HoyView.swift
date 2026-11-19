@@ -9,6 +9,7 @@ enum Hoja: String, Identifiable {
 struct HoyView: View {
     @EnvironmentObject var store: Store
     @State private var hoja: Hoja?
+    @State private var hojaEtapa = false
 
     var body: some View {
         Pantalla(titulo: "Cargo Brothers") {
@@ -72,15 +73,27 @@ struct HoyView: View {
     func principal(_ d: Datos) -> Pedido? { let r = d.pedidos.filter { !$0.esPrueba }; return r.filter { !$0.entregado }.max { $0.cantidad < $1.cantidad } ?? r.last }
 
     func encabezado(_ d: Datos) -> some View {
-        HStack(spacing: 14) {
-            Image("Logo").resizable().renderingMode(.template).scaledToFit().foregroundStyle(Tema.texto).frame(width: 52, height: 52)
-            VStack(alignment: .leading, spacing: 2) {
-                Text("ETAPA \(d.etapa.numero ?? 1)").font(.caption.weight(.bold)).tracking(1.5).foregroundStyle(Tema.bronce)
-                Text(d.etapa.nombre.prefix(1).uppercased() + d.etapa.nombre.dropFirst()).font(.title3.weight(.semibold))
+        // la que eligió Santi recién (si todavía no llegaron los datos nuevos) o la de los datos
+        let local = store.etapaLocal
+        let n = local.flatMap { Int($0) } ?? (local == "auto" ? d.etapa.auto : nil) ?? d.etapa.numero ?? 1
+        let fijada = local.map { $0 != "auto" } ?? (d.etapa.fijada != nil)
+        return Button { hojaEtapa = true } label: {
+            HStack(spacing: 14) {
+                Image("Logo").resizable().renderingMode(.template).scaledToFit().foregroundStyle(Tema.texto).frame(width: 52, height: 52)
+                VStack(alignment: .leading, spacing: 2) {
+                    HStack(spacing: 6) {
+                        Text("ETAPA \(n)").font(.caption.weight(.bold)).tracking(1.5).foregroundStyle(Tema.bronce)
+                        Text(fijada ? "· FIJADA POR VOS" : "· AUTOMÁTICA").font(.caption2.weight(.semibold)).tracking(1).foregroundStyle(Tema.gris)
+                    }
+                    Text(Etapa.nombres[n] ?? d.etapa.nombre).font(.title3.weight(.semibold)).foregroundStyle(Tema.texto)
+                }
+                Spacer()
+                Image(systemName: "chevron.up.chevron.down").font(.footnote.weight(.semibold)).foregroundStyle(Tema.gris)
             }
-            Spacer()
+            .padding(.top, 4).contentShape(Rectangle())
         }
-        .padding(.top, 4)
+        .buttonStyle(.plain)
+        .sheet(isPresented: $hojaEtapa) { ElegirEtapa(datos: d.etapa).environmentObject(store).presentationDetents([.medium, .large]) }
     }
 
     func tarjetaGerente(_ r: [Recomendacion], cuando: String) -> some View {
@@ -356,5 +369,56 @@ struct FinanzasView: View {
     }
     func fila(_ a: String, _ b: String) -> some View {
         HStack { Text(a).foregroundStyle(Tema.gris); Spacer(); Text(b).monospacedDigit() }.font(.subheadline)
+    }
+}
+
+
+/// Elegir la etapa del negocio (Santi, 19/11): automática (la decide el estado de los pedidos) o fijada a mano.
+/// Se confirma con Face ID y le llega al Gerente, que ajusta el foco del equipo.
+struct ElegirEtapa: View {
+    let datos: Etapa
+    @EnvironmentObject var store: Store
+    @Environment(\.dismiss) private var cerrar
+    @State private var eleccion = ""
+    var actual: String { store.etapaLocal ?? datos.fijada.map(String.init) ?? "auto" }
+
+    var body: some View {
+        NavigationStack {
+            List {
+                Section {
+                    opcion("auto", "Automática", "Hoy da la etapa \(datos.auto ?? datos.numero ?? 1): \(Etapa.nombres[datos.auto ?? datos.numero ?? 1] ?? ""). Cambia sola cuando sale o llega un pedido y cuando se vende la última unidad.")
+                }
+                Section("O fijala vos") {
+                    ForEach(1...3, id: \.self) { n in opcion(String(n), "Etapa \(n) · \(Etapa.nombres[n]!)", Etapa.detalle[n]!) }
+                }
+                Section {
+                    Button {
+                        Task {
+                            guard eleccion != actual else { cerrar(); return }
+                            if await store.confirmarIdentidad(motivo: "Cambiar la etapa del negocio") {
+                                if await store.fijarEtapa(eleccion) { cerrar() }
+                            }
+                        }
+                    } label: { Text("Confirmar").font(.headline).frame(maxWidth: .infinity) }
+                    .disabled(eleccion == actual)
+                } footer: { Text("Al cambiarla, el Gerente ajusta los objetivos y el foco de cada agente. Una etapa fijada a mano queda hasta que vuelvas a «Automática».") }
+            }
+            .navigationTitle("Etapa del negocio").navigationBarTitleDisplayMode(.inline)
+            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("Cerrar") { cerrar() } } }
+            .onAppear { eleccion = actual }
+        }
+    }
+
+    func opcion(_ v: String, _ titulo: String, _ texto: String) -> some View {
+        Button { eleccion = v } label: {
+            HStack(alignment: .top, spacing: 12) {
+                Image(systemName: eleccion == v ? "checkmark.circle.fill" : "circle").font(.title3)
+                    .foregroundStyle(eleccion == v ? Tema.bronce : Tema.gris)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(titulo).font(.subheadline.weight(.semibold)).foregroundStyle(Tema.texto)
+                    Text(texto).font(.footnote).foregroundStyle(Tema.gris)
+                }
+            }
+        }
     }
 }
