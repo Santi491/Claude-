@@ -48,6 +48,7 @@
 		E2C89FFC45286BFD5DB88E27 /* Detalle3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140A08282DA18EB225D290E /* Detalle3D.swift */; };
 		E313BFAFC4093C679D95F4C5 /* EquipoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C5D96174AE07BC40B1701 /* EquipoView.swift */; };
 		E378004B54AFE601200B489B /* Oficina3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236FFED311223CA063EA75F /* Oficina3D.swift */; };
+		E43B83A5093DFB7F370DBC57 /* Bienvenida.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AEA9DBDF1CBE0B8A546027 /* Bienvenida.swift */; };
 		EB0B203E00434695642F5CFF /* VentasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A15194E2CC3B99416EB40 /* VentasView.swift */; };
 		F5DACBDB7BFDA38034F338AE /* cb-venta.caf in Resources */ = {isa = PBXBuildFile; fileRef = B1C6ECB443A010EBF412B184 /* cb-venta.caf */; };
 		F61C8953A3A4FF979E1A1B85 /* cb-ronda.caf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD41044CA17447A60A6FED /* cb-ronda.caf */; };
@@ -110,6 +111,7 @@
 		BB04B8EF0EE76840DB01B130 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 		BEF81893D5F19E454303E8E1 /* Comportamiento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comportamiento.swift; sourceTree = "<group>"; };
 		C1E7BC6E4A520F297C8E5938 /* cb-decision.caf */ = {isa = PBXFileReference; path = "cb-decision.caf"; sourceTree = "<group>"; };
+		C6AEA9DBDF1CBE0B8A546027 /* Bienvenida.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bienvenida.swift; sourceTree = "<group>"; };
 		CFDD41044CA17447A60A6FED /* cb-ronda.caf */ = {isa = PBXFileReference; path = "cb-ronda.caf"; sourceTree = "<group>"; };
 		D7BD44D0FC4004978F31E952 /* CargoBrothers.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CargoBrothers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E055386B3C14F3F8100EA3BB /* VentaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentaView.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				FC9477CD72D4D139BF79BD62 /* Apariencia.swift */,
 				4C6273E57DB7F514097317CA /* App.swift */,
 				8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */,
+				C6AEA9DBDF1CBE0B8A546027 /* Bienvenida.swift */,
 				EB1B336C54BCE76DE79D8F1C /* Calculo.swift */,
 				9C5D8357A645921BC6016B15 /* Calidad.swift */,
 				059EAF0FCF1D9A19B01C139F /* Cola.swift */,
@@ -355,6 +358,7 @@
 				C6876863A89487D4F9E0C341 /* Acciones.swift in Sources */,
 				0A7B89741B6B675668827CE1 /* Apariencia.swift in Sources */,
 				024D314FECBD41121D26B449 /* App.swift in Sources */,
+				E43B83A5093DFB7F370DBC57 /* Bienvenida.swift in Sources */,
 				8D35708ACBED1341CFB5C3EC /* Calculo.swift in Sources */,
 				CF94B714D369672CEE64E380 /* Calidad.swift in Sources */,
 				A1DE442E5457C3A53A8D44C6 /* Cola.swift in Sources */,

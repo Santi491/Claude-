@@ -246,6 +246,8 @@ struct RaizView: View {
         }
         .onChange(of: store.aviso) { _, a in if let a { store.mostrar(Toast(texto: a, tipo: a.hasPrefix("No ") || a.hasPrefix("Falta") ? .error : .info)); store.aviso = nil } }
         .overlay { if store.bloqueada { Bloqueo() } }
+        // vista previa de la bienvenida para mostrarla (todavía no sale sola la primera vez)
+        .overlay { if ProcessInfo.processInfo.arguments.contains("-bienvenida") { Bienvenida() } }
         .animation(.spring(duration: 0.35), value: store.toast)
         .onAppear { Novedades.pedirPermiso() }
     }
