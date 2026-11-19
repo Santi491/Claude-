@@ -12,6 +12,8 @@
 		0A7B89741B6B675668827CE1 /* Apariencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9477CD72D4D139BF79BD62 /* Apariencia.swift */; };
 		16BFA7EA601E083AA56AFB6C /* Modelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1229FF333DB2EDEE5619D0DE /* Modelo.swift */; };
 		1C6A428B8A439B80981DF850 /* cb-decision.caf in Resources */ = {isa = PBXBuildFile; fileRef = C1E7BC6E4A520F297C8E5938 /* cb-decision.caf */; };
+		1DA2560759C7EE7BD8F49817 /* Muebles3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331833B9E75180E015CF4FC /* Muebles3D.swift */; };
+		21BA8F6403F4D24BBDCE042C /* Muebles3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = A331833B9E75180E015CF4FC /* Muebles3D.swift */; };
 		22BAB56C8D0DB99F575D74B8 /* VentaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E055386B3C14F3F8100EA3BB /* VentaView.swift */; };
 		2B5AFF8346100FC0FA1A7AE1 /* DecidirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1972F47C18837AD9A732BF5 /* DecidirView.swift */; };
 		314806A88F36DBF1740EE171 /* PreciosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB966AC3E3A469EA59DF573A /* PreciosView.swift */; };
@@ -29,6 +31,7 @@
 		6D63ACEE01AD2D04B1633EF8 /* Fotos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37864CBDDB4B818CB0FE26 /* Fotos.xcassets */; };
 		71392DCDE12266458E3D97F0 /* Fotos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37864CBDDB4B818CB0FE26 /* Fotos.xcassets */; };
 		77DAC811BF99D96E1EBBC59A /* Modelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1229FF333DB2EDEE5619D0DE /* Modelo.swift */; };
+		799A2A972DB8EB97F9628117 /* Gym3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E830331EC6226C671A1BF66 /* Gym3D.swift */; };
 		7AB9A9B73C24DF111799E0D5 /* Oficina3D in Resources */ = {isa = PBXBuildFile; fileRef = 638EF099DB456882B60C2333 /* Oficina3D */; };
 		7B461266F228387F9383D1F7 /* Personas3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012048F7428B9A01717E2 /* Personas3D.swift */; };
 		7EDFC7D17900C3E6DFBACA18 /* MasWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323D1B098D1BCB461A1CA55 /* MasWidgets.swift */; };
@@ -52,6 +55,7 @@
 		EB0B203E00434695642F5CFF /* VentasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A15194E2CC3B99416EB40 /* VentasView.swift */; };
 		F5DACBDB7BFDA38034F338AE /* cb-venta.caf in Resources */ = {isa = PBXBuildFile; fileRef = B1C6ECB443A010EBF412B184 /* cb-venta.caf */; };
 		F61C8953A3A4FF979E1A1B85 /* cb-ronda.caf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD41044CA17447A60A6FED /* cb-ronda.caf */; };
+		F84F325D497F4E9166FD674E /* Gym3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E830331EC6226C671A1BF66 /* Gym3D.swift */; };
 		FFF7B80627D6AACA1617FECB /* Componentes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1258C8E2E618C28407F90222 /* Componentes.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +106,8 @@
 		9178CBA57C8D6EBA5763BB7A /* Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
 		9236FFED311223CA063EA75F /* Oficina3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oficina3D.swift; sourceTree = "<group>"; };
 		9C5D8357A645921BC6016B15 /* Calidad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calidad.swift; sourceTree = "<group>"; };
+		9E830331EC6226C671A1BF66 /* Gym3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gym3D.swift; sourceTree = "<group>"; };
+		A331833B9E75180E015CF4FC /* Muebles3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muebles3D.swift; sourceTree = "<group>"; };
 		A94B2953F13E92D943008DFC /* Manejo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manejo.swift; sourceTree = "<group>"; };
 		A959C99911657117CA0FBF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB966AC3E3A469EA59DF573A /* PreciosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreciosView.swift; sourceTree = "<group>"; };
@@ -146,7 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				F140A08282DA18EB225D290E /* Detalle3D.swift */,
+				9E830331EC6226C671A1BF66 /* Gym3D.swift */,
 				1229FF333DB2EDEE5619D0DE /* Modelo.swift */,
+				A331833B9E75180E015CF4FC /* Muebles3D.swift */,
 				9236FFED311223CA063EA75F /* Oficina3D.swift */,
 				24A012048F7428B9A01717E2 /* Personas3D.swift */,
 			);
@@ -343,8 +351,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2C89FFC45286BFD5DB88E27 /* Detalle3D.swift in Sources */,
+				F84F325D497F4E9166FD674E /* Gym3D.swift in Sources */,
 				7EDFC7D17900C3E6DFBACA18 /* MasWidgets.swift in Sources */,
 				16BFA7EA601E083AA56AFB6C /* Modelo.swift in Sources */,
+				21BA8F6403F4D24BBDCE042C /* Muebles3D.swift in Sources */,
 				E378004B54AFE601200B489B /* Oficina3D.swift in Sources */,
 				7B461266F228387F9383D1F7 /* Personas3D.swift in Sources */,
 				050F0AED04949A6C445E6F64 /* Widgets.swift in Sources */,
@@ -370,9 +380,11 @@
 				36DCC1A5561A59AC5834F4E8 /* Extras.swift in Sources */,
 				65E0B88A311E66231F23F8BE /* Formularios.swift in Sources */,
 				9CF8A07AFE7F4448FA090B4C /* GitHub.swift in Sources */,
+				799A2A972DB8EB97F9628117 /* Gym3D.swift in Sources */,
 				3D93E0F03A86622F2B3DF443 /* HoyView.swift in Sources */,
 				459BA0C202AE10892C268E02 /* Manejo.swift in Sources */,
 				77DAC811BF99D96E1EBBC59A /* Modelo.swift in Sources */,
+				1DA2560759C7EE7BD8F49817 /* Muebles3D.swift in Sources */,
 				A2B85026D017C40E68B6CAB5 /* Notificaciones.swift in Sources */,
 				DE755E1F3EAABA3625A39443 /* Oficina3D.swift in Sources */,
 				3B28B35A80139004BFDCD06D /* OficinaView.swift in Sources */,

@@ -201,6 +201,17 @@ enum Oficina3D {
                 if let c = caja(n) { cajas.append(c) }
             }
         }
+        // (19/11) sofá y sillones modernos, sillas de la sala de juntas y gym con más realismo (Muebles3D / Gym3D): los
+        // viejos se sacaron de oficina.json. También chocan; las luces del gym quedan aparte y lo demás se junta en pocas piezas
+        let muebles = SCNNode(); escena.rootNode.addChildNode(muebles)
+        Muebles3D.ponerTodo(en: muebles)
+        var luces: [SCNNode] = []
+        muebles.enumerateHierarchy { n, _ in
+            if n.light != nil { luces.append(n) } else if let c = caja(n) { cajas.append(c) }
+        }
+        for l in luces { let t = l.worldTransform; l.removeFromParentNode(); l.transform = t; escena.rootNode.addChildNode(l) }
+        let juntos = muebles.flattenedClone(); juntos.name = "muebles"
+        muebles.removeFromParentNode(); escena.rootNode.addChildNode(juntos)
         solidos = cajas
         if alta { mejorar(escena, raiz: plano); mejorar(escena, raiz: vidrios, luces: false) }
         if let f = a.fondo { escena.background.contents = CGColor(srgbRed: CGFloat(f[0]), green: CGFloat(f[1]), blue: CGFloat(f[2]), alpha: 1) }

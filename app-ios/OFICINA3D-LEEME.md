@@ -47,3 +47,9 @@ pesas, cinta, sentarse, pararse, a_teclear, de_teclear, cafe, celular, pensar, e
 y saludar (Waving.fbx), 20 en total. Ojo: la exportación desde FBX deja `mat.mapa` vacío (las texturas de Mixamo no cargan en
 Chrome sin GPU): después de comprimir hay que copiar el `mat` de cada malla de los JSON anteriores (mismas mallas, mismo orden),
 si no las personas salen grises.
+
+**Muebles nuevos (19/11):** el sofá y los 5 sillones (estilo moderno), las 10 sillas de la sala de juntas y el gym completo
+(con 3 luces cálidas, espejo y piso de goma) los arma la app en código (`Shared/Muebles3D.swift`, `Shared/Gym3D.swift`,
+`Muebles3D.ponerTodo`). Los viejos se sacaron de `oficina.json` (430 nodos: gym 104, sofá 15, sillones 31, sillas 280).
+Si se vuelve a exportar la oficina, hay que volver a sacarlos: el script que los encuentra por zona está descrito en esta
+sesión (cajas por lugar y tamaño) — sin eso aparecerían duplicados.
