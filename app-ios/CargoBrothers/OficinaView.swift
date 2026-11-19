@@ -12,6 +12,8 @@ struct OficinaView: View {
     @State private var vista = 0
     @StateObject private var marcas = Marcas()
     @State private var elegido: String?
+    @State private var vida: Comportamiento?
+    @State private var junta = false
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -27,12 +29,21 @@ struct OficinaView: View {
                     .background(.ultraThinMaterial, in: Circle())
                 LuzVivo().environmentObject(store).frame(maxWidth: 260)
                 Spacer()
+                if vida != nil {
+                    Button { junta.toggle(); vida?.junta = junta } label: {
+                        Image(systemName: junta ? "person.3.fill" : "person.3").font(.subheadline.weight(.semibold)).padding(10)
+                            .foregroundStyle(junta ? Color(red: 0.79, green: 0.64, blue: 0.36) : .white)
+                    }
+                    .background(.ultraThinMaterial, in: Circle())
+                    .accessibilityLabel(junta ? "Terminar junta" : "Llamar a junta")
+                }
                 Button { elegido = nil; vista += 1 } label: { Label("Vista general", systemImage: "scope").font(.caption.weight(.semibold)).padding(.horizontal, 12).padding(.vertical, 9) }
                     .background(.ultraThinMaterial, in: Capsule())
             }
             .padding(.horizontal, 14).padding(.top, 6)
         }
         .preferredColorScheme(.dark)
+        .onDisappear { vida?.parar(); Vivo3D.vida = nil }
         .onChange(of: store.vivo?.actualizado) { _, _ in if let escena { Vivo3D.aplicar(escena, store) } }
         .onChange(of: store.datos?.generado) { _, _ in if let escena { Vivo3D.aplicar(escena, store) } }
         .sheet(item: Binding(get: { elegido.map { Elegido(id: $0) } }, set: { elegido = $0?.id })) { e in
@@ -52,7 +63,16 @@ struct OficinaView: View {
                 if let pers { Personas3D.sentarEquipo(en: e.rootNode, carpeta: pers) }
                 return e
             }.value
-            if let e { escena = e; Vivo3D.aplicar(e, store) } else { error = "No pude armar la oficina." }
+            if let e {
+                escena = e
+                if let pers {
+                    let c = Comportamiento(escena: e, carpeta: pers)
+                    c.animPuesto = { id in Vivo3D.animacion(id, store) }
+                    vida = c; Vivo3D.vida = c
+                    c.empezar()
+                }
+                Vivo3D.aplicar(e, store)
+            } else { error = "No pude armar la oficina." }
         }
     }
 }
@@ -76,7 +96,7 @@ struct Etiquetas: View {
             Color.clear.frame(maxWidth: .infinity, maxHeight: .infinity).allowsHitTesting(false)
             ForEach(orden, id: \.self) { id in
                 if let m = marcas.puntos[id], m.visible {
-                    Button { tocar(id) } label: { etiqueta(id, distancia: m.distancia).fixedSize().contentShape(Capsule()) }
+                    Button { tocar(id) } label: { etiqueta(id, distancia: apretados.contains(id) ? 99 : m.distancia).fixedSize().contentShape(Capsule()) }
                         .buttonStyle(.plain)
                         .position(x: m.punto.x, y: m.punto.y - 18)
                 }
@@ -86,6 +106,12 @@ struct Etiquetas: View {
 
     /// los más lejanos se dibujan primero (los cercanos quedan encima)
     var orden: [String] { marcas.puntos.keys.sorted { (marcas.puntos[$0]?.distancia ?? 0) > (marcas.puntos[$1]?.distancia ?? 0) } }
+
+    /// los que tienen a otro al lado (en la junta, en el sofá) muestran solo la foto, para que no se tapen los nombres
+    var apretados: Set<String> {
+        let v = marcas.puntos.filter(\.value.visible)
+        return Set(v.keys.filter { a in v.contains { b in b.key != a && abs(b.value.punto.x - v[a]!.punto.x) < 150 && abs(b.value.punto.y - v[a]!.punto.y) < 40 } })
+    }
 
     /// de lejos solo la foto con su punto de estado; más cerca, el nombre; bien cerca, también lo que hace
     @ViewBuilder func etiqueta(_ id: String, distancia: Float) -> some View {
@@ -325,6 +351,13 @@ struct VistaSCN: UIViewRepresentable {
 @MainActor
 enum Vivo3D {
     static var actual: [String: String] = [:]
+    static weak var vida: Comportamiento?
+
+    /// ¿está en su puesto o anda libre? (como la oficina web: el Gerente siempre en su puesto; en ronda, todos a trabajar)
+    static func destino(_ id: String, _ store: Store) -> String {
+        if id == "gerente" || store.vivo?.enCurso == true { return "puesto" }
+        return "lugar"
+    }
 
     /// qué animación toca: teclear si trabaja; si espera o no tiene trabajo, relajado en la silla (a veces café o risa)
     static func animacion(_ id: String, _ store: Store) -> String {
@@ -335,15 +368,14 @@ enum Vivo3D {
             default: return "reir_sentado"
             }
         }
-        if id == "gerente" { return "teclear" }   // el Gerente siempre está en su puesto, como en la oficina web
-        let variedad = ["sentado", "cafe", "sentado", "reir_sentado"]
-        return variedad[abs(id.hashValue) % variedad.count]
+        return id == "gerente" ? "teclear" : "sentado"   // el Gerente siempre está en su puesto, como en la oficina web
     }
 
     static func aplicar(_ e: SCNScene, _ store: Store) {
         let pers = Bundle.main.url(forResource: "Personas", withExtension: nil)
         for (k, (id, _, _)) in Detalle3D.puestos.enumerated() {
-            if let pers, let p = e.rootNode.childNode(withName: "persona-\(id)", recursively: false) {
+            if let v = vida { v.quiere[id] = destino(id, store) }
+            else if let pers, let p = e.rootNode.childNode(withName: "persona-\(id)", recursively: false) {
                 let a = animacion(id, store)
                 if actual[id] != a { Personas3D.animar(p, a, carpeta: pers, desfase: Double(k) * 0.77); actual[id] = a }
             }

@@ -39,6 +39,7 @@
 		B8644EEA6FED254B50CA4E3A /* Personas3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012048F7428B9A01717E2 /* Personas3D.swift */; };
 		B9BAE4EB13071DA0EED4BEC1 /* cb-pedido.caf in Resources */ = {isa = PBXBuildFile; fileRef = AC7B9B7B601AF6355149CE55 /* cb-pedido.caf */; };
 		C6876863A89487D4F9E0C341 /* Acciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83D2B23602459B6C36474D /* Acciones.swift */; };
+		CDB9FFD705AC5F63CB037211 /* Comportamiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF81893D5F19E454303E8E1 /* Comportamiento.swift */; };
 		DE755E1F3EAABA3625A39443 /* Oficina3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236FFED311223CA063EA75F /* Oficina3D.swift */; };
 		E2C89FFC45286BFD5DB88E27 /* Detalle3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140A08282DA18EB225D290E /* Detalle3D.swift */; };
 		E313BFAFC4093C679D95F4C5 /* EquipoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C5D96174AE07BC40B1701 /* EquipoView.swift */; };
@@ -100,6 +101,7 @@
 		B03F1620C032AB23EFC753E3 /* cb-gerente.caf */ = {isa = PBXFileReference; path = "cb-gerente.caf"; sourceTree = "<group>"; };
 		B1C6ECB443A010EBF412B184 /* cb-venta.caf */ = {isa = PBXFileReference; path = "cb-venta.caf"; sourceTree = "<group>"; };
 		BB04B8EF0EE76840DB01B130 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		BEF81893D5F19E454303E8E1 /* Comportamiento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comportamiento.swift; sourceTree = "<group>"; };
 		C1E7BC6E4A520F297C8E5938 /* cb-decision.caf */ = {isa = PBXFileReference; path = "cb-decision.caf"; sourceTree = "<group>"; };
 		CFDD41044CA17447A60A6FED /* cb-ronda.caf */ = {isa = PBXFileReference; path = "cb-ronda.caf"; sourceTree = "<group>"; };
 		D7BD44D0FC4004978F31E952 /* CargoBrothers.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CargoBrothers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,7 @@
 				8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */,
 				EB1B336C54BCE76DE79D8F1C /* Calculo.swift */,
 				1258C8E2E618C28407F90222 /* Componentes.swift */,
+				BEF81893D5F19E454303E8E1 /* Comportamiento.swift */,
 				F1972F47C18837AD9A732BF5 /* DecidirView.swift */,
 				FB7C5D96174AE07BC40B1701 /* EquipoView.swift */,
 				9178CBA57C8D6EBA5763BB7A /* Extras.swift */,
@@ -342,6 +345,7 @@
 				024D314FECBD41121D26B449 /* App.swift in Sources */,
 				8D35708ACBED1341CFB5C3EC /* Calculo.swift in Sources */,
 				FFF7B80627D6AACA1617FECB /* Componentes.swift in Sources */,
+				CDB9FFD705AC5F63CB037211 /* Comportamiento.swift in Sources */,
 				2B5AFF8346100FC0FA1A7AE1 /* DecidirView.swift in Sources */,
 				83596903A97FDAA983B3391A /* Detalle3D.swift in Sources */,
 				E313BFAFC4093C679D95F4C5 /* EquipoView.swift in Sources */,

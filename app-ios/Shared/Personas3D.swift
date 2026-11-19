@@ -78,6 +78,8 @@ enum Personas3D {
             let idx: [UInt32] = ms.idx.map { lee(bin, $0, ms.ni, UInt32.self) } ?? (0..<UInt32(ms.n)).map { $0 }
             let geo = SCNGeometry(sources: src, elements: [SCNGeometryElement(indices: idx, primitiveType: .triangles)])
             geo.materials = [material(c, ms.mat)]
+            // caja amplia (en cm): con huesos animados SceneKit calcula mal la caja de la pose y escondía el cuerpo al caminar
+            geo.boundingBox = (SCNVector3(-400, -100, -400), SCNVector3(400, 300, 400))
             let pesos = SCNGeometrySource(data: bin.subdata(in: ms.sw..<(ms.sw + ms.n * 16)), semantic: .boneWeights, vectorCount: ms.n,
                                           usesFloatComponents: true, componentsPerVector: 4, bytesPerComponent: 4, dataOffset: 0, dataStride: 16)
             // los índices vienen sobre la lista total de huesos; el skinner usa solo los de esta malla
@@ -98,31 +100,68 @@ enum Personas3D {
         return raiz
     }
 
-    /// Pone a la persona a hacer una animación (en bucle). Devuelve la duración.
+    static let sentadas: Set<String> = ["sentado", "teclear", "cafe", "reir_sentado", "reunion", "a_teclear", "de_teclear"]
+
+    /// centro del cuerpo (promedio de los huesos, en cm) en cada cuadro
+    static func centros(_ c: Cargado, _ a: Modelo.Anim) -> [(Float, Float, Float)] {
+        let H = c.m.nh, N = a.cuadros, t = lee(c.bin, a.t, N * H * 3, Int16.self)
+        return (0..<N).map { f in
+            var x: Float = 0, y: Float = 0, z: Float = 0
+            for h in 0..<H { let b = (f * H + h) * 3; x += Float(t[b]); y += Float(t[b + 1]); z += Float(t[b + 2]) }
+            return (x / Float(H) / 100, y / Float(H) / 100, z / Float(H) / 100)
+        }
+    }
+
+    /// Pone a la persona a hacer una animación, con fundido desde la anterior. `bucle` = false: una vez y queda en el último cuadro.
+    /// Las sentadas se corrigen para que el cuerpo quede siempre donde lo deja "sentado" (algunas venían corridas o con un
+    /// primer cuadro de pie, como el café).
     @discardableResult
-    static func animar(_ raiz: SCNNode, _ nombre: String, carpeta: URL, desfase: Double = 0) -> Double {
+    static func animar(_ raiz: SCNNode, _ nombre: String, carpeta: URL, desfase: Double = 0, bucle: Bool = true, fundido: Double = 0.3) -> Double {
         guard let i = raiz.value(forKey: "modeloIdx") as? Int, let c = try? cargar(i, carpeta: carpeta), let a = c.m.anims[nombre],
               let modelo = raiz.childNode(withName: "modelo", recursively: false) else { return 0 }
         modelo.eulerAngles.y = .init(a.giro)
         let H = c.m.nh, N = a.cuadros
+        var cuadros = Array(0..<N)
+        var dx: Float = 0, dz: Float = 0
+        if sentadas.contains(nombre), let ref = c.m.anims["sentado"] {
+            let cs = centros(c, a), cr = centros(c, ref)
+            let ys = cs.map(\.1).sorted(), yMed = ys[ys.count / 2]
+            cuadros = cuadros.filter { abs(cs[$0].1 - yMed) < 0.2 }   // fuera los cuadros de pie
+            if cuadros.count < 2 { cuadros = Array(0..<N) }
+            let mx = cuadros.map { cs[$0].0 }.sorted()[cuadros.count / 2], mz = cuadros.map { cs[$0].2 }.sorted()[cuadros.count / 2]
+            let rx = cr.map(\.0).reduce(0, +) / Float(cr.count), rz = cr.map(\.2).reduce(0, +) / Float(cr.count)
+            dx = mx - rx; dz = mz - rz
+        }
+        modelo.position = SCNVector3(-dx, 0, -dz)   // el modelo está en metros (escala 0,01 adentro)
         let q = lee(c.bin, a.q, N * H * 4, Int16.self), t = lee(c.bin, a.t, N * H * 3, Int16.self)
-        let tiempos = (0..<N).map { NSNumber(value: Double($0) / Double(max(N - 1, 1))) }
+        let M = cuadros.count
+        let tiempos = (0..<M).map { NSNumber(value: Double($0) / Double(max(M - 1, 1))) }
+        let dur = a.dur * Double(M) / Double(N)
+        let k = (raiz.value(forKey: "animK") as? Int ?? 0) + 1
+        raiz.setValue(k, forKey: "animK")
         func anim(_ kp: String, _ vals: [NSValue]) -> SCNAnimation {
-            let k = CAKeyframeAnimation(keyPath: kp)
-            k.values = vals; k.keyTimes = tiempos; k.duration = a.dur; k.repeatCount = .infinity
-            k.calculationMode = .linear; k.timeOffset = desfase.truncatingRemainder(dividingBy: max(a.dur, 0.01))
-            k.usesSceneTimeBase = tiempoEscena
-            return SCNAnimation(caAnimation: k)
+            let ka = CAKeyframeAnimation(keyPath: kp)
+            ka.values = vals; ka.keyTimes = tiempos; ka.duration = dur
+            ka.repeatCount = bucle ? .infinity : 1
+            ka.isRemovedOnCompletion = !bucle ? false : true
+            ka.fillMode = .forwards
+            ka.calculationMode = .linear
+            if bucle { ka.timeOffset = desfase.truncatingRemainder(dividingBy: max(dur, 0.01)) }
+            ka.usesSceneTimeBase = tiempoEscena
+            let an = SCNAnimation(caAnimation: ka)
+            an.blendInDuration = fundido
+            an.isRemovedOnCompletion = bucle
+            return an
         }
         for h in 0..<H {
             guard let n = modelo.childNode(withName: "h\(h)", recursively: false) else { continue }
-            n.removeAllAnimations()
-            n.addAnimation(anim("orientation", (0..<N).map { f in let b = (f * H + h) * 4
-                return NSValue(scnVector4: SCNVector4(Float(q[b]) / 32767, Float(q[b + 1]) / 32767, Float(q[b + 2]) / 32767, Float(q[b + 3]) / 32767)) }), forKey: "q")
-            n.addAnimation(anim("position", (0..<N).map { f in let b = (f * H + h) * 3
-                return NSValue(scnVector3: SCNVector3(Float(t[b]) / 100, Float(t[b + 1]) / 100, Float(t[b + 2]) / 100)) }), forKey: "t")
+            for key in n.animationKeys where key != "q\(k)" && key != "t\(k)" { n.removeAnimation(forKey: key, blendOutDuration: fundido) }
+            n.addAnimation(anim("orientation", cuadros.map { f in let b = (f * H + h) * 4
+                return NSValue(scnVector4: SCNVector4(Float(q[b]) / 32767, Float(q[b + 1]) / 32767, Float(q[b + 2]) / 32767, Float(q[b + 3]) / 32767)) }), forKey: "q\(k)")
+            n.addAnimation(anim("position", cuadros.map { f in let b = (f * H + h) * 3
+                return NSValue(scnVector3: SCNVector3(Float(t[b]) / 100, Float(t[b + 1]) / 100, Float(t[b + 2]) / 100)) }), forKey: "t\(k)")
         }
-        return a.dur
+        return dur
     }
 
     /// Modelo de cada agente (MODELO de la oficina web) y dónde se sientan
