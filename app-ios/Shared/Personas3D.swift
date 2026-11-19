@@ -116,7 +116,7 @@ enum Personas3D {
     /// Las sentadas se corrigen para que el cuerpo quede siempre donde lo deja "sentado" (algunas venían corridas o con un
     /// primer cuadro de pie, como el café).
     @discardableResult
-    static func animar(_ raiz: SCNNode, _ nombre: String, carpeta: URL, desfase: Double = 0, bucle: Bool = true, fundido: Double = 0.3) -> Double {
+    static func animar(_ raiz: SCNNode, _ nombre: String, carpeta: URL, desfase: Double = 0, bucle: Bool = true, fundido: Double = 0.3, velocidad: Float = 1) -> Double {
         guard let i = raiz.value(forKey: "modeloIdx") as? Int, let c = try? cargar(i, carpeta: carpeta), let a = c.m.anims[nombre],
               let modelo = raiz.childNode(withName: "modelo", recursively: false) else { return 0 }
         modelo.eulerAngles.y = .init(a.giro)
@@ -148,6 +148,7 @@ enum Personas3D {
             ka.calculationMode = .linear
             if bucle { ka.timeOffset = desfase.truncatingRemainder(dividingBy: max(dur, 0.01)) }
             ka.usesSceneTimeBase = tiempoEscena
+            ka.speed = velocidad
             let an = SCNAnimation(caAnimation: ka)
             an.blendInDuration = fundido
             an.isRemovedOnCompletion = bucle

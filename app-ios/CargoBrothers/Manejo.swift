@@ -17,6 +17,8 @@ final class Manejo: ObservableObject {
 
     @Published var manejando = false
     @Published var opcion: Opcion?
+    /// botón de correr (Santi, 19/11): más rápido y con la animación de caminar acelerada
+    @Published var corriendo = false
     /// el joystick: x a la derecha, y hacia abajo, de -1 a 1
     var joy = CGVector.zero
     /// cámara detrás de Santi
@@ -50,12 +52,13 @@ final class Manejo: ObservableObject {
     private func poner(_ n: String, bucle: Bool = true) {
         guard n != anim || !bucle else { return }
         anim = n
+        if n == "correr" { Personas3D.animar(nodo, "caminar", carpeta: carpeta, desfase: 0, bucle: true, fundido: 0.2, velocidad: 1.8); return }
         Personas3D.animar(nodo, n, carpeta: carpeta, desfase: 0, bucle: bucle, fundido: 0.3)
     }
 
     func manejar(_ on: Bool) {
         manejando = on
-        accion = nil; opcion = nil
+        accion = nil; opcion = nil; corriendo = false
         vida?.reservado = nil
         if on {
             nodo.position = SCNVector3(Self.SANTI.0 + 2.8, 0, Self.SANTI.1 - 1.2); nodo.eulerAngles.y = .pi / 2
@@ -78,7 +81,7 @@ final class Manejo: ObservableObject {
             var ax = Float(p.x - cp.x), az = Float(p.z - cp.z); let n = max(0.001, (ax * ax + az * az).squareRoot()); ax /= n; az /= n
             let rx = -az, rz = ax
             var mx = rx * fx - ax * fz, mz = rz * fx - az * fz; let m = max(0.001, (mx * mx + mz * mz).squareRoot()); mx /= m; mz /= m
-            let v = (mag > 0.9 ? 2.4 : 1.45 * max(0.5, mag)) * Float(dt)
+            let v = (corriendo ? 3.6 : mag > 0.9 ? 2.4 : 1.45 * max(0.5, mag)) * Float(dt)
             let otros = otrosPuntos()
             let x0 = Float(p.x), z0 = Float(p.z)
             let atascado = choca(x0, z0, otros)   // si quedó metido en algo, puede salir hacia cualquier lado
@@ -88,7 +91,7 @@ final class Manejo: ObservableObject {
             nodo.position = SCNVector3(nx, 0, nz)
             var dr = atan2(mx, mz) - Float(nodo.eulerAngles.y); dr = atan2(sin(dr), cos(dr))
             nodo.eulerAngles.y += .init(dr * min(1, Float(dt) * 12))
-            poner("caminar")
+            poner(corriendo ? "correr" : "caminar")
         } else { poner("quieto") }
         actualizarOpcion()
         seguir(dt)

@@ -561,11 +561,24 @@ struct ControlesSanti: View {
                     .padding(.bottom, 8)
                     .transition(.opacity)
                 }
-                HStack {
+                HStack(alignment: .bottom) {
                     Joystick { manejo.joy = $0 }
                     Spacer()
+                    Button { manejo.corriendo.toggle() } label: {
+                        VStack(spacing: 3) {
+                            Image(systemName: "figure.run").font(.title2.weight(.semibold))
+                            Text(manejo.corriendo ? "Corriendo" : "Correr").font(.caption2.weight(.semibold))
+                        }
+                        .frame(width: 84, height: 84)
+                        .foregroundStyle(manejo.corriendo ? Color(red: 0.06, green: 0.06, blue: 0.06) : .white)
+                        .background(manejo.corriendo ? AnyShapeStyle(Color(red: 0.95, green: 0.65, blue: 0.25)) : AnyShapeStyle(.ultraThinMaterial), in: Circle())
+                        .overlay(Circle().stroke(Color.white.opacity(0.18), lineWidth: 1))
+                    }
+                    .sensoryFeedback(.selection, trigger: manejo.corriendo)
+                    .accessibilityLabel(manejo.corriendo ? "Dejar de correr" : "Correr")
+                    .padding(.bottom, 16)
                 }
-                .padding(.leading, 24).padding(.bottom, 30)
+                .padding(.horizontal, 24).padding(.bottom, 30)
             }
         }
     }
