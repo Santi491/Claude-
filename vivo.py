@@ -27,7 +27,9 @@ AGENTES = ("gerente", "wa", "mkt", "cat", "ebay", "ana", "pedidos", "fin", "dem"
 
 
 def git(*a, env=None, entrada=None):
-    return subprocess.run(["git", *a], cwd=DIR, capture_output=True, text=True, env=env, input=entrada)
+    # git en español escribe acentos en la consola: se lee siempre como UTF-8 sin romperse, y en inglés (LC_ALL=C)
+    env = dict(env or os.environ, LC_ALL="C", LANG="C")
+    return subprocess.run(["git", *a], cwd=DIR, capture_output=True, text=True, encoding="utf-8", errors="replace", env=env, input=entrada)
 
 
 def ahora():

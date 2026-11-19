@@ -33,6 +33,8 @@ struct OficinaView: View {
             .padding(.horizontal, 14).padding(.top, 6)
         }
         .preferredColorScheme(.dark)
+        .onChange(of: store.vivo?.actualizado) { _, _ in if let escena { Vivo3D.aplicar(escena, store) } }
+        .onChange(of: store.datos?.generado) { _, _ in if let escena { Vivo3D.aplicar(escena, store) } }
         .sheet(item: Binding(get: { elegido.map { Elegido(id: $0) } }, set: { elegido = $0?.id })) { e in
             FichaAgente(agente: e.id).environmentObject(store)
                 .presentationDetents([.height(330), .large])
@@ -50,7 +52,7 @@ struct OficinaView: View {
                 if let pers { Personas3D.sentarEquipo(en: e.rootNode, carpeta: pers) }
                 return e
             }.value
-            if let e { escena = e } else { error = "No pude armar la oficina." }
+            if let e { escena = e; Vivo3D.aplicar(e, store) } else { error = "No pude armar la oficina." }
         }
     }
 }
@@ -315,6 +317,68 @@ struct VistaSCN: UIViewRepresentable {
                     n = x.parent
                 }
             }
+        }
+    }
+}
+
+/// Parte 4 (19/11): cada agente hace lo que de verdad está haciendo y su monitor muestra sus datos.
+@MainActor
+enum Vivo3D {
+    static var actual: [String: String] = [:]
+
+    /// qué animación toca: teclear si trabaja; si espera o no tiene trabajo, relajado en la silla (a veces café o risa)
+    static func animacion(_ id: String, _ store: Store) -> String {
+        if store.vivo?.enCurso == true {
+            switch store.vivo?.agentes?[id]?.estado {
+            case "trabajando": return "teclear"
+            case "esperando": return "sentado"
+            default: return "reir_sentado"
+            }
+        }
+        if id == "gerente" { return "teclear" }   // el Gerente siempre está en su puesto, como en la oficina web
+        let variedad = ["sentado", "cafe", "sentado", "reir_sentado"]
+        return variedad[abs(id.hashValue) % variedad.count]
+    }
+
+    static func aplicar(_ e: SCNScene, _ store: Store) {
+        let pers = Bundle.main.url(forResource: "Personas", withExtension: nil)
+        for (k, (id, _, _)) in Detalle3D.puestos.enumerated() {
+            if let pers, let p = e.rootNode.childNode(withName: "persona-\(id)", recursively: false) {
+                let a = animacion(id, store)
+                if actual[id] != a { Personas3D.animar(p, a, carpeta: pers, desfase: Double(k) * 0.77); actual[id] = a }
+            }
+            // monitor con sus datos
+            if let scr = e.rootNode.childNode(withName: "pantalla-\(id)-0", recursively: true), let img = pantalla(id, store) {
+                scr.geometry?.firstMaterial?.diffuse.contents = img
+                scr.geometry?.firstMaterial?.emission.contents = img
+            }
+        }
+    }
+
+    /// la pantalla del puesto: nombre, estado, lo último que hizo y sus acciones de la semana
+    static func pantalla(_ id: String, _ store: Store) -> UIImage? {
+        let est = EstadoAgente.de(id, store)
+        let ag = store.datos?.equipo.first { $0.agente == id }
+        let tam = CGSize(width: 640, height: 360)
+        return UIGraphicsImageRenderer(size: tam).image { c in
+            UIColor(red: 0.04, green: 0.05, blue: 0.07, alpha: 1).setFill(); c.fill(CGRect(origin: .zero, size: tam))
+            let bronce = UIColor(red: 0.79, green: 0.64, blue: 0.36, alpha: 1)
+            bronce.setFill(); c.fill(CGRect(x: 0, y: 0, width: tam.width, height: 6))
+            (Equipo.nombre(id).uppercased() as NSString).draw(at: CGPoint(x: 28, y: 26), withAttributes: [.font: UIFont.systemFont(ofSize: 30, weight: .bold), .foregroundColor: UIColor.white])
+            UIColor(est.color).setFill(); c.cgContext.fillEllipse(in: CGRect(x: 30, y: 80, width: 16, height: 16))
+            (est.nombreEstado as NSString).draw(at: CGPoint(x: 56, y: 74), withAttributes: [.font: UIFont.systemFont(ofSize: 22, weight: .semibold), .foregroundColor: UIColor(est.color)])
+            let texto = (store.vivo?.enCurso == true ? store.vivo?.agentes?[id]?.texto : nil) ?? ag?.ultima ?? ""
+            (texto as NSString).draw(in: CGRect(x: 28, y: 116, width: tam.width - 56, height: 120),
+                                     withAttributes: [.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 0.75, alpha: 1)])
+            // barras: acciones de los últimos 7 días
+            let serie = ag?.serie ?? []
+            let maxV = CGFloat(max(serie.max() ?? 1, 1))
+            for (i, v) in serie.enumerated() {
+                let h = CGFloat(v) / maxV * 80
+                (i == serie.count - 1 ? bronce : UIColor(red: 0.31, green: 0.82, blue: 0.91, alpha: 1)).setFill()
+                c.fill(CGRect(x: 28 + CGFloat(i) * 46, y: 330 - h, width: 32, height: max(h, 3)))
+            }
+            ("\(ag?.acciones ?? 0) acciones en 7 días" as NSString).draw(at: CGPoint(x: 370, y: 300), withAttributes: [.font: UIFont.systemFont(ofSize: 18, weight: .medium), .foregroundColor: bronce])
         }
     }
 }
