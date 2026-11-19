@@ -102,6 +102,34 @@ enum Personas3D {
 
     static let sentadas: Set<String> = ["sentado", "teclear", "cafe", "reir_sentado", "reunion", "a_teclear", "de_teclear"]
 
+    /// las que mueven el cuerpo de verdad (sentarse, pararse…): no se enderezan
+    static let transiciones: Set<String> = ["sentarse", "pararse", "a_teclear", "de_teclear"]
+
+    /// el hueso de la cadera: el del centro del cuerpo a ~1 m de altura en "quieto" (Mixamo lo pone en otro lugar en cada modelo)
+    static func cadera(_ c: Cargado) -> Int {
+        guard let q = c.m.anims["quieto"] else { return 0 }
+        let H = c.m.nh, t = lee(c.bin, q.t, H * 3, Int16.self)
+        var mejor = 0, d = Float.infinity
+        for k in 0..<H {
+            let x = Float(t[k * 3]) / 10_000, y = Float(t[k * 3 + 1]) / 10_000
+            if abs(x) < 0.05, y > 0.9, y < 1.05, abs(y - 0.98) < d { d = abs(y - 0.98); mejor = k }
+        }
+        return mejor
+    }
+    /// hacia dónde mira la cadera (radianes, 0 = de frente) en esos cuadros
+    static func rumbo(_ c: Cargado, _ a: Modelo.Anim, _ cuadros: [Int]) -> Float {
+        let H = c.m.nh, h = cadera(c), q = lee(c.bin, a.q, a.cuadros * H * 4, Int16.self)
+        var s: Float = 0, co: Float = 0
+        for f in cuadros {
+            let b = (f * H + h) * 4
+            let x = Float(q[b]) / 32767, y = Float(q[b + 1]) / 32767, z = Float(q[b + 2]) / 32767, w = Float(q[b + 3]) / 32767
+            let r = atan2(2 * (x * z + w * y), 1 - 2 * (x * x + y * y))
+            s += sin(r); co += cos(r)
+        }
+        return atan2(s, co)
+    }
+    static func girar(_ x: Float, _ z: Float, _ g: Float) -> (Float, Float) { (x * cos(g) + z * sin(g), -x * sin(g) + z * cos(g)) }
+
     /// centro del cuerpo (promedio de los huesos) en cada cuadro, en metros (los huesos vienen en centésimas de cm)
     static func centros(_ c: Cargado, _ a: Modelo.Anim) -> [(Float, Float, Float)] {
         let H = c.m.nh, N = a.cuadros, t = lee(c.bin, a.t, N * H * 3, Int16.self)
@@ -119,10 +147,10 @@ enum Personas3D {
     static func animar(_ raiz: SCNNode, _ nombre: String, carpeta: URL, desfase: Double = 0, bucle: Bool = true, fundido: Double = 0.3, velocidad: Float = 1) -> Double {
         guard let i = raiz.value(forKey: "modeloIdx") as? Int, let c = try? cargar(i, carpeta: carpeta), let a = c.m.anims[nombre],
               let modelo = raiz.childNode(withName: "modelo", recursively: false) else { return 0 }
-        modelo.eulerAngles.y = .init(a.giro)
         let H = c.m.nh, N = a.cuadros
         var cuadros = Array(0..<N)
         var dx: Float = 0, dz: Float = 0
+        var giro: Float = 0
         if sentadas.contains(nombre), let ref = c.m.anims["sentado"] {
             let cs = centros(c, a), cr = centros(c, ref)
             // algunas (el café de Mixamo) empiezan caminando ~2 m y sentándose: se arranca desde el primer cuadro en que ya
@@ -133,10 +161,18 @@ enum Personas3D {
             if let ini = cs.indices.first(where: { abs(cs[$0].1 - fy) < 0.1 && hypot(cs[$0].0 - fx, cs[$0].2 - fz) < 0.2 }), ini > 0 {
                 cuadros = Array(ini..<N)
             }
+            // (19/11) cada animación mira hacia donde la grabó Mixamo (el café sentado, 165° girado): se endereza para que
+            // todas miren al frente, como en la oficina web, y después se lleva el cuerpo al lugar de "sentado"
+            giro = -rumbo(c, a, cuadros)
+            let gr = -rumbo(c, ref, Array(0..<ref.cuadros))
             let mx = cuadros.map { cs[$0].0 }.sorted()[cuadros.count / 2], mz = cuadros.map { cs[$0].2 }.sorted()[cuadros.count / 2]
             let rx = cr.map(\.0).reduce(0, +) / Float(cr.count), rz = cr.map(\.2).reduce(0, +) / Float(cr.count)
-            dx = mx - rx; dz = mz - rz
+            let (ax, az) = girar(mx, mz, giro), (bx, bz) = girar(rx, rz, gr)
+            dx = ax - bx; dz = az - bz
+        } else if !transiciones.contains(nombre) {
+            giro = -rumbo(c, a, cuadros)
         }
+        modelo.eulerAngles.y = .init(giro)
         modelo.position = SCNVector3(-dx, 0, -dz)   // el modelo está en metros (escala 0,01 adentro)
         let q = lee(c.bin, a.q, N * H * 4, Int16.self), t = lee(c.bin, a.t, N * H * 3, Int16.self)
         let M = cuadros.count
