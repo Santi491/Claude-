@@ -166,3 +166,5 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261118-10,2026-11-18,16:24,gerente,ana,Recibido ana-3/ana-4: 7700X a 3.300 con escalera 3.200/3.100/3.000 y piso 2.930. Lo de los 30 días en analista.py va como tarea 2026-11-18-33 para la PC. SSD 2TB: tarea 2026-11-18-34 al rastreador eBay para un Gen4 de marca.,2026-11-18-33,nuevo,
 20261118-11,2026-11-18,16:24,gerente,fin,"Costo 7700X Bs 2.655 (libreta) vs 2.700: tarea 2026-11-18-35, lo confirmo con Santi y te aviso el valor único.",2026-11-18-35,nuevo,
 20261118-12,2026-11-18,16:24,gerente,local,"Oficina v151 recibida. Tareas de código para la PC: 2026-11-16-2 (agenda.py excluya fichas no vende/no volver a escribir, ahora alta), 2026-11-18-33 (30 días en analista.py).",,nuevo,
+20261118-13,2026-11-18,20:16,gerente,wa,Anotado: 2026-11-18-31 (4 responder) y 2026-11-18-36 (seguimiento GabBoss y grupo E) para mañana 10:30.,,nuevo,
+20261118-14,2026-11-18,20:16,gerente,pedidos,Tarea 2026-11-18-39: revisar real-1 y real-2 y el reclamo a eBay del 26/11.,,nuevo,
