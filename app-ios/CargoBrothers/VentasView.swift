@@ -27,7 +27,7 @@ struct ClientesView: View {
                     }
                 }
             }
-            if lista.isEmpty { Text("Nadie en este grupo.").foregroundStyle(Tema.gris) }
+            if lista.isEmpty { Vacio(titulo: "Nadie en este grupo", texto: "WhatsApp y Marketplace van moviendo a las tiendas de grupo a medida que las conocen.", icono: "person.2.slash") }
             ForEach(lista) { c in
                 NavigationLink { TiendaDetalle(nombre: c.tienda) } label: { tarjeta(c) }.buttonStyle(.plain)
             }

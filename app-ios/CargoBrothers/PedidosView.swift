@@ -100,7 +100,7 @@ struct PedidosView: View {
                 let reales = d.pedidos.filter { !$0.esPrueba }
                 let productos = Array(Set(reales.map(\.producto))).sorted()
                 let visibles = filtro == "__pruebas" ? d.pedidos.filter(\.esPrueba) : reales.filter { filtro.isEmpty || $0.producto == filtro }
-                if d.pedidos.isEmpty { Text("Sin pedidos todavía.").foregroundStyle(Tema.gris) }
+                if d.pedidos.isEmpty { Vacio(titulo: "Sin pedidos todavía", texto: "Cuando registres una compra con el botón + de Hoy, aparece acá con su ruta y su etapa.", icono: "shippingbox") }
                 else {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {

@@ -318,7 +318,7 @@ struct ChatView: View {
             ScrollViewReader { sv in
                 ScrollView {
                     LazyVStack(spacing: 8) {
-                        if mensajes.isEmpty { Text("Todavía no hay mensajes con \(Equipo.nombre(agente)).").foregroundStyle(Tema.gris).padding(.top, 40) }
+                        if mensajes.isEmpty { Vacio(titulo: "Todavía no hay mensajes", texto: "Escribile a \(Equipo.nombre(agente)) abajo: lo lee al empezar su próxima ronda y te contesta acá.", icono: "bubble.left.and.bubble.right").padding(.top, 30) }
                         ForEach(mensajes) { m in globo(m).id(m.id) }
                     }.padding(12)
                 }

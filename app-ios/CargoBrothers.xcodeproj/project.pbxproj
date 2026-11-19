@@ -35,6 +35,7 @@
 		83596903A97FDAA983B3391A /* Detalle3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140A08282DA18EB225D290E /* Detalle3D.swift */; };
 		8D35708ACBED1341CFB5C3EC /* Calculo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1B336C54BCE76DE79D8F1C /* Calculo.swift */; };
 		9CF8A07AFE7F4448FA090B4C /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853087D9A16FEB38BD9EA645 /* GitHub.swift */; };
+		A1DE442E5457C3A53A8D44C6 /* Cola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EAF0FCF1D9A19B01C139F /* Cola.swift */; };
 		A2B85026D017C40E68B6CAB5 /* Notificaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D03DF6ACA1FC4F697264724 /* Notificaciones.swift */; };
 		B712A01E0981A3ECD5BB0738 /* cb-gerente.caf in Resources */ = {isa = PBXBuildFile; fileRef = B03F1620C032AB23EFC753E3 /* cb-gerente.caf */; };
 		B71A6E92DBFF4D45EA34DBF9 /* cb-oferta.caf in Resources */ = {isa = PBXBuildFile; fileRef = EFF1328E1C606630139551CD /* cb-oferta.caf */; };
@@ -78,6 +79,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		059EAF0FCF1D9A19B01C139F /* Cola.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cola.swift; sourceTree = "<group>"; };
 		11C131FA598268FF87C0C103 /* CargoWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CargoWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1229FF333DB2EDEE5619D0DE /* Modelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelo.swift; sourceTree = "<group>"; };
 		1258C8E2E618C28407F90222 /* Componentes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Componentes.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */,
 				EB1B336C54BCE76DE79D8F1C /* Calculo.swift */,
 				9C5D8357A645921BC6016B15 /* Calidad.swift */,
+				059EAF0FCF1D9A19B01C139F /* Cola.swift */,
 				1258C8E2E618C28407F90222 /* Componentes.swift */,
 				BEF81893D5F19E454303E8E1 /* Comportamiento.swift */,
 				F1972F47C18837AD9A732BF5 /* DecidirView.swift */,
@@ -354,6 +357,7 @@
 				024D314FECBD41121D26B449 /* App.swift in Sources */,
 				8D35708ACBED1341CFB5C3EC /* Calculo.swift in Sources */,
 				CF94B714D369672CEE64E380 /* Calidad.swift in Sources */,
+				A1DE442E5457C3A53A8D44C6 /* Cola.swift in Sources */,
 				FFF7B80627D6AACA1617FECB /* Componentes.swift in Sources */,
 				CDB9FFD705AC5F63CB037211 /* Comportamiento.swift in Sources */,
 				2B5AFF8346100FC0FA1A7AE1 /* DecidirView.swift in Sources */,

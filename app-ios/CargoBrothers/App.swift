@@ -62,6 +62,9 @@ final class Store: ObservableObject {
     @Published var bloqueada = UserDefaults.standard.object(forKey: "bloqueo") as? Bool ?? true
     @Published var enviadosChat: [Mensaje] = []
     @Published var vivo: Vivo?
+    /// lo que Santi hizo y todavía no se subió (Cola.swift) y la confirmación de abajo
+    @Published var cola: [Pendiente] = Store.leerCola()
+    @Published var toast: Toast?
     /// lo que se guardó desde este iPhone (para la pantalla de Sincronización): texto y fecha-hora de Bolivia
     @Published var acciones: [[String: String]] = (UserDefaults.standard.array(forKey: "acciones") as? [[String: String]]) ?? []
     private var reloj: Task<Void, Never>?
@@ -91,7 +94,13 @@ final class Store: ObservableObject {
     /// Decisiones guardadas desde esta app que todavía no se ven en los datos.
     @Published var enviadas: [String: String] = (UserDefaults.standard.dictionary(forKey: "enviadas") as? [String: String]) ?? [:]
 
-    init() { Task { await refrescar() }; empezarReloj() }
+    init() {
+        // lo último que se cargó se muestra al instante (sin pantalla en blanco) mientras llega lo nuevo
+        if let d = try? Data(contentsOf: Fuente.cache), let x = try? JSONDecoder().decode(Datos.self, from: d) { datos = x }
+        Task { await refrescar(); await subirPendientes() }
+        empezarReloj()
+        Red.compartida.empezar(self)
+    }
 
     func refrescar() async {
         cargando = true
@@ -217,17 +226,15 @@ struct RaizView: View {
             EquipoView().tabItem { Label("Equipo", systemImage: "person.3") }
         }
         .overlay(alignment: .bottom) {
-            if let a = store.aviso {
-                Text(a).font(.footnote.weight(.medium)).padding(.horizontal, 14).padding(.vertical, 10)
-                    .background(.ultraThinMaterial, in: Capsule()).padding(.bottom, 64).padding(.horizontal, 16)
-                    .onTapGesture { store.aviso = nil }
-                    .task(id: a) { try? await Task.sleep(for: .seconds(6)); if store.aviso == a { store.aviso = nil } }
+            if let t = store.toast {
+                ToastVista(t: t).id(t.id).padding(.bottom, 70).padding(.horizontal, 16)
+                    .task(id: t.id) { try? await Task.sleep(for: .seconds(t.deshacer != nil ? Store.segundosDeshacer + 0.4 : 5)); if store.toast?.id == t.id { store.toast = nil } }
                     .transition(.move(edge: .bottom).combined(with: .opacity))
             }
         }
-        .overlay { if store.guardando { ProgressView("Guardando…").padding(20).background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14)) } }
+        .onChange(of: store.aviso) { _, a in if let a { store.mostrar(Toast(texto: a, tipo: a.hasPrefix("No ") || a.hasPrefix("Falta") ? .error : .info)); store.aviso = nil } }
         .overlay { if store.bloqueada { Bloqueo() } }
-        .animation(.spring(duration: 0.3), value: store.aviso)
+        .animation(.spring(duration: 0.35), value: store.toast)
         .onAppear { Novedades.pedirPermiso() }
     }
 }
