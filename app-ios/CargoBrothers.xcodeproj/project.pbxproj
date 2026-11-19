@@ -19,6 +19,7 @@
 		39C530296CE27EC849C77BF4 /* PedidosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B85EC49E114571E35BAB5B5 /* PedidosView.swift */; };
 		3B28B35A80139004BFDCD06D /* OficinaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA99B998CF8A3ED19B22031 /* OficinaView.swift */; };
 		3D93E0F03A86622F2B3DF443 /* HoyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59127BEB2EE9C2570661CC34 /* HoyView.swift */; };
+		459BA0C202AE10892C268E02 /* Manejo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B2953F13E92D943008DFC /* Manejo.swift */; };
 		4D4A0D8B97BEEB7532E7E987 /* Personas in Resources */ = {isa = PBXBuildFile; fileRef = 40EEC2FF5696537514E3132D /* Personas */; };
 		51AA2C0CBC367C84AD9D98F3 /* CargoWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 11C131FA598268FF87C0C103 /* CargoWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5430657223D8DCA1FCE22859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */; };
@@ -95,6 +96,7 @@
 		8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9178CBA57C8D6EBA5763BB7A /* Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
 		9236FFED311223CA063EA75F /* Oficina3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oficina3D.swift; sourceTree = "<group>"; };
+		A94B2953F13E92D943008DFC /* Manejo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manejo.swift; sourceTree = "<group>"; };
 		A959C99911657117CA0FBF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB966AC3E3A469EA59DF573A /* PreciosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreciosView.swift; sourceTree = "<group>"; };
 		AC7B9B7B601AF6355149CE55 /* cb-pedido.caf */ = {isa = PBXFileReference; path = "cb-pedido.caf"; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				853087D9A16FEB38BD9EA645 /* GitHub.swift */,
 				59127BEB2EE9C2570661CC34 /* HoyView.swift */,
 				A959C99911657117CA0FBF04 /* Info.plist */,
+				A94B2953F13E92D943008DFC /* Manejo.swift */,
 				7D03DF6ACA1FC4F697264724 /* Notificaciones.swift */,
 				4BA99B998CF8A3ED19B22031 /* OficinaView.swift */,
 				6B85EC49E114571E35BAB5B5 /* PedidosView.swift */,
@@ -353,6 +356,7 @@
 				65E0B88A311E66231F23F8BE /* Formularios.swift in Sources */,
 				9CF8A07AFE7F4448FA090B4C /* GitHub.swift in Sources */,
 				3D93E0F03A86622F2B3DF443 /* HoyView.swift in Sources */,
+				459BA0C202AE10892C268E02 /* Manejo.swift in Sources */,
 				77DAC811BF99D96E1EBBC59A /* Modelo.swift in Sources */,
 				A2B85026D017C40E68B6CAB5 /* Notificaciones.swift in Sources */,
 				DE755E1F3EAABA3625A39443 /* Oficina3D.swift in Sources */,

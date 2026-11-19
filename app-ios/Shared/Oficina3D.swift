@@ -24,6 +24,22 @@ enum Oficina3D {
     /// oclusión ambiental, desenfoque de profundidad suave, brillo en las luces y un tono cálido de cine
     static var alta = true
     static var brillo = 0.72
+    /// Parte 6: las cajas de los muebles vistas desde arriba (x0, x1, z0, z1), para que Santi choque al caminar
+    static var solidos: [SIMD4<Float>] = []
+
+    /// caja (vista desde arriba) de una pieza: sin lo plano del piso, sin lo que cuelga arriba de la cabeza ni lo enorme
+    static func caja(_ nodo: SCNNode) -> SIMD4<Float>? {
+        guard let g = nodo.geometry else { return nil }
+        let (lo, hi) = g.boundingBox
+        var mn = SIMD3<Float>(repeating: .infinity), mx = SIMD3<Float>(repeating: -.infinity)
+        for i in 0..<8 {
+            let c = SCNVector3(i & 1 == 0 ? lo.x : hi.x, i & 2 == 0 ? lo.y : hi.y, i & 4 == 0 ? lo.z : hi.z)
+            let w = nodo.convertPosition(c, to: nil)
+            let v = SIMD3<Float>(Float(w.x), Float(w.y), Float(w.z)); mn = simd_min(mn, v); mx = simd_max(mx, v)
+        }
+        guard mx.y - mn.y > 0.05, mn.y < 1.9, mx.x - mn.x < 9 || mx.z - mn.z < 9 else { return nil }
+        return SIMD4(mn.x, mx.x, mn.z, mx.z)
+    }
     static func srgb(_ c: [Double], _ k: Double = 1) -> CGColor {
         func f(_ x: Double) -> CGFloat { CGFloat(pow(max(0, min(1, x * k)), 1 / gamma)) }
         return CGColor(srgbRed: f(c[0]), green: f(c[1]), blue: f(c[2]), alpha: 1)
@@ -102,6 +118,7 @@ enum Oficina3D {
 
         // ---------- piezas ----------
         let raiz = SCNNode(), vidrios = SCNNode()
+        var cajas: [SIMD4<Float>] = []
         for n in a.nodos {
             guard let (src, idx, grupos) = fuentes[n.g] else { continue }
             var elementos: [SCNGeometryElement] = [], ms: [SCNMaterial] = []
@@ -121,6 +138,7 @@ enum Oficina3D {
             let nodo = SCNNode(geometry: geo)
             nodo.transform = matriz(n.x)
             nodo.castsShadow = n.som
+            if let c = caja(nodo) { cajas.append(c) }
             // lo transparente (vidrio, esmerilado) va aparte y se dibuja al final, para que se vea lo de atrás
             if ms.contains(where: { $0.transparency < 0.99 }) { nodo.renderingOrder = 100; nodo.castsShadow = false; vidrios.addChildNode(nodo) }
             else { raiz.addChildNode(nodo) }
@@ -168,6 +186,15 @@ enum Oficina3D {
             escena.rootNode.addChildNode(nodo)
         }
         Detalle3D.ponerPuestos(en: escena.rootNode)
+        // los escritorios con detalle también chocan (las sillas no: se mueven)
+        for (id, _, _) in Detalle3D.puestos {
+            escena.rootNode.childNode(withName: "puesto-\(id)", recursively: false)?.enumerateHierarchy { n, _ in
+                if let nm = n.name, nm.hasPrefix("silla") { return }
+                var p = n.parent; while let q = p { if q.name?.hasPrefix("silla") == true { return }; p = q.parent }
+                if let c = caja(n) { cajas.append(c) }
+            }
+        }
+        solidos = cajas
         if alta { mejorar(escena, raiz: plano); mejorar(escena, raiz: vidrios, luces: false) }
         if let f = a.fondo { escena.background.contents = CGColor(srgbRed: CGFloat(f[0]), green: CGFloat(f[1]), blue: CGFloat(f[2]), alpha: 1) }
 

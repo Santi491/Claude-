@@ -74,6 +74,10 @@ final class Comportamiento {
     var quiere: [String: String] = [:]
     /// la animación en el puesto (teclear si trabaja, etc.)
     var animPuesto: (String) -> String = { _ in "teclear" }
+    /// parte 6: el lugar o la silla de la junta donde está sentado Santi (nadie más lo usa) y su paso por cuadro
+    var reservado: String?
+    var sillaSanti: Int?
+    weak var manejo: Manejo?
     private var link: CADisplayLink?
     private var ultimo: CFTimeInterval = 0
 
@@ -145,7 +149,7 @@ final class Comportamiento {
     }
 
     func elegirLugar(_ id: String, evitar: String? = nil) -> String? {
-        let ocupados = Set(agentes.values.compactMap(\.spot))
+        let ocupados = Set(agentes.values.compactMap(\.spot) + [reservado].compactMap { $0 })
         let cand = Self.LUGAR.keys.filter { !ocupados.contains($0) && $0 != evitar }
         guard !cand.isEmpty else { return nil }
         let g = Self.GUSTO[id] ?? [:]
@@ -172,7 +176,7 @@ final class Comportamiento {
         a.cola = dejar(a, L, conEntrada: true) + sentarseEnPuesto(a)
     }
     func irAJunta(_ a: Agente) {
-        let usadas = Set(agentes.values.compactMap(\.sillaJ))
+        let usadas = Set(agentes.values.compactMap(\.sillaJ) + [sillaSanti].compactMap { $0 })
         guard let i = Self.JUNTA.indices.first(where: { !usadas.contains($0) }) else { return }
         let S = Self.JUNTA[i]
         var salida: [Paso] = []
@@ -198,6 +202,7 @@ final class Comportamiento {
             decidir(a, dt)
             avanzar(a, dt)
         }
+        manejo?.paso(dt)
     }
 
     func destino(_ a: Agente) -> String {

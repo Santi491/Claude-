@@ -14,12 +14,13 @@ struct OficinaView: View {
     @State private var elegido: String?
     @State private var vida: Comportamiento?
     @State private var junta = false
+    @State private var santi: Manejo?
 
     var body: some View {
         ZStack(alignment: .top) {
             Color(red: 0.07, green: 0.078, blue: 0.09).ignoresSafeArea()
             if let escena {
-                VistaSCN(escena: escena, vista: vista, marcas: marcas, enfocar: elegido) { elegido = $0 }.ignoresSafeArea()
+                VistaSCN(escena: escena, vista: vista, marcas: marcas, enfocar: santi?.manejando == true ? nil : elegido, manejo: santi) { elegido = $0 }.ignoresSafeArea()
                 Etiquetas(marcas: marcas) { elegido = $0 }.environmentObject(store).ignoresSafeArea()
             }
             else if let error { Text(error).foregroundStyle(.white).padding() }
@@ -27,8 +28,9 @@ struct OficinaView: View {
             HStack(spacing: 8) {
                 Button { cerrar() } label: { Image(systemName: "xmark").font(.headline).padding(11) }
                     .background(.ultraThinMaterial, in: Circle())
-                LuzVivo().environmentObject(store).frame(maxWidth: 260)
+                LuzVivo(soloPunto: true).environmentObject(store)
                 Spacer()
+                if let santi { BotonManejar(manejo: santi) { on in elegido = nil; santi.manejar(on); if !on { vista += 1 } } }
                 if vida != nil {
                     Button { junta.toggle(); vida?.junta = junta } label: {
                         Image(systemName: junta ? "person.3.fill" : "person.3").font(.subheadline.weight(.semibold)).padding(10)
@@ -41,9 +43,10 @@ struct OficinaView: View {
                     .background(.ultraThinMaterial, in: Capsule())
             }
             .padding(.horizontal, 14).padding(.top, 6)
+            if let santi { ControlesSanti(manejo: santi) }
         }
         .preferredColorScheme(.dark)
-        .onDisappear { vida?.parar(); Vivo3D.vida = nil }
+        .onDisappear { vida?.parar(); Vivo3D.vida = nil; santi?.manejar(false) }
         .onChange(of: store.vivo?.actualizado) { _, _ in if let escena { Vivo3D.aplicar(escena, store) } }
         .onChange(of: store.datos?.generado) { _, _ in if let escena { Vivo3D.aplicar(escena, store) } }
         .sheet(item: Binding(get: { elegido.map { Elegido(id: $0) } }, set: { elegido = $0?.id })) { e in
@@ -69,6 +72,11 @@ struct OficinaView: View {
                     let c = Comportamiento(escena: e, carpeta: pers)
                     c.animPuesto = { id in Vivo3D.animacion(id, store) }
                     vida = c; Vivo3D.vida = c
+                    if let m = Manejo(escena: e, carpeta: pers) {
+                        m.vida = c; c.manejo = m
+                        m.abrirAgente = { id in elegido = id }
+                        santi = m
+                    }
                     c.empezar()
                 }
                 Vivo3D.aplicar(e, store)
@@ -143,6 +151,7 @@ struct Etiquetas: View {
 struct EstadoAgente {
     var color: Color; var texto: String; var nombreEstado: String
     @MainActor static func de(_ id: String, _ store: Store) -> EstadoAgente {
+        if id == "santi" { return EstadoAgente(color: Color(red: 0.95, green: 0.65, blue: 0.25), texto: "el jefe", nombreEstado: "jefe") }
         let rojo = Color(red: 0.93, green: 0.45, blue: 0.45), ambar = Color(red: 0.95, green: 0.65, blue: 0.25), verde = Color(red: 0.36, green: 0.77, blue: 0.56)
         if store.vivo?.enCurso == true, let a = store.vivo?.agentes?[id] {
             let c = a.estado == "trabajando" ? rojo : a.estado == "esperando" ? ambar : verde
@@ -235,6 +244,7 @@ struct VistaSCN: UIViewRepresentable {
     var vista: Int
     var marcas: Marcas
     var enfocar: String?
+    var manejo: Manejo?
     var elegir: (String) -> Void
 
     static let objetivo = SCNVector3(-1, 0, 4)
@@ -267,6 +277,11 @@ struct VistaSCN: UIViewRepresentable {
         context.coordinator.vista = v
         context.coordinator.marcas = marcas
         context.coordinator.elegir = elegir
+        // manejando a Santi: un dedo gira la cámara alrededor de él y pellizcar acerca
+        let arr = UIPanGestureRecognizer(target: context.coordinator, action: #selector(Coord.girar(_:))); arr.maximumNumberOfTouches = 1
+        arr.isEnabled = false; v.addGestureRecognizer(arr); context.coordinator.arrastre = arr
+        let pel = UIPinchGestureRecognizer(target: context.coordinator, action: #selector(Coord.pellizcar(_:)))
+        pel.isEnabled = false; v.addGestureRecognizer(pel); context.coordinator.pellizco = pel
         let toque = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coord.tocar(_:)))
         toque.cancelsTouchesInView = false
         v.addGestureRecognizer(toque)
@@ -275,7 +290,12 @@ struct VistaSCN: UIViewRepresentable {
 
     func updateUIView(_ v: SCNView, context: Context) {
         let co = context.coordinator
-        co.marcas = marcas; co.elegir = elegir
+        co.marcas = marcas; co.elegir = elegir; co.manejo = manejo
+        let maneja = manejo?.manejando == true
+        if v.allowsCameraControl == maneja {
+            v.allowsCameraControl = !maneja
+            co.arrastre?.isEnabled = maneja; co.pellizco?.isEnabled = maneja
+        }
         if v.bounds.size.width > 0 { co.tamano = v.bounds.size }
         if vista != co.ultima, let t = co.inicio, let p = v.pointOfView {
             co.ultima = vista
@@ -307,6 +327,21 @@ struct VistaSCN: UIViewRepresentable {
         weak var vista: SCNView?
         var marcas: Marcas?
         var elegir: ((String) -> Void)?
+        weak var manejo: Manejo?
+        weak var arrastre: UIPanGestureRecognizer?
+        weak var pellizco: UIPinchGestureRecognizer?
+        private var distInicial: Float = 5.4
+        @MainActor @objc func girar(_ g: UIPanGestureRecognizer) {
+            guard let m = manejo, let v = vista else { return }
+            let d = g.translation(in: v); g.setTranslation(.zero, in: v)
+            m.giro -= Float(d.x) * 0.008
+            m.alto = min(1.25, max(0.08, m.alto + Float(d.y) * 0.005))
+        }
+        @MainActor @objc func pellizcar(_ g: UIPinchGestureRecognizer) {
+            guard let m = manejo else { return }
+            if g.state == .began { distInicial = m.dist }
+            m.dist = min(14, max(2.5, distInicial / Float(g.scale)))
+        }
         private var ultimoCalculo: TimeInterval = 0
         /// tamaño de la pantalla (se guarda desde el hilo principal; leerlo desde el de dibujo con sync trababa todo)
         var tamano = CGSize(width: 400, height: 870)
@@ -317,7 +352,7 @@ struct VistaSCN: UIViewRepresentable {
             ultimoCalculo = t
             var out: [String: Marcas.Marca] = [:]
             let tam = tamano
-            for (id, x, z) in Detalle3D.puestos {
+            for (id, x, z) in Detalle3D.puestos + [("santi", Manejo.SILLA.0, Manejo.SILLA.1)] {
                 let base = r.scene?.rootNode.childNode(withName: "persona-\(id)", recursively: false)
                 let cabeza = base.map { SCNVector3($0.position.x, 1.55, $0.position.z) } ?? SCNVector3(x, 1.5, z + 0.9)
                 let p = r.projectPoint(cabeza)
@@ -337,7 +372,7 @@ struct VistaSCN: UIViewRepresentable {
             for h in hits {
                 var n: SCNNode? = h.node
                 while let x = n {
-                    if let nm = x.name, nm.hasPrefix("persona-") || nm.hasPrefix("puesto-") {
+                    if let nm = x.name, nm != "persona-santi", nm.hasPrefix("persona-") || nm.hasPrefix("puesto-") {
                         elegir?(String(nm.split(separator: "-", maxSplits: 1)[1])); return
                     }
                     n = x.parent
@@ -411,6 +446,49 @@ enum Vivo3D {
                 c.fill(CGRect(x: 28 + CGFloat(i) * 46, y: 330 - h, width: 32, height: max(h, 3)))
             }
             ("\(ag?.acciones ?? 0) acciones en 7 días" as NSString).draw(at: CGPoint(x: 370, y: 300), withAttributes: [.font: UIFont.systemFont(ofSize: 18, weight: .medium), .foregroundColor: bronce])
+        }
+    }
+}
+
+/// Botón "Manejar a Santi" de la barra de arriba
+struct BotonManejar: View {
+    @ObservedObject var manejo: Manejo
+    var cambiar: (Bool) -> Void
+    var body: some View {
+        Button { cambiar(!manejo.manejando) } label: {
+            Image(systemName: manejo.manejando ? "figure.walk.circle.fill" : "figure.walk").font(.subheadline.weight(.semibold)).padding(10)
+                .foregroundStyle(manejo.manejando ? Color(red: 0.79, green: 0.64, blue: 0.36) : .white)
+        }
+        .background(.ultraThinMaterial, in: Circle())
+        .accessibilityLabel(manejo.manejando ? "Dejar de manejar a Santi" : "Manejar a Santi")
+    }
+}
+
+/// Joystick abajo a la izquierda y el botón de lo que hay cerca, abajo al centro
+struct ControlesSanti: View {
+    @ObservedObject var manejo: Manejo
+    var body: some View {
+        if manejo.manejando {
+            VStack {
+                Spacer()
+                if let o = manejo.opcion {
+                    Button { manejo.usarOpcion() } label: {
+                        Text(o.texto).font(.subheadline.weight(.semibold)).lineLimit(1)
+                            .padding(.horizontal, 16).padding(.vertical, 10)
+                            .background(o.activa ? Color(red: 0.95, green: 0.65, blue: 0.25) : Color.gray.opacity(0.5), in: Capsule())
+                            .foregroundStyle(Color(red: 0.06, green: 0.06, blue: 0.06))
+                            .shadow(color: .black.opacity(0.45), radius: 8, y: 4)
+                    }
+                    .disabled(!o.activa)
+                    .padding(.bottom, 8)
+                    .transition(.opacity)
+                }
+                HStack {
+                    Joystick { manejo.joy = $0 }
+                    Spacer()
+                }
+                .padding(.leading, 24).padding(.bottom, 30)
+            }
         }
     }
 }

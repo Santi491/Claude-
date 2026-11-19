@@ -102,13 +102,13 @@ enum Personas3D {
 
     static let sentadas: Set<String> = ["sentado", "teclear", "cafe", "reir_sentado", "reunion", "a_teclear", "de_teclear"]
 
-    /// centro del cuerpo (promedio de los huesos, en cm) en cada cuadro
+    /// centro del cuerpo (promedio de los huesos) en cada cuadro, en metros (los huesos vienen en centésimas de cm)
     static func centros(_ c: Cargado, _ a: Modelo.Anim) -> [(Float, Float, Float)] {
         let H = c.m.nh, N = a.cuadros, t = lee(c.bin, a.t, N * H * 3, Int16.self)
         return (0..<N).map { f in
             var x: Float = 0, y: Float = 0, z: Float = 0
             for h in 0..<H { let b = (f * H + h) * 3; x += Float(t[b]); y += Float(t[b + 1]); z += Float(t[b + 2]) }
-            return (x / Float(H) / 100, y / Float(H) / 100, z / Float(H) / 100)
+            return (x / Float(H) / 10_000, y / Float(H) / 10_000, z / Float(H) / 10_000)
         }
     }
 

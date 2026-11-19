@@ -3,10 +3,22 @@ import SwiftUI
 // ---------- El foquito: ronda en curso (rojo) o sin ronda (gris), como en la oficina ----------
 struct LuzVivo: View {
     @EnvironmentObject var store: Store
+    /// en la oficina 3D (Santi, 19/11): solo el puntito; gris sin ronda, rojo latiendo con ronda en curso
+    var soloPunto = false
     @State private var latido = false
     var body: some View {
         let v = store.vivo
         let on = v?.enCurso ?? false
+        if soloPunto {
+            ZStack {
+                if on { Circle().fill(Tema.rojo.opacity(0.35)).frame(width: 18, height: 18).scaleEffect(latido ? 1.5 : 0.8).opacity(latido ? 0 : 1) }
+                Circle().fill(on ? Tema.rojo : Tema.gris.opacity(0.55)).frame(width: 11, height: 11)
+            }
+            .frame(width: 40, height: 40)
+            .background(.ultraThinMaterial, in: Circle())
+            .onAppear { withAnimation(.easeOut(duration: 1.4).repeatForever(autoreverses: false)) { latido = true } }
+            .accessibilityLabel(on ? "Ronda en curso" : "Sin ronda en curso")
+        } else {
         HStack(spacing: 8) {
             ZStack {
                 if on { Circle().fill(Tema.rojo.opacity(0.35)).frame(width: 18, height: 18).scaleEffect(latido ? 1.4 : 0.8).opacity(latido ? 0 : 1) }
@@ -22,6 +34,7 @@ struct LuzVivo: View {
         .background(on ? Tema.rojo.opacity(0.12) : Tema.tarjeta, in: Capsule())
         .overlay(Capsule().stroke(on ? Tema.rojo.opacity(0.4) : Tema.linea))
         .onAppear { withAnimation(.easeOut(duration: 1.4).repeatForever(autoreverses: false)) { latido = true } }
+        }
     }
     func nombre(_ q: String?) -> String { ["pc": "PC de la casa", "mac": "Mac"][q ?? ""] ?? (q ?? "PC") }
 }
