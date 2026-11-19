@@ -1,27 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "01:04",
-  "fecha": "2026-11-19",
-  "hasta": "10:49"
+  "desde": "16:08",
+  "fecha": "2026-11-19"
  },
- "actualizado": "2026-11-19 10:49",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "Prueba: leyendo chats sin leer",
-   "hora": "01:04"
-  },
-  "pedidos": {
-   "estado": "terminó",
-   "texto": "Prueba: revisando el paquete",
-   "hora": "01:04"
-  },
-  "ana": {
-   "estado": "esperando",
-   "texto": "Prueba: espera precios",
-   "hora": "01:04"
-  }
- }
+ "actualizado": "2026-11-19 16:08",
+ "agentes": {}
 }
