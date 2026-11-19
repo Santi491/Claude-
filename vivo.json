@@ -11,6 +11,11 @@
    "estado": "trabajando",
    "texto": "Prueba: leyendo chats sin leer",
    "hora": "01:04"
+  },
+  "pedidos": {
+   "estado": "trabajando",
+   "texto": "Prueba: revisando el paquete",
+   "hora": "01:04"
   }
  }
 }
