@@ -93,7 +93,7 @@ final class Comportamiento {
 
     func empezar() {
         let l = CADisplayLink(target: Ticker(self), selector: #selector(Ticker.tic(_:)))
-        l.preferredFrameRateRange = CAFrameRateRange(minimum: 20, maximum: 30, preferred: 30)
+        l.preferredFrameRateRange = Calidad.actual.rango   // al mismo ritmo que la pantalla: a 120 fps se mueven a 120
         l.add(to: .main, forMode: .common)
         link = l
     }

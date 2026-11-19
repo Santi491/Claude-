@@ -60,7 +60,12 @@ enum Oficina3D {
 
         // ---------- materiales ----------
         var mats: [String: SCNMaterial] = [:]
+        // materiales iguales comparten el mismo objeto: así, al juntar la nave en pocas piezas, se dibujan juntos
+        // (eran 400 materiales y solo 156 distintos)
+        var iguales: [String: SCNMaterial] = [:]
         for m in a.materiales {
+            let clave = "\(m.tipo)|\(m.color)|\(m.opacidad)|\(m.transparente)|\(m.doble)|\(m.atras)|\(m.rough)|\(m.metal)|\(m.emisivo ?? [])|\(m.emisivoI)|\(m.mapa ?? "")|\(m.mapaEmisivo ?? "")|\(m.escribeProf)|\(m.mapaInfo.map { "\($0.`repeat`)\($0.offset)\($0.wrap)" } ?? "")"
+            if let ya = iguales[clave] { mats[m.id] = ya; continue }
             let s = SCNMaterial()
             let basico = m.tipo == "MeshBasicMaterial"
             s.lightingModel = basico ? .constant : .physicallyBased
@@ -89,7 +94,7 @@ enum Oficina3D {
             }
             s.isDoubleSided = m.doble
             if m.atras { s.cullMode = .front }
-            mats[m.id] = s
+            mats[m.id] = s; iguales[clave] = s
         }
 
         // ---------- geometrías ----------
@@ -249,18 +254,20 @@ enum Oficina3D {
 
     static func mejorar(_ e: SCNScene, raiz: SCNNode, luces: Bool = true) {
         if luces, let amb = ambiente() { e.lightingEnvironment.contents = amb; e.lightingEnvironment.intensity = 0.9 }
+        var hechos = Set<ObjectIdentifier>()   // un material compartido se mejora una sola vez
         raiz.enumerateHierarchy { n, _ in
+            let mats = (n.geometry?.materials ?? []).filter { hechos.insert(ObjectIdentifier($0)).inserted }
             // vidrio de las salas: transparente de verdad (antes era un panel lechoso)
-            for m in n.geometry?.materials ?? [] where m.lightingModel == .constant && m.transparency < 0.9 && m.transparency > 0.3 {
+            for m in mats where m.lightingModel == .constant && m.transparency < 0.9 && m.transparency > 0.3 {
                 m.transparency = 0.35   // franja esmerilada: más suave
             }
-            for m in n.geometry?.materials ?? [] where m.lightingModel == .physicallyBased && m.transparency < 0.5 {
+            for m in mats where m.lightingModel == .physicallyBased && m.transparency < 0.5 {
                 // vidrio ahumado: casi invisible, con un leve tono (el físico en SceneKit se veía lechoso por los reflejos)
                 m.lightingModel = .constant
                 m.diffuse.contents = CGColor(srgbRed: 0.55, green: 0.62, blue: 0.68, alpha: 1)
                 m.transparency = 0.07; m.isDoubleSided = false; m.transparencyMode = .singleLayer
             }
-            for m in n.geometry?.materials ?? [] where m.lightingModel == .physicallyBased && m.transparency >= 0.5 {
+            for m in mats where m.lightingModel == .physicallyBased && m.transparency >= 0.5 {
                 let r = (m.roughness.contents as? NSNumber)?.doubleValue ?? 0.7
                 let met = (m.metalness.contents as? NSNumber)?.doubleValue ?? 0
                 // superficies pulidas (mármol, bronce, cromo, vidrio): más brillo y una capa de laca

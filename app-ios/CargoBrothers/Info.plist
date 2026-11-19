@@ -8,6 +8,8 @@
 	</array>
 	<key>BotUsuario</key>
 	<string>$(BOT_USUARIO)</string>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

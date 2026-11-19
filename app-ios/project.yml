@@ -44,6 +44,7 @@ targets:
         UILaunchScreen: {UIColorName: ""}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
         UIUserInterfaceStyle: Dark
+        CADisableMinimumFrameDurationOnPhone: true
         NSSupportsLiveActivities: true
         NSFaceIDUsageDescription: Para confirmar que eres tú antes de aprobar o rechazar.
         LSApplicationQueriesSchemes: [tg]

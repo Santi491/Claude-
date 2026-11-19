@@ -239,6 +239,7 @@ struct AjustesView: View {
     @State private var probando = false
     @AppStorage("bloqueo") private var bloqueo = true
     @AppStorage("oficina_fps") private var fps = false
+    @AppStorage("oficina_calidad") private var calidad = Calidad.equilibrada.rawValue
 
     var body: some View {
         Form {
@@ -267,9 +268,10 @@ struct AjustesView: View {
                 Toggle("Pedir Face ID al abrir la app", isOn: $bloqueo)
             }
             Section {
+                Picker("Calidad", selection: $calidad) { ForEach(Calidad.allCases) { Text($0.nombre).tag($0.rawValue) } }
                 Toggle("Mostrar FPS en la oficina 3D", isOn: $fps)
             } header: { Text("Oficina 3D") } footer: {
-                Text("Abajo de la oficina aparecen los cuadros por segundo (fps) y cuánto tarda cada cuadro. 60 es lo ideal; menos de 30 se nota trabado.")
+                Text((Calidad(rawValue: calidad) ?? .equilibrada).detalle + " Con «Mostrar FPS», abajo de la oficina aparecen los cuadros por segundo y cuánto tarda cada cuadro.")
             }
             Section("Avisos") {
                 NavigationLink { NotificacionesView() } label: { Label("Notificaciones", systemImage: "bell.badge") }

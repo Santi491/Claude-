@@ -42,6 +42,7 @@
 		B9BAE4EB13071DA0EED4BEC1 /* cb-pedido.caf in Resources */ = {isa = PBXBuildFile; fileRef = AC7B9B7B601AF6355149CE55 /* cb-pedido.caf */; };
 		C6876863A89487D4F9E0C341 /* Acciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83D2B23602459B6C36474D /* Acciones.swift */; };
 		CDB9FFD705AC5F63CB037211 /* Comportamiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF81893D5F19E454303E8E1 /* Comportamiento.swift */; };
+		CF94B714D369672CEE64E380 /* Calidad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5D8357A645921BC6016B15 /* Calidad.swift */; };
 		DE755E1F3EAABA3625A39443 /* Oficina3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236FFED311223CA063EA75F /* Oficina3D.swift */; };
 		E2C89FFC45286BFD5DB88E27 /* Detalle3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140A08282DA18EB225D290E /* Detalle3D.swift */; };
 		E313BFAFC4093C679D95F4C5 /* EquipoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C5D96174AE07BC40B1701 /* EquipoView.swift */; };
@@ -97,6 +98,7 @@
 		8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9178CBA57C8D6EBA5763BB7A /* Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
 		9236FFED311223CA063EA75F /* Oficina3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oficina3D.swift; sourceTree = "<group>"; };
+		9C5D8357A645921BC6016B15 /* Calidad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calidad.swift; sourceTree = "<group>"; };
 		A94B2953F13E92D943008DFC /* Manejo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manejo.swift; sourceTree = "<group>"; };
 		A959C99911657117CA0FBF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB966AC3E3A469EA59DF573A /* PreciosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreciosView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				4C6273E57DB7F514097317CA /* App.swift */,
 				8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */,
 				EB1B336C54BCE76DE79D8F1C /* Calculo.swift */,
+				9C5D8357A645921BC6016B15 /* Calidad.swift */,
 				1258C8E2E618C28407F90222 /* Componentes.swift */,
 				BEF81893D5F19E454303E8E1 /* Comportamiento.swift */,
 				F1972F47C18837AD9A732BF5 /* DecidirView.swift */,
@@ -350,6 +353,7 @@
 				0A7B89741B6B675668827CE1 /* Apariencia.swift in Sources */,
 				024D314FECBD41121D26B449 /* App.swift in Sources */,
 				8D35708ACBED1341CFB5C3EC /* Calculo.swift in Sources */,
+				CF94B714D369672CEE64E380 /* Calidad.swift in Sources */,
 				FFF7B80627D6AACA1617FECB /* Componentes.swift in Sources */,
 				CDB9FFD705AC5F63CB037211 /* Comportamiento.swift in Sources */,
 				2B5AFF8346100FC0FA1A7AE1 /* DecidirView.swift in Sources */,

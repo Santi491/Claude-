@@ -84,11 +84,38 @@ enum Detalle3D {
     /// pantallas "pantalla-<agente>-N" (para las partes que vienen: personas sentadas y pantallas con datos en vivo).
     static func ponerPuestos(en raiz: SCNNode) {
         for (id, x, z) in puestos {
-            let p = puesto(dos: id == "gerente", id: id)
+            let p = aplanar(puesto(dos: id == "gerente", id: id))
             p.name = "puesto-\(id)"
             p.position = SCNVector3(x, 0, z + 0.275)   // el centro del escritorio está 0,275 m delante del punto del puesto
             raiz.addChildNode(p)
         }
+    }
+
+    /// Junta cada escritorio en pocas piezas (Santi 19/11, rendimiento): eran ~120 piezas sueltas por puesto que el iPhone
+    /// dibujaba una por una (y otra vez para las sombras). Quedan aparte solo lo que cambia: la silla (se corre), las
+    /// pantallas (muestran los datos de cada agente) y la luz de la lámpara.
+    static func aplanar(_ p: SCNNode) -> SCNNode {
+        let out = SCNNode()
+        var sueltos: [(SCNNode, SCNMatrix4)] = []
+        p.enumerateHierarchy { n, parar in
+            if n === p { return }
+            if let nm = n.name, nm.hasPrefix("silla-") || nm.hasPrefix("pantalla-") || n.light != nil { sueltos.append((n, n.convertTransform(SCNMatrix4Identity, to: p))) }
+        }
+        for (n, _) in sueltos { n.removeFromParentNode() }
+        let plano = p.flattenedClone(); plano.name = "escritorio"
+        plano.castsShadow = true
+        out.addChildNode(plano)
+        for (n, m) in sueltos {
+            let f: SCNNode
+            if n.name?.hasPrefix("silla-") == true {
+                // la silla también se junta en una sola pieza, pero sigue siendo un nodo que se mueve
+                let nombre = n.name; let pos = n.position
+                n.position = SCNVector3Zero
+                f = n.flattenedClone(); f.name = nombre; f.position = pos; f.castsShadow = true
+            } else { f = n; f.transform = m }
+            out.addChildNode(f)
+        }
+        return out
     }
 
     static func puesto(dos: Bool = false, id: String = "") -> SCNNode {
@@ -114,7 +141,7 @@ enum Detalle3D {
         }
         // teclado, teclas y mouse
         let tec = caja(0.44, 0.018, 0.14, r: 0.006, plasticoNegro, -0.05, 0.775, 0.12, pe)
-        let teclaG = SCNBox(width: 0.022, height: 0.008, length: 0.02, chamferRadius: 0.003); teclaG.materials = [pbr(0.12, 0.12, 0.13, rough: 0.6)]
+        let teclaG = SCNBox(width: 0.022, height: 0.008, length: 0.02, chamferRadius: 0.003); teclaG.chamferSegmentCount = 1; teclaG.materials = [pbr(0.12, 0.12, 0.13, rough: 0.6)]
         for f in 0..<5 { for k in 0..<17 {
             let t = SCNNode(geometry: teclaG); t.position = SCNVector3(-0.2 + Float(k) * 0.025, 0.012, -0.05 + Float(f) * 0.025); tec.addChildNode(t)
         } }
@@ -141,7 +168,7 @@ enum Detalle3D {
         for k in 0..<5 {
             let pata = SCNNode(); pata.eulerAngles.y = .init(Double(k) * 2 * .pi / 5); silla.addChildNode(pata)
             let b = capsula(0.022, 0.34, cromo, pata); b.position = SCNVector3(0, 0.08, 0.16); b.eulerAngles.x = .pi / 2 - 0.1
-            let rueda = SCNSphere(radius: 0.03); rueda.materials = [gomaNegra]
+            let rueda = SCNSphere(radius: 0.03); rueda.segmentCount = 12; rueda.materials = [gomaNegra]
             let rn = SCNNode(geometry: rueda); rn.position = SCNVector3(0, 0.03, 0.31); pata.addChildNode(rn)
         }
         // aro de luz bajo el escritorio (LED cálido)

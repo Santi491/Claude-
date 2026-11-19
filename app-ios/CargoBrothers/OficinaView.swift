@@ -258,14 +258,13 @@ struct VistaSCN: UIViewRepresentable {
         let v = SCNView()
         v.scene = escena
         v.backgroundColor = .clear
-        v.antialiasingMode = .multisampling4X
-        v.preferredFramesPerSecond = 60
         v.pointOfView = escena.rootNode.childNode(withName: "camara", recursively: false)
         v.allowsCameraControl = false
         v.showsStatistics = UserDefaults.standard.bool(forKey: "oficina_fps")
         v.delegate = context.coordinator
         v.isPlaying = true
         if let cam = v.pointOfView?.camera { cam.projectionDirection = .horizontal; cam.fieldOfView = 62 }
+        Calidad.actual.aplicar(v)
         let co = context.coordinator
         co.vista = v; co.marcas = marcas; co.elegir = elegir
         let pan = UIPanGestureRecognizer(target: co, action: #selector(Coord.arrastrar(_:))); pan.maximumNumberOfTouches = 1
@@ -318,7 +317,8 @@ struct VistaSCN: UIViewRepresentable {
 
         @MainActor func inicio() {
             irAInicio(); obj = objD; dist = distD; giro = giroD; aplicar()
-            let l = CADisplayLink(target: self, selector: #selector(tic(_:))); l.add(to: .main, forMode: .common); link = l
+            let l = CADisplayLink(target: self, selector: #selector(tic(_:))); l.preferredFrameRateRange = Calidad.actual.rango
+            l.add(to: .main, forMode: .common); link = l
         }
         @MainActor func irAInicio() { objD = SIMD2(-1, 4); distD = apaisado ? 30 : 29; giroD = 0.53; vel = .zero }
         @MainActor func volar(a p: SIMD2<Float>, dist d: Float) { objD = p; distD = d; vel = .zero }
