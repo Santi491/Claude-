@@ -50,12 +50,12 @@ enum Gym3D {
         // piso: baldosas de goma de 1 m con juntas finas
         let piso = SCNBox(width: 12.6, height: 0.03, length: 4.0, chamferRadius: 0.005); piso.materials = [gomaPiso]
         let pn = SCNNode(geometry: piso); pn.position = SCNVector3(0, 0.015, 0); g.addChildNode(pn)
-        for k in -6...6 { let j = caja(0.006, 0.002, 4.0, r: 0, D.pbr(0.02, 0.02, 0.02, rough: 1), Float(k), 0.036, 0, g); j.castsShadow = false }
-        for k in -1...1 { let j = caja(12.6, 0.002, 0.006, r: 0, D.pbr(0.02, 0.02, 0.02, rough: 1), 0, 0.036, Float(k), g); j.castsShadow = false }
+        for k in -6...6 { let j = caja(0.006, 0.002, 4.0, r: 0, D.pbr(0.02, 0.02, 0.02, rough: 1), Float(k), 0.031, 0, g); j.castsShadow = false }
+        for k in -1...1 { let j = caja(12.6, 0.002, 0.006, r: 0, D.pbr(0.02, 0.02, 0.02, rough: 1), 0, 0.031, Float(k), g); j.castsShadow = false }
         // borde de luz cálida (como la web)
         let led = SCNMaterial(); led.lightingModel = .constant; led.diffuse.contents = CGColor(srgbRed: 1, green: 0.78, blue: 0.45, alpha: 1)
         for (x, z, w, d) in [(Float(0), Float(-2.0), CGFloat(12.6), CGFloat(0.03)), (0, 2.0, 12.6, 0.03), (-6.3, 0, 0.03, 4.0), (6.3, 0, 0.03, 4.0)] {
-            let e = caja(w, 0.01, d, r: 0, led, x, 0.042, z, g); e.castsShadow = false
+            let e = caja(w, 0.01, d, r: 0, led, x, 0.035, z, g); e.castsShadow = false
         }
 
         // ---------- jaula de sentadillas (power rack) sobre plataforma, con barra cargada ----------
