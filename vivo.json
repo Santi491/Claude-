@@ -5,6 +5,12 @@
   "desde": "16:08",
   "fecha": "2026-11-19"
  },
- "actualizado": "2026-11-19 16:08",
- "agentes": {}
+ "actualizado": "2026-11-19 16:09",
+ "agentes": {
+  "wa": {
+   "estado": "trabajando",
+   "texto": "respuestas y seguimientos de la tarde",
+   "hora": "16:08"
+  }
+ }
 }
