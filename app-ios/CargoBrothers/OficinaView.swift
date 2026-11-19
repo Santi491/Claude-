@@ -31,7 +31,13 @@ struct OficinaView: View {
             guard escena == nil, let u = Bundle.main.url(forResource: "Oficina3D", withExtension: nil) else {
                 if escena == nil { error = "No encontré el modelo de la oficina." }; return
             }
-            let e = await Task.detached(priority: .userInitiated) { try? Oficina3D.escena(carpeta: u) }.value
+            let pers = Bundle.main.url(forResource: "Personas", withExtension: nil)
+            let e = await Task.detached(priority: .userInitiated) { () -> SCNScene? in
+                guard let e = try? Oficina3D.escena(carpeta: u) else { return nil }
+                // las personas (solo en la Mac de Santi: son de Mixamo y no van al repo)
+                if let pers { Personas3D.sentarEquipo(en: e.rootNode, carpeta: pers) }
+                return e
+            }.value
             if let e { escena = e } else { error = "No pude armar la oficina." }
         }
     }

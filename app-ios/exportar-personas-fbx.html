@@ -1,0 +1,110 @@
+<meta charset="utf-8"><script src="three.min.js"></script><script src="fflate.min.js"></script><script src="NURBSUtils.js"></script><script src="NURBSCurve.js"></script><script src="FBXLoader.js"></script>
+<script>
+// Exporta los 6 personajes de Mixamo (FBX originales) con sus animaciones para la app nativa (formato de Personas3D.swift).
+const CLIPS = ["teclear", "sentado", "quieto", "caminar", "hablar", "pesas", "cinta", "sentarse", "pararse", "a_teclear", "de_teclear",
+               "cafe", "celular", "pensar", "estirarse", "reir_sentado", "reunion"];
+const TRANS = { sentarse: "ini", pararse: "fin", a_teclear: "raw", de_teclear: "raw" };
+const SENTADO = new Set(["teclear", "sentado", "cafe", "reir_sentado", "reunion"]);
+const FPS = 20;
+const L = new THREE.FBXLoader();
+const cargar = u => new Promise((ok, mal) => L.load(u, ok, undefined, mal));
+const subir = (ruta, cuerpo, tipo) => fetch("/guardar/" + ruta, { method: "POST", body: cuerpo, headers: { "Content-Type": tipo || "application/octet-stream" } });
+const estado = t => { document.title = t; };
+
+function prepararClip(clip, nombre) {
+  const c = clip.clone(); c.name = nombre;
+  c.tracks = c.tracks.filter(t => !/\.scale$/.test(t.name));
+  const hp = c.tracks.find(t => /Hips\.position$/.test(t.name));
+  if (hp && !SENTADO.has(nombre) && TRANS[nombre] !== "raw") {
+    hp.values = hp.values.slice();
+    const v = hp.values, n = v.length / 3, tipo = TRANS[nombre];
+    const r = tipo === "ini" ? 0 : tipo === "fin" ? (n - 1) * 3 : (n >> 1) * 3, x0 = v[r], z0 = v[r + 2];
+    for (let q = 0; q < v.length; q += 3) { v[q] -= x0; v[q + 2] -= z0; }
+  }
+  return c;
+}
+
+async function correr() {
+  estado("cargando animaciones");
+  const clips = {};
+  for (const n of CLIPS) { const a = await cargar(`m/${n}.fbx`); if (a.animations[0]) clips[n] = prepararClip(a.animations[0], n); estado("anim " + n); }
+  const res = [];
+  for (let idx = 0; idx < 6; idx++) {
+    estado("personaje " + idx);
+    const o = await cargar(`m/p${idx}.fbx`);
+    o.updateMatrixWorld(true);
+    const partes = []; let off = 0;
+    const meter = arr => { const b = new Uint8Array(arr.buffer, arr.byteOffset, arr.byteLength); const q = off; partes.push(b); off += b.byteLength; const pad = (4 - (off % 4)) % 4; if (pad) { partes.push(new Uint8Array(pad)); off += pad; } return q; };
+    const mallas = []; o.traverse(c => { if (c.isSkinnedMesh) mallas.push(c); });
+    const huesos = [], indice = new Map();
+    mallas.forEach(m => m.skeleton.bones.forEach(b => { if (!indice.has(b)) { indice.set(b, huesos.length); huesos.push(b); } }));
+    const tmp = new THREE.Matrix4(), pos = new THREE.Vector3(), qua = new THREE.Quaternion(), esc = new THREE.Vector3();
+    function grabar(qA, tA, sA, f) {
+      o.updateMatrixWorld(true);
+      const m0 = mallas[0], Lm = new THREE.Matrix4().copy(o.matrixWorld).invert().multiply(m0.matrixWorld).multiply(m0.bindMatrixInverse);
+      huesos.forEach((b, i) => { tmp.multiplyMatrices(Lm, b.matrixWorld); tmp.decompose(pos, qua, esc); const k = f * huesos.length + i;
+        qA.set(qua.toArray(), k * 4); tA.set(pos.toArray(), k * 3); sA[k] = (esc.x + esc.y + esc.z) / 3; });
+    }
+    const texs = new Map();
+    async function tex(t) {
+      if (!t || !t.image) return null;
+      if (texs.has(t.uuid)) return texs.get(t.uuid);
+      const id = `m${idx}-t${texs.size}`; const im = t.image;
+      const k = document.createElement("canvas"); k.width = Math.min(1024, im.width || im.naturalWidth); k.height = Math.min(1024, im.height || im.naturalHeight);
+      k.getContext("2d").drawImage(im, 0, 0, k.width, k.height);
+      const blob = await new Promise(r => k.toBlob(r, "image/png")); await subir(`personas/tex/${id}.png`, blob, "image/png");
+      texs.set(t.uuid, id); return id;
+    }
+    const mixer = new THREE.AnimationMixer(o);
+    // Mixamo cambia el prefijo de los huesos en cada descarga (mixamorig, mixamorig7…): cada animación se adapta al personaje
+    let hipsN = null; o.traverse(c => { if (!hipsN && c.isBone && /Hips$/.test(c.name)) hipsN = c.name; });
+    const pref = hipsN ? hipsN.replace(/Hips$/, "") : "mixamorig";
+    const adaptar = c => { const x = c.clone(); x.tracks.forEach(t => { t.name = t.name.replace(/^mixamorig\d*:?/, pref); }); return x; };
+    const misClips = {}; for (const n in clips) misClips[n] = adaptar(clips[n]);
+    // reposo: primer cuadro de "quieto"
+    let ac = mixer.clipAction(misClips.quieto); ac.play(); ac.time = 0; mixer.update(0);
+    const rq = new Float32Array(huesos.length * 4), rt = new Float32Array(huesos.length * 3), rs = new Float32Array(huesos.length);
+    grabar(rq, rt, rs, 0);
+    const reposo = { q: meter(rq), t: meter(rt), s: meter(rs) };
+    mixer.stopAllAction();
+    const salidaMallas = [];
+    for (const m of mallas) {
+      const g = m.geometry, a = g.attributes;
+      const mats = Array.isArray(m.material) ? m.material : [m.material];
+      const si = new Uint16Array(a.skinIndex.count * 4);
+      for (let i = 0; i < a.skinIndex.count; i++) for (let k = 0; k < 4; k++) si[i * 4 + k] = indice.get(m.skeleton.bones[a.skinIndex.array[i * a.skinIndex.itemSize + k]]) ?? 0;
+      const inv = huesos.map(() => null);
+      m.skeleton.bones.forEach((b, j) => { inv[indice.get(b)] = new THREE.Matrix4().multiplyMatrices(m.skeleton.boneInverses[j], m.bindMatrix).toArray(); });
+      const usados = [...new Set(m.skeleton.bones.map(b => indice.get(b)))];
+      // grupos de material (FBX suele traer varios por malla): se exportan como índices separados
+      const idxArr = g.index ? g.index.array : Uint32Array.from({ length: a.position.count }, (_, i) => i);
+      const grupos = (g.groups && g.groups.length ? g.groups : [{ start: 0, count: idxArr.length, materialIndex: 0 }]);
+      for (const gr of grupos) {
+        const mat = mats[Math.min(gr.materialIndex || 0, mats.length - 1)];
+        const sub = new Uint32Array(idxArr.slice(gr.start, gr.start + gr.count));
+        salidaMallas.push({ n: a.position.count, pos: meter(new Float32Array(a.position.array)), nor: a.normal ? meter(new Float32Array(a.normal.array)) : null,
+          uv: a.uv ? meter(new Float32Array(a.uv.array)) : null, si: meter(si), sw: meter(new Float32Array(a.skinWeight.array)),
+          idx: meter(sub), ni: sub.length, huesos: usados, inversas: usados.map(i => inv[i]),
+          mat: { color: mat.color ? mat.color.toArray() : [1, 1, 1], rough: mat.roughness ?? 0.7, metal: mat.metalness ?? 0, mapa: await tex(mat.map),
+                 transparente: !!mat.transparent, opacidad: mat.opacity ?? 1 } });
+      }
+    }
+    const anims = {};
+    for (const n of CLIPS) {
+      if (!misClips[n]) continue;
+      mixer.stopAllAction(); mixer.uncacheRoot(o);
+      ac = mixer.clipAction(misClips[n]); ac.play();
+      const dur = misClips[n].duration, N = Math.max(2, Math.round(dur * FPS));
+      const q = new Float32Array(N * huesos.length * 4), t = new Float32Array(N * huesos.length * 3), sc = new Float32Array(N * huesos.length);
+      for (let f = 0; f < N; f++) { ac.time = Math.min(dur, f / FPS); mixer.update(0); grabar(q, t, sc, f); }
+      anims[n] = { dur, cuadros: N, giro: 0, q: meter(q), t: meter(t), s: meter(sc) };
+    }
+    const bin = new Uint8Array(off); let k = 0; for (const b of partes) { bin.set(b, k); k += b.byteLength; }
+    await subir(`personas/m${idx}.bin`, bin);
+    await subir(`personas/m${idx}.json`, JSON.stringify({ escala: 0.01, nh: huesos.length, reposo, mallas: salidaMallas, anims, fps: FPS }), "application/json");
+    res.push(`${pref}|m${idx}:${huesos.length}h/${salidaMallas.length}m/${Object.keys(anims).length}a/${(off / 1e6).toFixed(1)}MB`);
+  }
+  estado("LISTO " + res.join(" "));
+}
+correr().catch(e => estado("ERROR " + e));
+</script>

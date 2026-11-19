@@ -20,7 +20,11 @@ targets:
     platform: iOS
     sources:
       - path: CargoBrothers
-        excludes: [Oficina3D/**]
+        excludes: [Oficina3D/**, Personas/**]
+      - path: CargoBrothers/Personas
+        type: folder
+        buildPhase: resources
+        optional: true
       - path: CargoBrothers/Oficina3D
         type: folder
         buildPhase: resources

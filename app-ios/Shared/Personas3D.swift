@@ -22,6 +22,9 @@ enum Personas3D {
     static var cache: [Int: Cargado] = [:]
     /// en la Mac (fotos de prueba) las animaciones siguen el tiempo de la escena; en el teléfono, el reloj real
     static var tiempoEscena = false
+    /// los FBX de Mixamo ya traen la V como la espera SceneKit (los glTF venían al revés)
+    static var invertirV = false
+    static var dzSentado: Float = 0.95
 
     static func cargar(_ i: Int, carpeta: URL) throws -> Cargado {
         if let c = cache[i] { return c }
@@ -71,7 +74,7 @@ enum Personas3D {
             let p = lee(bin, ms.pos, ms.n * 3, Float.self)
             src.append(SCNGeometrySource(vertices: stride(from: 0, to: p.count, by: 3).map { SCNVector3(p[$0], p[$0 + 1], p[$0 + 2]) }))
             if let o = ms.nor { let q = lee(bin, o, ms.n * 3, Float.self); src.append(SCNGeometrySource(normals: stride(from: 0, to: q.count, by: 3).map { SCNVector3(q[$0], q[$0 + 1], q[$0 + 2]) })) }
-            if let o = ms.uv { let u = lee(bin, o, ms.n * 2, Float.self); src.append(SCNGeometrySource(textureCoordinates: stride(from: 0, to: u.count, by: 2).map { CGPoint(x: CGFloat(u[$0]), y: CGFloat(1 - u[$0 + 1])) })) }
+            if let o = ms.uv { let u = lee(bin, o, ms.n * 2, Float.self); src.append(SCNGeometrySource(textureCoordinates: stride(from: 0, to: u.count, by: 2).map { CGPoint(x: CGFloat(u[$0]), y: CGFloat(invertirV ? 1 - u[$0 + 1] : u[$0 + 1])) })) }
             let idx: [UInt32] = ms.idx.map { lee(bin, $0, ms.ni, UInt32.self) } ?? (0..<UInt32(ms.n)).map { $0 }
             let geo = SCNGeometry(sources: src, elements: [SCNGeometryElement(indices: idx, primitiveType: .triangles)])
             geo.materials = [material(c, ms.mat)]
@@ -130,7 +133,7 @@ enum Personas3D {
         for (k, (id, x, z)) in Detalle3D.puestos.enumerated() {
             guard let i = modelos[id], let p = try? persona(i, carpeta: carpeta) else { continue }
             p.name = "persona-\(id)"
-            p.position = SCNVector3(x, 0, z + 0.675 + 0.15 - 0.477)   // "adentro" de la oficina web: sentado y arrimado
+            p.position = SCNVector3(x, 0, z + Personas3D.dzSentado)   // en la silla, arrimado al escritorio
             p.eulerAngles.y = .pi
             raiz.addChildNode(p)
             animar(p, animacion(id), carpeta: carpeta, desfase: Double(k) * 0.77)
