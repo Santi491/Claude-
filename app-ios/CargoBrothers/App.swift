@@ -65,6 +65,8 @@ final class Store: ObservableObject {
     /// lo que Santi hizo y todavía no se subió (Cola.swift) y la confirmación de abajo
     @Published var cola: [Pendiente] = Store.leerCola()
     @Published var toast: Toast?
+    /// a dónde llevó el último aviso tocado (lo abre RaizView)
+    @Published var destino: Destino?
     /// lo que se guardó desde este iPhone (para la pantalla de Sincronización): texto y fecha-hora de Bolivia
     @Published var acciones: [[String: String]] = (UserDefaults.standard.array(forKey: "acciones") as? [[String: String]]) ?? []
     private var reloj: Task<Void, Never>?
@@ -216,15 +218,25 @@ enum Novedades {
 
 struct RaizView: View {
     @EnvironmentObject var store: Store
+    @State private var pestana = 0
+    @State private var hoja: Destino?
     var body: some View {
-        TabView {
-            HoyView().tabItem { Label("Hoy", systemImage: "house") }
-            PedidosView().tabItem { Label("Pedidos", systemImage: "shippingbox") }
-            PreciosView().tabItem { Label("Precios", systemImage: "chart.line.uptrend.xyaxis") }
-            DecidirView().tabItem { Label("Decidir", systemImage: "checkmark.seal") }
+        TabView(selection: $pestana) {
+            HoyView().tabItem { Label("Hoy", systemImage: "house") }.tag(0)
+            PedidosView().tabItem { Label("Pedidos", systemImage: "shippingbox") }.tag(1)
+            PreciosView().tabItem { Label("Precios", systemImage: "chart.line.uptrend.xyaxis") }.tag(2)
+            DecidirView().tabItem { Label("Decidir", systemImage: "checkmark.seal") }.tag(3)
                 .badge(store.datos.map { $0.decidir.filter { store.enviadas[$0.id] == nil }.count } ?? 0)
-            EquipoView().tabItem { Label("Equipo", systemImage: "person.3") }
+            EquipoView().tabItem { Label("Equipo", systemImage: "person.3") }.tag(4)
         }
+        // aviso tocado: la pestaña que corresponde y, si es un pedido, un producto o un chat, se abre directo
+        .onChange(of: store.destino) { _, d in
+            guard let d else { return }
+            pestana = d.pestana
+            switch d { case .pedido, .producto, .chat: hoja = d; default: break }
+            store.destino = nil
+        }
+        .sheet(item: $hoja) { HojaDestino(destino: $0).environmentObject(store) }
         .overlay(alignment: .bottom) {
             if let t = store.toast {
                 ToastVista(t: t).id(t.id).padding(.bottom, 70).padding(.horizontal, 16)

@@ -275,11 +275,11 @@ enum Avisador {
         case .oferta:
             let x = d?.cazador.topes.first(where: \.bajo_tope)
             await mandar(.oferta, titulo: "Oferta en eBay: \(x?.producto ?? "Ryzen 5 7600X")", sub: "\(F.usd(x?.hoy_usd ?? 139)) · nuestro tope \(F.usd(x?.tope_usd ?? 166))",
-                         cuerpo: d.map { margenTexto($0, x?.producto ?? "", x?.hoy_usd) } ?? "Deja 27 %.", imagen: foto("ebay"), info: ["url": x?.link ?? ""], en: 3, forzar: true)
+                         cuerpo: d.map { margenTexto($0, x?.producto ?? "", x?.hoy_usd) } ?? "Deja 27 %.", imagen: foto("ebay"), info: ["url": x?.link ?? "", "producto": x?.producto ?? ""], en: 3, forzar: true)
         case .pedido:
             let p = d?.pedidos.first { !$0.esPrueba }
             await mandar(.pedido, titulo: "Tus 4 \(p?.producto ?? "Ryzen 7 7700X") llegaron al almacén", sub: "Courier en Miami (ejemplo)",
-                         cuerpo: "El paquete ya está en la bodega del courier. Desde ahí sale hacia Bolivia.", imagen: p != nil ? await mapa(p!) : nil, en: 3, forzar: true)
+                         cuerpo: "El paquete ya está en la bodega del courier. Desde ahí sale hacia Bolivia.", imagen: p != nil ? await mapa(p!) : nil, info: p.map { ["pedido": $0.id] } ?? [:], en: 3, forzar: true)
         case .decision:
             let x = d?.decidir.first
             await mandar(.decision, titulo: "El Gerente espera tu OK (ejemplo)", sub: Equipo.nombre(x?.agente ?? "gerente"),
@@ -320,6 +320,9 @@ final class DelegadoAvisos: NSObject, UNUserNotificationCenterDelegate {
             if let t = r as? UNTextInputNotificationResponse, let ag = info["agente"], info["ejemplo"] == nil {
                 _ = await Store.compartido.escribir(a: ag, t.userText)
             }
+        case UNNotificationDefaultActionIdentifier:
+            // tocar el aviso: abre el lugar justo (el pedido, el producto, la decisión o el chat)
+            await MainActor.run { Store.compartido.destino = Destino.de(info) }
         default: break
         }
     }

@@ -141,3 +141,48 @@ struct ToastVista: View {
         .onTapGesture { if t.deshacer == nil { store.toast = nil } }
     }
 }
+
+/// A dónde lleva un aviso al tocarlo (Santi, 19/11: "que los avisos me lleven al lugar justo")
+enum Destino: Identifiable, Hashable {
+    case pedido(String), producto(String), chat(String), decidir, equipo, hoy, pedidos
+    var id: String { "\(self)" }
+    /// la pestaña donde cae
+    var pestana: Int {
+        switch self { case .hoy: return 0; case .pedido, .pedidos: return 1; case .producto: return 2; case .decidir: return 3; case .chat, .equipo: return 4 }
+    }
+    static func de(_ info: [String: String]) -> Destino {
+        switch info["tipo"] ?? "" {
+        case "pedido": return info["pedido"].map { .pedido($0) } ?? .pedidos
+        case "oferta": return info["producto"].map { .producto($0) } ?? .hoy
+        case "decision": return .decidir
+        case "mensaje": return info["agente"].map { .chat($0) } ?? .equipo
+        case "ronda": return .equipo
+        case "venta": return .pedidos
+        default: return .hoy
+        }
+    }
+}
+
+/// la hoja que se abre encima de la pestaña: el pedido, el producto o el chat del aviso
+struct HojaDestino: View {
+    let destino: Destino
+    @EnvironmentObject var store: Store
+    @Environment(\.dismiss) private var cerrar
+    var body: some View {
+        NavigationStack {
+            Group {
+                switch destino {
+                case .pedido(let id):
+                    if let p = store.datos?.pedidos.first(where: { $0.id == id }) { PedidoDetalle(pedido: p) }
+                    else { Vacio(titulo: "No encontré ese pedido", texto: "Puede que los datos todavía no se hayan actualizado. Desliza hacia abajo en Pedidos para recargar.", icono: "shippingbox") }
+                case .producto(let n):
+                    if let p = store.datos?.productos.first(where: { $0.producto == n }) { ProductoDetalle(p: p) }
+                    else { Vacio(titulo: n, texto: "Todavía no tengo los números de este producto.", icono: "cpu") }
+                case .chat(let a): ChatView(agente: a)
+                default: EmptyView()
+                }
+            }
+            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("Cerrar") { cerrar() } } }
+        }
+    }
+}
