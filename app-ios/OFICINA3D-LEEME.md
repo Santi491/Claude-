@@ -40,3 +40,5 @@ Se usan los **FBX originales de Mixamo** que bajó Santi en `~/Documents/mixamo/
 3. Copiar a `app-ios/CargoBrothers/Personas/` (en .gitignore: Mixamo, repo público). `OficinaView` los sienta si están.
 Sentados: `Personas3D.dzSentado = 0.95` m desde el punto del puesto. Animaciones: teclear, sentado, quieto, caminar, hablar,
 pesas, cinta, sentarse, pararse, a_teclear, de_teclear, cafe, celular, pensar, estirarse, reir_sentado, reunion.
+
+**Ojo al exportar la oficina de nuevo (19/11):** la oficina web tiene personas simples de respaldo (el "Gerente caminante" de camisa amarilla, las sentadas y la de Santi) que solo se esconden cuando cargan los personajes de Mixamo. Si al exportar quedan visibles, salen como un muñeco fijo en la nave: hay que esconderlas antes de exportar o sacarlas de `oficina.json` (el 19/11 se sacaron los nodos 1158 a 1168, el caminante junto al puesto de Finanzas).
