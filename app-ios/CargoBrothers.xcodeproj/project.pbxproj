@@ -25,6 +25,7 @@
 		5430657223D8DCA1FCE22859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */; };
 		658F89D2843EBDDF51517647 /* cb-mensaje.caf in Resources */ = {isa = PBXBuildFile; fileRef = F379D72065CE6B5BA36B6BD2 /* cb-mensaje.caf */; };
 		65E0B88A311E66231F23F8BE /* Formularios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F307845EB1BA3750F894444 /* Formularios.swift */; };
+		664E1E2C1411A0E510DFEDD3 /* Orientacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE395085E899C00EE8925875 /* Orientacion.swift */; };
 		6D63ACEE01AD2D04B1633EF8 /* Fotos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37864CBDDB4B818CB0FE26 /* Fotos.xcassets */; };
 		71392DCDE12266458E3D97F0 /* Fotos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37864CBDDB4B818CB0FE26 /* Fotos.xcassets */; };
 		77DAC811BF99D96E1EBBC59A /* Modelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1229FF333DB2EDEE5619D0DE /* Modelo.swift */; };
@@ -111,6 +112,7 @@
 		E0EC8E9B13C35881B2DA1798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB1B336C54BCE76DE79D8F1C /* Calculo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculo.swift; sourceTree = "<group>"; };
 		EBF8BDB7D79BE27222FE55F7 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
+		EE395085E899C00EE8925875 /* Orientacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientacion.swift; sourceTree = "<group>"; };
 		EFF1328E1C606630139551CD /* cb-oferta.caf */ = {isa = PBXFileReference; path = "cb-oferta.caf"; sourceTree = "<group>"; };
 		F140A08282DA18EB225D290E /* Detalle3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detalle3D.swift; sourceTree = "<group>"; };
 		F1972F47C18837AD9A732BF5 /* DecidirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecidirView.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				A94B2953F13E92D943008DFC /* Manejo.swift */,
 				7D03DF6ACA1FC4F697264724 /* Notificaciones.swift */,
 				4BA99B998CF8A3ED19B22031 /* OficinaView.swift */,
+				EE395085E899C00EE8925875 /* Orientacion.swift */,
 				6B85EC49E114571E35BAB5B5 /* PedidosView.swift */,
 				AB966AC3E3A469EA59DF573A /* PreciosView.swift */,
 				2C2A15194E2CC3B99416EB40 /* VentasView.swift */,
@@ -361,6 +364,7 @@
 				A2B85026D017C40E68B6CAB5 /* Notificaciones.swift in Sources */,
 				DE755E1F3EAABA3625A39443 /* Oficina3D.swift in Sources */,
 				3B28B35A80139004BFDCD06D /* OficinaView.swift in Sources */,
+				664E1E2C1411A0E510DFEDD3 /* Orientacion.swift in Sources */,
 				39C530296CE27EC849C77BF4 /* PedidosView.swift in Sources */,
 				B8644EEA6FED254B50CA4E3A /* Personas3D.swift in Sources */,
 				314806A88F36DBF1740EE171 /* PreciosView.swift in Sources */,

@@ -15,12 +15,13 @@ struct OficinaView: View {
     @State private var vida: Comportamiento?
     @State private var junta = false
     @State private var santi: Manejo?
+    @State private var manejando = false
 
     var body: some View {
         ZStack(alignment: .top) {
             Color(red: 0.07, green: 0.078, blue: 0.09).ignoresSafeArea()
             if let escena {
-                VistaSCN(escena: escena, vista: vista, marcas: marcas, enfocar: santi?.manejando == true ? nil : elegido, manejo: santi) { elegido = $0 }.ignoresSafeArea()
+                VistaSCN(escena: escena, vista: vista, marcas: marcas, enfocar: manejando ? nil : elegido, manejo: santi, manejando: manejando) { elegido = $0 }.ignoresSafeArea()
                 Etiquetas(marcas: marcas) { elegido = $0 }.environmentObject(store).ignoresSafeArea()
             }
             else if let error { Text(error).foregroundStyle(.white).padding() }
@@ -30,7 +31,7 @@ struct OficinaView: View {
                     .background(.ultraThinMaterial, in: Circle())
                 LuzVivo(soloPunto: true).environmentObject(store)
                 Spacer()
-                if let santi { BotonManejar(manejo: santi) { on in elegido = nil; santi.manejar(on); if !on { vista += 1 } } }
+                if let santi { BotonManejar(manejo: santi) { on in elegido = nil; santi.manejar(on); manejando = on } }
                 if vida != nil {
                     Button { junta.toggle(); vida?.junta = junta } label: {
                         Image(systemName: junta ? "person.3.fill" : "person.3").font(.subheadline.weight(.semibold)).padding(10)
@@ -39,14 +40,15 @@ struct OficinaView: View {
                     .background(.ultraThinMaterial, in: Circle())
                     .accessibilityLabel(junta ? "Terminar junta" : "Llamar a junta")
                 }
-                Button { elegido = nil; vista += 1 } label: { Label("Vista general", systemImage: "scope").font(.caption.weight(.semibold)).padding(.horizontal, 12).padding(.vertical, 9) }
+                Button { elegido = nil; if manejando { santi?.manejar(false); manejando = false }; vista += 1 } label: { Label("Vista general", systemImage: "scope").font(.caption.weight(.semibold)).padding(.horizontal, 12).padding(.vertical, 9) }
                     .background(.ultraThinMaterial, in: Capsule())
             }
             .padding(.horizontal, 14).padding(.top, 6)
             if let santi { ControlesSanti(manejo: santi) }
         }
         .preferredColorScheme(.dark)
-        .onDisappear { vida?.parar(); Vivo3D.vida = nil; santi?.manejar(false) }
+        .onAppear { Orientacion.permitir(.allButUpsideDown) }
+        .onDisappear { vida?.parar(); Vivo3D.vida = nil; santi?.manejar(false); Orientacion.permitir(.portrait) }
         .onChange(of: store.vivo?.actualizado) { _, _ in if let escena { Vivo3D.aplicar(escena, store) } }
         .onChange(of: store.datos?.generado) { _, _ in if let escena { Vivo3D.aplicar(escena, store) } }
         .sheet(item: Binding(get: { elegido.map { Elegido(id: $0) } }, set: { elegido = $0?.id })) { e in
@@ -238,13 +240,16 @@ struct FichaAgente: View {
     }
 }
 
-/// SCNView con controles tipo oficina web: arrastrar gira, dos dedos mueven, pellizcar acerca. Tocar a una persona la elige.
+/// SCNView con cámara tipo juego de estrategia (Santi, 19/11: "como el Clash of Clans"): un dedo arrastra el piso (con
+/// inercia), pellizcar acerca hacia los dedos, dos dedos giran. La inclinación cambia sola con el zoom: de lejos se ve desde
+/// arriba y de cerca más de costado. Manejando a Santi, un dedo gira alrededor de él y pellizcar acerca. Tocar a una persona la elige.
 struct VistaSCN: UIViewRepresentable {
     let escena: SCNScene
     var vista: Int
     var marcas: Marcas
     var enfocar: String?
     var manejo: Manejo?
+    var manejando: Bool
     var elegir: (String) -> Void
 
     static let objetivo = SCNVector3(-1, 0, 4)
@@ -256,92 +261,164 @@ struct VistaSCN: UIViewRepresentable {
         v.antialiasingMode = .multisampling4X
         v.preferredFramesPerSecond = 60
         v.pointOfView = escena.rootNode.childNode(withName: "camara", recursively: false)
-        v.allowsCameraControl = true
+        v.allowsCameraControl = false
         v.delegate = context.coordinator
         v.isPlaying = true
-        let c = v.defaultCameraController
-        c.interactionMode = .orbitTurntable
-        c.target = VistaSCN.objetivo
-        c.inertiaEnabled = true
-        c.maximumVerticalAngle = 80
-        c.minimumVerticalAngle = 8
-        // con el celular vertical, la cámara abre el ángulo a lo ancho y se aleja para que entre toda la sala
-        if let p = v.pointOfView, let cam = p.camera {
-            cam.projectionDirection = .horizontal
-            cam.fieldOfView = 62
-            let t = VistaSCN.objetivo
-            p.position = SCNVector3(t.x + 10, 21, t.z + 17)
-            p.look(at: t)
-        }
-        context.coordinator.inicio = v.pointOfView?.transform
-        context.coordinator.vista = v
-        context.coordinator.marcas = marcas
-        context.coordinator.elegir = elegir
-        // manejando a Santi: un dedo gira la cámara alrededor de él y pellizcar acerca
-        let arr = UIPanGestureRecognizer(target: context.coordinator, action: #selector(Coord.girar(_:))); arr.maximumNumberOfTouches = 1
-        arr.isEnabled = false; v.addGestureRecognizer(arr); context.coordinator.arrastre = arr
-        let pel = UIPinchGestureRecognizer(target: context.coordinator, action: #selector(Coord.pellizcar(_:)))
-        pel.isEnabled = false; v.addGestureRecognizer(pel); context.coordinator.pellizco = pel
-        let toque = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coord.tocar(_:)))
-        toque.cancelsTouchesInView = false
-        v.addGestureRecognizer(toque)
+        if let cam = v.pointOfView?.camera { cam.projectionDirection = .horizontal; cam.fieldOfView = 62 }
+        let co = context.coordinator
+        co.vista = v; co.marcas = marcas; co.elegir = elegir
+        let pan = UIPanGestureRecognizer(target: co, action: #selector(Coord.arrastrar(_:))); pan.maximumNumberOfTouches = 1
+        let pel = UIPinchGestureRecognizer(target: co, action: #selector(Coord.pellizcar(_:)))
+        let rot = UIRotationGestureRecognizer(target: co, action: #selector(Coord.rotar(_:)))
+        let toque = UITapGestureRecognizer(target: co, action: #selector(Coord.tocar(_:)))
+        let doble = UITapGestureRecognizer(target: co, action: #selector(Coord.dobleToque(_:))); doble.numberOfTapsRequired = 2
+        toque.require(toFail: doble)
+        for g in [pan, pel, rot, toque, doble] as [UIGestureRecognizer] { g.delegate = co; v.addGestureRecognizer(g) }
+        co.inicio()
         return v
     }
 
     func updateUIView(_ v: SCNView, context: Context) {
         let co = context.coordinator
         co.marcas = marcas; co.elegir = elegir; co.manejo = manejo
-        let maneja = manejo?.manejando == true
-        if v.allowsCameraControl == maneja {
-            v.allowsCameraControl = !maneja
-            co.arrastre?.isEnabled = maneja; co.pellizco?.isEnabled = maneja
-        }
         if v.bounds.size.width > 0 { co.tamano = v.bounds.size }
-        if vista != co.ultima, let t = co.inicio, let p = v.pointOfView {
-            co.ultima = vista
-            SCNTransaction.begin(); SCNTransaction.animationDuration = 0.8
-            p.transform = t
-            v.defaultCameraController.target = VistaSCN.objetivo
-            SCNTransaction.commit()
+        if manejando != co.manejando {
+            co.manejando = manejando
+            if !manejando { co.leerCamara(); co.irAInicio() }
         }
-        // al elegir un agente, la cámara se acerca a su puesto
+        if vista != co.ultima { co.ultima = vista; co.irAInicio() }
+        // al elegir un agente, la cámara vuela hasta él
         if let id = enfocar, id != co.enfocado,
-           let n = escena.rootNode.childNode(withName: "persona-\(id)", recursively: false) ?? escena.rootNode.childNode(withName: "puesto-\(id)", recursively: false),
-           let p = v.pointOfView {
+           let n = escena.rootNode.childNode(withName: "persona-\(id)", recursively: false) ?? escena.rootNode.childNode(withName: "puesto-\(id)", recursively: false) {
             co.enfocado = id
-            let t = SCNVector3(n.position.x, 0.9, n.position.z)
-            SCNTransaction.begin(); SCNTransaction.animationDuration = 0.9
-            SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-            p.position = SCNVector3(t.x + 2.6, 3.4, t.z + 4.2)
-            p.look(at: SCNVector3(t.x, t.y - 0.6, t.z + 0.6))
-            v.defaultCameraController.target = t
-            SCNTransaction.commit()
+            co.volar(a: SIMD2(Float(n.position.x), Float(n.position.z) + 0.6), dist: 7.5)
         }
         if enfocar == nil { co.enfocado = nil }
     }
 
     func makeCoordinator() -> Coord { Coord() }
 
-    final class Coord: NSObject, SCNSceneRendererDelegate {
-        var inicio: SCNMatrix4?; var ultima = 0; var enfocado: String?
+    final class Coord: NSObject, SCNSceneRendererDelegate, UIGestureRecognizerDelegate {
+        var ultima = 0; var enfocado: String?; var manejando = false
         weak var vista: SCNView?
         var marcas: Marcas?
         var elegir: ((String) -> Void)?
         weak var manejo: Manejo?
-        weak var arrastre: UIPanGestureRecognizer?
-        weak var pellizco: UIPinchGestureRecognizer?
-        private var distInicial: Float = 5.4
-        @MainActor @objc func girar(_ g: UIPanGestureRecognizer) {
-            guard let m = manejo, let v = vista else { return }
-            let d = g.translation(in: v); g.setTranslation(.zero, in: v)
-            m.giro -= Float(d.x) * 0.008
-            m.alto = min(1.25, max(0.08, m.alto + Float(d.y) * 0.005))
+
+        // ---------- la cámara: mira a un punto del piso desde una distancia y un giro ----------
+        var obj = SIMD2<Float>(-1, 4), dist: Float = 29, giro: Float = 0.53
+        var objD = SIMD2<Float>(-1, 4), distD: Float = 29, giroD: Float = 0.53
+        var vel = SIMD2<Float>(0, 0)
+        private var link: CADisplayLink?, ultimoT: CFTimeInterval = 0
+        static let DMIN: Float = 4.5, DMAX: Float = 46
+        @MainActor var apaisado: Bool { guard let b = vista?.bounds, b.width > 0 else { return false }; return b.width > b.height }
+        private var eraApaisado: Bool?
+        func inclinacion(_ d: Float) -> Float { 0.55 + (min(max(d, Self.DMIN), Self.DMAX) - Self.DMIN) / (Self.DMAX - Self.DMIN) * 0.55 }
+
+        @MainActor func inicio() {
+            irAInicio(); obj = objD; dist = distD; giro = giroD; aplicar()
+            let l = CADisplayLink(target: self, selector: #selector(tic(_:))); l.add(to: .main, forMode: .common); link = l
+        }
+        @MainActor func irAInicio() { objD = SIMD2(-1, 4); distD = apaisado ? 30 : 29; giroD = 0.53; vel = .zero }
+        @MainActor func volar(a p: SIMD2<Float>, dist d: Float) { objD = p; distD = d; vel = .zero }
+        func limitar(_ p: SIMD2<Float>) -> SIMD2<Float> { SIMD2(min(30, max(-16, p.x)), min(20, max(-17, p.y))) }
+
+        @MainActor @objc func tic(_ l: CADisplayLink) {
+            guard vista?.window != nil else { if vista == nil { l.invalidate() }; return }
+            let dt = Float(ultimoT == 0 ? 1.0 / 60 : min(0.05, l.timestamp - ultimoT)); ultimoT = l.timestamp
+            guard !manejando else { return }
+            if simd_length(vel) > 0.01 { objD = limitar(objD + vel * dt); vel *= exp(-dt * 3.2) } else { vel = .zero }
+            let k = 1 - exp(-dt * 9)
+            obj += (objD - obj) * k; dist += (distD - dist) * k
+            var dg = giroD - giro; dg = atan2(sin(dg), cos(dg)); giro += dg * k
+            aplicar()
+        }
+        @MainActor func aplicar() {
+            guard let c = vista?.pointOfView else { return }
+            // vertical: el ángulo se mide a lo ancho; echado, a lo alto (si no, se ve todo muy de cerca)
+            let ap = apaisado
+            if ap != eraApaisado, let cam = c.camera {
+                if eraApaisado != nil { distD = ap ? 30 : 29 }
+                eraApaisado = ap
+                cam.projectionDirection = ap ? .vertical : .horizontal
+                cam.fieldOfView = ap ? 50 : 62
+            }
+            let inc = inclinacion(dist)
+            c.position = SCNVector3(obj.x + sin(giro) * cos(inc) * dist, sin(inc) * dist, obj.y + cos(giro) * cos(inc) * dist)
+            c.look(at: SCNVector3(obj.x, 0, obj.y), up: SCNVector3(0, 1, 0), localFront: SCNVector3(0, 0, -1))
+        }
+        /// al dejar de manejar: arranca desde donde quedó la cámara detrás de Santi, sin saltos
+        @MainActor func leerCamara() {
+            guard let c = vista?.pointOfView, let p = suelo(CGPoint(x: tamano.width / 2, y: tamano.height / 2)) else { return }
+            let cp = SIMD3<Float>(Float(c.position.x), Float(c.position.y), Float(c.position.z))
+            obj = p; dist = min(Self.DMAX, max(Self.DMIN, simd_length(cp - SIMD3(p.x, 0, p.y)))); giro = atan2(cp.x - p.x, cp.z - p.y)
+            objD = obj; distD = dist; giroD = giro
+        }
+        /// el punto del piso que está debajo de un punto de la pantalla
+        @MainActor func suelo(_ s: CGPoint) -> SIMD2<Float>? {
+            guard let v = vista else { return nil }
+            let a = v.unprojectPoint(SCNVector3(Float(s.x), Float(s.y), 0)), b = v.unprojectPoint(SCNVector3(Float(s.x), Float(s.y), 1))
+            let dy = Float(b.y - a.y); guard dy < -0.0001 else { return nil }
+            let t = -Float(a.y) / dy
+            return SIMD2(Float(a.x) + Float(b.x - a.x) * t, Float(a.z) + Float(b.z - a.z) * t)
+        }
+
+        // ---------- gestos ----------
+        private var ultimoDedo: CGPoint = .zero, distInicial: Float = 29, giroInicial: Float = 0
+        func gestureRecognizer(_ g: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith o: UIGestureRecognizer) -> Bool {
+            (g is UIPinchGestureRecognizer && o is UIRotationGestureRecognizer) || (g is UIRotationGestureRecognizer && o is UIPinchGestureRecognizer)
+        }
+        @MainActor @objc func arrastrar(_ g: UIPanGestureRecognizer) {
+            guard let v = vista else { return }
+            if manejando, let m = manejo {   // alrededor de Santi
+                let d = g.translation(in: v); g.setTranslation(.zero, in: v)
+                m.giro -= Float(d.x) * 0.008
+                m.alto = min(1.25, max(0.08, m.alto + Float(d.y) * 0.005))
+                return
+            }
+            let p = g.location(in: v)
+            switch g.state {
+            case .began: ultimoDedo = p; vel = .zero; objD = obj; distD = dist; giroD = giro
+            case .changed:
+                // el piso que tocaste queda debajo del dedo
+                if let a = suelo(ultimoDedo), let b = suelo(p) { obj = limitar(obj + (a - b)); objD = obj; aplicar() }
+                ultimoDedo = p
+            case .ended, .cancelled:
+                let vp = g.velocity(in: v), c = CGPoint(x: p.x, y: p.y)
+                if let a = suelo(c), let b = suelo(CGPoint(x: c.x + vp.x * 0.1, y: c.y + vp.y * 0.1)) { vel = (a - b) * 10 * 0.55 }
+                let lim: Float = 40; if simd_length(vel) > lim { vel = simd_normalize(vel) * lim }
+            default: break
+            }
         }
         @MainActor @objc func pellizcar(_ g: UIPinchGestureRecognizer) {
-            guard let m = manejo else { return }
-            if g.state == .began { distInicial = m.dist }
-            m.dist = min(14, max(2.5, distInicial / Float(g.scale)))
+            if manejando, let m = manejo {
+                if g.state == .began { distInicial = m.dist }
+                m.dist = min(14, max(2.5, distInicial / Float(g.scale))); return
+            }
+            guard let v = vista else { return }
+            switch g.state {
+            case .began: distInicial = dist; vel = .zero
+            case .changed:
+                // acerca hacia los dedos: el punto entre los dedos se queda quieto en la pantalla
+                let c = g.location(in: v), antes = suelo(c)
+                dist = min(Self.DMAX, max(Self.DMIN, distInicial / Float(g.scale))); distD = dist; aplicar()
+                if let a = antes, let b = suelo(c) { obj = limitar(obj + (a - b)); objD = obj; aplicar() }
+            default: break
+            }
         }
+        @MainActor @objc func rotar(_ g: UIRotationGestureRecognizer) {
+            if manejando, let m = manejo { m.giro -= Float(g.rotation); g.rotation = 0; return }
+            guard let v = vista else { return }
+            let c = g.location(in: v), antes = suelo(c)
+            giro -= Float(g.rotation); g.rotation = 0; giroD = giro; aplicar()
+            if let a = antes, let b = suelo(c) { obj = limitar(obj + (a - b)); objD = obj; aplicar() }
+        }
+        /// doble toque: acerca ahí (o se aleja si ya está cerca)
+        @MainActor @objc func dobleToque(_ g: UITapGestureRecognizer) {
+            guard !manejando, let v = vista, let p = suelo(g.location(in: v)) else { return }
+            volar(a: limitar(p), dist: dist > 12 ? 9 : 24)
+        }
+
         private var ultimoCalculo: TimeInterval = 0
         /// tamaño de la pantalla (se guarda desde el hilo principal; leerlo desde el de dibujo con sync trababa todo)
         var tamano = CGSize(width: 400, height: 870)
@@ -366,7 +443,7 @@ struct VistaSCN: UIViewRepresentable {
         }
 
         /// tocar el cuerpo de un agente o su escritorio lo elige
-        @objc func tocar(_ g: UITapGestureRecognizer) {
+        @MainActor @objc func tocar(_ g: UITapGestureRecognizer) {
             guard let v = vista else { return }
             let hits = v.hitTest(g.location(in: v), options: [.searchMode: SCNHitTestSearchMode.all.rawValue, .ignoreHiddenNodes: true])
             for h in hits {

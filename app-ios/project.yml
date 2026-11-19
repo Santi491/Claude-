@@ -42,7 +42,7 @@ targets:
       properties:
         CFBundleDisplayName: Cargo Brothers
         UILaunchScreen: {UIColorName: ""}
-        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
         UIUserInterfaceStyle: Dark
         NSSupportsLiveActivities: true
         NSFaceIDUsageDescription: Para confirmar que eres tú antes de aprobar o rechazar.

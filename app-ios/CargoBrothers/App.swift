@@ -10,6 +10,7 @@ let TAREA_FONDO = "com.cargobrothers.oficina.refresh"
 @main
 struct CargoBrothersApp: App {
     @StateObject private var store = Store.compartido
+    @UIApplicationDelegateAdaptor(Orientacion.self) private var orientacion
     @Environment(\.scenePhase) private var fase
     @AppStorage("tema_modo") private var modo = "sistema"
     @AppStorage("tema_acento") private var acento = "bronce"
