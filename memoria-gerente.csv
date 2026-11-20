@@ -74,3 +74,4 @@ id,fecha,hora,fuente,tipo,resumen,vence,estado,cerrado
 73,2026-11-18,20:17,2000,compromiso,Mañana 19/11: recordarle a Santi el reclamo a eBay de los 7700X (vence 26/11) y pedirle precio y fotos del 7700X,2026-11-19,cumplida,19/11 10:49: Recordado a Santi el 19/11 en el aviso de fin de ronda
 74,2026-11-19,10:49,ronda,compromiso,"Si Santi no decide el reclamo a eBay de los 7700X antes, volver a recordárselo el 23/11 (vence 26/11)",2026-11-23,abierta,
 75,2026-11-19,13:50,ronda,dato,"Etapas nuevas (Santi 19/11): 1 búsqueda de productos, 2 producto en camino (hoy), 3 vendiendo. Cambian solas con los pedidos y las ventas; Santi también la fija desde la app (etapa.csv, te llega un mensaje). Objetivos repartidos en objetivos.csv; ana-5 nuevo para la etapa 1.",,abierta,
+76,2026-11-19,20:16,2000,compromiso,Recordar a Santi el reclamo a eBay de los 7700X (vence 26/11) y avisar el resultado de la ronda de las 16:00 del 19/11,2026-11-20,abierta,
