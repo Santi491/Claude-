@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-20"
  },
- "actualizado": "2026-11-20 16:17",
+ "actualizado": "2026-11-20 16:18",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -23,9 +23,9 @@
    "hora": "16:17"
   },
   "pedidos": {
-   "estado": "trabajando",
-   "texto": "Rastreo de pedidos en camino",
-   "hora": "16:17"
+   "estado": "terminó",
+   "texto": "Sin cambios; reclamo eBay vence 26/11",
+   "hora": "16:18"
   }
  }
 }
