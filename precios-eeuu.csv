@@ -1233,7 +1233,7 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-20,Ryzen 5 5600,nuevo,139.80,0.00,real,eBay API; vendedor technological-trend 99.4%; (New) AMD Ryzen 5 5600 Vermeer Zen3 6-Core 12-Thread AM4 CPU,https://www.ebay.com/itm/178171159145
 2026-11-20,Ryzen 5 7600,nuevo,261.69,0.00,real,eBay API; vendedor nothingbutsavings 99.5%; AMD Ryzen 5 7600 6 Core 3.80GHz Socket AM5 OEM/Tray Processo,https://www.ebay.com/itm/206712855371
 2026-11-20,Ryzen 7 7800X3D,nuevo,314.99,0.00,real,"eBay API; vendedor luckyfootllc 99.5%; AMD Ryzen 7 7800X3D Processor (5 GHz, 8 Cores, 16 Threads, A",https://www.ebay.com/itm/860155999983
-2026-11-20,Ryzen 9 9950X,nuevo,389.00,16.12,real,eBay API; vendedor corelinker 98.1%; AMD Ryzen 9 9950X AM5 Desktop Processor - NEW- OEM Tray,https://www.ebay.com/itm/237193150488
+2026-11-20,Ryzen 9 9950X,nuevo,389.00,16.12,agotado,eBay API; vendedor corelinker 98.1%; AMD Ryzen 9 9950X AM5 Desktop Processor - NEW- OEM Tray; vendido o agotado al revisar a las 10:47,https://www.ebay.com/itm/237193150488
 2026-11-20,Intel Core i5-12400F,nuevo,127.99,0.00,real,"eBay API; vendedor gr_liquidators 99.6%; Intel Core I5 Core 12400f Desktop Processor 18m Cache, Up To",https://www.ebay.com/itm/206675761087
 2026-11-20,Intel Core i5-14400F,nuevo,152.99,0.00,real,eBay API; vendedor antonline 99.4%; Intel Core i5-14400F Desktop Processor,https://www.ebay.com/itm/126275456933
 2026-11-20,Intel Core Ultra 7 265K,nuevo,239.00,0.00,real,eBay API; vendedor bumperoffers 100.0%; ✴️ Intel Core Ultra 7 265K Processor CPU LGA1851 Socket - NE,https://www.ebay.com/itm/287733023578
@@ -1266,3 +1266,4 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-20,Ryzen 5 9600X,usado,149.99,19.99,real,eBay API; vendedor diaz7788 100.0%; AMD Ryzen  5 9600X,https://www.ebay.com/itm/127803717729
 2026-11-20,Ryzen 5 7600X,usado,139.99,0.00,real,"eBay API; vendedor g-electronic 99.7%; AMD Ryzen 5 7600X Desktop Processor 4.7GHz,6-Core Socket AM5",https://www.ebay.com/itm/327094285155
 2026-11-20,Ryzen 9 9950X3D,usado,512.99,0.00,real,eBay API; vendedor paymore_kennesaw 99.2%; AMD Ryzen 9 9950X3D 4.30GHz 16 Core 100-000000719 32 Thread ,https://www.ebay.com/itm/198750337032
+2026-11-20,Ryzen 9 9950X,nuevo,489.99,0.00,real,"eBay API; vendedor nycbst 99.7%; AMD Ryzen 9 9950X (16-Core, 32-Thread, 4.3 GHz, 5.7 GHz Max)",https://www.ebay.com/itm/800893981003

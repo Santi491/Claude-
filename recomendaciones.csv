@@ -11,3 +11,6 @@ fecha,hora,orden,texto,por_que,accion
 2026-11-19,10:49,1,Decide si reclamamos a eBay por los 7700X: el plazo vence el 26/11,Quedan 7 días y hoy no hay reclamo abierto; después no hay vuelta atrás,pedido
 2026-11-19,10:49,2,Fija el precio del 7700X y pasa las fotos para publicar,"El Analista sugiere Bs 3.300 y bajar 100 por semana (piso 2.930); el suelto de 3.100 ya no aparece, solo el sellado a 4.000",venta
 2026-11-19,10:49,3,Mira el segundo pedido: SSD 2TB y 7800X3D,"SSD 2TB deja 39,6 % (ojo, Gen3 sin marca); 7800X3D 26,6 % y aguanta el peor caso",compra
+2026-11-20,10:53,1,Decide si reclamamos a eBay por los 7700X: el plazo vence el 26/11,Quedan 6 días y no hay reclamo abierto; después no hay vuelta atrás,pedido
+2026-11-20,10:53,2,Fija el precio del 7700X y pasa las fotos para publicar,El suelto de 3.100 salió vendido; solo queda el sellado a 4.000 y el Analista sugiere Bs 3.300,venta
+2026-11-20,10:53,3,Mira el segundo pedido con calma: el 9600X y el SSD 2TB,"El 9600X deja 5,2 % y el SSD 2TB 34,8 %; son los menos firmes hasta confirmar garantía y mínimo de 3 piezas",compra

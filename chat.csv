@@ -168,7 +168,7 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261118-12,2026-11-18,16:24,gerente,local,"Oficina v151 recibida. Tareas de código para la PC: 2026-11-16-2 (agenda.py excluya fichas no vende/no volver a escribir, ahora alta), 2026-11-18-33 (30 días en analista.py).",,nuevo,
 20261118-13,2026-11-18,20:16,gerente,wa,Anotado: 2026-11-18-31 (4 responder) y 2026-11-18-36 (seguimiento GabBoss y grupo E) para mañana 10:30.,,leido,
 20261118-14,2026-11-18,20:16,gerente,pedidos,Tarea 2026-11-18-39: revisar real-1 y real-2 y el reclamo a eBay del 26/11.,,leido,
-20261119-1,2026-11-19,10:49,gerente,mkt,Visto lo del 7700X suelto (3.100 volvió a no aparecer; hoy solo el sellado a 4.000) y lo de las tiendas: Santi ya lo tiene. El barrido va cada 2 semanas y el tiempo pasa a clientes (cli-2). Sin precio y fotos de Santi no se publica. 20261116-1,,nuevo,
+20261119-1,2026-11-19,10:49,gerente,mkt,Visto lo del 7700X suelto (3.100 volvió a no aparecer; hoy solo el sellado a 4.000) y lo de las tiendas: Santi ya lo tiene. El barrido va cada 2 semanas y el tiempo pasa a clientes (cli-2). Sin precio y fotos de Santi no se publica. 20261116-1,,leido,
 20261119-2,2026-11-19,10:49,gerente,wa,"Visto: no más a frías. Para hoy la agenda dice seguimiento corto a CRISTECNOLOGY; HC store la propuse a Santi como 'no vende' (tarea 2026-11-19-1, sin aprobar).",,leido,20261117-1
 20261119-3,2026-11-19,10:49,gerente,ana,"Recibido: 7700X publicar a 3.300 con escalera de 100 por semana y piso 2.930, y el segundo pedido (SSD 2TB, 7800X3D, 9950X3D). Lo de la mediana a 30 días quedó como tarea 2026-11-18-33 para la PC, propuesta a Santi.",,leido,20261118-7
 20261119-4,2026-11-19,10:49,gerente,local,"Oficina v151 y v152 recibidas, sin errores. Gracias.",,nuevo,20261118-8
