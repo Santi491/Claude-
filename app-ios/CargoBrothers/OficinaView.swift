@@ -295,7 +295,7 @@ struct VistaSCN: UIViewRepresentable {
         var obj = SIMD2<Float>(-1, 4), dist: Float = 29, giro: Float = 0.53
         var objD = SIMD2<Float>(-1, 4), distD: Float = 29, giroD: Float = 0.53
         var vel = SIMD2<Float>(0, 0)
-        private var link: CADisplayLink?, ultimoT: CFTimeInterval = 0
+        private var link: CADisplayLink?, ultimoT: CFTimeInterval = 0, ultimoReloj = 0
         static let DMIN: Float = 4.5, DMAX: Float = 46
         @MainActor var apaisado: Bool { guard let b = vista?.bounds, b.width > 0 else { return false }; return b.width > b.height }
         private var eraApaisado: Bool?
@@ -315,6 +315,9 @@ struct VistaSCN: UIViewRepresentable {
             let dt = Float(ultimoT == 0 ? 1.0 / 60 : min(0.05, l.timestamp - ultimoT)); ultimoT = l.timestamp
             // todo en el mismo cuadro: primero los agentes (y la cámara de Santi), después la cámara, al final las etiquetas
             Vivo3D.vida?.paso(l.timestamp)
+            if Int(l.timestamp) % 20 == 0, Int(l.timestamp) != ultimoReloj, let r = vista?.scene?.rootNode.childNode(withName: "relojes", recursively: false) {
+                ultimoReloj = Int(l.timestamp); Relojes3D.actualizar(r)
+            }
             defer { etiquetas() }
             guard !manejando else { return }
             if simd_length(vel) > 0.01 { objD = limitar(objD + vel * dt); vel *= exp(-dt * 3.2) } else { vel = .zero }

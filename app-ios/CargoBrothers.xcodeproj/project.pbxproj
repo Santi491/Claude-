@@ -19,6 +19,7 @@
 		314806A88F36DBF1740EE171 /* PreciosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB966AC3E3A469EA59DF573A /* PreciosView.swift */; };
 		36DCC1A5561A59AC5834F4E8 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178CBA57C8D6EBA5763BB7A /* Extras.swift */; };
 		39C530296CE27EC849C77BF4 /* PedidosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B85EC49E114571E35BAB5B5 /* PedidosView.swift */; };
+		3AA15763FD404AEEBB843717 /* Relojes3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFD7DD7762AC6F754BBFEC /* Relojes3D.swift */; };
 		3B28B35A80139004BFDCD06D /* OficinaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA99B998CF8A3ED19B22031 /* OficinaView.swift */; };
 		3D93E0F03A86622F2B3DF443 /* HoyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59127BEB2EE9C2570661CC34 /* HoyView.swift */; };
 		459BA0C202AE10892C268E02 /* Manejo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B2953F13E92D943008DFC /* Manejo.swift */; };
@@ -44,6 +45,7 @@
 		B71A6E92DBFF4D45EA34DBF9 /* cb-oferta.caf in Resources */ = {isa = PBXBuildFile; fileRef = EFF1328E1C606630139551CD /* cb-oferta.caf */; };
 		B8644EEA6FED254B50CA4E3A /* Personas3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012048F7428B9A01717E2 /* Personas3D.swift */; };
 		B9BAE4EB13071DA0EED4BEC1 /* cb-pedido.caf in Resources */ = {isa = PBXBuildFile; fileRef = AC7B9B7B601AF6355149CE55 /* cb-pedido.caf */; };
+		C3F96E9156DDB072B5DC4DFE /* Relojes3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFD7DD7762AC6F754BBFEC /* Relojes3D.swift */; };
 		C6876863A89487D4F9E0C341 /* Acciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83D2B23602459B6C36474D /* Acciones.swift */; };
 		CDB9FFD705AC5F63CB037211 /* Comportamiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF81893D5F19E454303E8E1 /* Comportamiento.swift */; };
 		CF94B714D369672CEE64E380 /* Calidad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5D8357A645921BC6016B15 /* Calidad.swift */; };
@@ -102,6 +104,7 @@
 		6B85EC49E114571E35BAB5B5 /* PedidosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosView.swift; sourceTree = "<group>"; };
 		7D03DF6ACA1FC4F697264724 /* Notificaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificaciones.swift; sourceTree = "<group>"; };
 		853087D9A16FEB38BD9EA645 /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
+		89CFD7DD7762AC6F754BBFEC /* Relojes3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relojes3D.swift; sourceTree = "<group>"; };
 		8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9178CBA57C8D6EBA5763BB7A /* Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
 		9236FFED311223CA063EA75F /* Oficina3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oficina3D.swift; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 				A331833B9E75180E015CF4FC /* Muebles3D.swift */,
 				9236FFED311223CA063EA75F /* Oficina3D.swift */,
 				24A012048F7428B9A01717E2 /* Personas3D.swift */,
+				89CFD7DD7762AC6F754BBFEC /* Relojes3D.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -357,6 +361,7 @@
 				21BA8F6403F4D24BBDCE042C /* Muebles3D.swift in Sources */,
 				E378004B54AFE601200B489B /* Oficina3D.swift in Sources */,
 				7B461266F228387F9383D1F7 /* Personas3D.swift in Sources */,
+				3AA15763FD404AEEBB843717 /* Relojes3D.swift in Sources */,
 				050F0AED04949A6C445E6F64 /* Widgets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +397,7 @@
 				39C530296CE27EC849C77BF4 /* PedidosView.swift in Sources */,
 				B8644EEA6FED254B50CA4E3A /* Personas3D.swift in Sources */,
 				314806A88F36DBF1740EE171 /* PreciosView.swift in Sources */,
+				C3F96E9156DDB072B5DC4DFE /* Relojes3D.swift in Sources */,
 				22BAB56C8D0DB99F575D74B8 /* VentaView.swift in Sources */,
 				EB0B203E00434695642F5CFF /* VentasView.swift in Sources */,
 			);
