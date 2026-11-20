@@ -313,3 +313,7 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-19,Intel Core i5-13400,cpu,2300,Bs,2300,nuevo,MSR Computers,web,no,Web 19/11; MSR no vende sueltos (referencia); la web no muestra stock
 2026-11-19,Apacer Nox DDR5 32GB 5200,ram,5560,Bs,5560,nuevo,Punto Tecnológico / Supermall,web,sí,Web 19/11; 5200 MHz (el enlace dice 6000: por confirmar); Disponible; también versión Bs 6.010 stock bajo
 2026-11-20,Ryzen 7 7700X3D,cpu,4400,Bs,4400,nuevo,NPC Technology,whatsapp,sí,WhatsApp 18/11 10:49; sellado con garantía 3 meses; en stock
+2026-11-20,Ryzen 7 9800X3D,cpu,6100,Bs,6100,nuevo/sin dato,Marketplace Cochabamba (particular),marketplace,sí,Ronda tarde 20/11; 6.500 tachado
+2026-11-20,Ryzen 7 5700X,cpu,2550,Bs,2550,nuevo/sin dato,Marketplace Cochabamba (particular),marketplace,sí,Ronda tarde 20/11; otros a 2.540 y 2.560
+2026-11-20,Ryzen 7 8700G,cpu,3450,Bs,3450,nuevo/sin dato,Marketplace Cochabamba (particular),marketplace,sí,Ronda tarde 20/11
+2026-11-20,Ryzen 7 5700G,cpu,2780,Bs,2780,nuevo/sin dato,Marketplace Cochabamba (particular),marketplace,sí,Ronda tarde 20/11

@@ -384,3 +384,22 @@ fecha,producto,fuente,ciudad,anuncios,nuevos,desaparecidos,precio_min_bs,precio_
 2026-11-20,Ryzen 5 9600X,marketplace,Cochabamba,1,0,0,2900,2900,"en zona solo el sellado caja a 2.900 (Quillacollo); más 1 a 2.680 en Tiquipaya (no cuenta) y 1 caja a Bs 2 de relleno; los de 2.450, 2.500 y 2.770 del 18/11 no salieron (conteo parcial, no confirmado)"
 2026-11-20,Ryzen 5 7600X,marketplace,Cochabamba,0,0,0,,,ninguno suelto; sin señal
 2026-11-20,Ryzen 9 9950X3D,marketplace,Cochabamba,1,0,0,9200,9200,"1 suelto a 9.200 (antes 9.700 tachado: baja de precio, mismo anuncio) y 1 OEM a Bs 1 de relleno; sin demanda confirmada"
+2026-11-20,Ryzen 5 5600,marketplace,Cochabamba,0,0,0,,,"ronda tarde: ninguno suelto (solo PC armadas, 5600X/5600G); sin señal"
+2026-11-20,Ryzen 7 5700X3D,marketplace,Cochabamba,0,0,0,,,ronda tarde: ninguno suelto (5800X3D a Bs 1 de relleno); sin señal
+2026-11-20,Ryzen 5 7600,marketplace,Cochabamba,0,0,0,,,ronda tarde: ninguno suelto; sin señal
+2026-11-20,Ryzen 7 7800X3D,marketplace,Cochabamba,4,1,0,4350,4600,"ronda tarde: 4 vistos: 4.350 nuevo, 4.400, 4.800 sellado y 5.190 (este reapareció: no estaba en la ronda de la mañana); conteo parcial por la búsqueda; sin demanda confirmada"
+2026-11-20,Ryzen 9 9950X,marketplace,Cochabamba,0,0,0,,,ronda tarde: ninguno suelto (solo OEM a Bs 1 de relleno); sin señal
+2026-11-20,Intel Core i5-12400F,marketplace,Cochabamba,0,0,0,,,ronda tarde: solo 1 a Bs 1 (relleno) y combos con placa (no cuentan); sin precio útil
+2026-11-20,Intel Core i5-13400,marketplace,Cochabamba,0,0,0,,,ronda tarde: ninguno (solo generaciones viejas); sin señal
+2026-11-20,Intel Core i5-14400F,marketplace,Cochabamba,0,0,0,,,ronda tarde: ninguno (el i5 14400 sin F a 2.700 es otro modelo); sin señal
+2026-11-20,Intel Core Ultra 7 265K,marketplace,Cochabamba,1,0,0,4200,4200,ronda tarde: 1 con precio en el título (4.200 caja sellada; el campo dice Gratis) y 1 a Bs 1 de relleno; igual que la mañana; sin demanda confirmada
+2026-11-20,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,marketplace,Cochabamba,0,0,0,,,ronda tarde: ningún kit 2x16 5600 Corsair; solo módulos sueltos 16GB; sin precio útil
+2026-11-20,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,marketplace,Cochabamba,0,0,0,,,ronda tarde: ningún kit 2x16 6000 Corsair; solo módulos sueltos de 16GB (Corsair RS 6000 a 3.300); sin precio útil
+2026-11-20,RAM DDR4 16GB (2x8) 3200,marketplace,Cochabamba,2,0,1,1300,1300,ronda tarde: 1.300 Fury Beast 2x8 y 1.300 Billon Reservoir 16GB-3200; el kit Vengeance de 1.499 de la mañana no salió (no confirmado); señal pequeña
+2026-11-20,SSD NVMe 1TB,marketplace,Cochabamba,5,2,1,1300,1810,"ronda tarde: Crucial P3 1.300, Kingston NV3 1.610 y 1.810, Lexar NM790 con disipador 2.500 (reapareció) y Samsung 9100 PRO 3.050; el Crucial de 1.250 de la mañana no salió (no confirmado); interés medio, sin demanda confirmada"
+2026-11-20,SSD NVMe 2TB,marketplace,Cochabamba,1,1,0,5500,5500,ronda tarde: 1 interno: Samsung 9100 2TB a 5.500 (nuevo en la lista; en la mañana no había ninguno); sin demanda confirmada
+2026-11-20,Ryzen 7 7700X,marketplace,Cochabamba,1,0,0,4000,4000,"ronda tarde: solo el sellado a 4.000 (disponible, en línea desde antes del 20/10; 0 desaparecidos); el suelto de 3.100 sigue Vendido; el PC con 7700X + RTX 3080 (15.800) tambien Vendido, no cuenta como CPU"
+2026-11-20,Ryzen 5 7500F,marketplace,Cochabamba,0,0,0,,,ronda tarde: ninguno suelto; sin señal
+2026-11-20,Ryzen 5 9600X,marketplace,Cochabamba,3,2,1,2450,2500,"ronda tarde: 3 en zona: 2.450 (chip), 2.500 y 2.770 (oferta); el sellado de 2.900 de Quillacollo de la mañana no salió (no confirmado); más 1 a 2.680 en Tiquipaya (no cuenta) y 1 caja a Bs 2 de relleno; conteo parcial"
+2026-11-20,Ryzen 5 7600X,marketplace,Cochabamba,0,0,0,,,ronda tarde: ninguno suelto; sin señal
+2026-11-20,Ryzen 9 9950X3D,marketplace,Cochabamba,1,0,0,9200,9200,"ronda tarde: 1 suelto a 9.200 (9.700 tachado, igual que la mañana) y 2 de relleno (Gratis / Bs 1); sin demanda confirmada"
