@@ -5,7 +5,7 @@
   "desde": "10:36",
   "fecha": "2026-11-20"
  },
- "actualizado": "2026-11-20 10:49",
+ "actualizado": "2026-11-20 10:50",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -23,9 +23,9 @@
    "hora": "10:49"
   },
   "ana": {
-   "estado": "trabajando",
-   "texto": "Recalcular análisis con precios nuevos",
-   "hora": "10:49"
+   "estado": "terminó",
+   "texto": "Recalculado; 9950X y DDR4 pasan a no traer",
+   "hora": "10:50"
   },
   "fin": {
    "estado": "terminó",
