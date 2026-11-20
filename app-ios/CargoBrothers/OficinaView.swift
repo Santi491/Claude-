@@ -22,7 +22,7 @@ struct OficinaView: View {
         ZStack(alignment: .top) {
             Color(red: 0.07, green: 0.078, blue: 0.09).ignoresSafeArea()
             if let escena {
-                VistaSCN(escena: escena, vista: vista, store: store, enfocar: manejando ? nil : elegido, manejo: santi, manejando: manejando) { elegido = $0 }.ignoresSafeArea()
+                VistaSCN(escena: escena, vista: vista, store: store, enfocar: manejando ? nil : elegido, manejo: santi, manejando: manejando, pausado: escritorioDemo || lugar != nil) { elegido = $0 }.ignoresSafeArea()
             }
             else if let error { Text(error).foregroundStyle(.white).padding() }
             else { ProgressView("Armando la oficina…").tint(.white).foregroundStyle(.white) }
@@ -260,6 +260,8 @@ struct VistaSCN: UIViewRepresentable {
     var enfocar: String?
     var manejo: Manejo?
     var manejando: Bool
+    /// con una pantalla encima (la computadora del Gerente, el resumen…) la oficina deja de dibujarse: todo va más fluido
+    var pausado: Bool = false
     var elegir: (String) -> Void
 
     static let objetivo = SCNVector3(-1, 0, 4)
@@ -291,6 +293,7 @@ struct VistaSCN: UIViewRepresentable {
     func updateUIView(_ v: SCNView, context: Context) {
         let co = context.coordinator
         co.elegir = elegir; co.manejo = manejo
+        if co.pausado != pausado { co.pausado = pausado; v.isPlaying = !pausado; v.scene?.isPaused = pausado }
         if v.bounds.size.width > 0 { co.tamano = v.bounds.size }
         if manejando != co.manejando {
             co.manejando = manejando
@@ -309,7 +312,7 @@ struct VistaSCN: UIViewRepresentable {
     func makeCoordinator() -> Coord { Coord() }
 
     final class Coord: NSObject, SCNSceneRendererDelegate, UIGestureRecognizerDelegate {
-        var ultima = 0; var enfocado: String?; var manejando = false
+        var ultima = 0; var enfocado: String?; var manejando = false; var pausado = false
         weak var vista: SCNView?
         weak var store: Store?
         var elegir: ((String) -> Void)?
@@ -337,6 +340,7 @@ struct VistaSCN: UIViewRepresentable {
         @MainActor @objc func tic(_ l: CADisplayLink) {
             guard vista?.window != nil else { if vista == nil { l.invalidate() }; return }
             let dt = Float(ultimoT == 0 ? 1.0 / 60 : min(0.05, l.timestamp - ultimoT)); ultimoT = l.timestamp
+            if pausado { return }
             // todo en el mismo cuadro: primero los agentes (y la cámara de Santi), después la cámara, al final las etiquetas
             Vivo3D.vida?.paso(l.timestamp)
             if Int(l.timestamp) % 20 == 0, Int(l.timestamp) != ultimoReloj, let r = vista?.scene?.rootNode.childNode(withName: "relojes", recursively: false) {

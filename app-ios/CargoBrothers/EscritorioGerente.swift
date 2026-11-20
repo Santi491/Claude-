@@ -25,7 +25,6 @@ struct EscritorioGerente: View {
     @State private var inicio = false
     @State private var buscar = ""
     @State private var zTope: Double = 1
-    @GestureState private var arrastre: (String, CGSize)? = nil
     @State private var area = CGSize(width: 874, height: 402)
 
     var body: some View {
@@ -145,36 +144,14 @@ struct EscritorioGerente: View {
     // ---------- ventanas ----------
     func ventana(_ v: Ventana, area: CGSize) -> some View {
         let a = Self.apps.first { $0.id == v.id }!
-        let barraAlto: CGFloat = 54
-        let tam = v.max ? CGSize(width: area.width, height: area.height - barraAlto) : v.tam
-        let desp = arrastre?.0 == v.id ? arrastre!.1 : .zero
-        let pos = v.max ? CGPoint(x: area.width / 2, y: (area.height - barraAlto) / 2) : CGPoint(x: v.pos.x + desp.width, y: v.pos.y + desp.height)
-        return VStack(spacing: 0) {
-            // barra de título: se arrastra; doble toque maximiza
-            HStack(spacing: 8) {
-                Image(systemName: a.icono).font(.system(size: 12, weight: .bold)).foregroundStyle(.white).frame(width: 22, height: 22).background(a.color, in: RoundedRectangle(cornerRadius: 6))
-                Text(a.nombre).font(.system(size: 13, weight: .semibold))
-                Spacer()
-                boton("minus") { cambiar(v.id) { $0.min = true } }
-                boton(v.max ? "arrow.down.right.and.arrow.up.left" : "square") { cambiar(v.id) { $0.max.toggle() } }
-                boton("xmark", rojo: true) { ventanas.removeAll { $0.id == v.id } }
-            }
-            .padding(.leading, 12).padding(.trailing, 6).frame(height: 40)
-            .background(.thinMaterial)
-            .contentShape(Rectangle())
-            .onTapGesture(count: 2) { cambiar(v.id) { $0.max.toggle() } }
-            .gesture(DragGesture().updating($arrastre) { val, st, _ in st = (v.id, val.translation) }
-                .onEnded { val in cambiar(v.id) { $0.pos.x += val.translation.width; $0.pos.y += val.translation.height; $0.max = false }; acomodar() })
+        return VentanaVista(v: v, app: a, area: area,
+                            minimizar: { cambiar(v.id) { $0.min = true } },
+                            maximizar: { cambiar(v.id) { $0.max.toggle() } },
+                            cerrar: { ventanas.removeAll { $0.id == v.id } },
+                            alFrente: { alFrente(v.id) },
+                            mover: { t in cambiar(v.id) { $0.pos.x += t.width; $0.pos.y += t.height; $0.max = false }; acomodar() }) {
             contenido(v.id)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Tema.fondo)
         }
-        .frame(width: tam.width, height: tam.height)
-        .clipShape(RoundedRectangle(cornerRadius: v.max ? 0 : 14, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: v.max ? 0 : 14, style: .continuous).stroke(.white.opacity(0.12)))
-        .shadow(color: .black.opacity(0.5), radius: 24, y: 12)
-        .position(pos)
-        .onTapGesture { alFrente(v.id) }
         .transition(.scale(scale: 0.88).combined(with: .opacity))
     }
     /// lo que muestra cada app (las mismas de la oficina web, cada una con lo suyo)
@@ -301,5 +278,57 @@ struct EscritorioGerente: View {
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).stroke(.white.opacity(0.1)))
         .shadow(color: .black.opacity(0.5), radius: 30, y: 12)
+    }
+}
+
+
+/// Una ventana del escritorio. El arrastre vive acá adentro (solo se redibuja esta ventana mientras se mueve) y se mide
+/// contra la pantalla, no contra la barra que se mueve con el dedo (eso hacía que la ventana parpadeara).
+struct VentanaVista<C: View>: View {
+    let v: EscritorioGerente.Ventana
+    let app: EscritorioGerente.AppDef
+    let area: CGSize
+    var minimizar: () -> Void, maximizar: () -> Void, cerrar: () -> Void, alFrente: () -> Void, mover: (CGSize) -> Void
+    @ViewBuilder var contenido: C
+    @GestureState private var desp: CGSize = .zero
+
+    var body: some View {
+        let barraAlto: CGFloat = 54
+        let tam = v.max ? CGSize(width: area.width, height: area.height - barraAlto) : v.tam
+        let pos = v.max ? CGPoint(x: area.width / 2, y: (area.height - barraAlto) / 2) : v.pos
+        VStack(spacing: 0) {
+            HStack(spacing: 8) {
+                Image(systemName: app.icono).font(.system(size: 12, weight: .bold)).foregroundStyle(.white).frame(width: 22, height: 22)
+                    .background(app.color, in: RoundedRectangle(cornerRadius: 6))
+                Text(app.nombre).font(.system(size: 13, weight: .semibold))
+                Spacer()
+                boton("minus", minimizar)
+                boton(v.max ? "arrow.down.right.and.arrow.up.left" : "square", maximizar)
+                boton("xmark", cerrar)
+            }
+            .padding(.leading, 12).padding(.trailing, 6).frame(height: 40)
+            .background(Color(white: 0.16))
+            .contentShape(Rectangle())
+            .onTapGesture(count: 2, perform: maximizar)
+            .gesture(DragGesture(minimumDistance: 2, coordinateSpace: .global)
+                .updating($desp) { val, st, t in t.animation = nil; st = val.translation }
+                .onEnded { val in mover(val.translation) })
+            contenido
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Tema.fondo)
+                .allowsHitTesting(desp == .zero)
+        }
+        .frame(width: tam.width, height: tam.height)
+        .clipShape(RoundedRectangle(cornerRadius: v.max ? 0 : 14, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: v.max ? 0 : 14, style: .continuous).stroke(.white.opacity(0.12)))
+        .compositingGroup()
+        .shadow(color: .black.opacity(0.45), radius: 20, y: 10)
+        .position(pos)
+        .offset(v.max ? .zero : desp)
+        .simultaneousGesture(TapGesture().onEnded(alFrente))
+    }
+    func boton(_ ic: String, _ a: @escaping () -> Void) -> some View {
+        Button(action: a) { Image(systemName: ic).font(.system(size: 11, weight: .bold)).frame(width: 34, height: 28).foregroundStyle(.white.opacity(0.85)) }
+            .buttonStyle(.plain)
     }
 }
