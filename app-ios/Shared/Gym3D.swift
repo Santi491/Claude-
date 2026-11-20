@@ -200,3 +200,95 @@ enum Gym3D {
         return g
     }
 }
+
+/// Barra de café con realismo (Santi, 19/11: "se ve de juguete"): mostrador de mármol cálido con canto de bronce y cubierta
+/// de mármol negro, máquina de espresso de acero con dos grupos, portafiltros, manómetro y vaporizador, molinillo,
+/// tazas con platito, repisa de nogal con luz y frascos, y 3 banquetas tapizadas con apoyapiés de bronce. Mismo lugar.
+enum Cafe3D {
+    typealias M = Muebles3D
+    typealias D = Detalle3D
+    static let x: Float = 23.2, z: Float = -9.55
+    static let acero = D.pbr(0.78, 0.79, 0.81, rough: 0.18, metal: 1)
+    static let marmolCalido = D.pbr(0.86, 0.83, 0.78, rough: 0.18, laca: 0.6)
+    static let nogal = D.pbr(0.33, 0.2, 0.11, rough: 0.5, laca: 0.25)
+    static let ceramica = D.pbr(0.95, 0.95, 0.94, rough: 0.25, laca: 0.4)
+    static let negro = D.pbr(0.03, 0.03, 0.035, rough: 0.4, metal: 0.2)
+
+    static func caja(_ w: CGFloat, _ h: CGFloat, _ l: CGFloat, r: CGFloat = 0.01, _ m: SCNMaterial, _ px: Float, _ py: Float, _ pz: Float, _ p: SCNNode) -> SCNNode {
+        let n = D.caja(w, h, l, r: r, m, px, py, pz, p); n.castsShadow = true; return n
+    }
+    static func cil(_ r: CGFloat, _ h: CGFloat, _ m: SCNMaterial, _ px: Float, _ py: Float, _ pz: Float, _ p: SCNNode, lados: Int = 32) -> SCNNode {
+        let g = SCNCylinder(radius: r, height: h); g.radialSegmentCount = lados; g.materials = [m]
+        let n = SCNNode(geometry: g); n.position = SCNVector3(px, py, pz); n.castsShadow = true; p.addChildNode(n); return n
+    }
+    /// taza con su platito y café adentro
+    static func taza(_ px: Float, _ py: Float, _ pz: Float, _ p: SCNNode) {
+        _ = cil(0.065, 0.008, ceramica, px, py + 0.004, pz, p)
+        let t = SCNTube(innerRadius: 0.034, outerRadius: 0.04, height: 0.06); t.radialSegmentCount = 24; t.materials = [ceramica]
+        let tn = SCNNode(geometry: t); tn.position = SCNVector3(px, py + 0.04, pz); p.addChildNode(tn)
+        _ = cil(0.036, 0.004, ceramica, px, py + 0.012, pz, p)
+        _ = cil(0.034, 0.002, D.pbr(0.18, 0.09, 0.04, rough: 0.2, laca: 0.6), px, py + 0.06, pz, p, lados: 20)
+        let asa = SCNTorus(ringRadius: 0.016, pipeRadius: 0.004); asa.materials = [ceramica]
+        let an = SCNNode(geometry: asa); an.position = SCNVector3(px + 0.045, py + 0.04, pz); an.eulerAngles.x = .pi / 2; p.addChildNode(an)
+    }
+
+    static func barra() -> SCNNode {
+        let b = SCNNode(); b.name = "cafe"
+        // mostrador
+        M.pieza(M.mullido(3.6, 0.96, 0.62, r: 0.02, infla: 0), marmolCalido, x, 0.5, z, b)
+        for k in 0..<12 { _ = caja(0.012, 0.8, 0.01, r: 0.003, D.pbr(0.7, 0.66, 0.6, rough: 0.3), x - 1.65 + Float(k) * 0.3, 0.5, z + 0.312, b) }   // ranuras verticales
+        _ = caja(3.66, 0.035, 0.7, r: 0.006, D.bronce, x, 0.82, z, b)
+        let tapa = caja(3.72, 0.05, 0.74, r: 0.012, D.marmolNegro, x, 1.03, z, b); _ = tapa
+        _ = caja(3.5, 0.06, 0.04, r: 0.01, negro, x, 0.03, z + 0.29, b)   // zócalo
+        let top: Float = 1.055
+        // máquina de espresso: cuerpo de acero, panel negro, dos grupos con portafiltros, bandeja, manómetro y vaporizador
+        let mx = x - 1.05, mz = z - 0.08
+        M.pieza(M.mullido(0.68, 0.42, 0.46, r: 0.04, infla: 0), acero, mx, top + 0.25, mz, b)
+        M.pieza(M.mullido(0.6, 0.12, 0.02, r: 0.01, infla: 0), negro, mx, top + 0.39, mz + 0.235, b)
+        for gx: Float in [-0.15, 0.15] {
+            _ = cil(0.045, 0.06, acero, mx + gx, top + 0.27, mz + 0.24, b)
+            _ = cil(0.04, 0.03, negro, mx + gx, top + 0.225, mz + 0.25, b)
+            Muebles3D.tubo(SIMD3(mx + gx, top + 0.225, mz + 0.27), SIMD3(mx + gx, top + 0.2, mz + 0.42), 0.012, negro, b, lados: 10)   // mango
+            taza(mx + gx, top + 0.05, mz + 0.25, b)
+        }
+        _ = caja(0.6, 0.02, 0.16, r: 0.004, negro, mx, top + 0.045, mz + 0.27, b)          // bandeja de goteo
+        let man = cil(0.035, 0.012, ceramica, mx, top + 0.39, mz + 0.248, b); man.eulerAngles.x = .pi / 2   // manómetro
+        Muebles3D.tubo(SIMD3(mx + 0.3, top + 0.35, mz + 0.2), SIMD3(mx + 0.36, top + 0.12, mz + 0.3), 0.008, acero, b, lados: 8)   // vaporizador
+        for k in 0..<4 { taza(mx - 0.22 + Float(k) * 0.14, top + 0.465, mz - 0.08, b) }     // tazas calentándose arriba
+        // molinillo: base negra, cuerpo de acero y tolva con granos
+        let gx = x - 0.45
+        _ = caja(0.16, 0.24, 0.2, r: 0.03, negro, gx, top + 0.12, z - 0.1, b)
+        _ = cil(0.06, 0.06, acero, gx, top + 0.27, z - 0.1, b)
+        let tol = SCNCone(topRadius: 0.075, bottomRadius: 0.045, height: 0.16); tol.radialSegmentCount = 24
+        let vidrio = D.pbr(0.25, 0.15, 0.08, rough: 0.1, laca: 0.9); tol.materials = [vidrio]
+        let tn = SCNNode(geometry: tol); tn.position = SCNVector3(gx, top + 0.38, z - 0.1); b.addChildNode(tn)
+        // tazas listas para servir y azucarera
+        for k in 0..<3 { taza(x - 0.1 + Float(k) * 0.16, top, z + 0.12, b) }
+        _ = cil(0.04, 0.09, ceramica, x + 0.45, top + 0.045, z + 0.05, b); _ = cil(0.042, 0.012, acero, x + 0.45, top + 0.096, z + 0.05, b)
+        // repisa de nogal con luz cálida y frascos
+        _ = caja(3.2, 0.045, 0.3, r: 0.006, nogal, x, 1.95, -9.84, b)
+        let luz = SCNMaterial(); luz.lightingModel = .constant; luz.diffuse.contents = CGColor(srgbRed: 1, green: 0.85, blue: 0.6, alpha: 1)
+        let l = caja(3.1, 0.008, 0.02, r: 0, luz, x, 1.924, -9.72, b); l.castsShadow = false
+        for k in 0..<7 {
+            let fx = x - 1.3 + Float(k) * 0.43, alto = CGFloat(0.16 + Double(k % 3) * 0.04)
+            let f = SCNCylinder(radius: 0.055, height: alto); f.radialSegmentCount = 20; f.materials = [vidrio]
+            let fn = SCNNode(geometry: f); fn.position = SCNVector3(fx, 1.972 + Float(alto) / 2, -9.84); b.addChildNode(fn)
+            _ = cil(0.057, 0.02, nogal, fx, 1.972 + Float(alto) + 0.01, -9.84, b)
+        }
+        // banquetas: asiento tapizado redondeado, pie de bronce, apoyapiés y base
+        for d: Float in [-1, 0, 1] {
+            let sx = x + d, sz = z + 0.75
+            _ = cil(0.18, 0.06, M.cognac, sx, 0.79, sz, b, lados: 40)
+            let borde = SCNTorus(ringRadius: 0.18, pipeRadius: 0.032); borde.ringSegmentCount = 40; borde.materials = [M.cognac]
+            let bn = SCNNode(geometry: borde); bn.position = SCNVector3(sx, 0.79, sz); b.addChildNode(bn)
+            _ = cil(0.17, 0.02, M.cognacOscuro, sx, 0.826, sz, b, lados: 40)
+            Muebles3D.tubo(SIMD3(sx, 0.76, sz), SIMD3(sx, 0.02, sz), 0.022, D.bronce, b)
+            let apo = SCNTorus(ringRadius: 0.17, pipeRadius: 0.012); apo.ringSegmentCount = 36; apo.materials = [D.bronce]
+            let an = SCNNode(geometry: apo); an.position = SCNVector3(sx, 0.3, sz); b.addChildNode(an)
+            for k in 0..<4 { let a = Float(k) * .pi / 2; Muebles3D.tubo(SIMD3(sx, 0.3, sz), SIMD3(sx + 0.17 * sin(a), 0.3, sz + 0.17 * cos(a)), 0.008, D.bronce, b, lados: 8) }
+            _ = cil(0.2, 0.025, D.bronce, sx, 0.0125, sz, b, lados: 40)
+        }
+        b.enumerateHierarchy { n, _ in n.castsShadow = true }
+        return b
+    }
+}

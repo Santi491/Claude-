@@ -267,5 +267,6 @@ extension Muebles3D {
         sillas.append((cx - 3.25, cz, -pi / 2)); sillas.append((cx + 3.25, cz, pi / 2))
         for (x, z, rot) in sillas { let s = sillaJunta(); s.position = SCNVector3(x, 0, z); s.eulerAngles = SCNVector3(0, rot, 0); r.addChildNode(s) }
         r.addChildNode(Gym3D.gym())
+        r.addChildNode(Cafe3D.barra())
     }
 }
