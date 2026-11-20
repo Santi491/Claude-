@@ -190,6 +190,7 @@ enum Gym3D {
         for x: Float in [-4.2, 0, 4.2] {
             let l = SCNLight(); l.type = .omni; l.intensity = 280; l.color = CGColor(srgbRed: 1, green: 0.86, blue: 0.68, alpha: 1)
             l.attenuationStartDistance = 0; l.attenuationEndDistance = 7; l.attenuationFalloffExponent = 2
+            l.categoryBitMask = 2   // solo ilumina el gym (Oficina3D lo marca con la máscara 2)
             let n = SCNNode(); n.light = l; n.position = SCNVector3(x, 2.9, 0); g.addChildNode(n)
             // la lámpara: barra lineal de bronce con su difusor
             tubo(SIMD3(x, 3.1, 0), SIMD3(x, 4.2, 0), 0.006, negroMate, g, lados: 6)

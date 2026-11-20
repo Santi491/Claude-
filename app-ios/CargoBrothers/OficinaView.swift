@@ -52,7 +52,7 @@ struct OficinaView: View {
         .onChange(of: store.vivo?.actualizado) { _, _ in if let escena { Vivo3D.aplicar(escena, store) } }
         .onChange(of: store.datos?.generado) { _, _ in if let escena { Vivo3D.aplicar(escena, store) } }
         .sheet(item: Binding(get: { elegido.map { Elegido(id: $0) } }, set: { elegido = $0?.id })) { e in
-            FichaAgente(agente: e.id).environmentObject(store)
+            FichaAgente(agente: e.id, abrirPC: { DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) { escritorioDemo = true } }).environmentObject(store)
                 .presentationDetents([.height(330), .large])
                 .presentationBackgroundInteraction(.enabled(upThrough: .height(330)))
                 .presentationCornerRadius(28)
@@ -168,6 +168,8 @@ struct EstadoAgente {
 /// La ficha que sube al tocar un agente: foto, qué hace, sus números y los mismos botones de Equipo
 struct FichaAgente: View {
     var agente: String
+    /// el Gerente: "Su pantalla" abre su computadora completa (Santi, 20/11), también desde lejos
+    var abrirPC: (() -> Void)? = nil
     @EnvironmentObject var store: Store
     @Environment(\.dismiss) private var cerrarFicha
     @State private var tarea = false
@@ -190,7 +192,11 @@ struct FichaAgente: View {
                     }
                     HStack(spacing: 10) { ForEach(cifras, id: \.1) { v, t in cifra(v, t) } }
                     HStack(spacing: 8) {
-                        NavigationLink { AgenteView(agente: agente) } label: { boton("Su pantalla", lleno: true) }
+                        if agente == "gerente", let abrirPC {
+                            Button { cerrarFicha(); abrirPC() } label: { boton("Su pantalla", lleno: true) }
+                        } else {
+                            NavigationLink { AgenteView(agente: agente) } label: { boton("Su pantalla", lleno: true) }
+                        }
                         NavigationLink { ChatView(agente: agente) } label: { boton("Escribirle") }
                         Button { tarea = true } label: { boton("Encargar") }
                     }
@@ -293,6 +299,7 @@ struct VistaSCN: UIViewRepresentable {
     func updateUIView(_ v: SCNView, context: Context) {
         let co = context.coordinator
         co.elegir = elegir; co.manejo = manejo
+        let fps = UserDefaults.standard.bool(forKey: "oficina_fps"); if v.showsStatistics != fps { v.showsStatistics = fps }
         if co.pausado != pausado { co.pausado = pausado; v.isPlaying = !pausado; v.scene?.isPaused = pausado }
         if v.bounds.size.width > 0 { co.tamano = v.bounds.size }
         if manejando != co.manejando {

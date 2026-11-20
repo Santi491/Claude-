@@ -152,7 +152,7 @@ enum Detalle3D {
         let cab = cil(0.06, 0.06, bronce, 0.66, 1.2, -0.22, pe); cab.eulerAngles.z = 1.2
         let foco = SCNLight(); foco.type = .omni; foco.intensity = 40; foco.color = CGColor(srgbRed: 1, green: 0.85, blue: 0.62, alpha: 1)
         foco.attenuationEndDistance = 1.1; foco.attenuationFalloffExponent = 2
-        let fl = SCNNode(); fl.light = foco; fl.position = SCNVector3(0.62, 1.12, -0.2); pe.addChildNode(fl)
+        _ = foco   // (20/11) sin luz real: eran 9 luces más que el iPhone calculaba en cada píxel; la pantalla de la lámpara brilla sola
         // silla ejecutiva
         let silla = SCNNode(); silla.name = "silla-\(id)"; silla.position = SCNVector3(0, -0.03, 0.62); p.addChildNode(silla)
         caja(0.54, 0.09, 0.52, r: 0.04, cuero, 0, 0.5, 0, silla)

@@ -212,6 +212,12 @@ enum Oficina3D {
             if n.light != nil { luces.append(n) } else if let c = caja(n) { cajas.append(c) }
         }
         for l in luces { let t = l.worldTransform; l.removeFromParentNode(); l.transform = t; escena.rootNode.addChildNode(l) }
+        // el gym va aparte, marcado para que sus 3 luces solo lo iluminen a él (y no a toda la nave)
+        if let gym = muebles.childNode(withName: "gym", recursively: false) {
+            gym.removeFromParentNode()
+            let g = gym.flattenedClone(); g.name = "gym"; g.categoryBitMask = 1 | 2
+            escena.rootNode.addChildNode(g)
+        }
         let juntos = muebles.flattenedClone(); juntos.name = "muebles"
         muebles.removeFromParentNode(); escena.rootNode.addChildNode(juntos)
         solidos = cajas
