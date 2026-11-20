@@ -5,7 +5,7 @@
   "desde": "10:36",
   "fecha": "2026-11-20"
  },
- "actualizado": "2026-11-20 10:43",
+ "actualizado": "2026-11-20 10:47",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -13,9 +13,9 @@
    "hora": "10:43"
   },
   "mkt": {
-   "estado": "trabajando",
-   "texto": "Seguir 7700X y contar demanda de 19 productos",
-   "hora": "10:43"
+   "estado": "terminó",
+   "texto": "7700X suelto vendido a Bs 3.100; demanda 19 productos",
+   "hora": "10:47"
   }
  }
 }
