@@ -16,6 +16,7 @@ struct OficinaView: View {
     @State private var santi: Manejo?
     @State private var manejando = false
     @State private var lugar: Lugar3D?
+    @State private var escritorioDemo = false
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -56,6 +57,7 @@ struct OficinaView: View {
                 .presentationBackgroundInteraction(.enabled(upThrough: .height(330)))
                 .presentationCornerRadius(28)
         }
+        .fullScreenCover(isPresented: $escritorioDemo) { EscritorioGerente().environmentObject(store) }
         .sheet(item: $lugar) { HojaLugar3D(lugar: $0).environmentObject(store) }
         .task {
             guard escena == nil, let u = Bundle.main.url(forResource: "Oficina3D", withExtension: nil) else {
@@ -86,6 +88,7 @@ struct OficinaView: View {
                 // para probar: abrir la app con -lugar gerente|resumen|tablero|mapa|archivo
                 let a = ProcessInfo.processInfo.arguments
                 if let i = a.firstIndex(of: "-lugar"), i + 1 < a.count { lugar = Lugar3D(rawValue: a[i + 1]) }
+                if a.contains("-escritorio") { escritorioDemo = true }   // demo del escritorio del Gerente (20/11)
             } else { error = "No pude armar la oficina." }
         }
     }

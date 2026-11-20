@@ -24,6 +24,7 @@
 		3D93E0F03A86622F2B3DF443 /* HoyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59127BEB2EE9C2570661CC34 /* HoyView.swift */; };
 		459BA0C202AE10892C268E02 /* Manejo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B2953F13E92D943008DFC /* Manejo.swift */; };
 		4D4A0D8B97BEEB7532E7E987 /* Personas in Resources */ = {isa = PBXBuildFile; fileRef = 40EEC2FF5696537514E3132D /* Personas */; };
+		5003CC23E53403A2FFBDEEC2 /* EscritorioGerente.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A0FECBF01662CC6EDF71B7 /* EscritorioGerente.swift */; };
 		51AA2C0CBC367C84AD9D98F3 /* CargoWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 11C131FA598268FF87C0C103 /* CargoWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5430657223D8DCA1FCE22859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */; };
 		57DFAC234F64C4DAD68DA651 /* PantallasOficina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D9B5CE241FCCBB0486B75 /* PantallasOficina.swift */; };
@@ -134,6 +135,7 @@
 		F140A08282DA18EB225D290E /* Detalle3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detalle3D.swift; sourceTree = "<group>"; };
 		F1972F47C18837AD9A732BF5 /* DecidirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecidirView.swift; sourceTree = "<group>"; };
 		F379D72065CE6B5BA36B6BD2 /* cb-mensaje.caf */ = {isa = PBXFileReference; path = "cb-mensaje.caf"; sourceTree = "<group>"; };
+		F7A0FECBF01662CC6EDF71B7 /* EscritorioGerente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscritorioGerente.swift; sourceTree = "<group>"; };
 		FB7C5D96174AE07BC40B1701 /* EquipoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipoView.swift; sourceTree = "<group>"; };
 		FC9477CD72D4D139BF79BD62 /* Apariencia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apariencia.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,6 +203,7 @@
 				BEF81893D5F19E454303E8E1 /* Comportamiento.swift */,
 				F1972F47C18837AD9A732BF5 /* DecidirView.swift */,
 				FB7C5D96174AE07BC40B1701 /* EquipoView.swift */,
+				F7A0FECBF01662CC6EDF71B7 /* EscritorioGerente.swift */,
 				9178CBA57C8D6EBA5763BB7A /* Extras.swift */,
 				3F307845EB1BA3750F894444 /* Formularios.swift */,
 				853087D9A16FEB38BD9EA645 /* GitHub.swift */,
@@ -385,6 +388,7 @@
 				2B5AFF8346100FC0FA1A7AE1 /* DecidirView.swift in Sources */,
 				83596903A97FDAA983B3391A /* Detalle3D.swift in Sources */,
 				E313BFAFC4093C679D95F4C5 /* EquipoView.swift in Sources */,
+				5003CC23E53403A2FFBDEEC2 /* EscritorioGerente.swift in Sources */,
 				36DCC1A5561A59AC5834F4E8 /* Extras.swift in Sources */,
 				65E0B88A311E66231F23F8BE /* Formularios.swift in Sources */,
 				9CF8A07AFE7F4448FA090B4C /* GitHub.swift in Sources */,

@@ -135,7 +135,17 @@ struct PCGerente: View {
                     }
                 }.padding(.horizontal, 14).padding(.vertical, 10)
             }
-            ScrollView {
+            AppGerente(app: app)
+        }
+    }
+}
+
+/// el contenido de cada app del Gerente (lo usan la computadora simple y el escritorio)
+struct AppGerente: View {
+    let app: String
+    @EnvironmentObject var store: Store
+    var body: some View {
+        ScrollView {
                 VStack(spacing: 12) {
                     if let d = store.datos {
                         switch app {
@@ -191,6 +201,5 @@ struct PCGerente: View {
                 }
                 .padding(14)
             }
-        }
     }
 }
