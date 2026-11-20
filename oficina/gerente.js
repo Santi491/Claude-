@@ -324,7 +324,7 @@
 `;
   document.head.appendChild(st);
 
-  const TABS = [["escritorio", "Escritorio"], ["chat", "Chat del equipo"], ["tareas", "Tareas y metas"], ["propuestas", "Propuestas"], ["memoria", "Libreta"], ["resumen", "Resumen"], ["contacto", "Contacto con tiendas"], ["precios", "Precios y dólar"], ["oport", "Oportunidades"], ["equipo", "Equipo"], ["salud", "Salud del equipo"], ["objetivos", "Objetivos"], ["plan", "Plan e informes"]];
+  const TABS = [["escritorio", "Escritorio"], ["chat", "Chat del equipo"], ["tareas", "Tareas y metas"], ["propuestas", "Propuestas"], ["memoria", "Libreta"], ["resumen", "Resumen"], ["contacto", "Contacto con tiendas"], ["precios", "Precios y dólar"], ["oport", "Oportunidades"], ["equipo", "Equipo"], ["salud", "Salud del equipo"], ["objetivos", "Objetivos"], ["plan", "Plan e informes"], ["graficos", "Gráficos del negocio"]];
   let tab = "escritorio", rango = "7", dia = MET.length ? MET[MET.length - 1].fecha : "";
   const box = document.createElement("div");
   box.className = "gpanel"; box.hidden = true; box.setAttribute("role", "dialog"); box.setAttribute("aria-label", "Panel de datos del Gerente");
@@ -686,7 +686,7 @@
     } catch (err) { aviso = "No se pudo guardar. Por Telegram funciona siempre."; render(); }
   });
 
-  const VIEWS = { escritorio: vEscritorio, chat: vChat, tareas: vTareas, propuestas: vPropuestas, memoria: vMemoria, resumen: vResumen, contacto: vContacto, precios: vPrecios, oport: vOport, equipo: vEquipo, salud: vSalud, objetivos: vObjetivos, plan: vPlan };
+  const VIEWS = { escritorio: vEscritorio, chat: vChat, tareas: vTareas, propuestas: vPropuestas, memoria: vMemoria, resumen: vResumen, contacto: vContacto, precios: vPrecios, oport: vOport, equipo: vEquipo, salud: vSalud, objetivos: vObjetivos, plan: vPlan, graficos: () => window.graficosVentana ? window.graficosVentana() : `<p class="gp-empty">Los gráficos no cargaron.</p>` };
   /* ---------- Ventanas (Santi, 28/10: "que se parezca bastante a Windows en funciones") ----------
      Cada app se abre en su ventana: se arrastra por la barra de título, se agranda desde la esquina, doble clic o □ la
      maximiza, – la minimiza a la barra de tareas y ✕ la cierra. En la barra: clic en una app abierta la trae al frente o la
@@ -715,7 +715,6 @@
     barra();
   }
   function abrirApp(k) {
-    if (k === "graficos") { if (window.abrirNegocio) window.abrirNegocio("ventas"); return; }   // abre el panel de gráficos encima del escritorio
     let w = OS.wins.find(x => x.k === k); cerrarInicio();
     if (!w) { const L = capa(), W = L.clientWidth, H = L.clientHeight, n = OS.n++ % 6;
       w = { k, x: Math.min(150 + n * 30, Math.max(0, W - 360)), y: 16 + n * 26, w: Math.max(320, Math.min(1000, W - 190)), h: Math.max(240, Math.min(640, H - 40)), min: false, max: W < 760, z: 0 };

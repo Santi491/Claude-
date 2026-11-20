@@ -18,6 +18,7 @@ struct EscritorioGerente: View {
         .init(id: "panel", nombre: "Panel de datos", icono: "chart.bar.xaxis", color: Color(red: 0.42, green: 0.62, blue: 0.95)),
         .init(id: "oport", nombre: "Oportunidades", icono: "dollarsign.circle.fill", color: Color(red: 0.36, green: 0.77, blue: 0.56)),
         .init(id: "equipo", nombre: "Equipo", icono: "person.3.fill", color: Color(red: 0.6, green: 0.62, blue: 0.66)),
+        .init(id: "graficos", nombre: "Gráficos del negocio", icono: "chart.line.uptrend.xyaxis", color: Color(red: 0.79, green: 0.64, blue: 0.36)),
     ]
 
     struct Ventana: Identifiable, Equatable { let id: String; var pos: CGPoint; var tam: CGSize; var min = false; var max = false; var z: Double }
@@ -46,7 +47,8 @@ struct EscritorioGerente: View {
         .onAppear {
             // la computadora se usa con el teléfono echado
             for e in UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }) { e.requestGeometryUpdate(.iOS(interfaceOrientations: .landscapeRight)) { _ in } }
-            if ProcessInfo.processInfo.arguments.contains("-demo-ventana") { DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { abrir("oport"); abrir("salud") } }
+            if ProcessInfo.processInfo.arguments.contains("-demo-ventana") { DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { abrir("oport"); abrir("salud") }
+            if ProcessInfo.processInfo.arguments.contains("-demo-graficos") { DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { abrir("graficos") } } }
         }
         .preferredColorScheme(.dark)
         .statusBarHidden()
@@ -162,6 +164,7 @@ struct EscritorioGerente: View {
         case "panel": AppPanel()
         case "oport": AppOportunidades()
         case "salud": AppSalud()
+        case "graficos": AppGraficos()
         default: AppGerente(app: id)
         }
     }

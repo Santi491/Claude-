@@ -70,8 +70,8 @@
     return `<div class="gn-chart"><svg viewBox="0 0 ${W} ${H}" data-gtip="${id}" role="img" aria-label="${e(o.aria || "gráfico por día")}">${g}</svg><div class="gr-tip"></div></div>`;
   }
   document.addEventListener("pointermove", ev => {
-    const svg = ev.target.closest && ev.target.closest("svg[data-gtip]"); const all = document.querySelectorAll("#pNeg .gr-tip");
-    if (!svg) { all.forEach(t => t.style.display = "none"); document.querySelectorAll("#pNeg .gx").forEach(x => x.setAttribute("visibility", "hidden")); return; }
+    const svg = ev.target.closest && ev.target.closest("svg[data-gtip]"); const all = document.querySelectorAll(".gn-host .gr-tip");
+    if (!svg) { all.forEach(t => t.style.display = "none"); document.querySelectorAll(".gn-host .gx").forEach(x => x.setAttribute("visibility", "hidden")); return; }
     const t = TIPS[svg.dataset.gtip], r = svg.getBoundingClientRect(), sx = (ev.clientX - r.left) / r.width * t.W;
     const i = t.pts.length === 1 ? 0 : Math.max(0, Math.min(t.pts.length - 1, Math.round((sx - t.L) / ((t.W - t.L - t.R) / (t.pts.length - 1)))));
     const ln = svg.querySelector(".gx"); ln.setAttribute("x1", t.X(i)); ln.setAttribute("x2", t.X(i)); ln.setAttribute("visibility", "visible");
@@ -332,6 +332,7 @@
   const css = document.createElement("style");
   css.textContent = `
 #pNeg .eq-body{gap:12px}
+.gn-win{display:grid;gap:12px;padding:4px 0;grid-column:1/-1;width:100%;min-width:0}.gn-win .gn-tabs{top:0;background:transparent;position:static}
 .gn-tabs{display:flex;flex-wrap:wrap;gap:6px;position:sticky;top:-14px;z-index:2;background:#151516;padding:6px 0}
 .gn-tabs button,.gn-chips button{font:600 12px var(--f-mono);background:#1B1B1C;color:var(--o-ink);border:1px solid var(--o-line);border-radius:999px;padding:6px 11px;min-height:34px;cursor:pointer}
 .gn-tabs button[aria-pressed="true"],.gn-chips button[aria-pressed="true"]{background:var(--o-amber);color:#151516;border-color:var(--o-amber)}
@@ -383,37 +384,44 @@
     if (!el) {
       el = document.createElement("div"); el.id = "pNeg"; el.className = "gpanel"; el.hidden = true;
       el.setAttribute("role", "dialog"); el.setAttribute("aria-modal", "true"); el.setAttribute("aria-label", "Gráficos del negocio");
-      el.innerHTML = `<div class="gp-card" style="grid-template-rows:auto minmax(0,1fr)"><div class="gp-head"><div><b>Gráficos del negocio</b><span>los mismos de la app · datos de ${e((G.generado || "").replace(" ", " · "))}</span></div><div class="gp-tools"><button type="button" class="openmap" data-gncerrar style="margin:0">Cerrar</button></div></div><div class="eq-body"></div></div>`;
+      el.innerHTML = `<div class="gp-card" style="grid-template-rows:auto minmax(0,1fr)"><div class="gp-head"><div><b>Gráficos del negocio</b><span>los mismos de la app · datos de ${e((G.generado || "").replace(" ", " · "))}</span></div><div class="gp-tools"><button type="button" class="openmap" data-gncerrar style="margin:0">Cerrar</button></div></div><div class="eq-body gn-host"></div></div>`;
       el.addEventListener("click", ev => { if (ev.target === el || ev.target.closest("[data-gncerrar]")) cerrar(); });
       el.addEventListener("keydown", ev => { if (ev.key === "Escape") cerrar(); });
       document.body.appendChild(el);
     }
     return el;
   }
-  function render() {
-    const el = panelNeg(), t = TABS.find(x => x[0] === tab) || TABS[0];
-    el.querySelector(".eq-body").innerHTML = `<div class="gn-tabs" role="tablist">${TABS.map(([k, n]) => `<button type="button" role="tab" data-gntab="${k}" aria-pressed="${k === tab && !det}">${n}</button>`).join("")}</div>
+  function contenido() {
+    const t = TABS.find(x => x[0] === tab) || TABS[0];
+    return `<div class="gn-tabs" role="tablist">${TABS.map(([k, n]) => `<button type="button" role="tab" data-gntab="${k}" aria-pressed="${k === tab && !det}">${n}</button>`).join("")}</div>
       ${det ? `<button type="button" class="gn-back" data-gnvolver>← Volver</button>` : ""}<div class="${det || tab === "tiendas" ? "gn-grid" : "gn-grid"}"${det ? ' style="grid-template-columns:minmax(0,1fr)"' : ""}>${t[2](det)}</div>`;
   }
+  // render en el panel o en la ventana de la computadora del Gerente (cualquier .gn-host)
+  function render(host) {
+    const h = host || panelNeg().querySelector(".eq-body");
+    h.innerHTML = contenido();
+  }
+  // la ventana "Gráficos del negocio" del escritorio del Gerente (gerente.js) usa esto
+  window.graficosVentana = () => `<div class="gn-host gn-win">${contenido()}</div>`;
   function cerrar() { const el = document.getElementById("pNeg"); if (!el) return; el.hidden = true; document.body.style.overflow = ""; if (volver && volver.focus) volver.focus(); }
   window.abrirNegocio = function (t, d) {
     if (t) tab = t; det = d || null; if (tab === "tiendas" && d != null) { paso = +d; det = "lista"; }
     volver = document.activeElement; render(); const el = panelNeg(); el.hidden = false; document.body.style.overflow = "hidden";
     const b = el.querySelector("[data-gncerrar]"); if (b) b.focus();
   };
-  const arriba = () => { const b = document.querySelector("#pNeg .eq-body"); if (b) b.scrollTop = 0; };
+  const arriba = h => { if (h) h.scrollTop = 0; const w = h && h.closest(".os-wb"); if (w) w.scrollTop = 0; };
   document.addEventListener("click", ev => {
     const w = ev.target.closest("[data-gn-abrir]"); if (w) { ev.preventDefault(); window.abrirNegocio(w.dataset.gnAbrir); return; }
-    if (!ev.target.closest("#pNeg")) return;
-    const tb = ev.target.closest("[data-gntab]"); if (tb) { tab = tb.dataset.gntab; det = null; render(); arriba(); return; }
-    if (ev.target.closest("[data-gnvolver]")) { det = null; render(); arriba(); return; }
-    const ir = ev.target.closest("[data-gn]"); if (ir) { const k = ir.dataset.gn, pre = k.split(":")[0]; if (DET[pre]) tab = DET[pre]; else if (k.includes("#")) tab = "anuncios"; det = pre === "oportunidades" ? "todas" : pre === "precios" ? "precios" : k; if (pre === "precios") { tab = "oportunidades"; } render(); arriba(); return; }
-    const ps = ev.target.closest("[data-gnpaso]"); if (ps) { paso = +ps.dataset.gnpaso; soloQ = false; tab = "tiendas"; det = "lista"; render(); return; }
-    const rg = ev.target.closest("[data-gnrg]"); if (rg) { abierto = abierto === rg.dataset.gnrg ? null : rg.dataset.gnrg; render(); }
+    const host = ev.target.closest(".gn-host"); if (!host) return;
+    const tb = ev.target.closest("[data-gntab]"); if (tb) { tab = tb.dataset.gntab; det = null; render(host); arriba(host); return; }
+    if (ev.target.closest("[data-gnvolver]")) { det = null; render(host); arriba(host); return; }
+    const ir = ev.target.closest("[data-gn]"); if (ir) { const k = ir.dataset.gn, pre = k.split(":")[0]; if (DET[pre]) tab = DET[pre]; else if (k.includes("#")) tab = "anuncios"; det = pre === "oportunidades" ? "todas" : pre === "precios" ? "precios" : k; render(host); arriba(host); return; }
+    const ps = ev.target.closest("[data-gnpaso]"); if (ps) { paso = +ps.dataset.gnpaso; soloQ = false; tab = "tiendas"; det = "lista"; render(host); return; }
+    const rg = ev.target.closest("[data-gnrg]"); if (rg) { abierto = abierto === rg.dataset.gnrg ? null : rg.dataset.gnrg; render(host); }
   });
-  document.addEventListener("change", ev => { if (ev.target.closest && ev.target.closest("#pNeg [data-gnsolo]")) { soloQ = ev.target.checked; render(); } });
-  document.addEventListener("input", ev => { if (ev.target.closest && ev.target.closest("#pNeg [data-gnbusca]")) { busca = ev.target.value; render(); const i = document.querySelector("#pNeg [data-gnbusca]"); if (i) { i.focus(); i.setSelectionRange(busca.length, busca.length); } } });
-  document.addEventListener("keydown", ev => { const r = ev.target.closest && ev.target.closest("#pNeg [data-gnrg]"); if (r && (ev.key === "Enter" || ev.key === " ")) { ev.preventDefault(); r.click(); } });
+  document.addEventListener("change", ev => { const h = ev.target.closest && ev.target.closest(".gn-host"); if (h && ev.target.matches("[data-gnsolo]")) { soloQ = ev.target.checked; render(h); } });
+  document.addEventListener("input", ev => { const h = ev.target.closest && ev.target.closest(".gn-host"); if (h && ev.target.matches("[data-gnbusca]")) { busca = ev.target.value; render(h); const i = h.querySelector("[data-gnbusca]"); if (i) { i.focus(); i.setSelectionRange(busca.length, busca.length); } } });
+  document.addEventListener("keydown", ev => { const r = ev.target.closest && ev.target.closest(".gn-host [data-gnrg]"); if (r && (ev.key === "Enter" || ev.key === " ")) { ev.preventDefault(); r.click(); } });
 
   // el detalle de precios de Cochabamba vive en la pestaña de oportunidades
   const _op = tabOport; TABS[4][2] = d => d === "precios" ? tabPrecios(true) : _op(d);

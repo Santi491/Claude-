@@ -1032,3 +1032,65 @@ struct TarjetaCosto: View {
         }
     }
 }
+
+// =====================================================================
+// La app "Gráficos del negocio" en la computadora del Gerente (Santi, 20/11): las mismas tarjetas, por sección
+// =====================================================================
+struct AppGraficos: View {
+    @EnvironmentObject var store: Store
+    @State private var seccion = "ventas"
+    static let secciones: [(String, String)] = [("ventas", "Ventas"), ("anuncios", "Anuncios"), ("envios", "Envíos"), ("oport", "Oportunidades"), ("tiendas", "Tiendas"), ("costo", "Costo")]
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 12) {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 6) {
+                            ForEach(AppGraficos.secciones, id: \.0) { k, n in
+                                Button { withAnimation(.snappy) { seccion = k } } label: {
+                                    Text(n).font(.caption.weight(.semibold)).padding(.horizontal, 11).padding(.vertical, 6)
+                                        .background(seccion == k ? Tema.bronce : Tema.tarjeta, in: Capsule())
+                                        .foregroundStyle(seccion == k ? Tema.sobreAcento : Tema.texto)
+                                        .overlay(Capsule().stroke(Tema.linea))
+                                }.buttonStyle(.plain)
+                            }
+                        }
+                    }
+                    if let d = store.datos { tarjetas(d) }
+                }.padding(12)
+            }
+            .background(Tema.fondo)
+            .toolbar(.hidden, for: .navigationBar)
+            .navigationDestination(for: Producto.self) { ProductoDetalle(p: $0) }
+        }
+    }
+    @ViewBuilder func tarjetas(_ d: Datos) -> some View {
+        switch seccion {
+        case "ventas":
+            if d.comprados.isEmpty { Vacio(titulo: "Sin compras", texto: "Todavía no compramos nada para vender.", icono: "cart") }
+            ForEach(d.comprados, id: \.self) { p in
+                NavigationLink { VentasDetalle(producto: p) } label: { TarjetaVentas(d: d, producto: p) }.buttonStyle(.plain)
+                NavigationLink { StockDetalle(producto: p) } label: { TarjetaStock(d: d, producto: p) }.buttonStyle(.plain)
+            }
+        case "anuncios":
+            let ans = anuncios(d)
+            if ans.isEmpty { Vacio(titulo: "Sin anuncios", texto: "Marketplace publica cuando fijes el precio y dejes las fotos en la PC. Acá sale un gráfico por anuncio.", icono: "megaphone") }
+            if ans.count > 1 { ResumenAnuncios(lista: ans) }
+            ForEach(ans.filter(\.activo) + ans.filter { !$0.activo }) { a in
+                NavigationLink { AnuncioDetalle(a: a) } label: { TarjetaAnuncio(a: a, varios: ans.contains { $0.producto == a.producto && $0.id != a.id }) }.buttonStyle(.plain)
+            }
+            ForEach(Array(Set(d.comprados + ans.map(\.producto))).sorted(), id: \.self) { p in
+                NavigationLink { CompetenciaDetalle(producto: p) } label: { TarjetaCompetencia(d: d, producto: p) }.buttonStyle(.plain)
+            }
+        case "envios":
+            ForEach(d.paquetes) { p in NavigationLink { EnvioDetalle(pedido: p) } label: { TarjetaEnvio(d: d, pedido: p) }.buttonStyle(.plain) }
+        case "oport":
+            NavigationLink { OportunidadesDetalle() } label: { TarjetaOportunidades(d: d) }.buttonStyle(.plain)
+            NavigationLink { AbanicoDetalle() } label: { TarjetaAbanico(d: d) }.buttonStyle(.plain)
+        case "tiendas":
+            TarjetaEmbudo(d: d)
+        default:
+            ForEach(d.comprados, id: \.self) { p in TarjetaCosto(d: d, producto: p) }
+        }
+    }
+}
