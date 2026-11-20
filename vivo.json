@@ -6,5 +6,11 @@
   "fecha": "2026-11-20"
  },
  "actualizado": "2026-11-20 16:08",
- "agentes": {}
+ "agentes": {
+  "wa": {
+   "estado": "trabajando",
+   "texto": "Respuestas y seguimientos de la tarde",
+   "hora": "16:08"
+  }
+ }
 }
