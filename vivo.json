@@ -21,6 +21,11 @@
    "estado": "terminó",
    "texto": "real-1 y real-2 sin cambios; reclamo eBay vence 26/11",
    "hora": "10:49"
+  },
+  "ana": {
+   "estado": "trabajando",
+   "texto": "Recalcular análisis con precios nuevos",
+   "hora": "10:49"
   }
  }
 }
