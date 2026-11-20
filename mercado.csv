@@ -323,4 +323,4 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-20,RTX 5050 8GB Gigabyte,gpu,5260,Bs,5260,nuevo,Punto Tecnológico,web,no,web de tienda vista por Google; agotado; Cochabamba y Santa Cruz
 2026-11-20,RTX 5050 8GB MSI Gaming OC,gpu,5736,USD,480,nuevo,Cyrex Store,web,sí,"USD 480 a 11,95; web vista por Google"
 2026-11-20,RTX 5050 8GB MSI Shadow 2X,gpu,5103,USD,427,nuevo,Iris Computer,web,sí,"USD 427 a 11,95; web vista por Google (iriscomputer.bo)"
-2026-11-20,RTX 5050 8GB (MSI Ventus 2X OC),gpu,5850,BOB,5850,nuevo,tienda (anuncio de Marketplace sin precio),marketplace,si,precio que la tienda le dio a Santi por mensaje el 20/11; el anuncio dice Bs 0
+2026-11-20,RTX 5050 8GB (MSI Ventus 2X OC),gpu,5850,Bs,Bs 5850,nuevo,tienda (mismo vendedor que el Windforce),marketplace,sí,precio que la tienda le dio a Santi por mensaje el 20/11; el anuncio dice Bs 0
