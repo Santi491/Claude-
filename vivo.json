@@ -31,6 +31,11 @@
    "estado": "terminó",
    "texto": "Sin ventas; 4 Ryzen 7700X en camino, invertido Bs 10.620",
    "hora": "10:49"
+  },
+  "oficina": {
+   "estado": "trabajando",
+   "texto": "Regenerar, verificar y publicar la oficina",
+   "hora": "10:50"
   }
  }
 }
