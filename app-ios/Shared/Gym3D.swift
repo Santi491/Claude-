@@ -14,7 +14,7 @@ enum Gym3D {
     static let negroMate = D.pbr(0.025, 0.025, 0.028, rough: 0.65, metal: 0.1)
     static let acero = D.pbr(0.62, 0.63, 0.66, rough: 0.25, metal: 1)
     static let goma = D.pbr(0.025, 0.025, 0.027, rough: 0.92)
-    static let gomaPiso: SCNMaterial = { let m = M.material(0.05, 0.052, 0.055, tejido: true, escala: 14, brillo: 0.02); m.normal.intensity = 0.15; return m }()
+    static let gomaPiso = D.pbr(0.05, 0.052, 0.055, rough: 0.9)   // liso: la textura fina hacía ondas que se movían con la cámara
     static let madera = D.pbr(0.36, 0.23, 0.13, rough: 0.6, laca: 0.15)
     static let tapizado = M.material(0.04, 0.035, 0.032, tejido: false, escala: 3, brillo: 0.4)
     static let consola = D.pbr(0.06, 0.065, 0.07, rough: 0.3, metal: 0.4)
@@ -84,7 +84,7 @@ enum Gym3D {
         _ = caja(0.08, 0.04, 1.0, r: 0.006, negroMate, rx, 0.385, bz, g)
         for dz: Float in [-0.45, 0.45] {
             tubo(SIMD3(rx, 0.38, bz + dz), SIMD3(rx, 0.04, bz + dz), 0.025, negroMate, g)
-            _ = caja(0.42, 0.04, 0.06, r: 0.01, negroMate, rx, 0.03, bz + dz, g)
+            _ = caja(0.42, 0.04, 0.06, r: 0.01, negroMate, rx, 0.05, bz + dz, g)
         }
 
         // ---------- árbol de discos ----------
@@ -103,7 +103,7 @@ enum Gym3D {
         }
         for e: Float in [-1.25, 1.25] {
             tubo(SIMD3(dx0 + e, 0.03, -1.35), SIMD3(dx0 + e, 0.9, -1.75), 0.03, negroMate, g)
-            _ = caja(0.06, 0.03, 0.6, r: 0.008, negroMate, dx0 + e, 0.02, -1.55, g)
+            _ = caja(0.06, 0.03, 0.6, r: 0.008, negroMate, dx0 + e, 0.046, -1.55, g)
         }
         for row in 0..<2 { for k in 0..<5 {
             let x = dx0 - 1.0 + Float(k) * 0.5, y = 0.58 + Float(row) * 0.38, r = CGFloat(0.05 + Double(k) * 0.01 + Double(row) * 0.008)
@@ -112,7 +112,7 @@ enum Gym3D {
         // banco ajustable inclinado: riel en el piso, asiento plano y respaldo inclinado unidos por la bisagra
         let bx: Float = -1.2
         tubo(SIMD3(bx, 0.05, -0.45), SIMD3(bx, 0.05, 0.75), 0.035, negroMate, g)
-        _ = caja(0.5, 0.05, 0.08, r: 0.015, negroMate, bx, 0.035, -0.45, g); _ = caja(0.5, 0.05, 0.08, r: 0.015, negroMate, bx, 0.035, 0.75, g)
+        _ = caja(0.5, 0.05, 0.08, r: 0.015, negroMate, bx, 0.056, -0.45, g); _ = caja(0.5, 0.05, 0.08, r: 0.015, negroMate, bx, 0.056, 0.75, g)
         tubo(SIMD3(bx, 0.05, 0.38), SIMD3(bx, 0.4, 0.38), 0.03, negroMate, g)                      // columna del asiento
         M.pieza(M.mullido(0.3, 0.08, 0.42, r: 0.035, infla: 0.012), tapizado, bx, 0.45, 0.42, g)
         let resp = SCNNode(); resp.position = SCNVector3(bx, 0.45, 0.2); resp.eulerAngles.x = -0.55; g.addChildNode(resp)
@@ -166,7 +166,7 @@ enum Gym3D {
 
         // ---------- saco de boxeo en su pórtico ----------
         let sx: Float = 4.9
-        for d: Float in [-0.8, 0.8] { _ = caja(0.08, 3.0, 0.08, r: 0.006, negroMate, sx + d, 1.5, -0.6, g); _ = caja(0.5, 0.03, 0.5, r: 0.006, negroMate, sx + d, 0.015, -0.6, g) }
+        for d: Float in [-0.8, 0.8] { _ = caja(0.08, 3.0, 0.08, r: 0.006, negroMate, sx + d, 1.5, -0.6, g); _ = caja(0.5, 0.03, 0.5, r: 0.006, negroMate, sx + d, 0.046, -0.6, g) }
         _ = caja(1.7, 0.08, 0.08, r: 0.006, negroMate, sx, 3.0, -0.6, g)
         tubo(SIMD3(sx, 2.96, -0.6), SIMD3(sx, 2.5, -0.6), 0.005, acero, g, lados: 6)
         let saco = SCNCapsule(capRadius: 0.24, height: 1.25); saco.radialSegmentCount = 32; saco.materials = [M.cognacOscuro]
