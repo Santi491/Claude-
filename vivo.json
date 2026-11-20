@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-20"
  },
- "actualizado": "2026-11-20 16:19",
+ "actualizado": "2026-11-20 16:20",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -28,14 +28,19 @@
    "hora": "16:18"
   },
   "ana": {
-   "estado": "trabajando",
-   "texto": "Recalcular análisis",
-   "hora": "16:19"
+   "estado": "terminó",
+   "texto": "SSD 2TB sigue traer, 1TB no traer",
+   "hora": "16:20"
   },
   "fin": {
+   "estado": "terminó",
+   "texto": "Sin ventas",
+   "hora": "16:20"
+  },
+  "oficina": {
    "estado": "trabajando",
-   "texto": "Finanzas e inventario",
-   "hora": "16:19"
+   "texto": "Regenerar y publicar oficina",
+   "hora": "16:20"
   }
  }
 }
