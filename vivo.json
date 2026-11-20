@@ -5,12 +5,12 @@
   "desde": "10:36",
   "fecha": "2026-11-20"
  },
- "actualizado": "2026-11-20 10:36",
+ "actualizado": "2026-11-20 10:43",
  "agentes": {
   "wa": {
-   "estado": "trabajando",
-   "texto": "Responder no leídos y pedir precios a 2 tiendas",
-   "hora": "10:36"
+   "estado": "terminó",
+   "texto": "2 respuestas, 2 seguimientos, precios de Supermall y NPC",
+   "hora": "10:43"
   }
  }
 }
