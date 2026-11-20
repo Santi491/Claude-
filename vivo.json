@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-20"
  },
- "actualizado": "2026-11-20 16:20",
+ "actualizado": "2026-11-20 16:22",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -38,9 +38,14 @@
    "hora": "16:20"
   },
   "oficina": {
+   "estado": "terminó",
+   "texto": "Oficina v157 publicada",
+   "hora": "16:22"
+  },
+  "gerente": {
    "estado": "trabajando",
-   "texto": "Regenerar y publicar oficina",
-   "hora": "16:20"
+   "texto": "Control y aviso de fin de ronda",
+   "hora": "16:22"
   }
  }
 }
