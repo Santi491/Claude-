@@ -79,7 +79,7 @@ struct OficinaView: View {
                     if let m = Manejo(escena: e, carpeta: pers) {
                         m.vida = c; c.manejo = m
                         m.abrirAgente = { id in elegido = id }
-                        m.abrirLugar = { l in lugar = l }
+                        m.abrirLugar = { l in if l == .gerente { escritorioDemo = true } else { lugar = l } }   // la computadora del Gerente: su escritorio completo
                         santi = m
                     }
                     // sin reloj propio: la vista 3D los mueve en cada cuadro, junto con la cámara y las etiquetas

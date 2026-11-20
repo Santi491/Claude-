@@ -203,3 +203,147 @@ struct AppGerente: View {
             }
     }
 }
+
+import Charts
+
+// ---------- apps propias del escritorio del Gerente (20/11), las mismas de la oficina web ----------
+
+/// Tareas y metas, o Propuestas: lo que espera tu OK, con Aprobar y Rechazar (Face ID)
+struct AppDecisiones: View {
+    let tipos: Set<String>
+    let vacioTitulo: String
+    @EnvironmentObject var store: Store
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 10) {
+                let l = (store.datos?.decidir ?? []).filter { tipos.contains($0.tipo) && store.enviadas[$0.id] == nil }
+                if l.isEmpty { Vacio(titulo: vacioTitulo, texto: "No hay nada esperando tu decisión acá.", icono: "checkmark.seal") }
+                ForEach(l) { x in
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack(alignment: .top) {
+                            Avatar(agente: x.agente, tam: 30)
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text(x.titulo).font(.subheadline.weight(.semibold))
+                                if !x.detalle.isEmpty { Text(x.detalle).font(.caption).foregroundStyle(Tema.gris).lineLimit(4) }
+                                Text("\(Equipo.nombre(x.agente))\(x.plazo.isEmpty ? "" : " · vence \(F.dia(x.plazo))")").font(.caption2.weight(.semibold))
+                                    .foregroundStyle(x.vencida ? Tema.rojo : Tema.bronce)
+                            }
+                        }
+                        HStack {
+                            Spacer()
+                            if x.tipo == "necesidad" {
+                                boton("Resuelta", Tema.verde) { decidir(x, "resuelta") }
+                            } else {
+                                boton("Rechazar", Tema.rojo) { decidir(x, "rechazar") }
+                                boton("Aprobar", Tema.verde) { decidir(x, "aprobar") }
+                            }
+                        }
+                    }
+                    .padding(12).background(Tema.tarjeta, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                }
+            }.padding(14)
+        }
+    }
+    func boton(_ t: String, _ c: Color, _ a: @escaping () -> Void) -> some View {
+        Button(t, action: a).font(.caption.weight(.bold)).padding(.horizontal, 14).padding(.vertical, 7)
+            .background(c.opacity(0.16), in: Capsule()).foregroundStyle(c).buttonStyle(.plain)
+    }
+    func decidir(_ x: Decision, _ a: String) {
+        Task { if await store.confirmarIdentidad(motivo: "Decidir: \(x.titulo)") { await store.decidirDirecto(x, accion: a) } }
+    }
+}
+
+/// Panel de datos: dólar USDT (gráfico), la plata, los pedidos y cuántos productos seguimos
+struct AppPanel: View {
+    @EnvironmentObject var store: Store
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 12) {
+                if let d = store.datos {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 130), spacing: 10)], spacing: 10) {
+                        kpi("Dólar USDT", d.dolar.usado.map { String(format: "Bs %.2f", $0) } ?? "–", "dollarsign.circle")
+                        kpi("Invertido", d.finanzas.invertido_bs.map(F.bs) ?? "–", "banknote")
+                        kpi("En camino", "\(d.finanzas.unidades_en_camino ?? 0) u.", "shippingbox")
+                        kpi("Vendidas", "\(d.finanzas.unidades_vendidas ?? 0) u.", "cart")
+                        kpi("Ganancia", d.finanzas.ganancia_bs.map(F.bs) ?? "–", "chart.line.uptrend.xyaxis")
+                        kpi("Productos", "\(d.productos.count)", "cpu")
+                    }
+                    Tarjeta(titulo: "Dólar USDT · últimos días", icono: "chart.xyaxis.line") {
+                        let s = d.dolar.serie.suffix(30).filter { $0.valor != nil }
+                        Chart(s) { p in
+                            LineMark(x: .value("Día", F.dia(p.fecha)), y: .value("Bs", p.valor ?? 0)).foregroundStyle(Tema.bronce).interpolationMethod(.catmullRom)
+                            AreaMark(x: .value("Día", F.dia(p.fecha)), y: .value("Bs", p.valor ?? 0))
+                                .foregroundStyle(LinearGradient(colors: [Tema.bronce.opacity(0.3), .clear], startPoint: .top, endPoint: .bottom)).interpolationMethod(.catmullRom)
+                        }
+                        .chartYScale(domain: .automatic(includesZero: false))
+                        .chartXAxis { AxisMarks(values: .automatic(desiredCount: 5)) }
+                        .frame(height: 170)
+                    }
+                } else { Esqueleto() }
+            }.padding(14)
+        }
+    }
+    func kpi(_ t: String, _ v: String, _ ic: String) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Image(systemName: ic).foregroundStyle(Tema.bronce)
+            Text(v).font(.title3.weight(.semibold).monospacedDigit()).lineLimit(1).minimumScaleFactor(0.7)
+            Text(t).font(.caption).foregroundStyle(Tema.gris)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading).padding(12).background(Tema.tarjeta, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+    }
+}
+
+/// Oportunidades: los productos por margen, con eBay, costo puesto, precio en Cochabamba y la recomendación
+struct AppOportunidades: View {
+    @EnvironmentObject var store: Store
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 10) {
+                let l = (store.datos?.productos ?? []).filter { $0.margen != nil }.sorted { ($0.margen ?? 0) > ($1.margen ?? 0) }
+                if l.isEmpty { Vacio(titulo: "Sin datos", texto: "Todavía no hay productos con margen calculado.", icono: "dollarsign.circle") }
+                ForEach(l) { p in
+                    HStack(spacing: 12) {
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text(p.producto).font(.subheadline.weight(.semibold))
+                            Text("eBay \(p.ebay_usd.map { String(format: "USD %.0f", $0) } ?? "–") · puesto \(F.bs(p.costo_bs)) · local \(F.bs(p.local_bs))")
+                                .font(.caption.monospacedDigit()).foregroundStyle(Tema.gris)
+                            Text(p.recomendacion.uppercased()).font(.caption2.weight(.bold)).foregroundStyle(Tema.color(recomendacion: p.recomendacion))
+                        }
+                        Spacer()
+                        VStack(alignment: .trailing, spacing: 2) {
+                            Text(p.margen.map { String(format: "%.0f %%", $0) } ?? "–").font(.title3.weight(.bold).monospacedDigit())
+                                .foregroundStyle((p.margen ?? 0) >= 15 ? Tema.verde : (p.margen ?? 0) >= 5 ? Tema.ambar : Tema.rojo)
+                            Text("margen").font(.caption2).foregroundStyle(Tema.gris)
+                        }
+                    }
+                    .padding(12).background(Tema.tarjeta, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                }
+            }.padding(14)
+        }
+    }
+}
+
+/// Salud del equipo: qué corrió hoy y los últimos 14 días
+struct AppSalud: View {
+    @EnvironmentObject var store: Store
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 12) {
+                if let d = store.datos {
+                    Tarjeta(titulo: "Hoy", icono: "heart.text.square") {
+                        ForEach(d.salud) { s in
+                            HStack {
+                                Circle().fill(s.estado == "ok" ? Tema.verde : s.estado == "pendiente" ? Tema.gris : Tema.rojo).frame(width: 9, height: 9)
+                                Text(s.nombre).font(.subheadline)
+                                Spacer()
+                                Text(s.estado).font(.caption.weight(.semibold)).foregroundStyle(Tema.gris)
+                                if !s.hora.isEmpty { Text(s.hora).font(.caption.monospacedDigit()).foregroundStyle(Tema.gris) }
+                            }
+                        }
+                    }
+                    if let s = d.salud14, !s.isEmpty { Tarjeta(titulo: "Últimos 14 días", icono: "waveform.path.ecg") { Salud14(filas: s) } }
+                } else { Esqueleto() }
+            }.padding(14)
+        }
+    }
+}

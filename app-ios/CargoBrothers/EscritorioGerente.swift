@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Demo (Santi, 20/11): la computadora del Gerente como en la oficina web, un escritorio tipo Windows (íconos, widgets,
+/// (Santi, 20/11: "me encanta cómo quedó") la computadora del Gerente como en la oficina web, un escritorio tipo Windows (íconos, widgets,
 /// barra de tareas con Inicio, buscador, apps abiertas y reloj; ventanas que se mueven, minimizan, maximizan y cierran),
 /// pero nativo y con la terminación de Apple: vidrio esmerilado, íconos SF, sombras suaves y animaciones con resorte.
 struct EscritorioGerente: View {
@@ -26,22 +26,29 @@ struct EscritorioGerente: View {
     @State private var buscar = ""
     @State private var zTope: Double = 1
     @GestureState private var arrastre: (String, CGSize)? = nil
+    @State private var area = CGSize(width: 874, height: 402)
 
     var body: some View {
         GeometryReader { g in
             ZStack(alignment: .topLeading) {
                 fondo
                 iconos.padding(.top, 14).padding(.leading, g.size.width > g.size.height ? 62 : 14)   // la isla de la cámara
-                widgets.frame(width: min(300, g.size.width * 0.32)).frame(maxWidth: .infinity, alignment: .topTrailing).padding(.top, 14).padding(.trailing, g.size.width > g.size.height ? 40 : 14)
+                widgets.frame(width: min(300, g.size.width * 0.32)).frame(maxWidth: .infinity, alignment: .topTrailing).padding(.top, 14).padding(.trailing, g.size.width > g.size.height ? 64 : 14)
                 ForEach(ventanas.filter { !$0.min }.sorted { $0.z < $1.z }) { v in ventana(v, area: g.size) }
                 if inicio { menuInicio.padding(.bottom, 64).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom).transition(.move(edge: .bottom).combined(with: .opacity)) }
                 barra.frame(maxHeight: .infinity, alignment: .bottom)
             }
+            .onAppear { area = g.size }
+            .onChange(of: g.size) { _, t in area = t; acomodar() }
             .animation(.spring(duration: 0.32, bounce: 0.18), value: ventanas)
             .animation(.spring(duration: 0.3), value: inicio)
         }
         .ignoresSafeArea()
-        .onAppear { if ProcessInfo.processInfo.arguments.contains("-demo-ventana") { abrir("chat"); abrir("decidir") } }
+        .onAppear {
+            // la computadora se usa con el teléfono echado
+            for e in UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }) { e.requestGeometryUpdate(.iOS(interfaceOrientations: .landscapeRight)) { _ in } }
+            if ProcessInfo.processInfo.arguments.contains("-demo-ventana") { DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { abrir("oport"); abrir("salud") } }
+        }
         .preferredColorScheme(.dark)
         .statusBarHidden()
     }
@@ -87,7 +94,8 @@ struct EscritorioGerente: View {
     func insignia(_ id: String) -> Int? {
         guard let d = store.datos else { return nil }
         switch id {
-        case "decidir": return d.decidir.filter { store.enviadas[$0.id] == nil }.count
+        case "decidir": return d.decidir.filter { $0.tipo == "plan" && store.enviadas[$0.id] == nil }.count
+        case "propuestas": return d.decidir.filter { $0.tipo != "plan" && store.enviadas[$0.id] == nil }.count
         case "chat": return (d.chat ?? []).filter { $0.para == "santi" && $0.fecha == F.bo("yyyy-MM-dd") }.count
         case "libreta": return (d.libreta ?? []).filter { $0.estado == "abierta" && !$0.vence.isEmpty && $0.vence <= F.bo("yyyy-MM-dd") }.count
         case "objetivos": return d.objetivos.filter(\.vencido).count
@@ -156,8 +164,8 @@ struct EscritorioGerente: View {
             .contentShape(Rectangle())
             .onTapGesture(count: 2) { cambiar(v.id) { $0.max.toggle() } }
             .gesture(DragGesture().updating($arrastre) { val, st, _ in st = (v.id, val.translation) }
-                .onEnded { val in cambiar(v.id) { $0.pos.x += val.translation.width; $0.pos.y += val.translation.height; $0.max = false } })
-            AppGerente(app: v.id == "propuestas" || v.id == "decidir" ? "decidir" : v.id == "panel" || v.id == "oport" || v.id == "salud" ? "objetivos" : v.id)
+                .onEnded { val in cambiar(v.id) { $0.pos.x += val.translation.width; $0.pos.y += val.translation.height; $0.max = false }; acomodar() })
+            contenido(v.id)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Tema.fondo)
         }
@@ -169,6 +177,18 @@ struct EscritorioGerente: View {
         .onTapGesture { alFrente(v.id) }
         .transition(.scale(scale: 0.88).combined(with: .opacity))
     }
+    /// lo que muestra cada app (las mismas de la oficina web, cada una con lo suyo)
+    @ViewBuilder func contenido(_ id: String) -> some View {
+        switch id {
+        case "decidir": AppDecisiones(tipos: ["plan"], vacioTitulo: "Sin tareas por aprobar")
+        case "propuestas": AppDecisiones(tipos: ["idea", "necesidad"], vacioTitulo: "Sin propuestas")
+        case "panel": AppPanel()
+        case "oport": AppOportunidades()
+        case "salud": AppSalud()
+        default: AppGerente(app: id)
+        }
+    }
+
     func boton(_ ic: String, rojo: Bool = false, _ a: @escaping () -> Void) -> some View {
         Button(action: a) {
             Image(systemName: ic).font(.system(size: 11, weight: .bold)).frame(width: 34, height: 28)
@@ -185,9 +205,24 @@ struct EscritorioGerente: View {
     func abrir(_ id: String) {
         inicio = false
         if let i = ventanas.firstIndex(where: { $0.id == id }) { ventanas[i].min = false; alFrente(id); return }
-        let n = CGFloat(ventanas.count % 5)
+        // ventana centrada en el espacio libre (entre los íconos y la barra), un poco escalonada si ya hay otras
+        let n = CGFloat(ventanas.count % 5), libreAlto = area.height - 54
+        let iconosAncho: CGFloat = area.width > area.height ? 350 : 0   // a la derecha de los íconos
+        let tam = CGSize(width: min(640, max(320, area.width - iconosAncho - 90)), height: min(libreAlto - 30, max(260, libreAlto * 0.86)))
         zTope += 1
-        ventanas.append(Ventana(id: id, pos: CGPoint(x: 420 + n * 34, y: 200 + n * 26), tam: CGSize(width: 560, height: 330), z: zTope))
+        ventanas.append(Ventana(id: id, pos: CGPoint(x: iconosAncho + (area.width - iconosAncho - 60) / 2 + n * 26, y: libreAlto / 2 + n * 16), tam: tam, z: zTope))
+        acomodar()
+    }
+    /// que ninguna ventana quede afuera de la pantalla (al abrirla o al girar el teléfono)
+    func acomodar() {
+        let libreAlto = area.height - 54, isla: CGFloat = area.width > area.height ? 62 : 10   // la isla de la cámara al costado
+        for i in ventanas.indices {
+            var v = ventanas[i]
+            v.tam.width = min(v.tam.width, area.width - 2 * isla); v.tam.height = min(v.tam.height, libreAlto - 12)
+            v.pos.x = min(max(v.pos.x, v.tam.width / 2 + isla), area.width - v.tam.width / 2 - isla)
+            v.pos.y = min(max(v.pos.y, v.tam.height / 2 + 6), libreAlto - v.tam.height / 2 - 6)
+            if v != ventanas[i] { ventanas[i] = v }
+        }
     }
 
     // ---------- barra de tareas ----------
