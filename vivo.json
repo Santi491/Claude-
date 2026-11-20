@@ -26,6 +26,11 @@
    "estado": "trabajando",
    "texto": "Recalcular análisis con precios nuevos",
    "hora": "10:49"
+  },
+  "fin": {
+   "estado": "trabajando",
+   "texto": "Finanzas e inventario",
+   "hora": "10:49"
   }
  }
 }
