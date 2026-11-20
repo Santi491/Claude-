@@ -6,3 +6,7 @@ Fotos.xcassets/
 personas-prueba/
 CargoBrothers/Personas/
 .DS_Store
+
+build-dev/
+build-ipa/
+CargoBrothers.xcodeproj/xcshareddata/

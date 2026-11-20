@@ -410,6 +410,117 @@
   /* ---------- Lounge (al fondo a la derecha, del muro bajo hasta el pasillo) ---------- */
   // (27/10) el entrepiso del jefe se sacó: la oficina de Santi pasó a planta baja, al fondo a la izquierda
   const nero = M(0xffffff, { map: marbleN, roughness: .18, metalness: .06 });
+  /* ---------- Muebles con realismo (Santi, 19-20/11, igual que la app de iPhone): sofá y sillones modernos de cuero cognac,
+     sillas ejecutivas de la sala de juntas, gym con piso de goma, luces y espejo, y barra de café con máquina de espresso.
+     "mullido" es una caja tapizada: bordes redondeados en toda la pieza y la cara de arriba un poco inflada. ---------- */
+  const MUE = (() => {
+    function mullido(w, h, l, r, infla) {
+      r = r == null ? 0.04 : r; infla = infla == null ? 0.012 : infla;
+      const hw = [w / 2, h / 2, l / 2], rr = Math.min(r, Math.min(...hw) * 0.95), seg = 12, n1 = seg + 1;
+      const pos = [], nor = [], uv = [], idx = [];
+      const caras = [[1, 1, 0, 2], [1, -1, 2, 0], [0, 1, 2, 1], [0, -1, 1, 2], [2, 1, 1, 0], [2, -1, 0, 1]];
+      const f = k => { const x = k / seg * 2 - 1; return x * (1.5 - 0.5 * x * x); };
+      const punto = c => {
+        const q = [c[0] * hw[0], c[1] * hw[1], c[2] * hw[2]];
+        const d0 = q.map((v, i) => Math.max(-(hw[i] - rr), Math.min(hw[i] - rr, v)));
+        let d = q.map((v, i) => v - d0[i]); const L = Math.hypot(...d) || 1; d = d.map(v => v / L);
+        const p = d0.map((v, i) => v + d[i] * rr);
+        if (c[1] > 0.999) p[1] += infla * (1 - c[0] * c[0]) * (1 - c[2] * c[2]);
+        if (Math.abs(c[2]) > 0.999) p[2] += Math.sign(c[2]) * infla * 0.6 * (1 - c[0] * c[0]) * (1 - c[1] * c[1]);
+        return p;
+      };
+      caras.forEach(([ax, sg, au, av]) => {
+        const base = pos.length / 3, m = [];
+        for (let i = 0; i <= seg; i++) for (let j = 0; j <= seg; j++) { const c = [0, 0, 0]; c[ax] = sg; c[au] = f(i); c[av] = f(j); m.push(punto(c)); }
+        const at = (i, j) => m[Math.max(0, Math.min(seg, i)) * n1 + Math.max(0, Math.min(seg, j))];
+        for (let i = 0; i <= seg; i++) for (let j = 0; j <= seg; j++) {
+          const p = at(i, j), pu = at(i + 1, j).map((v, k) => v - at(i - 1, j)[k]), pv = at(i, j + 1).map((v, k) => v - at(i, j - 1)[k]);
+          let nn = [pu[1] * pv[2] - pu[2] * pv[1], pu[2] * pv[0] - pu[0] * pv[2], pu[0] * pv[1] - pu[1] * pv[0]];
+          const L = Math.hypot(...nn) || 1; nn = nn.map(v => v / L); if (nn[ax] * sg < 0) nn = nn.map(v => -v);
+          pos.push(...p); nor.push(...nn);
+          // textura proyectada según la cara (en las curvas no se estira)
+          const an = nn.map(Math.abs), e = an[0] >= an[1] && an[0] >= an[2] ? 0 : an[1] >= an[2] ? 1 : 2, [ua, va] = e === 0 ? [2, 1] : e === 1 ? [0, 2] : [0, 1];
+          uv.push(p[ua] * 2.4, p[va] * 2.4);
+        }
+        for (let i = 0; i < seg; i++) for (let j = 0; j < seg; j++) {
+          const k = base + i * n1 + j, k2 = k + n1, A = pos.slice(k * 3, k * 3 + 3), B = pos.slice(k2 * 3, k2 * 3 + 3), C = pos.slice((k + 1) * 3, (k + 1) * 3 + 3);
+          const u = B.map((v, q) => v - A[q]), v2 = C.map((v, q) => v - A[q]), cr = [u[1] * v2[2] - u[2] * v2[1], u[2] * v2[0] - u[0] * v2[2], u[0] * v2[1] - u[1] * v2[0]];
+          if (cr[ax] * sg >= 0) idx.push(k, k2, k + 1, k + 1, k2, k2 + 1); else idx.push(k, k + 1, k2, k + 1, k2 + 1, k2);
+        }
+      });
+      const g = new THREE.BufferGeometry();
+      g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute("normal", new THREE.Float32BufferAttribute(nor, 3));
+      g.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(idx); return g;
+    }
+    const pieza = (geo, mat, x, y, z, p) => { const m = new THREE.Mesh(geo, mat); m.position.set(x, y, z); m.castShadow = true; m.receiveShadow = true; p.add(m); return m; };
+    const tubo = (a, b, r, mat, p, lados) => {
+      const va = new THREE.Vector3(...a), vb = new THREE.Vector3(...b), d = vb.clone().sub(va);
+      const m = new THREE.Mesh(new THREE.CylinderGeometry(r, r, d.length(), lados || 14), mat);
+      m.position.copy(va).add(vb).multiplyScalar(0.5); m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize());
+      m.castShadow = true; p.add(m); return m;
+    };
+    // relieve (mapa de normales) hecho en código: poros y pocas arrugas para el cuero; tejido para la tela
+    function relieve(tejido) {
+      const T = 256, h = new Float32Array(T * T); let s = tejido ? 7 : 3; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+      if (tejido) for (let y = 0; y < T; y++) for (let x = 0; x < T; x++) h[y * T + x] = ((((x >> 2) + (y >> 2)) & 1) ? Math.sin(x * .9) : Math.sin(y * .9)) * .3 + r() * .25;
+      else {
+        for (let n = 0; n < 900; n++) { const cx = r() * T | 0, cy = r() * T | 0, rr = 1 + (r() * 2.5 | 0); for (let dy = -rr; dy <= rr; dy++) for (let dx = -rr; dx <= rr; dx++) if (dx * dx + dy * dy <= rr * rr) h[((cy + dy + T) % T) * T + (cx + dx + T) % T] -= .35; }
+        for (let n = 0; n < 5; n++) { let x = r() * T, y = r() * T, a = r() * 6.28; for (let k = 0; k < 30 + r() * 60; k++) { for (let d = -2; d <= 2; d++) h[(((y | 0) + d + T) % T) * T + ((x | 0) + T) % T] -= .5 * (1 - Math.abs(d) / 3); x += Math.cos(a) * 1.5; y += Math.sin(a) * 1.5; a += (r() - .5) * .3; } }
+      }
+      const c = document.createElement("canvas"); c.width = c.height = T; const g = c.getContext("2d"), im = g.createImageData(T, T), k = tejido ? 2.2 : 3.2;
+      for (let y = 0; y < T; y++) for (let x = 0; x < T; x++) {
+        const hx = h[y * T + (x + 1) % T] - h[y * T + (x - 1 + T) % T], hy = h[((y + 1) % T) * T + x] - h[((y - 1 + T) % T) * T + x];
+        let nx = -hx * k, ny = -hy * k, nz = 1; const L = Math.hypot(nx, ny, nz); nx /= L; ny /= L; nz /= L;
+        const i = (y * T + x) * 4; im.data[i] = (nx * .5 + .5) * 255; im.data[i + 1] = (ny * .5 + .5) * 255; im.data[i + 2] = (nz * .5 + .5) * 255; im.data[i + 3] = 255;
+      }
+      g.putImageData(im, 0, 0); const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = ANISO; return t;
+    }
+    const nCuero = relieve(false), nTela = relieve(true);
+    const mat = (hex, tejido, rough, rep) => { const n = (tejido ? nTela : nCuero).clone(); n.needsUpdate = true; n.repeat.set(rep, rep);
+      return M(hex, { roughness: rough, normalMap: n, normalScale: new THREE.Vector2(tejido ? .5 : .35, tejido ? .5 : .35) }); };
+    const cognac = mat(0x5a2810, false, .5, 2.5), cognacOsc = mat(0x381709, false, .5, 2.5), tela = mat(0x3d4148, true, .95, 6);
+    const metalNegro = M(0x0c0c0e, { metalness: .8, roughness: .35 });
+
+    // sillón moderno (el asiento mira hacia -z, como los de antes)
+    function sillon(x, z, rot, ancho, fondo) {
+      ancho = ancho || 0.9; fondo = fondo || 0.85;
+      const s = new THREE.Group(); s.position.set(x, 0, z); s.rotation.y = rot; scene.add(s);
+      pieza(mullido(ancho, .14, fondo, .025, .002), cognac, 0, .2, 0, s);
+      [-1, 1].forEach(sx => pieza(mullido(.07, .36, fondo, .025, .002), cognac, sx * (ancho / 2 - .035), .37, 0, s));
+      pieza(mullido(ancho - .14, .42, .1, .03, .003), cognac, 0, .48, fondo / 2 - .05, s);
+      pieza(mullido(ancho - .16, .13, fondo - .14, .04, .016), cognac, 0, .335, -.06, s);
+      pieza(mullido(ancho - .18, .34, .14, .045, .014), cognac, 0, .58, fondo / 2 - .15, s).rotation.x = .12;
+      [-1, 1].forEach(sx => [-1, 1].forEach(sz => { const ab = [sx * (ancho / 2 - .03), .012, sz * (fondo / 2 - .03)];
+        tubo([sx * (ancho / 2 - .06), .13, sz * (fondo / 2 - .06)], ab, .011, metalNegro, s, 10); cyl(.012, .012, .012, bronce, ab[0], .006, ab[2], s, 12); }));
+      return s;
+    }
+    // sofá seccional (frente hacia +z)
+    function sofa(x, z) {
+      const s = new THREE.Group(); s.position.set(x, 0, z); scene.add(s);
+      pieza(mullido(3.2, .2, .95, .025, .002), tela, 0, .2, 0, s); pieza(mullido(3.2, .62, .16, .03, .003), tela, 0, .53, -.4, s);
+      pieza(mullido(.12, .42, .95, .03, .002), tela, -1.54, .39, 0, s);
+      [-.9, 0, .9].forEach(dx => { pieza(mullido(.86, .14, .76, .04, .016), cognac, dx, .37, .07, s); pieza(mullido(.84, .42, .16, .045, .014), cognac, dx, .67, -.25, s).rotation.x = -.12; });
+      [[-1.15, 0x8a6d3e], [1.12, 0xe9dfd0], [.75, 0x2f5a3c]].forEach(([dx, c], k) => { const n = pieza(mullido(.4, .4, .12, .07, .03), mat(c, true, .95, 4), dx, .62, -.1, s); n.rotation.set(-.22, k ? -.15 : .2, k ? .08 : -.06); });
+      pieza(mullido(.95, .2, 1.4, .025, .002), tela, 2.07, .2, .7, s); pieza(mullido(.86, .14, 1.32, .04, .016), cognac, 2.07, .37, .72, s);
+      pieza(mullido(.12, .42, 1.4, .03, .002), tela, 2.6, .39, .7, s);
+      [[-1.55, -.42], [-1.55, .42], [0, -.42], [1.55, -.42], [2.6, -.42], [2.6, 1.35], [1.6, 1.35], [1.55, .42]].forEach(([px, pz]) => tubo([px, .11, pz], [px, 0, pz], .012, metalNegro, s, 10));
+      return s;
+    }
+    // silla ejecutiva de la sala de juntas (frente hacia -z, asiento a 0,47 m)
+    function sillaJunta(x, z, rot) {
+      const s = new THREE.Group(); s.position.set(x, 0, z); s.rotation.y = rot; scene.add(s);
+      pieza(mullido(.52, .035, .5, .015, 0), metalNegro, 0, .43, 0, s); pieza(mullido(.54, .09, .52, .04, .015), cognac, 0, .49, -.01, s);
+      const r = new THREE.Group(); r.position.set(0, .55, .25); r.rotation.x = .12; s.add(r);
+      pieza(mullido(.5, .36, .09, .04, .012), cognac, 0, .2, 0, r); pieza(mullido(.48, .42, .08, .04, .01), cognac, 0, .6, .015, r).rotation.x = .06;
+      pieza(mullido(.52, .8, .03, .012, 0), metalNegro, 0, .4, .06, r);
+      [-1, 1].forEach(sx => { const px = sx * .3; tubo([px, .45, .12], [px, .68, .05], .012, cromo, s, 10); tubo([px, .45, -.12], [px, .66, -.12], .012, cromo, s, 10); pieza(mullido(.06, .035, .32, .015, .002), cognac, px, .69, -.04, s); });
+      tubo([0, .42, 0], [0, .1, 0], .025, cromo, s); tubo([0, .25, 0], [0, .1, 0], .034, metalNegro, s);
+      for (let k = 0; k < 5; k++) { const a = k * 2 * Math.PI / 5, dx = Math.sin(a) * .3, dz = Math.cos(a) * .3; tubo([0, .1, 0], [dx, .07, dz], .016, cromo, s, 8);
+        const w = cyl(.028, .028, .025, metalNegro, dx, .028, dz, s, 14); w.rotation.set(0, -a, Math.PI / 2); }
+      return s;
+    }
+    return { mullido, pieza, tubo, mat, sillon, sofa, sillaJunta, cognac, cognacOsc, tela, metalNegro };
+  })();
   const sofaM = M(0x7b7f84, { roughness: .95 });
   function sofa(x, z, w, d, rotY) {
     const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = rotY; scene.add(g);
@@ -428,36 +539,54 @@
   box(2.5, 1.45, 0.06, M(0x0a0a0b, { metalness: .4, roughness: .3 }), LG.tvX, 1.75, ZB + 0.04);
   const tv = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 1.35), new THREE.MeshBasicMaterial({ map: tvArt, toneMapped: false }));
   tv.position.set(LG.tvX, 1.75, ZB + 0.075); scene.add(tv);
-  // sofá seccional: base de tela, almohadones de cuero cognac, cojines y chaise a la derecha
-  const tela = M(0x34383e, { roughness: .95 });
-  const sofaG = new THREE.Group(); sofaG.position.set(LG.tvX, 0, LG.sofaZ); scene.add(sofaG);
-  box(3.2, 0.3, 0.95, tela, 0, 0.15, 0, sofaG); box(3.2, 0.72, 0.24, tela, 0, 0.5, -0.38, sofaG);
-  box(0.24, 0.55, 0.95, tela, -1.48, 0.3, 0, sofaG);
-  [-0.9, 0, 0.9].forEach(x => { box(0.86, 0.12, 0.72, cueroCognac, x, 0.36, 0.08, sofaG); box(0.84, 0.42, 0.14, cueroCognac, x, 0.68, -0.22, sofaG).rotation.x = -0.12; });
-  [[-1.15, 0x8a6d3e], [1.12, 0xe9dfd0], [0.75, 0x2f5a3c]].forEach(([x, c], i) => { const k = box(0.36, 0.34, 0.1, M(c, { roughness: .9 }), x, 0.6, -0.08, sofaG); k.rotation.set(-0.25, i ? -0.2 : 0.25, i ? 0.12 : -0.1); });
-  box(0.95, 0.3, 1.4, tela, 2.07, 0.15, 0.7, sofaG); box(0.86, 0.12, 1.3, cueroCognac, 2.07, 0.36, 0.72, sofaG); box(0.24, 0.55, 1.4, tela, 2.55, 0.3, 0.7, sofaG);
+  MUE.sofa(LG.tvX, LG.sofaZ);   // (20/11) sofá moderno de cuero, como la app
   // mesa redonda de mármol con pie de bronce, taza y libro
   cyl(0.55, 0.55, 0.05, marmolCalido, LG.tvX - 0.2, 0.42, -6.0, scene, 40); cyl(0.07, 0.2, 0.4, bronce, LG.tvX - 0.2, 0.2, -6.0, scene, 16);
   cyl(0.07, 0.06, 0.18, M(0xf4f6f8), LG.tvX, 0.53, -5.9, scene, 12); box(0.3, 0.04, 0.22, M(0x8a6d3e), LG.tvX - 0.4, 0.465, -6.1);
   // sillón de cuero mirando al sofá (asiento a 0,42 m, como el sofá)
-  function sillon(x, z, rot) {
-    const s = new THREE.Group(); s.position.set(x, 0, z); s.rotation.y = rot; scene.add(s);
-    box(0.9, 0.36, 0.85, cueroCognac, 0, 0.24, 0, s); box(0.9, 0.55, 0.2, cueroCognac, 0, 0.64, 0.33, s).rotation.x = 0.15;
-    [-0.42, 0.42].forEach(x2 => box(0.14, 0.32, 0.85, cueroCognac, x2, 0.5, 0, s));
-    [-0.35, 0.35].forEach(x2 => [-0.3, 0.3].forEach(z2 => cyl(0.02, 0.015, 0.06, bronce, x2, 0.03, z2, s, 6)));
-    return s;
-  }
+  function sillon(x, z, rot) { return MUE.sillon(x, z, rot); }   // (20/11) sillón moderno de cuero, como la app
   sillon(10.6, -5.8, -0.8);
   // lámpara de pie de bronce con pantalla cálida
   cyl(0.18, 0.18, 0.03, bronce, 10.2, 0.015, -9.2, scene, 20); cyl(0.015, 0.015, 1.6, bronce, 10.2, 0.8, -9.2, scene, 6);
   cyl(0.18, 0.24, 0.3, M(0xf1e4cc, { emissive: 0xffc98a, emissiveIntensity: .5, roughness: .9 }), 10.2, 1.68, -9.2, scene, 20);
-  // barra de café contra el muro del fondo con 3 banquetas de cuero
+  /* ---------- Barra de café con realismo (Santi, 19/11): mostrador de mármol cálido con canto de bronce y cubierta de mármol
+     negro, máquina de espresso con dos grupos, molinillo, tazas con platito, repisa de nogal con frascos y 3 banquetas. ---------- */
   const BAR = { x: 23.2, z: ZB + 0.45 };
-  box(3.6, 1.0, 0.62, marmolCalido, BAR.x, 0.5, BAR.z); box(3.66, 0.04, 0.7, bronce, BAR.x, 0.82, BAR.z); box(3.7, 0.05, 0.72, nero, BAR.x, 1.03, BAR.z);
-  box(0.45, 0.5, 0.4, M(0x111214, { metalness: .4 }), BAR.x - 1.1, 1.3, BAR.z - 0.05); box(0.36, 0.05, 0.05, ledM, BAR.x - 1.1, 1.42, BAR.z + 0.16);   // máquina de café
-  [[-0.3, 0xf4f6f8], [-0.15, 0xf4f6f8], [0, 0x2b2420]].forEach(([dx, c]) => cyl(0.04, 0.035, 0.1, M(c), BAR.x + dx, 1.1, BAR.z - 0.05, scene, 12));
-  box(3.2, 0.04, 0.3, nero, BAR.x, 1.95, ZB + 0.16); box(3.2, 0.012, 0.02, M(0xffd9a0, { emissive: 0xffc070, emissiveIntensity: 1.2 }), BAR.x, 1.925, ZB + 0.3);   // repisa con luz
-  [-1, 0, 1].forEach(d => { const x = BAR.x + d; cyl(0.2, 0.2, 0.06, cueroCognac, x, 0.78, BAR.z + 0.75, scene, 20); cyl(0.025, 0.025, 0.75, bronce, x, 0.38, BAR.z + 0.75, scene, 8); cyl(0.2, 0.22, 0.02, bronce, x, 0.01, BAR.z + 0.75, scene, 20); });
+  {
+    const { mullido, pieza, tubo } = MUE, b = new THREE.Group(); scene.add(b);
+    const x = BAR.x, z = BAR.z, top = 1.055;
+    const acero = M(0xc7c9cd, { metalness: 1, roughness: .18 }), ceramica = M(0xf3f3f1, { roughness: .25 }), negro = M(0x08080a, { roughness: .4, metalness: .2 });
+    const nogal = M(0x54331c, { roughness: .5 }), vidrio = M(0x3f2614, { roughness: .1, metalness: .1 });
+    const c = (r, h, m, px, py, pz, seg) => cyl(r, r, h, m, px, py, pz, b, seg || 28);
+    const taza = (px, py, pz) => { c(.065, .008, ceramica, px, py + .004, pz); cyl(.04, .034, .06, ceramica, px, py + .04, pz, b, 24); c(.034, .003, M(0x2e170a, { roughness: .2 }), px, py + .069, pz, 20);
+      const asa = new THREE.Mesh(new THREE.TorusGeometry(.016, .004, 8, 16), ceramica); asa.position.set(px + .045, py + .04, pz); b.add(asa); };
+    pieza(mullido(3.6, .96, .62, .02, 0), marmolCalido, x, .5, z, b);
+    for (let k = 0; k < 12; k++) box(.012, .8, .01, M(0xb3a690, { roughness: .3 }), x - 1.65 + k * .3, .5, z + .312, b).castShadow = false;
+    box(3.66, .035, .7, bronce, x, .82, z, b); box(3.72, .05, .74, nero, x, 1.03, z, b); box(3.5, .06, .04, negro, x, .03, z + .29, b);
+    // máquina de espresso
+    const mx = x - 1.05, mz = z - .08;
+    pieza(mullido(.68, .42, .46, .04, 0), acero, mx, top + .25, mz, b); pieza(mullido(.6, .12, .02, .01, 0), negro, mx, top + .39, mz + .235, b);
+    [-.15, .15].forEach(gx => { c(.045, .06, acero, mx + gx, top + .27, mz + .24); c(.04, .03, negro, mx + gx, top + .225, mz + .25);
+      tubo([mx + gx, top + .225, mz + .27], [mx + gx, top + .2, mz + .42], .012, negro, b, 10); taza(mx + gx, top + .05, mz + .25); });
+    box(.6, .02, .16, negro, mx, top + .045, mz + .27, b); c(.035, .012, ceramica, mx, top + .39, mz + .248).rotation.x = Math.PI / 2;
+    tubo([mx + .3, top + .35, mz + .2], [mx + .36, top + .12, mz + .3], .008, acero, b, 8);
+    for (let k = 0; k < 4; k++) taza(mx - .22 + k * .14, top + .465, mz - .08);
+    // molinillo
+    const gx = x - .45; pieza(mullido(.16, .24, .2, .03, 0), negro, gx, top + .12, z - .1, b); c(.06, .06, acero, gx, top + .27, z - .1);
+    cyl(.075, .045, .16, vidrio, gx, top + .38, z - .1, b, 24);
+    for (let k = 0; k < 3; k++) taza(x - .1 + k * .16, top, z + .12);
+    c(.04, .09, ceramica, x + .45, top + .045, z + .05); c(.042, .012, acero, x + .45, top + .096, z + .05);
+    // repisa de nogal con luz y frascos
+    box(3.2, .045, .3, nogal, x, 1.95, ZB + .16, b); box(3.1, .008, .02, M(0xffd9a0, { emissive: 0xffc070, emissiveIntensity: 1.2 }), x, 1.924, ZB + .28, b).castShadow = false;
+    for (let k = 0; k < 7; k++) { const fx = x - 1.3 + k * .43, h = .16 + (k % 3) * .04; c(.055, h, vidrio, fx, 1.972 + h / 2, ZB + .16, 20); c(.057, .02, nogal, fx, 1.982 + h, ZB + .16, 20); }
+    // banquetas tapizadas con apoyapiés de bronce
+    [-1, 0, 1].forEach(d => { const sx = x + d, sz = z + .75;
+      c(.18, .06, MUE.cognac, sx, .79, sz, 40); const bo = new THREE.Mesh(new THREE.TorusGeometry(.18, .032, 12, 40), MUE.cognac); bo.rotation.x = Math.PI / 2; bo.position.set(sx, .79, sz); b.add(bo);
+      c(.17, .02, MUE.cognacOsc, sx, .826, sz, 40); tubo([sx, .76, sz], [sx, .02, sz], .022, bronce, b);
+      const ap = new THREE.Mesh(new THREE.TorusGeometry(.17, .012, 8, 36), bronce); ap.rotation.x = Math.PI / 2; ap.position.set(sx, .3, sz); b.add(ap);
+      for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2; tubo([sx, .3, sz], [sx + .17 * Math.sin(a), .3, sz + .17 * Math.cos(a)], .008, bronce, b, 8); }
+      c(.2, .025, bronce, sx, .0125, sz, 40); });
+  }
   // rincón de charla: dos sillones y una mesita, con planta
   alfombra(26.6, -5.6, 3.6, 3.0, 0x2a2420, 0x8a6d3e);
   sillon(25.6, -5.6, -Math.PI / 2); sillon(27.6, -5.6, Math.PI / 2);
@@ -470,62 +599,90 @@
   pointL(LG.tvX, 2.8, -6.6, 0.5, 9); pointL(BAR.x, 2.6, -7.5, 0.4, 8);
 
   /* ---------- Gym (a la derecha de la sala de operaciones) ---------- */
+  /* ---------- Gym con realismo (Santi, 19/11: "se ve súper de juguete"; igual que la app): piso de goma en baldosas, jaula con
+     agujeros, barra con discos de buje de acero, árbol de discos, mancuernas hexagonales, bancos tapizados, cinta con motor y
+     pantalla, bici con volante, saco de cuero, espejo y 3 luces cálidas colgadas. Mismos lugares que antes. ---------- */
   const gym = new THREE.Group(); gym.position.set(21, 0, 9); scene.add(gym);
-  const gmat = new THREE.Mesh(new THREE.BoxGeometry(12.6, 0.035, 4.0), M(0x1b1d20, { roughness: 1 })); gmat.position.y = 0.018; gmat.receiveShadow = true; gym.add(gmat);
-  [[0, -2.0, 12.6, .04], [0, 2.0, 12.6, .04], [-6.3, 0, .04, 4.0], [6.3, 0, .04, 4.0]].forEach(([x, z, w, d]) => { const e = box(w, 0.012, d, ledM, x, 0.04, z, gym); e.castShadow = false; });
-  const steel = M(0xc9a45c, { metalness: .85, roughness: .28 }), black = M(0x141414, { roughness: .6 }), rubber = M(0x101010, { roughness: .9 }), pad = M(0x1a1512, { roughness: .42 });   // (Santi, 28/10) bronce y cuero negro
-  const hcyl = (r, len, mat, x, y, z, axis) => { const c = cyl(r, r, len, mat, x, y, z, gym, 20); if (axis === "x") c.rotation.z = Math.PI / 2; else c.rotation.x = Math.PI / 2; return c; };
-  // jaula de sentadillas (power rack) sobre plataforma de madera, con barra cargada
-  const rx = -4.9;
-  box(2.4, 0.06, 2.4, M(0x5a3a22, { roughness: .6 }), rx, 0.05, -0.3, gym);
-  [[-0.65, -1.0], [0.65, -1.0], [-0.65, 0.3], [0.65, 0.3]].forEach(([dx, dz]) => box(0.08, 2.35, 0.08, black, rx + dx, 1.2, dz, gym));
-  [-1.0, 0.3].forEach(dz => box(1.38, 0.08, 0.08, black, rx, 2.36, dz, gym));
-  [-0.65, 0.65].forEach(dx => box(0.08, 0.08, 1.38, black, rx + dx, 2.36, -0.35, gym));
-  hcyl(0.018, 2.2, steel, rx, 1.35, 0.3, "x");
-  [-0.85, -0.95, 0.85, 0.95].forEach((dx, i) => hcyl(i % 2 ? 0.17 : 0.23, 0.05, rubber, rx + dx, 1.35, 0.3, "x"));
-  // banco de press plano frente a la jaula
-  box(0.32, 0.08, 1.2, pad, rx, 0.45, 1.3, gym); box(0.06, 0.4, 0.06, steel, rx, 0.22, 0.85, gym); box(0.06, 0.4, 0.06, steel, rx, 0.22, 1.75, gym);
-  // árbol de discos
-  const tx = -3.0;
-  cyl(0.3, 0.3, 0.04, black, tx, 0.04, -1.3, gym, 20); cyl(0.03, 0.03, 1.1, black, tx, 0.58, -1.3, gym, 8);
-  [[0.35, .23], [0.6, .2], [0.85, .16]].forEach(([y, r]) => { [-1, 1].forEach(s => { hcyl(0.015, 0.25, steel, tx + s * 0.12, y, -1.3, "x"); hcyl(r, 0.06, rubber, tx + s * 0.22, y, -1.3, "x"); }); });
-  // rack de mancuernas (2 niveles) con pares
-  const dx0 = -1.2;
-  box(2.6, 0.06, 0.55, black, dx0, 0.45, -1.55, gym); box(2.6, 0.06, 0.55, black, dx0, 0.85, -1.55, gym);
-  [-1.25, 1.25].forEach(e => box(0.06, 0.88, 0.55, black, dx0 + e, 0.44, -1.55, gym));
-  for (let row = 0; row < 2; row++) for (let k = 0; k < 5; k++) {
-    const x = dx0 - 1.0 + k * 0.5, y = 0.55 + row * 0.4, r = 0.055 + k * 0.012 + row * 0.01;
-    hcyl(0.02, 0.3, steel, x, y, -1.55, "z");
-    [-0.14, 0.14].forEach(dz => hcyl(r, 0.07, black, x, y, -1.55 + dz, "z"));
+  {
+    const { mullido, pieza, tubo, mat } = MUE;
+    const negroMate = M(0x0a0a0b, { metalness: .1, roughness: .65 }), acero = M(0xa9abb0, { metalness: 1, roughness: .25 }), goma = M(0x070708, { roughness: .92 });
+    const tapizado = mat(0x0b0a09, false, .55, 3), consola = M(0x111214, { metalness: .4, roughness: .3 }), madera = M(0x5c3b22, { roughness: .6 });
+    const caja = (w, h, d, m, x, y, z, p) => pieza(mullido(w, h, d, Math.min(.008, Math.min(w, h, d) * .3), 0), m, x, y, z, p || gym);
+    const gmat = new THREE.Mesh(new THREE.BoxGeometry(12.6, 0.03, 4.0), M(0x0e0f10, { roughness: .9 })); gmat.position.y = 0.015; gmat.receiveShadow = true; gym.add(gmat);
+    const junta = M(0x050505, { roughness: 1 });
+    for (let k = -6; k <= 6; k++) box(0.006, 0.002, 4.0, junta, k, 0.036, 0, gym).castShadow = false;
+    for (let k = -1; k <= 1; k++) box(12.6, 0.002, 0.006, junta, 0, 0.036, k, gym).castShadow = false;
+    [[0, -2.0, 12.6, .03], [0, 2.0, 12.6, .03], [-6.3, 0, .03, 4.0], [6.3, 0, .03, 4.0]].forEach(([x, z, w, d]) => { box(w, 0.01, d, ledM, x, 0.042, z, gym).castShadow = false; });
+    const disco = (r, g, x, y, z) => { cyl(r, r, g, goma, x, y, z, gym, 36).rotation.z = Math.PI / 2; cyl(.03, .03, g + .006, acero, x, y, z, gym, 20).rotation.z = Math.PI / 2; };
+    const mancuerna = (r, x, y, z) => { tubo([x, y, z - .13], [x, y, z + .13], .016, acero, gym, 12); [-.135, .135].forEach(dz => cyl(r, r, .07, goma, x, y, z + dz, gym, 6).rotation.x = Math.PI / 2); };
+    // jaula de sentadillas sobre plataforma de madera con gomas, barra cargada
+    const rx = -4.9;
+    caja(2.4, .05, 2.4, madera, rx, .055, -.3); [-.6, .6].forEach(dx => caja(.6, .012, 2.3, goma, rx + dx, .084, -.3));
+    [[-.65, -1.0], [.65, -1.0], [-.65, .3], [.65, .3]].forEach(([dx, dz]) => { const p = caja(.075, 2.35, .075, negroMate, rx + dx, 1.255, dz);
+      for (let k = 0; k < 20; k++) box(.012, .025, .08, junta, dx < 0 ? .034 : -.034, -.9 + k * .09, 0, p).castShadow = false; });
+    [-1.0, .3].forEach(dz => caja(1.38, .075, .075, negroMate, rx, 2.39, dz)); [-.65, .65].forEach(dx => caja(.075, .075, 1.38, negroMate, rx + dx, 2.39, -.35));
+    tubo([rx - .65, 2.25, -1.0], [rx + .65, 2.25, -1.0], .016, acero, gym);
+    [-.65, .65].forEach(dx => caja(.05, .1, .07, acero, rx + dx, 1.3, .38));
+    tubo([rx - 1.1, 1.35, .33], [rx + 1.1, 1.35, .33], .014, acero, gym);
+    [-1, 1].forEach(sx => { tubo([rx + sx * .78, 1.35, .33], [rx + sx * 1.1, 1.35, .33], .025, acero, gym); disco(.225, .06, rx + sx * .85, 1.35, .33); disco(.225, .06, rx + sx * .92, 1.35, .33); disco(.16, .04, rx + sx * .98, 1.35, .33); });
+    // banco plano con toalla y botellas
+    const bz = 1.3;
+    pieza(mullido(.3, .09, 1.15, .035, .01), tapizado, rx, .45, bz, gym); caja(.08, .04, 1.0, negroMate, rx, .385, bz);
+    [-.45, .45].forEach(dz => { tubo([rx, .38, bz + dz], [rx, .04, bz + dz], .025, negroMate, gym); caja(.42, .04, .06, negroMate, rx, .05, bz + dz); });
+    pieza(mullido(.26, .05, .36, .02, .008), mat(0xdcd6cc, true, .95, 10), rx, .52, bz + .35, gym);
+    [0x2a2d33, 0xc9a45c].forEach((c, k) => cyl(.035, .035, .22, M(c, { metalness: .6, roughness: .3 }), rx + .45 + k * .12, .14, bz + .6, gym, 18));
+    // árbol de discos
+    const tx = -3.0; cyl(.3, .3, .04, negroMate, tx, .05, -1.3, gym, 30); tubo([tx, .05, -1.3], [tx, 1.15, -1.3], .03, negroMate, gym);
+    [[.35, .225], [.65, .2], [.95, .15]].forEach(([y, r]) => [-1, 1].forEach(sx => { tubo([tx, y, -1.3], [tx + sx * .26, y, -1.3], .014, acero, gym); disco(r, .05, tx + sx * .18, y, -1.3); }));
+    // rack de mancuernas inclinado con 10 pares hexagonales
+    const dx0 = -1.2;
+    [[.5, -1.5], [.88, -1.62]].forEach(([y, z]) => { caja(2.6, .03, .42, negroMate, dx0, y, z).rotation.x = -.18; });
+    [-1.25, 1.25].forEach(e => { tubo([dx0 + e, .03, -1.35], [dx0 + e, .9, -1.75], .03, negroMate, gym); caja(.06, .03, .6, negroMate, dx0 + e, .046, -1.55); });
+    for (let row = 0; row < 2; row++) for (let k = 0; k < 5; k++) { const x = dx0 - 1.0 + k * .5, y = .58 + row * .38, r = .05 + k * .01 + row * .008, z = -1.5 - row * .12; mancuerna(r, x - .1, y, z); mancuerna(r, x + .1, y, z); }
+    // banco ajustable inclinado
+    const bx = -1.2;
+    tubo([bx, .05, -.45], [bx, .05, .75], .035, negroMate, gym); caja(.5, .05, .08, negroMate, bx, .056, -.45); caja(.5, .05, .08, negroMate, bx, .056, .75);
+    tubo([bx, .05, .38], [bx, .4, .38], .03, negroMate, gym); pieza(mullido(.3, .08, .42, .035, .012), tapizado, bx, .45, .42, gym);
+    { const r = new THREE.Group(); r.position.set(bx, .45, .2); r.rotation.x = -.55; gym.add(r); pieza(mullido(.3, .08, .95, .035, .012), tapizado, 0, 0, -.48, r); caja(.08, .04, .85, negroMate, 0, -.06, -.45, r); }
+    tubo([bx, .05, -.2], [bx, .62, -.25], .025, negroMate, gym);
+    // pesas rusas
+    [.12, .14, .16].forEach((r, i) => { const x = .5 + i * .45; const b = new THREE.Mesh(new THREE.SphereGeometry(r, 28, 20), negroMate); b.position.set(x, r * .92, -1.6); b.castShadow = true; gym.add(b);
+      const h = new THREE.Mesh(new THREE.TorusGeometry(r * .62, r * .13, 10, 28, Math.PI), negroMate); h.position.set(x, r * 1.75, -1.6); gym.add(h); });
+    // cinta de correr (la banda a 0,23 m, donde corren los agentes)
+    const tm = new THREE.Group(); tm.position.set(1.4, 0, .6); gym.add(tm);
+    pieza(mullido(.86, .17, 1.95, .05, 0), consola, 0, .12, .05, tm); caja(.6, .012, 1.7, goma, 0, .215, .12, tm);
+    [-1, 1].forEach(sx => caja(.11, .025, 1.75, M(0x343538, { roughness: .6 }), sx * .36, .215, .1, tm));
+    pieza(mullido(.86, .22, .32, .08, 0), consola, 0, .2, -.88, tm);
+    [-1, 1].forEach(sx => { tubo([sx * .38, .3, -.85], [sx * .33, 1.25, -1.0], .03, consola, tm); tubo([sx * .33, 1.05, -.95], [sx * .33, 1.05, -.45], .018, acero, tm); });
+    { const con = pieza(mullido(.72, .32, .1, .04, 0), consola, 0, 1.33, -1.0, tm); con.rotation.x = -.4;
+      const scr = new THREE.Mesh(new THREE.PlaneGeometry(.38, .2), new THREE.MeshBasicMaterial({ color: 0x1f6bad, toneMapped: false })); scr.position.set(0, .02, .052); con.add(scr); }
+    // bicicleta fija
+    const bk = new THREE.Group(); bk.position.set(2.9, 0, .6); gym.add(bk);
+    [-.5, .5].forEach(z => tubo([-.3, .04, z], [.3, .04, z], .03, negroMate, bk)); tubo([0, .05, -.5], [0, .05, .5], .03, negroMate, bk);
+    cyl(.25, .25, .06, acero, 0, .42, -.38, bk, 40).rotation.z = Math.PI / 2; pieza(mullido(.09, .42, .42, .04, 0), negroMate, 0, .42, -.22, bk);
+    tubo([0, .05, -.1], [0, .92, .25], .032, negroMate, bk); pieza(mullido(.2, .06, .28, .03, .01), tapizado, 0, .96, .3, bk);
+    tubo([0, .3, -.3], [0, 1.1, -.5], .03, negroMate, bk); tubo([-.22, 1.12, -.5], [.22, 1.12, -.5], .016, acero, bk);
+    pieza(mullido(.2, .13, .05, .02, 0), consola, 0, 1.2, -.55, bk).rotation.x = -.5;
+    // saco de boxeo en su pórtico (placas apoyadas encima del piso de goma)
+    const sx = 4.9;
+    [-.8, .8].forEach(d => { caja(.08, 3.0, .08, negroMate, sx + d, 1.5, -.6); caja(.5, .03, .5, negroMate, sx + d, .046, -.6); });
+    caja(1.7, .08, .08, negroMate, sx, 3.0, -.6); tubo([sx, 2.96, -.6], [sx, 2.5, -.6], .005, acero, gym, 6);
+    { const s2 = new THREE.Mesh(new THREE.LatheGeometry(Array.from({ length: 25 }, (_, k) => { const t = k / 24, y = (t - .5) * 1.73, r = .24 * Math.sqrt(Math.max(0, 1 - Math.pow(Math.max(0, Math.abs(y) - .625) / .24, 2))); return new THREE.Vector2(Math.max(r, .0001), y); }), 32), MUE.cognacOsc)   // cápsula (three r128 no tiene CapsuleGeometry); s2.position.set(sx, 1.85, -.6); s2.castShadow = true; gym.add(s2);
+      cyl(.25, .25, .04, bronce, sx, 2.35, -.6, gym, 32); }
+    // colchoneta, balones medicinales y botella
+    pieza(mullido(.62, .02, 1.75, .01, 0), mat(0x35210f, true, .95, 6), 3.9, .045, 1.2, gym);
+    [[5.6, 1.2, .16], [5.6, 1.6, .14]].forEach(([x, z, r]) => { const b = new THREE.Mesh(new THREE.SphereGeometry(r, 28, 20), mat(0x2b2e33, true, .95, 8)); b.position.set(x, r + .03, z); b.castShadow = true; gym.add(b); });
+    tubo([-4.3, .45, 1.75], [-4.3, .67, 1.75], .035, M(0xd6dde3, { metalness: 1, roughness: .2 }), gym, 16);
+    // espejo de pared detrás del rack, con marco negro
+    caja(6.2, 2.1, .03, M(0x8d969e, { metalness: .25, roughness: .06 }), -.6, 1.25, -1.97);   // (sin mapa de entorno, un espejo 100 % metal se ve negro)
+    caja(6.3, .05, .05, negroMate, -.6, 2.32, -1.97); caja(6.3, .05, .05, negroMate, -.6, .18, -1.97); [-3.73, 2.53].forEach(x => caja(.05, 2.2, .05, negroMate, x, 1.25, -1.97));
+    // 3 luces cálidas colgadas (lámpara lineal de bronce con difusor)
+    [-4.2, 0, 4.2].forEach(x => {
+      const l = new THREE.PointLight(0xffdcae, 0.55, 7, 2); l.position.set(21 + x, 2.9, 9); scene.add(l);
+      tubo([x, 3.1, 0], [x, 4.2, 0], .006, negroMate, gym, 6); caja(1.6, .05, .12, bronce, x, 3.08, 0);
+      box(1.5, .01, .07, new THREE.MeshBasicMaterial({ color: 0xffe0b0 }), x, 3.05, 0, gym).castShadow = false;
+    });
   }
-  // banco ajustable y pesas rusas
-  const ab = box(0.32, 0.08, 1.1, pad, -1.2, 0.5, 0.2, gym); ab.rotation.x = -0.25;
-  box(0.06, 0.42, 0.06, steel, -1.2, 0.22, -0.2, gym); box(0.06, 0.32, 0.06, steel, -1.2, 0.18, 0.6, gym);
-  [0.14, 0.17, 0.2].forEach((r, i) => { const x = 0.5 + i * 0.45; const b = new THREE.Mesh(new THREE.SphereGeometry(r, 18, 14), black); b.position.set(x, r, -1.6); b.castShadow = true; gym.add(b); const h = new THREE.Mesh(new THREE.TorusGeometry(r * 0.6, r * 0.13, 8, 16, Math.PI), black); h.position.set(x, r * 1.8, -1.6); gym.add(h); });
-  // cinta de correr con pantalla
-  const tm = new THREE.Group(); tm.position.set(1.4, 0, 0.6); gym.add(tm);
-  box(0.85, 0.2, 2.0, M(0x1d1f22, { metalness: .4, roughness: .5 }), 0, 0.12, 0, tm); box(0.62, 0.02, 1.8, rubber, 0, 0.23, 0.05, tm);
-  [-0.4, 0.4].forEach(dx => { const u = box(0.06, 1.25, 0.08, M(0x2a2c30, { metalness: .5 }), dx, 0.75, -0.85, tm); u.rotation.x = 0.18; });
-  box(0.8, 0.06, 0.2, M(0x2a2c30, { metalness: .5 }), 0, 1.32, -0.95, tm);
-  const tmScr = new THREE.Mesh(new THREE.PlaneGeometry(0.42, 0.26), new THREE.MeshBasicMaterial({ color: 0x3d7fbf, toneMapped: false })); tmScr.position.set(0, 1.48, -0.98); tmScr.rotation.x = -0.35; tm.add(tmScr);
-  box(0.46, 0.3, 0.04, M(0x111214), 0, 1.48, -1.0, tm).rotation.x = -0.35;
-  // bicicleta fija
-  const bk = new THREE.Group(); bk.position.set(2.9, 0, 0.6); gym.add(bk);
-  box(0.12, 0.06, 1.1, black, 0, 0.04, 0, bk); box(0.6, 0.05, 0.08, black, 0, 0.04, -0.5, bk); box(0.6, 0.05, 0.08, black, 0, 0.04, 0.5, bk);
-  const fw = hcyl(0.26, 0.08, M(0x2a2c30, { metalness: .6 }), 0, 0.42, -0.35, "x"); fw.parent.remove(fw); bk.add(fw);
-  const stem = box(0.08, 0.8, 0.08, black, 0, 0.55, 0.2, bk); stem.rotation.x = -0.25;
-  box(0.26, 0.06, 0.32, pad, 0, 0.98, 0.32, bk);
-  const hb = box(0.08, 0.7, 0.08, black, 0, 0.75, -0.35, bk); hb.rotation.x = 0.2;
-  box(0.5, 0.05, 0.06, black, 0, 1.12, -0.45, bk);
-  // saco de boxeo en su pórtico
-  const sx = 4.9;
-  [-0.8, 0.8].forEach(d => box(0.1, 3.0, 0.1, black, sx + d, 1.5, -0.6, gym)); box(1.7, 0.1, 0.1, black, sx, 3.0, -0.6, gym);
-  cyl(0.006, 0.006, 0.5, M(0x777777), sx, 2.72, -0.6, gym, 4);
-  cyl(0.24, 0.24, 1.2, M(0x2e170b, { roughness: .4 }), sx, 1.85, -0.6, gym, 24); cyl(0.245, 0.245, 0.04, bronce, sx, 2.43, -0.6, gym, 24);
-  // colchoneta, balones medicinales y botella
-  box(0.6, 0.012, 1.7, M(0x3a2414, { roughness: .9 }), 3.9, 0.04, 1.2, gym);
-  [[5.6, 1.2, 0.16], [5.6, 1.6, 0.14]].forEach(([x, z, r]) => { const b = new THREE.Mesh(new THREE.SphereGeometry(r, 18, 14), M(0x2c2f33, { roughness: .8 })); b.position.set(x, r + 0.03, z); b.castShadow = true; gym.add(b); });
-  cyl(0.035, 0.035, 0.22, M(0xd6dde3, { metalness: .6, roughness: .25 }), -4.3, 0.56, 1.75, gym, 12);
   // letrero GYM: con hangSign, como el resto de los letreros (se pone más abajo, cuando ya existe la tipografía)
 
   /* ---------- Decoración del jefe: escritorio con su avatar, rincón gym ---------- */
@@ -590,11 +747,7 @@
   sillonS(-4.6, -8.7, Math.PI); sillonS(-4.6, -6.5, 0);
   cyl(0.38, 0.38, 0.04, marbleWM, -4.6, 0.44, -7.6, scene, 32); cyl(0.06, 0.18, 0.42, bronce, -4.6, 0.21, -7.6, scene, 16);
   cyl(0.04, 0.035, 0.1, M(0xf4f6f8), -4.45, 0.51, -7.5, scene, 12); box(0.24, 0.03, 0.18, M(0x2b2420), -4.75, 0.475, -7.7);
-  function sillonS(x, z, rot) {
-    const t = new THREE.Group(); t.position.set(x, 0, z); t.rotation.y = rot; scene.add(t);
-    box(0.85, 0.36, 0.8, cueroCognac, 0, 0.24, 0, t); box(0.85, 0.55, 0.18, cueroCognac, 0, 0.64, 0.31, t).rotation.x = 0.15;
-    [-0.4, 0.4].forEach(x2 => box(0.12, 0.3, 0.8, cueroCognac, x2, 0.5, 0, t));
-  }
+  function sillonS(x, z, rot) { return MUE.sillon(x, z, rot, 0.85, 0.8); }   // (20/11) sillón moderno, como la app
   // izquierda: qué conviene traer · centro: el día de Cargo Brothers (dólar, oportunidades, pedidos, tiendas) · derecha: agentes
   function paintBoss() {
     const rank = typeof ranking !== "undefined" ? ranking : [], fx = typeof lastFx !== "undefined" ? lastFx : null, wait = typeof waiting !== "undefined" ? waiting : [];
@@ -805,12 +958,15 @@
   floorText("OPERACIONES", -7, 9.6, 7);
 
   // ---- 2. Relojes de dos ciudades (hora real) ----
-  const clocks = [["Cochabamba", "America/La_Paz", 3.6], ["Miami", "America/New_York", 4.9]].map(([n, tz, x]) => {
-    const c = textPlane(1.05, 1.05, 256, 256, () => {}, { transparent: true });
-    c.position.set(x, 6.75, 0.05); vwG.add(c);
-    cyl(0.56, 0.56, 0.06, M(0x111214, { metalness: .5, roughness: .3 }), x, 6.75, 0.01, vwG).rotation.x = Math.PI / 2;
-    const lab = textPlane(1.6, 0.26, 512, 84, (g, w, h) => { g.clearRect(0, 0, w, h); g.fillStyle = "#C9CED4"; g.font = `600 34px ${MONO}`; spaced(g, n.toUpperCase(), w / 2, 56, 6); });
-    lab.position.set(x - 2.6, 6.75, 0.05); vwG.add(lab);
+  // (Santi, 19/11) en la oficina de Santi, sobre el logo de Cargo Brothers (antes en la pared de operaciones), como la app
+  const clocks = [["Cochabamba", "America/La_Paz", -9.75], ["Miami", "America/New_York", -8.25]].map(([n, tz, x]) => {
+    const y = 3.7, z = ZB + 0.07;
+    const c = textPlane(0.66, 0.66, 256, 256, () => {}, { transparent: true });
+    c.position.set(x, y, z + 0.03); scene.add(c);
+    cyl(0.36, 0.36, 0.03, M(0x0d0e10, { metalness: .5, roughness: .35 }), x, y, z, scene, 48).rotation.x = Math.PI / 2;
+    const aro = new THREE.Mesh(new THREE.TorusGeometry(0.355, 0.018, 12, 64), bronce); aro.position.set(x, y, z + 0.02); scene.add(aro);
+    const lab = textPlane(1.0, 0.14, 640, 90, (g, w, h) => { g.clearRect(0, 0, w, h); g.fillStyle = "#D9BF8C"; g.font = `700 30px ${MONO}`; spaced(g, n.toUpperCase(), w / 2, 58, 5); });
+    lab.position.set(x, y - 0.52, z + 0.02); scene.add(lab);
     return { c, tz };
   });
   function paintClocks() {
@@ -911,8 +1067,8 @@
   { const top = cyl(1, 1, 0.07, marmolCalido, srCx, 0.75, srCz, scene, 48); top.scale.set(2.7, 1, 1.0);
     const canto = cyl(1, 1, 0.03, bronce, srCx, 0.705, srCz, scene, 48); canto.scale.set(2.72, 1, 1.02);
     [-1.5, 1.5].forEach(d => { cyl(0.18, 0.38, 0.68, marmolCalido, srCx + d, 0.34, srCz, scene, 24); cyl(0.4, 0.4, 0.03, bronce, srCx + d, 0.015, srCz, scene, 24); });
-    [-1.8, -0.6, 0.6, 1.8].forEach(d => { sillaEjecutiva(scene, srCx + d, srCz - 1.4, Math.PI, cueroCognac); sillaEjecutiva(scene, srCx + d, srCz + 1.4, 0, cueroCognac); });
-    sillaEjecutiva(scene, srCx - 3.25, srCz, -Math.PI / 2, cueroCognac); sillaEjecutiva(scene, srCx + 3.25, srCz, Math.PI / 2, cueroCognac);
+    [-1.8, -0.6, 0.6, 1.8].forEach(d => { MUE.sillaJunta(srCx + d, srCz - 1.4, Math.PI); MUE.sillaJunta(srCx + d, srCz + 1.4, 0); });   // (20/11) sillas nuevas, como la app
+    MUE.sillaJunta(srCx - 3.25, srCz, -Math.PI / 2); MUE.sillaJunta(srCx + 3.25, srCz, Math.PI / 2);
     cyl(0.01, 0.01, WH - 2.95, bronce, srCx, 2.95 + (WH - 2.95) / 2, srCz, scene, 6);
     const lamp = box(3.6, 0.05, 0.12, bronce, srCx, 2.95, srCz); lamp.castShadow = false;
     const brillo = box(3.5, 0.01, 0.07, new THREE.MeshBasicMaterial({ color: 0xffe2b0 }), srCx, 2.92, srCz); brillo.castShadow = false;
@@ -1460,7 +1616,7 @@
         v = (d >= 1 && d <= 5 && m >= 630 && m < 675) || (d >= 1 && d <= 6 && m >= 960 && m < 1005); } catch (e) { } }
       rondaCache = { t: now, v }; return v;
     }
-    let P = {}, clips, TRANS, RETRO, porPref = {};
+    let P = {}, clips, TRANS, RETRO, porPref = {}, SECRETARIA = null;
 
     (async () => {
       let gl;
@@ -1500,6 +1656,14 @@
         if (p.donde === "puesto") enPuesto(p, a.id, animPuesto(a)); });
       if (P.gerente) P.gerente.sentadoG = true;
       sentarSanti();
+      // (Santi, 19/11) la secretaria de la recepción, como en la app: sentada detrás del mostrador, mirando a la entrada, tecleando
+      if (!LIVIANO && gl.ps[3]) {
+        const sec = persona(gl.ps[3], true); SECRETARIA = sec;
+        const borde = REC.z - 1.0;   // borde de su lado de la mesa de trabajo
+        sec.root.position.set(REC.x + 1.2, 0, borde - 0.15 + RM0);   // igual que en los escritorios, del otro lado sec.root.rotation.y = 0;
+        MUE.sillaJunta(REC.x + 1.2, borde - 0.22, Math.PI);
+        sec.play("teclear", 0, true); sec.azar();
+      }
       AG.forEach(a => { if (ST[a.id] && ST[a.id].simple) ST[a.id].simple.visible = false; });
       bossP.visible = false;
       if (GER) GER.usar(hooksGer);
@@ -2015,6 +2179,7 @@
       if (api.manejando) moverSanti(dt);
       botonJunta();
       Object.values(P).forEach(p => p.mixer.update(dt));
+      if (SECRETARIA) SECRETARIA.mixer.update(dt);
     };
     api.moviendo = () => api.manejando || Object.values(P).some(p => p.paso && p.paso.a !== "anim");
     api.cabeza = id => { const p = P[id === "jefe" ? "santi" : id]; if (!api.listo || !p || !p.head) return null; p.head.getWorldPosition(tmpV); tmpV.y += 0.42; return tmpV; };
