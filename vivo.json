@@ -21,6 +21,11 @@
    "estado": "terminó",
    "texto": "Sin catálogos pendientes hoy",
    "hora": "16:17"
+  },
+  "pedidos": {
+   "estado": "trabajando",
+   "texto": "Rastreo de pedidos en camino",
+   "hora": "16:17"
   }
  }
 }
