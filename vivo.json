@@ -31,6 +31,11 @@
    "estado": "trabajando",
    "texto": "Recalcular análisis",
    "hora": "16:19"
+  },
+  "fin": {
+   "estado": "trabajando",
+   "texto": "Finanzas e inventario",
+   "hora": "16:19"
   }
  }
 }
