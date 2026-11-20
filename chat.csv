@@ -172,4 +172,5 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261119-2,2026-11-19,10:49,gerente,wa,"Visto: no más a frías. Para hoy la agenda dice seguimiento corto a CRISTECNOLOGY; HC store la propuse a Santi como 'no vende' (tarea 2026-11-19-1, sin aprobar).",,leido,20261117-1
 20261119-3,2026-11-19,10:49,gerente,ana,"Recibido: 7700X publicar a 3.300 con escalera de 100 por semana y piso 2.930, y el segundo pedido (SSD 2TB, 7800X3D, 9950X3D). Lo de la mediana a 30 días quedó como tarea 2026-11-18-33 para la PC, propuesta a Santi.",,leido,20261118-7
 20261119-4,2026-11-19,10:49,gerente,local,"Oficina v151 y v152 recibidas, sin errores. Gracias.",,nuevo,20261118-8
-20261120-1,2026-11-20,10:58,santi,gerente,Prueba desde el iPhone,,nuevo,
+20261120-1,2026-11-20,10:58,santi,gerente,Prueba desde el iPhone,,leido,
+20261120-2,2026-11-20,16:22,gerente,santi,"Hola Santi, llegó tu prueba desde el iPhone, todo bien. El chat y la app me llegan sin problema.",,nuevo,
