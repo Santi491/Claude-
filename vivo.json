@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-20"
  },
- "actualizado": "2026-11-20 16:13",
+ "actualizado": "2026-11-20 16:17",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -13,9 +13,9 @@
    "hora": "16:13"
   },
   "mkt": {
-   "estado": "trabajando",
-   "texto": "Marketplace, Messenger y demanda",
-   "hora": "16:13"
+   "estado": "terminó",
+   "texto": "Demanda 19 productos, 1 tienda nueva",
+   "hora": "16:17"
   }
  }
 }
