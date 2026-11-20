@@ -16,6 +16,11 @@
    "estado": "terminó",
    "texto": "Demanda 19 productos, 1 tienda nueva",
    "hora": "16:17"
+  },
+  "cat": {
+   "estado": "terminó",
+   "texto": "Sin catálogos pendientes hoy",
+   "hora": "16:17"
   }
  }
 }
