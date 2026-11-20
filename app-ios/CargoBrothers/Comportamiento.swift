@@ -76,6 +76,8 @@ final class Comportamiento {
     var animPuesto: (String) -> String = { _ in "teclear" }
     /// parte 6: el lugar o la silla de la junta donde está sentado Santi (nadie más lo usa) y su paso por cuadro
     var reservado: String?
+    /// los que tienen que aplaudir antes de levantarse (terminó la ronda)
+    var aplausos = Set<String>()
     var sillaSanti: Int?
     weak var manejo: Manejo?
     private var link: CADisplayLink?
@@ -162,7 +164,9 @@ final class Comportamiento {
     func irAlLugar(_ a: Agente) {
         guard let k = elegirLugar(a.id), let L = Self.LUGAR[k] else { return }
         a.spot = k; a.donde = "yendo"
-        a.cola = levantarseDelPuesto(a) + caminar(Self.ENTRADA[L.zona] ?? []) + llegar(a, L, k)
+        // al terminar la ronda, los que están en su puesto aplauden unos segundos antes de irse (como en la web)
+        let aplauso: [Paso] = aplausos.remove(a.id) != nil ? [.anim("aplaudir", bucle: true, espera: .random(in: 3.5...5))] : []
+        a.cola = aplauso + levantarseDelPuesto(a) + caminar(Self.ENTRADA[L.zona] ?? []) + llegar(a, L, k)
     }
     func cambiarDeLugar(_ a: Agente) {
         guard let actual = a.spot, let A = Self.LUGAR[actual], let k = elegirLugar(a.id, evitar: actual), let L = Self.LUGAR[k] else { a.tLugar = .random(in: 30...60); return }
@@ -231,7 +235,7 @@ final class Comportamiento {
             if n != a.anim { reproducir(a, n, bucle: true) }
         case ("junta", "junta"):
             a.tAnim -= dt
-            if a.tAnim <= 0 { a.tAnim = .random(in: 6...14); reproducir(a, ["sentado", "reir_sentado", "sentado", "reunion"].randomElement()!, bucle: true) }
+            if a.tAnim <= 0 { a.tAnim = .random(in: 6...14); reproducir(a, ["sentado", "reir_sentado", "sentado", "reunion", "aplaudir"].randomElement()!, bucle: true) }
         default: break
         }
     }

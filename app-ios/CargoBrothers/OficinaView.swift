@@ -100,8 +100,23 @@ struct EtiquetaVista: View {
     }
 
     /// de lejos solo la foto con su punto de estado; más cerca, el nombre; bien cerca, también lo que hace
+    /// ¿le está escribiendo a Santi? (un mensaje suyo en los últimos 10 minutos, o la ronda dice que está en el chat)
+    static func escribiendo(_ id: String, _ store: Store) -> Bool {
+        if let t = store.vivo?.agentes?[id], t.estado == "trabajando", t.texto.lowercased().contains("chat") || t.texto.lowercased().contains("santi") { return true }
+        let ahora = F.bo("yyyy-MM-dd HH:mm")
+        guard let m = (store.datos?.chat ?? []).last(where: { $0.de == id && $0.para == "santi" }) else { return false }
+        let f = DateFormatter(); f.dateFormat = "yyyy-MM-dd HH:mm"
+        guard let a = f.date(from: "\(m.fecha) \(m.hora)"), let b = f.date(from: ahora) else { return false }
+        return b.timeIntervalSince(a) < 600 && b >= a
+    }
+
     @ViewBuilder func etiqueta(_ id: String, nivel: Int) -> some View {
         let e = EstadoAgente.de(id, store)
+        etiquetaBase(id, nivel: nivel, e: e)
+            .overlay(alignment: .topTrailing) { if EtiquetaVista.escribiendo(id, store) { Escribiendo().offset(x: 14, y: -16) } }
+    }
+
+    @ViewBuilder func etiquetaBase(_ id: String, nivel: Int, e: EstadoAgente) -> some View {
         let bronce = Color(red: 0.79, green: 0.64, blue: 0.36)
         if nivel == 0 {
             Avatar(agente: id, tam: 26)
@@ -505,8 +520,13 @@ enum Vivo3D {
         return id == "gerente" ? "teclear" : "sentado"   // el Gerente siempre está en su puesto, como en la oficina web
     }
 
+    static var habiaRonda: Bool?
     static func aplicar(_ e: SCNScene, _ store: Store) {
         let pers = Bundle.main.url(forResource: "Personas", withExtension: nil)
+        // terminó una ronda: los que estaban en su puesto aplauden antes de irse
+        let ronda = store.vivo?.enCurso == true
+        if habiaRonda == true, !ronda, let v = vida { v.aplausos = Set(v.agentes.values.filter { $0.donde == "puesto" && $0.id != "gerente" }.map(\.id)) }
+        habiaRonda = ronda
         for (k, (id, _, _)) in Detalle3D.puestos.enumerated() {
             if let v = vida { v.quiere[id] = destino(id, store) }
             else if let pers, let p = e.rootNode.childNode(withName: "persona-\(id)", recursively: false) {
@@ -604,5 +624,24 @@ struct ControlesSanti: View {
                 .padding(.horizontal, 24).padding(.bottom, 30)
             }
         }
+    }
+}
+
+
+/// globito con tres puntitos que suben y bajan: el agente le está escribiendo a Santi
+struct Escribiendo: View {
+    @State private var fase = false
+    var body: some View {
+        HStack(spacing: 3) {
+            ForEach(0..<3) { k in
+                Circle().fill(Color(red: 0.12, green: 0.12, blue: 0.13)).frame(width: 5, height: 5)
+                    .offset(y: fase ? -2.5 : 1.5)
+                    .animation(.easeInOut(duration: 0.45).repeatForever().delay(Double(k) * 0.15), value: fase)
+            }
+        }
+        .padding(.horizontal, 8).padding(.vertical, 6)
+        .background(Color.white, in: Capsule())
+        .shadow(color: .black.opacity(0.35), radius: 3, y: 1)
+        .onAppear { fase = true }
     }
 }

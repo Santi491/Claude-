@@ -2,10 +2,10 @@
 <script>
 // Exporta los 6 personajes de Mixamo (FBX originales) con sus animaciones para la app nativa (formato de Personas3D.swift).
 const CLIPS = ["teclear", "sentado", "quieto", "caminar", "hablar", "pesas", "cinta", "sentarse", "pararse", "a_teclear", "de_teclear",
-               "cafe", "celular", "pensar", "estirarse", "reir_sentado", "reunion", "correr", "beber", "saludar"];
+               "cafe", "celular", "pensar", "estirarse", "reir_sentado", "reunion", "correr", "beber", "saludar", "aplaudir"];
 // correr (19/11) viene con avance: se le saca el avance en línea recta para que corra en el lugar, como caminar
 const TRANS = { sentarse: "ini", pararse: "fin", a_teclear: "raw", de_teclear: "raw", correr: "lineal" };
-const SENTADO = new Set(["teclear", "sentado", "cafe", "reir_sentado", "reunion"]);
+const SENTADO = new Set(["teclear", "sentado", "cafe", "reir_sentado", "reunion", "aplaudir"]);
 const FPS = 20;
 const L = new THREE.FBXLoader();
 const cargar = u => new Promise((ok, mal) => L.load(u, ok, undefined, mal));

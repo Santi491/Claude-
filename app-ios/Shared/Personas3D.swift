@@ -100,7 +100,7 @@ enum Personas3D {
         return raiz
     }
 
-    static let sentadas: Set<String> = ["sentado", "teclear", "cafe", "reir_sentado", "reunion", "a_teclear", "de_teclear"]
+    static let sentadas: Set<String> = ["sentado", "teclear", "cafe", "reir_sentado", "reunion", "aplaudir", "a_teclear", "de_teclear"]
 
     /// las que mueven el cuerpo de verdad (sentarse, pararse…): no se enderezan
     static let transiciones: Set<String> = ["sentarse", "pararse", "a_teclear", "de_teclear"]
