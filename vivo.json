@@ -11,6 +11,11 @@
    "estado": "terminó",
    "texto": "2 respuestas, 2 seguimientos, precios de Supermall y NPC",
    "hora": "10:43"
+  },
+  "mkt": {
+   "estado": "trabajando",
+   "texto": "Seguir 7700X y contar demanda de 19 productos",
+   "hora": "10:43"
   }
  }
 }
