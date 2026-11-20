@@ -15,6 +15,7 @@ struct OficinaView: View {
     @State private var junta = false
     @State private var santi: Manejo?
     @State private var manejando = false
+    @State private var lugar: Lugar3D?
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -55,6 +56,7 @@ struct OficinaView: View {
                 .presentationBackgroundInteraction(.enabled(upThrough: .height(330)))
                 .presentationCornerRadius(28)
         }
+        .sheet(item: $lugar) { HojaLugar3D(lugar: $0).environmentObject(store) }
         .task {
             guard escena == nil, let u = Bundle.main.url(forResource: "Oficina3D", withExtension: nil) else {
                 if escena == nil { error = "No encontré el modelo de la oficina." }; return
@@ -75,11 +77,15 @@ struct OficinaView: View {
                     if let m = Manejo(escena: e, carpeta: pers) {
                         m.vida = c; c.manejo = m
                         m.abrirAgente = { id in elegido = id }
+                        m.abrirLugar = { l in lugar = l }
                         santi = m
                     }
                     // sin reloj propio: la vista 3D los mueve en cada cuadro, junto con la cámara y las etiquetas
                 }
                 Vivo3D.aplicar(e, store)
+                // para probar: abrir la app con -lugar gerente|resumen|tablero|mapa|archivo
+                let a = ProcessInfo.processInfo.arguments
+                if let i = a.firstIndex(of: "-lugar"), i + 1 < a.count { lugar = Lugar3D(rawValue: a[i + 1]) }
             } else { error = "No pude armar la oficina." }
         }
     }

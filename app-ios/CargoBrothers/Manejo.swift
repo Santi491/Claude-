@@ -28,6 +28,8 @@ final class Manejo: ObservableObject {
     weak var vida: Comportamiento?
     var camara: SCNNode? { escena.rootNode.childNode(withName: "camara", recursively: false) }
     var abrirAgente: (String) -> Void = { _ in }
+    /// abre una pantalla de la oficina (resumen, tablero, mapa, archivo, la computadora del Gerente)
+    var abrirLugar: (Lugar3D) -> Void = { _ in }
 
     private var anim = ""
     /// lo que está haciendo (sentado, en la cinta…): dónde estaba antes y en qué fase va
@@ -137,7 +139,17 @@ final class Manejo: ObservableObject {
         let d: (Float, Float) -> Float = { x, z in ((s.0 - x) * (s.0 - x) + (s.1 - z) * (s.1 - z)).squareRoot() }
         let ocupados = Set(vida?.agentes.values.compactMap(\.spot) ?? [])
         let sillasJ = Set(vida?.agentes.values.compactMap(\.sillaJ) ?? [])
+        // lugares de la oficina, como la tecla E de la web
+        add(d(Self.SANTI.0, Self.SANTI.1), 1.9, "Ver el resumen del día") { [weak self] in self?.abrirLugar(.resumen) }
+        add(d(-13.5, -6.0), 1.7, "Ver los documentos") { [weak self] in self?.abrirLugar(.archivo) }
+        add(d(-13.7, 15.4), 2.2, "Ver el tablero") { [weak self] in self?.abrirLugar(.tablero) }
+        add(d(5.0, -8.6), 2.4, "Ver el mapa de envíos") { [weak self] in self?.abrirLugar(.mapa) }
+        add(d(14.3, -13.0), 1.8, "Ver el mapa de envíos") { [weak self] in self?.abrirLugar(.mapa) }
         for (id, x, z) in Detalle3D.puestos {
+            if id == "gerente" {   // su computadora completa
+                add(d(x, z + 1.25), 1.5, "Ver la computadora del Gerente") { [weak self] in self?.abrirLugar(.gerente) }
+                continue
+            }
             add(d(x, z + 1.25), 1.5, "Ver la computadora de \(Equipo.nombre(id))") { [weak self] in self?.abrirAgente(id) }
             if let a = vida?.agentes[id], a.donde == "lugar", let L = a.spot.flatMap({ Comportamiento.LUGAR[$0] }), !L.sentado, a.spot != "cinta" {
                 add(d(Float(a.nodo.position.x), Float(a.nodo.position.z)), 1.6, "Saludar a \(Equipo.nombre(id))", extra: 0.1) { [weak self] in self?.saludar(id) }

@@ -26,6 +26,7 @@
 		4D4A0D8B97BEEB7532E7E987 /* Personas in Resources */ = {isa = PBXBuildFile; fileRef = 40EEC2FF5696537514E3132D /* Personas */; };
 		51AA2C0CBC367C84AD9D98F3 /* CargoWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 11C131FA598268FF87C0C103 /* CargoWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5430657223D8DCA1FCE22859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE87379E0E0F3E844DEF2A4 /* Assets.xcassets */; };
+		57DFAC234F64C4DAD68DA651 /* PantallasOficina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D9B5CE241FCCBB0486B75 /* PantallasOficina.swift */; };
 		658F89D2843EBDDF51517647 /* cb-mensaje.caf in Resources */ = {isa = PBXBuildFile; fileRef = F379D72065CE6B5BA36B6BD2 /* cb-mensaje.caf */; };
 		65E0B88A311E66231F23F8BE /* Formularios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F307845EB1BA3750F894444 /* Formularios.swift */; };
 		664E1E2C1411A0E510DFEDD3 /* Orientacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE395085E899C00EE8925875 /* Orientacion.swift */; };
@@ -87,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		059EAF0FCF1D9A19B01C139F /* Cola.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cola.swift; sourceTree = "<group>"; };
+		0B6D9B5CE241FCCBB0486B75 /* PantallasOficina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantallasOficina.swift; sourceTree = "<group>"; };
 		11C131FA598268FF87C0C103 /* CargoWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CargoWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1229FF333DB2EDEE5619D0DE /* Modelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelo.swift; sourceTree = "<group>"; };
 		1258C8E2E618C28407F90222 /* Componentes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Componentes.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				7D03DF6ACA1FC4F697264724 /* Notificaciones.swift */,
 				4BA99B998CF8A3ED19B22031 /* OficinaView.swift */,
 				EE395085E899C00EE8925875 /* Orientacion.swift */,
+				0B6D9B5CE241FCCBB0486B75 /* PantallasOficina.swift */,
 				6B85EC49E114571E35BAB5B5 /* PedidosView.swift */,
 				AB966AC3E3A469EA59DF573A /* PreciosView.swift */,
 				2C2A15194E2CC3B99416EB40 /* VentasView.swift */,
@@ -394,6 +397,7 @@
 				DE755E1F3EAABA3625A39443 /* Oficina3D.swift in Sources */,
 				3B28B35A80139004BFDCD06D /* OficinaView.swift in Sources */,
 				664E1E2C1411A0E510DFEDD3 /* Orientacion.swift in Sources */,
+				57DFAC234F64C4DAD68DA651 /* PantallasOficina.swift in Sources */,
 				39C530296CE27EC849C77BF4 /* PedidosView.swift in Sources */,
 				B8644EEA6FED254B50CA4E3A /* Personas3D.swift in Sources */,
 				314806A88F36DBF1740EE171 /* PreciosView.swift in Sources */,
