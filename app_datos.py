@@ -341,6 +341,13 @@ def main():
     out.update(extras(D, caz))
     os.makedirs(os.path.dirname(SALIDA), exist_ok=True)
     json.dump(out, open(SALIDA, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    # los mismos datos de los gráficos para la oficina web (oficina/graficos.js, Santi 20/11); ya pasaron el filtro de la app
+    claves = ("etapa", "pedidos", "finanzas_productos", "ventas", "publicaciones", "productos", "demanda", "demanda_serie",
+              "locales", "tiendas", "generado")
+    graf = {k: out.get(k) for k in claves}
+    graf["catalogos"] = [{"tienda": c["tienda"]} for c in out.get("catalogos", [])]
+    with open(os.path.join(DIR, "oficina", "graficos-datos.js"), "w", encoding="utf-8") as f:
+        f.write("window.GRAF = " + json.dumps(graf, ensure_ascii=False) + ";\n")
     print(f"app/datos-app.json: {len(productos)} productos, {len(pedidos)} pedidos, {len(decidir)} por decidir")
 
 

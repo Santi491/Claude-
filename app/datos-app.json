@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-20 10:51",
+ "generado": "2026-11-20 13:26",
  "etapa": {
   "numero": 2,
   "nombre": "producto en camino",
@@ -1538,6 +1538,15 @@
  },
  "decidir": [
   {
+   "tipo": "necesidad",
+   "ref": "51",
+   "agente": "gerente",
+   "fecha": "2026-11-20",
+   "titulo": "Actualizar el texto fijo de analista.py (línea ~247) sobre el SSD NVMe 2TB: dice que sale de un Leven Gen3 sin marca y ya no refleja los datos de hoy",
+   "detalle": "Que el aviso del análisis no hable de un SSD que cambió; hoy el SSD 2TB deja 34,8 % y es de los menos firmes",
+   "plazo": ""
+  },
+  {
    "tipo": "plan",
    "ref": "2026-11-19-1",
    "agente": "wa",
@@ -1618,6 +1627,22 @@
   }
  ],
  "equipo": [
+  {
+   "agente": "gerente",
+   "nombre": "Gerente",
+   "acciones": 21,
+   "serie": [
+    2,
+    1,
+    3,
+    5,
+    4,
+    3,
+    3
+   ],
+   "ultima": "App de iPhone: gráficos nuevos (ventas y ganancia, stock, anuncios, competencia, oportunidades, precios de Cochabamba, embudo de tiendas, tiempos del envío y costo por unidad), cada uno con su detalle",
+   "cuando": "2026-11-20 12:13"
+  },
   {
    "agente": "ana",
    "nombre": "Analista",
@@ -1745,22 +1770,6 @@
    ],
    "ultima": "Revisión diaria hecha: dólar USDT 11,96, Excel, PDF, copia del día, informe",
    "cuando": "2026-11-20 07:58"
-  },
-  {
-   "agente": "gerente",
-   "nombre": "Gerente",
-   "acciones": 19,
-   "serie": [
-    2,
-    1,
-    3,
-    5,
-    4,
-    3,
-    1
-   ],
-   "ultima": "App de iPhone (Raspberry): necesidad 50 resuelta",
-   "cuando": "2026-11-20 01:31"
   }
  ],
  "objetivos": [
@@ -1991,7 +2000,7 @@
   {
    "parte": "manana",
    "nombre": "PC · ronda 10:30",
-   "estado": "en curso",
+   "estado": "ok",
    "hora": "10:30"
   },
   {
@@ -5144,7 +5153,7 @@
    "agente": "wa",
    "titulo": "Ronda de las 10:30: abrir 'No leídos', mirar la ficha (memoria_wa.py) y contestar a quien escribió; después pedir precio de vigilar.csv a 2 tiendas que respondieron y aún no dieron precio (wa-2 va 3/5, cierra el 22/11); sin escribir a frías ni a las de ficha 'no vende'",
    "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "decision": "auto (rutina) · reprogramada 20/11: sigue sin precio de una tienda; cierra con wa-2 el 22/11",
    "fecha": "2026-11-20"
   },
   {
@@ -5152,8 +5161,8 @@
    "ref": "2026-11-19-3",
    "agente": "wa",
    "titulo": "Clientes potenciales (cli-1): calificar las tiendas del grupo E que falten en clientes-potenciales.csv y dejar A y B ordenadas por a quién ofrecer primero, sin ofrecer nada",
-   "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "estado": "hecho",
+   "decision": "auto (rutina) · hecho 20/11: clientes-potenciales.csv al día (WhatsApp, ronda mañana)",
    "fecha": "2026-11-20"
   },
   {
@@ -5161,8 +5170,8 @@
    "ref": "2026-11-19-4",
    "agente": "mkt",
    "titulo": "Ronda de las 10:30: seguir cada 7700X publicado en la zona (precio y días en línea; hoy el suelto de Bs 3.100 no apareció) y contar la demanda de los 19 productos, no solo 4",
-   "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "estado": "hecho",
+   "decision": "auto (rutina) · hecho 20/11: 7700X suelto vendido (3.100) y demanda de los 19 productos (3 conteos parciales) (Marketplace)",
    "fecha": "2026-11-20"
   },
   {
@@ -5188,8 +5197,8 @@
    "ref": "2026-11-19-7",
    "agente": "local",
    "titulo": "Revisar por qué la ronda de la tarde del 19/11 quedó 'en curso' desde las 16:08 sin una sola fila de actividad ni mensajes; cerrar esa sesión y decir si hay que repetir algo (mañana 10:30 las dos partes)",
-   "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "estado": "hecho",
+   "decision": "auto (rutina) · hecho 20/11: el vigilante relanzó la ronda a las 22:30 y la de hoy 10:30 cubrió las dos partes",
    "fecha": "2026-11-20"
   },
   {
@@ -5225,7 +5234,7 @@
    "agente": "ebay",
    "titulo": "En --revisar buscar un SSD NVMe 2TB Gen4 de marca (Kingston, WD, Samsung, Crucial) para comparar con los Gen4 locales; el Leven Gen3 no es comparable",
    "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "decision": "auto (rutina) · reprogramada 20/11: no se hizo en la ronda; plazo 24/11",
    "fecha": "2026-11-19"
   },
   {
@@ -6977,8 +6986,8 @@
    "fuente": "2000",
    "resumen": "Recordar a Santi el reclamo a eBay de los 7700X (vence 26/11) y avisar el resultado de la ronda de las 16:00 del 19/11",
    "vence": "2026-11-20",
-   "estado": "abierta",
-   "cerrado": ""
+   "estado": "cumplida",
+   "cerrado": "20/11 10:53: 20/11: aviso de fin de ronda con el recordatorio del reclamo a eBay (vence 26/11); la ronda del 19/11 por la tarde la cubrió el vigilante"
   }
  ],
  "movimientos": [
@@ -11197,9 +11206,9 @@
  "sincronizacion": {
   "ultima_ronda": "2026-11-20 10:54",
   "ultima_ronda_quien": "pc",
-  "oficina_publicada": "2026-11-20 10:51",
+  "oficina_publicada": "2026-11-20 11:19",
   "armado_por": "una ronda o sesión",
-  "armado": "2026-11-20 11:59"
+  "armado": "2026-11-20 13:26"
  },
  "clientes": [
   {
@@ -24092,24 +24101,9 @@
    "resumen": "Etapas nuevas (Santi 19/11): 1 búsqueda de productos, 2 producto en camino (hoy), 3 vendiendo. Cambian solas con los pedidos y las ventas; Santi también la fija desde la app (etapa.csv, te llega un mensaje). Objetivos repartidos en objetivos.csv; ana-5 nuevo para la etapa 1.",
    "vence": "",
    "fecha": "2026-11-19"
-  },
-  {
-   "id": "76",
-   "tipo": "compromiso",
-   "resumen": "Recordar a Santi el reclamo a eBay de los 7700X (vence 26/11) y avisar el resultado de la ronda de las 16:00 del 19/11",
-   "vence": "2026-11-20",
-   "fecha": "2026-11-19"
   }
  ],
  "chat": [
-  {
-   "id": "20261022-10",
-   "fecha": "2026-10-22",
-   "hora": "16:22",
-   "de": "gerente",
-   "para": "fin",
-   "texto": "Recibido lo del dólar. Dejo tu propuesta 1 como tarea 22-4 (Binance P2P) para que Santi decida; no cambies la fuente hasta su OK. Mientras tanto, anota en la fuente cuando compra > venta."
-  },
   {
    "id": "20261022-11",
    "fecha": "2026-10-22",
@@ -25301,6 +25295,14 @@
    "de": "gerente",
    "para": "local",
    "texto": "Oficina v151 y v152 recibidas, sin errores. Gracias."
+  },
+  {
+   "id": "20261120-1",
+   "fecha": "2026-11-20",
+   "hora": "10:58",
+   "de": "santi",
+   "para": "gerente",
+   "texto": "Prueba desde el iPhone"
   }
  ],
  "salud14": [
@@ -25398,7 +25400,7 @@
   {
    "fecha": "2026-11-20",
    "nube": "ok",
-   "manana": "en curso",
+   "manana": "ok",
    "pc": "pendiente",
    "gerente": "pendiente"
   }

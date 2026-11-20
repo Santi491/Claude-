@@ -4,6 +4,8 @@
    puede escribir); la próxima ronda las pasa a plan.csv, ideas.csv y necesidades.csv con aplicar_decisiones.py. */
 (function () {
   const C = { nuevo: "#2A9DB3", usado: "#B565CC", local: "#C27A22", green: "#5CD69A", amber: "#F2A541", red: "#F07A7A", muted: "#92959A", ink: "#E3E4E6", line: "#333437" };
+  // botón de cada agente a sus gráficos del negocio (graficos.js, 20/11)
+  const GN_AG = { fin: ["ventas", "ventas, stock y ganancia"], mkt: ["anuncios", "anuncios y competencia"], wa: ["tiendas", "embudo de tiendas"], pedidos: ["envios", "cuánto tarda cada envío"], ana: ["oportunidades", "mapa de oportunidades"], dem: ["oportunidades", "mapa de oportunidades"], gerente: ["ventas", "gráficos del negocio"] };
   const NOMBRE = id => (AG.find(a => a.id === id) || {}).name || ({ local: "Ronda local", santi: "Santi" }[id] || id);
   const DEC = {};           // decisiones guardadas en la oficina: id -> datos
   let db = null, owner = false, listo = false;
@@ -240,6 +242,7 @@
     const n = pendientes(sel).length, f = sinDecidir(sel);
     const b = document.createElement("div");
     b.innerHTML = `<button type="button" class="openmap" data-abrir="tablero" data-agente="${esc(sel)}">Necesidades e ideas${n ? ` · ${f} por decidir` : " · nada pendiente"}</button>`
+      + (GN_AG[sel] ? `<button type="button" class="openmap" data-gn-abrir="${GN_AG[sel][0]}">Gráficos · ${GN_AG[sel][1]}</button>` : "")
       + (sel === "ana" ? `<button type="button" class="openmap" data-abrir="graf">Abrir pantalla · gráficos de precios</button><button type="button" class="openmap" data-abrir="sim">Simulador de pedido</button>` : "");
     $("dBody").prepend(b);
   };

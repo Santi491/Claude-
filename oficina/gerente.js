@@ -544,7 +544,7 @@
   const propuestasAb = () => (D.ideas || []).filter(i => i.estado === "propuesta").length + (D.necesidades || []).length;
   const APPS = [["chat", "Chat del equipo", "💬", C.cyan, () => pendChat().length], ["tareas", "Tareas y metas", "✓", C.amber, () => metasHoy().filter(p => p.estado === "aprobado").length],
     ["propuestas", "Propuestas", "★", C.violet, () => propuestasAb()], ["memoria", "Libreta", "✎", C.gold, () => owner ? memVence().length : 0], ["objetivos", "Objetivos", "◎", "#C9A45C", () => OBJ ? (OBJ.objetivos || []).filter(o => o.vencido).length : 0], ["salud", "Salud del equipo", "♥", C.green, () => 0], ["plan", "Informes", "▤", C.blue, () => 0],
-    ["resumen", "Panel de datos", "▦", C.gold, () => 0], ["oport", "Oportunidades", "$", C.green, () => 0], ["equipo", "Equipo", "◉", C.muted, () => 0]];
+    ["resumen", "Panel de datos", "▦", C.gold, () => 0], ["oport", "Oportunidades", "$", C.green, () => 0], ["equipo", "Equipo", "◉", C.muted, () => 0], ["graficos", "Gráficos del negocio", "📈", C.blue, () => 0]];
   const back = () => `<button type="button" class="gd-back" data-t="escritorio">← Escritorio</button>`;
   function vEscritorio() {
     const fr = D.frescura || {}, viejo = Object.entries(fr).filter(([k, v]) => v && k !== "catalogos" && (new Date(HOY) - new Date(v.slice(0, 10))) / 864e5 >= 3).map(([k]) => k);
@@ -715,6 +715,7 @@
     barra();
   }
   function abrirApp(k) {
+    if (k === "graficos") { if (window.abrirNegocio) window.abrirNegocio("ventas"); return; }   // abre el panel de gráficos encima del escritorio
     let w = OS.wins.find(x => x.k === k); cerrarInicio();
     if (!w) { const L = capa(), W = L.clientWidth, H = L.clientHeight, n = OS.n++ % 6;
       w = { k, x: Math.min(150 + n * 30, Math.max(0, W - 360)), y: 16 + n * 26, w: Math.max(320, Math.min(1000, W - 190)), h: Math.max(240, Math.min(640, H - 40)), min: false, max: W < 760, z: 0 };

@@ -15,6 +15,7 @@ Todos los detalles de la oficina: cómo es, qué muestra cada pantalla, cómo se
 | `pantallas.js` | Las pantallas propias de los agentes. |
 | `equipo.js` | "Necesidades e ideas", tablero del equipo, simulador de pedido y gráficos de precios. |
 | `archivo.js` | El Archivo de documentos. |
+| `graficos.js` + `graficos-datos.js` | **Gráficos del negocio** (20/11, los mismos de la app): ventas y ganancia, stock, anuncios y competencia, envíos, oportunidades y precios de Cochabamba, embudo de tiendas (cada paso abre la lista) y costo por unidad. Se abre con el botón de la barra de arriba, el botón "Gráficos · …" del panel de cada agente y la app "Gráficos del negocio" del escritorio del Gerente. `graficos-datos.js` lo escribe `app_datos.py`. |
 | `mapa.js` + `mapa/` | La pantalla de Pedidos: el mapa de envíos. |
 | `capturas/` + `capturas.csv` | Capturas de pantalla de los agentes con Chrome. |
 | `catalogos/` | Catálogos y listas de precios de las tiendas. |
@@ -92,6 +93,6 @@ La oficina escucha la colección `vivo` de la base de datos del artefacto (herra
 - Al terminar: `vivo/_ronda` con `activa: false`. Mientras `activa` es false, la oficina muestra el estado de `actividad.csv`. La nube no tiene esa herramienta: no escribe en vivo.
 
 ## Publicar
-- Se publica en la misma URL con `file_path` = `oficina/index.html` y `files` con `datos.js`, más los .js que cambiaron (`oficina3d.js`, `equipo.js`, `gerente.js`, `pantallas.js`, `archivo.js`, `mapa.js`), las capturas nuevas, los catálogos nuevos (`"catalogos/<archivo>": "oficina/catalogos/<archivo>"`), los mapas nuevos de `oficina/mapa/calles/` y las fotos de producto.
+- Se publica en la misma URL con `file_path` = `oficina/index.html` y `files` con `datos.js`, `graficos-datos.js` (siempre), más los .js que cambiaron (`oficina3d.js`, `equipo.js`, `gerente.js`, `pantallas.js`, `archivo.js`, `mapa.js`, `graficos.js`), las capturas nuevas, los catálogos nuevos (`"catalogos/<archivo>": "oficina/catalogos/<archivo>"`), los mapas nuevos de `oficina/mapa/calles/` y las fotos de producto.
 - Capacidades: `db` con la regla `{path: "", read: "view", write: "owner"}` y `user`. Ya quedan guardadas; en los republish normales no se pasan.
 - Las personas de Mixamo no se mandan ni se borran en las publicaciones de la ronda.

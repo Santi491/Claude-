@@ -448,6 +448,7 @@ footer{color:var(--muted);font-size:13px;display:grid;gap:4px;max-width:90ch}
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/utils/SkeletonUtils.js"></script>
 <script src="datos.js"></script>
+<script src="graficos-datos.js"></script>
 <script>
 const D=Object.assign({productos:[],movimientos:[],dolar:[],actividad:[],documentos:[],tiendas:[],capturas:[],pedidos:[],generado:""},window.DATOS||{});
 const $=id=>document.getElementById(id);
@@ -761,7 +762,7 @@ function drawHud(all){
    <div class="kv"><span>Tiendas esperando</span><b class="a">${waiting.length}</b></div>
    <div class="kv"><span>Movimientos</span><b>${D.movimientos.length}</b></div>
    <div class="kv"><span>Conviene</span><b class="c">${ok} de ${P.length}</b></div>
-   <div class="hudbtns"><button type="button" data-abrir="tablero">Necesidades e ideas${window.pendientesDe&&window.pendientesDe()?`<span class="n">${window.pendientesDe()}</span>`:""}</button><button type="button" data-abrir="sim">Simulador de pedido</button><button type="button" data-abrir="graf">Gráficos de precios</button><button type="button" id="irTabla" aria-label="Bajar a la tabla de productos">Ver tabla ↓</button></div>`;
+   <div class="hudbtns"><button type="button" data-abrir="tablero">Necesidades e ideas${window.pendientesDe&&window.pendientesDe()?`<span class="n">${window.pendientesDe()}</span>`:""}</button><button type="button" data-abrir="sim">Simulador de pedido</button><button type="button" data-gn-abrir="ventas">Gráficos del negocio</button><button type="button" data-abrir="graf">Gráficos de precios</button><button type="button" id="irTabla" aria-label="Bajar a la tabla de productos">Ver tabla ↓</button></div>`;
 }
 function parseCSV(t){const rows=[];let row=[],f="",q=false;for(let i=0;i<t.length;i++){const c=t[i];if(q){if(c==='"'){if(t[i+1]==='"'){f+='"';i++}else q=false}else f+=c}else if(c==='"')q=true;else if(c===","){row.push(f);f=""}else if(c==="\n"){row.push(f);rows.push(row);row=[];f=""}else if(c!=="\r")f+=c}if(f||row.length){row.push(f);rows.push(row)}return rows.filter(r=>r.some(x=>x!==""))}
 function csvTable(t){
@@ -1060,6 +1061,7 @@ resize();lastW=$("stage").clientWidth;render();renderStmt();renderDays();renderD
 <script src="mapa.js"></script>
 <script src="gerente.js"></script>
 <script src="equipo.js"></script>
+<script src="graficos.js"></script>
 <script src="pantallas.js"></script>
 <script src="archivo.js"></script>
 <script src="oficina3d.js"></script>

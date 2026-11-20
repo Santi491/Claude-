@@ -109,8 +109,8 @@ struct PuntoVenta: Identifiable { var fecha: Date; var cobrado: Double; var acum
 
 func serieVentas(_ d: Datos, _ p: String) -> [PuntoVenta] {
     let vs = d.ventasDe(p).filter { $0.estado == "vendida" }
-    let inicio = [d.llegada(p), vs.first?.fecha].compactMap { $0 }.min() ?? G.sumar(G.hoy, -6)
-    let total = max(G.dias(inicio, G.hoy), 6)
+    let inicio = [d.llegada(p), vs.first?.fecha, G.sumar(G.hoy, -6)].compactMap { $0 }.min()!   // nunca días del futuro
+    let total = max(G.dias(inicio, G.hoy), 0)
     var acum = -d.invertido(p)
     var out: [PuntoVenta] = []
     for i in 0...total {
