@@ -6,5 +6,11 @@
   "fecha": "2026-11-20"
  },
  "actualizado": "2026-11-20 10:36",
- "agentes": {}
+ "agentes": {
+  "wa": {
+   "estado": "trabajando",
+   "texto": "Responder no leídos y pedir precios a 2 tiendas",
+   "hora": "10:36"
+  }
+ }
 }
