@@ -894,3 +894,6 @@ fecha,hora,agente,texto
 2026-11-19,13:50,gerente,"Etapas nuevas aprobadas por Santi: 1 búsqueda de productos, 2 producto en camino (ahora), 3 vendiendo; automáticas y Santi las puede fijar desde la app (etapa.csv). Objetivos repartidos en objetivos.csv (ana-5 nuevo)."
 2026-11-19,20:25,gerente,"Informe 20:00 (jueves): sin errores de verificar.py; alerta: la ronda de las 16:00 sigue en curso desde las 16:08 sin actividad (tarea 19-7 para local); 6 tareas nuevas para el 20/11 (5 aprobadas por rutina, 1 propuesta de wa ya abierta), 1 reprogramada; 0 mensajes del chat (sin pendientes); libreta: 1 nota anotada, 0 cerradas; necesidades sin cambios (reclamo eBay 26/11 sigue abierta); Telegram: 0 (lo lee la Raspberry); Doc en Drive"
 2026-11-20,01:31,gerente,App de iPhone (Raspberry): necesidad 50 resuelta
+2026-11-20,07:58,ebay,API: 17 precios nuevos y 17 usados; 0 filas corregidas por variante o repuestos
+2026-11-20,07:58,ana,"Traer nuevo: SSD 2TB 34,9 %, 9950X3D 26,0 %, 7600X 24,7 %, 265K 24,0 %, 7800X3D 22,8 %, 12400F 20,6 %, 9600X 18,6 %; esperar 7700X, 14400F, 9950X y DDR4; no traer DDR5 Corsair, 7600, 7500F y SSD 1TB; usados sin 2 tiendas recientes quedan en esperar"
+2026-11-20,07:58,nube,"Revisión diaria hecha: dólar USDT 11,96, Excel, PDF, copia del día, informe"

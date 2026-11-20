@@ -203,3 +203,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-19,gerente,informe,20:15,20:17,alerta,Informe 20:00: sin errores; la ronda de las 16:00 quedó en curso sin actividad; plan del 20/11 con 6 tareas
 2026-11-19,raspberry,vigilante,22:30,22:30,arreglado,la PC no hizo la ronda de las 16:00: relanzada
 2026-11-20,raspberry,vigilante,07:00,07:00,arreglado,pedido a la PC sin hacer hace 510 min: dado por perdido y borrado
+2026-11-20,nube,revision diaria,07:52,07:58,ok,dólar USDT 11,96; eBay API; informe del día
