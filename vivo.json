@@ -1,47 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "10:36",
-  "fecha": "2026-11-20",
-  "hasta": "10:54"
+  "desde": "16:08",
+  "fecha": "2026-11-20"
  },
- "actualizado": "2026-11-20 10:54",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "2 respuestas, 2 seguimientos, precios de Supermall y NPC",
-   "hora": "10:43"
-  },
-  "mkt": {
-   "estado": "terminó",
-   "texto": "7700X suelto vendido a Bs 3.100; demanda 19 productos",
-   "hora": "10:47"
-  },
-  "pedidos": {
-   "estado": "terminó",
-   "texto": "real-1 y real-2 sin cambios; reclamo eBay vence 26/11",
-   "hora": "10:49"
-  },
-  "ana": {
-   "estado": "terminó",
-   "texto": "Recalculado; 9950X y DDR4 pasan a no traer",
-   "hora": "10:50"
-  },
-  "fin": {
-   "estado": "terminó",
-   "texto": "Sin ventas; 4 Ryzen 7700X en camino, invertido Bs 10.620",
-   "hora": "10:49"
-  },
-  "oficina": {
-   "estado": "terminó",
-   "texto": "Oficina v153 publicada",
-   "hora": "10:52"
-  },
-  "gerente": {
-   "estado": "terminó",
-   "texto": "Aviso de fin de ronda enviado",
-   "hora": "10:54"
-  }
- }
+ "actualizado": "2026-11-20 16:08",
+ "agentes": {}
 }
