@@ -111,6 +111,11 @@ struct PedidosView: View {
                     }
                     let enCamino = visibles.filter { !$0.entregado }
                     MapaRuta(pedidos: unicos(enCamino.isEmpty ? visibles : enCamino)).id(filtro)
+                    if filtro != "__pruebas" {
+                        ForEach(d.paquetes.filter { filtro.isEmpty || $0.producto == filtro }) { p in
+                            NavigationLink { EnvioDetalle(pedido: p) } label: { TarjetaEnvio(d: d, pedido: p) }.buttonStyle(.plain)
+                        }
+                    }
                 }
                 ForEach(visibles.filter { !$0.entregado } + visibles.filter(\.entregado)) { p in
                     NavigationLink(value: p) {
@@ -182,6 +187,9 @@ struct PedidoDetalle: View {
                 if pedido.etapa >= 5 {
                     Button { hoja = .prepararVenta } label: { Label("Preparar la venta", systemImage: "tag").frame(maxWidth: .infinity).padding(.vertical, 6) }
                         .buttonStyle(.bordered).tint(Tema.verde)
+                }
+                if !pedido.esPrueba, let d = store.datos {
+                    NavigationLink { EnvioDetalle(pedido: pedido) } label: { TarjetaEnvio(d: d, pedido: pedido) }.buttonStyle(.plain)
                 }
                 Tarjeta(titulo: "Etapas", icono: "map") {
                     ForEach(Array(pedido.etapas.enumerated()), id: \.offset) { i, e in

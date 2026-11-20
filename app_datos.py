@@ -129,11 +129,12 @@ def extras(D, caz):
                  "por_que": c.get("por_que", ""), "productos": c.get("productos_interes", ""),
                  "precio_ref_bs": num(c.get("precio_referencia_bs")), "proximo_paso": c.get("proximo_paso", ""),
                  "actualizado": c.get("actualizado", "")} for c in leer_csv("clientes-potenciales.csv")]
-    publicaciones = [{k: f.get(k, "") for k in ("fecha", "hora", "producto", "accion", "precio_bs", "cantidad", "titulo",
+    publicaciones = [{k: f.get(k, "") for k in ("fecha", "hora", "producto", "pedido_id", "accion", "precio_bs", "cantidad", "titulo",
                                                 "clics", "mensajes", "notas")} for f in leer_csv("publicaciones.csv")]
     msj = leer_csv("mensajes.csv")
     pcb = leer_csv("precios-cochabamba.csv")
     cli = {c["tienda"].lower(): c for c in clientes}
+    frias = {(x.get("tienda") if isinstance(x, dict) else str(x)) for x in (ag.get("frias") or [])}
     tiendas = []
     for t in leer_csv("tiendas-cochabamba.csv"):   # sin teléfono, dirección ni notas (pueden traer números)
         n = t["tienda"]
@@ -147,6 +148,8 @@ def extras(D, caz):
                         "recibidos": sum(1 for m in mm if m.get("direccion") == "recibido"),
                         "con_precio": sum(1 for m in mm if (m.get("con_precio") or "").startswith("s")),
                         "ultimo_mensaje": max((m["fecha"] for m in mm), default=""),
+                        "lista": any((m.get("nota") or "").lower().startswith("lista completa") for m in mm if m.get("direccion") == "enviado"),
+                        "fria": n in frias,
                         "grupo": c.get("grupo", ""), "precios": sorted(pr, key=lambda x: x["fecha"], reverse=True)[:12]})
     # ---------- documentos para leer dentro de la app ----------
     import glob
@@ -206,7 +209,19 @@ def extras(D, caz):
             "oficina_publicada": (f"{publ[-1]['fecha']} {publ[-1].get('hora', '')}" if publ else ""),
             "armado_por": "GitHub (automático)" if os.environ.get("GITHUB_ACTIONS") else "una ronda o sesión",
             "armado": datetime.now(ZoneInfo("America/La_Paz")).strftime("%Y-%m-%d %H:%M")}
+    # ---------- gráficos (Santi, 20/11): ventas y anuncios por día de Marketplace por producto ----------
+    ventas = [{"fecha": v["fecha"], "producto": v["producto"], "cantidad": num(v.get("cantidad")) or 1, "precio_bs": num(v.get("precio_bs")),
+               "canal": v.get("canal", ""), "pedido_id": v.get("pedido_id", ""), "estado": v.get("estado", "") or "vendida",
+               "cobrado_bs": num(v.get("cobrado_bs")), "comision_bs": num(v.get("comision_bs"))} for v in leer_csv("ventas.csv") if v.get("fecha")]
+    dserie = {}
+    for f in leer_csv("demanda.csv"):
+        if (f.get("fuente") or "marketplace") == "marketplace" and (f.get("ciudad") or "Cochabamba") == "Cochabamba":
+            dserie.setdefault(f["producto"], []).append({"fecha": f["fecha"], "anuncios": num(f.get("anuncios")) or 0,
+                                                         "nuevos": num(f.get("nuevos")) or 0, "desaparecidos": num(f.get("desaparecidos")) or 0,
+                                                         "min_bs": num(f.get("precio_min_bs")), "med_bs": num(f.get("precio_med_bs"))})
+    dserie = {k: sorted(v, key=lambda x: x["fecha"])[-60:] for k, v in dserie.items()}
     return {
+        "ventas": ventas, "demanda_serie": dserie,
         "decididas": decididas[:120], "libreta": libreta, "movimientos": movimientos, "tabla": tabla, "sincronizacion": sinc,
         "clientes": clientes, "publicaciones": publicaciones, "tiendas": tiendas,
         "informes_nube": inf_nube, "catalogos": catalogos, "capturas": capturas[:30],
@@ -216,6 +231,19 @@ def extras(D, caz):
         "constantes": {"b_usd_kg": C.B_USD_KG, "b_min_kg": C.B_MIN_KG, "b_paso_kg": C.B_PASO_KG,
                        "caja_g": C.CAJA_EXTERIOR_G, "a_usd": C.A_USD_UNIDAD, "a_tax": C.A_TAX_DEF},
     }
+
+
+_PED = None
+
+
+def costo_pedido(pid):
+    """Costo real por unidad en Bs (precio_usd + envio_usd, al dólar con que se pagó). Sin guía ni notas."""
+    global _PED
+    if _PED is None:
+        _PED = {r["id"]: r for r in leer_csv("pedidos.csv") + leer_csv("pedidos-prueba.csv")}
+    r = _PED.get(pid) or {}
+    u, e, tc = num(r.get("precio_usd")), num(r.get("envio_usd")) or 0, num(r.get("tc"))
+    return round((u + e) * tc, 2) if u and tc else None
 
 
 def main():
@@ -230,6 +258,7 @@ def main():
             "estado": p.get("estado", ""), "etapa": etapa_idx(p.get("estado")), "etapas": ETAPAS,
             "fecha_compra": p.get("fecha_compra", ""), "actualizado": p.get("actualizado", ""),
             "tienda": p.get("tienda", ""), "courier": p.get("courier", ""),
+            "costo_unit_bs": costo_pedido(p["id"]),
             "eventos": [{"fecha": e["fecha"], "hora": e.get("hora", ""), "lugar": e.get("lugar", ""),
                          "evento": e.get("evento", ""), "lat": num(e.get("lat")), "lon": num(e.get("lon"))}
                         for e in p.get("eventos", [])],
@@ -250,6 +279,8 @@ def main():
             "costo_bs": a.get("costo_bs"), "local_bs": a.get("mejor_local_bs"), "sugerido_bs": a.get("precio_sugerido_bs"),
             "margen": a.get("margen_pct"), "peor": esc.get("peor caso"), "recomendacion": a.get("recomendacion", ""),
             "por_que": a.get("por_que", ""), "link": a.get("link_ebay") or "",
+            "courier_usd": a.get("courier_usd"), "tc": a.get("tc"), "ganancia_bs": a.get("ganancia_bs"),
+            "precios_locales": a.get("precios_locales"), "via": a.get("via", ""),
         })
     orden = {"traer": 0, "esperar": 1, "sin datos": 2, "no traer": 3}
     productos.sort(key=lambda p: (orden.get(p["recomendacion"], 2), -(p["margen"] or -99)))

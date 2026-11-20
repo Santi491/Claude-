@@ -126,6 +126,10 @@ struct PreciosView: View {
                     Text("Traer").tag("traer"); Text("Esperar").tag("esperar"); Text("Todos").tag("todos"); Text("Cazador").tag("cazador")
                 }
                 .pickerStyle(.segmented)
+                if filtro != "cazador" {
+                    NavigationLink { OportunidadesDetalle() } label: { TarjetaOportunidades(d: d) }.buttonStyle(.plain)
+                    NavigationLink { AbanicoDetalle() } label: { TarjetaAbanico(d: d) }.buttonStyle(.plain)
+                }
                 if filtro == "cazador" {
                     ForEach(d.cazador.topes.filter { $0.tope_usd != nil }) { t in filaTope(t) }
                     Text("Sin tope: \(d.cazador.topes.filter { $0.tope_usd == nil }.map(\.producto).joined(separator: ", ")) (falta precio de Cochabamba).")

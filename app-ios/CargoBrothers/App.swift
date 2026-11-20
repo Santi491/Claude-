@@ -253,6 +253,7 @@ struct RaizView: View {
         .overlay { if store.bloqueada { Bloqueo() } }
         .overlay { if verBienvenida || !bienvenidaVista { Bienvenida { withAnimation { verBienvenida = false; bienvenidaVista = true } }.environmentObject(store).transition(.opacity) } }
         .animation(.spring(duration: 0.35), value: store.toast)
+        .environment(\.locale, Locale(identifier: "es_BO"))   // fechas de los gráficos en castellano
         .onAppear { Novedades.pedirPermiso() }
     }
 }

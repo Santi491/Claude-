@@ -40,6 +40,7 @@
 		7EDFC7D17900C3E6DFBACA18 /* MasWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323D1B098D1BCB461A1CA55 /* MasWidgets.swift */; };
 		83596903A97FDAA983B3391A /* Detalle3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140A08282DA18EB225D290E /* Detalle3D.swift */; };
 		8D35708ACBED1341CFB5C3EC /* Calculo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1B336C54BCE76DE79D8F1C /* Calculo.swift */; };
+		9BBC8A70982F2008C6D83632 /* Graficos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1530C2C90401CE13EDF4605D /* Graficos.swift */; };
 		9CF8A07AFE7F4448FA090B4C /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853087D9A16FEB38BD9EA645 /* GitHub.swift */; };
 		A1DE442E5457C3A53A8D44C6 /* Cola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EAF0FCF1D9A19B01C139F /* Cola.swift */; };
 		A2B85026D017C40E68B6CAB5 /* Notificaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D03DF6ACA1FC4F697264724 /* Notificaciones.swift */; };
@@ -93,6 +94,7 @@
 		11C131FA598268FF87C0C103 /* CargoWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CargoWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1229FF333DB2EDEE5619D0DE /* Modelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelo.swift; sourceTree = "<group>"; };
 		1258C8E2E618C28407F90222 /* Componentes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Componentes.swift; sourceTree = "<group>"; };
+		1530C2C90401CE13EDF4605D /* Graficos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graficos.swift; sourceTree = "<group>"; };
 		24A012048F7428B9A01717E2 /* Personas3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personas3D.swift; sourceTree = "<group>"; };
 		2C2A15194E2CC3B99416EB40 /* VentasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentasView.swift; sourceTree = "<group>"; };
 		3B37864CBDDB4B818CB0FE26 /* Fotos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Fotos.xcassets; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				9178CBA57C8D6EBA5763BB7A /* Extras.swift */,
 				3F307845EB1BA3750F894444 /* Formularios.swift */,
 				853087D9A16FEB38BD9EA645 /* GitHub.swift */,
+				1530C2C90401CE13EDF4605D /* Graficos.swift */,
 				59127BEB2EE9C2570661CC34 /* HoyView.swift */,
 				A959C99911657117CA0FBF04 /* Info.plist */,
 				A94B2953F13E92D943008DFC /* Manejo.swift */,
@@ -392,6 +395,7 @@
 				36DCC1A5561A59AC5834F4E8 /* Extras.swift in Sources */,
 				65E0B88A311E66231F23F8BE /* Formularios.swift in Sources */,
 				9CF8A07AFE7F4448FA090B4C /* GitHub.swift in Sources */,
+				9BBC8A70982F2008C6D83632 /* Graficos.swift in Sources */,
 				799A2A972DB8EB97F9628117 /* Gym3D.swift in Sources */,
 				3D93E0F03A86622F2B3DF443 /* HoyView.swift in Sources */,
 				459BA0C202AE10892C268E02 /* Manejo.swift in Sources */,

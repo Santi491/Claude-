@@ -287,6 +287,7 @@
    "actualizado": "2026-11-18 11:42",
    "tienda": "eBay (compra conjunta con un socio)",
    "courier": "Courier B",
+   "costo_unit_bs": 2700.0,
    "eventos": [
     {
      "fecha": "2026-10-25",
@@ -342,6 +343,7 @@
    "actualizado": "2026-11-18 11:42",
    "tienda": "eBay (compra conjunta con un socio)",
    "courier": "Courier B",
+   "costo_unit_bs": 2520.0,
    "eventos": [
     {
      "fecha": "2026-10-25",
@@ -397,6 +399,7 @@
    "actualizado": "2026-11-10 15:20",
    "tienda": "(pedido de un familiar)",
    "courier": "USPS",
+   "costo_unit_bs": null,
    "eventos": [
     {
      "fecha": "2026-10-11",
@@ -516,6 +519,7 @@
    "actualizado": "2026-11-10 15:20",
    "tienda": "(pedido de la hermana de Santi)",
    "courier": "GOFO Express",
+   "costo_unit_bs": null,
    "eventos": [
     {
      "fecha": "2026-10-10",
@@ -595,6 +599,7 @@
    "actualizado": "2026-11-10 15:20",
    "tienda": "(pedido de la hermana de Santi)",
    "courier": "SpeedX",
+   "costo_unit_bs": null,
    "eventos": [
     {
      "fecha": "2026-10-09",
@@ -666,6 +671,7 @@
    "actualizado": "2026-10-29 11:55",
    "tienda": "(pedido de la hermana de Santi)",
    "courier": "Courier A (la señora)",
+   "costo_unit_bs": null,
    "eventos": [
     {
      "fecha": "2026-10-19",
@@ -699,7 +705,12 @@
    "peor": 24.4,
    "recomendacion": "traer",
    "por_que": "aguanta el peor caso (24.4 %)",
-   "link": "https://www.ebay.com/itm/128205358300"
+   "link": "https://www.ebay.com/itm/128205358300",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 1363,
+   "precios_locales": 10,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 9 9950X3D",
@@ -712,7 +723,12 @@
    "peor": 15.0,
    "recomendacion": "traer",
    "por_que": "aguanta el peor caso (15.0 %)",
-   "link": "https://www.ebay.com/itm/900013883043"
+   "link": "https://www.ebay.com/itm/900013883043",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 2370,
+   "precios_locales": 3,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 5 7600X",
@@ -725,7 +741,12 @@
    "peor": 12.5,
    "recomendacion": "traer",
    "por_que": "aguanta el peor caso (12.5 %)",
-   "link": "https://www.ebay.com/itm/137926619063"
+   "link": "https://www.ebay.com/itm/137926619063",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 628,
+   "precios_locales": 6,
+   "via": "B 1 kg"
   },
   {
    "producto": "Intel Core Ultra 7 265K",
@@ -738,7 +759,12 @@
    "peor": 12.1,
    "recomendacion": "traer",
    "por_que": "aguanta el peor caso (12.1 %)",
-   "link": "https://www.ebay.com/itm/287733023578"
+   "link": "https://www.ebay.com/itm/287733023578",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 957,
+   "precios_locales": 8,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 7 7800X3D",
@@ -751,7 +777,12 @@
    "peor": 11.0,
    "recomendacion": "traer",
    "por_que": "aguanta el peor caso (11.0 %)",
-   "link": "https://www.ebay.com/itm/860155999983"
+   "link": "https://www.ebay.com/itm/860155999983",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 1169,
+   "precios_locales": 22,
+   "via": "B 1 kg"
   },
   {
    "producto": "Intel Core i5-12400F",
@@ -764,7 +795,12 @@
    "peor": 7.7,
    "recomendacion": "traer",
    "por_que": "aguanta el peor caso (7.7 %)",
-   "link": "https://www.ebay.com/itm/206675761087"
+   "link": "https://www.ebay.com/itm/206675761087",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 443,
+   "precios_locales": 7,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 5 9600X",
@@ -777,7 +813,12 @@
    "peor": 5.2,
    "recomendacion": "traer",
    "por_que": "aguanta el peor caso (5.2 %)",
-   "link": "https://www.ebay.com/itm/407345993407"
+   "link": "https://www.ebay.com/itm/407345993407",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 491,
+   "precios_locales": 15,
+   "via": "B 1 kg"
   },
   {
    "producto": "RAM DDR4 16GB (2x8) 3200",
@@ -789,8 +830,13 @@
    "margen": 30.0,
    "peor": 16.9,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
-   "link": "https://www.ebay.com/itm/920160940608"
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "link": "https://www.ebay.com/itm/920160940608",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 457,
+   "precios_locales": 3,
+   "via": "B 1 kg"
   },
   {
    "producto": "Intel Core i5-12400F",
@@ -802,8 +848,13 @@
    "margen": 29.9,
    "peor": 17.8,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
-   "link": "https://www.ebay.com/itm/198790623774"
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "link": "https://www.ebay.com/itm/198790623774",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 668,
+   "precios_locales": 1,
+   "via": "B 1 kg"
   },
   {
    "producto": "SSD NVMe 1TB",
@@ -815,8 +866,13 @@
    "margen": 28.0,
    "peor": 15.4,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
-   "link": "https://www.ebay.com/itm/940105945240"
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "link": "https://www.ebay.com/itm/940105945240",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 479,
+   "precios_locales": 5,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 7 7800X3D",
@@ -828,8 +884,13 @@
    "margen": 19.1,
    "peor": 6.5,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
-   "link": "https://www.ebay.com/itm/336905110914"
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "link": "https://www.ebay.com/itm/336905110914",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 800,
+   "precios_locales": 1,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 7 7700X",
@@ -842,7 +903,12 @@
    "peor": 2.8,
    "recomendacion": "esperar",
    "por_que": "el peor caso lo deja en 2.8 %",
-   "link": "https://www.ebay.com/itm/267042355650"
+   "link": "https://www.ebay.com/itm/267042355650",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 546,
+   "precios_locales": 8,
+   "via": "B 1 kg"
   },
   {
    "producto": "Intel Core i5-14400F",
@@ -855,7 +921,12 @@
    "peor": 1.4,
    "recomendacion": "esperar",
    "por_que": "el peor caso lo deja en 1.4 %",
-   "link": "https://www.ebay.com/itm/126275456933"
+   "link": "https://www.ebay.com/itm/126275456933",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 354,
+   "precios_locales": 10,
+   "via": "B 1 kg"
   },
   {
    "producto": "SSD NVMe 2TB",
@@ -868,7 +939,12 @@
    "peor": 37.7,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/920158533564"
+   "link": "https://www.ebay.com/itm/920158533564",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 1817,
+   "precios_locales": 10,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 5 7600",
@@ -881,7 +957,12 @@
    "peor": 31.2,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/257857896293"
+   "link": "https://www.ebay.com/itm/257857896293",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 1111,
+   "precios_locales": 4,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 7 7700X",
@@ -894,7 +975,12 @@
    "peor": 24.6,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/960185553593"
+   "link": "https://www.ebay.com/itm/960185553593",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 1191,
+   "precios_locales": 8,
+   "via": "B 1 kg"
   },
   {
    "producto": "Intel Core Ultra 7 265K",
@@ -907,7 +993,12 @@
    "peor": 22.0,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/198798405271"
+   "link": "https://www.ebay.com/itm/198798405271",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 1304,
+   "precios_locales": 8,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 9 9950X3D",
@@ -920,7 +1011,12 @@
    "peor": 20.2,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/198750337032"
+   "link": "https://www.ebay.com/itm/198750337032",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 2782,
+   "precios_locales": 3,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 5 7600X",
@@ -933,7 +1029,12 @@
    "peor": 15.7,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/327094285155"
+   "link": "https://www.ebay.com/itm/327094285155",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 700,
+   "precios_locales": 6,
+   "via": "B 1 kg"
   },
   {
    "producto": "Intel Core i5-14400F",
@@ -946,7 +1047,12 @@
    "peor": 14.8,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/366820395440"
+   "link": "https://www.ebay.com/itm/366820395440",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 629,
+   "precios_locales": 10,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 5 9600X",
@@ -959,7 +1065,12 @@
    "peor": 2.6,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/127803717729"
+   "link": "https://www.ebay.com/itm/127803717729",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 431,
+   "precios_locales": 15,
+   "via": "B 1 kg"
   },
   {
    "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
@@ -972,7 +1083,12 @@
    "peor": 3.2,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/920161892533"
+   "link": "https://www.ebay.com/itm/920161892533",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 943,
+   "precios_locales": 3,
+   "via": "B 1 kg"
   },
   {
    "producto": "Intel Core i5-13400",
@@ -985,7 +1101,12 @@
    "peor": 1.5,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/307290903175"
+   "link": "https://www.ebay.com/itm/307290903175",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 340,
+   "precios_locales": 2,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 5 5600",
@@ -998,7 +1119,12 @@
    "peor": null,
    "recomendacion": "sin datos",
    "por_que": "faltan: precio local",
-   "link": ""
+   "link": "",
+   "courier_usd": null,
+   "tc": null,
+   "ganancia_bs": null,
+   "precios_locales": null,
+   "via": ""
   },
   {
    "producto": "Ryzen 5 5600",
@@ -1010,8 +1136,13 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
-   "link": ""
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
+   "link": "",
+   "courier_usd": null,
+   "tc": null,
+   "ganancia_bs": null,
+   "precios_locales": null,
+   "via": ""
   },
   {
    "producto": "Ryzen 7 5700X3D",
@@ -1024,7 +1155,12 @@
    "peor": null,
    "recomendacion": "sin datos",
    "por_que": "faltan: precio de eBay nuevo, precio local",
-   "link": ""
+   "link": "",
+   "courier_usd": null,
+   "tc": null,
+   "ganancia_bs": null,
+   "precios_locales": null,
+   "via": ""
   },
   {
    "producto": "Ryzen 7 5700X3D",
@@ -1036,8 +1172,13 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
-   "link": ""
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
+   "link": "",
+   "courier_usd": null,
+   "tc": null,
+   "ganancia_bs": null,
+   "precios_locales": null,
+   "via": ""
   },
   {
    "producto": "Intel Core i5-13400",
@@ -1049,8 +1190,13 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
-   "link": ""
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
+   "link": "",
+   "courier_usd": null,
+   "tc": null,
+   "ganancia_bs": null,
+   "precios_locales": null,
+   "via": ""
   },
   {
    "producto": "RAM DDR4 16GB (2x8) 3200",
@@ -1063,7 +1209,12 @@
    "peor": -7.1,
    "recomendacion": "no traer",
    "por_que": "margen 8% con el precio sugerido",
-   "link": "https://www.ebay.com/itm/168841913584"
+   "link": "https://www.ebay.com/itm/168841913584",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 128,
+   "precios_locales": 12,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 5 7500F",
@@ -1076,7 +1227,12 @@
    "peor": -8.7,
    "recomendacion": "no traer",
    "por_que": "margen 7% con el precio sugerido",
-   "link": "https://www.ebay.com/itm/860134912522"
+   "link": "https://www.ebay.com/itm/860134912522",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 110,
+   "precios_locales": 1,
+   "via": "B 1 kg"
   },
   {
    "producto": "SSD NVMe 1TB",
@@ -1089,7 +1245,12 @@
    "peor": -10.4,
    "recomendacion": "no traer",
    "por_que": "margen 6% con el precio sugerido",
-   "link": "https://www.ebay.com/itm/407370632258"
+   "link": "https://www.ebay.com/itm/407370632258",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 99,
+   "precios_locales": 34,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 9 9950X",
@@ -1102,7 +1263,12 @@
    "peor": -10.8,
    "recomendacion": "no traer",
    "por_que": "margen 4% con el precio sugerido",
-   "link": "https://www.ebay.com/itm/257573828939"
+   "link": "https://www.ebay.com/itm/257573828939",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": 226,
+   "precios_locales": 4,
+   "via": "B 1 kg"
   },
   {
    "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
@@ -1115,7 +1281,12 @@
    "peor": -15.4,
    "recomendacion": "no traer",
    "por_que": "margen -0% con el precio sugerido",
-   "link": "https://www.ebay.com/itm/206180664090"
+   "link": "https://www.ebay.com/itm/206180664090",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": -13,
+   "precios_locales": 3,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 9 9950X",
@@ -1128,7 +1299,12 @@
    "peor": -19.0,
    "recomendacion": "no traer",
    "por_que": "margen -3% con el precio sugerido",
-   "link": "https://www.ebay.com/itm/800893981003"
+   "link": "https://www.ebay.com/itm/800893981003",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": -193,
+   "precios_locales": 4,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 5 7500F",
@@ -1141,7 +1317,12 @@
    "peor": -26.2,
    "recomendacion": "no traer",
    "por_que": "margen -9% con el precio sugerido",
-   "link": "https://www.ebay.com/itm/146892120982"
+   "link": "https://www.ebay.com/itm/146892120982",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": -144,
+   "precios_locales": 1,
+   "via": "B 1 kg"
   },
   {
    "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 5600",
@@ -1154,7 +1335,12 @@
    "peor": -33.3,
    "recomendacion": "no traer",
    "por_que": "margen -16% con el precio sugerido",
-   "link": "https://www.ebay.com/itm/377593144670"
+   "link": "https://www.ebay.com/itm/377593144670",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": -665,
+   "precios_locales": 1,
+   "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 5 7600",
@@ -1167,7 +1353,12 @@
    "peor": -41.1,
    "recomendacion": "no traer",
    "por_que": "margen -22% con el precio sugerido",
-   "link": "https://www.ebay.com/itm/206712855371"
+   "link": "https://www.ebay.com/itm/206712855371",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": -594,
+   "precios_locales": 4,
+   "via": "B 1 kg"
   },
   {
    "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 5600",
@@ -1180,7 +1371,12 @@
    "peor": -54.4,
    "recomendacion": "no traer",
    "por_que": "margen -34% con el precio sugerido",
-   "link": "https://www.ebay.com/itm/287735773153"
+   "link": "https://www.ebay.com/itm/287735773153",
+   "courier_usd": 14.0,
+   "tc": 11.95,
+   "ganancia_bs": -1454,
+   "precios_locales": 1,
+   "via": "B 1 kg"
   }
  ],
  "cazador": {
@@ -1820,6 +2016,3127 @@
  "alertas": [
   "⬇ Ryzen 9 9950X (nuevo) bajó 17% en eBay: USD 489.99 → 405.12"
  ],
+ "ventas": [],
+ "demanda_serie": {
+  "Ryzen 5 5600": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-27",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-28",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-05",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   }
+  ],
+  "Ryzen 7 5700X3D": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-27",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-28",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   }
+  ],
+  "Ryzen 5 7600": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-27",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-28",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-05",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   }
+  ],
+  "Ryzen 7 7800X3D": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 4.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 4800.0,
+    "med_bs": 5190.0
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 4.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4800.0,
+    "med_bs": 5190.0
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": 4800.0,
+    "med_bs": 4860.0
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": 4800.0,
+    "med_bs": 5190.0
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 2.0,
+    "min_bs": 4860.0,
+    "med_bs": 5025.0
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4800.0,
+    "med_bs": 4800.0
+   },
+   {
+    "fecha": "2026-10-27",
+    "anuncios": 4.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4800.0,
+    "med_bs": 5125.0
+   },
+   {
+    "fecha": "2026-10-28",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": 4800.0,
+    "med_bs": 5190.0
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 2.0,
+    "min_bs": 5190.0,
+    "med_bs": 5190.0
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4800.0,
+    "med_bs": 5190.0
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 5190.0,
+    "med_bs": 5190.0
+   },
+   {
+    "fecha": "2026-11-05",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4800.0,
+    "med_bs": 4995.0
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4500.0,
+    "med_bs": 5190.0
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 2.0,
+    "nuevos": 1.0,
+    "desaparecidos": 2.0,
+    "min_bs": 4500.0,
+    "med_bs": 4650.0
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": 4400.0,
+    "med_bs": 4400.0
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 2.0,
+    "nuevos": 2.0,
+    "desaparecidos": 0,
+    "min_bs": 4350.0,
+    "med_bs": 4375.0
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 5.0,
+    "nuevos": 3.0,
+    "desaparecidos": 0,
+    "min_bs": 4350.0,
+    "med_bs": 4800.0
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4400.0,
+    "med_bs": 4600.0
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 3.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 4400.0,
+    "med_bs": 4800.0
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 4.0,
+    "nuevos": 2.0,
+    "desaparecidos": 1.0,
+    "min_bs": 4350.0,
+    "med_bs": 4400.0
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 4.0,
+    "nuevos": 1.0,
+    "desaparecidos": 1.0,
+    "min_bs": 4400.0,
+    "med_bs": 4995.0
+   },
+   {
+    "fecha": "2026-11-19",
+    "anuncios": 5.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 4350.0,
+    "med_bs": 4800.0
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4350.0,
+    "med_bs": 4400.0
+   }
+  ],
+  "Ryzen 9 9950X": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 2.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 4.0,
+    "nuevos": 2.0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   }
+  ],
+  "Intel Core i5-12400F": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 2350.0,
+    "med_bs": 2350.0
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2350.0,
+    "med_bs": 2350.0
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2350.0,
+    "med_bs": 2350.0
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2350.0,
+    "med_bs": 2350.0
+   },
+   {
+    "fecha": "2026-10-27",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2350.0,
+    "med_bs": 2350.0
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-05",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2350.0,
+    "med_bs": 2350.0
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2350.0,
+    "med_bs": 2350.0
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2350.0,
+    "med_bs": 2350.0
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 2.0,
+    "nuevos": 2.0,
+    "desaparecidos": 0,
+    "min_bs": 2350.0,
+    "med_bs": 2350.0
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   }
+  ],
+  "Intel Core i5-13400": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   }
+  ],
+  "Intel Core i5-14400F": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2700.0,
+    "med_bs": 2700.0
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2700.0,
+    "med_bs": 2700.0
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-28",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   }
+  ],
+  "Intel Core Ultra 7 265K": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 4250.0,
+    "med_bs": 4250.0
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 4250.0,
+    "med_bs": 4250.0
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4250.0,
+    "med_bs": 4250.0
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4250.0,
+    "med_bs": 4250.0
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4250.0,
+    "med_bs": 4250.0
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4200.0,
+    "med_bs": 4200.0
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4200.0,
+    "med_bs": 4200.0
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4200.0,
+    "med_bs": 4200.0
+   }
+  ],
+  "Corsair Vengeance RGB DDR5 32GB (2x16) 5600": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4500.0,
+    "med_bs": 4500.0
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4500.0,
+    "med_bs": 4500.0
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-28",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3000.0,
+    "med_bs": 3000.0
+   },
+   {
+    "fecha": "2026-11-05",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   }
+  ],
+  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 6200.0,
+    "med_bs": 6200.0
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 6200.0,
+    "med_bs": 6200.0
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 5800.0,
+    "med_bs": 5800.0
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 5800.0,
+    "med_bs": 5800.0
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 2.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 5800.0,
+    "med_bs": 6000.0
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 5800.0,
+    "med_bs": 6000.0
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": 6200.0,
+    "med_bs": 6200.0
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 6200.0,
+    "med_bs": 6200.0
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 6200.0,
+    "med_bs": 6200.0
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-05",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 5800.0,
+    "med_bs": 5800.0
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 5800.0,
+    "med_bs": 5800.0
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   }
+  ],
+  "RAM DDR4 16GB (2x8) 3200": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1950.0,
+    "med_bs": 1950.0
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1400.0,
+    "med_bs": 1500.0
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1400.0,
+    "med_bs": 1400.0
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 1400.0,
+    "med_bs": 1400.0
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 3.0,
+    "nuevos": 2.0,
+    "desaparecidos": 1.0,
+    "min_bs": 540.0,
+    "med_bs": 600.0
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 5.0,
+    "nuevos": 2.0,
+    "desaparecidos": 1.0,
+    "min_bs": 540.0,
+    "med_bs": 1300.0
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 540.0,
+    "med_bs": 970.0
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1400.0,
+    "med_bs": 1500.0
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 950.0,
+    "med_bs": 950.0
+   },
+   {
+    "fecha": "2026-11-05",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 725.0,
+    "med_bs": 725.0
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 725.0,
+    "med_bs": 725.0
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 725.0,
+    "med_bs": 725.0
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 2.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 725.0,
+    "med_bs": 1088.0
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 2.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 1500.0,
+    "med_bs": 1590.0
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 3.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 1100.0,
+    "med_bs": 1500.0
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 540.0,
+    "med_bs": 1234.0
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 4.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1100.0,
+    "med_bs": 1150.0
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 1300.0,
+    "med_bs": 1300.0
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 3.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 1300.0,
+    "med_bs": 1300.0
+   }
+  ],
+  "SSD NVMe 1TB": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 3.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 1730.0,
+    "med_bs": 2390.0
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 6.0,
+    "nuevos": 3.0,
+    "desaparecidos": 1.0,
+    "min_bs": 1230.0,
+    "med_bs": 1850.0
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 5.0,
+    "nuevos": 2.0,
+    "desaparecidos": 3.0,
+    "min_bs": 1230.0,
+    "med_bs": 1850.0
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 5.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1500.0,
+    "med_bs": 1850.0
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 5.0,
+    "nuevos": 2.0,
+    "desaparecidos": 0,
+    "min_bs": 1500.0,
+    "med_bs": 1850.0
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 5.0,
+    "nuevos": 2.0,
+    "desaparecidos": 2.0,
+    "min_bs": 1700.0,
+    "med_bs": 2050.0
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 4.0,
+    "nuevos": 1.0,
+    "desaparecidos": 2.0,
+    "min_bs": 1100.0,
+    "med_bs": 1775.0
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 3.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 1700.0,
+    "med_bs": 1850.0
+   },
+   {
+    "fecha": "2026-10-28",
+    "anuncios": 6.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1100.0,
+    "med_bs": 1850.0
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 4.0,
+    "nuevos": 1.0,
+    "desaparecidos": 2.0,
+    "min_bs": 1675.0,
+    "med_bs": 1775.0
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 4.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1675.0,
+    "med_bs": 1775.0
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1850.0,
+    "med_bs": 1880.0
+   },
+   {
+    "fecha": "2026-11-05",
+    "anuncios": 6.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1610.0,
+    "med_bs": 1810.0
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 4.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1675.0,
+    "med_bs": 1845.0
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 5.0,
+    "nuevos": 3.0,
+    "desaparecidos": 3.0,
+    "min_bs": 1250.0,
+    "med_bs": 1400.0
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 5.0,
+    "nuevos": 1.0,
+    "desaparecidos": 1.0,
+    "min_bs": 1300.0,
+    "med_bs": 1400.0
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1300.0,
+    "med_bs": 1400.0
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 8.0,
+    "nuevos": 5.0,
+    "desaparecidos": 0,
+    "min_bs": 1300.0,
+    "med_bs": 1880.0
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 6.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1300.0,
+    "med_bs": 1845.0
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1300.0,
+    "med_bs": 2175.0
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1300.0,
+    "med_bs": 1400.0
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 4.0,
+    "nuevos": 2.0,
+    "desaparecidos": 0,
+    "min_bs": 1300.0,
+    "med_bs": 1655.0
+   },
+   {
+    "fecha": "2026-11-19",
+    "anuncios": 4.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 1300.0,
+    "med_bs": 2165.0
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 4.0,
+    "nuevos": 1.0,
+    "desaparecidos": 1.0,
+    "min_bs": 1250.0,
+    "med_bs": 1555.0
+   }
+  ],
+  "SSD NVMe 2TB": [
+   {
+    "fecha": "2026-10-15",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-19",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 3350.0,
+    "med_bs": 3350.0
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3150.0,
+    "med_bs": 3350.0
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3100.0,
+    "med_bs": 3325.0
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3100.0,
+    "med_bs": 3100.0
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3100.0,
+    "med_bs": 3100.0
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 5100.0,
+    "med_bs": 5100.0
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 2.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 5100.0,
+    "med_bs": 5250.0
+   },
+   {
+    "fecha": "2026-11-19",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 2.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   }
+  ],
+  "Ryzen 7 7700X": [
+   {
+    "fecha": "2026-10-20",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3000.0,
+    "med_bs": 3500.0
+   },
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": 3000.0,
+    "med_bs": 3000.0
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3100.0,
+    "med_bs": 3100.0
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-28",
+    "anuncios": 2.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 3100.0,
+    "med_bs": 3550.0
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": 3000.0,
+    "med_bs": 3000.0
+   },
+   {
+    "fecha": "2026-11-03",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3100.0,
+    "med_bs": 3550.0
+   },
+   {
+    "fecha": "2026-11-04",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-05",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3100.0,
+    "med_bs": 3100.0
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3100.0,
+    "med_bs": 3100.0
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3100.0,
+    "med_bs": 3100.0
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 2.0,
+    "nuevos": 2.0,
+    "desaparecidos": 0,
+    "min_bs": 3100.0,
+    "med_bs": 3550.0
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3100.0,
+    "med_bs": 3550.0
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 3100.0,
+    "med_bs": 3550.0
+   },
+   {
+    "fecha": "2026-11-19",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 1.0,
+    "min_bs": 4000.0,
+    "med_bs": 4000.0
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4000.0,
+    "med_bs": 4000.0
+   }
+  ],
+  "Ryzen 5 7500F": [
+   {
+    "fecha": "2026-10-21",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-22",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-26",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-27",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-28",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-10-30",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-06",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-09",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-10",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-11",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   }
+  ],
+  "Ryzen 5 9600X": [
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 5.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2450.0,
+    "med_bs": 2635.0
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2800.0,
+    "med_bs": 2800.0
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2450.0,
+    "med_bs": 2500.0
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 4.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 2450.0,
+    "med_bs": 2635.0
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 4.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2450.0,
+    "med_bs": 2635.0
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2900.0,
+    "med_bs": 2900.0
+   }
+  ],
+  "Ryzen 5 7600X": [
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   }
+  ],
+  "Ryzen 9 9950X3D": [
+   {
+    "fecha": "2026-11-12",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-13",
+    "anuncios": 2.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-16",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-17",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-18",
+    "anuncios": 1.0,
+    "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 9700.0,
+    "med_bs": 9700.0
+   },
+   {
+    "fecha": "2026-11-20",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 9200.0,
+    "med_bs": 9200.0
+   }
+  ]
+ },
  "decididas": [
   {
    "tipo": "plan",
@@ -7878,11 +11195,11 @@
   }
  ],
  "sincronizacion": {
-  "ultima_ronda": "2026-11-20 10:35",
+  "ultima_ronda": "2026-11-20 10:54",
   "ultima_ronda_quien": "pc",
   "oficina_publicada": "2026-11-20 10:51",
   "armado_por": "una ronda o sesión",
-  "armado": "2026-11-20 10:51"
+  "armado": "2026-11-20 11:59"
  },
  "clientes": [
   {
@@ -8789,6 +12106,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp (buscar otro contacto)",
    "precios": []
   },
@@ -8803,6 +12122,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp (buscar otro contacto)",
    "precios": []
   },
@@ -8817,6 +12138,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-18",
+   "lista": true,
+   "fria": false,
    "grupo": "D · No apuntar por ahora",
    "precios": [
     {
@@ -8838,6 +12161,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-10-16",
+   "lista": false,
+   "fria": false,
    "grupo": "D · No apuntar",
    "precios": [
     {
@@ -8925,6 +12250,8 @@
    "recibidos": 2,
    "con_precio": 1,
    "ultimo_mensaje": "2026-11-12",
+   "lista": true,
+   "fria": false,
    "grupo": "B · Arman PCs (consumen componentes)",
    "precios": [
     {
@@ -8946,6 +12273,8 @@
    "recibidos": 5,
    "con_precio": 2,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "C · Revende componentes (compararía precio)",
    "precios": [
     {
@@ -8979,6 +12308,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-17",
+   "lista": true,
+   "fria": false,
    "grupo": "B · Arman PCs (consumen componentes)",
    "precios": [
     {
@@ -9066,6 +12397,8 @@
    "recibidos": 3,
    "con_precio": 2,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "C · Revende componentes (compararía precio)",
    "precios": [
     {
@@ -9153,6 +12486,8 @@
    "recibidos": 12,
    "con_precio": 3,
    "ultimo_mensaje": "2026-11-12",
+   "lista": true,
+   "fria": false,
    "grupo": "B · Arman PCs (consumen componentes)",
    "precios": [
     {
@@ -9216,6 +12551,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
@@ -9230,6 +12567,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp (buscar otro contacto)",
    "precios": []
   },
@@ -9244,6 +12583,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "D · No apuntar por ahora",
    "precios": []
   },
@@ -9258,6 +12599,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp (buscar otro contacto)",
    "precios": []
   },
@@ -9272,6 +12615,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-10-14",
+   "lista": false,
+   "fria": false,
    "grupo": "D · No apuntar",
    "precios": [
     {
@@ -9293,6 +12638,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "E · Por calificar",
    "precios": []
   },
@@ -9307,6 +12654,8 @@
    "recibidos": 3,
    "con_precio": 1,
    "ultimo_mensaje": "2026-11-20",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": [
     {
@@ -9346,6 +12695,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
@@ -9360,6 +12711,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "2026-10-17",
+   "lista": false,
+   "fria": true,
    "grupo": "F · Sin WhatsApp (buscar otro contacto)",
    "precios": []
   },
@@ -9374,6 +12727,8 @@
    "recibidos": 6,
    "con_precio": 1,
    "ultimo_mensaje": "2026-11-12",
+   "lista": true,
+   "fria": false,
    "grupo": "C · Revende componentes (compararía precio)",
    "precios": [
     {
@@ -9401,6 +12756,8 @@
    "recibidos": 5,
    "con_precio": 2,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "C · Revende componentes (compararía precio)",
    "precios": [
     {
@@ -9440,6 +12797,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
@@ -9454,6 +12813,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp (buscar otro contacto)",
    "precios": []
   },
@@ -9468,6 +12829,8 @@
    "recibidos": 6,
    "con_precio": 3,
    "ultimo_mensaje": "2026-11-12",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": [
     {
@@ -9501,6 +12864,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-10-15",
+   "lista": false,
+   "fria": false,
    "grupo": "D · No apuntar por ahora",
    "precios": []
   },
@@ -9515,6 +12880,8 @@
    "recibidos": 16,
    "con_precio": 10,
    "ultimo_mensaje": "2026-11-12",
+   "lista": true,
+   "fria": false,
    "grupo": "C · Revende componentes (compararía precio)",
    "precios": [
     {
@@ -9602,6 +12969,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-17",
+   "lista": true,
+   "fria": true,
    "grupo": "B · Arman PCs (consumen componentes)",
    "precios": []
   },
@@ -9616,6 +12985,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
@@ -9630,6 +13001,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-17",
+   "lista": true,
+   "fria": true,
    "grupo": "E · Por calificar",
    "precios": []
   },
@@ -9644,6 +13017,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "D · No apuntar",
    "precios": []
   },
@@ -9658,6 +13033,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-18",
+   "lista": true,
+   "fria": true,
    "grupo": "E · Por calificar",
    "precios": []
   },
@@ -9672,6 +13049,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-18",
+   "lista": true,
+   "fria": true,
    "grupo": "E · Por calificar",
    "precios": []
   },
@@ -9686,6 +13065,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "D · No apuntar por ahora",
    "precios": []
   },
@@ -9700,6 +13081,8 @@
    "recibidos": 4,
    "con_precio": 1,
    "ultimo_mensaje": "2026-11-12",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": [
     {
@@ -9721,6 +13104,8 @@
    "recibidos": 4,
    "con_precio": 2,
    "ultimo_mensaje": "2026-11-12",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": [
     {
@@ -9748,6 +13133,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-17",
+   "lista": true,
+   "fria": true,
    "grupo": "E · Por calificar",
    "precios": []
   },
@@ -9762,6 +13149,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-10-15",
+   "lista": false,
+   "fria": false,
    "grupo": "D · No apuntar por ahora",
    "precios": []
   },
@@ -9776,6 +13165,8 @@
    "recibidos": 11,
    "con_precio": 3,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "C · Revende componentes (compararía precio)",
    "precios": [
     {
@@ -9827,6 +13218,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
@@ -9841,6 +13234,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp (buscar otro contacto)",
    "precios": []
   },
@@ -9855,6 +13250,8 @@
    "recibidos": 22,
    "con_precio": 11,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "C · Revende componentes (compararía precio)",
    "precios": [
     {
@@ -9942,6 +13339,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp (buscar otro contacto)",
    "precios": []
   },
@@ -9956,6 +13355,8 @@
    "recibidos": 5,
    "con_precio": 3,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "B · Arman PCs (consumen componentes)",
    "precios": [
     {
@@ -9995,6 +13396,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-18",
+   "lista": true,
+   "fria": true,
    "grupo": "D · No apuntar por ahora",
    "precios": []
   },
@@ -10009,6 +13412,8 @@
    "recibidos": 4,
    "con_precio": 2,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "C · Revende componentes (compararía precio)",
    "precios": [
     {
@@ -10042,6 +13447,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp",
    "precios": []
   },
@@ -10056,6 +13463,8 @@
    "recibidos": 4,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10070,6 +13479,8 @@
    "recibidos": 3,
    "con_precio": 1,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10084,6 +13495,8 @@
    "recibidos": 3,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10098,6 +13511,8 @@
    "recibidos": 4,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
@@ -10112,6 +13527,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
@@ -10126,6 +13543,8 @@
    "recibidos": 3,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
@@ -10140,6 +13559,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-10-21",
+   "lista": false,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10154,6 +13575,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-18",
+   "lista": true,
+   "fria": true,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
@@ -10168,6 +13591,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-10-21",
+   "lista": false,
+   "fria": false,
    "grupo": "D · No apuntar",
    "precios": []
   },
@@ -10182,6 +13607,8 @@
    "recibidos": 5,
    "con_precio": 1,
    "ultimo_mensaje": "2026-10-27",
+   "lista": false,
+   "fria": false,
    "grupo": "D · No apuntar (no vende CPU/RAM)",
    "precios": [
     {
@@ -10209,6 +13636,8 @@
    "recibidos": 5,
    "con_precio": 2,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": [
     {
@@ -10236,6 +13665,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-10-23",
+   "lista": false,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10250,6 +13681,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10264,6 +13697,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10278,6 +13713,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-17",
+   "lista": true,
+   "fria": false,
    "grupo": "B · Arman PCs (consumen componentes)",
    "precios": []
   },
@@ -10292,6 +13729,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-10-30",
+   "lista": false,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10306,6 +13745,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "2026-10-30",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp (buscar otro contacto)",
    "precios": []
   },
@@ -10320,6 +13761,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10334,6 +13777,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "2026-10-30",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp (buscar otro contacto)",
    "precios": []
   },
@@ -10348,6 +13793,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-17",
+   "lista": true,
+   "fria": true,
    "grupo": "",
    "precios": []
   },
@@ -10362,6 +13809,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-18",
+   "lista": true,
+   "fria": true,
    "grupo": "E · Por calificar",
    "precios": []
   },
@@ -10376,6 +13825,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
@@ -10390,6 +13841,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-19",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10404,6 +13857,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10418,6 +13873,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-20",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10432,6 +13889,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10446,6 +13905,8 @@
    "recibidos": 3,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
@@ -10460,6 +13921,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "2026-10-30",
+   "lista": false,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10474,6 +13937,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp",
    "precios": []
   },
@@ -10488,6 +13953,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp",
    "precios": []
   },
@@ -10502,6 +13969,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp",
    "precios": []
   },
@@ -10516,6 +13985,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp",
    "precios": []
   },
@@ -10530,6 +14001,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp",
    "precios": []
   },
@@ -10544,6 +14017,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp",
    "precios": []
   },
@@ -10558,6 +14033,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp",
    "precios": []
   },
@@ -10572,6 +14049,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-04",
+   "lista": false,
+   "fria": false,
    "grupo": "D · No apuntar",
    "precios": []
   },
@@ -10586,6 +14065,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-04",
+   "lista": false,
+   "fria": false,
    "grupo": "D · No apuntar",
    "precios": []
   },
@@ -10600,6 +14081,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-04",
+   "lista": false,
+   "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
@@ -10614,6 +14097,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "",
+   "lista": false,
+   "fria": false,
    "grupo": "F · Sin WhatsApp (buscar otro contacto)",
    "precios": []
   },
@@ -10628,6 +14113,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-18",
+   "lista": true,
+   "fria": true,
    "grupo": "E · Por calificar",
    "precios": []
   },
@@ -10642,6 +14129,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-17",
+   "lista": true,
+   "fria": false,
    "grupo": "D · No apuntar por ahora",
    "precios": []
   },
@@ -10656,6 +14145,8 @@
    "recibidos": 3,
    "con_precio": 1,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "C · Revende componentes (compararía precio)",
    "precios": [
     {
@@ -10677,6 +14168,8 @@
    "recibidos": 6,
    "con_precio": 1,
    "ultimo_mensaje": "2026-11-18",
+   "lista": true,
+   "fria": false,
    "grupo": "C · Revende componentes (compararía precio)",
    "precios": [
     {
@@ -10704,6 +14197,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "D · No apuntar (no vende componentes)",
    "precios": []
   },
@@ -10718,6 +14213,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-06",
+   "lista": false,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10732,6 +14229,8 @@
    "recibidos": 4,
    "con_precio": 2,
    "ultimo_mensaje": "2026-11-19",
+   "lista": false,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10746,6 +14245,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-09",
+   "lista": false,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10760,6 +14261,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-11",
+   "lista": false,
+   "fria": true,
    "grupo": "",
    "precios": []
   },
@@ -10774,6 +14277,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-18",
+   "lista": true,
+   "fria": true,
    "grupo": "",
    "precios": []
   },
@@ -10788,6 +14293,8 @@
    "recibidos": 4,
    "con_precio": 2,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": [
     {
@@ -10821,6 +14328,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-05",
+   "lista": false,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10835,6 +14344,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-09",
+   "lista": false,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10849,6 +14360,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-12",
+   "lista": false,
+   "fria": true,
    "grupo": "",
    "precios": []
   },
@@ -10863,6 +14376,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-06",
+   "lista": false,
+   "fria": false,
    "grupo": "D · No apuntar",
    "precios": []
   },
@@ -10877,6 +14392,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-06",
+   "lista": false,
+   "fria": false,
    "grupo": "B · Arman PCs (consumen componentes)",
    "precios": []
   },
@@ -10891,6 +14408,8 @@
    "recibidos": 2,
    "con_precio": 1,
    "ultimo_mensaje": "2026-11-20",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10905,6 +14424,8 @@
    "recibidos": 6,
    "con_precio": 1,
    "ultimo_mensaje": "2026-11-13",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": [
     {
@@ -10926,6 +14447,8 @@
    "recibidos": 0,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-18",
+   "lista": true,
+   "fria": true,
    "grupo": "",
    "precios": []
   },
@@ -10940,6 +14463,8 @@
    "recibidos": 3,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-17",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10954,6 +14479,8 @@
    "recibidos": 6,
    "con_precio": 1,
    "ultimo_mensaje": "2026-11-20",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": [
     {
@@ -10975,6 +14502,8 @@
    "recibidos": 2,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -10989,6 +14518,8 @@
    "recibidos": 3,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-19",
+   "lista": true,
+   "fria": false,
    "grupo": "",
    "precios": []
   },
@@ -11003,6 +14534,8 @@
    "recibidos": 4,
    "con_precio": 2,
    "ultimo_mensaje": "2026-11-20",
+   "lista": false,
+   "fria": false,
    "grupo": "C · Revende componentes (compararía precio)",
    "precios": [
     {
@@ -11036,6 +14569,8 @@
    "recibidos": 1,
    "con_precio": 0,
    "ultimo_mensaje": "2026-11-16",
+   "lista": false,
+   "fria": false,
    "grupo": "D · No apuntar",
    "precios": []
   }
@@ -21882,21 +25417,21 @@
  "recomendaciones": [
   {
    "texto": "Decide si reclamamos a eBay por los 7700X: el plazo vence el 26/11",
-   "por_que": "Quedan 7 días y hoy no hay reclamo abierto; después no hay vuelta atrás",
+   "por_que": "Quedan 6 días y no hay reclamo abierto; después no hay vuelta atrás",
    "accion": "pedido"
   },
   {
    "texto": "Fija el precio del 7700X y pasa las fotos para publicar",
-   "por_que": "El Analista sugiere Bs 3.300 y bajar 100 por semana (piso 2.930); el suelto de 3.100 ya no aparece, solo el sellado a 4.000",
+   "por_que": "El suelto de 3.100 salió vendido; solo queda el sellado a 4.000 y el Analista sugiere Bs 3.300",
    "accion": "venta"
   },
   {
-   "texto": "Mira el segundo pedido: SSD 2TB y 7800X3D",
-   "por_que": "SSD 2TB deja 39,6 % (ojo, Gen3 sin marca); 7800X3D 26,6 % y aguanta el peor caso",
+   "texto": "Mira el segundo pedido con calma: el 9600X y el SSD 2TB",
+   "por_que": "El 9600X deja 5,2 % y el SSD 2TB 34,8 %; son los menos firmes hasta confirmar garantía y mínimo de 3 piezas",
    "accion": "compra"
   }
  ],
- "recomendaciones_cuando": "2026-11-19 10:49",
+ "recomendaciones_cuando": "2026-11-20 10:53",
  "constantes": {
   "b_usd_kg": 28,
   "b_min_kg": 1.0,

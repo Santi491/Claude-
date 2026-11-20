@@ -77,6 +77,7 @@ struct EquipoView: View {
                     }
                     ProgressView(value: Double(hechos), total: Double(max(d.objetivos.count, 1))).tint(Tema.bronce)
                 }
+                TarjetaEmbudo(d: d)
                 if let s = d.salud14, !s.isEmpty {
                     Tarjeta(titulo: "Salud del equipo · 14 días", icono: "waveform.path.ecg") { Salud14(filas: s) }
                 }

@@ -44,6 +44,9 @@ struct PrepararVentaView: View {
                     Text(a.por_que).font(.footnote).foregroundStyle(Tema.gris)
                 }
             }
+            if let d = store.datos, piezas(d, producto) != nil {
+                Section { TarjetaCosto(d: d, producto: producto) }.listRowInsets(EdgeInsets()).listRowBackground(Color.clear)
+            }
             Section("La competencia") {
                 if competencia.isEmpty { Text("Sin precios de la competencia todavía.").foregroundStyle(Tema.gris) }
                 ForEach(competencia.prefix(8)) { l in

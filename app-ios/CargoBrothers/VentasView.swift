@@ -75,31 +75,11 @@ struct AnunciosView: View {
                     Button { venta = true } label: { Label("Preparar la venta", systemImage: "tag").frame(maxWidth: .infinity).padding(.vertical, 4) }
                         .buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(Tema.sobreAcento)
                 }
-            } else {
-                ForEach(Dictionary(grouping: pubs, by: \.producto).sorted { $0.key < $1.key }, id: \.key) { prod, l in
-                    let ult = l.sorted { $0.fecha + $0.hora < $1.fecha + $1.hora }
-                    let primera = ult.first { $0.accion == "publicada" }
-                    Tarjeta(titulo: prod, icono: "megaphone") {
-                        if let u = ult.last {
-                            HStack {
-                                Chip(texto: u.accion, color: u.accion == "vendida" ? Tema.verde : u.accion == "eliminada" || u.accion == "pausada" ? Tema.gris : Tema.bronce)
-                                Spacer()
-                                if !u.precio_bs.isEmpty { Text("Bs \(u.precio_bs)").font(.title3.weight(.semibold).monospacedDigit()) }
-                            }
-                            if !u.titulo.isEmpty { Text(u.titulo).font(.subheadline) }
-                            HStack {
-                                if let p = primera { dato(String(dias(desde: p.fecha)), "días en línea") }
-                                dato(u.clics.isEmpty ? "—" : u.clics, "clics")
-                                dato(u.mensajes.isEmpty ? "—" : u.mensajes, "mensajes")
-                                dato(u.cantidad.isEmpty ? "—" : u.cantidad, "unidades")
-                            }
-                        }
-                        Divider().overlay(Tema.linea)
-                        ForEach(ult.reversed()) { x in
-                            Text("\(F.dia(x.fecha)) \(x.hora) · \(x.accion)\(x.precio_bs.isEmpty ? "" : " a Bs \(x.precio_bs)")\(x.notas.isEmpty ? "" : ": \(x.notas)")")
-                                .font(.caption).foregroundStyle(Tema.gris)
-                        }
-                    }
+            } else if let d = store.datos {
+                let ans = anuncios(d)
+                if ans.count > 1 { ResumenAnuncios(lista: ans) }
+                ForEach(ans.filter(\.activo) + ans.filter { !$0.activo }) { a in
+                    NavigationLink { AnuncioDetalle(a: a) } label: { TarjetaAnuncio(a: a, varios: ans.contains { $0.producto == a.producto && $0.id != a.id }) }.buttonStyle(.plain)
                 }
             }
             competencia
@@ -108,21 +88,10 @@ struct AnunciosView: View {
     }
 
     @ViewBuilder var competencia: some View {
-        let prods = Set((store.datos?.finanzas_productos ?? []).map(\.producto))
-        ForEach(Array(prods).sorted(), id: \.self) { p in
-            let hace14 = F.bo("yyyy-MM-dd", Date().addingTimeInterval(-14 * 86400))
-            let l = (store.datos?.locales?[p] ?? []).filter { $0.src == "mkt" && $0.fecha >= hace14 && !$0.estado.contains("otra ciudad") }
-            if !l.isEmpty {
-                Tarjeta(titulo: "La competencia: \(p) en Marketplace", icono: "eye") {
-                    ForEach(l) { x in
-                        HStack {
-                            Text("\(F.dia(x.fecha)) · \(x.estado.replacingOccurrences(of: "no cuenta: ", with: ""))").font(.caption).foregroundStyle(Tema.gris).lineLimit(2)
-                            Spacer()
-                            if let u = URL(string: x.url), !x.url.isEmpty { Link(F.bs(x.bs), destination: u).font(.subheadline.monospacedDigit()) }
-                            else { Text(F.bs(x.bs)).font(.subheadline.monospacedDigit()) }
-                        }
-                    }
-                }
+        let prods = Set((store.datos?.finanzas_productos ?? []).map(\.producto) + (store.datos?.publicaciones ?? []).map(\.producto))
+        if let d = store.datos {
+            ForEach(Array(prods).sorted(), id: \.self) { p in
+                NavigationLink { CompetenciaDetalle(producto: p) } label: { TarjetaCompetencia(d: d, producto: p) }.buttonStyle(.plain)
             }
         }
     }
@@ -153,6 +122,7 @@ struct TiendasView: View {
     }
     var body: some View {
         VStack(spacing: 12) {
+            if let d = store.datos, buscar.isEmpty, filtro.isEmpty { TarjetaEmbudo(d: d) }
             HStack {
                 Image(systemName: "magnifyingglass").foregroundStyle(Tema.gris)
                 TextField("Buscar tienda", text: $buscar).textInputAutocapitalization(.never)

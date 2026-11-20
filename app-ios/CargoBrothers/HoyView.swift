@@ -23,6 +23,10 @@ struct HoyView: View {
                         Label("Preparar la venta del \(p.producto)", systemImage: "tag").frame(maxWidth: .infinity).padding(.vertical, 6)
                     }.buttonStyle(.borderedProminent).tint(Tema.bronce).foregroundStyle(Tema.sobreAcento)
                 }
+                ForEach(d.comprados.filter { d.unidades($0) > d.cuantas($0, "vendida") || d.ventasDe($0).contains { G.dias($0.fecha, G.hoy) <= 30 } }, id: \.self) { p in
+                    NavigationLink { VentasDetalle(producto: p) } label: { TarjetaVentas(d: d, producto: p) }.buttonStyle(.plain)
+                    NavigationLink { StockDetalle(producto: p) } label: { TarjetaStock(d: d, producto: p) }.buttonStyle(.plain)
+                }
                 HStack(spacing: 12) {
                     NavigationLink { DolarView() } label: { tarjetaDolar(d) }.buttonStyle(.plain)
                     NavigationLink { FinanzasView() } label: { tarjetaPlata(d) }.buttonStyle(.plain)

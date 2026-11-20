@@ -36,6 +36,13 @@ enum Fuente {
 
     /// Baja los datos (rama app-datos; si todavía no existe, los de la rama del equipo); sin internet, la última copia.
     static func cargar(token: String? = nil) async -> (Datos?, Bool) {
+        #if DEBUG
+        // pruebas en el simulador: -datos-archivo /ruta/datos.json
+        let a = ProcessInfo.processInfo.arguments
+        if let i = a.firstIndex(of: "-datos-archivo"), i + 1 < a.count, let data = FileManager.default.contents(atPath: a[i + 1]) {
+            do { return (try JSONDecoder().decode(Datos.self, from: data), true) } catch { print("datos-archivo:", error) }
+        }
+        #endif
         for (ruta, r) in [("datos-app.json", "app-datos"), ("app/datos-app.json", rama)] {
             if let data = await bajar(ruta, rama: r, token: token), let d = try? JSONDecoder().decode(Datos.self, from: data) {
                 try? data.write(to: cache)
@@ -102,7 +109,14 @@ struct Datos: Codable {
     var movimientos: [Movimiento]?
     var tabla: [FilaTabla]?
     var sincronizacion: Sinc?
+    // gráficos (20/11)
+    var ventas: [VentaReg]?
+    var demanda_serie: [String: [DemandaDia]]?
 }
+
+struct VentaReg: Codable, Identifiable, Hashable { var fecha: String; var producto: String; var cantidad: Double; var precio_bs: Double?; var canal: String; var pedido_id: String; var estado: String; var cobrado_bs: Double?; var comision_bs: Double?
+    var id: String { fecha + producto + canal + String(precio_bs ?? 0) + estado + pedido_id } }
+struct DemandaDia: Codable, Identifiable, Hashable { var fecha: String; var anuncios: Double; var nuevos: Double; var desaparecidos: Double; var min_bs: Double?; var med_bs: Double?; var id: String { fecha } }
 
 struct Decidida: Codable, Identifiable, Hashable { var tipo: String; var ref: String; var agente: String; var titulo: String; var estado: String; var decision: String; var fecha: String; var id: String { tipo + ref } }
 struct NotaLibreta: Codable, Identifiable, Hashable { var id: String; var fecha: String; var tipo: String; var fuente: String; var resumen: String; var vence: String; var estado: String; var cerrado: String }
@@ -115,10 +129,10 @@ struct Cliente: Codable, Identifiable, Hashable { var tienda: String; var grupo:
     var letra: String { String(grupo.prefix(1)) }
     var orden: Int { if let r = proximo_paso.range(of: #"Orden (\d+)"#, options: .regularExpression) { return Int(proximo_paso[r].dropFirst(6)) ?? 999 }; return 999 } }
 struct Publicacion: Codable, Identifiable, Hashable { var fecha: String; var hora: String; var producto: String; var accion: String; var precio_bs: String
-    var cantidad: String; var titulo: String; var clics: String; var mensajes: String; var notas: String; var id: String { fecha + hora + producto + accion } }
+    var cantidad: String; var titulo: String; var clics: String; var mensajes: String; var notas: String; var pedido_id: String?; var id: String { fecha + hora + producto + accion } }
 struct PrecioTienda: Codable, Identifiable, Hashable { var fecha: String; var producto: String; var precio_bs: Double?; var estado: String; var id: String { fecha + producto + String(precio_bs ?? 0) } }
 struct TiendaInfo: Codable, Identifiable, Hashable { var id: String; var tienda: String; var ciudad: String; var estado: String; var vende: String; var ultima: String
-    var enviados: Int; var recibidos: Int; var con_precio: Int; var ultimo_mensaje: String; var grupo: String; var precios: [PrecioTienda] }
+    var enviados: Int; var recibidos: Int; var con_precio: Int; var ultimo_mensaje: String; var grupo: String; var precios: [PrecioTienda]; var lista: Bool?; var fria: Bool? }
 struct InformeNube: Codable, Identifiable, Hashable { var fecha: String; var ruta: String; var id: String { ruta } }
 struct Catalogo: Codable, Identifiable, Hashable { var fecha: String; var tienda: String; var canal: String; var formato: String; var descripcion: String
     var productos: String; var precios: String; var ruta: String; var id: String { fecha + tienda + formato + descripcion.prefix(20) } }
@@ -170,6 +184,7 @@ struct Pedido: Codable, Identifiable, Hashable {
     var tienda: String?
     var courier: String?
     var prueba: Bool?
+    var costo_unit_bs: Double?
     var esPrueba: Bool { prueba ?? id.hasPrefix("prueba") }
     var entregado: Bool { etapa >= etapas.count - 1 }
 }
@@ -184,6 +199,7 @@ struct Producto: Codable, Identifiable, Hashable {
     var ebay_usd: Double?; var costo_bs: Double?; var local_bs: Double?; var sugerido_bs: Double?
     var margen: Double?; var peor: Double?
     var recomendacion: String; var por_que: String; var link: String
+    var courier_usd: Double?; var tc: Double?; var ganancia_bs: Double?; var precios_locales: Double?; var via: String?
     var id: String { producto + condicion }
 }
 
