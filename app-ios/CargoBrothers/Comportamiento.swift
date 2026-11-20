@@ -207,6 +207,25 @@ final class Comportamiento {
             avanzar(a, dt)
         }
         manejo?.paso(dt)
+        recepcion(dt)
+    }
+
+    // ---------- la secretaria: teclea y saluda a Santi cuando pasa cerca (una vez por minuto) ----------
+    private var secretariaSaluda: Double = 0, secretariaEspera: Double = 0
+    func recepcion(_ dt: Double) {
+        guard let sec = escena.rootNode.childNode(withName: "recepcionista", recursively: false) else { return }
+        secretariaEspera -= dt
+        if secretariaSaluda > 0 {
+            secretariaSaluda -= dt
+            if secretariaSaluda <= 0 { Personas3D.animar(sec, "teclear", carpeta: carpeta, desfase: 0, fundido: 0.5) }
+            return
+        }
+        guard let m = manejo, m.manejando, secretariaEspera <= 0 else { return }
+        let dx = Float(m.nodo.position.x - sec.position.x), dz = Float(m.nodo.position.z - sec.position.z)
+        if dx * dx + dz * dz < 2.6 * 2.6 {
+            Personas3D.animar(sec, "reir_sentado", carpeta: carpeta, desfase: 0, fundido: 0.35)
+            secretariaSaluda = 3.5; secretariaEspera = 60
+        }
     }
 
     func destino(_ a: Agente) -> String {

@@ -65,7 +65,7 @@ struct OficinaView: View {
             let e = await Task.detached(priority: .userInitiated) { () -> SCNScene? in
                 guard let e = try? Oficina3D.escena(carpeta: u) else { return nil }
                 // las personas (solo en la Mac de Santi: son de Mixamo y no van al repo)
-                if let pers { Personas3D.sentarEquipo(en: e.rootNode, carpeta: pers) }
+                if let pers { Personas3D.sentarEquipo(en: e.rootNode, carpeta: pers); Personas3D.ponerSecretaria(en: e.rootNode, carpeta: pers) }
                 return e
             }.value
             if let e {

@@ -209,6 +209,16 @@ enum Personas3D {
     /// Modelo de cada agente (MODELO de la oficina web) y dónde se sientan
     static let modelos: [String: Int] = ["gerente": 0, "santi": 1, "mkt": 1, "ana": 2, "ebay": 2, "fin": 3, "dem": 3, "wa": 4, "pedidos": 5, "nube": 5]
 
+    /// La secretaria de la recepción (Santi, 19/11): sentada detrás del mostrador, mirando a la entrada, en su silla
+    static func ponerSecretaria(en raiz: SCNNode, carpeta: URL) {
+        guard let p = try? persona(3, carpeta: carpeta) else { return }
+        p.name = "recepcionista"   // sin "persona-": no es un agente del equipo (no tiene ficha ni etiqueta)
+        p.position = SCNVector3(3.2, 0, 15.12)
+        raiz.addChildNode(p)
+        let silla = Muebles3D.sillaJunta(); silla.position = SCNVector3(3.2, 0, 14.97); silla.eulerAngles.y = .pi; raiz.addChildNode(silla)
+        animar(p, "teclear", carpeta: carpeta, desfase: 1.3)
+    }
+
     /// Sienta a los 9 agentes en su puesto, tecleando (cada uno en un momento distinto de la animación).
     static func sentarEquipo(en raiz: SCNNode, carpeta: URL, animacion: (String) -> String = { _ in "teclear" }) {
         for (k, (id, x, z)) in Detalle3D.puestos.enumerated() {
