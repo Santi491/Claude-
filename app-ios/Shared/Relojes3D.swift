@@ -76,3 +76,34 @@ enum Relojes3D {
         return g.makeImage()
     }
 }
+
+/// El avioncito del mapa de la ruta (Santi, 19/11: "no se mueve"): recorre la curva Miami → Cochabamba en 9 s, con un leve
+/// vuelo hacia afuera a mitad de camino, como en la oficina web. Mismas medidas que el mapa de la web.
+enum Avion3D {
+    static let MP = (x: Float(4.9), y: Float(4.5), z: Float(-9.86), w: Float(5.8), h: Float(3.2)), MCW: Float = 2048, MCH: Float = 1134
+    static func lonX(_ lon: Float) -> Float { 70 + (lon + 128) / 98 * (1024 - 140) }
+    static func latY(_ lat: Float) -> Float { 50 + (52 - lat) / 94 * (MCH - 100) }
+    static func aMuro(_ p: SIMD2<Float>) -> SIMD2<Float> { SIMD2(MP.x - MP.w / 2 + p.x / MCW * MP.w, MP.y + MP.h / 2 - p.y / MCH * MP.h) }
+    static func curva(_ k: Float) -> SIMD2<Float> {
+        let mia = SIMD2(lonX(-80.2), latY(25.8)), cbb = SIMD2(lonX(-66.16), latY(-17.39))
+        let ctrl = SIMD2((mia.x + cbb.x) / 2 + 150, (mia.y + cbb.y) / 2 - 40), u = 1 - k
+        return u * u * mia + 2 * u * k * ctrl + k * k * cbb
+    }
+
+    static func poner(en raiz: SCNNode) {
+        let avion = SCNNode(); avion.name = "avion"; raiz.addChildNode(avion)
+        let cuerpo = SCNNode(); avion.addChildNode(cuerpo)
+        let blanco = Detalle3D.pbr(0.93, 0.94, 0.95, rough: 0.35)
+        let fus = SCNCapsule(capRadius: 0.028, height: 0.34); fus.radialSegmentCount = 16; fus.materials = [blanco]
+        let fn = SCNNode(geometry: fus); fn.eulerAngles.z = .pi / 2; cuerpo.addChildNode(fn)
+        _ = Detalle3D.caja(0.08, 0.38, 0.01, r: 0.004, blanco, 0.01, 0, 0, cuerpo)        // alas
+        _ = Detalle3D.caja(0.045, 0.14, 0.01, r: 0.003, blanco, -0.14, 0, 0, cuerpo)      // cola
+        _ = Detalle3D.caja(0.05, 0.012, 0.07, r: 0.003, Detalle3D.bronce, -0.15, 0, 0.035, cuerpo)   // timón
+        let dur: Double = 9
+        avion.runAction(.repeatForever(.customAction(duration: dur) { n, t in
+            let k = Float(t) / Float(dur), a = aMuro(curva(k)), b = aMuro(curva(min(1, k + 0.01)))
+            n.position = SCNVector3(a.x, a.y, MP.z + 0.06 + sin(.pi * k) * 0.12)
+            n.eulerAngles = SCNVector3(0, 0, atan2(b.y - a.y, b.x - a.x))
+        }))
+    }
+}

@@ -204,6 +204,7 @@ enum Oficina3D {
         // (19/11) sofá y sillones modernos, sillas de la sala de juntas y gym con más realismo (Muebles3D / Gym3D): los
         // viejos se sacaron de oficina.json. También chocan; las luces del gym quedan aparte y lo demás se junta en pocas piezas
         Relojes3D.poner(en: escena.rootNode)
+        Avion3D.poner(en: escena.rootNode)
         let muebles = SCNNode(); escena.rootNode.addChildNode(muebles)
         Muebles3D.ponerTodo(en: muebles)
         var luces: [SCNNode] = []
