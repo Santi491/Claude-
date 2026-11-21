@@ -5,7 +5,7 @@
   "desde": "16:04",
   "fecha": "2026-11-21"
  },
- "actualizado": "2026-11-21 16:10",
+ "actualizado": "2026-11-21 16:11",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -23,9 +23,9 @@
    "hora": "16:09"
   },
   "ana": {
-   "estado": "trabajando",
-   "texto": "Recalcular SSD 2TB",
-   "hora": "16:10"
+   "estado": "terminó",
+   "texto": "SSD 2TB traer con riesgo; 1TB no",
+   "hora": "16:11"
   }
  }
 }
