@@ -5,12 +5,12 @@
   "desde": "16:04",
   "fecha": "2026-11-21"
  },
- "actualizado": "2026-11-21 16:04",
+ "actualizado": "2026-11-21 16:07",
  "agentes": {
   "wa": {
-   "estado": "trabajando",
-   "texto": "Sábado ligera: respuestas y seguimientos",
-   "hora": "16:04"
+   "estado": "terminó",
+   "texto": "2 respuestas, 0 chats nuevos, cli-1 calificadas",
+   "hora": "16:07"
   }
  }
 }
