@@ -16,6 +16,11 @@
    "estado": "terminó",
    "texto": "Messenger sin preguntas",
    "hora": "16:08"
+  },
+  "pedidos": {
+   "estado": "trabajando",
+   "texto": "Rastreo de pedidos",
+   "hora": "16:08"
   }
  }
 }
