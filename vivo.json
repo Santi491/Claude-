@@ -1,52 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "16:08",
-  "fecha": "2026-11-20",
-  "hasta": "16:23"
+  "desde": "16:04",
+  "fecha": "2026-11-21"
  },
- "actualizado": "2026-11-20 16:23",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "4 respuestas, 3 seguimientos, precios SSD nuevos",
-   "hora": "16:13"
-  },
-  "mkt": {
-   "estado": "terminó",
-   "texto": "Demanda 19 productos, 1 tienda nueva",
-   "hora": "16:17"
-  },
-  "cat": {
-   "estado": "terminó",
-   "texto": "Sin catálogos pendientes hoy",
-   "hora": "16:17"
-  },
-  "pedidos": {
-   "estado": "terminó",
-   "texto": "Sin cambios; reclamo eBay vence 26/11",
-   "hora": "16:18"
-  },
-  "ana": {
-   "estado": "terminó",
-   "texto": "SSD 2TB sigue traer, 1TB no traer",
-   "hora": "16:20"
-  },
-  "fin": {
-   "estado": "terminó",
-   "texto": "Sin ventas",
-   "hora": "16:20"
-  },
-  "oficina": {
-   "estado": "terminó",
-   "texto": "Oficina v157 publicada",
-   "hora": "16:22"
-  },
-  "gerente": {
-   "estado": "terminó",
-   "texto": "Aviso de fin de ronda enviado",
-   "hora": "16:23"
-  }
- }
+ "actualizado": "2026-11-21 16:04",
+ "agentes": {}
 }
