@@ -5,9 +5,9 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 
 | Producto | Cond. | Costo Bs/u | Venta sugerida | Margen | Recargo | Dólar +3 % | Courier +20 % | Local −10 % | Peor caso | Recomendación | Falta |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Ryzen 5 7600X | nuevo | 1.737 | 2.540 | 31.6 % | 46.3 % | 29.6 % | 30.3 % | 24.2 % | 20.4 % | **traer** (aguanta el peor caso (20.4 %)) | — |
 | SSD NVMe 2TB | nuevo | 2.690 | 3.920 | 31.4 % | 45.7 % | 29.3 % | 30.5 % | 23.8 % | 20.5 % | **traer** (aguanta el peor caso (20.5 %)) | 1 anuncio(s) de particular sin marca o configuración descartado(s) |
 | Ryzen 9 9950X3D | nuevo | 6.744 | 9.080 | 25.7 % | 34.6 % | 23.5 % | 25.4 % | 17.5 % | 14.6 % | **traer** (aguanta el peor caso (14.6 %)) | — |
+| Ryzen 5 7600X | nuevo | 1.921 | 2.540 | 24.4 % | 32.2 % | 22.1 % | 23.0 % | 16.1 % | 12.1 % | **traer** (aguanta el peor caso (12.1 %)) | — |
 | Intel Core Ultra 7 265K | nuevo | 3.039 | 3.980 | 23.7 % | 31.0 % | 21.4 % | 22.8 % | 15.1 % | 11.6 % | **traer** (aguanta el peor caso (11.6 %)) | — |
 | Ryzen 7 7800X3D | nuevo | 3.951 | 5.100 | 22.5 % | 29.1 % | 20.2 % | 21.9 % | 13.9 % | 10.6 % | **traer** (aguanta el peor caso (10.6 %)) | — |
 | Ryzen 5 9600X | nuevo | 2.138 | 2.630 | 18.7 % | 23.0 % | 16.3 % | 17.4 % | 9.4 % | 5.2 % | **traer** (aguanta el peor caso (5.2 %)) | — |
@@ -31,8 +31,8 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | SSD NVMe 2TB | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), 1 anuncio(s) de particular sin marca o configuración descartado(s) |
 | Ryzen 7 7700X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Intel Core Ultra 7 265K | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
-| Ryzen 5 7600X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Ryzen 9 9950X3D | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
+| Ryzen 5 7600X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Intel Core i5-14400F | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Ryzen 5 9600X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
@@ -75,7 +75,7 @@ Solo nuevos, sin el 7700X (ya comprado), ordenados por margen en el peor caso. L
 | # | Producto | Costo Bs/u | Plata para 2 u (Bs / USD) | Venta sugerida | Ganancia/u | Margen | Peor caso | Estado |
 |---|---|---|---|---|---|---|---|---|
 | 1 | SSD NVMe 2TB | 2.690 | 5.380 / 448 | 3.920 | 1.230 | 31.4 % | 20.5 % | traer |
-| 2 | Ryzen 5 7600X | 1.737 | 3.474 / 289 | 2.540 | 803 | 31.6 % | 20.4 % | traer |
-| 3 | Ryzen 9 9950X3D | 6.744 | 13.488 / 1123 | 9.080 | 2.336 | 25.7 % | 14.6 % | traer |
+| 2 | Ryzen 9 9950X3D | 6.744 | 13.488 / 1123 | 9.080 | 2.336 | 25.7 % | 14.6 % | traer |
+| 3 | Ryzen 5 7600X | 1.921 | 3.842 / 320 | 2.540 | 619 | 24.4 % | 12.1 % | traer |
 
 Plata = costo por unidad × 2 (pedido por defecto; con 4 u el courier B baja el costo por unidad). Ojo: el SSD NVMe 2TB sale de un Leven Gen3 sin marca de eBay y los locales son Gen4 de marca; con un Gen4 de marca (WD SN770) el margen cae a ~11 % y el peor caso a ~-3 % (cálculo del 16/11): no lo des por firme sin decidir cuál se compara. El 9950X3D tiene solo 2 tiendas locales y es la compra más grande.

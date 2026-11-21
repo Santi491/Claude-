@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-21 07:54",
+ "generado": "2026-11-21 16:11",
  "etapa": {
   "numero": 2,
   "nombre": "producto en camino",
@@ -701,24 +701,6 @@
  },
  "productos": [
   {
-   "producto": "Ryzen 5 7600X",
-   "condicion": "nuevo",
-   "ebay_usd": 130.6,
-   "costo_bs": 1737,
-   "local_bs": 2682,
-   "sugerido_bs": 2540,
-   "margen": 31.6,
-   "peor": 20.4,
-   "recomendacion": "traer",
-   "por_que": "aguanta el peor caso (20.4 %)",
-   "link": "https://www.ebay.com/itm/237196178359",
-   "courier_usd": 14.0,
-   "tc": 12.01,
-   "ganancia_bs": 803,
-   "precios_locales": 6,
-   "via": "B 1 kg"
-  },
-  {
    "producto": "SSD NVMe 2TB",
    "condicion": "nuevo",
    "ebay_usd": 209.99,
@@ -752,6 +734,24 @@
    "tc": 12.01,
    "ganancia_bs": 2336,
    "precios_locales": 3,
+   "via": "B 1 kg"
+  },
+  {
+   "producto": "Ryzen 5 7600X",
+   "condicion": "nuevo",
+   "ebay_usd": 145.99,
+   "costo_bs": 1921,
+   "local_bs": 2682,
+   "sugerido_bs": 2540,
+   "margen": 24.4,
+   "peor": 12.1,
+   "recomendacion": "traer",
+   "por_que": "aguanta el peor caso (12.1 %)",
+   "link": "https://www.ebay.com/itm/137926619063",
+   "courier_usd": 14.0,
+   "tc": 12.01,
+   "ganancia_bs": 619,
+   "precios_locales": 6,
    "via": "B 1 kg"
   },
   {
@@ -818,7 +818,7 @@
    "margen": 41.5,
    "peor": 30.2,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/117533137293",
    "courier_usd": 14.0,
    "tc": 12.01,
@@ -836,7 +836,7 @@
    "margen": 29.6,
    "peor": 17.4,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/198790623774",
    "courier_usd": 14.0,
    "tc": 12.01,
@@ -854,7 +854,7 @@
    "margen": 19.9,
    "peor": 6.2,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/206716034158",
    "courier_usd": 14.0,
    "tc": 12.01,
@@ -872,7 +872,7 @@
    "margen": 19.6,
    "peor": 7.0,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/128207574344",
    "courier_usd": 14.0,
    "tc": 12.01,
@@ -1025,24 +1025,6 @@
    "via": "B 1 kg"
   },
   {
-   "producto": "Ryzen 5 7600X",
-   "condicion": "usado",
-   "ebay_usd": 129.99,
-   "costo_bs": 1729,
-   "local_bs": 2682,
-   "sugerido_bs": 2540,
-   "margen": 31.9,
-   "peor": 20.7,
-   "recomendacion": "sin datos",
-   "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/115712758959",
-   "courier_usd": 14.0,
-   "tc": 12.01,
-   "ganancia_bs": 811,
-   "precios_locales": 6,
-   "via": "B 1 kg"
-  },
-  {
    "producto": "Ryzen 9 9950X3D",
    "condicion": "usado",
    "ebay_usd": 512.99,
@@ -1058,6 +1040,24 @@
    "tc": 12.01,
    "ganancia_bs": 2751,
    "precios_locales": 3,
+   "via": "B 1 kg"
+  },
+  {
+   "producto": "Ryzen 5 7600X",
+   "condicion": "usado",
+   "ebay_usd": 139.99,
+   "costo_bs": 1849,
+   "local_bs": 2682,
+   "sugerido_bs": 2540,
+   "margen": 27.2,
+   "peor": 15.3,
+   "recomendacion": "sin datos",
+   "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
+   "link": "https://www.ebay.com/itm/327094285155",
+   "courier_usd": 14.0,
+   "tc": 12.01,
+   "ganancia_bs": 691,
+   "precios_locales": 6,
    "via": "B 1 kg"
   },
   {
@@ -1178,7 +1178,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1214,7 +1214,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1232,7 +1232,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1528,8 +1528,8 @@
     "producto": "Ryzen 5 7600X",
     "tope_usd": 165,
     "mediana_bs": 2678,
-    "hoy_usd": 130.6,
-    "link": "https://www.ebay.com/itm/237196178359",
+    "hoy_usd": 145.99,
+    "link": "https://www.ebay.com/itm/137926619063",
     "bajo_tope": true
    },
    {
@@ -1643,6 +1643,118 @@
  ],
  "equipo": [
   {
+   "agente": "mkt",
+   "nombre": "Marketplace",
+   "acciones": 14,
+   "serie": [
+    0,
+    3,
+    2,
+    4,
+    2,
+    2,
+    1
+   ],
+   "ultima": "Ronda ligera del sábado: Messenger revisado, 0 mensajes por nuestros anuncios (publicaciones.csv sin anuncios); no se abrieron chats personales; sin búsqueda ni redes",
+   "cuando": "2026-11-21 16:20"
+  },
+  {
+   "agente": "wa",
+   "nombre": "WhatsApp",
+   "acciones": 10,
+   "serie": [
+    0,
+    2,
+    2,
+    2,
+    1,
+    2,
+    1
+   ],
+   "ultima": "Ronda ligera del sábado: leídos los 7 chats No leídos; 2 respuestas (INTEGRAL, SYSTEMS); INTEGRAL aún no confirma sellado del Crucial 2TB (garantía 1 mes); 0 chats nuevos; 6 tiendas calificadas en clientes potenciales",
+   "cuando": "2026-11-21 16:12"
+  },
+  {
+   "agente": "ana",
+   "nombre": "Analista",
+   "acciones": 17,
+   "serie": [
+    1,
+    3,
+    3,
+    3,
+    2,
+    3,
+    2
+   ],
+   "ultima": "Ronda ligera sábado: analisis recalculado. SSD 2TB nuevo sigue TRAER (margen 31,4 %, peor caso 20,5 %, costo Bs 2.690) pero con riesgo: INTEGRAL Crucial 2TB a Bs 2.900 solo con garantía de 1 mes, sin sellado ni modelo co",
+   "cuando": "2026-11-21 16:11"
+  },
+  {
+   "agente": "fin",
+   "nombre": "Finanzas",
+   "acciones": 10,
+   "serie": [
+    0,
+    2,
+    2,
+    2,
+    1,
+    2,
+    1
+   ],
+   "ultima": "Ronda ligera del sábado: sin ventas ni reservas del negocio (ventas.csv sin filas); 4 Ryzen 7 7700X en camino a Cochabamba (real-1 y real-2, desde 18/11), 0 en stock; invertido Bs 10.620 (Bs 2.655/u con todo incluido); d",
+   "cuando": "2026-11-21 16:10"
+  },
+  {
+   "agente": "pedidos",
+   "nombre": "Pedidos",
+   "acciones": 11,
+   "serie": [
+    0,
+    2,
+    2,
+    3,
+    1,
+    2,
+    1
+   ],
+   "ultima": "Ronda ligera del sábado: real-1 y real-2 en camino a Cochabamba desde 18/11, sin cambios de etapa ni avisos nuevos de Santi (sin rastreo web del tramo); reclamo eBay vence 26/11, sin decidir; tarea 2026-11-20-4 hecha",
+   "cuando": "2026-11-21 16:09"
+  },
+  {
+   "agente": "nube",
+   "nombre": "Informe diario",
+   "acciones": 7,
+   "serie": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ultima": "Revisión diaria hecha: dólar USDT 12,01 (oficial 11,75, paralelo 11,97/11,94), eBay, comparación, análisis, Excel/PDF, informe. Rama remota tenía historia distinta: se rehízo sobre origin.",
+   "cuando": "2026-11-21 07:59"
+  },
+  {
+   "agente": "ebay",
+   "nombre": "Rastreador eBay",
+   "acciones": 8,
+   "serie": [
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ultima": "API: 17 precios nuevos y 19 usados; 0 filas corregidas (variante y vendedor revisados; 9950X nuevo USD 389 es OEM tray de corelinker 98,1 %, dentro de reglas)",
+   "cuando": "2026-11-21 07:58"
+  },
+  {
    "agente": "gerente",
    "nombre": "Gerente",
    "acciones": 22,
@@ -1673,118 +1785,6 @@
    ],
    "ultima": "Encargo de Santi (RTX 5050 8GB, Marketplace Cochabamba, solo lectura): 3 anuncios de escritorio nuevos; solo 1 con precio (Bs 4.440 Gigabyte 3 ventiladores, igual a la oferta de Santi); 2 de una tienda sin precio visible",
    "cuando": "2026-11-20 19:20"
-  },
-  {
-   "agente": "ana",
-   "nombre": "Analista",
-   "acciones": 15,
-   "serie": [
-    1,
-    3,
-    3,
-    3,
-    2,
-    3,
-    0
-   ],
-   "ultima": "Ronda tarde: analisis.md recalculado con SSD y demanda de hoy. SSD 1TB nuevo sigue NO TRAER (margen 4,5 %, antes 5,6 %; peor caso -11 %; sugerido Bs 1.760 vs costo 1.681; hay locales a 1.610-1.700). SSD 2TB nuevo sigue t",
-   "cuando": "2026-11-20 17:30"
-  },
-  {
-   "agente": "mkt",
-   "nombre": "Marketplace",
-   "acciones": 13,
-   "serie": [
-    0,
-    3,
-    2,
-    4,
-    2,
-    2,
-    0
-   ],
-   "ultima": "Ronda tarde (viernes, completa): Messenger sin mensajes de nuestros anuncios (los chats de Marketplace son compras y ventas personales de Santi, sin abrir); 19 productos buscados; precios nuevos: NVMe 1TB Kingston 1.610 ",
-   "cuando": "2026-11-20 17:10"
-  },
-  {
-   "agente": "wa",
-   "nombre": "WhatsApp",
-   "acciones": 9,
-   "serie": [
-    0,
-    2,
-    2,
-    2,
-    1,
-    2,
-    0
-   ],
-   "ultima": "Ronda de la tarde: 3 respuestas (INTEGRAL TU-PC, Supermall, EQUIPAMIENTO MODERNO), 4 seguimientos (Compuland y SYSTEMS por wa-2, CRISTECNOLOGY de agenda); precios nuevos de SSD NVMe de INTEGRAL y EQUIPAMIENTO; 0 chats nu",
-   "cuando": "2026-11-20 16:30"
-  },
-  {
-   "agente": "pedidos",
-   "nombre": "Pedidos",
-   "acciones": 10,
-   "serie": [
-    0,
-    2,
-    2,
-    3,
-    1,
-    2,
-    0
-   ],
-   "ultima": "Ronda tarde: real-1 y real-2 en camino a Cochabamba desde 18/11, sin cambios ni avisos nuevos de Santi; sin rastreo web (tramo sin guía). Reclamo eBay vence 26/11 (6 días); Santi marcó la necesidad del 19/11 como resuelt",
-   "cuando": "2026-11-20 16:20"
-  },
-  {
-   "agente": "fin",
-   "nombre": "Finanzas",
-   "acciones": 9,
-   "serie": [
-    0,
-    2,
-    2,
-    2,
-    1,
-    2,
-    0
-   ],
-   "ultima": "sin ventas ni compras nuevas del negocio: 4 Ryzen 7 7700X en camino, 0 en stock, 0 vendidas (ventas.csv sin filas); invertido Bs 10.620 en 4 u (Bs 2.655/u con todo incluido, dato de Santi); dolar usado 11,95 Bs (USDT, 20",
-   "cuando": "2026-11-20 16:19"
-  },
-  {
-   "agente": "ebay",
-   "nombre": "Rastreador eBay",
-   "acciones": 7,
-   "serie": [
-    1,
-    2,
-    1,
-    1,
-    1,
-    1,
-    0
-   ],
-   "ultima": "API: 17 precios nuevos y 17 usados; 0 filas corregidas por variante o repuestos",
-   "cuando": "2026-11-20 07:58"
-  },
-  {
-   "agente": "nube",
-   "nombre": "Informe diario",
-   "acciones": 6,
-   "serie": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0
-   ],
-   "ultima": "Revisión diaria hecha: dólar USDT 11,96, Excel, PDF, copia del día, informe",
-   "cuando": "2026-11-20 07:58"
   }
  ],
  "objetivos": [
@@ -2009,7 +2009,7 @@
   {
    "parte": "nube",
    "nombre": "Nube · revisión 7:52",
-   "estado": "pendiente",
+   "estado": "ok",
    "hora": "07:52"
   },
   {
@@ -2021,7 +2021,7 @@
   {
    "parte": "pc",
    "nombre": "PC · ronda 16:00",
-   "estado": "pendiente",
+   "estado": "en curso",
    "hora": "16:00"
   },
   {
@@ -5340,8 +5340,8 @@
    "ref": "2026-11-20-3",
    "agente": "ana",
    "titulo": "Con la respuesta de INTEGRAL (Crucial 2TB a Bs 2.900, sellado y garantía) recalcular el SSD 2TB y decir si sigue en traer; mantener SSD 1TB nuevo en no traer",
-   "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "estado": "hecho",
+   "decision": "hecho 21/11 ana (ronda ligera sáb): INTEGRAL dijo solo garantía 1 mes, sin sellado ni modelo exacto confirmado, precio por 2 sin respuesta. SSD 2TB nuevo sigue TRAER según el cálculo (costo Bs 2.690, venta Bs 3.920, margen 31,4 %, peor caso 20,5 %) pero con riesgo: si el Crucial de INTEGRAL es nuevo sellado y se iguala a Bs 2.900, venta Bs 2.755 y margen ~2 % (peor caso ~-13 %): no traer. No pedir hasta confirmar sellado y modelo. SSD 1TB nuevo sigue NO TRAER (margen 4,0 %, peor caso -11,6 %)",
    "fecha": "2026-11-21"
   },
   {
@@ -5349,8 +5349,8 @@
    "ref": "2026-11-20-4",
    "agente": "pedidos",
    "titulo": "Revisar real-1 y real-2 (en camino a Cochabamba): anotar cualquier aviso de Santi y dejar escrito que el reclamo a eBay vence el 26/11",
-   "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "estado": "hecho",
+   "decision": "Revisado 21/11 16:20: real-1 y real-2 en camino a Cochabamba desde 18/11, sin cambios de etapa ni rastreo web del tramo; sin avisos nuevos de Santi; reclamo a eBay vence 26/11 (5 días) y sigue sin decidir; necesidad abierta del 20/11 sigue",
    "fecha": "2026-11-21"
   },
   {
@@ -5358,8 +5358,8 @@
    "ref": "2026-11-20-5",
    "agente": "mkt",
    "titulo": "Sábado (ronda ligera): solo Messenger. Contestar lo que pregunten por nuestros anuncios y avisar a Santi qué preguntan; no abrir chats personales de Santi",
-   "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "estado": "hecho",
+   "decision": "Ronda ligera 21/11 16:20: bandeja de Marketplace revisada; solo hay chats de ventas ajenas a nuestros anuncios (no hay anuncios nuestros publicados); 0 preguntas por nuestros anuncios",
    "fecha": "2026-11-21"
   },
   {
@@ -5376,8 +5376,8 @@
    "ref": "2026-11-20-7",
    "agente": "fin",
    "titulo": "Revisar ventas.csv y pedidos.csv por si Santi avisó una venta, una compra o la llegada de los 7700X; dejar stock y caja al día y decir cuánto falta para el precio de venta del 7700X",
-   "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "estado": "hecho",
+   "decision": "auto (rutina) · hecho 21/11 16:10 (fin): ventas.csv sin filas y pedidos.csv sin cambios (real-1 y real-2 en camino). Caja: invertido Bs 10.620, cobrado Bs 0. Falta el precio de venta de Santi para calcular la ganancia; el piso sin comisiones es el costo Bs 2.655/u",
    "fecha": "2026-11-21"
   },
   {
@@ -7191,26 +7191,6 @@
   }
  ],
  "movimientos": [
-  {
-   "fecha": "2026-11-13",
-   "tipo": "ebay",
-   "producto": "Ryzen 5 5600",
-   "concepto": "eBay usado",
-   "detalle": "API · vendedor paymore_murray 99.8%; AMD Ryzen 5 5600 3.50GHz 6 Core 100-000000927 12 Thread AM4",
-   "valor": 133.99,
-   "antes": 133.99,
-   "moneda": "USD"
-  },
-  {
-   "fecha": "2026-11-13",
-   "tipo": "ebay",
-   "producto": "Ryzen 7 5700X3D",
-   "concepto": "eBay usado",
-   "detalle": "API · vendedor jpmoney27xy 100.0%; AMD Ryzen 7 5700X3D 8-Core 16-Thread AM4 USA IN HAND QUICK S; envío no indicado",
-   "valor": 344.44,
-   "antes": 344.44,
-   "moneda": "USD"
-  },
   {
    "fecha": "2026-11-13",
    "tipo": "ebay",
@@ -10986,7 +10966,7 @@
    "tipo": "ebay",
    "producto": "Ryzen 5 7600X",
    "concepto": "eBay nuevo",
-   "detalle": "API · vendedor corelinker 98.1%; AMD Ryzen 5 7600x Processor (5.3 GHz, 6 Cores, LGA 1718/Sock",
+   "detalle": "API · vendedor corelinker 98.1%; AMD Ryzen 5 7600x Processor (5.3 GHz, 6 Cores, LGA 1718/Sock; vendido o agotado al revisar a las 16:09",
    "valor": 130.6,
    "antes": 145.99,
    "moneda": "USD"
@@ -11176,7 +11156,7 @@
    "tipo": "ebay",
    "producto": "Ryzen 5 7600X",
    "concepto": "eBay usado",
-   "detalle": "API · vendedor wazno 99.7%; AMD Ryzen 5 7600X Processor (4.7 GHz, 6 Cores, Socket AM5)",
+   "detalle": "API · vendedor wazno 99.7%; AMD Ryzen 5 7600X Processor (4.7 GHz, 6 Cores, Socket AM5); vendido o agotado al revisar a las 16:09",
    "valor": 129.99,
    "antes": 139.99,
    "moneda": "USD"
@@ -11189,6 +11169,26 @@
    "detalle": "API · vendedor paymore_kennesaw 99.2%; AMD Ryzen 9 9950X3D 4.30GHz 16 Core 100-000000719 32 Thread ",
    "valor": 512.99,
    "antes": 512.99,
+   "moneda": "USD"
+  },
+  {
+   "fecha": "2026-11-21",
+   "tipo": "ebay",
+   "producto": "Ryzen 5 7600X",
+   "concepto": "eBay nuevo",
+   "detalle": "API · vendedor mavcofinds 100.0%; AMD Ryzen 5 7600X Processor CPU 6 Cores 12 Threads Socket AM",
+   "valor": 145.99,
+   "antes": 130.6,
+   "moneda": "USD"
+  },
+  {
+   "fecha": "2026-11-21",
+   "tipo": "ebay",
+   "producto": "Ryzen 5 7600X",
+   "concepto": "eBay usado",
+   "detalle": "API · vendedor g-electronic 99.7%; AMD Ryzen 5 7600X Desktop Processor 4.7GHz,6-Core Socket AM5",
+   "valor": 139.99,
+   "antes": 129.99,
    "moneda": "USD"
   }
  ],
@@ -11384,12 +11384,12 @@
    "producto": "Ryzen 5 7600X",
    "cat": "CPU",
    "peso_g": 350.0,
-   "nuevo_usd": 130.6,
-   "usado_usd": 129.99,
+   "nuevo_usd": 145.99,
+   "usado_usd": 139.99,
    "mkt_bs": null,
    "tienda_bs": 2550.0,
-   "nuevo_link": "https://www.ebay.com/itm/237196178359",
-   "usado_link": "https://www.ebay.com/itm/115712758959"
+   "nuevo_link": "https://www.ebay.com/itm/137926619063",
+   "usado_link": "https://www.ebay.com/itm/327094285155"
   },
   {
    "producto": "Ryzen 9 9950X3D",
@@ -11404,11 +11404,11 @@
   }
  ],
  "sincronizacion": {
-  "ultima_ronda": "2026-11-20 16:23",
+  "ultima_ronda": "2026-11-21 16:04",
   "ultima_ronda_quien": "pc",
   "oficina_publicada": "2026-11-20 16:21",
   "armado_por": "una ronda o sesión",
-  "armado": "2026-11-21 07:54"
+  "armado": "2026-11-21 16:11"
  },
  "clientes": [
   {
@@ -11605,11 +11605,11 @@
    "tienda": "Centro PC",
    "grupo": "E · Por calificar",
    "prioridad": "baja",
-   "por_que": "sigue E: sin respuesta a 3 mensajes; 17/11 lista completa",
+   "por_que": "sigue E: sin respuesta a 3 mensajes; 17/11 lista completa (21/11 revisada: sin dato nuevo)",
    "productos": "",
    "precio_ref_bs": null,
    "proximo_paso": "Esperar respuesta",
-   "actualizado": "2026-11-17"
+   "actualizado": "2026-11-21"
   },
   {
    "tienda": "Computer World",
@@ -11625,21 +11625,21 @@
    "tienda": "4 Gamers",
    "grupo": "E · Por calificar",
    "prioridad": "media",
-   "por_que": "sigue E: solo respuesta automática (13/10); sin dato de qué vende",
+   "por_que": "sigue E: solo respuesta automática (13/10); sin dato de qué vende (21/11 revisada: sin dato nuevo)",
    "productos": "",
    "precio_ref_bs": null,
    "proximo_paso": "Esperar respuesta",
-   "actualizado": "2026-11-17"
+   "actualizado": "2026-11-21"
   },
   {
    "tienda": "PortatiComps",
    "grupo": "E · Por calificar",
    "prioridad": "baja",
-   "por_que": "sigue E: sin respuesta a 3 mensajes",
+   "por_que": "sigue E: sin respuesta a 3 mensajes (21/11 revisada: sin dato nuevo)",
    "productos": "",
    "precio_ref_bs": null,
    "proximo_paso": "Esperar respuesta",
-   "actualizado": "2026-11-17"
+   "actualizado": "2026-11-21"
   },
   {
    "tienda": "Hardware Technology",
@@ -11665,11 +11665,11 @@
    "tienda": "Electro-TTS",
    "grupo": "E · Por calificar",
    "prioridad": "baja",
-   "por_que": "sigue E: solo \"No case\" (15/10), no queda claro si vende",
+   "por_que": "sigue E: solo \"No case\" (15/10), no queda claro si vende (21/11 revisada: sin dato nuevo)",
    "productos": "",
    "precio_ref_bs": null,
    "proximo_paso": "Solo observar",
-   "actualizado": "2026-11-17"
+   "actualizado": "2026-11-21"
   },
   {
    "tienda": "Compucenter",
@@ -11755,11 +11755,11 @@
    "tienda": "ECOM (Economic Computers)",
    "grupo": "E · Por calificar",
    "prioridad": "baja",
-   "por_que": "sigue E: sin respuesta a 3 mensajes; 17/11 lista completa",
+   "por_que": "sigue E: sin respuesta a 3 mensajes; 17/11 lista completa (21/11 revisada: sin dato nuevo)",
    "productos": "7600 · 12400F · DDR5",
    "precio_ref_bs": null,
    "proximo_paso": "Esperar respuesta",
-   "actualizado": "2026-11-17"
+   "actualizado": "2026-11-21"
   },
   {
    "tienda": "Shopping PC",
@@ -12025,11 +12025,11 @@
    "tienda": "IPcenter",
    "grupo": "E · Por calificar",
    "prioridad": "media",
-   "por_que": "sigue E: 02/11 preguntó si era para PC; sin dato de qué vende",
+   "por_que": "sigue E: 02/11 preguntó si era para PC; sin dato de qué vende (21/11 revisada: sin dato nuevo)",
    "productos": "",
    "precio_ref_bs": null,
    "proximo_paso": "Esperar respuesta",
-   "actualizado": "2026-11-17"
+   "actualizado": "2026-11-21"
   },
   {
    "tienda": "Compumas Bolivia",
@@ -12105,11 +12105,11 @@
    "tienda": "PC Gaming Forge",
    "grupo": "E · Por calificar",
    "prioridad": "media",
-   "por_que": "sigue E: solo automática; 17/11 lista completa",
+   "por_que": "sigue E: solo automática; 17/11 lista completa (21/11 revisada: sin dato nuevo)",
    "productos": "",
    "precio_ref_bs": null,
    "proximo_paso": "Esperar respuesta",
-   "actualizado": "2026-11-17"
+   "actualizado": "2026-11-21"
   },
   {
    "tienda": "CRISTECNOLOGY",
@@ -12300,6 +12300,66 @@
    "precio_ref_bs": null,
    "proximo_paso": "Solo observar; compararía precio; sin ofrecer nada",
    "actualizado": "2026-11-20"
+  },
+  {
+   "tienda": "INTEGRAL TU-PC",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "media",
+   "por_que": "21/11: sin procesadores ni RAM; solo SSD (Crucial 2TB Bs 2.900, BR 1TB Bs 1.700, garantía 1 mes)",
+   "productos": "Ryzen 7600/7600X/9600X · RAM DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "No ofrecer todavía",
+   "actualizado": "2026-11-21"
+  },
+  {
+   "tienda": "SYSTEMS HARDWARE & SOFTWARE SOLUTIONS",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "media",
+   "por_que": "21/11: sin procesadores ni placas; 7500F agotado (12/11); sin DDR5",
+   "productos": "Ryzen 7600/9600X/7700X · DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "No ofrecer todavía",
+   "actualizado": "2026-11-21"
+  },
+  {
+   "tienda": "EQUIPAMIENTO MODERNO S.R.L.",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "baja",
+   "por_que": "20/11: solo SSD Crucial E100 1TB Bs 1.850; \"NOP\" procesadores y RAM",
+   "productos": "Ryzen · RAM DDR5",
+   "precio_ref_bs": null,
+   "proximo_paso": "No ofrecer todavía",
+   "actualizado": "2026-11-21"
+  },
+  {
+   "tienda": "Importadora ITA",
+   "grupo": "A · Sin stock (les falta producto)",
+   "prioridad": "baja",
+   "por_que": "19/11: sin componentes de PC; NVMe 1TB Crucial E100 Bs 1.850 último; sin 2TB; mercadería el mes próximo",
+   "productos": "NVMe 1-2TB",
+   "precio_ref_bs": null,
+   "proximo_paso": "No ofrecer todavía",
+   "actualizado": "2026-11-21"
+  },
+  {
+   "tienda": "Compuland",
+   "grupo": "C · Revende componentes (compararía precio)",
+   "prioridad": "baja",
+   "por_que": "13/11: tienda 100 % en línea; trae componentes de alta gama a pedido (llegada ~30/12); sin precios",
+   "productos": "Ryzen · SSD NVMe",
+   "precio_ref_bs": null,
+   "proximo_paso": "No ofrecer todavía",
+   "actualizado": "2026-11-21"
+  },
+  {
+   "tienda": "Tecnología GabBoss",
+   "grupo": "D · No apuntar",
+   "prioridad": "baja",
+   "por_que": "19/11: equipo viejo y segunda mano (SSD 512GB, DDR3); responde solo con IA de Meta",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "No escribir",
+   "actualizado": "2026-11-21"
   }
  ],
  "publicaciones": [],
@@ -13683,14 +13743,14 @@
    "ciudad": "Cochabamba",
    "estado": "respondió",
    "vende": "por verificar (Google Maps: tienda de informática)",
-   "ultima": "2026-11-20",
-   "enviados": 5,
-   "recibidos": 3,
+   "ultima": "2026-11-21",
+   "enviados": 6,
+   "recibidos": 4,
    "con_precio": 1,
-   "ultimo_mensaje": "2026-11-20",
+   "ultimo_mensaje": "2026-11-21",
    "lista": true,
    "fria": false,
-   "grupo": "",
+   "grupo": "A · Sin stock (les falta producto)",
    "precios": []
   },
   {
@@ -14077,14 +14137,14 @@
    "ciudad": "Cochabamba",
    "estado": "respondió",
    "vende": "por verificar (Google Maps: accesorios informáticos; tiene web)",
-   "ultima": "2026-11-20",
+   "ultima": "2026-11-21",
    "enviados": 5,
-   "recibidos": 2,
+   "recibidos": 3,
    "con_precio": 1,
-   "ultimo_mensaje": "2026-11-20",
+   "ultimo_mensaje": "2026-11-21",
    "lista": true,
    "fria": false,
-   "grupo": "",
+   "grupo": "A · Sin stock (les falta producto)",
    "precios": [
     {
      "fecha": "2026-11-20",
@@ -14447,7 +14507,7 @@
    "ultimo_mensaje": "2026-11-20",
    "lista": false,
    "fria": false,
-   "grupo": "",
+   "grupo": "D · No apuntar",
    "precios": []
   },
   {
@@ -14619,14 +14679,14 @@
    "ciudad": "Cochabamba",
    "estado": "respondió",
    "vende": "por verificar (Google Maps: tienda de accesorios informáticos)",
-   "ultima": "2026-11-20",
-   "enviados": 6,
-   "recibidos": 3,
+   "ultima": "2026-11-21",
+   "enviados": 7,
+   "recibidos": 4,
    "con_precio": 2,
-   "ultimo_mensaje": "2026-11-20",
+   "ultimo_mensaje": "2026-11-21",
    "lista": true,
    "fria": false,
-   "grupo": "",
+   "grupo": "A · Sin stock (les falta producto)",
    "precios": [
     {
      "fecha": "2026-11-20",
@@ -14694,7 +14754,7 @@
    "ultimo_mensaje": "2026-11-20",
    "lista": true,
    "fria": false,
-   "grupo": "",
+   "grupo": "C · Revende componentes (compararía precio)",
    "precios": []
   },
   {
@@ -14710,7 +14770,7 @@
    "ultimo_mensaje": "2026-11-20",
    "lista": true,
    "fria": false,
-   "grupo": "",
+   "grupo": "A · Sin stock (les falta producto)",
    "precios": [
     {
      "fecha": "2026-11-19",
@@ -14828,6 +14888,10 @@
  ],
  "informes_nube": [
   {
+   "fecha": "2026-11-21",
+   "ruta": "informes/2026-11-21.md"
+  },
+  {
    "fecha": "2026-11-20",
    "ruta": "informes/2026-11-20.md"
   },
@@ -14942,10 +15006,6 @@
   {
    "fecha": "2026-10-22",
    "ruta": "informes/2026-10-22.md"
-  },
-  {
-   "fecha": "2026-10-21",
-   "ruta": "informes/2026-10-21.md"
   }
  ],
  "catalogos": [
@@ -17757,8 +17817,8 @@
    },
    {
     "fecha": "2026-11-21",
-    "nuevo": 130.6,
-    "usado": 129.99,
+    "nuevo": 145.99,
+    "usado": 139.99,
     "mkt": null,
     "tienda": null
    }
@@ -23474,28 +23534,23 @@
  },
  "whatsapp": {
   "tiendas_total": 110.0,
-  "contactadas_7d": 43.0,
+  "contactadas_7d": 42.0,
   "respondieron_7d": 19.0,
-  "tasa_7d": 0.442,
+  "tasa_7d": 0.452,
   "lista_pedida": 64,
   "lista_faltan": 13,
   "seguimiento": [
    "Tecnología GabBoss"
   ],
   "responder": [
+   "EQUIPAMIENTO MODERNO S.R.L.",
    "Compuland",
    "Importadora ITA",
    "NPC Technology"
   ],
   "frias": 16,
-  "respondieron": 46,
+  "respondieron": 45,
   "serie": [
-   {
-    "fecha": "2026-10-31",
-    "nuevos": 0,
-    "respuestas": 0,
-    "con_precio": 0
-   },
    {
     "fecha": "2026-11-01",
     "nuevos": 0,
@@ -23615,6 +23670,12 @@
     "nuevos": 0,
     "respuestas": 9.0,
     "con_precio": 6.0
+   },
+   {
+    "fecha": "2026-11-21",
+    "nuevos": 0,
+    "respuestas": 3.0,
+    "con_precio": 0
    }
   ]
  },
@@ -23844,6 +23905,13 @@
    "tipo": "Tabla de comparación",
    "fecha": "2026-11-21",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
+   "carpeta": "Informes"
+  },
+  {
+   "titulo": "Informe diario 2026-11-21",
+   "tipo": "Informe de la nube",
+   "fecha": "2026-11-21",
+   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/informes/2026-11-21.md",
    "carpeta": "Informes"
   },
   {
@@ -24082,13 +24150,6 @@
    "tipo": "CSV",
    "fecha": "2026-11-09",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/2026-11-09.csv",
-   "carpeta": "Tabla diaria"
-  },
-  {
-   "titulo": "Tabla del 2026-11-09",
-   "tipo": "PDF",
-   "fecha": "2026-11-09",
-   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/2026-11-09.pdf",
    "carpeta": "Tabla diaria"
   }
  ],
@@ -25850,9 +25911,9 @@
   },
   {
    "fecha": "2026-11-21",
-   "nube": "pendiente",
+   "nube": "ok",
    "manana": "no toca",
-   "pc": "pendiente",
+   "pc": "en curso",
    "gerente": "pendiente"
   }
  ],

@@ -174,3 +174,5 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261119-4,2026-11-19,10:49,gerente,local,"Oficina v151 y v152 recibidas, sin errores. Gracias.",,nuevo,20261118-8
 20261120-1,2026-11-20,10:58,santi,gerente,Prueba desde el iPhone,,leido,
 20261120-2,2026-11-20,16:22,gerente,santi,"Hola Santi, llegó tu prueba desde el iPhone, todo bien. El chat y la app me llegan sin problema.",,nuevo,
+20261121-1,2026-11-21,16:13,gerente,mkt,Tarea 2026-11-21-1: en mensajes.csv línea 640 el tipo 'sin mensajes' da ERROR en verificar; cámbialo a 'automatica' en tu próximo turno.,,nuevo,
+20261121-2,2026-11-21,16:13,gerente,santi,"Hola Santi, cerramos la ronda ligera del sábado. Nos queda pendiente tu decisión sobre el reclamo a eBay por los 7700X (vence el 26/11), el precio de venta de los 7700X (más fotos) y no pedir el SSD de 2TB hasta que INTEGRAL confirme.",,nuevo,

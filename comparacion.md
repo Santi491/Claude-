@@ -7,8 +7,8 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 
 | Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs | Ganancia 2 u | Ganancia 4 u | Estado |
 |---|---|---|---|---|---|---|---|
-| Ryzen 5 7600X | [130.60](https://www.ebay.com/itm/237196178359) | 1.737 (B 1 kg) | 1.737 (B 2 kg) | 2.550 | 813 (32%) | 813 (32%) | conviene |
 | Ryzen 9 9950X3D | [547.52](https://www.ebay.com/itm/900013883043) | 6.744 (B 1 kg) | 6.744 (B 2 kg) | 9.200 | 2.456 (27%) | 2.456 (27%) | conviene |
+| Ryzen 5 7600X | [145.99](https://www.ebay.com/itm/137926619063) | 1.921 (B 1 kg) | 1.921 (B 2 kg) | 2.550 | 629 (25%) | 629 (25%) | conviene |
 | Intel Core Ultra 7 265K | [239.00](https://www.ebay.com/itm/287733023578) | 3.039 (B 1 kg) | 2.996 (B 1.5 kg) | 3.950 | 911 (23%) | 954 (24%) | conviene |
 | Intel Core i5-14400F | [149.99](https://www.ebay.com/itm/126275456933) | 1.970 (B 1 kg) | 1.927 (B 1.5 kg) | 2.360 | 390 (17%) | 433 (18%) | conviene |
 | Intel Core i5-12400F | [134.00](https://www.ebay.com/itm/188895031520) | 1.777 (B 1 kg) | 1.735 (B 1.5 kg) | 2.050 | 273 (13%) | 315 (15%) | justo |
@@ -29,9 +29,9 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Producto | eBay USD | Costo puesto 2 u (Bs/u) | Costo puesto 4 u (Bs/u) | Mejor local Bs | Ganancia 2 u | Ganancia 4 u | Estado |
 |---|---|---|---|---|---|---|---|
 | Ryzen 5 7600 | [119.00](https://www.ebay.com/itm/257857896293) | 1.597 (B 1 kg) | 1.597 (B 2 kg) | 2.800 | 1.203 (43%) | 1.203 (43%) | conviene |
-| Ryzen 5 7600X | [129.99](https://www.ebay.com/itm/115712758959) | 1.729 (B 1 kg) | 1.729 (B 2 kg) | 2.550 | 821 (32%) | 821 (32%) | conviene |
 | Intel Core Ultra 7 265K | [209.95](https://www.ebay.com/itm/198798405271) | 2.690 (B 1 kg) | 2.648 (B 1.5 kg) | 3.950 | 1.260 (32%) | 1.302 (33%) | conviene |
 | Ryzen 9 9950X3D | [512.99](https://www.ebay.com/itm/198750337032) | 6.329 (B 1 kg) | 6.329 (B 2 kg) | 9.200 | 2.871 (31%) | 2.871 (31%) | conviene |
+| Ryzen 5 7600X | [139.99](https://www.ebay.com/itm/327094285155) | 1.849 (B 1 kg) | 1.849 (B 2 kg) | 2.550 | 701 (27%) | 701 (27%) | conviene |
 | Intel Core i5-14400F | [129.48](https://www.ebay.com/itm/168839621841) | 1.723 (B 1 kg) | 1.681 (B 1.5 kg) | 2.360 | 637 (27%) | 679 (29%) | conviene |
 | Ryzen 7 7700X | [170.00](https://www.ebay.com/itm/960185553593) | 2.210 (B 1 kg) | 2.210 (B 2 kg) | 3.000 | 790 (26%) | 790 (26%) | conviene |
 | Intel Core i5-12400F | [116.74](https://www.ebay.com/itm/198790623774) | 1.570 (B 1 kg) | 1.528 (B 1.5 kg) | 2.050 | 480 (23%) | 522 (25%) | conviene |
@@ -339,17 +339,17 @@ eBay nuevo: USD 164.00 con envío en EE.UU. (eBay API; vendedor hilux808 99.9%; 
 | ELVYCOMP (WhatsApp) | nuevo | 3.430 | 1.292 (38%) | 2026-11-09 |
 
 ### Ryzen 5 7600X
-eBay nuevo: USD 130.60 con envío en EE.UU. (eBay API; vendedor corelinker 98.1%; AMD Ryzen 5 7600x Processor (5.3 GHz, 6 Cores, LGA 1718/Sock, 2026-11-21). Costo puesto: **Bs 1.737**/u en pedido de 2, **Bs 1.737**/u en pedido de 4.
+eBay nuevo: USD 145.99 con envío en EE.UU. (eBay API; vendedor mavcofinds 100.0%; AMD Ryzen 5 7600X Processor CPU 6 Cores 12 Threads Socket AM, 2026-11-21). Costo puesto: **Bs 1.921**/u en pedido de 2, **Bs 1.921**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
-| OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 2.550 | 813 (32%) | 2026-11-12 |
-| Punto Tecnológico / Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | nuevo | 2.560 | 823 (32%) | 2026-11-12 |
-| Punto Tecnológico / Supermall (web) · [ver](https://puntotecnologic.com/categories/procesadores) | nuevo | 2.560 | 823 (32%) | 2026-11-18 |
-| Cyrex Store América (WhatsApp) | nuevo | 2.678 | 941 (35%) | 2026-11-04 |
-| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.686 | 950 (35%) | 2026-11-12 |
-| NPC Technology (WhatsApp) | no indica | 3.000 | 1.263 (42%) | 2026-11-18 |
-| Viadata Computadoras (WhatsApp) | nuevo | 3.300 | 1.563 (47%) | 2026-10-20 |
+| OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 2.550 | 629 (25%) | 2026-11-12 |
+| Punto Tecnológico / Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | nuevo | 2.560 | 639 (25%) | 2026-11-12 |
+| Punto Tecnológico / Supermall (web) · [ver](https://puntotecnologic.com/categories/procesadores) | nuevo | 2.560 | 639 (25%) | 2026-11-18 |
+| Cyrex Store América (WhatsApp) | nuevo | 2.678 | 756 (28%) | 2026-11-04 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.686 | 765 (28%) | 2026-11-12 |
+| NPC Technology (WhatsApp) | no indica | 3.000 | 1.079 (36%) | 2026-11-18 |
+| Viadata Computadoras (WhatsApp) | nuevo | 3.300 | 1.379 (42%) | 2026-10-20 |
 
 ### Ryzen 9 9950X3D
 eBay nuevo: USD 547.52 con envío en EE.UU. (eBay API; vendedor simplysold-8 100.0%; AMD Ryzen 9 9950X3D 16-Core 4.3GHz AM5 Desktop CPU 100-00000, 2026-11-21). Costo puesto: **Bs 6.744**/u en pedido de 2, **Bs 6.744**/u en pedido de 4.
