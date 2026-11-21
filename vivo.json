@@ -36,6 +36,11 @@
    "estado": "terminó",
    "texto": "Oficina v158 publicada",
    "hora": "16:13"
+  },
+  "gerente": {
+   "estado": "trabajando",
+   "texto": "Control y mensaje de fin de ronda",
+   "hora": "16:13"
   }
  }
 }
