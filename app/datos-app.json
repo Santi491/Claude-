@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-21 16:11",
+ "generado": "2026-11-21 20:16",
  "etapa": {
   "numero": 2,
   "nombre": "producto en camino",
@@ -818,7 +818,7 @@
    "margen": 41.5,
    "peor": 30.2,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/117533137293",
    "courier_usd": 14.0,
    "tc": 12.01,
@@ -836,7 +836,7 @@
    "margen": 29.6,
    "peor": 17.4,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/198790623774",
    "courier_usd": 14.0,
    "tc": 12.01,
@@ -854,7 +854,7 @@
    "margen": 19.9,
    "peor": 6.2,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/206716034158",
    "courier_usd": 14.0,
    "tc": 12.01,
@@ -872,7 +872,7 @@
    "margen": 19.6,
    "peor": 7.0,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/128207574344",
    "courier_usd": 14.0,
    "tc": 12.01,
@@ -1178,7 +1178,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1214,7 +1214,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1232,7 +1232,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1643,6 +1643,22 @@
  ],
  "equipo": [
   {
+   "agente": "gerente",
+   "nombre": "Gerente",
+   "acciones": 24,
+   "serie": [
+    1,
+    3,
+    5,
+    4,
+    3,
+    6,
+    2
+   ],
+   "ultima": "Informe de las 20:00 (sábado): verificar.py sin errores, chat sin pendientes, 5 tareas nuevas para el lunes (todas rutina), 0 propuestas a Santi, 0 mensajes del chat contestados, 2 notas de libreta (1 descartada, 1 anota",
+   "cuando": "2026-11-21 20:20"
+  },
+  {
    "agente": "mkt",
    "nombre": "Marketplace",
    "acciones": 14,
@@ -1753,22 +1769,6 @@
    ],
    "ultima": "API: 17 precios nuevos y 19 usados; 0 filas corregidas (variante y vendedor revisados; 9950X nuevo USD 389 es OEM tray de corelinker 98,1 %, dentro de reglas)",
    "cuando": "2026-11-21 07:58"
-  },
-  {
-   "agente": "gerente",
-   "nombre": "Gerente",
-   "acciones": 22,
-   "serie": [
-    1,
-    3,
-    5,
-    4,
-    3,
-    6,
-    0
-   ],
-   "ultima": "Informe de las 20:00 (viernes): verificar.py sin errores, chat sin pendientes, 3 tareas nuevas para el sábado (rutina), 0 propuestas a Santi, 0 mensajes del chat contestados, 1 nota de libreta anotada (RTX 5050); Doc sub",
-   "cuando": "2026-11-20 20:20"
   },
   {
    "agente": "dem",
@@ -2021,13 +2021,13 @@
   {
    "parte": "pc",
    "nombre": "PC · ronda 16:00",
-   "estado": "en curso",
+   "estado": "ok",
    "hora": "16:00"
   },
   {
    "parte": "gerente",
    "nombre": "Gerente · informe 20:00",
-   "estado": "pendiente",
+   "estado": "ok",
    "hora": "20:00"
   },
   {
@@ -5319,6 +5319,60 @@
  "decididas": [
   {
    "tipo": "plan",
+   "ref": "2026-11-21-2",
+   "agente": "mkt",
+   "titulo": "Lunes (ronda completa): barrido semanal de tiendas nuevas por redes (Instagram, Facebook, TikTok, Google Maps, webs) y, con el tiempo libre, 10 grupos o compradores de la zona (cli-2, sin nombres ni datos en el repo)",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-23"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-21-3",
+   "agente": "ana",
+   "titulo": "Lunes: correr candidatos.py --ebay --proponer y proponer en ideas.csv hasta 3 productos nuevos (margen ≥ 20 %, peor caso ≥ 5 %, 2 tiendas o más)",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-23"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-21-4",
+   "agente": "wa",
+   "titulo": "Lunes: leer 'No leídos', mirar la ficha y contestar a EQUIPAMIENTO MODERNO, Compuland, Importadora ITA y NPC Technology (agenda.py los marca como 'responder'); seguimiento corto a Tecnología GabBoss; anotar si INTEGRAL confirma el Crucial 2TB sellado",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-23"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-21-5",
+   "agente": "pedidos",
+   "titulo": "Lunes: revisar real-1 y real-2 (última revisión web 18/11), preguntar a Santi por la llegada si no avisó, y recordar que el reclamo a eBay vence el 26/11",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-23"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-21-6",
+   "agente": "fin",
+   "titulo": "Lunes: revisar ventas.csv y pedidos.csv por si Santi avisó llegada, compra (RTX 5050) o venta; dejar stock y caja al día",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-23"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-21-1",
+   "agente": "mkt",
+   "titulo": "Corregir mensajes.csv línea 640 (fila Messenger del 21/11 16:20): el tipo 'sin mensajes' no es válido; cambiarlo a 'automatica' y dejar el detalle en nota",
+   "estado": "hecho",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-22"
+  },
+  {
+   "tipo": "plan",
    "ref": "2026-11-20-1",
    "agente": "wa",
    "titulo": "Sábado (ronda ligera): abrir 'No leídos', mirar la ficha y contestar a quien escribió (Compuland, que además llamó por teléfono, Importadora ITA, NPC Technology, y las respuestas abiertas de INTEGRAL, Supermall, EQUIPAMIENTO y SYSTEMS HARDWARE); anotar si INTEGRAL confirma el Crucial 2TB nuevo sellado con garantía",
@@ -6342,60 +6396,6 @@
    "estado": "hecho",
    "decision": "hecho 09/11 15:58 (wa): seguimiento a Punto Tecnológico (sellado/OEM del 7600 y precio por 2); sin respuesta aún",
    "fecha": "2026-11-07"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-06-2",
-   "agente": "wa",
-   "titulo": "Pedir precio, stock y garantía del SSD NVMe 2TB a las tiendas que ya tienen chat y lo venden (INTEGRAL TU-PC, Microworld y las otras del chat de hoy)",
-   "estado": "hecho",
-   "decision": "hecho 09/11 15:58 (wa): pregunta de SSD NVMe 2TB a 7 tiendas con chat (INTEGRAL TU-PC, Microworld y otras); sin respuesta aún",
-   "fecha": "2026-11-07"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-06-3",
-   "agente": "pedidos",
-   "titulo": "Rastrear UPS de los 7700X y las 3 guías de prueba; avisar el mismo día si hay movimiento",
-   "estado": "hecho",
-   "decision": "hecho 09/11 16:17 (pedidos): rastreo hecho, sin movimiento nuevo (UPS/USPS/GOFO sin resultado)",
-   "fecha": "2026-11-07"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-06-4",
-   "agente": "mkt",
-   "titulo": "Ronda ligera: contestar Messenger y anotar lo que se vea; sin búsquedas nuevas",
-   "estado": "rechazado",
-   "decision": "vencida (Gerente) 07/11: la PC no prendió",
-   "fecha": "2026-11-07"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-06-5",
-   "agente": "local",
-   "titulo": "Dividir datos.js en partes chicas (generar.py) para que la PC pueda publicar la oficina sin leer 1,1 MB de una vez",
-   "estado": "rechazado",
-   "decision": "vencida (Gerente 10/11): ya no hace falta, la PC publicó la oficina el 10/11 (v123 y v128)",
-   "fecha": "2026-11-07"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-06-6",
-   "agente": "gerente",
-   "titulo": "Santi: decidir si se reescribe el historial de git para sacar del repo público archivos sueltos de la PC (personas Mixamo y una captura de WhatsApp subidos por error el 06/11)",
-   "estado": "rechazado",
-   "decision": "vencida (Gerente 10/11): reprogramada como 2026-11-10-8",
-   "fecha": "2026-11-07"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-05-1",
-   "agente": "mkt",
-   "titulo": "Revisar las webs de Dr. Compu y SS Electrónica (catálogo y precios de componentes) y pasar lo que haya a catalogos.csv y precios-cochabamba.csv",
-   "estado": "hecho",
-   "decision": "auto (rutina) · hecho 06/11 PC (mkt): Dr. Compu = página de Facebook de reparación, sin catálogo; SS Electrónica = electrónica para proyectos (resistencias, Arduino), sin SSD/RAM/CPU; 2 filas en catalogos.csv, 0 precios; ambas marcadas como que no venden componentes",
-   "fecha": "2026-11-06"
   }
  ],
  "libreta": [
@@ -7186,6 +7186,16 @@
    "fuente": "ronda",
    "resumen": "RTX 5050: preguntarle a Santi mañana en el aviso de las 8:20 si compró y, si sí, avisar a Marketplace del precio y las fotos (no presionar)",
    "vence": "2026-11-21",
+   "estado": "descartada",
+   "cerrado": "21/11 20:16: Pasó el sábado sin dato de compra; se le pregunta a Santi en el aviso de las 20:00 y se reprograma"
+  },
+  {
+   "id": "80",
+   "fecha": "2026-11-21",
+   "tipo": "compromiso",
+   "fuente": "2000",
+   "resumen": "RTX 5050: si Santi no contó si compró, preguntarle en el aviso del lunes 23/11 sin presionar; si compró, avisar a Marketplace del precio (Bs 5.290) y las fotos",
+   "vence": "2026-11-23",
    "estado": "abierta",
    "cerrado": ""
   }
@@ -11404,11 +11414,11 @@
   }
  ],
  "sincronizacion": {
-  "ultima_ronda": "2026-11-21 16:04",
+  "ultima_ronda": "2026-11-21 16:14",
   "ultima_ronda_quien": "pc",
-  "oficina_publicada": "2026-11-20 16:21",
+  "oficina_publicada": "2026-11-21 16:14",
   "armado_por": "una ronda o sesión",
-  "armado": "2026-11-21 16:11"
+  "armado": "2026-11-21 20:16"
  },
  "clientes": [
   {
@@ -23875,16 +23885,23 @@
   {
    "titulo": "Importación Cochabamba (Excel)",
    "tipo": "Excel",
-   "fecha": "2026-11-21",
+   "fecha": "2026-11-22",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/importacion-cochabamba.xlsx",
    "carpeta": "Excel"
   },
   {
    "titulo": "Historial completo",
    "tipo": "CSV",
-   "fecha": "2026-11-21",
+   "fecha": "2026-11-22",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/historial.csv",
    "carpeta": "Tabla diaria"
+  },
+  {
+   "titulo": "Comparación EE.UU. → Cochabamba",
+   "tipo": "Tabla de comparación",
+   "fecha": "2026-11-22",
+   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
+   "carpeta": "Informes"
   },
   {
    "titulo": "Tabla del 2026-11-21",
@@ -23899,13 +23916,6 @@
    "fecha": "2026-11-21",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/2026-11-21.pdf",
    "carpeta": "Tabla diaria"
-  },
-  {
-   "titulo": "Comparación EE.UU. → Cochabamba",
-   "tipo": "Tabla de comparación",
-   "fecha": "2026-11-21",
-   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
-   "carpeta": "Informes"
   },
   {
    "titulo": "Informe diario 2026-11-21",
@@ -24155,6 +24165,11 @@
  ],
  "informes": [
   {
+   "fecha": "2026-11-21",
+   "tipo": "diario",
+   "url": "https://docs.google.com/document/d/1GpD__77UETOKcX_WdPw5Ri1UOJ3DfBXEYQFN8n9fTC8/edit"
+  },
+  {
    "fecha": "2026-11-20",
    "tipo": "diario",
    "url": "https://docs.google.com/document/d/1N3yUc-V01J4LiMuv8GtPT0VU0T7U5866cUq1P60Z1bA/edit"
@@ -24298,11 +24313,6 @@
    "fecha": "2026-10-22",
    "tipo": "diario",
    "url": "https://docs.google.com/document/d/1hMTYLwK8lnAEqWig9uahwQdq68UvvI92HVk94S70b6U/edit"
-  },
-  {
-   "fecha": "2026-10-21",
-   "tipo": "diario",
-   "url": "https://docs.google.com/document/d/14hySi1UIwAYoDhm9_TUOUSzN_KvlopiTjHgH3Q7N4B4/edit"
   }
  ],
  "memoria": [
@@ -24608,30 +24618,14 @@
    "fecha": "2026-11-20"
   },
   {
-   "id": "79",
+   "id": "80",
    "tipo": "compromiso",
-   "resumen": "RTX 5050: preguntarle a Santi mañana en el aviso de las 8:20 si compró y, si sí, avisar a Marketplace del precio y las fotos (no presionar)",
-   "vence": "2026-11-21",
-   "fecha": "2026-11-20"
+   "resumen": "RTX 5050: si Santi no contó si compró, preguntarle en el aviso del lunes 23/11 sin presionar; si compró, avisar a Marketplace del precio (Bs 5.290) y las fotos",
+   "vence": "2026-11-23",
+   "fecha": "2026-11-21"
   }
  ],
  "chat": [
-  {
-   "id": "20261022-12",
-   "fecha": "2026-10-22",
-   "hora": "16:22",
-   "de": "gerente",
-   "para": "pedidos",
-   "texto": "Visto, bien por los tres sellos. La guía del 7700X y la del paquete de prueba se las pido a Santi hoy."
-  },
-  {
-   "id": "20261022-13",
-   "fecha": "2026-10-22",
-   "hora": "20:16",
-   "de": "gerente",
-   "para": "fin",
-   "texto": "Recibido. Anoté tu propuesta del dólar como tarea 2026-10-22-4 para Santi (cambiar fuente la decide él). Mientras tanto no cambies el dólar de cálculos; sigue anotando en la fuente cuando compra > venta."
-  },
   {
    "id": "20261022-14",
    "fecha": "2026-10-22",
@@ -25815,6 +25809,22 @@
    "de": "gerente",
    "para": "santi",
    "texto": "Hola Santi, llegó tu prueba desde el iPhone, todo bien. El chat y la app me llegan sin problema."
+  },
+  {
+   "id": "20261121-1",
+   "fecha": "2026-11-21",
+   "hora": "16:13",
+   "de": "gerente",
+   "para": "mkt",
+   "texto": "Tarea 2026-11-21-1: en mensajes.csv línea 640 el tipo 'sin mensajes' da ERROR en verificar; cámbialo a 'automatica' en tu próximo turno."
+  },
+  {
+   "id": "20261121-2",
+   "fecha": "2026-11-21",
+   "hora": "16:13",
+   "de": "gerente",
+   "para": "santi",
+   "texto": "Hola Santi, cerramos la ronda ligera del sábado. Nos queda pendiente tu decisión sobre el reclamo a eBay por los 7700X (vence el 26/11), el precio de venta de los 7700X (más fotos) y no pedir el SSD de 2TB hasta que INTEGRAL confirme."
   }
  ],
  "salud14": [
@@ -25913,8 +25923,8 @@
    "fecha": "2026-11-21",
    "nube": "ok",
    "manana": "no toca",
-   "pc": "en curso",
-   "gerente": "pendiente"
+   "pc": "ok",
+   "gerente": "ok"
   }
  ],
  "finanzas_productos": [
@@ -25930,22 +25940,22 @@
  ],
  "recomendaciones": [
   {
-   "texto": "Decide si reclamamos a eBay por los 7700X: el plazo vence el 26/11",
-   "por_que": "Quedan 6 días y no hay reclamo abierto; después no hay vuelta atrás",
+   "texto": "Decide si reclamamos a eBay por los 7700X: vence el 26/11",
+   "por_que": "Quedan 5 días, sigue sin decisión y después no hay vuelta atrás",
    "accion": "pedido"
   },
   {
-   "texto": "Fija el precio del 7700X y pasa las fotos para publicar",
-   "por_que": "El suelto de 3.100 salió vendido; solo queda el sellado a 4.000 y el Analista sugiere Bs 3.300",
+   "texto": "Fija el precio de venta del 7700X y pasa las fotos",
+   "por_que": "Sin tu precio y fotos Marketplace no publica; el Analista sugiere Bs 3.300",
    "accion": "venta"
   },
   {
-   "texto": "Espera la respuesta de INTEGRAL antes de decidir el SSD 2TB",
-   "por_que": "Ofrece un Crucial 2TB a Bs 2.900; si es sellado con garantía baja nuestro margen",
+   "texto": "No pidas el SSD de 2TB hasta que INTEGRAL confirme",
+   "por_que": "Si el Crucial a Bs 2.900 es sellado, el margen baja a ~2 %",
    "accion": "compra"
   }
  ],
- "recomendaciones_cuando": "2026-11-20 16:30",
+ "recomendaciones_cuando": "2026-11-21 16:25",
  "constantes": {
   "b_usd_kg": 28,
   "b_min_kg": 1.0,
