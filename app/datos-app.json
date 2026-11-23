@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-22 07:54",
+ "generado": "2026-11-22 20:17",
  "etapa": {
   "numero": 2,
   "nombre": "producto en camino",
@@ -1550,6 +1550,16 @@
  },
  "decidir": [
   {
+   "tipo": "plan",
+   "ref": "2026-11-22-3",
+   "agente": "local",
+   "fecha": "2026-11-22",
+   "titulo": "Actualizar el texto fijo de analista.py (~línea 247) sobre el SSD NVMe 2TB, que ya no refleja los datos de hoy (31 %, peor caso 20,5 %)",
+   "detalle": "Necesidad abierta del Gerente; es código, la decide Santi",
+   "plazo": "2026-11-27",
+   "fecha_para": "2026-11-23"
+  },
+  {
    "tipo": "necesidad",
    "ref": "51",
    "agente": "gerente",
@@ -1584,7 +1594,7 @@
    "fecha": "2026-11-18",
    "titulo": "Que analista.py limite la mediana local a 30 días como cazador.py (hoy analista.py no la limita)",
    "detalle": "Analista 18/11: dos criterios distintos dan medianas distintas para el mismo producto (7700X: 3.574 en analista)",
-   "plazo": "2026-11-21",
+   "plazo": "2026-11-27",
    "fecha_para": "2026-11-19"
   },
   {
@@ -1651,7 +1661,7 @@
   {
    "agente": "gerente",
    "nombre": "Gerente",
-   "acciones": 23,
+   "acciones": 24,
    "serie": [
     3,
     5,
@@ -1659,10 +1669,58 @@
     3,
     6,
     2,
-    0
+    1
    ],
-   "ultima": "Informe de las 20:00 (sábado): verificar.py sin errores, chat sin pendientes, 5 tareas nuevas para el lunes (todas rutina), 0 propuestas a Santi, 0 mensajes del chat contestados, 2 notas de libreta (1 descartada, 1 anota",
-   "cuando": "2026-11-21 20:20"
+   "ultima": "Resumen semanal 16-22/11 en Drive: sin errores de verificar.py; 3 tareas nuevas (2 auto por rutina, 1 propuesta), 1 reprogramada y 1 cerrada; 1 mensaje de chat contestado; 1 compromiso anotado en la libreta (reclamo eBay",
+   "cuando": "2026-11-22 20:20"
+  },
+  {
+   "agente": "nube",
+   "nombre": "Informe diario",
+   "acciones": 7,
+   "serie": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ultima": "Revisión diaria hecha: dólar USDT 12,01 (oficial y paralelo del 21/11), eBay, comparación, análisis, Excel y PDF, informe del día. Oficina sin publicar (la publica la PC).",
+   "cuando": "2026-11-22 07:59"
+  },
+  {
+   "agente": "ebay",
+   "nombre": "Rastreador eBay",
+   "acciones": 8,
+   "serie": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ultima": "API: 18 precios nuevos y 19 usados; revisé títulos y vendedores: variantes correctas, sin repuestos; 0 filas corregidas. Ojo: Ryzen 5 7600 nuevo es OEM/Tray a USD 261,69 (único anuncio nuevo que salió).",
+   "cuando": "2026-11-22 07:58"
+  },
+  {
+   "agente": "ana",
+   "nombre": "Analista",
+   "acciones": 17,
+   "serie": [
+    3,
+    3,
+    3,
+    2,
+    3,
+    2,
+    1
+   ],
+   "ultima": "Con margen: traer SSD NVMe 2TB nuevo (31 %, peor caso 20,5 %), Ryzen 9 9950X3D (27 %), Core Ultra 7 265K y Ryzen 5 7600X (24 %), Ryzen 7 7800X3D (22 %). Esperar 9600X, 12400F, 14400F, 7700X, 9950X (margen bajo en el peor",
+   "cuando": "2026-11-22 07:58"
   },
   {
    "agente": "mkt",
@@ -1697,22 +1755,6 @@
    "cuando": "2026-11-21 16:12"
   },
   {
-   "agente": "ana",
-   "nombre": "Analista",
-   "acciones": 16,
-   "serie": [
-    3,
-    3,
-    3,
-    2,
-    3,
-    2,
-    0
-   ],
-   "ultima": "Ronda ligera sábado: analisis recalculado. SSD 2TB nuevo sigue TRAER (margen 31,4 %, peor caso 20,5 %, costo Bs 2.690) pero con riesgo: INTEGRAL Crucial 2TB a Bs 2.900 solo con garantía de 1 mes, sin sellado ni modelo co",
-   "cuando": "2026-11-21 16:11"
-  },
-  {
    "agente": "fin",
    "nombre": "Finanzas",
    "acciones": 10,
@@ -1743,38 +1785,6 @@
    ],
    "ultima": "Ronda ligera del sábado: real-1 y real-2 en camino a Cochabamba desde 18/11, sin cambios de etapa ni avisos nuevos de Santi (sin rastreo web del tramo); reclamo eBay vence 26/11, sin decidir; tarea 2026-11-20-4 hecha",
    "cuando": "2026-11-21 16:09"
-  },
-  {
-   "agente": "nube",
-   "nombre": "Informe diario",
-   "acciones": 6,
-   "serie": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0
-   ],
-   "ultima": "Revisión diaria hecha: dólar USDT 12,01 (oficial 11,75, paralelo 11,97/11,94), eBay, comparación, análisis, Excel/PDF, informe. Rama remota tenía historia distinta: se rehízo sobre origin.",
-   "cuando": "2026-11-21 07:59"
-  },
-  {
-   "agente": "ebay",
-   "nombre": "Rastreador eBay",
-   "acciones": 7,
-   "serie": [
-    2,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0
-   ],
-   "ultima": "API: 17 precios nuevos y 19 usados; 0 filas corregidas (variante y vendedor revisados; 9950X nuevo USD 389 es OEM tray de corelinker 98,1 %, dentro de reglas)",
-   "cuando": "2026-11-21 07:58"
   },
   {
    "agente": "dem",
@@ -2015,7 +2025,7 @@
   {
    "parte": "nube",
    "nombre": "Nube · revisión 7:52",
-   "estado": "pendiente",
+   "estado": "ok",
    "hora": "07:52"
   },
   {
@@ -2033,7 +2043,7 @@
   {
    "parte": "gerente",
    "nombre": "Gerente · informe 20:00",
-   "estado": "pendiente",
+   "estado": "ok",
    "hora": "20:00"
   },
   {
@@ -5370,6 +5380,24 @@
   },
   {
    "tipo": "plan",
+   "ref": "2026-11-22-1",
+   "agente": "fin",
+   "titulo": "Revisar la fuente del dólar paralelo de dolarbolivia.net (compra mayor que venta 4 días seguidos del 10 al 13/11) y anotar en la fila del día si hay que cambiarla; el dólar usado sigue siendo el USDT",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-23"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-22-2",
+   "agente": "ebay",
+   "titulo": "En la ronda del lunes dejar precio real de eBay de hoy para los 19 productos (ebay.py --vigilar --guardar y --revisar); hoy faltan los de 2 días",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-23"
+  },
+  {
+   "tipo": "plan",
    "ref": "2026-11-21-1",
    "agente": "mkt",
    "titulo": "Corregir mensajes.csv línea 640 (fila Messenger del 21/11 16:20): el tipo 'sin mensajes' no es válido; cambiarlo a 'automatica' y dejar el detalle en nota",
@@ -5382,7 +5410,7 @@
    "ref": "2026-11-20-1",
    "agente": "wa",
    "titulo": "Sábado (ronda ligera): abrir 'No leídos', mirar la ficha y contestar a quien escribió (Compuland, que además llamó por teléfono, Importadora ITA, NPC Technology, y las respuestas abiertas de INTEGRAL, Supermall, EQUIPAMIENTO y SYSTEMS HARDWARE); anotar si INTEGRAL confirma el Crucial 2TB nuevo sellado con garantía",
-   "estado": "aprobado",
+   "estado": "hecho",
    "decision": "auto (rutina)",
    "fecha": "2026-11-21"
   },
@@ -6384,24 +6412,6 @@
    "estado": "rechazado",
    "decision": "repetida de la 2026-11-07-5",
    "fecha": "2026-11-09"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-08-6",
-   "agente": "fin",
-   "titulo": "Dejar vacíos el oficial y el paralelo en tipo-cambio.csv cuando no se hallan, en vez de repetir el del 28/10",
-   "estado": "hecho",
-   "decision": "hecho 09/11 16:24 (fin): oficial y paralelo vacíos en 01-03/11 y 07/11, nota en fuente",
-   "fecha": "2026-11-09"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-06-1",
-   "agente": "wa",
-   "titulo": "Seguimiento a Punto Tecnológico (sellado/OEM del Ryzen 5 7600 y precio por 2 unidades) y responder a las tiendas que escriban",
-   "estado": "hecho",
-   "decision": "hecho 09/11 15:58 (wa): seguimiento a Punto Tecnológico (sellado/OEM del 7600 y precio por 2); sin respuesta aún",
-   "fecha": "2026-11-07"
   }
  ],
  "libreta": [
@@ -7201,6 +7211,16 @@
    "tipo": "compromiso",
    "fuente": "2000",
    "resumen": "RTX 5050: si Santi no contó si compró, preguntarle en el aviso del lunes 23/11 sin presionar; si compró, avisar a Marketplace del precio (Bs 5.290) y las fotos",
+   "vence": "2026-11-23",
+   "estado": "abierta",
+   "cerrado": ""
+  },
+  {
+   "id": "81",
+   "fecha": "2026-11-22",
+   "tipo": "compromiso",
+   "fuente": "2000",
+   "resumen": "Lunes 23/11: recordarle a Santi el reclamo a eBay de los 7700X (vence 26/11) y preguntar sin presionar si compró las RTX 5050",
    "vence": "2026-11-23",
    "estado": "abierta",
    "cerrado": ""
@@ -11424,7 +11444,7 @@
   "ultima_ronda_quien": "pc",
   "oficina_publicada": "2026-11-21 16:14",
   "armado_por": "una ronda o sesión",
-  "armado": "2026-11-22 07:54"
+  "armado": "2026-11-22 20:17"
  },
  "clientes": [
   {
@@ -14904,6 +14924,10 @@
  ],
  "informes_nube": [
   {
+   "fecha": "2026-11-22",
+   "ruta": "informes/2026-11-22.md"
+  },
+  {
    "fecha": "2026-11-21",
    "ruta": "informes/2026-11-21.md"
   },
@@ -15018,10 +15042,6 @@
   {
    "fecha": "2026-10-23",
    "ruta": "informes/2026-10-23.md"
-  },
-  {
-   "fecha": "2026-10-22",
-   "ruta": "informes/2026-10-22.md"
   }
  ],
  "catalogos": [
@@ -23701,12 +23721,6 @@
   "respondieron": 45,
   "serie": [
    {
-    "fecha": "2026-11-01",
-    "nuevos": 0,
-    "respuestas": 0,
-    "con_precio": 0
-   },
-   {
     "fecha": "2026-11-02",
     "nuevos": 0,
     "respuestas": 2.0,
@@ -23824,6 +23838,12 @@
     "fecha": "2026-11-21",
     "nuevos": 0,
     "respuestas": 3.0,
+    "con_precio": 0
+   },
+   {
+    "fecha": "2026-11-22",
+    "nuevos": 0,
+    "respuestas": 0,
     "con_precio": 0
    }
   ]
@@ -24024,16 +24044,23 @@
   {
    "titulo": "Importación Cochabamba (Excel)",
    "tipo": "Excel",
-   "fecha": "2026-11-22",
+   "fecha": "2026-11-23",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/importacion-cochabamba.xlsx",
    "carpeta": "Excel"
   },
   {
    "titulo": "Historial completo",
    "tipo": "CSV",
-   "fecha": "2026-11-22",
+   "fecha": "2026-11-23",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/historial.csv",
    "carpeta": "Tabla diaria"
+  },
+  {
+   "titulo": "Comparación EE.UU. → Cochabamba",
+   "tipo": "Tabla de comparación",
+   "fecha": "2026-11-23",
+   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
+   "carpeta": "Informes"
   },
   {
    "titulo": "Tabla del 2026-11-22",
@@ -24050,10 +24077,10 @@
    "carpeta": "Tabla diaria"
   },
   {
-   "titulo": "Comparación EE.UU. → Cochabamba",
-   "tipo": "Tabla de comparación",
+   "titulo": "Informe diario 2026-11-22",
+   "tipo": "Informe de la nube",
    "fecha": "2026-11-22",
-   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
+   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/informes/2026-11-22.md",
    "carpeta": "Informes"
   },
   {
@@ -24293,16 +24320,14 @@
    "fecha": "2026-11-10",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/2026-11-10.csv",
    "carpeta": "Tabla diaria"
-  },
-  {
-   "titulo": "Tabla del 2026-11-10",
-   "tipo": "PDF",
-   "fecha": "2026-11-10",
-   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/2026-11-10.pdf",
-   "carpeta": "Tabla diaria"
   }
  ],
  "informes": [
+  {
+   "fecha": "2026-11-22",
+   "tipo": "semanal",
+   "url": "https://docs.google.com/document/d/11qSnCyNUH3jb0nOAyOKd2aVeFQFfVs3UcLjXHh-aS3k/edit"
+  },
   {
    "fecha": "2026-11-21",
    "tipo": "diario",
@@ -24447,11 +24472,6 @@
    "fecha": "2026-10-23",
    "tipo": "diario",
    "url": "https://docs.google.com/document/d/1KheZ1vzyI_zSwUPB3MEYelgRokveOd7ssT87V13AsXo/edit"
-  },
-  {
-   "fecha": "2026-10-22",
-   "tipo": "diario",
-   "url": "https://docs.google.com/document/d/1hMTYLwK8lnAEqWig9uahwQdq68UvvI92HVk94S70b6U/edit"
   }
  ],
  "memoria": [
@@ -24762,17 +24782,16 @@
    "resumen": "RTX 5050: si Santi no contó si compró, preguntarle en el aviso del lunes 23/11 sin presionar; si compró, avisar a Marketplace del precio (Bs 5.290) y las fotos",
    "vence": "2026-11-23",
    "fecha": "2026-11-21"
+  },
+  {
+   "id": "81",
+   "tipo": "compromiso",
+   "resumen": "Lunes 23/11: recordarle a Santi el reclamo a eBay de los 7700X (vence 26/11) y preguntar sin presionar si compró las RTX 5050",
+   "vence": "2026-11-23",
+   "fecha": "2026-11-22"
   }
  ],
  "chat": [
-  {
-   "id": "20261022-14",
-   "fecha": "2026-10-22",
-   "hora": "20:16",
-   "de": "gerente",
-   "para": "local",
-   "texto": "Plan.csv ya pasa verificar.py sin ERROR (la fila 2026-10-21-9 quedó corregida). Publica la oficina en la próxima ronda."
-  },
   {
    "id": "20261022-15",
    "fecha": "2026-10-22",
@@ -25964,6 +25983,14 @@
    "de": "gerente",
    "para": "santi",
    "texto": "Hola Santi, cerramos la ronda ligera del sábado. Nos queda pendiente tu decisión sobre el reclamo a eBay por los 7700X (vence el 26/11), el precio de venta de los 7700X (más fotos) y no pedir el SSD de 2TB hasta que INTEGRAL confirme."
+  },
+  {
+   "id": "20261122-1",
+   "fecha": "2026-11-22",
+   "hora": "20:16",
+   "de": "gerente",
+   "para": "pedidos",
+   "texto": "Recibido. Lunes: revisa real-1 y real-2 y recuerda el reclamo a eBay (vence 26/11); tarea 2026-11-21-5."
   }
  ],
  "salud14": [
@@ -26060,10 +26087,10 @@
   },
   {
    "fecha": "2026-11-22",
-   "nube": "pendiente",
+   "nube": "ok",
    "manana": "no toca",
    "pc": "no toca",
-   "gerente": "pendiente"
+   "gerente": "ok"
   }
  ],
  "finanzas_productos": [

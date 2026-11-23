@@ -176,3 +176,4 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261120-2,2026-11-20,16:22,gerente,santi,"Hola Santi, llegó tu prueba desde el iPhone, todo bien. El chat y la app me llegan sin problema.",,nuevo,
 20261121-1,2026-11-21,16:13,gerente,mkt,Tarea 2026-11-21-1: en mensajes.csv línea 640 el tipo 'sin mensajes' da ERROR en verificar; cámbialo a 'automatica' en tu próximo turno.,,nuevo,
 20261121-2,2026-11-21,16:13,gerente,santi,"Hola Santi, cerramos la ronda ligera del sábado. Nos queda pendiente tu decisión sobre el reclamo a eBay por los 7700X (vence el 26/11), el precio de venta de los 7700X (más fotos) y no pedir el SSD de 2TB hasta que INTEGRAL confirme.",,nuevo,
+20261122-1,2026-11-22,20:16,gerente,pedidos,Recibido. Lunes: revisa real-1 y real-2 y recuerda el reclamo a eBay (vence 26/11); tarea 2026-11-21-5.,,nuevo,
