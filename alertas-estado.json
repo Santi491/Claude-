@@ -113,7 +113,10 @@
   "baja|Ryzen 7 5700X3D|usado|2026-11-21": "2026-11-21 07:54",
   "baja|Ryzen 9 9950X|nuevo|2026-11-21": "2026-11-21 07:54",
   "baja|RAM DDR4 16GB (2x8) 3200|usado|2026-11-21": "2026-11-21 07:54",
-  "baja|Ryzen 5 7600X|nuevo|2026-11-21": "2026-11-21 07:54"
+  "baja|Ryzen 5 7600X|nuevo|2026-11-21": "2026-11-21 07:54",
+  "baja|SSD NVMe 1TB|usado|2026-11-23": "2026-11-23 07:54",
+  "baja|Ryzen 5 9600X|usado|2026-11-23": "2026-11-23 07:54",
+  "conviene|Ryzen 5 9600X|usado|2026-11-23": "2026-11-23 07:54"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -129,7 +132,6 @@
   "Intel Core i5-14400F|usado": true,
   "Intel Core Ultra 7 265K|nuevo": true,
   "Intel Core Ultra 7 265K|usado": true,
-  "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|nuevo": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|usado": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": false,
@@ -144,17 +146,16 @@
   "Ryzen 5 7500F|nuevo": false,
   "Ryzen 5 7500F|usado": false,
   "Ryzen 5 9600X|nuevo": false,
-  "Ryzen 5 9600X|usado": false,
+  "Ryzen 5 9600X|usado": true,
   "Ryzen 5 7600X|nuevo": true,
   "Ryzen 5 7600X|usado": true,
   "Ryzen 9 9950X3D|nuevo": true,
   "Ryzen 9 9950X3D|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 7 5700X3D (usado) bajó 10% en eBay: USD 329.92 → 296.07",
-  "⬇ Ryzen 9 9950X (nuevo) bajó 17% en eBay: USD 489.99 → 405.12",
-  "⬇ RAM DDR4 16GB (2x8) 3200 (usado) bajó 21% en eBay: USD 75.59 → 59.99",
-  "⬇ Ryzen 5 7600X (nuevo) bajó 11% en eBay: USD 145.99 → 130.60"
+  "⬇ SSD NVMe 1TB (usado) bajó 10% en eBay: USD 99.99 → 89.99",
+  "⬇ Ryzen 5 9600X (usado) bajó 12% en eBay: USD 169.98 → 150.00",
+  "✅ Ahora conviene Ryzen 5 9600X (usado): +20% · costo puesto Bs 1.971 vs Bs 2.450 en Cochabamba"
  ],
- "revisado": "2026-11-22 07:54"
+ "revisado": "2026-11-23 07:54"
 }
