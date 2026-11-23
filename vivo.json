@@ -11,6 +11,11 @@
    "estado": "terminó",
    "texto": "1 chat nuevo, INTEGRAL sellado confirmado",
    "hora": "10:39"
+  },
+  "mkt": {
+   "estado": "trabajando",
+   "texto": "Barrido semanal de redes y Marketplace",
+   "hora": "10:39"
   }
  }
 }
