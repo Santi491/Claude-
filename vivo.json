@@ -16,6 +16,11 @@
    "estado": "terminó",
    "texto": "1 tienda nueva, 19 productos revisados",
    "hora": "10:47"
+  },
+  "pedidos": {
+   "estado": "trabajando",
+   "texto": "Rastreo de pedidos",
+   "hora": "10:47"
   }
  }
 }
