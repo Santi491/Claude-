@@ -5,7 +5,7 @@
   "desde": "10:35",
   "fecha": "2026-11-23"
  },
- "actualizado": "2026-11-23 10:49",
+ "actualizado": "2026-11-23 10:50",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -21,6 +21,11 @@
    "estado": "terminó",
    "texto": "Sin movimiento; reclamo eBay vence 26/11",
    "hora": "10:49"
+  },
+  "ana": {
+   "estado": "trabajando",
+   "texto": "Análisis y candidatos del lunes",
+   "hora": "10:50"
   }
  }
 }
