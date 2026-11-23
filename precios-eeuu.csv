@@ -1374,10 +1374,11 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-23,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,usado,399.00,0.00,real,eBay API; vendedor shenidss9ckq 99.0%; Corsair Vengeance RGB DDR5 32GB (2x16GB) RAM 5600MHz CMH5S16,https://www.ebay.com/itm/377593144670
 2026-11-23,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,usado,399.99,0.00,real,eBay API; vendedor paymore_great_hills 99.6%; Corsair Vengeance RGB 32GB (2x16GB) RAM DDR5 6000MHz CMH32GX,https://www.ebay.com/itm/880137811296
 2026-11-23,RAM DDR4 16GB (2x8) 3200,usado,64.99,5.65,real,eBay API; vendedor echotechpcs 100.0%; SK Hynix 16GB (2x8GB) DDR4 3200MHz PC4-25600 Desktop RAM UDI,https://www.ebay.com/itm/840153727928
-2026-11-23,SSD NVMe 1TB,usado,89.99,0.00,real,eBay API; vendedor dina0819 98.3%; SK hynix PC601 1TB M.2 2280 PCIe Gen3 x4 NVMe SSD Solid Stat,https://www.ebay.com/itm/920174335823
+2026-11-23,SSD NVMe 1TB,usado,89.99,0.00,agotado,eBay API; vendedor dina0819 98.3%; SK hynix PC601 1TB M.2 2280 PCIe Gen3 x4 NVMe SSD Solid Stat; vendido o agotado al revisar a las 10:49,https://www.ebay.com/itm/920174335823
 2026-11-23,SSD NVMe 2TB,usado,181.00,0.00,real,eBay API; vendedor rawko 99.6%; TOSHIBA KXG50PNV2T04 Solid State Drive 2TB m.2/NVMe 2280 80%,https://www.ebay.com/itm/336908217847
 2026-11-23,Ryzen 7 7700X,usado,160.00,10.00,real,eBay API; vendedor 19jdmcrx91 100.0%; AMD Ryzen 7 7700X CPU,https://www.ebay.com/itm/960185553593
 2026-11-23,Ryzen 5 7500F,usado,105.00,6.71,real,eBay API; vendedor corefoundry 100.0%; AMD Ryzen 5 7500F AM5 3.7GHz 6-Core 12-Thread CPU Processor,https://www.ebay.com/itm/860134912522
 2026-11-23,Ryzen 5 9600X,usado,150.00,0.00,real,eBay API; vendedor nathand73 100.0%; AMD Ryzen 5 9600x,https://www.ebay.com/itm/287750629769
 2026-11-23,Ryzen 5 7600X,usado,125.00,8.02,real,eBay API; vendedor meric-3049 99.0%; AMD Ryzen 5 7600X Open Box,https://www.ebay.com/itm/287751750612
 2026-11-23,Ryzen 9 9950X3D,usado,509.99,0.00,real,eBay API; vendedor paymore_dayton_south 99.6%; AMD Ryzen 9 9950X3D 4.30GHz 16 Core 100-000000719 32 Thread ,https://www.ebay.com/itm/366799839237
+2026-11-23,SSD NVMe 1TB,usado,95.99,0.00,real,eBay API; vendedor paymore_roswell 98.5%; SK Hynix 2280mm PB11M280S 1TB M.2 NVMe Gen 3.0 x 4 SSD SDHGP,https://www.ebay.com/itm/860089907407

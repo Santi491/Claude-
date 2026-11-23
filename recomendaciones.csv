@@ -20,3 +20,6 @@ fecha,hora,orden,texto,por_que,accion
 2026-11-21,16:25,1,Decide si reclamamos a eBay por los 7700X: vence el 26/11,"Quedan 5 días, sigue sin decisión y después no hay vuelta atrás",pedido
 2026-11-21,16:25,2,Fija el precio de venta del 7700X y pasa las fotos,Sin tu precio y fotos Marketplace no publica; el Analista sugiere Bs 3.300,venta
 2026-11-21,16:25,3,No pidas el SSD de 2TB hasta que INTEGRAL confirme,"Si el Crucial a Bs 2.900 es sellado, el margen baja a ~2 %",compra
+2026-11-23,11:35,1,Decide si reclamamos a eBay por los 7700X: vence el 26/11,Quedan 3 días y sin tu decisión no podemos anotarla ni abrir el reclamo,pedido
+2026-11-23,11:35,2,Pásanos tu precio de venta y las fotos de los 7700X,Sin ellos Marketplace no publica; el Analista sugiere mantener Bs 3.300,venta
+2026-11-23,11:35,3,Espera con el SSD de 2TB hasta que INTEGRAL dé precio por 2 y haya segunda tienda,"Confirmaron el Crucial sellado a Bs 2.900, pero el margen depende de una sola tienda",compra
