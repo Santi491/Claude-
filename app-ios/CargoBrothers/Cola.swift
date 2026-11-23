@@ -70,7 +70,7 @@ extension Store {
             try await ejecutar(p.op, hoy: p.hoy, hora: p.hora, sello: p.sello)
             cola.removeAll { $0.id == id }; guardarCola()
             anotarAccion(p.titulo)
-            Task { try? await Task.sleep(for: .seconds(8)); await refrescar() }
+            Task { await subirNotasPendientes(); try? await Task.sleep(for: .seconds(8)); await refrescar() }
         } catch let e as URLError where [.notConnectedToInternet, .networkConnectionLost, .timedOut, .cannotFindHost, .cannotConnectToHost, .dataNotAllowed, .internationalRoamingOff].contains(e.code) {
             if let k = cola.firstIndex(where: { $0.id == id }) { cola[k].estado = "sin señal" }
             guardarCola()
@@ -85,6 +85,7 @@ extension Store {
 
     /// al volver la conexión (o al abrir la app) se sube lo que quedó guardado sin señal
     func subirPendientes() async {
+        await subirNotasPendientes()
         let ids = cola.filter { $0.estado == "sin señal" || $0.estado == "subiendo" }.map(\.id)
         guard !ids.isEmpty, hayClave else { return }
         for id in ids { if let k = cola.firstIndex(where: { $0.id == id }) { cola[k].estado = "sin señal" }; await subir(id) }

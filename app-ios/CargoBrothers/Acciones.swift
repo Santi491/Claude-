@@ -47,10 +47,27 @@ extension Store {
         return true
     }
 
+    /// La fila en actividad.csv es solo la nota de lo que ya se guardó: si GitHub la rechaza (una ronda escribió al
+    /// mismo tiempo, 23/11), lo hecho NO se da por fallado; la nota queda en el teléfono y se sube sola después.
     func actividad(_ texto: String, _ hoy: String, _ hora: String) async throws {
-        try await GitHub.modificar("actividad.csv", mensaje: "App: \(texto.prefix(60))") { t in
-            try CSV(t).agregar(["fecha": hoy, "hora": hora, "agente": "gerente", "texto": "App de iPhone (Santi): " + texto])
+        let fila = ["fecha": hoy, "hora": hora, "agente": "gerente", "texto": "App de iPhone (Santi): " + texto]
+        do {
+            try await GitHub.modificar("actividad.csv", mensaje: "App: \(texto.prefix(60))") { t in try CSV(t).agregar(fila) }
+        } catch {
+            var p = UserDefaults.standard.array(forKey: "notas_pendientes") as? [[String: String]] ?? []
+            p.append(fila); UserDefaults.standard.set(p, forKey: "notas_pendientes")
         }
+    }
+    /// sube las notas de actividad que quedaron pendientes (se llama al abrir la app, al volver la señal y después de cada acción)
+    func subirNotasPendientes() async {
+        let p = UserDefaults.standard.array(forKey: "notas_pendientes") as? [[String: String]] ?? []
+        guard !p.isEmpty, hayClave else { return }
+        do {
+            try await GitHub.modificar("actividad.csv", mensaje: "App: \(p.count) nota\(p.count == 1 ? "" : "s") pendiente\(p.count == 1 ? "" : "s")") { t in
+                var s = t; for f in p { s = try CSV(s).agregar(f) }; return s
+            }
+            UserDefaults.standard.removeObject(forKey: "notas_pendientes")
+        } catch { }
     }
 
     // ---------- lo que Santi puede hacer (validan y van a la cola) ----------

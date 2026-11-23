@@ -34,6 +34,7 @@ enum GitHubError: LocalizedError {
         switch self {
         case .sinClave: return "Falta la clave de GitHub (Ajustes)."
         case .http(401, _), .http(403, _): return "GitHub no aceptó la clave: puede haber vencido o no tener permiso de escritura."
+        case .http(409, _), .http(422, _): return "GitHub estaba ocupado guardando otra cosa al mismo tiempo (una ronda). Probá de nuevo en un minuto."
         case .http(let c, let m): return "GitHub respondió \(c): \(m)"
         case .datos(let m): return m
         }
@@ -86,13 +87,14 @@ enum GitHub {
 
     /// Lee, cambia y guarda. Si alguien (una ronda) lo cambió en el medio, lo vuelve a leer y reintenta.
     static func modificar(_ ruta: String, mensaje: String, _ cambio: (String) throws -> String) async throws {
-        for intento in 0..<4 {
+        // hasta 7 intentos con espera creciente (~30 s en total): alcanza para que termine de subir una ronda (23/11)
+        for intento in 0..<7 {
             let (txt, sha) = try await leer(ruta)
             let nuevo = try cambio(txt)
             if nuevo == txt { return }
             do { try await escribir(ruta, nuevo, sha: sha, mensaje: mensaje); return }
-            catch GitHubError.http(let c, _) where (c == 409 || c == 422) && intento < 3 {
-                try await Task.sleep(for: .seconds(1.5)); continue
+            catch GitHubError.http(let c, _) where (c == 409 || c == 422) && intento < 6 {
+                try await Task.sleep(for: .seconds(1.5 * Double(intento + 1))); continue
             }
         }
     }
