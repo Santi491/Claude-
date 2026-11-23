@@ -26,6 +26,11 @@
    "estado": "trabajando",
    "texto": "Análisis y candidatos del lunes",
    "hora": "10:50"
+  },
+  "fin": {
+   "estado": "trabajando",
+   "texto": "Ventas y pedidos",
+   "hora": "10:50"
   }
  }
 }
