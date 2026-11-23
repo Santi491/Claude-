@@ -1,47 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "10:35",
-  "fecha": "2026-11-23",
-  "hasta": "10:55"
+  "desde": "16:06",
+  "fecha": "2026-11-23"
  },
- "actualizado": "2026-11-23 10:55",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "1 chat nuevo, INTEGRAL sellado confirmado",
-   "hora": "10:39"
-  },
-  "mkt": {
-   "estado": "terminó",
-   "texto": "1 tienda nueva, 19 productos revisados",
-   "hora": "10:47"
-  },
-  "pedidos": {
-   "estado": "terminó",
-   "texto": "Sin movimiento; reclamo eBay vence 26/11",
-   "hora": "10:49"
-  },
-  "ana": {
-   "estado": "terminó",
-   "texto": "SSD 2TB: esperar confirmación de INTEGRAL",
-   "hora": "10:52"
-  },
-  "fin": {
-   "estado": "terminó",
-   "texto": "Sin ventas; 4 en camino",
-   "hora": "10:52"
-  },
-  "oficina": {
-   "estado": "terminó",
-   "texto": "Oficina v159 publicada",
-   "hora": "10:53"
-  },
-  "gerente": {
-   "estado": "terminó",
-   "texto": "Aviso de fin de ronda enviado",
-   "hora": "10:55"
-  }
- }
+ "actualizado": "2026-11-23 16:06",
+ "agentes": {}
 }
