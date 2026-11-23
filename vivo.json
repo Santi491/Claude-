@@ -31,6 +31,11 @@
    "estado": "terminó",
    "texto": "Sin ventas; 4 en camino",
    "hora": "10:52"
+  },
+  "oficina": {
+   "estado": "trabajando",
+   "texto": "Regenerando y publicando oficina",
+   "hora": "10:52"
   }
  }
 }
