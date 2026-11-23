@@ -125,8 +125,10 @@ func serieVentas(_ d: Datos, _ p: String) -> [PuntoVenta] {
 
 struct GraficoVentas: View {
     var d: Datos; var producto: String; var alto: CGFloat = 170
+    /// con lo invertido oculto (ojito de Hoy) la tarjeta no muestra las cifras del eje
+    var sinCifras = false
     @Binding var sel: Date?
-    init(d: Datos, producto: String, alto: CGFloat = 170, sel: Binding<Date?> = .constant(nil)) { self.d = d; self.producto = producto; self.alto = alto; self._sel = sel }
+    init(d: Datos, producto: String, alto: CGFloat = 170, sinCifras: Bool = false, sel: Binding<Date?> = .constant(nil)) { self.d = d; self.producto = producto; self.alto = alto; self.sinCifras = sinCifras; self._sel = sel }
     var body: some View {
         let s = serieVentas(d, producto)
         let elegido = sel.flatMap { x in s.min { abs($0.fecha.timeIntervalSince(x)) < abs($1.fecha.timeIntervalSince(x)) } }
@@ -153,7 +155,7 @@ struct GraficoVentas: View {
         }
         .chartXSelection(value: $sel)
         .chartYScale(domain: (min(s.map(\.acumulado).min() ?? 0, 0) * 1.1)...(max(s.map(\.acumulado).max() ?? 0, s.map(\.cobrado).max() ?? 0, 1000) * 1.2))
-        .chartYAxis { AxisMarks { v in AxisGridLine(); AxisValueLabel { if let n = v.as(Double.self) { Text(G.miles(n)) } } } }
+        .chartYAxis { AxisMarks { v in AxisGridLine(); if !sinCifras { AxisValueLabel { if let n = v.as(Double.self) { Text(G.miles(n)) } } } } }
         .chartXAxis { AxisMarks(values: .stride(by: .day, count: max(s.count / 4, 1))) { v in AxisGridLine(); AxisValueLabel { if let f = v.as(Date.self) { Text(F.dia(G.s(f))) } } } }
         .frame(height: alto)
     }
@@ -161,6 +163,7 @@ struct GraficoVentas: View {
 
 struct TarjetaVentas: View {
     var d: Datos; var producto: String
+    @AppStorage("ocultar_invertido") private var ocultarInvertido = false
     var body: some View {
         let costo = d.costoUnit(producto)
         let vs = d.ventasDe(producto).filter { $0.estado == "vendida" }
@@ -173,8 +176,8 @@ struct TarjetaVentas: View {
                 Spacer()
                 Text("\(vendidas) de \(d.unidades(producto)) vendidas").font(.caption.weight(.semibold)).foregroundStyle(Tema.bronce)
             }
-            GraficoVentas(d: d, producto: producto).allowsHitTesting(false)   // en la tarjeta el toque abre el detalle
-            PieGrafico(texto: vs.isEmpty ? "Todavía sin ventas: la línea arranca en lo invertido (\(F.bs(-d.invertido(producto)))) y sube con cada venta." : "Barras: lo cobrado por día · línea: ganancia acumulada")
+            GraficoVentas(d: d, producto: producto, sinCifras: ocultarInvertido).allowsHitTesting(false)   // en la tarjeta el toque abre el detalle
+            PieGrafico(texto: vs.isEmpty ? (ocultarInvertido ? "Todavía sin ventas: la línea arranca en lo invertido y sube con cada venta." : "Todavía sin ventas: la línea arranca en lo invertido (\(F.bs(-d.invertido(producto)))) y sube con cada venta.") : "Barras: lo cobrado por día · línea: ganancia acumulada")
         }
     }
 }

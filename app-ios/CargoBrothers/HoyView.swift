@@ -10,6 +10,8 @@ struct HoyView: View {
     @EnvironmentObject var store: Store
     @State private var hoja: Hoja?
     @State private var hojaEtapa = false
+    /// Santi 23/11: ocultar el saldo invertido de la pantalla principal (queda guardado en el teléfono)
+    @AppStorage("ocultar_invertido") private var ocultarInvertido = false
 
     var body: some View {
         Pantalla(titulo: "Cargo Brothers") {
@@ -30,6 +32,18 @@ struct HoyView: View {
                 HStack(spacing: 12) {
                     NavigationLink { DolarView() } label: { tarjetaDolar(d) }.buttonStyle(.plain)
                     NavigationLink { FinanzasView() } label: { tarjetaPlata(d) }.buttonStyle(.plain)
+                        .overlay(alignment: .topTrailing) {
+                            // fuera del NavigationLink para que el toque no abra Finanzas
+                            Button {
+                                withAnimation(.easeInOut(duration: 0.2)) { ocultarInvertido.toggle() }
+                                UISelectionFeedbackGenerator().selectionChanged()
+                            } label: {
+                                Image(systemName: ocultarInvertido ? "eye.slash" : "eye").font(.subheadline).foregroundStyle(Tema.gris)
+                                    .frame(width: 44, height: 44).contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain).padding(.top, 2).padding(.trailing, 4)
+                            .accessibilityLabel(ocultarInvertido ? "Mostrar lo invertido" : "Ocultar lo invertido")
+                        }
                 }
                 tarjetaOfertas(d)
                 tarjetaDecidir(d)
@@ -163,7 +177,9 @@ struct HoyView: View {
 
     func tarjetaPlata(_ d: Datos) -> some View {
         Tarjeta(titulo: "Plata", icono: "banknote") {
-            Text(F.bs(d.finanzas.invertido_bs)).font(.system(size: 24, weight: .semibold, design: .rounded)).minimumScaleFactor(0.6).lineLimit(1)
+            Text(ocultarInvertido ? "Bs ••••••" : F.bs(d.finanzas.invertido_bs))
+                .font(.system(size: 24, weight: .semibold, design: .rounded)).minimumScaleFactor(0.6).lineLimit(1)
+                .contentTransition(.opacity)
             Text("invertido").font(.caption).foregroundStyle(Tema.gris)
             VStack(alignment: .leading, spacing: 2) {
                 Text("\(d.finanzas.unidades_en_camino ?? 0) en camino · \(d.finanzas.unidades_en_stock ?? 0) en stock")
