@@ -26,6 +26,11 @@
    "estado": "terminó",
    "texto": "7 precios de la web de una tienda",
    "hora": "16:26"
+  },
+  "pedidos": {
+   "estado": "trabajando",
+   "texto": "Seguimiento de paquetes",
+   "hora": "16:26"
   }
  }
 }
