@@ -971,3 +971,4 @@ fecha,hora,agente,texto
 2026-11-24,16:33,local,"Oficina ronda tarde 24/11: generada a 16:29 y publicada en la misma URL (versión 161). Datos de hoy: captura 16:27 (SSD Punto Tecnológico), datos de todos los agentes. verificar.py comun y oficina sin ERROR; datos del artifact comprobados (generado 16:29). vivo/_ronda en false."
 2026-11-24,16:33,gerente,"Cierre ronda tarde PC: verificar sin errores; chat contestado (wa, ana, ebay, mkt, oficina); 23-5 confirmada y su parte del 25/11 pasa a 25-1; nuevas 25-1 a 25-3; 18-34 sigue abierta (falta la fila con link); 3 recomendaciones; aviso de fin de ronda enviado"
 2026-11-24,16:33,local,"Apagado de la PC: La PC queda prendida (arranque 10:00, prendida para la ronda: True, nadie la uso: False)"
+2026-11-24,18:37,gerente,App de iPhone (Santi): real-1 y real-2 (Ryzen 7 7700X) pasa a 'en Cochabamba'
