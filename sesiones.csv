@@ -222,3 +222,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-23,pc,ronda,16:12,16:16,alerta,sesión 16:12 no trabajó: otra ronda de la PC activa desde las 16:06
 2026-11-23,raspberry,vigilante,16:30,16:30,alerta,la ronda de las 16:00 terminó a medias
 2026-11-23,gerente,informe,20:15,20:16,ok,"Informe lunes 23/11: sin errores, 16:00 a medias, 6 tareas rutina para martes"
+2026-11-24,pc,ronda,10:35,10:35,en curso,empezó
