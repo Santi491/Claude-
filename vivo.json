@@ -1,47 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "10:35",
-  "fecha": "2026-11-24",
-  "hasta": "10:52"
+  "desde": "16:08",
+  "fecha": "2026-11-24"
  },
- "actualizado": "2026-11-24 10:52",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "4 mensajes, 1 chat nuevo, listas wa-3 67/77",
-   "hora": "10:41"
-  },
-  "mkt": {
-   "estado": "terminó",
-   "texto": "7700X sin cambios, 19 filas de demanda, 2 grupos nuevos",
-   "hora": "10:45"
-  },
-  "pedidos": {
-   "estado": "terminó",
-   "texto": "7700X en camino, sin cambios",
-   "hora": "10:46"
-  },
-  "ana": {
-   "estado": "terminó",
-   "texto": "Traer: SSD 2TB, 7600X, 9950X3D, 7800X3D",
-   "hora": "10:48"
-  },
-  "fin": {
-   "estado": "terminó",
-   "texto": "Sin ventas, 4 unidades 7700X en camino",
-   "hora": "10:48"
-  },
-  "oficina": {
-   "estado": "terminó",
-   "texto": "Publicada versión 160",
-   "hora": "10:50"
-  },
-  "gerente": {
-   "estado": "terminó",
-   "texto": "Aviso de fin de ronda enviado",
-   "hora": "10:51"
-  }
- }
+ "actualizado": "2026-11-24 16:08",
+ "agentes": {}
 }
