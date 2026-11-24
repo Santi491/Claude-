@@ -11,6 +11,11 @@
    "estado": "terminó",
    "texto": "Vendidos de la semana anotados",
    "hora": "16:11"
+  },
+  "wa": {
+   "estado": "trabajando",
+   "texto": "No leídos, respuestas y listas completas",
+   "hora": "16:11"
   }
  }
 }
