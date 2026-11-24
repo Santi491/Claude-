@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-24"
  },
- "actualizado": "2026-11-24 16:31",
+ "actualizado": "2026-11-24 16:33",
  "agentes": {
   "ebay": {
    "estado": "terminó",
@@ -48,9 +48,9 @@
    "hora": "16:31"
   },
   "gerente": {
-   "estado": "trabajando",
-   "texto": "Control de la ronda y aviso a Santi",
-   "hora": "16:31"
+   "estado": "terminó",
+   "texto": "Aviso de fin de ronda enviado",
+   "hora": "16:33"
   }
  }
 }
