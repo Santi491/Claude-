@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-24 07:54",
+ "generado": "2026-11-24 10:49",
  "etapa": {
   "numero": 2,
   "nombre": "producto en camino",
@@ -7,7 +7,7 @@
   "fijada": null
  },
  "dolar": {
-  "usado": 11.99,
+  "usado": 11.98,
   "oficial": null,
   "paralelo": null,
   "fecha": "2026-11-24",
@@ -278,7 +278,7 @@
    },
    {
     "fecha": "2026-11-24",
-    "valor": 11.99,
+    "valor": 11.98,
     "oficial": null,
     "paralelo": null
    }
@@ -302,7 +302,7 @@
     "entregado"
    ],
    "fecha_compra": "2026-10-20",
-   "actualizado": "2026-11-23 10:48",
+   "actualizado": "2026-11-24 10:45",
    "tienda": "eBay (compra conjunta con un socio)",
    "courier": "Courier B",
    "costo_unit_bs": 2700.0,
@@ -358,7 +358,7 @@
     "entregado"
    ],
    "fecha_compra": "2026-10-20",
-   "actualizado": "2026-11-23 10:48",
+   "actualizado": "2026-11-24 10:45",
    "tienda": "eBay (compra conjunta con un socio)",
    "courier": "Courier B",
    "costo_unit_bs": 2520.0,
@@ -716,7 +716,7 @@
    "producto": "SSD NVMe 2TB",
    "condicion": "nuevo",
    "ebay_usd": 209.99,
-   "costo_bs": 2686,
+   "costo_bs": 2683,
    "local_bs": 4133,
    "sugerido_bs": 3920,
    "margen": 31.5,
@@ -725,8 +725,8 @@
    "por_que": "aguanta el peor caso (20.7 %)",
    "link": "https://www.ebay.com/itm/227402767941",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 1234,
+   "tc": 11.98,
+   "ganancia_bs": 1237,
    "precios_locales": 12,
    "via": "B 1 kg"
   },
@@ -734,7 +734,7 @@
    "producto": "Ryzen 5 7600X",
    "condicion": "nuevo",
    "ebay_usd": 134.6,
-   "costo_bs": 1782,
+   "costo_bs": 1780,
    "local_bs": 2682,
    "sugerido_bs": 2540,
    "margen": 29.9,
@@ -743,8 +743,8 @@
    "por_que": "aguanta el peor caso (18.4 %)",
    "link": "https://www.ebay.com/itm/237202553623",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 758,
+   "tc": 11.98,
+   "ganancia_bs": 760,
    "precios_locales": 6,
    "via": "B 1 kg"
   },
@@ -752,35 +752,35 @@
    "producto": "Ryzen 9 9950X3D",
    "condicion": "nuevo",
    "ebay_usd": 525.0,
-   "costo_bs": 6463,
-   "local_bs": 9560,
-   "sugerido_bs": 9080,
-   "margen": 28.8,
-   "peor": 18.1,
+   "costo_bs": 6457,
+   "local_bs": 9380,
+   "sugerido_bs": 8910,
+   "margen": 27.5,
+   "peor": 16.5,
    "recomendacion": "traer",
-   "por_que": "aguanta el peor caso (18.1 %)",
+   "por_que": "aguanta el peor caso (16.5 %)",
    "link": "https://www.ebay.com/itm/237202551289",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 2617,
-   "precios_locales": 3,
+   "tc": 11.98,
+   "ganancia_bs": 2453,
+   "precios_locales": 4,
    "via": "B 1 kg"
   },
   {
    "producto": "Ryzen 7 7800X3D",
    "condicion": "nuevo",
    "ebay_usd": 310.0,
-   "costo_bs": 3885,
+   "costo_bs": 3882,
    "local_bs": 5370,
    "sugerido_bs": 5100,
-   "margen": 23.8,
+   "margen": 23.9,
    "peor": 12.1,
    "recomendacion": "traer",
    "por_que": "aguanta el peor caso (12.1 %)",
    "link": "https://www.ebay.com/itm/860172396208",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 1215,
+   "tc": 11.98,
+   "ganancia_bs": 1218,
    "precios_locales": 22,
    "via": "B 1 kg"
   },
@@ -788,17 +788,17 @@
    "producto": "Intel Core i5-12400F",
    "condicion": "nuevo",
    "ebay_usd": 127.42,
-   "costo_bs": 1696,
+   "costo_bs": 1694,
    "local_bs": 2260,
    "sugerido_bs": 2140,
    "margen": 20.8,
-   "peor": 7.7,
+   "peor": 7.8,
    "recomendacion": "traer",
-   "por_que": "aguanta el peor caso (7.7 %)",
+   "por_que": "aguanta el peor caso (7.8 %)",
    "link": "https://www.ebay.com/itm/920150064587",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 444,
+   "tc": 11.98,
+   "ganancia_bs": 446,
    "precios_locales": 7,
    "via": "B 1 kg"
   },
@@ -806,17 +806,17 @@
    "producto": "Intel Core i5-12400F",
    "condicion": "usado",
    "ebay_usd": 116.74,
-   "costo_bs": 1568,
+   "costo_bs": 1566,
    "local_bs": 2350,
    "sugerido_bs": 2230,
-   "margen": 29.7,
-   "peor": 17.5,
+   "margen": 29.8,
+   "peor": 17.6,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/198790623774",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 662,
+   "tc": 11.98,
+   "ganancia_bs": 664,
    "precios_locales": 1,
    "via": "B 1 kg"
   },
@@ -824,17 +824,17 @@
    "producto": "RAM DDR4 16GB (2x8) 3200",
    "condicion": "usado",
    "ebay_usd": 75.59,
-   "costo_bs": 1074,
+   "costo_bs": 1073,
    "local_bs": 1590,
    "sugerido_bs": 1510,
    "margen": 28.9,
-   "peor": 15.5,
+   "peor": 15.6,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/168863800993",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 436,
+   "tc": 11.98,
+   "ganancia_bs": 437,
    "precios_locales": 2,
    "via": "B 1 kg"
   },
@@ -842,17 +842,17 @@
    "producto": "SSD NVMe 1TB",
    "condicion": "usado",
    "ebay_usd": 95.99,
-   "costo_bs": 1319,
+   "costo_bs": 1318,
    "local_bs": 1810,
    "sugerido_bs": 1710,
    "margen": 22.9,
    "peor": 9.6,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/860089907407",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 391,
+   "tc": 11.98,
+   "ganancia_bs": 392,
    "precios_locales": 5,
    "via": "B 1 kg"
   },
@@ -860,17 +860,17 @@
    "producto": "Ryzen 7 7800X3D",
    "condicion": "usado",
    "ebay_usd": 274.99,
-   "costo_bs": 3465,
+   "costo_bs": 3462,
    "local_bs": 4400,
    "sugerido_bs": 4180,
-   "margen": 17.1,
+   "margen": 17.2,
    "peor": 4.2,
    "recomendacion": "esperar",
    "por_que": "el peor caso lo deja en 4.2 %",
-   "link": "https://www.ebay.com/itm/800908829146",
+   "link": "https://www.ebay.com/itm/336894710602",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 715,
+   "tc": 11.98,
+   "ganancia_bs": 718,
    "precios_locales": 1,
    "via": "B 1 kg"
   },
@@ -878,17 +878,17 @@
    "producto": "Intel Core Ultra 7 265K",
    "condicion": "nuevo",
    "ebay_usd": 262.99,
-   "costo_bs": 3321,
+   "costo_bs": 3318,
    "local_bs": 4190,
    "sugerido_bs": 3980,
    "margen": 16.6,
-   "peor": 3.5,
+   "peor": 3.6,
    "recomendacion": "esperar",
-   "por_que": "el peor caso lo deja en 3.5 %",
+   "por_que": "el peor caso lo deja en 3.6 %",
    "link": "https://www.ebay.com/itm/137893601856",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 659,
+   "tc": 11.98,
+   "ganancia_bs": 662,
    "precios_locales": 8,
    "via": "B 1 kg"
   },
@@ -896,17 +896,17 @@
    "producto": "Intel Core i5-14400F",
    "condicion": "nuevo",
    "ebay_usd": 149.99,
-   "costo_bs": 1966,
+   "costo_bs": 1965,
    "local_bs": 2480,
    "sugerido_bs": 2350,
-   "margen": 16.3,
-   "peor": 2.8,
+   "margen": 16.4,
+   "peor": 2.9,
    "recomendacion": "esperar",
-   "por_que": "el peor caso lo deja en 2.8 %",
+   "por_que": "el peor caso lo deja en 2.9 %",
    "link": "https://www.ebay.com/itm/126275456933",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 384,
+   "tc": 11.98,
+   "ganancia_bs": 385,
    "precios_locales": 10,
    "via": "B 1 kg"
   },
@@ -914,17 +914,17 @@
    "producto": "Ryzen 5 9600X",
    "condicion": "nuevo",
    "ebay_usd": 169.95,
-   "costo_bs": 2206,
+   "costo_bs": 2204,
    "local_bs": 2770,
    "sugerido_bs": 2630,
-   "margen": 16.1,
-   "peor": 2.3,
+   "margen": 16.2,
+   "peor": 2.4,
    "recomendacion": "esperar",
-   "por_que": "el peor caso lo deja en 2.3 %",
+   "por_que": "el peor caso lo deja en 2.4 %",
    "link": "https://www.ebay.com/itm/267806207378",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 424,
+   "tc": 11.98,
+   "ganancia_bs": 426,
    "precios_locales": 15,
    "via": "B 1 kg"
   },
@@ -932,17 +932,17 @@
    "producto": "Ryzen 7 7700X",
    "condicion": "nuevo",
    "ebay_usd": 223.98,
-   "costo_bs": 2853,
+   "costo_bs": 2851,
    "local_bs": 3574,
    "sugerido_bs": 3390,
-   "margen": 15.8,
-   "peor": 2.5,
+   "margen": 15.9,
+   "peor": 2.6,
    "recomendacion": "esperar",
-   "por_que": "el peor caso lo deja en 2.5 %",
+   "por_que": "el peor caso lo deja en 2.6 %",
    "link": "https://www.ebay.com/itm/267042355650",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 537,
+   "tc": 11.98,
+   "ganancia_bs": 539,
    "precios_locales": 8,
    "via": "B 1 kg"
   },
@@ -950,7 +950,7 @@
    "producto": "RAM DDR4 16GB (2x8) 3200",
    "condicion": "nuevo",
    "ebay_usd": 96.05,
-   "costo_bs": 1319,
+   "costo_bs": 1318,
    "local_bs": 1640,
    "sugerido_bs": 1550,
    "margen": 14.9,
@@ -959,8 +959,8 @@
    "por_que": "el peor caso lo deja en 0.5 %",
    "link": "https://www.ebay.com/itm/900026586847",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 231,
+   "tc": 11.98,
+   "ganancia_bs": 232,
    "precios_locales": 12,
    "via": "B 1 kg"
   },
@@ -968,17 +968,17 @@
    "producto": "Ryzen 9 9950X",
    "condicion": "nuevo",
    "ebay_usd": 415.12,
-   "costo_bs": 5145,
+   "costo_bs": 5141,
    "local_bs": 6140,
    "sugerido_bs": 5830,
-   "margen": 11.7,
-   "peor": -1.8,
+   "margen": 11.8,
+   "peor": -1.7,
    "recomendacion": "esperar",
-   "por_que": "el peor caso lo deja en -1.8 %",
+   "por_que": "el peor caso lo deja en -1.7 %",
    "link": "https://www.ebay.com/itm/237194901158",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 685,
+   "tc": 11.98,
+   "ganancia_bs": 689,
    "precios_locales": 5,
    "via": "B 1 kg"
   },
@@ -986,7 +986,7 @@
    "producto": "SSD NVMe 2TB",
    "condicion": "usado",
    "ebay_usd": 139.4,
-   "costo_bs": 1839,
+   "costo_bs": 1838,
    "local_bs": 4133,
    "sugerido_bs": 3920,
    "margen": 53.1,
@@ -995,8 +995,8 @@
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
    "link": "https://www.ebay.com/itm/128212910740",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 2081,
+   "tc": 11.98,
+   "ganancia_bs": 2082,
    "precios_locales": 12,
    "via": "B 1 kg"
   },
@@ -1004,17 +1004,17 @@
    "producto": "Ryzen 5 7600",
    "condicion": "usado",
    "ebay_usd": 119.0,
-   "costo_bs": 1595,
+   "costo_bs": 1593,
    "local_bs": 2850,
    "sugerido_bs": 2700,
-   "margen": 40.9,
+   "margen": 41.0,
    "peor": 31.0,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
    "link": "https://www.ebay.com/itm/257857896293",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 1105,
+   "tc": 11.98,
+   "ganancia_bs": 1107,
    "precios_locales": 4,
    "via": "B 1 kg"
   },
@@ -1022,17 +1022,17 @@
    "producto": "Ryzen 7 7700X",
    "condicion": "usado",
    "ebay_usd": 170.0,
-   "costo_bs": 2206,
+   "costo_bs": 2204,
    "local_bs": 3574,
    "sugerido_bs": 3390,
-   "margen": 34.9,
+   "margen": 35.0,
    "peor": 24.4,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
    "link": "https://www.ebay.com/itm/960185553593",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 1184,
+   "tc": 11.98,
+   "ganancia_bs": 1186,
    "precios_locales": 8,
    "via": "B 1 kg"
   },
@@ -1040,71 +1040,71 @@
    "producto": "Ryzen 5 7600X",
    "condicion": "usado",
    "ebay_usd": 125.98,
-   "costo_bs": 1678,
+   "costo_bs": 1677,
    "local_bs": 2682,
    "sugerido_bs": 2540,
-   "margen": 33.9,
-   "peor": 23.0,
+   "margen": 34.0,
+   "peor": 23.1,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
    "link": "https://www.ebay.com/itm/168882761209",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 862,
+   "tc": 11.98,
+   "ganancia_bs": 863,
    "precios_locales": 6,
-   "via": "B 1 kg"
-  },
-  {
-   "producto": "Ryzen 9 9950X3D",
-   "condicion": "usado",
-   "ebay_usd": 486.99,
-   "costo_bs": 6007,
-   "local_bs": 9560,
-   "sugerido_bs": 9080,
-   "margen": 33.8,
-   "peor": 23.8,
-   "recomendacion": "sin datos",
-   "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/198750337032",
-   "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 3073,
-   "precios_locales": 3,
    "via": "B 1 kg"
   },
   {
    "producto": "Intel Core Ultra 7 265K",
    "condicion": "usado",
    "ebay_usd": 209.95,
-   "costo_bs": 2685,
+   "costo_bs": 2683,
    "local_bs": 4190,
    "sugerido_bs": 3980,
-   "margen": 32.5,
+   "margen": 32.6,
    "peor": 21.8,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
    "link": "https://www.ebay.com/itm/198798405271",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 1295,
+   "tc": 11.98,
+   "ganancia_bs": 1297,
    "precios_locales": 8,
+   "via": "B 1 kg"
+  },
+  {
+   "producto": "Ryzen 9 9950X3D",
+   "condicion": "usado",
+   "ebay_usd": 486.99,
+   "costo_bs": 6002,
+   "local_bs": 9380,
+   "sugerido_bs": 8910,
+   "margen": 32.6,
+   "peor": 22.4,
+   "recomendacion": "sin datos",
+   "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
+   "link": "https://www.ebay.com/itm/198750337032",
+   "courier_usd": 14.0,
+   "tc": 11.98,
+   "ganancia_bs": 2908,
+   "precios_locales": 4,
    "via": "B 1 kg"
   },
   {
    "producto": "Intel Core i5-14400F",
    "condicion": "usado",
-   "ebay_usd": 129.48,
-   "costo_bs": 1720,
+   "ebay_usd": 130.99,
+   "costo_bs": 1737,
    "local_bs": 2480,
    "sugerido_bs": 2350,
-   "margen": 26.8,
-   "peor": 14.8,
+   "margen": 26.1,
+   "peor": 14.0,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/168839621841",
+   "link": "https://www.ebay.com/itm/880038123307",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 630,
+   "tc": 11.98,
+   "ganancia_bs": 613,
    "precios_locales": 10,
    "via": "B 1 kg"
   },
@@ -1112,35 +1112,35 @@
    "producto": "Ryzen 5 9600X",
    "condicion": "usado",
    "ebay_usd": 150.0,
-   "costo_bs": 1966,
+   "costo_bs": 1965,
    "local_bs": 2770,
    "sugerido_bs": 2630,
-   "margen": 25.2,
-   "peor": 12.7,
+   "margen": 25.3,
+   "peor": 12.8,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
    "link": "https://www.ebay.com/itm/287750629769",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 664,
+   "tc": 11.98,
+   "ganancia_bs": 665,
    "precios_locales": 15,
    "via": "B 1 kg"
   },
   {
    "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
    "condicion": "usado",
-   "ebay_usd": 395.94,
-   "costo_bs": 4915,
+   "ebay_usd": 399.99,
+   "costo_bs": 4960,
    "local_bs": 6200,
    "sugerido_bs": 5890,
-   "margen": 16.6,
-   "peor": 3.8,
+   "margen": 15.8,
+   "peor": 3.0,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/377668631766",
+   "link": "https://www.ebay.com/itm/880137811296",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 975,
+   "tc": 11.98,
+   "ganancia_bs": 930,
    "precios_locales": 3,
    "via": "B 1 kg"
   },
@@ -1148,17 +1148,17 @@
    "producto": "Intel Core i5-13400",
    "condicion": "usado",
    "ebay_usd": 139.99,
-   "costo_bs": 1846,
+   "costo_bs": 1845,
    "local_bs": 2300,
    "sugerido_bs": 2180,
-   "margen": 15.3,
-   "peor": 1.2,
+   "margen": 15.4,
+   "peor": 1.3,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
    "link": "https://www.ebay.com/itm/307290903175",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 334,
+   "tc": 11.98,
+   "ganancia_bs": 335,
    "precios_locales": 2,
    "via": "B 1 kg"
   },
@@ -1166,17 +1166,17 @@
    "producto": "Ryzen 9 9950X",
    "condicion": "usado",
    "ebay_usd": 408.01,
-   "costo_bs": 5060,
+   "costo_bs": 5056,
    "local_bs": 6140,
    "sugerido_bs": 5830,
-   "margen": 13.2,
-   "peor": -0.1,
+   "margen": 13.3,
+   "peor": -0.0,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
    "link": "https://www.ebay.com/itm/820382700945",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 770,
+   "tc": 11.98,
+   "ganancia_bs": 774,
    "precios_locales": 5,
    "via": "B 1 kg"
   },
@@ -1208,7 +1208,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1244,7 +1244,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1262,7 +1262,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1280,7 +1280,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1292,17 +1292,17 @@
    "producto": "SSD NVMe 1TB",
    "condicion": "nuevo",
    "ebay_usd": 126.67,
-   "costo_bs": 1687,
+   "costo_bs": 1685,
    "local_bs": 1870,
    "sugerido_bs": 1770,
-   "margen": 4.7,
-   "peor": -11.4,
+   "margen": 4.8,
+   "peor": -11.3,
    "recomendacion": "no traer",
    "por_que": "margen 5% con el precio sugerido",
    "link": "https://www.ebay.com/itm/128209092523",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 83,
+   "tc": 11.98,
+   "ganancia_bs": 85,
    "precios_locales": 38,
    "via": "B 1 kg"
   },
@@ -1310,17 +1310,17 @@
    "producto": "Ryzen 5 7500F",
    "condicion": "usado",
    "ebay_usd": 120.72,
-   "costo_bs": 1615,
+   "costo_bs": 1614,
    "local_bs": 1755,
    "sugerido_bs": 1660,
-   "margen": 2.7,
-   "peor": -13.2,
+   "margen": 2.8,
+   "peor": -13.1,
    "recomendacion": "no traer",
    "por_que": "margen 3% con el precio sugerido",
    "link": "https://www.ebay.com/itm/257792135268",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 45,
+   "tc": 11.98,
+   "ganancia_bs": 46,
    "precios_locales": 1,
    "via": "B 1 kg"
   },
@@ -1328,17 +1328,17 @@
    "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
    "condicion": "nuevo",
    "ebay_usd": 469.99,
-   "costo_bs": 5803,
+   "costo_bs": 5798,
    "local_bs": 6200,
    "sugerido_bs": 5890,
-   "margen": 1.5,
-   "peor": -13.4,
+   "margen": 1.6,
+   "peor": -13.3,
    "recomendacion": "no traer",
-   "por_que": "margen 1% con el precio sugerido",
+   "por_que": "margen 2% con el precio sugerido",
    "link": "https://www.ebay.com/itm/168879073232",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": 87,
+   "tc": 11.98,
+   "ganancia_bs": 92,
    "precios_locales": 3,
    "via": "B 1 kg"
   },
@@ -1346,17 +1346,17 @@
    "producto": "Ryzen 5 7500F",
    "condicion": "nuevo",
    "ebay_usd": 136.99,
-   "costo_bs": 1810,
+   "costo_bs": 1809,
    "local_bs": 1755,
    "sugerido_bs": 1660,
-   "margen": -9.1,
-   "peor": -26.6,
+   "margen": -9.0,
+   "peor": -26.5,
    "recomendacion": "no traer",
    "por_que": "margen -9% con el precio sugerido",
    "link": "https://www.ebay.com/itm/146892120982",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": -150,
+   "tc": 11.98,
+   "ganancia_bs": -149,
    "precios_locales": 1,
    "via": "B 1 kg"
   },
@@ -1364,17 +1364,17 @@
    "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 5600",
    "condicion": "usado",
    "ebay_usd": 399.99,
-   "costo_bs": 4964,
+   "costo_bs": 4960,
    "local_bs": 4500,
    "sugerido_bs": 4270,
-   "margen": -16.2,
-   "peor": -34.0,
+   "margen": -16.1,
+   "peor": -33.9,
    "recomendacion": "no traer",
    "por_que": "margen -16% con el precio sugerido",
    "link": "https://www.ebay.com/itm/117106556589",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": -694,
+   "tc": 11.98,
+   "ganancia_bs": -690,
    "precios_locales": 1,
    "via": "B 1 kg"
   },
@@ -1382,17 +1382,17 @@
    "producto": "Ryzen 5 7600",
    "condicion": "nuevo",
    "ebay_usd": 261.69,
-   "costo_bs": 3306,
+   "costo_bs": 3303,
    "local_bs": 2850,
    "sugerido_bs": 2700,
-   "margen": -22.4,
-   "peor": -41.5,
+   "margen": -22.3,
+   "peor": -41.4,
    "recomendacion": "no traer",
    "por_que": "margen -22% con el precio sugerido",
    "link": "https://www.ebay.com/itm/206712855371",
    "courier_usd": 14.0,
-   "tc": 11.99,
-   "ganancia_bs": -606,
+   "tc": 11.98,
+   "ganancia_bs": -603,
    "precios_locales": 4,
    "via": "B 1 kg"
   }
@@ -1458,7 +1458,7 @@
    },
    {
     "producto": "Intel Core i5-14400F",
-    "tope_usd": 146,
+    "tope_usd": 147,
     "mediana_bs": 2394,
     "hoy_usd": 149.99,
     "link": "https://www.ebay.com/itm/126275456933",
@@ -1466,7 +1466,7 @@
    },
    {
     "producto": "Intel Core Ultra 7 265K",
-    "tope_usd": 268,
+    "tope_usd": 269,
     "mediana_bs": 4210,
     "hoy_usd": 262.99,
     "link": "https://www.ebay.com/itm/137893601856",
@@ -1506,7 +1506,7 @@
    },
    {
     "producto": "SSD NVMe 2TB",
-    "tope_usd": 263,
+    "tope_usd": 264,
     "mediana_bs": 4133,
     "hoy_usd": 209.99,
     "link": "https://www.ebay.com/itm/227402767941",
@@ -1546,8 +1546,8 @@
    },
    {
     "producto": "Ryzen 9 9950X3D",
-    "tope_usd": 629,
-    "mediana_bs": 9560,
+    "tope_usd": 618,
+    "mediana_bs": 9380,
     "hoy_usd": 525.0,
     "link": "https://www.ebay.com/itm/237202551289",
     "bajo_tope": true
@@ -1555,6 +1555,15 @@
   ]
  },
  "decidir": [
+  {
+   "tipo": "necesidad",
+   "ref": "53",
+   "agente": "wa",
+   "fecha": "2026-11-24",
+   "titulo": "Un número de WhatsApp correcto de iPlace Bolivia (el de la ficha T071 es de una casa de empeño)",
+   "detalle": "Poder contactar a iPlace; mientras tanto no se le escribe (pasó el 04/11 y el 24/11)",
+   "plazo": ""
+  },
   {
    "tipo": "plan",
    "ref": "2026-11-19-1",
@@ -1608,6 +1617,134 @@
  ],
  "equipo": [
   {
+   "agente": "mkt",
+   "nombre": "Marketplace",
+   "acciones": 11,
+   "serie": [
+    4,
+    2,
+    2,
+    1,
+    0,
+    1,
+    1
+   ],
+   "ultima": "Ronda completa mañana PC (martes, rotación Facebook): 19 productos buscados en Marketplace; 2 precios (7700X sellado 4.000 sigue, día 35; 9950X3D baja a 9.100); mercado.csv +2 (9800X3D, 9900X3D). Messenger: 0 respuestas ",
+   "cuando": "2026-11-24 11:25"
+  },
+  {
+   "agente": "dem",
+   "nombre": "Analista de demanda",
+   "acciones": 9,
+   "serie": [
+    3,
+    1,
+    3,
+    0,
+    0,
+    1,
+    1
+   ],
+   "ultima": "Demanda 24/11: 19 filas. 7700X: 1 anuncio sellado a 4.000, 0 desaparecidos, 35 días en línea (mkt-2 ronda 1/5 de esta semana). Búsqueda de Marketplace parcial hoy (algunos anuncios del 23/11 no salieron: no se cuentan co",
+   "cuando": "2026-11-24 11:25"
+  },
+  {
+   "agente": "ana",
+   "nombre": "Analista",
+   "acciones": 15,
+   "serie": [
+    3,
+    2,
+    3,
+    2,
+    1,
+    2,
+    2
+   ],
+   "ultima": "Lectura 24/11 (dólar 11,98 USDT): TRAER SSD 2TB nuevo (margen 31,5 %, peor 20,7 %), 7600X (29,9 %, peor 18,4 %), 9950X3D (27,5 %, peor 16,5 %), 7800X3D (23,9 %, peor 12,1 %), i5-12400F (20,8 %, peor 7,8 %). ESPERAR 265K,",
+   "cuando": "2026-11-24 10:48"
+  },
+  {
+   "agente": "fin",
+   "nombre": "Finanzas",
+   "acciones": 8,
+   "serie": [
+    2,
+    1,
+    2,
+    1,
+    0,
+    1,
+    1
+   ],
+   "ultima": "Ronda mañana PC: ventas.csv sin filas y pedidos.csv sin cambios; 4 Ryzen 7 7700X en camino, 0 en stock, 0 vendidos. Invertido Bs 10.620, cobrado Bs 0. Dólar usado 11.98 (USDT, 24/11). Ganancia sin calcular: falta precio ",
+   "cuando": "2026-11-24 10:48"
+  },
+  {
+   "agente": "pedidos",
+   "nombre": "Pedidos",
+   "acciones": 9,
+   "serie": [
+    3,
+    1,
+    2,
+    1,
+    0,
+    1,
+    1
+   ],
+   "ultima": "Ronda mañana: sin pedidos activos en EE.UU.; pruebas entregadas; 7700X en camino a Cochabamba (sin rastreo del tramo). UPS sin resultado en 2 intentos; sin cambios de etapa",
+   "cuando": "2026-11-24 10:47"
+  },
+  {
+   "agente": "wa",
+   "nombre": "WhatsApp",
+   "acciones": 8,
+   "serie": [
+    2,
+    1,
+    2,
+    1,
+    0,
+    1,
+    1
+   ],
+   "ultima": "Ronda mañana PC: No leídos revisados (auto-respuestas viejas, nada nuevo); 5 por responder sin mensaje nuevo; 4 mensajes enviados (1 seguimiento, 2 lista completa, 1 chat nuevo); iPlace no se escribió (número equivocado)",
+   "cuando": "2026-11-24 10:46"
+  },
+  {
+   "agente": "ebay",
+   "nombre": "Rastreador eBay",
+   "acciones": 7,
+   "serie": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ultima": "API: 15 precios nuevos y 15 usados; 1 corregida (9950X3D nuevo: la más barata era delided, quedó la OEM tray de USD 525)",
+   "cuando": "2026-11-24 07:54"
+  },
+  {
+   "agente": "nube",
+   "nombre": "Informe diario",
+   "acciones": 7,
+   "serie": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ultima": "Revisión diaria hecha: dólar USDT 11.99 (oficial/paralelo de 23/11, no se buscó hoy), eBay, comparación, análisis, Excel/PDF e informe",
+   "cuando": "2026-11-24 07:54"
+  },
+  {
    "agente": "gerente",
    "nombre": "Gerente",
    "acciones": 21,
@@ -1622,134 +1759,6 @@
    ],
    "ultima": "Informe de las 20:00 (lunes): verificar.py sin errores; ronda de las 16:00 a medias (dos arranques a la vez); 6 tareas nuevas para el martes (todas rutina, 0 propuestas a Santi), 3 reprogramadas y 2 cerradas por vencidas",
    "cuando": "2026-11-23 20:25"
-  },
-  {
-   "agente": "ana",
-   "nombre": "Analista",
-   "acciones": 13,
-   "serie": [
-    3,
-    2,
-    3,
-    2,
-    1,
-    2,
-    0
-   ],
-   "ultima": "Lectura 23/11 (dólar 11,99): comparar, analista y alertas corridos (sin alertas nuevas). Traer: SSD 2TB (margen 34,6 %, peor 24,2 %), 9950X3D (27,5 %/16,6 %), 7600X, 265K, 7800X3D. Cuidado: el SSD 2TB depende de una medi",
-   "cuando": "2026-11-23 11:10"
-  },
-  {
-   "agente": "mkt",
-   "nombre": "Marketplace",
-   "acciones": 10,
-   "serie": [
-    4,
-    2,
-    2,
-    1,
-    0,
-    1,
-    0
-   ],
-   "ultima": "Ronda completa mañana PC (lunes): 19 productos buscados en Marketplace; 3 precios nuevos (9950X 7.500, SSD Gen5 3.000, DDR4 Vengeance Pro 1.600); 3 candidatos a mercado.csv (9800X3D 5 anuncios, 5700X 2, 8700G 1). 7700X: ",
-   "cuando": "2026-11-23 11:00"
-  },
-  {
-   "agente": "dem",
-   "nombre": "Analista de demanda",
-   "acciones": 8,
-   "serie": [
-    3,
-    1,
-    3,
-    0,
-    0,
-    1,
-    0
-   ],
-   "ultima": "Demanda 23/11: 19 filas. 7800X3D 5 anuncios sin cambios; 9950X 1 nuevo a 7.500; 9600X 4 en zona (reapareció el sellado 2.900); SSD 1TB 1 nuevo y 2 sin salir (no confirmados); resto sin señal. Ninguna demanda confirmada (",
-   "cuando": "2026-11-23 11:00"
-  },
-  {
-   "agente": "fin",
-   "nombre": "Finanzas",
-   "acciones": 7,
-   "serie": [
-    2,
-    1,
-    2,
-    1,
-    0,
-    1,
-    0
-   ],
-   "ultima": "23/11 mañana (lunes): sin ventas ni compras nuevas. ventas.csv vacío; pedidos.csv sin cambios (real-1 y real-2 en camino a Cochabamba desde 18/11). Stock: 4 Ryzen 7 7700X en camino, 0 en stock, 0 vendidos. Caja: invertid",
-   "cuando": "2026-11-23 10:52"
-  },
-  {
-   "agente": "pedidos",
-   "nombre": "Pedidos",
-   "acciones": 8,
-   "serie": [
-    3,
-    1,
-    2,
-    1,
-    0,
-    1,
-    0
-   ],
-   "ultima": "real-1 y real-2 (Ryzen 7 7700X, en camino a Cochabamba desde 18/11): UPS y 17track sin resultado en 2 intentos cada uno; sin cambios de estado. Recordatorio a Santi del reclamo a eBay (vence 26/11, sin decidir) y pregunt",
-   "cuando": "2026-11-23 10:49"
-  },
-  {
-   "agente": "wa",
-   "nombre": "WhatsApp",
-   "acciones": 7,
-   "serie": [
-    2,
-    1,
-    2,
-    1,
-    0,
-    1,
-    0
-   ],
-   "ultima": "Ronda mañana PC: No leídos leído; 1 respuesta a INTEGRAL (precio por 2) y 1 chat nuevo (ElectroMundo: no vende para PC, cerrado); 4 chats de \"responder\" revisados sin novedad; E del grupo sin cambios; 1 de 10 chats nuevo",
-   "cuando": "2026-11-23 10:45"
-  },
-  {
-   "agente": "nube",
-   "nombre": "Informe diario",
-   "acciones": 6,
-   "serie": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0
-   ],
-   "ultima": "Revisión diaria hecha: dólar USDT 12,02 (oficial 11,75 y paralelo 12,00/12,04 del cierre del 22/11), eBay, comparación, análisis, alertas (3 enviadas por Telegram), Excel y PDF, informe del día. Oficina sin publicar (la ",
-   "cuando": "2026-11-23 07:59"
-  },
-  {
-   "agente": "ebay",
-   "nombre": "Rastreador eBay",
-   "acciones": 6,
-   "serie": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0
-   ],
-   "ultima": "API: 17 precios nuevos y 17 usados; variantes y vendedores revisados, 0 filas corregidas. Nuevo destacado: 9950X3D USD 525, 7600X USD 139,99, SSD 2TB USD 199,95. Ryzen 5 7600 nuevo solo OEM/Tray a USD 261,69.",
-   "cuando": "2026-11-23 07:58"
   }
  ],
  "objetivos": [
@@ -1759,7 +1768,7 @@
    "nombre": "WhatsApp",
    "objetivo": "5 tiendas distintas con precio cada semana; primero los productos sin dato",
    "meta": "5",
-   "avance": 0,
+   "avance": 1,
    "hasta": "2026-11-29",
    "cumplido": false,
    "vencido": false,
@@ -1771,7 +1780,7 @@
    "nombre": "Marketplace",
    "objetivo": "Seguir cada 7700X publicado en la zona (precio y días en línea) en cada ronda completa",
    "meta": "5",
-   "avance": 0,
+   "avance": 1,
    "hasta": "2026-11-29",
    "cumplido": false,
    "vencido": false,
@@ -1795,7 +1804,7 @@
    "nombre": "Analista de demanda",
    "objetivo": "Contar la demanda en todas las rondas completas (5 días por semana)",
    "meta": "5",
-   "avance": 1,
+   "avance": 2,
    "hasta": "2026-11-29",
    "cumplido": false,
    "vencido": false,
@@ -1903,7 +1912,7 @@
    "nombre": "WhatsApp",
    "objetivo": "Pedir la lista completa a todas las tiendas que faltan, incluidas las frías: una sola vez y sin seguimiento",
    "meta": "77",
-   "avance": 64,
+   "avance": 67,
    "hasta": "2026-11-29",
    "cumplido": false,
    "vencido": false,
@@ -1950,13 +1959,13 @@
   {
    "parte": "nube",
    "nombre": "Nube · revisión 7:52",
-   "estado": "pendiente",
+   "estado": "ok",
    "hora": "07:52"
   },
   {
    "parte": "manana",
    "nombre": "PC · ronda 10:30",
-   "estado": "pendiente",
+   "estado": "en curso",
    "hora": "10:30"
   },
   {
@@ -2202,6 +2211,14 @@
     "desaparecidos": 0,
     "min_bs": null,
     "med_bs": null
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
    }
   ],
   "Ryzen 7 5700X3D": [
@@ -2407,6 +2424,14 @@
    },
    {
     "fecha": "2026-11-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-24",
     "anuncios": 0,
     "nuevos": 0,
     "desaparecidos": 0,
@@ -2625,6 +2650,14 @@
    },
    {
     "fecha": "2026-11-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-24",
     "anuncios": 0,
     "nuevos": 0,
     "desaparecidos": 0,
@@ -2856,6 +2889,14 @@
     "desaparecidos": 0,
     "min_bs": 4350.0,
     "med_bs": 4800.0
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 2.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4350.0,
+    "med_bs": 4375.0
    }
   ],
   "Ryzen 9 9950X": [
@@ -3047,6 +3088,14 @@
     "fecha": "2026-11-23",
     "anuncios": 1.0,
     "nuevos": 1.0,
+    "desaparecidos": 0,
+    "min_bs": 7500.0,
+    "med_bs": 7500.0
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 1.0,
+    "nuevos": 0,
     "desaparecidos": 0,
     "min_bs": 7500.0,
     "med_bs": 7500.0
@@ -3260,6 +3309,14 @@
     "desaparecidos": 0,
     "min_bs": null,
     "med_bs": null
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
    }
   ],
   "Intel Core i5-13400": [
@@ -3433,6 +3490,14 @@
    },
    {
     "fecha": "2026-11-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-24",
     "anuncios": 0,
     "nuevos": 0,
     "desaparecidos": 0,
@@ -3640,6 +3705,14 @@
     "desaparecidos": 0,
     "min_bs": null,
     "med_bs": null
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
    }
   ],
   "Intel Core Ultra 7 265K": [
@@ -3813,6 +3886,14 @@
    },
    {
     "fecha": "2026-11-23",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4200.0,
+    "med_bs": 4200.0
+   },
+   {
+    "fecha": "2026-11-24",
     "anuncios": 1.0,
     "nuevos": 0,
     "desaparecidos": 0,
@@ -4028,6 +4109,14 @@
     "desaparecidos": 0,
     "min_bs": null,
     "med_bs": null
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
    }
   ],
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000": [
@@ -4230,6 +4319,14 @@
     "desaparecidos": 0,
     "min_bs": 5800.0,
     "med_bs": 5800.0
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
    }
   ],
   "RAM DDR4 16GB (2x8) 3200": [
@@ -4432,6 +4529,14 @@
     "desaparecidos": 1.0,
     "min_bs": 1100.0,
     "med_bs": 1400.0
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 4.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1100.0,
+    "med_bs": 1450.0
    }
   ],
   "SSD NVMe 1TB": [
@@ -4650,6 +4755,14 @@
     "desaparecidos": 2.0,
     "min_bs": 1610.0,
     "med_bs": 2405.0
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 3.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 1500.0,
+    "med_bs": 3000.0
    }
   ],
   "SSD NVMe 2TB": [
@@ -4852,6 +4965,14 @@
     "desaparecidos": 0,
     "min_bs": 5500.0,
     "med_bs": 5500.0
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
    }
   ],
   "Ryzen 7 7700X": [
@@ -5054,6 +5175,14 @@
     "desaparecidos": 0,
     "min_bs": 4000.0,
     "med_bs": 4000.0
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 4000.0,
+    "med_bs": 4000.0
    }
   ],
   "Ryzen 5 7500F": [
@@ -5208,6 +5337,14 @@
     "desaparecidos": 0,
     "min_bs": null,
     "med_bs": null
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
    }
   ],
   "Ryzen 5 9600X": [
@@ -5274,6 +5411,14 @@
     "desaparecidos": 0,
     "min_bs": 2450.0,
     "med_bs": 2600.0
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 2450.0,
+    "med_bs": 2450.0
    }
   ],
   "Ryzen 5 7600X": [
@@ -5335,6 +5480,14 @@
    },
    {
     "fecha": "2026-11-23",
+    "anuncios": 0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": null,
+    "med_bs": null
+   },
+   {
+    "fecha": "2026-11-24",
     "anuncios": 0,
     "nuevos": 0,
     "desaparecidos": 0,
@@ -5406,6 +5559,14 @@
     "desaparecidos": 0,
     "min_bs": 9200.0,
     "med_bs": 9200.0
+   },
+   {
+    "fecha": "2026-11-24",
+    "anuncios": 1.0,
+    "nuevos": 0,
+    "desaparecidos": 0,
+    "min_bs": 9100.0,
+    "med_bs": 9100.0
    }
   ]
  },
@@ -5442,8 +5603,8 @@
    "ref": "2026-11-23-4",
    "agente": "ana",
    "titulo": "Martes: recalcular analisis tras los precios nuevos y avisar si el SSD 2TB (34,6 %, peor caso 24,2 %) sigue dependiendo de una sola tienda (INTEGRAL, garantía 1 mes)",
-   "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "estado": "hecho",
+   "decision": "hecho 24/11 (ana): SSD 2TB sigue traer (31,5 %, peor 20,7 %); mediana local de 10 precios de 8 tiendas, no depende solo de INTEGRAL (2.900, garantía 1 mes, sin 2ª fuente); riesgo: es el competidor real y el eBay es Gen3 sin marca",
    "fecha": "2026-11-24"
   },
   {
@@ -5460,8 +5621,8 @@
    "ref": "2026-11-23-6",
    "agente": "fin",
    "titulo": "Martes: revisar ventas.csv y pedidos.csv por si Santi cargó llegada o venta; dejar stock y caja al día y anotar qué falta para la venta del 7700X (precio y fotos de Santi)",
-   "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "estado": "hecho",
+   "decision": "hecho 24/11 (Finanzas, mañana PC): ventas.csv sin filas y pedidos.csv sin cambios. 4 Ryzen 7 7700X en camino, 0 en stock, 0 vendidos; invertido Bs 10.620, cobrado Bs 0, caja Bs -10.620. Falta para la venta del 7700X: precio de venta y fotos de Santi (sin eso no hay ganancia calculable; piso sin comisiones Bs 2.655/u)",
    "fecha": "2026-11-24"
   },
   {
@@ -7354,56 +7515,6 @@
   }
  ],
  "movimientos": [
-  {
-   "fecha": "2026-11-16",
-   "tipo": "ebay",
-   "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
-   "concepto": "eBay nuevo",
-   "detalle": "API · vendedor jacea-87 100.0%; CORSAIR Vengeance RGB 32GB (2x16GB) DDR5 6000MHz CL36 AMD EX",
-   "valor": 415.0,
-   "antes": 479.49,
-   "moneda": "USD"
-  },
-  {
-   "fecha": "2026-11-16",
-   "tipo": "ebay",
-   "producto": "RAM DDR4 16GB (2x8) 3200",
-   "concepto": "eBay nuevo",
-   "detalle": "API · vendedor eburnaselectronics1980 98.5%; Timetec 16GB ddr4 3200 2x8GB 76TT32NUS1R8-8GK2; envío no indicado",
-   "valor": 89.99,
-   "antes": 89.99,
-   "moneda": "USD"
-  },
-  {
-   "fecha": "2026-11-16",
-   "tipo": "ebay",
-   "producto": "SSD NVMe 1TB",
-   "concepto": "eBay nuevo",
-   "detalle": "API · vendedor netac-official-store 99.9%; Netac 1TB SSD 3D NAND NVMe PCIe Gen3×4 M.2 2280 Internal Sol",
-   "valor": 139.99,
-   "antes": 129.0,
-   "moneda": "USD"
-  },
-  {
-   "fecha": "2026-11-16",
-   "tipo": "ebay",
-   "producto": "SSD NVMe 2TB",
-   "concepto": "eBay nuevo",
-   "detalle": "API · vendedor honestdeals 99.5%; 2TB Leven 2280mm Lares 2TB M.2 NVMe Gen 3.0 SSD JPS600-2TB T",
-   "valor": 185.0,
-   "antes": 185.0,
-   "moneda": "USD"
-  },
-  {
-   "fecha": "2026-11-16",
-   "tipo": "ebay",
-   "producto": "Ryzen 7 7700X",
-   "concepto": "eBay nuevo",
-   "detalle": "API · vendedor asusparts2022 99.9%; AMD Ryzen 7 7700X - Zen 4 8-Core 4.5 GHz - Socket AM5 - 105W",
-   "valor": 223.98,
-   "antes": 223.98,
-   "moneda": "USD"
-  },
   {
    "fecha": "2026-11-16",
    "tipo": "ebay",
@@ -10989,10 +11100,30 @@
    "tipo": "dolar",
    "producto": "",
    "concepto": "Dólar USDT (el de los cálculos)",
-   "detalle": "CriptoYa/Binance P2P, nube 7:53; USDT Binance P2P (mediana de 10 anuncios) 07:53 BOT (comprar 11.99 / vender 11.94), usado = USDT para compr",
-   "valor": 11.99,
+   "detalle": "CriptoYa/Binance P2P, nube 7:53; USDT Binance P2P (mediana de 10 anuncios) 10:35 BOT (comprar 11.98 / vender 11.95), usado = USDT para compr",
+   "valor": 11.98,
    "antes": 11.99,
    "moneda": "Bs/USD"
+  },
+  {
+   "fecha": "2026-11-24",
+   "tipo": "local",
+   "producto": "Ryzen 7 7700X",
+   "concepto": "Marketplace",
+   "detalle": "sellado",
+   "valor": 4000.0,
+   "antes": 4000.0,
+   "moneda": "Bs"
+  },
+  {
+   "fecha": "2026-11-24",
+   "tipo": "local",
+   "producto": "Ryzen 9 9950X3D",
+   "concepto": "Marketplace",
+   "detalle": "nuevo/sin dato",
+   "valor": 9100.0,
+   "antes": null,
+   "moneda": "Bs"
   },
   {
    "fecha": "2026-11-24",
@@ -11199,7 +11330,7 @@
    "tipo": "ebay",
    "producto": "Ryzen 7 7800X3D",
    "concepto": "eBay usado",
-   "detalle": "API · vendedor paymore_hilliard 99.7%; AMD Ryzen 7 7800X3D 4.20GHz 8 Core 100-000000910 16 Thread A",
+   "detalle": "API · vendedor paymore_hilliard 99.7%; AMD Ryzen 7 7800X3D 4.20GHz 8 Core 100-000000910 16 Thread A; vendido o agotado al revisar a las 10:4",
    "valor": 274.99,
    "antes": 274.99,
    "moneda": "USD"
@@ -11239,7 +11370,7 @@
    "tipo": "ebay",
    "producto": "Intel Core i5-14400F",
    "concepto": "eBay usado",
-   "detalle": "API · vendedor ftgparts 99.7%; 5SA1M81310 SRN47 i5-14400F 2.5GHz/10C/16T/20M 65W B0",
+   "detalle": "API · vendedor ftgparts 99.7%; 5SA1M81310 SRN47 i5-14400F 2.5GHz/10C/16T/20M 65W B0; vendido o agotado al revisar a las 10:46",
    "valor": 129.48,
    "antes": 129.48,
    "moneda": "USD"
@@ -11269,7 +11400,7 @@
    "tipo": "ebay",
    "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
    "concepto": "eBay usado",
-   "detalle": "API · vendedor ibuypcs 100.0%; Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz CL36 Deskto",
+   "detalle": "API · vendedor ibuypcs 100.0%; Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz CL36 Deskto; vendido o agotado al revisar a las 10:46",
    "valor": 395.94,
    "antes": 399.99,
    "moneda": "USD"
@@ -11353,6 +11484,36 @@
    "valor": 486.99,
    "antes": 509.99,
    "moneda": "USD"
+  },
+  {
+   "fecha": "2026-11-24",
+   "tipo": "ebay",
+   "producto": "Ryzen 7 7800X3D",
+   "concepto": "eBay usado",
+   "detalle": "API · vendedor paymore_algonquin 99.9%; AMD Ryzen 7 7800X3D 4.20GHz 8 Core 100-000000910 16 Thread A",
+   "valor": 274.99,
+   "antes": 274.99,
+   "moneda": "USD"
+  },
+  {
+   "fecha": "2026-11-24",
+   "tipo": "ebay",
+   "producto": "Intel Core i5-14400F",
+   "concepto": "eBay usado",
+   "detalle": "API · vendedor paymore_streamwood 99.7%; Intel Core i5-14400F 2.50GHz 10 Core SRN47 16 Thread LGA 170",
+   "valor": 130.99,
+   "antes": 129.48,
+   "moneda": "USD"
+  },
+  {
+   "fecha": "2026-11-24",
+   "tipo": "ebay",
+   "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
+   "concepto": "eBay usado",
+   "detalle": "API · vendedor paymore_great_hills 99.6%; Corsair Vengeance RGB 32GB (2x16GB) RAM DDR5 6000MHz CMH32GX",
+   "valor": 399.99,
+   "antes": 395.94,
+   "moneda": "USD"
   }
  ],
  "tabla": [
@@ -11398,7 +11559,7 @@
    "mkt_bs": 4350.0,
    "tienda_bs": 4760.0,
    "nuevo_link": "https://www.ebay.com/itm/860172396208",
-   "usado_link": "https://www.ebay.com/itm/800908829146"
+   "usado_link": "https://www.ebay.com/itm/336894710602"
   },
   {
    "producto": "Ryzen 9 9950X",
@@ -11438,11 +11599,11 @@
    "cat": "CPU",
    "peso_g": 250.0,
    "nuevo_usd": 149.99,
-   "usado_usd": 129.48,
+   "usado_usd": 130.99,
    "mkt_bs": null,
    "tienda_bs": 2360.0,
    "nuevo_link": "https://www.ebay.com/itm/126275456933",
-   "usado_link": "https://www.ebay.com/itm/168839621841"
+   "usado_link": "https://www.ebay.com/itm/880038123307"
   },
   {
    "producto": "Intel Core Ultra 7 265K",
@@ -11471,11 +11632,11 @@
    "cat": "RAM",
    "peso_g": 150.0,
    "nuevo_usd": 469.99,
-   "usado_usd": 395.94,
+   "usado_usd": 399.99,
    "mkt_bs": 5800.0,
    "tienda_bs": 6700.0,
    "nuevo_link": "https://www.ebay.com/itm/168879073232",
-   "usado_link": "https://www.ebay.com/itm/377668631766"
+   "usado_link": "https://www.ebay.com/itm/880137811296"
   },
   {
    "producto": "RAM DDR4 16GB (2x8) 3200",
@@ -11560,18 +11721,18 @@
    "peso_g": 350.0,
    "nuevo_usd": 525.0,
    "usado_usd": 486.99,
-   "mkt_bs": 9200.0,
+   "mkt_bs": 9100.0,
    "tienda_bs": 9560.0,
    "nuevo_link": "https://www.ebay.com/itm/237202551289",
    "usado_link": "https://www.ebay.com/itm/198750337032"
   }
  ],
  "sincronizacion": {
-  "ultima_ronda": "2026-11-23 16:16",
+  "ultima_ronda": "2026-11-24 10:35",
   "ultima_ronda_quien": "pc",
   "oficina_publicada": "2026-11-23 11:20",
   "armado_por": "una ronda o sesión",
-  "armado": "2026-11-24 07:54"
+  "armado": "2026-11-24 10:49"
  },
  "clientes": [
   {
@@ -12533,6 +12694,26 @@
    "precio_ref_bs": null,
    "proximo_paso": "No escribir",
    "actualizado": "2026-11-23"
+  },
+  {
+   "tienda": "Grupo Facebook: solo venta de computadoras Bolivia",
+   "grupo": "G · Grupo de compra-venta (compradores)",
+   "prioridad": "baja",
+   "por_que": "24/11 en Facebook (búsqueda de grupos): 17 mil miembros, 3 publicaciones al día; nacional, no solo Cochabamba",
+   "productos": "CPU · RAM · SSD",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar: no unirse ni escribir hasta que Santi lo apruebe",
+   "actualizado": "2026-11-24"
+  },
+  {
+   "tienda": "Grupo Facebook: LAPTOPS COCHABAMBA",
+   "grupo": "G · Grupo de compra-venta (compradores)",
+   "prioridad": "baja",
+   "por_que": "24/11 en Facebook (búsqueda de grupos): 32 mil miembros, 90+ publicaciones al día; sobre todo laptops, poco componente suelto",
+   "productos": "RAM · SSD",
+   "precio_ref_bs": null,
+   "proximo_paso": "Solo observar: no unirse ni escribir hasta que Santi lo apruebe",
+   "actualizado": "2026-11-24"
   }
  ],
  "publicaciones": [],
@@ -14525,12 +14706,12 @@
    "ciudad": "Cochabamba",
    "estado": "respondió",
    "vende": "por verificar (Google Maps: electrónica general, 4.1 con 56 opiniones)",
-   "ultima": "2026-11-04",
-   "enviados": 2,
+   "ultima": "2026-11-24",
+   "enviados": 3,
    "recibidos": 1,
    "con_precio": 0,
-   "ultimo_mensaje": "2026-11-04",
-   "lista": false,
+   "ultimo_mensaje": "2026-11-24",
+   "lista": true,
    "fria": false,
    "grupo": "A · Sin stock (les falta producto)",
    "precios": []
@@ -14673,13 +14854,13 @@
    "ciudad": "Quillacollo",
    "estado": "consultada",
    "vende": "sí (WhatsApp: RAM DDR3, SSD, Intel 4ta gen; equipo viejo)",
-   "ultima": "2026-11-19",
-   "enviados": 4,
-   "recibidos": 5,
-   "con_precio": 3,
-   "ultimo_mensaje": "2026-11-20",
-   "lista": false,
-   "fria": false,
+   "ultima": "2026-11-24",
+   "enviados": 5,
+   "recibidos": 6,
+   "con_precio": 4,
+   "ultimo_mensaje": "2026-11-24",
+   "lista": true,
+   "fria": true,
    "grupo": "D · No apuntar",
    "precios": []
   },
@@ -14788,12 +14969,12 @@
    "ciudad": "Quillacollo",
    "estado": "respondió",
    "vende": "por verificar (Google Maps: tienda de electrónica)",
-   "ultima": "2026-11-10",
-   "enviados": 2,
+   "ultima": "2026-11-24",
+   "enviados": 3,
    "recibidos": 1,
    "con_precio": 0,
-   "ultimo_mensaje": "2026-11-09",
-   "lista": false,
+   "ultimo_mensaje": "2026-11-24",
+   "lista": true,
    "fria": false,
    "grupo": "",
    "precios": []
@@ -15068,13 +15249,13 @@
    "id": "T111",
    "tienda": "Pc Express Bolivia",
    "ciudad": "por verificar",
-   "estado": "sin contactar",
+   "estado": "consultada",
    "vende": "por verificar (Instagram: empresa de importación y venta de artículos tecnológicos; 2 publicaciones y 4 seguidores; no dice qué productos)",
-   "ultima": "",
-   "enviados": 0,
+   "ultima": "2026-11-24",
+   "enviados": 1,
    "recibidos": 0,
    "con_precio": 0,
-   "ultimo_mensaje": "",
+   "ultimo_mensaje": "2026-11-24",
    "lista": false,
    "fria": false,
    "grupo": "",
@@ -15082,6 +15263,10 @@
   }
  ],
  "informes_nube": [
+  {
+   "fecha": "2026-11-24",
+   "ruta": "informes/2026-11-24.md"
+  },
   {
    "fecha": "2026-11-23",
    "ruta": "informes/2026-11-23.md"
@@ -15197,10 +15382,6 @@
   {
    "fecha": "2026-10-25",
    "ruta": "informes/2026-10-25.md"
-  },
-  {
-   "fecha": "2026-10-24",
-   "ruta": "informes/2026-10-24.md"
   }
  ],
  "catalogos": [
@@ -15952,14 +16133,14 @@
    "cat": "CPU",
    "peso_g": 250.0,
    "mediana_bs": 2394,
-   "tope_usd": 146
+   "tope_usd": 147
   },
   {
    "producto": "Intel Core Ultra 7 265K",
    "cat": "CPU",
    "peso_g": 300.0,
    "mediana_bs": 4210,
-   "tope_usd": 268
+   "tope_usd": 269
   },
   {
    "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 5600",
@@ -15994,7 +16175,7 @@
    "cat": "SSD",
    "peso_g": 80.0,
    "mediana_bs": 4133,
-   "tope_usd": 263
+   "tope_usd": 264
   },
   {
    "producto": "Ryzen 7 7700X",
@@ -16028,8 +16209,8 @@
    "producto": "Ryzen 9 9950X3D",
    "cat": "CPU",
    "peso_g": 350.0,
-   "mediana_bs": 9560,
-   "tope_usd": 629
+   "mediana_bs": 9380,
+   "tope_usd": 618
   }
  ],
  "historial": {
@@ -23791,6 +23972,15 @@
     "fecha": "2026-11-20",
     "url": "https://www.facebook.com/marketplace/item/1080072357820250/",
     "cuenta": false
+   },
+   {
+    "bs": 4000.0,
+    "src": "mkt",
+    "vendedor": "Marketplace Cochabamba (particular)",
+    "estado": "sellado",
+    "fecha": "2026-11-24",
+    "url": "https://www.facebook.com/marketplace/item/887277370696710/",
+    "cuenta": true
    }
   ],
   "Ryzen 5 7500F": [
@@ -24159,6 +24349,15 @@
     "fecha": "2026-11-20",
     "url": "https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%209%209950x",
     "cuenta": true
+   },
+   {
+    "bs": 9100.0,
+    "src": "mkt",
+    "vendedor": "Marketplace Cochabamba (particular)",
+    "estado": "nuevo/sin dato",
+    "fecha": "2026-11-24",
+    "url": "https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%209%209950x3d",
+    "cuenta": true
    }
   ]
  },
@@ -24167,11 +24366,9 @@
   "contactadas_7d": 27.0,
   "respondieron_7d": 12.0,
   "tasa_7d": 0.444,
-  "lista_pedida": 64,
-  "lista_faltan": 14,
-  "seguimiento": [
-   "Tecnología GabBoss"
-  ],
+  "lista_pedida": 67,
+  "lista_faltan": 11,
+  "seguimiento": [],
   "responder": [
    "EQUIPAMIENTO MODERNO S.R.L.",
    "INTEGRAL TU-PC",
@@ -24179,7 +24376,7 @@
    "Importadora ITA",
    "NPC Technology"
   ],
-  "frias": 16,
+  "frias": 17,
   "respondieron": 45,
   "serie": [
    {
@@ -24313,53 +24510,53 @@
  "demanda": [
   {
    "producto": "SSD NVMe 1TB",
-   "anuncios": 4.3,
-   "nuevos": 13,
-   "desaparecidos": 5,
-   "precio_bs": 2405.0,
-   "tendencia": 0.718,
+   "anuncios": 4.1,
+   "nuevos": 12,
+   "desaparecidos": 4,
+   "precio_bs": 3000.0,
+   "tendencia": 1.143,
    "lectura": "demanda normal",
-   "puntaje": 9.3
+   "puntaje": 8.1
   },
   {
    "producto": "Ryzen 7 7800X3D",
    "anuncios": 3.5,
    "nuevos": 11,
-   "desaparecidos": 3,
-   "precio_bs": 4800.0,
-   "tendencia": 0.091,
+   "desaparecidos": 2,
+   "precio_bs": 4375.0,
+   "tendencia": 0.0,
    "lectura": "demanda normal",
-   "puntaje": 6.5
+   "puntaje": 5.5
   },
   {
    "producto": "RAM DDR4 16GB (2x8) 3200",
-   "anuncios": 2.4,
-   "nuevos": 6,
+   "anuncios": 2.6,
+   "nuevos": 5,
    "desaparecidos": 2,
-   "precio_bs": 1400.0,
-   "tendencia": 0.287,
+   "precio_bs": 1450.0,
+   "tendencia": -0.088,
    "lectura": "demanda normal",
-   "puntaje": 4.4
+   "puntaje": 4.6
   },
   {
    "producto": "Ryzen 5 9600X",
-   "anuncios": 3.1,
+   "anuncios": 2.9,
    "nuevos": 4,
    "desaparecidos": 1,
-   "precio_bs": 2600.0,
-   "tendencia": -0.013,
+   "precio_bs": 2450.0,
+   "tendencia": -0.07,
    "lectura": "demanda normal",
-   "puntaje": 4.3
+   "puntaje": 4.0
   },
   {
    "producto": "Ryzen 7 7700X",
-   "anuncios": 0.9,
+   "anuncios": 1.0,
    "nuevos": 2,
    "desaparecidos": 3,
    "precio_bs": 4000.0,
    "tendencia": 0.29,
    "lectura": "demanda normal",
-   "puntaje": 3.9
+   "puntaje": 4.0
   },
   {
    "producto": "SSD NVMe 2TB",
@@ -24384,7 +24581,7 @@
   {
    "producto": "Intel Core Ultra 7 265K",
    "anuncios": 1.2,
-   "nuevos": 2,
+   "nuevos": 1,
    "desaparecidos": 0,
    "precio_bs": 4200.0,
    "tendencia": -0.012,
@@ -24392,22 +24589,12 @@
    "puntaje": 1.2
   },
   {
-   "producto": "Ryzen 9 9950X",
-   "anuncios": 0.1,
-   "nuevos": 1,
-   "desaparecidos": 1,
-   "precio_bs": 7500.0,
-   "tendencia": null,
-   "lectura": "se mueve poco: evaluar sacarlo",
-   "puntaje": 1.1
-  },
-  {
    "producto": "Ryzen 9 9950X3D",
    "anuncios": 1.0,
    "nuevos": 2,
    "desaparecidos": 0,
-   "precio_bs": 9200.0,
-   "tendencia": -0.052,
+   "precio_bs": 9100.0,
+   "tendencia": -0.062,
    "lectura": "se mueve poco: evaluar sacarlo",
    "puntaje": 1.0
   },
@@ -24428,6 +24615,16 @@
    "desaparecidos": 0,
    "precio_bs": 2350.0,
    "tendencia": null,
+   "lectura": "se mueve poco: evaluar sacarlo",
+   "puntaje": 0.2
+  },
+  {
+   "producto": "Ryzen 9 9950X",
+   "anuncios": 0.2,
+   "nuevos": 1,
+   "desaparecidos": 0,
+   "precio_bs": 7500.0,
+   "tendencia": 0.0,
    "lectura": "se mueve poco: evaluar sacarlo",
    "puntaje": 0.2
   },
@@ -24536,6 +24733,13 @@
    "tipo": "Tabla de comparación",
    "fecha": "2026-11-24",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
+   "carpeta": "Informes"
+  },
+  {
+   "titulo": "Informe diario 2026-11-24",
+   "tipo": "Informe de la nube",
+   "fecha": "2026-11-24",
+   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/informes/2026-11-24.md",
    "carpeta": "Informes"
   },
   {
@@ -24774,13 +24978,6 @@
    "tipo": "CSV",
    "fecha": "2026-11-12",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/2026-11-12.csv",
-   "carpeta": "Tabla diaria"
-  },
-  {
-   "titulo": "Tabla del 2026-11-12",
-   "tipo": "PDF",
-   "fecha": "2026-11-12",
-   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/2026-11-12.pdf",
    "carpeta": "Tabla diaria"
   }
  ],
@@ -25247,14 +25444,6 @@
   }
  ],
  "chat": [
-  {
-   "id": "20261023-8",
-   "fecha": "2026-10-23",
-   "hora": "16:22",
-   "de": "gerente",
-   "para": "pedidos",
-   "texto": "Recibido 22/10: tarea 22-2 cerrada. La guia del 7700X sigue siendo lo pendiente; la tarea 2026-10-20-12 sigue abierta hasta que Santi la pase. Cuando se pueda leer GOFO de prueba-hermana-1 reintenta en la proxima ronda."
-  },
   {
    "id": "20261023-9",
    "fecha": "2026-10-23",
@@ -26446,6 +26635,14 @@
    "de": "gerente",
    "para": "pedidos",
    "texto": "Santi decidió NO reclamar a eBay: quita la incidencia y no lo vuelvas a mencionar (tarea 2026-11-23-5)."
+  },
+  {
+   "id": "20261124-1",
+   "fecha": "2026-11-24",
+   "hora": "10:41",
+   "de": "wa",
+   "para": "gerente",
+   "texto": "iPlace Bolivia: el numero de la ficha es de otro negocio (casa de empeno), no se escribio; necesito el numero correcto (necesidad para Santi). T111 Pc Express: primer mensaje enviado preguntando ciudad."
   }
  ],
  "salud14": [
@@ -26542,8 +26739,8 @@
   },
   {
    "fecha": "2026-11-24",
-   "nube": "pendiente",
-   "manana": "pendiente",
+   "nube": "ok",
+   "manana": "en curso",
    "pc": "pendiente",
    "gerente": "pendiente"
   }

@@ -1402,14 +1402,14 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-24,Ryzen 5 5600,usado,119.99,0.00,real,eBay API; vendedor paymore_lexington 99.4%; AMD Ryzen 5 5600 3.50GHz 6 Core 100-000000927 12 Thread AM4,https://www.ebay.com/itm/407358337876
 2026-11-24,Ryzen 7 5700X3D,usado,320.00,10.17,real,eBay API; vendedor jiyuu_4 100.0%; AMD Ryzen 7 5700X3D Cpu,https://www.ebay.com/itm/168882789188
 2026-11-24,Ryzen 5 7600,usado,119.00,0.00,real,eBay API; vendedor piedmontreeltimemovies 99.7%; AMD Ryzen 5 7600 6-Core 3.8GHz Desktop CPU Processor Socket ,https://www.ebay.com/itm/257857896293
-2026-11-24,Ryzen 7 7800X3D,usado,274.99,0.00,real,eBay API; vendedor paymore_hilliard 99.7%; AMD Ryzen 7 7800X3D 4.20GHz 8 Core 100-000000910 16 Thread A,https://www.ebay.com/itm/800908829146
+2026-11-24,Ryzen 7 7800X3D,usado,274.99,0.00,agotado,eBay API; vendedor paymore_hilliard 99.7%; AMD Ryzen 7 7800X3D 4.20GHz 8 Core 100-000000910 16 Thread A; vendido o agotado al revisar a las 10:46,https://www.ebay.com/itm/800908829146
 2026-11-24,Ryzen 9 9950X,usado,399.99,8.02,real,eBay API; vendedor fizziefox 100.0%; AMD Ryzen 9 9950x with box,https://www.ebay.com/itm/820382700945
 2026-11-24,Intel Core i5-12400F,usado,105.00,11.74,real,eBay API; vendedor jimmysmk3 100.0%; Intel Core i5-12400F 6-Core 2.50GHz CPU LGA1700 Processor SR,https://www.ebay.com/itm/198790623774
 2026-11-24,Intel Core i5-13400,usado,139.99,0.00,real,"eBay API; vendedor gadgetpickup 99.9%; Intel Core i5-13400 Desktop Processor (2.5 GHz, 10 Cores, LG",https://www.ebay.com/itm/307290903175
-2026-11-24,Intel Core i5-14400F,usado,121.49,7.99,real,eBay API; vendedor ftgparts 99.7%; 5SA1M81310 SRN47 i5-14400F 2.5GHz/10C/16T/20M 65W B0,https://www.ebay.com/itm/168839621841
+2026-11-24,Intel Core i5-14400F,usado,121.49,7.99,agotado,eBay API; vendedor ftgparts 99.7%; 5SA1M81310 SRN47 i5-14400F 2.5GHz/10C/16T/20M 65W B0; vendido o agotado al revisar a las 10:46,https://www.ebay.com/itm/168839621841
 2026-11-24,Intel Core Ultra 7 265K,usado,209.95,0.00,real,eBay API; vendedor rolamoto 99.6%; Intel Core Ultra 7 265K Series 2 Unlocked CPU LGA1851 20-Cor,https://www.ebay.com/itm/198798405271
 2026-11-24,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,usado,399.99,0.00,real,eBay API; vendedor wazno 99.7%; Corsair Vengeance RGB 32GB 2x16GB DDR5 5600MHz RAM CMH32GX5M,https://www.ebay.com/itm/117106556589
-2026-11-24,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,usado,389.99,5.95,real,eBay API; vendedor ibuypcs 100.0%; Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz CL36 Deskto,https://www.ebay.com/itm/377668631766
+2026-11-24,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,usado,389.99,5.95,agotado,eBay API; vendedor ibuypcs 100.0%; Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz CL36 Deskto; vendido o agotado al revisar a las 10:46,https://www.ebay.com/itm/377668631766
 2026-11-24,RAM DDR4 16GB (2x8) 3200,usado,70.00,5.59,real,eBay API; vendedor brak_3895 100.0%; Neo Forza 16GB (2x8GB) RAM DDR4 3200MHz Desktop Memory CL22 ,https://www.ebay.com/itm/168863800993
 2026-11-24,SSD NVMe 1TB,usado,95.99,0.00,real,eBay API; vendedor paymore_roswell 98.5%; SK Hynix 2280mm PB11M280S 1TB M.2 NVMe Gen 3.0 x 4 SSD SDHGP,https://www.ebay.com/itm/860089907407
 2026-11-24,SSD NVMe 2TB,usado,129.70,9.70,real,eBay API; vendedor ez-tech2 99.9%; Western Digital2280mm BLACK SN770 2TB M.2 NVMe Gen 4.0 x 4 S,https://www.ebay.com/itm/128212910740
@@ -1418,3 +1418,6 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-24,Ryzen 5 9600X,usado,150.00,0.00,real,eBay API; vendedor nathand73 100.0%; AMD Ryzen 5 9600x,https://www.ebay.com/itm/287750629769
 2026-11-24,Ryzen 5 7600X,usado,120.00,5.98,real,"eBay API; vendedor gamer_fan18 100.0%; AMD Ryzen 5 7600X CPU Processo, Pulled From Prebuilt, Nearly",https://www.ebay.com/itm/168882761209
 2026-11-24,Ryzen 9 9950X3D,usado,486.99,0.00,real,eBay API; vendedor paymore_kennesaw 99.2%; AMD Ryzen 9 9950X3D 4.30GHz 16 Core 100-000000719 32 Thread ,https://www.ebay.com/itm/198750337032
+2026-11-24,Ryzen 7 7800X3D,usado,274.99,0.00,real,eBay API; vendedor paymore_algonquin 99.9%; AMD Ryzen 7 7800X3D 4.20GHz 8 Core 100-000000910 16 Thread A,https://www.ebay.com/itm/336894710602
+2026-11-24,Intel Core i5-14400F,usado,130.99,0.00,real,eBay API; vendedor paymore_streamwood 99.7%; Intel Core i5-14400F 2.50GHz 10 Core SRN47 16 Thread LGA 170,https://www.ebay.com/itm/880038123307
+2026-11-24,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,usado,399.99,0.00,real,eBay API; vendedor paymore_great_hills 99.6%; Corsair Vengeance RGB 32GB (2x16GB) RAM DDR5 6000MHz CMH32GX,https://www.ebay.com/itm/880137811296

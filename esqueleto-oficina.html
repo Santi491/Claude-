@@ -1,0 +1,380 @@
+<title>Esqueleto de Cargo Brothers</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: barra de momentos arriba, un tablero (máquinas → afuera → archivos) con cables animados, y una línea de texto por paso */
+:root{
+  --bg:#f3f5f8; --panel:#ffffff; --fg:#172030; --muted:#647083; --line:#d9dee6; --soft:#eef1f5;
+  --nube:#2f6fd6; --pc:#c27508; --pi:#c4325c; --santi:#6d4bc4; --ext:#4f7d5c;
+  --read:#2f8be0; --write:#e2780e; --msg:#8b5cf6;
+  --f-h:"Space Grotesk",system-ui,sans-serif; --f-t:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f141b; --panel:#18202a; --fg:#e7ebf1; --muted:#97a3b3; --line:#2a3340; --soft:#1f2833;
+  --nube:#7aa8f5; --pc:#f0b04a; --pi:#f27c9c; --santi:#b49cf3; --ext:#86c497;
+  --read:#5fb0ff; --write:#ffa04a; --msg:#b28dff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141b; --panel:#18202a; --fg:#e7ebf1; --muted:#97a3b3; --line:#2a3340; --soft:#1f2833;
+  --nube:#7aa8f5; --pc:#f0b04a; --pi:#f27c9c; --santi:#b49cf3; --ext:#86c497;
+  --read:#5fb0ff; --write:#ffa04a; --msg:#b28dff; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-t);font-size:14px;margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 40px}
+.wrap{max-width:1220px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+h1{font-family:var(--f-h);font-size:24px;margin:0;text-wrap:balance}
+.top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:22px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.scenes{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.sc{flex:0 0 auto;border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:12px;padding:8px 12px;cursor:pointer;
+  font:inherit;text-align:left;display:flex;flex-direction:column;gap:1px;transition:border-color .2s,transform .2s}
+.sc b{font-family:var(--f-h);font-size:13px;font-weight:700;color:var(--c,var(--fg))}
+.sc span{font-size:12px;color:var(--muted)}
+.sc:hover{transform:translateY(-1px)}
+.sc[aria-pressed="true"]{border-color:var(--c,var(--fg));box-shadow:0 0 0 1px var(--c,var(--fg)) inset}
+.sc:focus-visible,.n:focus-visible,.ctl button:focus-visible{outline:2px solid var(--msg);outline-offset:2px}
+.bar{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px 10px;min-height:52px}
+.ctl{display:flex;gap:4px;flex:0 0 auto}
+.ctl button{width:34px;height:34px;border-radius:9px;border:1px solid var(--line);background:var(--soft);color:var(--fg);cursor:pointer;font-size:14px}
+.ctl button:disabled{opacity:.35;cursor:default}
+.cap{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.cap .t{font-weight:600;font-size:15px}
+.dots{display:flex;gap:4px;flex-wrap:wrap}
+.dots i{width:16px;height:4px;border-radius:2px;background:var(--line);cursor:pointer}
+.dots i.on{background:var(--c,var(--fg))}
+.fit{overflow-x:auto;overflow-y:hidden;border-radius:16px}
+.scaler{position:relative}
+#stage{position:absolute;left:0;top:0;width:1180px;transform-origin:0 0;padding:6px}
+#wires{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+.row1{display:grid;grid-template-columns:120px 262px 196px 1fr;gap:12px}
+.lane{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.lane h3{margin:0;font-family:var(--f-h);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.lane .ns{display:flex;flex-wrap:wrap;gap:7px}
+.pcgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+.n{position:relative;z-index:2;border:1.5px solid var(--c,var(--line));background:var(--panel);color:var(--fg);border-radius:10px;
+  padding:7px 9px;font:500 12.5px/1.2 var(--f-t);cursor:pointer;transition:opacity .25s,box-shadow .25s,transform .25s,background .25s;text-align:center}
+.n.big{font-size:13.5px;font-weight:600;padding:10px 10px}
+.n .ic{display:block;font-size:16px;margin-bottom:2px}
+.c-santi{--c:var(--santi)} .c-pi{--c:var(--pi)} .c-nube{--c:var(--nube)} .c-pc{--c:var(--pc)} .c-ext{--c:var(--ext)}
+.row2{display:flex;justify-content:space-around;gap:10px;margin:46px 40px 46px}
+.row2 .n{border-style:dashed;min-width:110px}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grp{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.grp h3{margin:0;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.grp .ns{display:flex;flex-wrap:wrap;gap:6px}
+.n.f{--c:var(--line);border-width:1px;border-radius:8px;font-family:ui-monospace,Consolas,monospace;font-size:11.5px;padding:6px 8px;background:var(--soft)}
+#stage.act .n{opacity:.22}
+#stage.act .n.seen{opacity:.55}
+#stage.act .n.on{opacity:1;transform:translateY(-1px);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 30%,transparent),0 6px 16px -8px var(--c)}
+#stage.act .n.f.on{opacity:1}
+#stage.act .n.f.r{--c:var(--read);border-color:var(--read)}
+#stage.act .n.f.w{--c:var(--write);border-color:var(--write)}
+#stage.act .n.f.r.w{border-image:linear-gradient(90deg,var(--read),var(--write)) 1}
+.wire{fill:none;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:7 7;animation:flow 1s linear infinite;opacity:.9}
+.wire.r{stroke:var(--read)} .wire.w{stroke:var(--write)} .wire.m{stroke:var(--msg);stroke-width:2.8}
+.wire.u{stroke:var(--muted);opacity:.5;animation:none;stroke-dasharray:3 5;stroke-width:1.4}
+@keyframes flow{to{stroke-dashoffset:-14}}
+.card{position:absolute;z-index:5;max-width:260px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;
+  box-shadow:0 12px 30px -12px rgba(0,0,0,.35);font-size:12.5px;line-height:1.45;display:flex;flex-direction:column;gap:4px}
+.card b{font-family:var(--f-h);font-size:14px}
+.card span{color:var(--muted)}
+.hint{font-size:12px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.wire{animation:none}.n,.sc{transition:none}}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <h1>Un día en Cargo Brothers</h1>
+    <div class="legend"><span><i style="background:var(--read)"></i>lee</span><span><i style="background:var(--write)"></i>escribe</span><span><i style="background:var(--msg)"></i>mensaje / llamada</span></div>
+  </div>
+  <div class="scenes" id="scenes"></div>
+  <div class="bar" id="bar">
+    <div class="ctl"><button id="prev" aria-label="Paso anterior">◀</button><button id="play" aria-label="Reproducir">⏸</button><button id="next" aria-label="Paso siguiente">▶</button></div>
+    <div class="cap"><div class="t" id="cap">Elegí un momento del día</div><div class="dots" id="dots"></div></div>
+  </div>
+  <div class="fit" id="fit"><div class="scaler" id="scaler">
+    <div id="stage">
+      <svg id="wires"></svg>
+      <div class="row1">
+        <div class="lane c-santi"><h3>Vos</h3><div class="ns"><button class="n big c-santi" data-id="santi"><span class="ic">🙂</span>Santi</button></div></div>
+        <div class="lane c-pi"><h3>Raspberry</h3><div class="ns">
+          <button class="n c-pi" data-id="bot">Bot de Telegram</button>
+          <button class="n c-pi" data-id="gpi">Gerente<br>(Claude Code)</button>
+          <button class="n c-pi" data-id="vig">Vigilante</button>
+          <button class="n c-pi" data-id="caz">Cazador</button>
+          <button class="n c-pi" data-id="desp">Prende la PC</button></div></div>
+        <div class="lane c-nube"><h3>Nube</h3><div class="ns">
+          <button class="n big c-nube" data-id="rev">Revisión<br>7:52</button>
+          <button class="n big c-nube" data-id="g20">Gerente<br>20:00</button></div></div>
+        <div class="lane c-pc"><h3>PC de la casa</h3><div class="pcgrid">
+          <button class="n big c-pc" data-id="coord" style="grid-column:span 3">Coordinadora de la ronda</button>
+          <button class="n big c-pc" data-id="enc" style="grid-column:span 3">Encargos</button>
+          <button class="n c-pc" data-id="s_ebay">eBay</button>
+          <button class="n c-pc" data-id="s_wa">WhatsApp</button>
+          <button class="n c-pc" data-id="s_mkt">Market&shy;place</button>
+          <button class="n c-pc" data-id="s_cat">Catálogos</button>
+          <button class="n c-pc" data-id="s_ped">Pedidos</button>
+          <button class="n c-pc" data-id="s_ana">Analista</button>
+          <button class="n c-pc" data-id="s_fin">Finanzas</button>
+          <button class="n c-pc" data-id="s_ofi">Oficina</button>
+          <button class="n c-pc" data-id="s_ger" style="grid-column:span 2">Gerente</button></div></div>
+      </div>
+      <div class="row2">
+        <button class="n c-ext" data-id="x_tg">Telegram</button>
+        <button class="n c-ext" data-id="x_wa">WhatsApp</button>
+        <button class="n c-ext" data-id="x_fb">Facebook</button>
+        <button class="n c-ext" data-id="x_ebay">eBay</button>
+        <button class="n c-ext" data-id="x_gdoc">Google Docs</button>
+        <button class="n c-ext" data-id="x_web">Oficina 3D</button>
+      </div>
+      <div class="row3" id="files"></div>
+    </div>
+  </div></div>
+  <div class="hint">Tocá cualquier cuadrito para ver qué es y con qué se conecta. Tocá un momento de arriba para verlo paso a paso.</div>
+</div>
+
+<script>
+const FILES = [
+  ["Instrucciones", [["f_claude","CLAUDE.md"],["f_proc","PROCESO-LOCAL.md"],["f_skills","skills/"],["f_agents","agents/"],["f_tarea","pedidos-pc.md"]]],
+  ["Precios", [["f_vig","vigilar.csv"],["f_pus","precios-eeuu.csv"],["f_pcb","precios-cochabamba.csv"],["f_tc","tipo-cambio.csv"],["f_comp","comparacion.md"],["f_anal","analisis.md"]]],
+  ["Tiendas", [["f_tie","tiendas.csv"],["f_msj","mensajes.csv"],["f_cli","clientes-potenciales.csv"],["f_cat","catalogos.csv"],["f_mer","mercado.csv"],["f_dem","demanda.csv"]]],
+  ["Pedidos y ventas", [["f_ped","pedidos.csv"],["f_seg","seguimiento.csv"],["f_ven","ventas.csv"],["f_pub","publicaciones.csv"]]],
+  ["Equipo", [["f_plan","plan.csv"],["f_act","actividad.csv"],["f_ses","sesiones.csv"],["f_mem","memoria-gerente.csv"],["f_chat","chat.csv"],["f_nec","necesidades.csv"],["f_ide","ideas.csv"],["f_met","metricas.csv"],["f_pedpc","pedido-pc.json"]]],
+  ["Lo que se entrega", [["f_inf","informes/"],["f_datos","oficina/datos.js"],["f_xls","Excel + historial/"],["f_alert","alertas-estado.json"]]],
+];
+const INFO = {
+  santi:"Hablás con el Gerente por Telegram y decidís con los botones de la oficina.",
+  bot:"Siempre prendido. Lee tus mensajes; los atajos (apruebo, plan, venta) los hace sin IA.",
+  gpi:"Cuando le preguntás algo, el bot abre Claude Code en la Raspberry y ese Claude es el Gerente.",
+  vig:"Cada 30 min revisa si las rondas corrieron. Si no, prende la PC y la relanza una vez. Sin IA.",
+  caz:"Cada 2 h (8 a 22) busca en eBay productos debajo de su tope y te avisa. Sin IA.",
+  desp:"Prende la PC por la red a las 10:00 y a las 15:50, o cuando el Gerente lo pide.",
+  rev:"Todos los días a las 7:52, con todo apagado: dólar, eBay, comparación e informe.",
+  g20:"Todos los días a las 20:00: controla al equipo, escribe el informe y propone el plan.",
+  coord:"Arranca la ronda (10:30 y 16:00), lanza cada puesto uno por uno y cierra.",
+  enc:"Cada pocos minutos mira si hay un pedido del Gerente. Si hay, lo hace y avisa.",
+  s_ebay:"Trae precios de eBay si la nube no los trajo. Modelo haiku.",
+  s_wa:"Responde a las tiendas, hace seguimientos y pide precios. Modelo sonnet.",
+  s_mkt:"Busca precios y tiendas en Facebook Marketplace y cuenta la demanda. Modelo sonnet.",
+  s_cat:"Lee los catálogos y listas de precios que mandan las tiendas. Modelo sonnet.",
+  s_ped:"Sigue las guías de los paquetes. Modelo haiku.",
+  s_ana:"Calcula qué conviene traer y propone productos nuevos. Modelo sonnet.",
+  s_fin:"Stock, ventas y ganancia real. Modelo haiku.",
+  s_ofi:"Regenera la oficina 3D y la publica. Modelo haiku.",
+  s_ger:"Controla la ronda y te manda el resumen por Telegram. Modelo sonnet.",
+  x_tg:"Por donde hablás con el Gerente. Solo la Raspberry lo lee.",
+  x_wa:"El número de la empresa. Lo usa solo la PC, con Chrome.",
+  x_fb:"Marketplace y Messenger. Lo usa solo la PC, con Chrome.",
+  x_ebay:"La API de eBay: precios y envío a Miami.",
+  x_gdoc:"La carpeta INFORME DIARIO.",
+  x_web:"La oficina 3D publicada.",
+  f_claude:"Las reglas y el mapa de todo. Se carga solo en cada sesión de Claude.",
+  f_proc:"Los pasos de la ronda y los mensajes modelo para tiendas.",
+  f_skills:"El manual de cada puesto (10 skills).",
+  f_agents:"Modelo y herramientas de cada sub-agente (9).",
+  f_tarea:"Qué hace la PC cuando el Gerente le pide algo.",
+  f_vig:"Los productos que seguimos y su tope.",
+  f_pus:"Precios de eBay, nuevo y usado, con envío.",
+  f_pcb:"Precios de las tiendas de Cochabamba.",
+  f_tc:"El dólar USDT de cada día.",
+  f_comp:"Costo puesto y ganancia por producto.",
+  f_anal:"El análisis del Analista.",
+  f_tie:"tiendas-cochabamba.csv: todas las tiendas, con su id.",
+  f_msj:"Cada mensaje enviado o recibido.",
+  f_cli:"Tiendas agrupadas como posibles clientes.",
+  f_cat:"Catálogos que mandaron las tiendas.",
+  f_mer:"Productos fuera de la lista que tienen las tiendas.",
+  f_dem:"Cuántos anuncios hay de cada producto.",
+  f_ped:"Compras reales y su estado.",
+  f_seg:"Cada movimiento del rastreo de un paquete.",
+  f_ven:"Lo que vendiste.",
+  f_pub:"Nuestros anuncios en Marketplace.",
+  f_plan:"Tareas: propuestas, aprobadas y metas.",
+  f_act:"Qué hizo cada agente y cuándo.",
+  f_ses:"Una fila por ronda o encargo.",
+  f_mem:"La libreta del Gerente.",
+  f_chat:"El chat interno entre agentes y vos.",
+  f_nec:"Lo que un agente necesita de vos.",
+  f_ide:"Ideas de mejora de los agentes.",
+  f_met:"Los números de cada día.",
+  f_pedpc:"Existe solo mientras hay un pedido para la PC.",
+  f_inf:"El informe diario de la nube y el del Gerente.",
+  f_datos:"Todos los datos juntos para la oficina 3D.",
+  f_xls:"El Excel y la copia de cada día.",
+  f_alert:"Qué alertas ya se mandaron, para no repetir.",
+};
+const ALL_CLAUDE = ["rev","g20","gpi","coord","enc","s_ebay","s_wa","s_mkt","s_cat","s_ped","s_ana","s_fin","s_ofi","s_ger"];
+// paso: [quién, texto, lee, escribe, mensajes [de,a]]
+const SCENES = [
+  {id:"s752", h:"7:52", t:"Revisión de la nube", c:"--nube", steps:[
+    [["rev"],"La nube arranca y lee las reglas y la lista",["f_claude","f_vig"],[],[]],
+    [["rev"],"Trae el dólar y los precios de eBay",["x_ebay"],["f_tc","f_pus"],[]],
+    [["rev"],"Compara contra Cochabamba; si hay algo, te alerta",["f_pcb","f_pus","f_tc"],["f_comp","f_alert"],[["rev","x_tg"],["x_tg","santi"]]],
+    [["rev"],"Deja el informe y anota lo que hizo",[],["f_inf","f_xls","f_act","f_ses"],[]]]},
+  {id:"s820", h:"8:20", t:"Mensaje de la mañana", c:"--pi", steps:[
+    [["bot"],"El bot despierta al Gerente",[],[],[["bot","gpi"]]],
+    [["gpi"],"El Gerente lee cómo va el equipo",["f_claude","f_act","f_inf","f_msj","f_mem"],[],[]],
+    [["gpi"],"Te escribe en 2 a 6 líneas",[],[],[["gpi","x_tg"],["x_tg","santi"]]]]},
+  {id:"ronda", h:"10:30 · 16:00", t:"Ronda en la PC", c:"--pc", steps:[
+    [["desp"],"La Raspberry prende la PC",[],[],[["desp","coord"]]],
+    [["coord"],"La coordinadora lee las reglas, el plan y el chat",["f_claude","f_proc","f_plan","f_chat"],["f_ses"],[]],
+    [["s_ebay"],"eBay, solo si faltan los precios de hoy",["f_skills","f_agents","f_vig","x_ebay"],["f_pus"],[["coord","s_ebay"]]],
+    [["s_wa"],"WhatsApp responde y pide precios",["f_skills","f_tie","f_msj"],["f_msj","f_pcb","f_cli","f_cat"],[["coord","s_wa"],["s_wa","x_wa"]]],
+    [["s_mkt"],"Marketplace busca precios, tiendas y demanda",["f_skills","x_fb"],["f_pcb","f_tie","f_dem","f_mer"],[["coord","s_mkt"]]],
+    [["s_cat"],"Catálogos lee las listas de precios",["f_skills","f_cat"],["f_pcb","f_mer"],[["coord","s_cat"]]],
+    [["s_ped"],"Pedidos sigue los paquetes",["f_skills","f_ped"],["f_ped","f_seg"],[["coord","s_ped"]]],
+    [["s_ana","s_fin"],"Analista y Finanzas sacan las cuentas",["f_pus","f_pcb","f_tc","f_dem","f_ped","f_ven"],["f_comp","f_anal","f_ide"],[["coord","s_ana"],["coord","s_fin"]]],
+    [["s_ofi"],"Oficina junta todo y publica la oficina 3D",["f_act","f_comp"],["f_datos","f_xls"],[["coord","s_ofi"],["s_ofi","x_web"]]],
+    [["s_ger"],"El Gerente controla y te manda el resumen",["f_act","f_plan","f_chat"],["f_plan","f_mem"],[["coord","s_ger"],["s_ger","x_tg"],["x_tg","santi"]]],
+    [["coord"],"Cierra, sube todo y apaga la PC",[],["f_ses","f_act"],[]]]},
+  {id:"preg", h:"Cuando quieras", t:"Le preguntás algo", c:"--santi", steps:[
+    [["santi"],"Le escribís al Gerente",[],[],[["santi","x_tg"],["x_tg","bot"]]],
+    [["bot"],"No es un atajo: el bot abre Claude Code",[],[],[["bot","gpi"]]],
+    [["gpi"],"El Gerente lee lo que necesita",["f_claude","f_comp","f_pcb","f_pus","f_mem"],[],[]],
+    [["gpi"],"Te contesta y anota que habló con vos",[],["f_act"],[["gpi","x_tg"],["x_tg","santi"]]]]},
+  {id:"apr", h:"«apruebo 1 3»", t:"Aprobás tareas", c:"--santi", steps:[
+    [["santi"],"Escribís el atajo",[],[],[["santi","x_tg"],["x_tg","bot"]]],
+    [["bot"],"Sin IA: marca las tareas en el plan",[],["f_plan"],[]],
+    [["coord"],"La próxima ronda las encuentra y las hace",["f_plan"],[],[]]]},
+  {id:"enc", h:"Algo grande", t:"Encargo a la PC", c:"--pc", steps:[
+    [["santi"],"Le pedís algo que necesita WhatsApp",[],[],[["santi","x_tg"],["x_tg","bot"],["bot","gpi"]]],
+    [["gpi"],"El Gerente decide que lo haga la PC",["f_claude"],[],[["gpi","bot"]]],
+    [["bot"],"Deja el pedido y prende la PC",[],["f_pedpc","f_plan"],[["bot","desp"],["desp","enc"]]],
+    [["enc"],"La PC encuentra el pedido",["f_tarea","f_pedpc","f_claude","f_proc"],[],[]],
+    [["s_wa"],"Lanza solo el puesto que toca",["f_skills","f_msj"],["f_msj"],[["enc","s_wa"],["s_wa","x_wa"]]],
+    [["enc"],"Te cuenta el resultado y se apaga",[],["f_ses","f_pedpc"],[["enc","x_tg"],["x_tg","santi"]]]]},
+  {id:"g20", h:"20:00", t:"Gerente del día", c:"--nube", steps:[
+    [["g20"],"Revisa todo lo que pasó hoy",["f_claude","f_skills","f_act","f_ses","f_plan","f_msj","f_chat","f_ide","f_mem"],[],[]],
+    [["g20"],"Propone el plan de mañana y anota en su libreta",[],["f_met","f_plan","f_mem"],[]],
+    [["g20"],"Escribe el informe y te avisa",[],["f_inf","f_act"],[["g20","x_gdoc"],["g20","x_tg"],["x_tg","santi"]]]]},
+  {id:"fondo", h:"Todo el día", t:"Sin IA, de fondo", c:"--ext", steps:[
+    [["vig"],"Cada 30 min: ¿corrió la ronda?",["f_ses"],["f_ses"],[]],
+    [["vig"],"Si no corrió, prende la PC y la relanza",[],["f_pedpc"],[["vig","desp"],["desp","coord"]]],
+    [["caz"],"Cada 2 h: ofertas de eBay debajo del tope",["f_vig","f_pus","f_pcb","x_ebay"],[],[["caz","x_tg"],["x_tg","santi"]]],
+    [["bot"],"Cada 15 min: te avisa necesidades y chat nuevo",["f_nec","f_chat"],[],[["bot","x_tg"],["x_tg","santi"]]]]},
+  {id:"cmd", h:"La clave", t:"¿Quién carga CLAUDE.md?", c:"--write", steps:[
+    [ALL_CLAUDE,"Cada sesión de Claude lo carga completo: entre 20 y 35 veces por día",["f_claude"],[],[]]]},
+];
+
+const $ = s => document.querySelector(s);
+const files = $("#files");
+FILES.forEach(([g, list]) => {
+  const d = document.createElement("div"); d.className = "grp";
+  d.innerHTML = `<h3>${g}</h3><div class="ns">${list.map(([id,l]) => `<button class="n f" data-id="${id}">${l}</button>`).join("")}</div>`;
+  files.appendChild(d);
+});
+const N = {}; document.querySelectorAll(".n").forEach(b => N[b.dataset.id] = b);
+const LABEL = id => N[id].innerText.replace(/\n/g," ");
+
+// conexiones de cada cuadrito (para el modo "tocar")
+const ADJ = {};
+const link = (a,b) => { (ADJ[a] ||= new Set()).add(b); (ADJ[b] ||= new Set()).add(a); };
+SCENES.forEach(s => s.steps.forEach(([who,,r,w,m]) => { who.forEach(x => { r.forEach(f => link(x,f)); w.forEach(f => link(x,f)); }); m.forEach(([a,b]) => link(a,b)); }));
+
+const stage = $("#stage"), svg = $("#wires"), fit = $("#fit"), scaler = $("#scaler");
+let scale = 1;
+function layout(){
+  scale = Math.max(.62, Math.min(1, fit.clientWidth / 1180));
+  stage.style.transform = `scale(${scale})`;
+  scaler.style.width = (1180*scale) + "px";
+  scaler.style.height = (stage.offsetHeight*scale) + "px";
+  svg.setAttribute("viewBox", `0 0 ${stage.offsetWidth} ${stage.offsetHeight}`);
+  redraw();
+}
+function box(id){
+  const s = stage.getBoundingClientRect(), r = N[id].getBoundingClientRect();
+  return {x:(r.left-s.left)/scale, y:(r.top-s.top)/scale, w:r.width/scale, h:r.height/scale};
+}
+function path(a,b){
+  const A = box(a), B = box(b);
+  const ax = A.x+A.w/2, ay = A.y+A.h/2, bx = B.x+B.w/2, by = B.y+B.h/2;
+  if (Math.abs(by-ay) > Math.max(A.h,B.h)) {
+    const down = by > ay, y1 = down ? A.y+A.h : A.y, y2 = down ? B.y : B.y+B.h, k = (y2-y1)*.5;
+    return `M${ax},${y1} C${ax},${y1+k} ${bx},${y2-k} ${bx},${y2}`;
+  }
+  const right = bx > ax, x1 = right ? A.x+A.w : A.x, x2 = right ? B.x : B.x+B.w, k = (x2-x1)*.5, lift = -Math.min(40, Math.abs(x2-x1)*.25);
+  return `M${x1},${ay} C${x1+k},${ay+lift} ${x2-k},${by+lift} ${x2},${by}`;
+}
+let wires = [];
+function redraw(){
+  svg.innerHTML = wires.map(([a,b,c]) => `<path class="wire ${c}" d="${path(a,b)}"/>`).join("");
+}
+
+// estado
+let sc = null, st = 0, timer = null, playing = true, picked = null;
+const scBox = $("#scenes");
+SCENES.forEach((s,i) => {
+  const b = document.createElement("button"); b.className = "sc"; b.style.setProperty("--c", `var(${s.c})`);
+  b.innerHTML = `<b>${s.h}</b><span>${s.t}</span>`; b.setAttribute("aria-pressed","false");
+  b.onclick = () => choose(i); scBox.appendChild(b);
+});
+function clear(){ document.querySelectorAll(".n").forEach(n => n.classList.remove("on","seen","r","w")); $(".card")?.remove(); }
+function choose(i){
+  picked = null; sc = i; st = 0;
+  [...scBox.children].forEach((b,j) => b.setAttribute("aria-pressed", j===i ? "true":"false"));
+  $("#bar").style.setProperty("--c", `var(${SCENES[i].c})`);
+  playing = true; show();
+}
+function show(){
+  clearTimeout(timer); clear();
+  const S = SCENES[sc], steps = S.steps;
+  stage.classList.add("act");
+  for (let k=0;k<st;k++){ const [who,,r,w,m] = steps[k]; [...who,...r,...w,...m.flat()].forEach(id => N[id].classList.add("seen")); }
+  const [who,txt,r,w,m] = steps[st];
+  who.forEach(id => N[id].classList.add("on"));
+  r.forEach(id => N[id].classList.add("on","r"));
+  w.forEach(id => N[id].classList.add("on","w"));
+  m.flat().forEach(id => N[id].classList.add("on"));
+  wires = [];
+  who.forEach(x => { r.forEach(f => wires.push([f,x,"r"])); w.forEach(f => wires.push([x,f,"w"])); });
+  m.forEach(([a,b]) => wires.push([a,b,"m"]));
+  redraw();
+  $("#cap").textContent = `${st+1}/${steps.length} · ${txt}`;
+  $("#dots").innerHTML = steps.map((_,k) => `<i class="${k<=st?"on":""}" data-k="${k}"></i>`).join("");
+  $("#prev").disabled = st===0; $("#next").disabled = st===steps.length-1;
+  $("#play").textContent = playing ? "⏸" : "▶︎"; $("#play").setAttribute("aria-label", playing ? "Pausar":"Reproducir");
+  if (playing && st < steps.length-1) timer = setTimeout(() => { st++; show(); }, 2600);
+  else if (st === steps.length-1) { playing = false; $("#play").textContent = "↻"; $("#play").setAttribute("aria-label","Repetir"); }
+}
+$("#dots").onclick = e => { const k = e.target.dataset.k; if (k!=null && sc!=null){ st=+k; playing=false; show(); } };
+$("#prev").onclick = () => { if (sc==null) return; playing=false; st=Math.max(0,st-1); show(); };
+$("#next").onclick = () => { if (sc==null) return; playing=false; st=Math.min(SCENES[sc].steps.length-1,st+1); show(); };
+$("#play").onclick = () => {
+  if (sc==null) return choose(0);
+  if (st===SCENES[sc].steps.length-1 && !playing){ st=0; playing=true; return show(); }
+  playing=!playing; show();
+};
+// tocar un cuadrito
+stage.addEventListener("click", e => {
+  const n = e.target.closest(".n");
+  if (!n) { reset(); return; }
+  const id = n.dataset.id;
+  clearTimeout(timer); sc = null; [...scBox.children].forEach(b => b.setAttribute("aria-pressed","false"));
+  if (picked === id) { reset(); return; }
+  picked = id; clear(); stage.classList.add("act");
+  n.classList.add("on");
+  const nb = [...(ADJ[id]||[])];
+  wires = [];
+  nb.forEach(o => { N[o].classList.add("on"); wires.push([id,o,"u"]); });
+  if (id === "f_claude") ALL_CLAUDE.forEach(o => { if (!nb.includes(o)) { N[o].classList.add("on"); wires.push([id,o,"u"]); } });
+  redraw();
+  $("#cap").textContent = LABEL(id); $("#dots").innerHTML = ""; $("#bar").style.removeProperty("--c");
+  ["prev","next"].forEach(b => $("#"+b).disabled = true); $("#play").textContent = "▶︎";
+  const B = box(id), c = document.createElement("div"); c.className = "card";
+  c.innerHTML = `<b>${LABEL(id)}</b><span>${INFO[id]||""}</span>`;
+  stage.appendChild(c);
+  let x = B.x + B.w + 10, y = B.y;
+  if (x + 270 > stage.offsetWidth) x = B.x - 270;
+  if (y + c.offsetHeight > stage.offsetHeight) y = stage.offsetHeight - c.offsetHeight - 6;
+  c.style.left = Math.max(4,x) + "px"; c.style.top = y + "px";
+});
+function reset(){
+  picked = null; sc = null; clearTimeout(timer); clear(); stage.classList.remove("act"); wires = []; redraw();
+  [...scBox.children].forEach(b => b.setAttribute("aria-pressed","false"));
+  $("#cap").textContent = "Elegí un momento del día"; $("#dots").innerHTML = "";
+  ["prev","next"].forEach(b => $("#"+b).disabled = true); $("#play").textContent = "▶︎";
+}
+addEventListener("resize", layout);
+document.fonts?.ready.then(layout);
+layout(); choose(2);
+</script>

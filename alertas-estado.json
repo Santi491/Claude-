@@ -138,7 +138,7 @@
   "Intel Core Ultra 7 265K|usado": true,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|usado": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo": false,
-  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": true,
+  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": false,
   "RAM DDR4 16GB (2x8) 3200|nuevo": false,
   "RAM DDR4 16GB (2x8) 3200|usado": false,
   "SSD NVMe 1TB|nuevo": false,
@@ -162,5 +162,5 @@
   "✅ Ahora conviene Corsair Vengeance RGB DDR5 32GB (2x16) 6000 (usado): +15% · costo puesto Bs 4.915 vs Bs 5.800 en Cochabamba",
   "⬇ SSD NVMe 2TB (usado) bajó 23% en eBay: USD 181.00 → 139.40"
  ],
- "revisado": "2026-11-24 07:54"
+ "revisado": "2026-11-24 10:47"
 }

@@ -327,3 +327,7 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-23,Ryzen 7 9800X3D,cpu,5899,Bs,Bs 5899,nuevo,particulares y tiendas (5 anuncios),marketplace,sí,"23/11 candidato: 5 anuncios en Cochabamba: 5.690, 5.899, 6.000, 6.100 y 6.700; más 1 listado multi-modelo a 4.860; sin demanda confirmada"
 2026-11-23,Ryzen 7 5700X,cpu,2555,Bs,Bs 2555,nuevo,particulares (2 anuncios),marketplace,sí,23/11 candidato: 2.550 y 2.560 sueltos (+ combo 3.950 no cuenta)
 2026-11-23,Ryzen 7 8700G,cpu,3450,Bs,Bs 3450,nuevo,particular (1 anuncio),marketplace,sí,23/11 candidato: 1 suelto a 3.450 AM5
+2026-11-24,Intel Core i5-4570,cpu,370,Bs,Bs 370,usado,Tecnología GabBoss,whatsapp,sí,"24/11 IA de Meta: equipo viejo 4ta gen, stock al pedido"
+2026-11-24,RAM DDR3 8GB,ram,230,Bs,Bs 230,usado,Tecnología GabBoss,whatsapp,sí,"24/11 IA de Meta: segunda mano, stock al pedido"
+2026-11-24,Ryzen 7 9800X3D,cpu,5690,Bs,Bs 5690,nuevo,"particular (2 anuncios: 5.690 y 6.000 ""sellado"")",marketplace,sí,24/11 candidato: 2 sueltos en Cochabamba
+2026-11-24,Ryzen 9 9900X3D,cpu,6600,Bs,Bs 6600,nuevo sellado,particular (1 anuncio),marketplace,sí,24/11 candidato: 1 suelto AM5
