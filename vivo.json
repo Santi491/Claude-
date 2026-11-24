@@ -36,6 +36,11 @@
    "estado": "trabajando",
    "texto": "Recalculando qué conviene traer",
    "hora": "16:28"
+  },
+  "fin": {
+   "estado": "trabajando",
+   "texto": "Números del negocio",
+   "hora": "16:28"
   }
  }
 }
