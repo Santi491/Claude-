@@ -16,6 +16,11 @@
    "estado": "terminó",
    "texto": "6 mensajes, listas completas pedidas, grupo E calificado",
    "hora": "16:20"
+  },
+  "mkt": {
+   "estado": "trabajando",
+   "texto": "Messenger y novedades de Marketplace",
+   "hora": "16:20"
   }
  }
 }
