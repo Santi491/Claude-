@@ -36,6 +36,11 @@
    "estado": "terminó",
    "texto": "Publicada versión 160",
    "hora": "10:50"
+  },
+  "gerente": {
+   "estado": "trabajando",
+   "texto": "Control, chat y mensaje de fin de ronda",
+   "hora": "10:50"
   }
  }
 }
