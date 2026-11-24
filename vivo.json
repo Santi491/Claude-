@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-24"
  },
- "actualizado": "2026-11-24 16:28",
+ "actualizado": "2026-11-24 16:29",
  "agentes": {
   "ebay": {
    "estado": "terminó",
@@ -33,9 +33,9 @@
    "hora": "16:27"
   },
   "ana": {
-   "estado": "trabajando",
-   "texto": "Recalculando qué conviene traer",
-   "hora": "16:28"
+   "estado": "terminó",
+   "texto": "Sin cambios en qué traer",
+   "hora": "16:29"
   },
   "fin": {
    "estado": "terminó",
