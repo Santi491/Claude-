@@ -116,7 +116,11 @@
   "baja|Ryzen 5 7600X|nuevo|2026-11-21": "2026-11-21 07:54",
   "baja|SSD NVMe 1TB|usado|2026-11-23": "2026-11-23 07:54",
   "baja|Ryzen 5 9600X|usado|2026-11-23": "2026-11-23 07:54",
-  "conviene|Ryzen 5 9600X|usado|2026-11-23": "2026-11-23 07:54"
+  "conviene|Ryzen 5 9600X|usado|2026-11-23": "2026-11-23 07:54",
+  "baja|Ryzen 5 5600|usado|2026-11-24": "2026-11-24 07:54",
+  "conviene|Intel Core i5-12400F|nuevo|2026-11-24": "2026-11-24 07:54",
+  "conviene|Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado|2026-11-24": "2026-11-24 07:54",
+  "baja|SSD NVMe 2TB|usado|2026-11-24": "2026-11-24 07:54"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -125,7 +129,7 @@
   "Ryzen 7 7800X3D|usado": true,
   "Ryzen 9 9950X|nuevo": false,
   "Ryzen 9 9950X|usado": false,
-  "Intel Core i5-12400F|nuevo": false,
+  "Intel Core i5-12400F|nuevo": true,
   "Intel Core i5-12400F|usado": true,
   "Intel Core i5-13400|usado": true,
   "Intel Core i5-14400F|nuevo": true,
@@ -134,7 +138,7 @@
   "Intel Core Ultra 7 265K|usado": true,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|usado": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo": false,
-  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": false,
+  "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": true,
   "RAM DDR4 16GB (2x8) 3200|nuevo": false,
   "RAM DDR4 16GB (2x8) 3200|usado": false,
   "SSD NVMe 1TB|nuevo": false,
@@ -153,9 +157,10 @@
   "Ryzen 9 9950X3D|usado": true
  },
  "ultimas": [
-  "⬇ SSD NVMe 1TB (usado) bajó 10% en eBay: USD 99.99 → 89.99",
-  "⬇ Ryzen 5 9600X (usado) bajó 12% en eBay: USD 169.98 → 150.00",
-  "✅ Ahora conviene Ryzen 5 9600X (usado): +20% · costo puesto Bs 1.971 vs Bs 2.450 en Cochabamba"
+  "⬇ Ryzen 5 5600 (usado) bajó 11% en eBay: USD 134.99 → 119.99",
+  "✅ Ahora conviene Intel Core i5-12400F (nuevo): +17% · costo puesto Bs 1.696 vs Bs 2.050 en Cochabamba",
+  "✅ Ahora conviene Corsair Vengeance RGB DDR5 32GB (2x16) 6000 (usado): +15% · costo puesto Bs 4.915 vs Bs 5.800 en Cochabamba",
+  "⬇ SSD NVMe 2TB (usado) bajó 23% en eBay: USD 181.00 → 139.40"
  ],
- "revisado": "2026-11-23 10:52"
+ "revisado": "2026-11-24 07:54"
 }

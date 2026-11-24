@@ -949,3 +949,6 @@ fecha,hora,agente,texto
 2026-11-23,11:36,gerente,"Objetivos de la semana 23-29/11 fijados por Santi (sesión en la Mac): cat-1 y cli-2 bajan a 5, cli-1 hasta el 26/11, mkt-4 próximo barrido 07/12, el resto renovado hasta el 29/11"
 2026-11-23,16:17,local,"Ronda de la tarde (sesión 16:12): otra ronda de la PC activa desde las 16:06 en vivo/_ronda; esperé unos minutos, sigue activa; no trabajé al mismo tiempo y terminé"
 2026-11-23,20:25,gerente,"Informe de las 20:00 (lunes): verificar.py sin errores; ronda de las 16:00 a medias (dos arranques a la vez); 6 tareas nuevas para el martes (todas rutina, 0 propuestas a Santi), 3 reprogramadas y 2 cerradas por vencidas; 3 mensajes de chat enviados; 2 notas de libreta anotadas; 2 necesidades resueltas; 3 recomendaciones nuevas",
+2026-11-24,07:54,ebay,"API: 15 precios nuevos y 15 usados; 1 corregida (9950X3D nuevo: la más barata era delided, quedó la OEM tray de USD 525)"
+2026-11-24,07:54,ana,"Traer (nuevo): SSD NVMe 2TB 31.5 % margen (peor caso 20.7 %), Ryzen 5 7600X 29.9 %, Ryzen 9 9950X3D 28.8 %, 7800X3D 23.8 %, i5-12400F 20.8 %. Esperar: 265K, 14400F, 9600X, 7700X. No traer: SSD 1TB, Corsair 6000, 7500F, 7600."
+2026-11-24,07:54,nube,"Revisión diaria hecha: dólar USDT 11.99 (oficial/paralelo de 23/11, no se buscó hoy), eBay, comparación, análisis, Excel/PDF e informe"
