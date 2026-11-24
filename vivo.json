@@ -5,7 +5,7 @@
   "desde": "10:35",
   "fecha": "2026-11-24"
  },
- "actualizado": "2026-11-24 10:45",
+ "actualizado": "2026-11-24 10:46",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -18,9 +18,9 @@
    "hora": "10:45"
   },
   "pedidos": {
-   "estado": "trabajando",
-   "texto": "Rastreando paquetes",
-   "hora": "10:45"
+   "estado": "terminó",
+   "texto": "7700X en camino, sin cambios",
+   "hora": "10:46"
   }
  }
 }
