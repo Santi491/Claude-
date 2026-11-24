@@ -41,6 +41,11 @@
    "estado": "terminó",
    "texto": "Sin ventas; 4 procesadores en camino",
    "hora": "16:28"
+  },
+  "oficina": {
+   "estado": "trabajando",
+   "texto": "Actualizando y publicando la oficina",
+   "hora": "16:29"
   }
  }
 }
