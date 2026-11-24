@@ -38,8 +38,8 @@
    "hora": "16:28"
   },
   "fin": {
-   "estado": "trabajando",
-   "texto": "Números del negocio",
+   "estado": "terminó",
+   "texto": "Sin ventas; 4 procesadores en camino",
    "hora": "16:28"
   }
  }
