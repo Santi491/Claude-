@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-24"
  },
- "actualizado": "2026-11-24 16:11",
+ "actualizado": "2026-11-24 16:20",
  "agentes": {
   "ebay": {
    "estado": "terminó",
@@ -13,9 +13,9 @@
    "hora": "16:11"
   },
   "wa": {
-   "estado": "trabajando",
-   "texto": "No leídos, respuestas y listas completas",
-   "hora": "16:11"
+   "estado": "terminó",
+   "texto": "6 mensajes, listas completas pedidas, grupo E calificado",
+   "hora": "16:20"
   }
  }
 }
