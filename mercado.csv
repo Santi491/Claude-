@@ -331,3 +331,10 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-24,RAM DDR3 8GB,ram,230,Bs,Bs 230,usado,Tecnología GabBoss,whatsapp,sí,"24/11 IA de Meta: segunda mano, stock al pedido"
 2026-11-24,Ryzen 7 9800X3D,cpu,5690,Bs,Bs 5690,nuevo,"particular (2 anuncios: 5.690 y 6.000 ""sellado"")",marketplace,sí,24/11 candidato: 2 sueltos en Cochabamba
 2026-11-24,Ryzen 9 9900X3D,cpu,6600,Bs,Bs 6600,nuevo sellado,particular (1 anuncio),marketplace,sí,24/11 candidato: 1 suelto AM5
+2026-11-24,Intel Core i7-14700F,cpu,4860,Bs,4860,no indica,Punto Tecnológico / Supermall,web,sí,web 24/11; baja de Bs 5.210 (18/11); Disponible
+2026-11-24,Ryzen 5 8400F,cpu,1760,Bs,1760,no indica,Punto Tecnológico / Supermall,web,sí,web 24/11; sube de Bs 1.680 (12/11); Disponible
+2026-11-24,Colorful SSD 512GB,ssd,920,Bs,920,no indica,Punto Tecnológico / Supermall,web,sí,web 24/11; sube de Bs 890 (12/11); Disponible
+2026-11-24,Hiksemi Wave SSD 512GB,ssd,1105,Bs,1105,no indica,Punto Tecnológico / Supermall,web,sí,web 24/11; sube de Bs 930 (12/11); stock bajo; sin dato de NVMe
+2026-11-24,Hiksemi Wave SSD M.2 512GB,ssd,1200,Bs,1200,no indica,Punto Tecnológico / Supermall,web,sí,web 24/11; Disponible; sin dato de NVMe
+2026-11-24,Hiksemi SSD M.2 SATA 512GB,ssd,1110,Bs,1110,no indica,Punto Tecnológico / Supermall,web,sí,web 24/11; Disponible; SATA
+2026-11-24,Apacer Nox RGB DDR5 32GB 5200,ram,5460,Bs,5460,no indica,Punto Tecnológico / Supermall,web,sí,web 24/11; stock bajo; kit sin dato

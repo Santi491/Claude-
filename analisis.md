@@ -10,9 +10,9 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Ryzen 9 9950X3D | nuevo | 6.457 | 8.910 | 27.5 % | 38.0 % | 25.4 % | 27.2 % | 19.4 % | 16.5 % | **traer** (aguanta el peor caso (16.5 %)) | — |
 | Ryzen 7 7800X3D | nuevo | 3.882 | 5.100 | 23.9 % | 31.4 % | 21.6 % | 23.2 % | 15.4 % | 12.1 % | **traer** (aguanta el peor caso (12.1 %)) | — |
 | Intel Core i5-12400F | nuevo | 1.694 | 2.140 | 20.8 % | 26.3 % | 18.5 % | 19.3 % | 12.2 % | 7.8 % | **traer** (aguanta el peor caso (7.8 %)) | — |
-| Intel Core i5-12400F | usado | 1.566 | 2.230 | 29.8 % | 42.4 % | 27.7 % | 28.3 % | 21.7 % | 17.6 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | RAM DDR4 16GB (2x8) 3200 | usado | 1.073 | 1.510 | 28.9 % | 40.7 % | 26.8 % | 26.7 % | 20.5 % | 15.6 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
-| SSD NVMe 1TB | usado | 1.318 | 1.710 | 22.9 % | 29.8 % | 20.6 % | 21.0 % | 14.4 % | 9.6 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
+| Intel Core i5-12400F | usado | 1.605 | 2.230 | 28.0 % | 38.9 % | 25.9 % | 26.5 % | 19.7 % | 15.6 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
+| SSD NVMe 1TB | usado | 1.354 | 1.710 | 20.8 % | 26.3 % | 18.5 % | 18.9 % | 12.1 % | 7.2 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 7 7800X3D | usado | 3.462 | 4.180 | 17.2 % | 20.7 % | 14.7 % | 16.4 % | 7.9 % | 4.2 % | **esperar** (el peor caso lo deja en 4.2 %) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Intel Core Ultra 7 265K | nuevo | 3.318 | 3.980 | 16.6 % | 19.9 % | 14.1 % | 15.8 % | 7.3 % | 3.6 % | **esperar** (el peor caso lo deja en 3.6 %) | — |
 | Intel Core i5-14400F | nuevo | 1.965 | 2.350 | 16.4 % | 19.6 % | 13.9 % | 15.0 % | 7.3 % | 2.9 % | **esperar** (el peor caso lo deja en 2.9 %) | — |
@@ -22,18 +22,18 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Ryzen 9 9950X | nuevo | 5.141 | 5.830 | 11.8 % | 13.4 % | 9.2 % | 11.2 % | 1.9 % | -1.7 % | **esperar** (el peor caso lo deja en -1.7 %) | — |
 | SSD NVMe 1TB | nuevo | 1.685 | 1.770 | 4.8 % | 5.0 % | 1.9 % | 2.9 % | -6.0 % | -11.3 % | **no traer** (margen 5% con el precio sugerido) | 3 anuncio(s) de particular sin marca o configuración descartado(s), 2 precio(s) local(es) atípico(s) (30 % bajo la mediana) descartado(s) |
 | Ryzen 5 7500F | usado | 1.614 | 1.660 | 2.8 % | 2.9 % | -0.1 % | 0.8 % | -7.6 % | -13.1 % | **no traer** (margen 3% con el precio sugerido) | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
-| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | nuevo | 5.798 | 5.890 | 1.6 % | 1.6 % | -1.4 % | 1.0 % | -9.4 % | -13.3 % | **no traer** (margen 2% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
+| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | nuevo | 5.858 | 5.890 | 0.5 % | 0.5 % | -2.4 % | -0.0 % | -10.5 % | -14.5 % | **no traer** (margen 1% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 5 7500F | nuevo | 1.809 | 1.660 | -9.0 % | -8.2 % | -12.2 % | -11.0 % | -20.6 % | -26.5 % | **no traer** (margen -9% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | usado | 4.960 | 4.270 | -16.1 % | -13.9 % | -19.6 % | -16.9 % | -29.2 % | -33.9 % | **no traer** (margen -16% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 5 7600 | nuevo | 3.303 | 2.700 | -22.3 % | -18.3 % | -26.0 % | -23.6 % | -35.9 % | -41.4 % | **no traer** (margen -22% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | SSD NVMe 2TB | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), 1 anuncio(s) de particular sin marca o configuración descartado(s) |
 | Ryzen 5 7600 | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 7 7700X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
-| Ryzen 5 7600X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Intel Core Ultra 7 265K | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Ryzen 9 9950X3D | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
-| Intel Core i5-14400F | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
+| Ryzen 5 7600X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Ryzen 5 9600X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
+| Intel Core i5-14400F | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
 | Intel Core i5-13400 | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 9 9950X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
