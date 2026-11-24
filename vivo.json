@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-24"
  },
- "actualizado": "2026-11-24 16:26",
+ "actualizado": "2026-11-24 16:27",
  "agentes": {
   "ebay": {
    "estado": "terminó",
@@ -28,9 +28,9 @@
    "hora": "16:26"
   },
   "pedidos": {
-   "estado": "trabajando",
-   "texto": "Seguimiento de paquetes",
-   "hora": "16:26"
+   "estado": "terminó",
+   "texto": "Sin cambios en los paquetes",
+   "hora": "16:27"
   }
  }
 }
