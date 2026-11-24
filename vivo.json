@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-24"
  },
- "actualizado": "2026-11-24 16:29",
+ "actualizado": "2026-11-24 16:33",
  "agentes": {
   "ebay": {
    "estado": "terminó",
@@ -43,9 +43,14 @@
    "hora": "16:28"
   },
   "oficina": {
-   "estado": "trabajando",
-   "texto": "Actualizando y publicando la oficina",
-   "hora": "16:29"
+   "estado": "terminó",
+   "texto": "Oficina publicada con lo de la tarde",
+   "hora": "16:31"
+  },
+  "gerente": {
+   "estado": "terminó",
+   "texto": "Aviso de fin de ronda enviado",
+   "hora": "16:33"
   }
  }
 }
