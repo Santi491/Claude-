@@ -5,7 +5,7 @@
   "desde": "10:35",
   "fecha": "2026-11-24"
  },
- "actualizado": "2026-11-24 10:47",
+ "actualizado": "2026-11-24 10:48",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -23,9 +23,9 @@
    "hora": "10:46"
   },
   "ana": {
-   "estado": "trabajando",
-   "texto": "Analizando precios y demanda",
-   "hora": "10:47"
+   "estado": "terminó",
+   "texto": "Traer: SSD 2TB, 7600X, 9950X3D, 7800X3D",
+   "hora": "10:48"
   },
   "fin": {
    "estado": "trabajando",
