@@ -16,6 +16,11 @@
    "estado": "terminó",
    "texto": "7700X sin cambios, 19 filas de demanda, 2 grupos nuevos",
    "hora": "10:45"
+  },
+  "pedidos": {
+   "estado": "trabajando",
+   "texto": "Rastreando paquetes",
+   "hora": "10:45"
   }
  }
 }
