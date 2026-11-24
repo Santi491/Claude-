@@ -5,6 +5,12 @@
   "desde": "16:08",
   "fecha": "2026-11-24"
  },
- "actualizado": "2026-11-24 16:08",
- "agentes": {}
+ "actualizado": "2026-11-24 16:09",
+ "agentes": {
+  "ebay": {
+   "estado": "trabajando",
+   "texto": "Ventas completadas de eBay de la semana",
+   "hora": "16:09"
+  }
+ }
 }
