@@ -5,7 +5,7 @@
   "desde": "10:35",
   "fecha": "2026-11-24"
  },
- "actualizado": "2026-11-24 10:48",
+ "actualizado": "2026-11-24 10:50",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -33,9 +33,9 @@
    "hora": "10:48"
   },
   "oficina": {
-   "estado": "trabajando",
-   "texto": "Regenerando y publicando",
-   "hora": "10:48"
+   "estado": "terminó",
+   "texto": "Publicada versión 160",
+   "hora": "10:50"
   }
  }
 }
