@@ -21,6 +21,11 @@
    "estado": "terminó",
    "texto": "Messenger sin respuestas; grupos revisados",
    "hora": "16:24"
+  },
+  "cat": {
+   "estado": "trabajando",
+   "texto": "Precios en páginas web de tiendas",
+   "hora": "16:24"
   }
  }
 }
