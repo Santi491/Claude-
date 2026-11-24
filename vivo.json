@@ -2,15 +2,9 @@
  "ronda": {
   "activa": true,
   "quien": "PC de la casa",
-  "desde": "16:06",
-  "fecha": "2026-11-23"
+  "desde": "10:35",
+  "fecha": "2026-11-24"
  },
- "actualizado": "2026-11-23 16:06",
- "agentes": {
-  "wa": {
-   "estado": "trabajando",
-   "texto": "ronda tarde: respuestas y seguimientos",
-   "hora": "16:06"
-  }
- }
+ "actualizado": "2026-11-24 10:35",
+ "agentes": {}
 }
