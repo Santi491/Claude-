@@ -31,6 +31,11 @@
    "estado": "terminó",
    "texto": "Sin ventas, 4 unidades 7700X en camino",
    "hora": "10:48"
+  },
+  "oficina": {
+   "estado": "trabajando",
+   "texto": "Regenerando y publicando",
+   "hora": "10:48"
   }
  }
 }
