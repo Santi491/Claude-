@@ -5,6 +5,12 @@
   "desde": "10:35",
   "fecha": "2026-11-24"
  },
- "actualizado": "2026-11-24 10:35",
- "agentes": {}
+ "actualizado": "2026-11-24 10:36",
+ "agentes": {
+  "wa": {
+   "estado": "trabajando",
+   "texto": "Revisando chats y respondiendo tiendas",
+   "hora": "10:36"
+  }
+ }
 }
