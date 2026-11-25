@@ -120,7 +120,8 @@
   "baja|Ryzen 5 5600|usado|2026-11-24": "2026-11-24 07:54",
   "conviene|Intel Core i5-12400F|nuevo|2026-11-24": "2026-11-24 07:54",
   "conviene|Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado|2026-11-24": "2026-11-24 07:54",
-  "baja|SSD NVMe 2TB|usado|2026-11-24": "2026-11-24 07:54"
+  "baja|SSD NVMe 2TB|usado|2026-11-24": "2026-11-24 07:54",
+  "baja|RAM DDR4 16GB (2x8) 3200|usado|2026-11-25": "2026-11-25 07:54"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -157,10 +158,7 @@
   "Ryzen 9 9950X3D|usado": true
  },
  "ultimas": [
-  "⬇ Ryzen 5 5600 (usado) bajó 11% en eBay: USD 134.99 → 119.99",
-  "✅ Ahora conviene Intel Core i5-12400F (nuevo): +17% · costo puesto Bs 1.696 vs Bs 2.050 en Cochabamba",
-  "✅ Ahora conviene Corsair Vengeance RGB DDR5 32GB (2x16) 6000 (usado): +15% · costo puesto Bs 4.915 vs Bs 5.800 en Cochabamba",
-  "⬇ SSD NVMe 2TB (usado) bajó 23% en eBay: USD 181.00 → 139.40"
+  "⬇ RAM DDR4 16GB (2x8) 3200 (usado) bajó 11% en eBay: USD 75.59 → 66.98"
  ],
- "revisado": "2026-11-24 16:29"
+ "revisado": "2026-11-25 07:54"
 }
