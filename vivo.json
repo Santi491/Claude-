@@ -1,52 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "10:35",
-  "fecha": "2026-11-25",
-  "hasta": "11:12"
+  "desde": "16:08",
+  "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-25 11:12",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "8 mensajes, 6 consultas de precio, 0 chats nuevos",
-   "hora": "10:49"
-  },
-  "mkt": {
-   "estado": "terminó",
-   "texto": "19 productos revisados; 7700X: 1 anuncio sellado a Bs 4.000; 2 tiendas nuevas en TikTok",
-   "hora": "11:02"
-  },
-  "cat": {
-   "estado": "terminó",
-   "texto": "3 webs revisadas por el 7700X, sin cambios en dólares",
-   "hora": "11:05"
-  },
-  "pedidos": {
-   "estado": "terminó",
-   "texto": "7700X: 35 días de puerta a puerta; sin guías activas",
-   "hora": "11:07"
-  },
-  "ana": {
-   "estado": "terminó",
-   "texto": "7700X: piso Bs 2.930, sugerido 3.300, techo 3.450",
-   "hora": "11:09"
-  },
-  "fin": {
-   "estado": "terminó",
-   "texto": "4 u del 7700X a Bs 2.655; sin ventas todavía",
-   "hora": "11:09"
-  },
-  "oficina": {
-   "estado": "terminó",
-   "texto": "Oficina publicada (versión 162)",
-   "hora": "11:11"
-  },
-  "gerente": {
-   "estado": "terminó",
-   "texto": "Control sin errores y aviso enviado",
-   "hora": "11:12"
-  }
- }
+ "actualizado": "2026-11-25 16:08",
+ "agentes": {}
 }
