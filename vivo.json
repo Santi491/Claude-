@@ -5,7 +5,7 @@
   "desde": "10:35",
   "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-25 11:02",
+ "actualizado": "2026-11-25 11:05",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -18,9 +18,9 @@
    "hora": "11:02"
   },
   "cat": {
-   "estado": "trabajando",
-   "texto": "Corrigiendo filas del 9950X3D2 y revisando webs que tocan",
-   "hora": "11:02"
+   "estado": "terminó",
+   "texto": "3 webs revisadas por el 7700X, sin cambios en dólares",
+   "hora": "11:05"
   }
  }
 }
