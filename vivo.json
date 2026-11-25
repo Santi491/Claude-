@@ -28,9 +28,9 @@
    "hora": "16:25"
   },
   "fin": {
-   "estado": "trabajando",
-   "texto": "Stock y caja",
-   "hora": "16:23"
+   "estado": "terminó",
+   "texto": "Sin ventas; 4 unidades en stock",
+   "hora": "16:25"
   }
  }
 }
