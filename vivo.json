@@ -5,7 +5,7 @@
   "desde": "10:35",
   "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-25 10:49",
+ "actualizado": "2026-11-25 11:02",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -13,9 +13,9 @@
    "hora": "10:49"
   },
   "mkt": {
-   "estado": "trabajando",
-   "texto": "Precios, demanda, tiendas en TikTok y competencia del 7700X",
-   "hora": "10:49"
+   "estado": "terminó",
+   "texto": "19 productos revisados; 7700X: 1 anuncio sellado a Bs 4.000; 2 tiendas nuevas en TikTok",
+   "hora": "11:02"
   }
  }
 }
