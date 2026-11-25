@@ -1,57 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "16:08",
-  "fecha": "2026-11-24",
-  "hasta": "16:33"
+  "desde": "10:35",
+  "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-24 16:33",
- "agentes": {
-  "ebay": {
-   "estado": "terminó",
-   "texto": "Vendidos de la semana anotados",
-   "hora": "16:11"
-  },
-  "wa": {
-   "estado": "terminó",
-   "texto": "6 mensajes, listas completas pedidas, grupo E calificado",
-   "hora": "16:20"
-  },
-  "mkt": {
-   "estado": "terminó",
-   "texto": "Messenger sin respuestas; grupos revisados",
-   "hora": "16:24"
-  },
-  "cat": {
-   "estado": "terminó",
-   "texto": "7 precios de la web de una tienda",
-   "hora": "16:26"
-  },
-  "pedidos": {
-   "estado": "terminó",
-   "texto": "Sin cambios en los paquetes",
-   "hora": "16:27"
-  },
-  "ana": {
-   "estado": "terminó",
-   "texto": "Sin cambios en qué traer",
-   "hora": "16:29"
-  },
-  "fin": {
-   "estado": "terminó",
-   "texto": "Sin ventas; 4 procesadores en camino",
-   "hora": "16:28"
-  },
-  "oficina": {
-   "estado": "terminó",
-   "texto": "Oficina publicada con lo de la tarde",
-   "hora": "16:31"
-  },
-  "gerente": {
-   "estado": "terminó",
-   "texto": "Aviso de fin de ronda enviado",
-   "hora": "16:33"
-  }
- }
+ "actualizado": "2026-11-25 10:35",
+ "agentes": {}
 }
