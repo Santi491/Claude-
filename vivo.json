@@ -5,12 +5,17 @@
   "desde": "16:08",
   "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-25 16:19",
+ "actualizado": "2026-11-25 16:20",
  "agentes": {
   "wa": {
    "estado": "terminó",
    "texto": "9 mensajes, 3 chats nuevos y 3 precios nuevos",
    "hora": "16:19"
+  },
+  "mkt": {
+   "estado": "trabajando",
+   "texto": "Messenger y precios en Marketplace",
+   "hora": "16:20"
   }
  }
 }
