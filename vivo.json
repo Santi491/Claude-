@@ -31,6 +31,11 @@
    "estado": "trabajando",
    "texto": "Comparación y precio de venta del 7700X",
    "hora": "11:07"
+  },
+  "fin": {
+   "estado": "trabajando",
+   "texto": "Stock y caja con los 7700X en Cochabamba",
+   "hora": "11:07"
   }
  }
 }
