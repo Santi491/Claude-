@@ -5,7 +5,7 @@
   "desde": "10:35",
   "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-25 11:06",
+ "actualizado": "2026-11-25 11:07",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -23,9 +23,9 @@
    "hora": "11:05"
   },
   "pedidos": {
-   "estado": "trabajando",
-   "texto": "Revisando pedidos activos y días de puerta a puerta",
-   "hora": "11:06"
+   "estado": "terminó",
+   "texto": "7700X: 35 días de puerta a puerta; sin guías activas",
+   "hora": "11:07"
   }
  }
 }
