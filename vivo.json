@@ -5,7 +5,7 @@
   "desde": "10:35",
   "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-25 11:09",
+ "actualizado": "2026-11-25 11:11",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -38,9 +38,9 @@
    "hora": "11:09"
   },
   "oficina": {
-   "estado": "trabajando",
-   "texto": "Regenerando y publicando la oficina",
-   "hora": "11:09"
+   "estado": "terminó",
+   "texto": "Oficina publicada (versión 162)",
+   "hora": "11:11"
   }
  }
 }
