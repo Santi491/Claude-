@@ -26,6 +26,11 @@
    "estado": "trabajando",
    "texto": "Recalculando márgenes con los precios de la tarde",
    "hora": "16:23"
+  },
+  "fin": {
+   "estado": "trabajando",
+   "texto": "Stock y caja",
+   "hora": "16:23"
   }
  }
 }
