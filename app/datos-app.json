@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-24 16:29",
+ "generado": "2026-11-24 20:17",
  "etapa": {
-  "numero": 2,
-  "nombre": "producto en camino",
-  "auto": 2,
+  "numero": 3,
+  "nombre": "vendiendo",
+  "auto": 3,
   "fijada": null
  },
  "dolar": {
@@ -290,8 +290,8 @@
    "id": "real-1",
    "producto": "Ryzen 7 7700X",
    "cantidad": 3,
-   "estado": "en camino a Cochabamba",
-   "etapa": 4,
+   "estado": "en Cochabamba",
+   "etapa": 5,
    "etapas": [
     "comprado",
     "enviado",
@@ -302,7 +302,7 @@
     "entregado"
    ],
    "fecha_compra": "2026-10-20",
-   "actualizado": "2026-11-24 10:45",
+   "actualizado": "2026-11-24 18:37",
    "tienda": "eBay (compra conjunta con un socio)",
    "courier": "Courier B",
    "costo_unit_bs": 2700.0,
@@ -338,6 +338,14 @@
      "evento": "Llegó a Santa Cruz (aviso de Santi); sigue a Cochabamba",
      "lat": -17.78,
      "lon": -63.18
+    },
+    {
+     "fecha": "2026-11-24",
+     "hora": "18:37",
+     "lugar": "Cochabamba",
+     "evento": "Llegó a Cochabamba (aviso de Santi en la app)",
+     "lat": -17.39,
+     "lon": -66.16
     }
    ]
   },
@@ -346,8 +354,8 @@
    "id": "real-2",
    "producto": "Ryzen 7 7700X",
    "cantidad": 1,
-   "estado": "en camino a Cochabamba",
-   "etapa": 4,
+   "estado": "en Cochabamba",
+   "etapa": 5,
    "etapas": [
     "comprado",
     "enviado",
@@ -358,7 +366,7 @@
     "entregado"
    ],
    "fecha_compra": "2026-10-20",
-   "actualizado": "2026-11-24 10:45",
+   "actualizado": "2026-11-24 18:37",
    "tienda": "eBay (compra conjunta con un socio)",
    "courier": "Courier B",
    "costo_unit_bs": 2520.0,
@@ -394,6 +402,14 @@
      "evento": "Llegó a Santa Cruz (aviso de Santi); sigue a Cochabamba",
      "lat": -17.78,
      "lon": -63.18
+    },
+    {
+     "fecha": "2026-11-24",
+     "hora": "18:37",
+     "lugar": "Cochabamba",
+     "evento": "Llegó a Cochabamba (aviso de Santi en la app)",
+     "lat": -17.39,
+     "lon": -66.16
     }
    ]
   },
@@ -812,7 +828,7 @@
    "margen": 28.9,
    "peor": 15.6,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/168863800993",
    "courier_usd": 14.0,
    "tc": 11.98,
@@ -830,7 +846,7 @@
    "margen": 28.0,
    "peor": 15.6,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/820390285569",
    "courier_usd": 14.0,
    "tc": 11.98,
@@ -848,7 +864,7 @@
    "margen": 20.8,
    "peor": 7.2,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/147685909512",
    "courier_usd": 14.0,
    "tc": 11.98,
@@ -1208,7 +1224,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1244,7 +1260,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1262,7 +1278,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1280,7 +1296,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1556,6 +1572,16 @@
  },
  "decidir": [
   {
+   "tipo": "plan",
+   "ref": "2026-11-25-9",
+   "agente": "wa",
+   "fecha": "2026-11-24",
+   "titulo": "Si Santi levanta la regla de no ofrecer ventas: ofrecer los 7700X a las tiendas de los grupos A y B (clientes-potenciales.csv) y avisarle a cada interesada (él cierra el trato); mientras no la levante, no se ofrece nada (v-2)",
+   "detalle": "Etapa 3: 4 unidades en Cochabamba y la meta es venderlas en 7 días; hoy la regla prohíbe ofrecer por WhatsApp",
+   "plazo": "2026-11-27",
+   "fecha_para": "2026-11-25"
+  },
+  {
    "tipo": "necesidad",
    "ref": "53",
    "agente": "wa",
@@ -1563,16 +1589,6 @@
    "titulo": "Un número de WhatsApp correcto de iPlace Bolivia (el de la ficha T071 es de una casa de empeño)",
    "detalle": "Poder contactar a iPlace; mientras tanto no se le escribe (pasó el 04/11 y el 24/11)",
    "plazo": ""
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-19-1",
-   "agente": "wa",
-   "fecha": "2026-11-19",
-   "titulo": "Marcar HC store como \"no vende componentes\" en su ficha y dejar de incluirla en listas y seguimientos",
-   "detalle": "WhatsApp 19/11: 2 seguimientos sin respuesta y ya está fría; propone marcarla no vende (cambio de ficha de tienda: necesita OK de Santi)",
-   "plazo": "2026-11-26",
-   "fecha_para": "2026-11-20"
   },
   {
    "tipo": "plan",
@@ -1616,6 +1632,22 @@
   }
  ],
  "equipo": [
+  {
+   "agente": "gerente",
+   "nombre": "Gerente",
+   "acciones": 26,
+   "serie": [
+    4,
+    3,
+    6,
+    2,
+    1,
+    5,
+    5
+   ],
+   "ultima": "Informe martes 24/11: etapa 3 (7700X en Cochabamba por aviso de Santi); verificar sin errores; 7 tareas nuevas para el 25/11 (6 rutina auto, 1 propuesta: levantar regla de ofrecer); 1 tarea cerrada por innecesaria; 3 men",
+   "cuando": "2026-11-24 20:30"
+  },
   {
    "agente": "wa",
    "nombre": "WhatsApp",
@@ -1729,22 +1761,6 @@
    "cuando": "2026-11-24 16:10"
   },
   {
-   "agente": "gerente",
-   "nombre": "Gerente",
-   "acciones": 22,
-   "serie": [
-    4,
-    3,
-    6,
-    2,
-    1,
-    5,
-    1
-   ],
-   "ultima": "Cierre ronda mañana PC: verificar sin errores; chat contestado (wa, mkt); tarea 2026-11-23-3 hecha, 23-1 reprogramada al 26/11; libreta: 68 reprogramada como 87 (vence 27/11); 3 recomendaciones; aviso de fin de ronda env",
-   "cuando": "2026-11-24 10:57"
-  },
-  {
    "agente": "nube",
    "nombre": "Informe diario",
    "acciones": 7,
@@ -1767,18 +1783,6 @@
    "agente": "wa",
    "nombre": "WhatsApp",
    "objetivo": "5 tiendas distintas con precio cada semana; primero los productos sin dato",
-   "meta": "5",
-   "avance": 1,
-   "hasta": "2026-11-29",
-   "cumplido": false,
-   "vencido": false,
-   "estado": ""
-  },
-  {
-   "id": "mkt-2",
-   "agente": "mkt",
-   "nombre": "Marketplace",
-   "objetivo": "Seguir cada 7700X publicado en la zona (precio y días en línea) en cada ronda completa",
    "meta": "5",
    "avance": 1,
    "hasta": "2026-11-29",
@@ -1859,18 +1863,6 @@
    "estado": ""
   },
   {
-   "id": "ped-2",
-   "agente": "pedidos",
-   "nombre": "Pedidos",
-   "objetivo": "Anotar los días reales de puerta a puerta de cada pedido cuando llegue",
-   "meta": "1",
-   "avance": null,
-   "hasta": "2026-11-29",
-   "cumplido": false,
-   "vencido": false,
-   "estado": ""
-  },
-  {
    "id": "ger-1",
    "agente": "gerente",
    "nombre": "Gerente",
@@ -1883,73 +1875,109 @@
    "estado": ""
   },
   {
-   "id": "cli-1",
-   "agente": "wa",
-   "nombre": "WhatsApp",
-   "objetivo": "Clientes potenciales con Marketplace: calificar las tiendas del grupo E en clientes-potenciales.csv y ordenar A y B por a quién ofrecer primero (sin ofrecer nada todavía)",
-   "meta": "1",
-   "avance": null,
-   "hasta": "2026-11-26",
-   "cumplido": true,
-   "vencido": false,
-   "estado": "hecho"
-  },
-  {
-   "id": "cli-2",
+   "id": "v-1",
    "agente": "mkt",
    "nombre": "Marketplace",
-   "objetivo": "Clientes potenciales con WhatsApp: encontrar 5 grupos y compradores de la zona que buscan componentes; personas sin nombres ni datos en el repo (a Santi, solo por notificar.py)",
+   "objetivo": "Publicar los 7700X dentro de las 24 horas después de tener el precio y las fotos de Santi; renovar a los 7 días y pasarle cada interesado el mismo día",
    "meta": "1",
    "avance": null,
-   "hasta": "2026-11-29",
+   "hasta": "",
    "cumplido": false,
    "vencido": false,
    "estado": ""
   },
   {
-   "id": "wa-3",
+   "id": "v-2",
    "agente": "wa",
    "nombre": "WhatsApp",
-   "objetivo": "Pedir la lista completa a todas las tiendas que faltan, incluidas las frías: una sola vez y sin seguimiento",
-   "meta": "77",
-   "avance": 70,
-   "hasta": "2026-11-29",
-   "cumplido": false,
-   "vencido": false,
-   "estado": ""
-  },
-  {
-   "id": "mkt-4",
-   "agente": "mkt",
-   "nombre": "Marketplace",
-   "objetivo": "Barrido de tiendas por redes cada 2 semanas (idea 21); el tiempo libre va a buscar compradores (cli-2)",
+   "objetivo": "Si Santi levanta la regla de no ofrecer: ofrecer los 7700X a las tiendas de los grupos A y B y avisarle cada interesada (él cierra el trato)",
    "meta": "1",
    "avance": null,
-   "hasta": "2026-12-07",
+   "hasta": "",
    "cumplido": false,
    "vencido": false,
    "estado": ""
   },
   {
-   "id": "ped-3",
+   "id": "v-3",
+   "agente": "ana",
+   "nombre": "Analista",
+   "objetivo": "Revisar en cada ronda si el precio de Santi sigue bien frente a la competencia y decir cuándo conviene bajarlo",
+   "meta": "1",
+   "avance": null,
+   "hasta": "",
+   "cumplido": false,
+   "vencido": false,
+   "estado": ""
+  },
+  {
+   "id": "v-4",
+   "agente": "dem",
+   "nombre": "Analista de demanda",
+   "objetivo": "Seguir el 7700X en cada ronda: anuncios, los que desaparecen e interesados",
+   "meta": "1",
+   "avance": null,
+   "hasta": "",
+   "cumplido": false,
+   "vencido": false,
+   "estado": ""
+  },
+  {
+   "id": "v-5",
+   "agente": "mkt",
+   "nombre": "Marketplace",
+   "objetivo": "Catálogos: vigilar primero el precio del 7700X en las tiendas",
+   "meta": "1",
+   "avance": null,
+   "hasta": "",
+   "cumplido": false,
+   "vencido": false,
+   "estado": ""
+  },
+  {
+   "id": "v-6",
+   "agente": "fin",
+   "nombre": "Finanzas",
+   "objetivo": "Registrar cada venta y cobro el mismo día; ganancia real y plata disponible para el segundo pedido",
+   "meta": "1",
+   "avance": null,
+   "hasta": "",
+   "cumplido": false,
+   "vencido": false,
+   "estado": ""
+  },
+  {
+   "id": "v-7",
    "agente": "pedidos",
    "nombre": "Pedidos",
-   "objetivo": "Avisarle a Santi el reclamo a eBay del primer pedido antes del 26/11 y anotar lo que decida",
+   "objetivo": "Cerrar el pedido con los días reales de puerta a puerta y rastrear el próximo",
    "meta": "1",
    "avance": null,
-   "hasta": "2026-11-24",
-   "cumplido": true,
+   "hasta": "",
+   "cumplido": false,
    "vencido": false,
-   "estado": "hecho"
+   "estado": ""
   },
   {
-   "id": "ger-2",
-   "agente": "gerente",
-   "nombre": "Gerente",
-   "objetivo": "Cada día, decirle a Santi qué falta para la venta del 7700X y qué le recomienda hacer",
+   "id": "v-8",
+   "agente": "ebay",
+   "nombre": "Rastreador eBay",
+   "objetivo": "Sumar las mejores ofertas para el segundo pedido",
    "meta": "1",
    "avance": null,
-   "hasta": "2026-11-29",
+   "hasta": "",
+   "cumplido": false,
+   "vencido": false,
+   "estado": ""
+  },
+  {
+   "id": "v-9",
+   "agente": "gerente",
+   "nombre": "Gerente",
+   "objetivo": "Cada día: interesados, ventas y unidades que quedan. Meta del equipo: vender las 4 unidades en 7 días como mucho y conseguir 3 precios de venta comprobados",
+   "meta": "1",
+   "avance": null,
+   "hasta": "",
    "cumplido": false,
    "vencido": false,
    "estado": ""
@@ -1971,13 +1999,13 @@
   {
    "parte": "pc",
    "nombre": "PC · ronda 16:00",
-   "estado": "en curso",
+   "estado": "ok",
    "hora": "16:00"
   },
   {
    "parte": "gerente",
    "nombre": "Gerente · informe 20:00",
-   "estado": "pendiente",
+   "estado": "ok",
    "hora": "20:00"
   },
   {
@@ -5573,6 +5601,78 @@
  "decididas": [
   {
    "tipo": "plan",
+   "ref": "2026-11-25-1",
+   "agente": "pedidos",
+   "titulo": "Si el 25/11 Santi todavía no avisó la llegada de los 7700X a Cochabamba, preguntárselo una sola vez (sin pedir código del courier ni mencionar reclamos)",
+   "estado": "rechazado",
+   "decision": "auto (rutina) · ya no hace falta: Santi avisó el 24/11 18:37 que los 7700X están en Cochabamba (Gerente 24/11)",
+   "fecha": "2026-11-25"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-2",
+   "agente": "mkt",
+   "titulo": "Catálogos: sin borrar filas, anotar en mercado.csv que las filas del 28/10, 03/11 y 12/11 con 9950X3D a Bs 12.590 son del 9950X3D2 (no usar como 9950X3D)",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-25"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-3",
+   "agente": "wa",
+   "titulo": "Abrir las 2 fotos que quedaron sin abrir de una tienda del 13/11 y anotar lo que sirva (o pasarlas a Catálogos)",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-25"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-4",
+   "agente": "fin",
+   "titulo": "Dejar stock y caja al día con los 4 Ryzen 7 7700X ya en Cochabamba (pedido en estado \"en Cochabamba\"): stock esperado 4, costo unitario Bs 2.655 y piso de precio; anotar qué falta para la primera venta",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-25"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-5",
+   "agente": "ana",
+   "titulo": "Calcular el rango de precio de venta del 7700X contra la competencia de Marketplace (anuncio sellado a Bs 4.000; vendidos a 3.000-3.100): piso, precio sugerido y techo, con margen y peor caso, para que Santi fije el precio (v-3)",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-25"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-6",
+   "agente": "mkt",
+   "titulo": "Dejar lista la publicación de los 7700X (título, descripción, cantidad 4) en publicaciones.csv como borrador en las notas, sin publicar hasta que Santi dé precio y fotos; seguir el precio y los días en línea de la competencia (v-1, v-4)",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-25"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-7",
+   "agente": "pedidos",
+   "titulo": "Calcular los días reales de puerta a puerta de real-1 y real-2 (compra 20/10 hasta llegada a Cochabamba 24/11), dejarlo en las notas del pedido y pasarlo a entregado solo cuando Santi avise que lo recogió (v-7)",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-25"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-8",
+   "agente": "mkt",
+   "titulo": "Demanda: sacar el ranking semanal de los 5 productos que más se mueven (demanda.py) y dejarlo en actividad.csv (dem-2, vence el 29/11)",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-25"
+  },
+  {
+   "tipo": "plan",
    "ref": "2026-11-23-1",
    "agente": "wa",
    "titulo": "Martes: leer No leídos y mirar la ficha; contestar a INTEGRAL si escribió (precio por 2 del Crucial 2TB sellado); contactar iPlace Bolivia (último número sin contactar) y seguimiento corto a Tecnología GabBoss; sumar lista completa a las tiendas que faltan (wa-3)",
@@ -5613,7 +5713,7 @@
    "agente": "pedidos",
    "titulo": "Martes: revisar real-1 y real-2; quitar la incidencia \"Reclamo a eBay\" (Santi decidió el 23/11 no reclamar, nunca más preguntarlo) y, si el 25/11 Santi no avisó la llegada a Cochabamba, preguntarle una sola vez",
    "estado": "hecho",
-   "decision": "24/11 (PC tarde, Pedidos): real-1 y real-2 sin incidencia abierta; la columna incidencia ya estaba vacia en las dos filas, no hubo que quitar nada. reclamo_hasta 26/11 queda como dato historico (no es incidencia). No se repite la revision web de la manana (10:45, sin resultado). Pregunta a Santi por la llegada a Cochabamba: solo el 25/11 si no avisó, una vez (hoy no).",
+   "decision": "24/11 (PC tarde, Pedidos): real-1 y real-2 sin incidencia abierta; la columna incidencia ya estaba vacia en las dos filas, no hubo que quitar nada. reclamo_hasta 26/11 queda como dato historico (no es incidencia). No se repite la revision web de la manana (10:45, sin resultado). Pregunta a Santi por la llegada a Cochabamba: solo el 25/11 si no avisó, una vez (hoy no). · 24/11 Gerente: la pregunta del 25/11 pasa a la tarea 2026-11-25-1",
    "fecha": "2026-11-24"
   },
   {
@@ -5771,6 +5871,15 @@
   },
   {
    "tipo": "plan",
+   "ref": "2026-11-19-1",
+   "agente": "wa",
+   "titulo": "Marcar HC store como \"no vende componentes\" en su ficha y dejar de incluirla en listas y seguimientos",
+   "estado": "aprobado",
+   "decision": "App 24/11 18:38",
+   "fecha": "2026-11-20"
+  },
+  {
+   "tipo": "plan",
    "ref": "2026-11-19-2",
    "agente": "wa",
    "titulo": "Ronda de las 10:30: abrir 'No leídos', mirar la ficha (memoria_wa.py) y contestar a quien escribió; después pedir precio de vigilar.csv a 2 tiendas que respondieron y aún no dieron precio (wa-2 va 3/5, cierra el 22/11); sin escribir a frías ni a las de ficha 'no vende'",
@@ -5874,7 +5983,7 @@
    "agente": "ebay",
    "titulo": "En --revisar buscar un SSD NVMe 2TB Gen4 de marca (Kingston, WD, Samsung, Crucial) para comparar con los Gen4 locales; el Leven Gen3 no es comparable",
    "estado": "aprobado",
-   "decision": "auto (rutina) · reprogramada 20/11: no se hizo en la ronda; plazo 24/11 · reprogramada 23/11 plazo 27/11",
+   "decision": "auto (rutina) · reprogramada 20/11: no se hizo en la ronda; plazo 24/11 · reprogramada 23/11 plazo 27/11 · 24/11 Gerente: búsqueda anotada en actividad (WD SN7100 2TB USD 209,99) pero sin fila con link en precios-eeuu.csv; sigue abierta hasta que quede la fila y el Analista pueda comparar",
    "fecha": "2026-11-19"
   },
   {
@@ -6569,87 +6678,6 @@
    "estado": "hecho",
    "decision": "Ronda 16:00 (mkt): Messenger revisado, sin mensajes nuevos desde el 09/11 (Compra: 5 chats ya anotados; Venta: solo chats de ropa de Santi, no se abren); nada que contestar; sin precios ni tiendas nuevas; 7700X aun sin publicar (en camino a Santa Cruz)",
    "fecha": "2026-11-11"
-  },
-  {
-   "tipo": "idea",
-   "ref": "17",
-   "agente": "ebay",
-   "titulo": "Que ebay.py descarte en los SSD NVMe los títulos con SATA o 2.5\" (y NOT NVMe), y en la RAM Corsair Vengeance RGB los códigos CMK (sin RGB)",
-   "estado": "aprobada",
-   "decision": "tarea 2026-11-11-3 (auto, rutina)",
-   "fecha": "2026-11-11"
-  },
-  {
-   "tipo": "idea",
-   "ref": "18",
-   "agente": "gerente",
-   "titulo": "Que agenda.py cuente también los chats sin leer ya vistos en la cola de Responder",
-   "estado": "hecha",
-   "decision": "Santi en el chat de la Mac 12/11 15:26; hecha en la misma sesión",
-   "fecha": "2026-11-11"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-09-1",
-   "agente": "wa",
-   "titulo": "Escribir a las tiendas con número que queden (T104 Compuland, T105 Importadora ITA) dentro del tope de 10, responder lo que llegue y hacer los seguimientos de agenda.py",
-   "estado": "hecho",
-   "decision": "10/11 13:13 PC (ronda cubre mac): chats nuevos T104 Compuland y T105 Importadora ITA (2 de 10 del día; quedan 8 para la ronda de las 16:00); 1 seguimiento (SS Electrónica Quillacollo); respondidas ELVYCOMP (Corsair MP600 PRO LPX 2TB Bs 4.880, repregunta sellado/por 2) e INTEGRAL TU-PC; leídas Punto (7600 sin stock), BitCate y Accesorios Technology (no tienen). GabBoss ya cerró el 05/11, no se le escribe. 3er número sin contactar (iPlace, Apple, prioridad baja) no se tocó",
-   "fecha": "2026-11-10"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-09-2",
-   "agente": "pedidos",
-   "titulo": "Rastrear UPS de los 7700X y las guías de prueba; avisar el mismo día si hay movimiento",
-   "estado": "hecho",
-   "decision": "10/11 13:25 (PC, Pedidos): UPS de los 7700X sin movimientos nuevos (entregado 27/10 11:45 en Doral); falta la guía del courier B. Guías de prueba: USPS y SpeedX sin movimientos; GOFO sin lectura válida (2 intentos). Sin movimiento que avisar el mismo día.",
-   "fecha": "2026-11-10"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-09-3",
-   "agente": "ana",
-   "titulo": "Cerrar la segunda fuente del SSD NVMe 2TB y los precios locales que faltan (Ryzen 5 5600, 5700X3D, 7500F) y recalcular analisis.md",
-   "estado": "hecho",
-   "decision": "auto (rutina) · reprogramada 11/11 (Gerente): faltan 5600, 5700X3D, 7500F; depende de respuestas de WhatsApp · avance ana 12/11 16:4x (PC tarde): SSD 2TB ya tiene 3 tiendas locales (Cyrex web Bs 4.119 Crucial P310 Gen4, ELVYCOMP 4.880 Corsair MP600 PRO LPX, Punto 5.860 Samsung 9100 Pro) = segunda fuente local cerrada; pero el costo eBay usa un Leven Gen3 sin marca (USD 185) y el Gen4 comparable cuesta USD 280-289: con Gen4 el margen baja a ~18 % (falta decidir cual). 7500F: solo Geek Store (USD 147 = Bs 1.755, por confirmar; SYSTEMS agotado) y eBay lo deja en -8 %: no traer; 5600 y 5700X3D siguen sin precio local; i5-13400 solo MSR (no vende sueltos). Sigue aprobado, no hecho · cerrada 13/11 07:55 (ana, nube) por la 2026-11-12-4: segunda fuente del SSD 2TB cerrada; 5600 y 5700X3D sin precio local (siguen en necesidades)",
-   "fecha": "2026-11-10"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-09-4",
-   "agente": "mkt",
-   "titulo": "Seguir cada 7700X publicado en la zona (precio y días en línea), contar demanda y revisar la web o el catálogo de otras 2 tiendas",
-   "estado": "hecho",
-   "decision": "auto (rutina); hecho 10/11 13:25 PC: parte de Marketplace la hizo Marketplace hoy (0 7700X sueltos; 3 PC armadas con 7700X a Bs 15.000). Catálogos revisó 2 tiendas: MSR Computers (web completa con Cargar más, 36 procesadores; no vende sueltos, referencia; 6 precios de vigilar) y Microworld (catálogo de WhatsApp Business visto en WhatsApp Web sin sesión nueva; 11 artículos de accesorios, sin productos de vigilar)",
-   "fecha": "2026-11-10"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-09-5",
-   "agente": "ebay",
-   "titulo": "Anotar la mediana de ventas completadas de los 5 mejores productos (tipo vendido)",
-   "estado": "hecho",
-   "decision": "hecho 10/11 16:08 (ebay): medianas de vendidos nuevos de los 5 mejores (265K 242,50; 12400F 146,49; 14400F 169,99 con 7 ventas; 7800X3D 315,00; 7700X 204,50) en precios-eeuu.csv",
-   "fecha": "2026-11-10"
-  },
-  {
-   "tipo": "necesidad",
-   "ref": "43",
-   "agente": "pedidos",
-   "titulo": "¿Ya llegó a Santa Cruz el paquete de Ryzen 7 7700X [conjunto-7700x]? Salió de la bodega del courier hace unos 12 días y no hay rastreo de ese tramo",
-   "estado": "resuelta",
-   "decision": "2026-11-18 (Santi: llegaron a Santa Cruz)",
-   "fecha": "2026-11-10"
-  },
-  {
-   "tipo": "necesidad",
-   "ref": "44",
-   "agente": "gerente",
-   "titulo": "Que el rastreo de UPS funcione desde la PC (falla seguido: 26/10, 30/10, 05/11 y 10/11; 17track tampoco mostró resultado hoy): probar otra fuente de rastreo o revisarlo a mano cuando haga falta",
-   "estado": "resuelta",
-   "decision": "2026-11-10 (UPS ya entregó en la bodega el 27/10; del courier a Bolivia no hay rastreo, Santi 10/11)",
-   "fecha": "2026-11-10"
   }
  ],
  "libreta": [
@@ -7520,6 +7548,26 @@
    "fuente": "ronda",
    "resumen": "Cuando los 7700X lleguen a Cochabamba, pedirle a Santi el precio de venta y las fotos; el Analista sugiere Bs 3.300",
    "vence": "2026-11-27",
+   "estado": "abierta",
+   "cerrado": ""
+  },
+  {
+   "id": "88",
+   "fecha": "2026-11-24",
+   "tipo": "compromiso",
+   "fuente": "ronda",
+   "resumen": "Proponerle a Santi el rango de precio de venta de los 7700X (piso, sugerido, techo) con la competencia de Marketplace para que fije el precio y las fotos; la publicación sale dentro de 24 h",
+   "vence": "2026-11-26",
+   "estado": "abierta",
+   "cerrado": ""
+  },
+  {
+   "id": "89",
+   "fecha": "2026-11-24",
+   "tipo": "dato",
+   "fuente": "ronda",
+   "resumen": "24/11 Santi avisó que los 4 7700X llegaron a Cochabamba: etapa 3 (vendiendo). Meta: venderlos en 7 días como máximo; para ofrecer por WhatsApp a tiendas Santi tiene que levantar la regla de no ofrecer",
+   "vence": "",
    "estado": "abierta",
    "cerrado": ""
   }
@@ -11738,11 +11786,11 @@
   }
  ],
  "sincronizacion": {
-  "ultima_ronda": "2026-11-24 16:08",
+  "ultima_ronda": "2026-11-24 16:33",
   "ultima_ronda_quien": "pc",
-  "oficina_publicada": "2026-11-23 11:20",
+  "oficina_publicada": "2026-11-24 16:33",
   "armado_por": "una ronda o sesión",
-  "armado": "2026-11-24 16:29"
+  "armado": "2026-11-24 20:17"
  },
  "clientes": [
   {
@@ -24803,16 +24851,23 @@
   {
    "titulo": "Importación Cochabamba (Excel)",
    "tipo": "Excel",
-   "fecha": "2026-11-24",
+   "fecha": "2026-11-25",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/importacion-cochabamba.xlsx",
    "carpeta": "Excel"
   },
   {
    "titulo": "Historial completo",
    "tipo": "CSV",
-   "fecha": "2026-11-24",
+   "fecha": "2026-11-25",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/historial.csv",
    "carpeta": "Tabla diaria"
+  },
+  {
+   "titulo": "Comparación EE.UU. → Cochabamba",
+   "tipo": "Tabla de comparación",
+   "fecha": "2026-11-25",
+   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
+   "carpeta": "Informes"
   },
   {
    "titulo": "Tabla del 2026-11-24",
@@ -24827,13 +24882,6 @@
    "fecha": "2026-11-24",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/2026-11-24.pdf",
    "carpeta": "Tabla diaria"
-  },
-  {
-   "titulo": "Comparación EE.UU. → Cochabamba",
-   "tipo": "Tabla de comparación",
-   "fecha": "2026-11-24",
-   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
-   "carpeta": "Informes"
   },
   {
    "titulo": "Informe diario 2026-11-24",
@@ -25083,6 +25131,11 @@
  ],
  "informes": [
   {
+   "fecha": "2026-11-24",
+   "tipo": "diario",
+   "url": "https://docs.google.com/document/d/1prgu-awN1vHWyyiADJmwNwZR4BjEeYm6JNfZ9Y_uXC0/edit"
+  },
+  {
    "fecha": "2026-11-23",
    "tipo": "diario",
    "url": "https://docs.google.com/document/d/1H-tULqUxQwcsCDGjkPy8776_yPNUyKEIFrF9Kcj_Q1w/edit"
@@ -25226,11 +25279,6 @@
    "fecha": "2026-10-25",
    "tipo": "semanal",
    "url": "https://docs.google.com/document/d/1o4rDwBcu065krcjyVUCr8HFKZO4dJNWsSd8d0f1yJ18/edit"
-  },
-  {
-   "fecha": "2026-10-24",
-   "tipo": "diario",
-   "url": "https://docs.google.com/document/d/1lhKHDrL_USBEqMm77qtaM7MrAAeSN5wfKoZqMmyEGKU/edit"
   }
  ],
  "memoria": [
@@ -25541,73 +25589,23 @@
    "resumen": "Cuando los 7700X lleguen a Cochabamba, pedirle a Santi el precio de venta y las fotos; el Analista sugiere Bs 3.300",
    "vence": "2026-11-27",
    "fecha": "2026-11-24"
+  },
+  {
+   "id": "88",
+   "tipo": "compromiso",
+   "resumen": "Proponerle a Santi el rango de precio de venta de los 7700X (piso, sugerido, techo) con la competencia de Marketplace para que fije el precio y las fotos; la publicación sale dentro de 24 h",
+   "vence": "2026-11-26",
+   "fecha": "2026-11-24"
+  },
+  {
+   "id": "89",
+   "tipo": "dato",
+   "resumen": "24/11 Santi avisó que los 4 7700X llegaron a Cochabamba: etapa 3 (vendiendo). Meta: venderlos en 7 días como máximo; para ofrecer por WhatsApp a tiendas Santi tiene que levantar la regla de no ofrecer",
+   "vence": "",
+   "fecha": "2026-11-24"
   }
  ],
  "chat": [
-  {
-   "id": "20261024-2",
-   "fecha": "2026-10-24",
-   "hora": "16:14",
-   "de": "gerente",
-   "para": "mkt",
-   "texto": "Messenger (tarea 2026-10-23-5) reprogramada al 26/10: se reintenta cuando haya Chrome en la PC. Deja tu fila en actividad.csv."
-  },
-  {
-   "id": "20261024-3",
-   "fecha": "2026-10-24",
-   "hora": "20:16",
-   "de": "gerente",
-   "para": "wa",
-   "texto": "Sábado sin Chrome en la PC: quedan para el lunes Viadata (responder) y los seguimientos de la tarea 2026-10-23-1; anotado como 2026-10-24-1 y 24-4."
-  },
-  {
-   "id": "20261024-4",
-   "fecha": "2026-10-24",
-   "hora": "20:16",
-   "de": "gerente",
-   "para": "pedidos",
-   "texto": "Sin Chrome el sábado no se rastreó; tarea 2026-10-23-2 pasa al lunes 26/10."
-  },
-  {
-   "id": "20261025-1",
-   "fecha": "2026-10-25",
-   "hora": "20:16",
-   "de": "gerente",
-   "para": "fin",
-   "texto": "Anotada la tarea 2026-10-25-2 para mostrar tu costo por unidad contra el promedio del pedido conjunto."
-  },
-  {
-   "id": "20261026-1",
-   "fecha": "2026-10-26",
-   "hora": "12:32",
-   "de": "pedidos",
-   "para": "gerente",
-   "texto": "Ronda Mac 26/10: la guía del 7700X ya estaba en pedidos.csv y la rastreé: en camino, entrega estimada 27/10. Las notas de real-1 y real-2 todavía dicen 'guía pendiente' y 'sin guía': conviene corregirlas. Mapa de Jacksonville pendiente: Overpass no respondió dos veces."
-  },
-  {
-   "id": "20261026-2",
-   "fecha": "2026-10-26",
-   "hora": "13:45",
-   "de": "gerente",
-   "para": "pedidos",
-   "texto": "Recibido. Corregí las notas de real-1 y real-2 con la guía cargada. El mapa de Jacksonville se reintenta en la próxima ronda."
-  },
-  {
-   "id": "20261026-3",
-   "fecha": "2026-10-26",
-   "hora": "16:22",
-   "de": "local",
-   "para": "gerente",
-   "texto": "Oficina: publicada la versión 85 con datos de las 16:21 y calles de Jacksonville. Sin errores de verificar."
-  },
-  {
-   "id": "20261026-4",
-   "fecha": "2026-10-26",
-   "hora": "16:23",
-   "de": "gerente",
-   "para": "local",
-   "texto": "Recibido: oficina v85 publicada. Cerré la tarea 24-5 (Chrome conectó toda la ronda)."
-  },
   {
    "id": "20261026-5",
    "fecha": "2026-10-26",
@@ -26743,6 +26741,70 @@
    "de": "ana",
    "para": "gerente",
    "texto": "Tarde 24/11: firmes con ventas reales de eBay 7600X, 7800X3D y 9950X3D. SSD 2TB e i5-12400F dicen traer con el anuncio más barato, pero a la mediana de vendidos el peor caso queda en -1,3 % y -0,2 %: no darlos por firmes."
+  },
+  {
+   "id": "20261124-8",
+   "fecha": "2026-11-24",
+   "hora": "16:33",
+   "de": "gerente",
+   "para": "wa",
+   "texto": "Recibido el cierre del 24/11: cli-1 y tareas 23-1 y 23-2 hechas. iPlace sigue esperando el número de Santi. Mañana: ver si INTEGRAL contestó el precio por 2 (confirmar modelo exacto y que no sea SATA) y tarea 2026-11-25-3 (fotos del 13/11)."
+  },
+  {
+   "id": "20261124-9",
+   "fecha": "2026-11-24",
+   "hora": "16:33",
+   "de": "gerente",
+   "para": "ana",
+   "texto": "Recibido: en el aviso a Santi el SSD 2TB y el i5-12400F van como no firmes; firmes 7600X, 7800X3D y 9950X3D. Ojo: el texto de analisis.md aún dice Leven Gen3 y el anuncio nuevo de hoy es otro (tarea 22-3)."
+  },
+  {
+   "id": "20261124-10",
+   "fecha": "2026-11-24",
+   "hora": "16:33",
+   "de": "gerente",
+   "para": "ebay",
+   "texto": "La 18-34 sigue abierta: deja el SSD 2TB Gen4 de marca en precios-eeuu.csv con su link (en actividad figura WD SN7100 a USD 209,99, pero la fila real de hoy a ese precio es un RAM Tech)."
+  },
+  {
+   "id": "20261124-11",
+   "fecha": "2026-11-24",
+   "hora": "16:33",
+   "de": "gerente",
+   "para": "mkt",
+   "texto": "Cat-1 cumplida con 7 precios (objetivos.py cuenta 8 por una referencia que no vale). Tarea 2026-11-25-2: corregir con nota las filas de mercado.csv del 9950X3D2. El ranking de hoy sirve para dem-2."
+  },
+  {
+   "id": "20261124-12",
+   "fecha": "2026-11-24",
+   "hora": "16:33",
+   "de": "gerente",
+   "para": "local",
+   "texto": "Para Oficina: vivo/_ronda es de la coordinadora; no ponerlo en false desde el turno de oficina (pasó hoy y hubo que reponerlo)."
+  },
+  {
+   "id": "20261124-13",
+   "fecha": "2026-11-24",
+   "hora": "20:16",
+   "de": "gerente",
+   "para": "fin",
+   "texto": "Etapa 3: los 7700X ya están en Cochabamba. Te dejé la tarea 2026-11-25-4: pasa el stock a 4 unidades con costo Bs 2.655 cada una y el piso de precio."
+  },
+  {
+   "id": "20261124-14",
+   "fecha": "2026-11-24",
+   "hora": "20:16",
+   "de": "gerente",
+   "para": "ana",
+   "texto": "Etapa 3: calcula piso, sugerido y techo del 7700X contra Marketplace (tarea 2026-11-25-5)."
+  },
+  {
+   "id": "20261124-15",
+   "fecha": "2026-11-24",
+   "hora": "20:16",
+   "de": "gerente",
+   "para": "mkt",
+   "texto": "Etapa 3: deja lista la publicación de los 7700X sin publicar hasta que Santi dé precio y fotos (tarea 2026-11-25-6); además dem-2 (tarea 2026-11-25-8)."
   }
  ],
  "salud14": [
@@ -26841,8 +26903,8 @@
    "fecha": "2026-11-24",
    "nube": "ok",
    "manana": "ok",
-   "pc": "en curso",
-   "gerente": "pendiente"
+   "pc": "ok",
+   "gerente": "ok"
   }
  ],
  "finanzas_productos": [
@@ -26858,22 +26920,22 @@
  ],
  "recomendaciones": [
   {
-   "texto": "Pásanos el número correcto de iPlace Bolivia",
-   "por_que": "El de la ficha es de una casa de empeño y es la última tienda sin contactar (wa-2 va 1/5)",
-   "accion": "tarea"
-  },
-  {
-   "texto": "Fija el precio de venta de los 7700X y ten las fotos listas",
-   "por_que": "Marketplace no publica sin ellos; el único 7700X sellado de la zona sigue a Bs 4.000 (35 días) y el Analista sugiere Bs 3.300",
+   "texto": "Fija el precio de venta de los 7700X y prepara las fotos",
+   "por_que": "Llegaron a Cochabamba y la meta es venderlos en 7 días; el Analista calcula el rango (costo real Bs 2.655 por unidad, competencia sellada a Bs 4.000 y vendidos a 3.000-3.100)",
    "accion": "venta"
   },
   {
-   "texto": "Elige con qué SSD Gen4 de marca comparamos el SSD de 2TB",
-   "por_que": "Es el producto con más margen (31,5 %, peor caso 20,7 %) pero depende de una sola tienda",
+   "texto": "Decide si levantas la regla de no ofrecer ventas por WhatsApp",
+   "por_que": "Sin eso André no puede ofrecer los 7700X a las tiendas de los grupos A y B",
    "accion": "tarea"
+  },
+  {
+   "texto": "Recoge los 7700X y avísanos cuando los tengas en la mano",
+   "por_que": "Con eso el pedido pasa a entregado y Finanzas cuenta el stock real",
+   "accion": "pedido"
   }
  ],
- "recomendaciones_cuando": "2026-11-24 10:55",
+ "recomendaciones_cuando": "2026-11-24 20:25",
  "constantes": {
   "b_usd_kg": 28,
   "b_min_kg": 1.0,

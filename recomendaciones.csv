@@ -32,3 +32,6 @@ fecha,hora,orden,texto,por_que,accion
 2026-11-24,16:33,1,Fija el precio de venta de los 7700X y ten las fotos listas,Sin ellos Marketplace no publica y la meta es vender las 4 en 7 días; el Analista sugiere Bs 3.300 (piso Bs 2.930),venta
 2026-11-24,16:33,2,Avísanos apenas los 7700X lleguen a Cochabamba,Con ese aviso pasamos a la etapa de venta; ese tramo no tiene rastreo,pedido
 2026-11-24,16:33,3,No pidas todavía el SSD de 2TB ni el i5-12400F,"A la mediana de ventas de eBay el peor caso queda en -1,3 % y -0,2 % (las ventas del i5 llegan solo hasta el 14/11)",calculadora
+2026-11-24,20:25,1,Fija el precio de venta de los 7700X y prepara las fotos,"Llegaron a Cochabamba y la meta es venderlos en 7 días; el Analista calcula el rango (costo real Bs 2.655 por unidad, competencia sellada a Bs 4.000 y vendidos a 3.000-3.100)",venta
+2026-11-24,20:25,2,Decide si levantas la regla de no ofrecer ventas por WhatsApp,Sin eso André no puede ofrecer los 7700X a las tiendas de los grupos A y B,tarea
+2026-11-24,20:25,3,Recoge los 7700X y avísanos cuando los tengas en la mano,Con eso el pedido pasa a entregado y Finanzas cuenta el stock real,pedido

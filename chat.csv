@@ -198,3 +198,6 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261124-10,2026-11-24,16:33,gerente,ebay,"La 18-34 sigue abierta: deja el SSD 2TB Gen4 de marca en precios-eeuu.csv con su link (en actividad figura WD SN7100 a USD 209,99, pero la fila real de hoy a ese precio es un RAM Tech).",,nuevo,
 20261124-11,2026-11-24,16:33,gerente,mkt,Cat-1 cumplida con 7 precios (objetivos.py cuenta 8 por una referencia que no vale). Tarea 2026-11-25-2: corregir con nota las filas de mercado.csv del 9950X3D2. El ranking de hoy sirve para dem-2.,,nuevo,
 20261124-12,2026-11-24,16:33,gerente,local,Para Oficina: vivo/_ronda es de la coordinadora; no ponerlo en false desde el turno de oficina (pasó hoy y hubo que reponerlo).,,nuevo,
+20261124-13,2026-11-24,20:16,gerente,fin,Etapa 3: los 7700X ya están en Cochabamba. Te dejé la tarea 2026-11-25-4: pasa el stock a 4 unidades con costo Bs 2.655 cada una y el piso de precio.,,nuevo,
+20261124-14,2026-11-24,20:16,gerente,ana,"Etapa 3: calcula piso, sugerido y techo del 7700X contra Marketplace (tarea 2026-11-25-5).",,nuevo,
+20261124-15,2026-11-24,20:16,gerente,mkt,Etapa 3: deja lista la publicación de los 7700X sin publicar hasta que Santi dé precio y fotos (tarea 2026-11-25-6); además dem-2 (tarea 2026-11-25-8).,,nuevo,
