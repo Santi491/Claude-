@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-25 16:22",
+ "actualizado": "2026-11-25 16:23",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -21,6 +21,11 @@
    "estado": "terminó",
    "texto": "Sin cambios",
    "hora": "16:22"
+  },
+  "ana": {
+   "estado": "trabajando",
+   "texto": "Recalculando márgenes con los precios de la tarde",
+   "hora": "16:23"
   }
  }
 }
