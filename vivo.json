@@ -36,6 +36,11 @@
    "estado": "terminó",
    "texto": "4 u del 7700X a Bs 2.655; sin ventas todavía",
    "hora": "11:09"
+  },
+  "oficina": {
+   "estado": "trabajando",
+   "texto": "Regenerando y publicando la oficina",
+   "hora": "11:09"
   }
  }
 }
