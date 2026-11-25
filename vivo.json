@@ -5,12 +5,12 @@
   "desde": "16:08",
   "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-25 16:09",
+ "actualizado": "2026-11-25 16:19",
  "agentes": {
   "wa": {
-   "estado": "trabajando",
-   "texto": "Revisando chats y contestando tiendas",
-   "hora": "16:09"
+   "estado": "terminó",
+   "texto": "9 mensajes, 3 chats nuevos y 3 precios nuevos",
+   "hora": "16:19"
   }
  }
 }
