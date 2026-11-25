@@ -42,7 +42,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Ryzen 9 9950X | [408.01](https://www.ebay.com/itm/820382700945) | 5.081 (B 1 kg) | 5.081 (B 2 kg) | 5.580 | 499 (9%) | 499 (9%) | justo |
 | Ryzen 5 7500F | [120.72](https://www.ebay.com/itm/257792135268) | 1.622 (B 1 kg) | 1.622 (B 2 kg) | 1.755 | 133 (8%) | 133 (8%) | justo |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [409.99](https://www.ebay.com/itm/880127792085) | 5.105 (B 1 kg) | 5.021 (B 1 kg) | 4.500 | -605 (-13%) | -521 (-12%) | no conviene |
-| SSD NVMe 1TB | [89.99](https://www.ebay.com/itm/327475649365) | 1.252 (B 1 kg) | 1.168 (B 1 kg) | 1.100 | -152 (-14%) | -68 (-6%) | no conviene |
+| SSD NVMe 1TB | [90.75](https://www.ebay.com/itm/840165155506) | 1.261 (B 1 kg) | 1.177 (B 1 kg) | 1.100 | -161 (-15%) | -77 (-7%) | no conviene |
 | RAM DDR4 16GB (2x8) 3200 | [66.98](https://www.ebay.com/itm/147696358726) | 975 (B 1 kg) | 891 (B 1 kg) | 540 | -435 (-81%) | -351 (-65%) | no conviene |
 
 ## Detalle por vendedor (eBay nuevo)
@@ -94,6 +94,7 @@ eBay nuevo: USD 310.00 con envío en EE.UU. (eBay API; vendedor lat_827209 99.4%
 | Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | BOX (según foto de su web; USD 480) | 5.664 | 1.763 (31%) | 2026-10-12 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo BOX (web: USD 480 a 11,80) | 5.664 | 1.763 (31%) | 2026-10-16 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 5.731 | 1.830 (32%) | 2026-11-12 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 5.779 | 1.878 (33%) | 2026-11-25 |
 | SMART CUBE (WhatsApp) | nuevo sellado, facturado; llevando 2 rebajan Bs 50 c/u (Bs 5.840) | 5.890 | 1.989 (34%) | 2026-10-15 |
 | ADN Gamer Store (WhatsApp) | nuevo en caja (box); garantía sin dato (se preguntó) | 6.162 | 2.261 (37%) | 2026-10-22 |
 | ADN Gamer Store (WhatsApp) | nuevo (estado y garantía sin confirmar; se preguntó) | 6.193 | 2.292 (37%) | 2026-10-21 |
@@ -119,10 +120,12 @@ eBay nuevo: USD 127.42 con envío en EE.UU. (eBay API; vendedor atx_storellc 100
 |---|---|---|---|---|
 | PC Armagedon (WhatsApp) | nuevo | 2.050 | 347 (17%) | 2026-11-13 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | oem | 2.054 | 351 (17%) | 2026-11-12 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | oem | 2.071 | 368 (18%) | 2026-11-25 |
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | estado sin dato (\"en stock\") | 2.250 | 547 (24%) | 2026-11-03 |
 | OverCity (web) · [ver](https://overcitygaming.com/categorias/procesadores) | nuevo/no indica | 2.250 | 547 (24%) | 2026-11-12 |
 | T&T Todo en Tecnología (WhatsApp) | OEM con cooler Intel; Bs 20 menos c/u llevando 2 | 2.260 | 557 (25%) | 2026-10-15 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.292 | 590 (26%) | 2026-11-12 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.312 | 609 (26%) | 2026-11-25 |
 | Marketplace Cochabamba (particular) | OEM (anuncio "Procesador CPU i5 12400f OEM"; estado sin dato) | 2.350 | 647 (28%) | 2026-10-21 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=i5%2012400f) | usado/no indica | 2.350 | 647 (28%) | 2026-11-12 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | disponible (web) | 2.460 | 757 (31%) | 2026-10-12 |
@@ -137,6 +140,7 @@ eBay nuevo: USD 149.99 con envío en EE.UU. (eBay API; vendedor antonline 99.4%;
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo OEM (web: USD 202 a la tasa de la tienda, 11,80; hay otra publicación del mismo a USD 215) | 2.384 | 410 (17%) | 2026-10-16 |
 | Cyrex Store (WhatsApp) | nuevo | 2.394 | 419 (18%) | 2026-11-13 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | oem | 2.412 | 437 (18%) | 2026-11-12 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | oem | 2.432 | 458 (19%) | 2026-11-25 |
 | OverCity (WhatsApp) | nuevo OEM | 2.460 | 486 (20%) | 2026-10-13 |
 | Soft Computers (WhatsApp) | nuevo OEM | 2.500 | 526 (21%) | 2026-10-13 |
 | Soft Computers (WhatsApp) | nuevo OEM; mismo precio por unidad llevando 2 | 2.500 | 526 (21%) | 2026-10-16 |
@@ -180,6 +184,7 @@ eBay nuevo: USD 99.00 con envío en EE.UU. (eBay API; vendedor cellbeach 100.0%;
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1643334157386642/) | estado sin dato (Kingston Fury Beast RGB 16GB 3200; no queda claro si es 2x8 o un módulo) | 540 | -821 (-152%) | 2026-10-22 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1975520143403882/) | estado sin dato (2x8 16GB; recién publicado) | 600 | -761 (-127%) | 2026-10-22 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/959874386670350/) | no indicado (16GB 3200; configuración no indicada) | 900 | -461 (-51%) | 2026-10-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1671614161100944/) | nuevo/sin dato | 1.350 | -11 (-1%) | 2026-11-25 |
 | Marketplace Cochabamba (particular) | 2x8 = 16GB (marca y frecuencia sin dato; antes Bs 1.600; vuelve a aparecer) | 1.400 | 39 (3%) | 2026-10-20 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ram%20ddr4%2016gb%203200) | Corsair LPX 2x8 3200 (estado sin dato); Cochabamba | 1.450 | 89 (6%) | 2026-11-10 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ram%20ddr4%2016gb%203200) | nuevo/sin dato | 1.499 | 138 (9%) | 2026-11-20 |
@@ -191,12 +196,14 @@ eBay nuevo: USD 99.00 con envío en EE.UU. (eBay API; vendedor cellbeach 100.0%;
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=corsair%20vengeance%20ddr5%2032gb) | nuevo/sin dato | 1.600 | 239 (15%) | 2026-11-23 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ram%20ddr4%2016gb%203200) | usado/no indica | 1.680 | 319 (19%) | 2026-11-11 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=memoria-ram) | nuevo/no indica | 1.731 | 371 (21%) | 2026-11-12 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=memoria-ram) | nuevo/no indica | 1.746 | 385 (22%) | 2026-11-25 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=memoria-ram) | nuevo/no indica | 1.970 | 610 (31%) | 2026-11-12 |
 | Compucenter (WhatsApp) · [ver](https://compucenter.store/) | nuevo (Corsair Vengeance RGB DDR4 16GB 3600; no dice si es 2x8; Bs 2.560 con factura) | 2.150 | 789 (37%) | 2026-10-12 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/memoria-ram) | disponible (web; Corsair Vengeance RGB Pro TUF Gaming 2x8 3200) | 2.160 | 799 (37%) | 2026-10-12 |
 | Punto Tecnológico / Supermall (web) · [ver](https://www.puntotecnologic.com/categories/memoria-ram) | nuevo | 2.160 | 799 (37%) | 2026-11-12 |
 | Punto Tecnológico / Supermall (web) · [ver](https://puntotecnologic.com/categories/memoria-ram) | nuevo | 2.160 | 799 (37%) | 2026-11-18 |
 | Punto Tecnológico / Supermall (web) · [ver](https://puntotecnologic.com/categories/memoria-ram) | nuevo | 2.160 | 799 (37%) | 2026-11-24 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1077680014841773/) | nuevo/sin dato | 2.190 | 829 (38%) | 2026-11-25 |
 
 ### SSD NVMe 1TB
 eBay nuevo: USD 129.00 con envío en EE.UU. (eBay API; vendedor soshified87 100.0%; Silicon Power P34A60 1TB M.2 2280 NVMe PCIe Gen3x4 3D NAND S, 2026-11-25). Costo puesto: **Bs 1.722**/u en pedido de 2, **Bs 1.637**/u en pedido de 4.
@@ -233,6 +240,7 @@ eBay nuevo: USD 129.00 con envío en EE.UU. (eBay API; vendedor soshified87 100.
 | NPC Technology (WhatsApp) | nuevo | 1.780 | 58 (3%) | 2026-11-20 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2078197563584097/) | no indicado (M.2 1TB; marca no indicada) | 1.800 | 78 (4%) | 2026-10-11 |
 | PC Armagedon (WhatsApp) | nuevo | 1.800 | 78 (4%) | 2026-11-13 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1045273818438184/) | nuevo/sin dato | 1.800 | 78 (4%) | 2026-11-25 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | Kingston NV3 1TB (estado sin dato); Cochabamba | 1.810 | 88 (5%) | 2026-11-05 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 1.810 | 88 (5%) | 2026-11-12 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1448988227128820/) | no indicado (Kingston NV3 1TB) | 1.850 | 128 (7%) | 2026-10-11 |
@@ -246,11 +254,14 @@ eBay nuevo: USD 129.00 con envío en EE.UU. (eBay API; vendedor soshified87 100.
 | Cyrex Store (WhatsApp) | nuevo | 1.884 | 162 (9%) | 2026-11-13 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=almacenamiento) | nuevo/no indica | 1.898 | 177 (9%) | 2026-11-12 |
 | Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/almacenamiento/1732592627077-dxXRD) | nuevo/no indica | 1.898 | 177 (9%) | 2026-11-12 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=almacenamiento) | nuevo/no indica | 1.914 | 193 (10%) | 2026-11-25 |
+| Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/almacenamiento/1732592627077-dxXRD) | nuevo/no indica | 1.914 | 193 (10%) | 2026-11-25 |
 | Soft Computers (WhatsApp) | sin dato | 1.950 | 228 (12%) | 2026-11-04 |
 | Tienda Supermall (Marketplace) (WhatsApp) | nuevo | 1.960 | 238 (12%) | 2026-11-20 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2817371738643128/) | no indicado (Crucial P310 1TB) | 2.000 | 278 (14%) | 2026-10-11 |
 | Punto Tecnológico (WhatsApp) | nuevo, NVMe (modelo SN3000), garantía 6 meses (confirmado 28/10) | 2.000 | 278 (14%) | 2026-10-26 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%20nvme%201tb) | usado/no indica | 2.000 | 278 (14%) | 2026-11-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/29388075170824982/) | nuevo | 2.000 | 278 (14%) | 2026-11-25 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/3707244856102112/) | WD Green SN3000 1TB (estado sin dato) | 2.050 | 328 (16%) | 2026-10-19 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/3707244856102112/) | estado sin dato (WD Green SN3000 1TB) | 2.050 | 328 (16%) | 2026-10-22 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; WD SN3000 M.2 1TB) | 2.060 | 338 (16%) | 2026-10-12 |
@@ -281,6 +292,7 @@ eBay nuevo: USD 204.99 con envío en EE.UU. (eBay API; vendedor paymore_temecula
 | Cyrex Store (WhatsApp) | nuevo | 4.088 | 1.452 (36%) | 2026-11-13 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=almacenamiento) | nuevo/no indica | 4.119 | 1.483 (36%) | 2026-11-12 |
 | Microworld (WhatsApp) | nuevo | 4.147 | 1.511 (36%) | 2026-11-13 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=almacenamiento) | nuevo/no indica | 4.154 | 1.517 (37%) | 2026-11-25 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; Hiksemi Futurex M.2 2TB) | 4.560 | 1.923 (42%) | 2026-10-12 |
 | ELVYCOMP (WhatsApp) | nuevo/sellado sin confirmar | 4.880 | 2.243 (46%) | 2026-11-10 |
 | ELVYCOMP (WhatsApp) | nuevo/sellado | 4.880 | 2.243 (46%) | 2026-11-10 |
@@ -301,9 +313,11 @@ eBay nuevo: USD 209.95 con envío en EE.UU. (eBay API; vendedor mobitelhqstore 9
 | Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD) | nuevo/no indica | 3.463 | 766 (22%) | 2026-11-12 |
 | Geek Store Bolivia (WhatsApp) | sin confirmar si es sellado (se preguntó) | 3.480 | 784 (23%) | 2026-10-15 |
 | Geek Store Bolivia (WhatsApp) | nuevo sellado (caja) | 3.480 | 784 (23%) | 2026-10-21 |
+| Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD) | nuevo/no indica | 3.492 | 795 (23%) | 2026-11-25 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/producto/procesador-amd-ryzen-7-7700x-box) | nuevo BOX sellado (sin cooler) | 3.667 | 971 (26%) | 2026-10-20 |
 | Cyrex Store (WhatsApp) | nuevo BOX (según foto de su chat; solo queda 1 unidad) | 3.674 | 977 (27%) | 2026-10-23 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 3.701 | 1.005 (27%) | 2026-11-12 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 3.732 | 1.036 (28%) | 2026-11-25 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/887277370696710/) | sellado | 4.000 | 1.304 (33%) | 2026-10-20 |
 | Marketplace Cochabamba (particular) | nuevo sellado ("Ryzen 7 7700x Sellado"); Cochabamba | 4.000 | 1.304 (33%) | 2026-10-28 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/887277370696710/) | sellado | 4.000 | 1.304 (33%) | 2026-11-17 |
@@ -315,6 +329,7 @@ eBay nuevo: USD 135.60 con envío en EE.UU. (eBay API; vendedor technological-tr
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
 | Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD) | nuevo/no indica | 1.755 | -46 (-3%) | 2026-11-12 |
+| Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD) | nuevo/no indica | 1.770 | -31 (-2%) | 2026-11-25 |
 
 ### Ryzen 5 9600X
 eBay nuevo: USD 169.95 con envío en EE.UU. (eBay API; vendedor us_electronics_seller 100.0%; AMD Ryzen 5 9600X Up to 5.4GHz 6 Cores 12 Threads Zen 5 AM5 , 2026-11-25). Costo puesto: **Bs 2.215**/u en pedido de 2, **Bs 2.215**/u en pedido de 4.
@@ -335,7 +350,9 @@ eBay nuevo: USD 169.95 con envío en EE.UU. (eBay API; vendedor us_electronics_s
 | Marketplace Cochabamba (particular) | sellado | 2.800 | 585 (21%) | 2026-11-06 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | sellado | 2.800 | 585 (21%) | 2026-11-12 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.806 | 591 (21%) | 2026-11-12 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.829 | 615 (22%) | 2026-11-25 |
 | Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD) | nuevo/no indica | 2.854 | 639 (22%) | 2026-11-12 |
+| Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD) | nuevo/no indica | 2.878 | 663 (23%) | 2026-11-25 |
 | Marketplace Quillacollo (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%205%209600x) | sellado | 2.900 | 685 (24%) | 2026-11-17 |
 | NPC Technology (WhatsApp) | no indica | 3.200 | 985 (31%) | 2026-11-18 |
 | ELVYCOMP (WhatsApp) | nuevo | 3.430 | 1.215 (35%) | 2026-11-09 |
@@ -351,6 +368,7 @@ eBay nuevo: USD 134.60 con envío en EE.UU. (eBay API; vendedor corelinker 98.5%
 | Punto Tecnológico / Supermall (web) · [ver](https://puntotecnologic.com/categories/procesadores) | nuevo | 2.560 | 771 (30%) | 2026-11-24 |
 | Cyrex Store América (WhatsApp) | nuevo | 2.678 | 888 (33%) | 2026-11-04 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.686 | 897 (33%) | 2026-11-12 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 2.709 | 920 (34%) | 2026-11-25 |
 | NPC Technology (WhatsApp) | no indica | 3.000 | 1.211 (40%) | 2026-11-18 |
 | Viadata Computadoras (WhatsApp) | nuevo | 3.300 | 1.511 (46%) | 2026-10-20 |
 

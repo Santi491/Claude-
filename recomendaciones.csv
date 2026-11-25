@@ -35,3 +35,6 @@ fecha,hora,orden,texto,por_que,accion
 2026-11-24,20:25,1,Fija el precio de venta de los 7700X y prepara las fotos,"Llegaron a Cochabamba y la meta es venderlos en 7 días; el Analista calcula el rango (costo real Bs 2.655 por unidad, competencia sellada a Bs 4.000 y vendidos a 3.000-3.100)",venta
 2026-11-24,20:25,2,Decide si levantas la regla de no ofrecer ventas por WhatsApp,Sin eso André no puede ofrecer los 7700X a las tiendas de los grupos A y B,tarea
 2026-11-24,20:25,3,Recoge los 7700X y avísanos cuando los tengas en la mano,Con eso el pedido pasa a entregado y Finanzas cuenta el stock real,pedido
+2026-11-25,11:12,1,"Fija el precio de los 7700X, súbenos las fotos y dinos si están sellados y con caja","Hay 4 unidades sin anuncio y la meta es venderlas en 7 días; sellados con caja el Analista sugiere Bs 3.300 (piso 2.930, techo 3.450), si no, Bs 3.100",venta
+2026-11-25,11:12,2,Decide si André puede ofrecer los 7700X a las tiendas ya calificadas (tarea 9),Hoy la regla lo prohíbe y sin anuncio no hay interesados; él solo avisa y tú cierras el trato,tarea
+2026-11-25,11:12,3,Avísanos cuando tengas los 7700X en la mano,Con ese aviso el pedido pasa a entregado; el viaje completo tomó hasta 35 días,pedido

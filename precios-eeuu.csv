@@ -1461,10 +1461,11 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-25,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,usado,409.99,0.00,real,eBay API; vendedor thespacevault 99.4%; CORSAIR Vengeance RGB 32GB DDR5  (2x16GB) 5600MHz CL40 AMD E,https://www.ebay.com/itm/880127792085
 2026-11-25,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,usado,400.00,0.00,real,eBay API; vendedor gadgetdepot-4usi 99.1%; Corsair VENGEANCE RGB 32GB (2x16GB) DDR5-6000 CL36 Desktop R,https://www.ebay.com/itm/920161892533
 2026-11-25,RAM DDR4 16GB (2x8) 3200,usado,59.99,6.99,real,eBay API; vendedor zeezaw-zoozaw 99.6%; Crucial 16GB (2x8GB) DDR4 3200MHz PC4-25600 CL22 Desktop RAM,https://www.ebay.com/itm/147696358726
-2026-11-25,SSD NVMe 1TB,usado,89.99,0.00,real,eBay API; vendedor huck2001 100.0%; Kioxia XG6 1TB NVMe M.2 2280 SSD PCIe 3.0 KXG60ZNV1T02,https://www.ebay.com/itm/327475649365
+2026-11-25,SSD NVMe 1TB,usado,89.99,0.00,agotado,eBay API; vendedor huck2001 100.0%; Kioxia XG6 1TB NVMe M.2 2280 SSD PCIe 3.0 KXG60ZNV1T02; vendido o agotado al revisar a las 11:07,https://www.ebay.com/itm/327475649365
 2026-11-25,SSD NVMe 2TB,usado,129.70,9.70,real,eBay API; vendedor ez-tech2 99.9%; Western Digital2280mm BLACK SN770 2TB M.2 NVMe Gen 4.0 x 4 S,https://www.ebay.com/itm/128212910740
 2026-11-25,Ryzen 7 7700X,usado,155.00,0.00,real,eBay API; vendedor emisa_3417 100.0%; AMD Ryzen 7 7700X Ryzen 7000 Series CPU Processor MPN 100-00,https://www.ebay.com/itm/920181513631
 2026-11-25,Ryzen 5 7500F,usado,114.99,5.73,real,eBay API; vendedor jorgejhj 100.0%; AMD Ryzen 5 7500F Ryzen 5 6-Core 3.7GHz Socket AM5,https://www.ebay.com/itm/257792135268
 2026-11-25,Ryzen 5 9600X,usado,135.00,5.73,real,eBay API; vendedor kemist1117 100.0%; AMD Ryzen 5 9600X CPU 6-Core 5.4GHz AM5 100-000001405 Zen 5 ,https://www.ebay.com/itm/198821661151
 2026-11-25,Ryzen 5 7600X,usado,125.00,8.02,real,eBay API; vendedor meric-3049 99.0%; AMD Ryzen 5 7600X Open Box,https://www.ebay.com/itm/287751750612
 2026-11-25,Ryzen 9 9950X3D,usado,486.99,0.00,real,eBay API; vendedor paymore_kennesaw 99.2%; AMD Ryzen 9 9950X3D 4.30GHz 16 Core 100-000000719 32 Thread ,https://www.ebay.com/itm/198750337032
+2026-11-25,SSD NVMe 1TB,usado,85.00,5.75,real,eBay API; vendedor anthonycpny 100.0%; Western Digital WD PC SN560 1TB NVMe M.2 2280 SSD SDDPNQE-1T,https://www.ebay.com/itm/840165155506

@@ -1,8 +1,8 @@
 fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en_stock,notas
 2026-10-28,Ryzen 5 5500,cpu,1440,Bs,1440,nuevo,Punto Tecnológico / Supermall,web,sí,importado de las notas de catalogos.csv (12/11)
-2026-10-28,Ryzen 9 9950X3D,cpu,12590,Bs,12590,nuevo,Punto Tecnológico / Supermall,web,sí,importado de las notas de catalogos.csv (12/11)
+2026-10-28,Ryzen 9 9950X3D,cpu,12590,Bs,12590,nuevo,Punto Tecnológico / Supermall,web,sí,"importado de las notas de catalogos.csv (12/11) · OJO 25/11: este precio es del Ryzen 9 9950X3D2, no usar como 9950X3D (ver precios-cochabamba.csv)"
 2026-11-03,Ryzen 5 5500,cpu,1440,Bs,1440,nuevo,Punto Tecnológico / Supermall,web,sí,importado de las notas de catalogos.csv (12/11)
-2026-11-03,Ryzen 9 9950X3D,cpu,12590,Bs,12590,nuevo,Punto Tecnológico / Supermall,web,sí,importado de las notas de catalogos.csv (12/11)
+2026-11-03,Ryzen 9 9950X3D,cpu,12590,Bs,12590,nuevo,Punto Tecnológico / Supermall,web,sí,"importado de las notas de catalogos.csv (12/11) · OJO 25/11: este precio es del Ryzen 9 9950X3D2, no usar como 9950X3D (ver precios-cochabamba.csv)"
 2026-11-03,Ryzen 7 5800X3D,cpu,4960,Bs,4960,nuevo,Punto Tecnológico / Supermall,web,sí,importado de las notas de catalogos.csv (12/11)
 2026-11-03,Ryzen 3 3200G,cpu,1145,Bs,1145,nuevo,OverCity,web,sí,importado de las notas de catalogos.csv (12/11)
 2026-11-03,Ryzen 9 9950X3D,cpu,12580,Bs,12580,nuevo,OverCity,web,sí,importado de las notas de catalogos.csv (12/11)
@@ -11,7 +11,7 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-10,Ryzen 3 3200G,cpu,840,Bs,840,nuevo,MSR Computers,web,sí,importado de las notas de catalogos.csv (12/11)
 2026-11-10,Intel Core Ultra 9 285K,cpu,8500,Bs,8500,nuevo,MSR Computers,web,sí,importado de las notas de catalogos.csv (12/11)
 2026-11-12,Ryzen 5 5500,cpu,1440,Bs,1440,nuevo,Punto Tecnológico / Supermall,web,sí,importado de las notas de catalogos.csv (12/11)
-2026-11-12,Ryzen 9 9950X3D,cpu,12590,Bs,12590,nuevo,Punto Tecnológico / Supermall,web,sí,importado de las notas de catalogos.csv (12/11)
+2026-11-12,Ryzen 9 9950X3D,cpu,12590,Bs,12590,nuevo,Punto Tecnológico / Supermall,web,sí,"importado de las notas de catalogos.csv (12/11) · OJO 25/11: este precio es del Ryzen 9 9950X3D2, no usar como 9950X3D (ver precios-cochabamba.csv)"
 2026-11-12,Ryzen 7 5800X3D,cpu,4960,Bs,4960,nuevo,Punto Tecnológico / Supermall,web,sí,importado de las notas de catalogos.csv (12/11)
 2026-11-12,Intel Core i5-13400F,cpu,2245,USD,188,oem,Cyrex Store,web,sí,importado de las notas de catalogos.csv (12/11)
 2026-10-14,Intel Core i9-14900K,cpu,6013,Bs,6013,nuevo,Crazy Store,whatsapp,sí,importado de las notas de mensajes.csv (12/11)
@@ -338,3 +338,6 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-24,Hiksemi Wave SSD M.2 512GB,ssd,1200,Bs,1200,no indica,Punto Tecnológico / Supermall,web,sí,web 24/11; Disponible; sin dato de NVMe
 2026-11-24,Hiksemi SSD M.2 SATA 512GB,ssd,1110,Bs,1110,no indica,Punto Tecnológico / Supermall,web,sí,web 24/11; Disponible; SATA
 2026-11-24,Apacer Nox RGB DDR5 32GB 5200,ram,5460,Bs,5460,no indica,Punto Tecnológico / Supermall,web,sí,web 24/11; stock bajo; kit sin dato
+2026-11-25,Kingston Fury Beast DDR5 16GB (1x16) 4800,ram,3079.8,USD,255.8,no indica,Cyrex Store,web,sí,web 25/11; no se vio el 12/11
+2026-11-25,Intel Core i9-14900K,cpu,8300,Bs,8300,no indica,PC Components Bolivia,web,sí,web 25/11 (Santa Cruz); el 12/11 estaba a Bs 7.700
+2026-11-25,Intel Core Ultra 7 270K Plus,cpu,4700,Bs,4700,no indica,PC Components Bolivia,web,sí,web 25/11 (Santa Cruz); el 12/11 estaba a Bs 4.750
