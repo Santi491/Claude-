@@ -36,6 +36,11 @@
    "estado": "terminó",
    "texto": "Oficina publicada con los datos de la tarde",
    "hora": "16:27"
+  },
+  "gerente": {
+   "estado": "trabajando",
+   "texto": "Controlando al equipo y avisando a Santi",
+   "hora": "16:27"
   }
  }
 }
