@@ -5,7 +5,7 @@
   "desde": "10:35",
   "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-25 11:07",
+ "actualizado": "2026-11-25 11:09",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -28,9 +28,9 @@
    "hora": "11:07"
   },
   "ana": {
-   "estado": "trabajando",
-   "texto": "Comparación y precio de venta del 7700X",
-   "hora": "11:07"
+   "estado": "terminó",
+   "texto": "7700X: piso Bs 2.930, sugerido 3.300, techo 3.450",
+   "hora": "11:09"
   },
   "fin": {
    "estado": "trabajando",
