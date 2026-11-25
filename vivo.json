@@ -6,5 +6,11 @@
   "fecha": "2026-11-25"
  },
  "actualizado": "2026-11-25 19:54",
- "agentes": {}
+ "agentes": {
+  "mkt": {
+   "estado": "trabajando",
+   "texto": "Publicando los 4 Ryzen 7 7700X en Marketplace",
+   "hora": "19:54"
+  }
+ }
 }
