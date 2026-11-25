@@ -18,8 +18,8 @@
    "hora": "16:22"
   },
   "pedidos": {
-   "estado": "trabajando",
-   "texto": "Revisando los pedidos",
+   "estado": "terminó",
+   "texto": "Sin cambios",
    "hora": "16:22"
   }
  }
