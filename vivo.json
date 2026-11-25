@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-25 16:25",
+ "actualizado": "2026-11-25 16:27",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -33,9 +33,9 @@
    "hora": "16:25"
   },
   "oficina": {
-   "estado": "trabajando",
-   "texto": "Actualizando la oficina",
-   "hora": "16:25"
+   "estado": "terminó",
+   "texto": "Oficina publicada con los datos de la tarde",
+   "hora": "16:27"
   }
  }
 }
