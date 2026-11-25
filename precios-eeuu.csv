@@ -1452,7 +1452,7 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-25,Ryzen 5 5600,usado,119.99,0.00,real,eBay API; vendedor paymore_lexington 99.4%; AMD Ryzen 5 5600 3.50GHz 6 Core 100-000000927 12 Thread AM4,https://www.ebay.com/itm/407358337876
 2026-11-25,Ryzen 7 5700X3D,usado,320.00,10.17,real,eBay API; vendedor jiyuu_4 100.0%; AMD Ryzen 7 5700X3D Cpu,https://www.ebay.com/itm/168882789188
 2026-11-25,Ryzen 5 7600,usado,119.00,0.00,real,eBay API; vendedor piedmontreeltimemovies 99.7%; AMD Ryzen 5 7600 6-Core 3.8GHz Desktop CPU Processor Socket ,https://www.ebay.com/itm/257857896293
-2026-11-25,Ryzen 7 7800X3D,usado,274.99,0.00,real,eBay API; vendedor rodmur-8813 99.7%; AMD Ryzen 7 7800X3D 8-Core 4.2GHz AM5 CPU 96MB L3 8MB L2 100,https://www.ebay.com/itm/377614050584
+2026-11-25,Ryzen 7 7800X3D,usado,274.99,0.00,agotado,eBay API; vendedor rodmur-8813 99.7%; AMD Ryzen 7 7800X3D 8-Core 4.2GHz AM5 CPU 96MB L3 8MB L2 100; vendido o agotado al revisar a las 16:22,https://www.ebay.com/itm/377614050584
 2026-11-25,Ryzen 9 9950X,usado,399.99,8.02,real,eBay API; vendedor fizziefox 100.0%; AMD Ryzen 9 9950x with box,https://www.ebay.com/itm/820382700945
 2026-11-25,Intel Core i5-12400F,usado,119.99,0.00,real,eBay API; vendedor paymore_santa_clarita 99.8%; Intel Core i5-12400F 2.50GHz 6 Core SRLW4 12 Thread LGA 1700,https://www.ebay.com/itm/820390285569
 2026-11-25,Intel Core i5-13400,usado,139.99,0.00,real,"eBay API; vendedor gadgetpickup 99.9%; Intel Core i5-13400 Desktop Processor (2.5 GHz, 10 Cores, LG",https://www.ebay.com/itm/307290903175
@@ -1460,7 +1460,7 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-25,Intel Core Ultra 7 265K,usado,209.95,0.00,real,eBay API; vendedor rolamoto 99.6%; Intel Core Ultra 7 265K Series 2 Unlocked CPU LGA1851 20-Cor,https://www.ebay.com/itm/198798405271
 2026-11-25,Corsair Vengeance RGB DDR5 32GB (2x16) 5600,usado,409.99,0.00,real,eBay API; vendedor thespacevault 99.4%; CORSAIR Vengeance RGB 32GB DDR5  (2x16GB) 5600MHz CL40 AMD E,https://www.ebay.com/itm/880127792085
 2026-11-25,Corsair Vengeance RGB DDR5 32GB (2x16) 6000,usado,400.00,0.00,real,eBay API; vendedor gadgetdepot-4usi 99.1%; Corsair VENGEANCE RGB 32GB (2x16GB) DDR5-6000 CL36 Desktop R,https://www.ebay.com/itm/920161892533
-2026-11-25,RAM DDR4 16GB (2x8) 3200,usado,59.99,6.99,real,eBay API; vendedor zeezaw-zoozaw 99.6%; Crucial 16GB (2x8GB) DDR4 3200MHz PC4-25600 CL22 Desktop RAM,https://www.ebay.com/itm/147696358726
+2026-11-25,RAM DDR4 16GB (2x8) 3200,usado,59.99,6.99,agotado,eBay API; vendedor zeezaw-zoozaw 99.6%; Crucial 16GB (2x8GB) DDR4 3200MHz PC4-25600 CL22 Desktop RAM; vendido o agotado al revisar a las 16:22,https://www.ebay.com/itm/147696358726
 2026-11-25,SSD NVMe 1TB,usado,89.99,0.00,agotado,eBay API; vendedor huck2001 100.0%; Kioxia XG6 1TB NVMe M.2 2280 SSD PCIe 3.0 KXG60ZNV1T02; vendido o agotado al revisar a las 11:07,https://www.ebay.com/itm/327475649365
 2026-11-25,SSD NVMe 2TB,usado,129.70,9.70,real,eBay API; vendedor ez-tech2 99.9%; Western Digital2280mm BLACK SN770 2TB M.2 NVMe Gen 4.0 x 4 S,https://www.ebay.com/itm/128212910740
 2026-11-25,Ryzen 7 7700X,usado,155.00,0.00,real,eBay API; vendedor emisa_3417 100.0%; AMD Ryzen 7 7700X Ryzen 7000 Series CPU Processor MPN 100-00,https://www.ebay.com/itm/920181513631
@@ -1469,3 +1469,5 @@ fecha,producto,condicion,precio_usd,envio_usd,tipo,fuente,link
 2026-11-25,Ryzen 5 7600X,usado,125.00,8.02,real,eBay API; vendedor meric-3049 99.0%; AMD Ryzen 5 7600X Open Box,https://www.ebay.com/itm/287751750612
 2026-11-25,Ryzen 9 9950X3D,usado,486.99,0.00,real,eBay API; vendedor paymore_kennesaw 99.2%; AMD Ryzen 9 9950X3D 4.30GHz 16 Core 100-000000719 32 Thread ,https://www.ebay.com/itm/198750337032
 2026-11-25,SSD NVMe 1TB,usado,85.00,5.75,real,eBay API; vendedor anthonycpny 100.0%; Western Digital WD PC SN560 1TB NVMe M.2 2280 SSD SDDPNQE-1T,https://www.ebay.com/itm/840165155506
+2026-11-25,Ryzen 7 7800X3D,usado,275.99,0.00,real,eBay API; vendedor paymore_pooler 99.7%; AMD Ryzen 7 7800X3D 4.20GHz 8 Core 100-000000910 16 Thread A,https://www.ebay.com/itm/366828133015
+2026-11-25,RAM DDR4 16GB (2x8) 3200,usado,70.00,5.59,real,eBay API; vendedor brak_3895 100.0%; Neo Forza 16GB (2x8GB) RAM DDR4 3200MHz Desktop Memory CL22 ,https://www.ebay.com/itm/168863800993
