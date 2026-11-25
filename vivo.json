@@ -41,6 +41,11 @@
    "estado": "terminó",
    "texto": "Oficina publicada (versión 162)",
    "hora": "11:11"
+  },
+  "gerente": {
+   "estado": "trabajando",
+   "texto": "Control de la ronda y mensaje a Santi",
+   "hora": "11:11"
   }
  }
 }
