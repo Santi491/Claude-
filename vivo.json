@@ -5,7 +5,7 @@
   "desde": "10:35",
   "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-25 11:06",
+ "actualizado": "2026-11-25 11:12",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -23,9 +23,29 @@
    "hora": "11:05"
   },
   "pedidos": {
-   "estado": "trabajando",
-   "texto": "Revisando pedidos activos y días de puerta a puerta",
-   "hora": "11:06"
+   "estado": "terminó",
+   "texto": "7700X: 35 días de puerta a puerta; sin guías activas",
+   "hora": "11:07"
+  },
+  "ana": {
+   "estado": "terminó",
+   "texto": "7700X: piso Bs 2.930, sugerido 3.300, techo 3.450",
+   "hora": "11:09"
+  },
+  "fin": {
+   "estado": "terminó",
+   "texto": "4 u del 7700X a Bs 2.655; sin ventas todavía",
+   "hora": "11:09"
+  },
+  "oficina": {
+   "estado": "terminó",
+   "texto": "Oficina publicada (versión 162)",
+   "hora": "11:11"
+  },
+  "gerente": {
+   "estado": "terminó",
+   "texto": "Control sin errores y aviso enviado",
+   "hora": "11:12"
   }
  }
 }
