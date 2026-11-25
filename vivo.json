@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-25"
  },
- "actualizado": "2026-11-25 16:27",
+ "actualizado": "2026-11-25 16:28",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -38,9 +38,9 @@
    "hora": "16:27"
   },
   "gerente": {
-   "estado": "trabajando",
-   "texto": "Controlando al equipo y avisando a Santi",
-   "hora": "16:27"
+   "estado": "terminó",
+   "texto": "Aviso de fin de ronda enviado",
+   "hora": "16:28"
   }
  }
 }
