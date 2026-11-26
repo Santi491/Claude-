@@ -31,6 +31,11 @@
    "estado": "trabajando",
    "texto": "Recalcular qué conviene",
    "hora": "16:24"
+  },
+  "fin": {
+   "estado": "trabajando",
+   "texto": "Stock y caja",
+   "hora": "16:24"
   }
  }
 }
