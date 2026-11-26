@@ -5,7 +5,7 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-03,Ryzen 9 9950X3D,cpu,12590,Bs,12590,nuevo,Punto Tecnológico / Supermall,web,sí,"importado de las notas de catalogos.csv (12/11) · OJO 25/11: este precio es del Ryzen 9 9950X3D2, no usar como 9950X3D (ver precios-cochabamba.csv)"
 2026-11-03,Ryzen 7 5800X3D,cpu,4960,Bs,4960,nuevo,Punto Tecnológico / Supermall,web,sí,importado de las notas de catalogos.csv (12/11)
 2026-11-03,Ryzen 3 3200G,cpu,1145,Bs,1145,nuevo,OverCity,web,sí,importado de las notas de catalogos.csv (12/11)
-2026-11-03,Ryzen 9 9950X3D,cpu,12580,Bs,12580,nuevo,OverCity,web,sí,importado de las notas de catalogos.csv (12/11)
+2026-11-03,Ryzen 9 9950X3D,cpu,12580,Bs,12580,nuevo,OverCity,web,sí,"importado de las notas de catalogos.csv (12/11) · OJO 26/11: es del Ryzen 9 9950X3D2, no usar como 9950X3D (ver precios-cochabamba.csv, fila del 03/11 corregida el 13/11)"
 2026-11-04,Ryzen 5 5600X,cpu,2350,Bs,2350,oem,PC Components Bolivia,web,sí,importado de las notas de catalogos.csv (12/11)
 2026-11-04,Ryzen 9 9950X3D,cpu,10500,Bs,10500,nuevo,PC Components Bolivia,web,sí,importado de las notas de catalogos.csv (12/11)
 2026-11-10,Ryzen 3 3200G,cpu,840,Bs,840,nuevo,MSR Computers,web,sí,importado de las notas de catalogos.csv (12/11)

@@ -10,7 +10,7 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Ryzen 9 9950X3D | nuevo | 6.495 | 8.910 | 27.1 % | 37.2 % | 24.9 % | 26.7 % | 18.9 % | 16.0 % | **traer** (aguanta el peor caso (16.0 %)) | — |
 | Ryzen 7 7800X3D | nuevo | 3.964 | 5.120 | 22.6 % | 29.2 % | 20.2 % | 21.9 % | 13.8 % | 10.5 % | **traer** (aguanta el peor caso (10.5 %)) | — |
 | Ryzen 7 7700X | nuevo | 2.699 | 3.480 | 22.5 % | 29.0 % | 20.1 % | 21.5 % | 13.8 % | 10.1 % | **traer** (aguanta el peor caso (10.1 %)) | — |
-| Intel Core i5-12400F | nuevo | 1.704 | 2.140 | 20.4 % | 25.6 % | 18.0 % | 18.8 % | 11.7 % | 7.3 % | **traer** (aguanta el peor caso (7.3 %)) | — |
+| Intel Core i5-12400F | nuevo | 1.704 | 2.160 | 21.1 % | 26.8 % | 18.7 % | 19.5 % | 12.2 % | 7.7 % | **traer** (aguanta el peor caso (7.7 %)) | — |
 | Intel Core Ultra 7 265K | nuevo | 3.168 | 3.980 | 20.4 % | 25.6 % | 18.0 % | 19.6 % | 11.5 % | 7.9 % | **traer** (aguanta el peor caso (7.9 %)) | — |
 | RAM DDR4 16GB (2x8) 3200 | usado | 1.080 | 1.510 | 28.5 % | 39.9 % | 26.4 % | 26.3 % | 20.0 % | 15.1 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Intel Core i5-12400F | usado | 1.615 | 2.230 | 27.6 % | 38.1 % | 25.4 % | 26.1 % | 19.3 % | 15.1 % | **esperar** (faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas) | precios recientes (14 días) de al menos 2 tiendas distintas |
@@ -25,13 +25,12 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Ryzen 5 7500F | nuevo | 1.803 | 1.670 | -7.9 % | -7.4 % | -11.2 % | -10.0 % | -20.2 % | -26.1 % | **no traer** (margen -8% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | usado | 5.109 | 4.270 | -19.7 % | -16.4 % | -23.2 % | -20.4 % | -33.0 % | -37.9 % | **no traer** (margen -20% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 5 7600 | nuevo | 3.322 | 2.700 | -23.0 % | -18.7 % | -26.7 % | -24.3 % | -36.7 % | -42.2 % | **no traer** (margen -23% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
-| Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | nuevo | 6.826 | 4.270 | -59.9 % | -37.4 % | -64.7 % | -60.7 % | -77.8 % | -84.0 % | **no traer** (margen -60% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | nuevo | 5.892 | 5.890 | -0.0 % | -0.0 % | -3.0 % | -0.6 % | -11.2 % | -15.2 % | **no traer** (margen -0% con el precio sugerido) | precios recientes (14 días) de al menos 2 tiendas distintas |
 | SSD NVMe 2TB | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), 1 anuncio(s) de particular sin marca o configuración descartado(s) |
 | Ryzen 5 7600 | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
 | Ryzen 7 7700X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
-| Ryzen 9 9950X3D | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Ryzen 5 7600X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
+| Ryzen 9 9950X3D | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Ryzen 5 9600X | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Intel Core i5-14400F | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos) |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precios recientes (14 días) de al menos 2 tiendas distintas |
@@ -43,6 +42,7 @@ Margen = ganancia / precio de venta · Recargo = ganancia / costo. Escenarios: m
 | Ryzen 7 5700X3D | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precio local |
 | Intel Core i5-13400 | nuevo | — | — | — | — | — | — | — | — | sin datos | precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas |
 | Intel Core Ultra 7 265K | usado | — | — | — | — | — | — | — | — | sin datos | precio local de usados (se comparó con nuevos), precio de eBay usado |
+| Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | nuevo | — | — | — | — | — | — | — | — | sin datos | precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas |
 
 ## Stock real (pedidos.csv)
 
