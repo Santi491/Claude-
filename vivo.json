@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-26"
  },
- "actualizado": "2026-11-26 16:22",
+ "actualizado": "2026-11-26 16:23",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -16,6 +16,11 @@
    "estado": "terminó",
    "texto": "7700X: 75 clics, 0 mensajes",
    "hora": "16:22"
+  },
+  "pedidos": {
+   "estado": "trabajando",
+   "texto": "Revisar pedidos activos",
+   "hora": "16:23"
   }
  }
 }
