@@ -24,7 +24,7 @@ for _s in (sys.stdout, sys.stderr):
         pass
 
 DIR = os.path.dirname(os.path.abspath(__file__))
-EN_STOCK = ("entregado",)
+EN_STOCK = ("en cochabamba", "entregado")   # ya está en Cochabamba, lo haya recogido Santi o no (tarea 25-13)
 # Compras conjuntas con socios: total del pedido grande (todas las unidades, no solo las nuestras), en USD.
 # Dato de Santi (20/10, notas de pedidos.csv: 14 u por USD 2.747,15). Se compara con nuestro costo por unidad
 # en el paquete de pedidos.csv (columna paquete). Sin nombres de socios.

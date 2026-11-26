@@ -244,9 +244,8 @@ def segundo_pedido(a):
                  f"{f['margen_pct']} % | {f['escenarios_margen_pct']['peor caso']} % | {est} |")
     L.append("")
     L.append("Plata = costo por unidad × 2 (pedido por defecto; con 4 u el courier B baja el costo por unidad). "
-             "Ojo: el SSD NVMe 2TB sale de un Leven Gen3 sin marca de eBay y los locales son Gen4 de marca; con un Gen4 de marca (WD SN770) "
-             "el margen cae a ~11 % y el peor caso a ~-3 % (cálculo del 16/11): no lo des por firme sin decidir cuál se compara. "
-             "El 9950X3D tiene solo 2 tiendas locales y es la compra más grande.")
+             "Ojo con el SSD NVMe 2TB: compara siempre la misma gama (el más barato de eBay puede ser Gen3 o sin marca y los locales Gen4 "
+             "de marca); mira qué anuncio y qué precios locales usa la tabla de hoy y no lo des por firme sin decidir cuál se compara.")
     return "\n".join(L) + "\n"
 
 
