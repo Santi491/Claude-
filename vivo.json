@@ -26,6 +26,11 @@
    "estado": "terminó",
    "texto": "Anuncios de hoy revisados",
    "hora": "16:24"
+  },
+  "ana": {
+   "estado": "trabajando",
+   "texto": "Recalcular qué conviene",
+   "hora": "16:24"
   }
  }
 }
