@@ -21,6 +21,11 @@
    "estado": "terminó",
    "texto": "Sin envíos activos",
    "hora": "10:55"
+  },
+  "ana": {
+   "estado": "trabajando",
+   "texto": "Costos, márgenes y precio del 7700X",
+   "hora": "10:55"
   }
  }
 }
