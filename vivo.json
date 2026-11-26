@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-26"
  },
- "actualizado": "2026-11-26 16:24",
+ "actualizado": "2026-11-26 16:25",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -28,9 +28,9 @@
    "hora": "16:24"
   },
   "ana": {
-   "estado": "trabajando",
-   "texto": "Recalcular qué conviene",
-   "hora": "16:24"
+   "estado": "terminó",
+   "texto": "7700X se mantiene en Bs 3.350",
+   "hora": "16:25"
   },
   "fin": {
    "estado": "terminó",
