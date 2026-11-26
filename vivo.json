@@ -21,6 +21,11 @@
    "estado": "terminó",
    "texto": "Sin pedidos activos",
    "hora": "16:23"
+  },
+  "ebay": {
+   "estado": "trabajando",
+   "texto": "Revisar que los anuncios de hoy sigan disponibles",
+   "hora": "16:23"
   }
  }
 }
