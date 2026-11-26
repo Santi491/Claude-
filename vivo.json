@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-26"
  },
- "actualizado": "2026-11-26 16:23",
+ "actualizado": "2026-11-26 16:24",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -23,9 +23,9 @@
    "hora": "16:23"
   },
   "ebay": {
-   "estado": "trabajando",
-   "texto": "Revisar que los anuncios de hoy sigan disponibles",
-   "hora": "16:23"
+   "estado": "terminó",
+   "texto": "Anuncios de hoy revisados",
+   "hora": "16:24"
   }
  }
 }
