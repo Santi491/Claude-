@@ -11,6 +11,11 @@
    "estado": "terminó",
    "texto": "4 mensajes, 1 chat nuevo, precios de CPUs y RAM",
    "hora": "16:16"
+  },
+  "mkt": {
+   "estado": "trabajando",
+   "texto": "Messenger, Marketplace y demanda",
+   "hora": "16:16"
   }
  }
 }
