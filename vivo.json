@@ -1,17 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "23:47",
-  "fecha": "2026-11-25",
-  "hasta": "00:00"
+  "desde": "10:35",
+  "fecha": "2026-11-26"
  },
- "actualizado": "2026-11-26 00:00",
- "agentes": {
-  "mkt": {
-   "estado": "terminó",
-   "texto": "7700X en 5 grupos de PC con el link del grupo",
-   "hora": "00:00"
-  }
- }
+ "actualizado": "2026-11-26 10:35",
+ "agentes": {}
 }
