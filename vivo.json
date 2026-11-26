@@ -5,12 +5,12 @@
   "desde": "10:35",
   "fecha": "2026-11-26"
  },
- "actualizado": "2026-11-26 10:36",
+ "actualizado": "2026-11-26 10:42",
  "agentes": {
   "wa": {
-   "estado": "trabajando",
-   "texto": "Respuestas de tiendas y grupo de clientes",
-   "hora": "10:36"
+   "estado": "terminó",
+   "texto": "Respuestas y precios nuevos; resumen en el grupo",
+   "hora": "10:42"
   }
  }
 }
