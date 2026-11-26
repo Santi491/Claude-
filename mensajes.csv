@@ -709,3 +709,14 @@ fecha,hora,canal,tienda,direccion,tipo,con_precio,nota,texto
 2026-11-26,10:41,whatsapp,ELVYCOMP,recibido,respuesta,no,Sellados; garantía solo de funcionamiento (cambio si no funciona al primer uso),
 2026-11-26,10:41,whatsapp,ELVYCOMP,enviado,respuesta,,Agradece la aclaración; cierre,"Perfecto, entendido. Gracias por aclararlo."
 2026-11-26,10:53,messenger,bandeja de Marketplace (ronda mañana PC),recibido,automatica,no,Bandeja vista solo como lista (ningún chat abierto): sin respuestas nuevas de vendedores y sin chats de nuestro anuncio; la ficha del anuncio dice que no hay mensajes,
+2026-11-26,10:48,whatsapp,Compubol,recibido,respuesta,no,"10:48: ""Los discos no tiene garantía""; sin respuesta sobre 2TB ni sellado",
+2026-11-26,16:09,whatsapp,Compubol,enviado,respuesta,,Agradece la aclaración de la garantía y repregunta el SSD de 2TB,"Ah ya, entendido, gracias por avisar. ¿Y en 2TB tienen alguno? ¿A cuánto?"
+2026-11-26,10:45,whatsapp,Cyrex Store,recibido,respuesta,sí,"10:45: tienen DDR5 6000MHz; foto de su web (abierta hoy): Patriot Viper Venom RGB 16GB (1x16) DDR5-6000 CL30 Bs 3.153,50 (USD 265)",
+2026-11-26,16:10,whatsapp,Cyrex Store,enviado,respuesta,,Confirma precio por módulo y pregunta si hay 2 en stock,"Buenísimo, gracias. Veo que es el módulo de 16GB a 3.153,50, ¿cierto? Para armar 32GB, ¿tienen 2 en stock?"
+2026-11-26,16:11,whatsapp,La Baticueva-Tec,enviado,nuevo,,"Chat nuevo (tarea 26-1): consulta de procesadores, RAM y SSD NVMe; sin ofrecer ventas","Hola, ¿qué tal? Vi su publicación del Ryzen 7 7700X. Estoy armando unas PCs: ¿qué otros procesadores tienen, y manejan RAM o SSD NVMe de 1TB o 2TB? Si me pasan precios, se los agradezco."
+2026-11-26,16:11,whatsapp,La Baticueva-Tec,recibido,automatica,sí,"Saludo automático con link a su catálogo WhatsApp Business (abierto hoy: procesadores, RAM y almacenamiento; precios en dólares en los avisos marcados; sin SSD NVMe 2TB y el 7700X no figura en la sección AMD)",
+2026-11-26,16:12,whatsapp,Cyrex Store,recibido,respuesta,no,16:12: sí tienen los 2 módulos en stock,
+2026-11-26,16:13,whatsapp,Cyrex Store,enviado,respuesta,,Agradece y repregunta i5-13400 o 9950X,"Genial, gracias. Anoto las 2 entonces. ¿Y del i5-13400 o el 9950X tienen algo?"
+2026-11-26,16:12,grupo,Grupo Cargo Brothers,recibido,automatica,no,Revisión de la tarde: sin mensajes de miembros en el grupo ni privados; 0 miembros nuevos; sin ofertas por pedido publicadas hoy que revisar; stock 7700X sigue sin publicar (tarea reprogramada),
+2026-11-26,16:14,whatsapp,Cyrex Store,recibido,respuesta,no,"16:14: un sticker y una foto con el texto ""14400F""; la foto queda sin abrir",
+2026-11-26,16:16,whatsapp,Cyrex Store,enviado,respuesta,,Aclara que solo está cotizando y que no separen nada (leído por la tienda),"Eso sí, por ahora solo estoy cotizando, así que no me separes nada todavía, porfa."

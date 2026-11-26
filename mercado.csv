@@ -366,3 +366,9 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-26,Ryzen 5 8600G,cpu,2275,BOB,2275,no indica,particular,marketplace,sí,Cochabamba; 1 anuncio
 2026-11-26,Intel Core i5-14400,cpu,2600,BOB,2600,no indica,particular,marketplace,sí,Cochabamba; bajó de 2.700
 2026-11-26,Intel Core Ultra 7 270K Plus,cpu,4350,BOB,4350,no indica,particular,marketplace,sí,Cochabamba; 1 anuncio
+2026-11-26,Ryzen 5 5500,cpu,1771.35,USD,147,nuevo,La Baticueva-Tec,whatsapp,sí,"catálogo WhatsApp 26/11: USD 147 × 12,05 (USDT 26/11), estimado; la tienda dice que el cambio a Bs varía"
+2026-11-26,Ryzen 5 8500G,cpu,2325.65,USD,193,nuevo,La Baticueva-Tec,whatsapp,sí,"catálogo WhatsApp 26/11: USD 193 × 12,05 (USDT 26/11), estimado; la tienda dice que el cambio a Bs varía"
+2026-11-26,Ryzen 9 5900XT,cpu,4940.5,USD,410,nuevo,La Baticueva-Tec,whatsapp,sí,"catálogo WhatsApp 26/11: USD 410 × 12,05 (USDT 26/11), estimado; la tienda dice que el cambio a Bs varía"
+2026-11-26,Intel Core i3-8300 OEM,cpu,1048.35,USD,87,nuevo,La Baticueva-Tec,whatsapp,sí,"catálogo WhatsApp 26/11: USD 87 × 12,05 (USDT 26/11), estimado; la tienda dice que el cambio a Bs varía"
+2026-11-26,Intel Core Ultra 5 225F,cpu,2711.25,USD,225,nuevo,La Baticueva-Tec,whatsapp,sí,"catálogo WhatsApp 26/11: USD 225 × 12,05 (USDT 26/11), estimado; la tienda dice que el cambio a Bs varía"
+2026-11-26,Patriot Viper Venom RGB DDR5 16GB (1x16) 6000,ram,3153.5,BOB,3153.5,no indica,Cyrex Store,whatsapp,sí,foto de su web enviada por chat (=USD 265); precio por módulo; 2 en stock
