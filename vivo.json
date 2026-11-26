@@ -5,6 +5,12 @@
   "desde": "10:35",
   "fecha": "2026-11-26"
  },
- "actualizado": "2026-11-26 10:35",
- "agentes": {}
+ "actualizado": "2026-11-26 10:36",
+ "agentes": {
+  "wa": {
+   "estado": "trabajando",
+   "texto": "Respuestas de tiendas y grupo de clientes",
+   "hora": "10:36"
+  }
+ }
 }
