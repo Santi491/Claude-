@@ -26,6 +26,11 @@
    "estado": "trabajando",
    "texto": "Costos, márgenes y precio del 7700X",
    "hora": "10:55"
+  },
+  "fin": {
+   "estado": "trabajando",
+   "texto": "Stock y caja",
+   "hora": "10:55"
   }
  }
 }
