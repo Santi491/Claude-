@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-25 16:25",
+ "generado": "2026-11-25 20:17",
  "etapa": {
   "numero": 3,
   "nombre": "vendiendo",
@@ -290,8 +290,8 @@
    "id": "real-1",
    "producto": "Ryzen 7 7700X",
    "cantidad": 3,
-   "estado": "en Cochabamba",
-   "etapa": 5,
+   "estado": "entregado",
+   "etapa": 6,
    "etapas": [
     "comprado",
     "enviado",
@@ -302,7 +302,7 @@
     "entregado"
    ],
    "fecha_compra": "2026-10-20",
-   "actualizado": "2026-11-24 18:37",
+   "actualizado": "2026-11-25 18:35",
    "tienda": "eBay (compra conjunta con un socio)",
    "courier": "Courier B",
    "costo_unit_bs": 2700.0,
@@ -346,6 +346,14 @@
      "evento": "Llegó a Cochabamba (aviso de Santi en la app)",
      "lat": -17.39,
      "lon": -66.16
+    },
+    {
+     "fecha": "2026-11-25",
+     "hora": "18:35",
+     "lugar": "Cochabamba",
+     "evento": "Santi lo recogió (aviso en la app)",
+     "lat": -17.39,
+     "lon": -66.16
     }
    ]
   },
@@ -354,8 +362,8 @@
    "id": "real-2",
    "producto": "Ryzen 7 7700X",
    "cantidad": 1,
-   "estado": "en Cochabamba",
-   "etapa": 5,
+   "estado": "entregado",
+   "etapa": 6,
    "etapas": [
     "comprado",
     "enviado",
@@ -366,7 +374,7 @@
     "entregado"
    ],
    "fecha_compra": "2026-10-20",
-   "actualizado": "2026-11-24 18:37",
+   "actualizado": "2026-11-25 18:35",
    "tienda": "eBay (compra conjunta con un socio)",
    "courier": "Courier B",
    "costo_unit_bs": 2520.0,
@@ -408,6 +416,14 @@
      "hora": "18:37",
      "lugar": "Cochabamba",
      "evento": "Llegó a Cochabamba (aviso de Santi en la app)",
+     "lat": -17.39,
+     "lon": -66.16
+    },
+    {
+     "fecha": "2026-11-25",
+     "hora": "18:35",
+     "lugar": "Cochabamba",
+     "evento": "Santi lo recogió (aviso en la app)",
      "lat": -17.39,
      "lon": -66.16
     }
@@ -721,8 +737,8 @@
  "finanzas": {
   "invertido_bs": 10620.0,
   "unidades_compradas": 4,
-  "unidades_en_camino": 4,
-  "unidades_en_stock": 0,
+  "unidades_en_camino": 0,
+  "unidades_en_stock": 4,
   "unidades_vendidas": 0,
   "ventas_bs": 0,
   "ganancia_bs": null
@@ -846,7 +862,7 @@
    "margen": 28.6,
    "peor": 15.1,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/168863800993",
    "courier_usd": 14.0,
    "tc": 12.04,
@@ -864,7 +880,7 @@
    "margen": 27.7,
    "peor": 15.2,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/820390285569",
    "courier_usd": 14.0,
    "tc": 12.04,
@@ -1206,7 +1222,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1242,7 +1258,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1260,7 +1276,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1278,7 +1294,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1688,6 +1704,38 @@
  ],
  "equipo": [
   {
+   "agente": "gerente",
+   "nombre": "Gerente",
+   "acciones": 33,
+   "serie": [
+    3,
+    6,
+    2,
+    1,
+    5,
+    5,
+    11
+   ],
+   "ultima": "Informe de las 20:00 (miércoles): etapa 3, 7700X en Cochabamba y anuncio publicado a Bs 3.350 contra los 3.400 de Santi (tarea de corrección); verificar.py sin errores; 4 tareas nuevas (4 auto por rutina, 0 propuestas); ",
+   "cuando": "2026-11-25 20:30"
+  },
+  {
+   "agente": "mkt",
+   "nombre": "Marketplace",
+   "acciones": 14,
+   "serie": [
+    2,
+    2,
+    1,
+    0,
+    1,
+    3,
+    5
+   ],
+   "ultima": "Publicado en Marketplace el Ryzen 7 7700X (4 unidades) a Bs 3350, 5 fotos, 20 etiquetas, solo Marketplace; aparece en Tus publicaciones (en revisión de Facebook). Tareas 2026-11-25-15 y -16 hechas.",
+   "cuando": "2026-11-25 20:00"
+  },
+  {
    "agente": "ana",
    "nombre": "Analista",
    "acciones": 16,
@@ -1736,22 +1784,6 @@
    "cuando": "2026-11-25 16:22"
   },
   {
-   "agente": "mkt",
-   "nombre": "Marketplace",
-   "acciones": 12,
-   "serie": [
-    2,
-    2,
-    1,
-    0,
-    1,
-    3,
-    3
-   ],
-   "ultima": "Ronda tarde PC: Messenger revisado (solo la lista): 0 respuestas de vendedores, 0 preguntas por nuestros anuncios, 0 seguimientos. El aviso de links sin revisar en la bandeja es falso positivo (la frase de las notas viej",
-   "cuando": "2026-11-25 16:21"
-  },
-  {
    "agente": "wa",
    "nombre": "WhatsApp",
    "acciones": 9,
@@ -1766,22 +1798,6 @@
    ],
    "ultima": "Ronda de la tarde: No leídos revisados y 9 mensajes a tiendas ya contactadas; 3 chats nuevos (3 del día). Precios: NVMe 1TB, i5-14400F OEM y DDR4 2x8GB; el SSD 2TB de una tienda resultó SATA y quedó como no cuenta; vario",
    "cuando": "2026-11-25 16:19"
-  },
-  {
-   "agente": "gerente",
-   "nombre": "Gerente",
-   "acciones": 28,
-   "serie": [
-    3,
-    6,
-    2,
-    1,
-    5,
-    5,
-    6
-   ],
-   "ultima": "Encargo de Santi (Mac): ¿conviene una RTX 4060 8GB a Bs 4.600? eBay API (cat. tarjetas de video): 4060 nueva USD 319,99 (MSI Ventus, envío gratis), usada USD 330-350; 5060 nueva USD 451; 5050 nueva USD 340-359. Marketpla",
-   "cuando": "2026-11-25 13:50"
   },
   {
    "agente": "dem",
@@ -2054,13 +2070,13 @@
   {
    "parte": "pc",
    "nombre": "PC · ronda 16:00",
-   "estado": "en curso",
+   "estado": "ok",
    "hora": "16:00"
   },
   {
    "parte": "gerente",
    "nombre": "Gerente · informe 20:00",
-   "estado": "pendiente",
+   "estado": "ok",
    "hora": "20:00"
   },
   {
@@ -5823,6 +5839,51 @@
   },
   {
    "tipo": "plan",
+   "ref": "2026-11-25-14",
+   "agente": "wa",
+   "titulo": "Grupo de clientes, primera ronda de publicaciones a la mañana: resumen, stock (7700X solo si Santi ya fijó el precio, con sus fotos) y por pedido con 15 % mínimo y foto solo del producto, verificando antes cada anuncio en eBay (lista del Analista en el chat)",
+   "estado": "aprobado",
+   "decision": "Santi 25/11 (chat)",
+   "fecha": "2026-11-26"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-17",
+   "agente": "mkt",
+   "titulo": "Corregir el precio del anuncio del Ryzen 7 7700X a Bs 3.400 por unidad (hoy sale a Bs 3.350) y avisar al Gerente por el chat",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-26"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-18",
+   "agente": "ana",
+   "titulo": "Comparar Bs 3.400 de los 7700X con Cyrex (3.732), Geek (3.492) y el sellado a 4.000 y decir si el precio aguanta o cuándo bajar (piso 3.000)",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-26"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-19",
+   "agente": "dem",
+   "titulo": "Seguir el 7700X en la zona en cada ronda: anuncios, los que desaparecen y cuántos interesados escribieron a nuestro anuncio",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-26"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-20",
+   "agente": "fin",
+   "titulo": "Registrar cada venta o reserva del 7700X el mismo día en ventas.csv y dar unidades que quedan y caja disponible",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-26"
+  },
+  {
+   "tipo": "plan",
    "ref": "2026-11-25-1",
    "agente": "pedidos",
    "titulo": "Si el 25/11 Santi todavía no avisó la llegada de los 7700X a Cochabamba, preguntárselo una sola vez (sin pedir código del courier ni mencionar reclamos)",
@@ -5900,6 +5961,24 @@
    "titulo": "Contestar a las 3 tiendas que escribieron y esperan respuesta (Cyrex Store, EQUIPAMIENTO MODERNO, Importadora ITA): leer el chat, anotar precios y fotos, y responder si hace falta (sin ofrecer ventas)",
    "estado": "hecho",
    "decision": "auto (rutina) · 25/11 16:10-16:15 (wa): Cyrex Store, EQUIPAMIENTO MODERNO e Importadora ITA, chats leídos; sin precios ni fotos nuevas y sin mensaje que contestar (Cyrex solo saludó y debe la respuesta; EQUIPAMIENTO cerró con NOP el 20/11; ITA cerró el 19/11 y avisa si le llega más); no se les escribió",
+   "fecha": "2026-11-25"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-15",
+   "agente": "mkt",
+   "titulo": "Publicar los 4 Ryzen 7 7700X en Marketplace a Bs 3350 c/u (nuevos sellados; 20 etiquetas) (precio fijado por Santi en la app; piso Bs 3000), con las fotos de Santi de la PC; avisarle cada interesado el mismo día",
+   "estado": "hecho",
+   "decision": "App 25/11 18:43; Santi en sesión 25/11 20:10: precio Bs 3350, están sellados, 20 etiquetas",
+   "fecha": "2026-11-25"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-25-16",
+   "agente": "mkt",
+   "titulo": "Publicar los 4 Ryzen 7 7700X en Marketplace a Bs 3350 c/u (nuevos sellados; 20 etiquetas) (precio fijado por Santi en la app; piso Bs 3000), con las fotos de Santi de la PC; avisarle cada interesado el mismo día",
+   "estado": "hecho",
+   "decision": "App 25/11 18:43; Santi en sesión 25/11 20:10: precio Bs 3350, están sellados, 20 etiquetas; duplicada de la 15",
    "fecha": "2026-11-25"
   },
   {
@@ -6819,69 +6898,6 @@
    "estado": "hecho",
    "decision": "Hecho 16:55 PC: primer barrido Instagram 0 (mañana), Facebook 0, TikTok 1, Maps 1 (T107 mañana). Usados de CPU caras: sin oferta local vista (se miró en la mañana); la próxima vez el lunes 16/11",
    "fecha": "2026-11-12"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-12-9",
-   "agente": "mkt",
-   "titulo": "Catálogos: volver a abrir las webs con catálogo de procesadores, RAM y SSD (PC Components Bolivia, Cyrex, Punto Tecnológico/Supermall, MSR, OverCity, Geek Store) y anotar en mercado.csv TODO lo que no está en vigilar.csv (precio, estado, si está agotado)",
-   "estado": "hecho",
-   "decision": "Santi en el chat de la Mac 12/11 15:52 · hecho 12/11 16:40 (PC; Catálogos): 6 webs reabiertas completas; 255 filas nuevas en mercado.csv (163 CPU/54 RAM/62 SSD en total) y 75 en precios-cochabamba.csv; los 4 sin precio local (5600; 5700X3D; i5-13400; 7500F): solo el 7500F aparece (Geek Store USD 147 ≈ Bs 1.755); 5600 y 5700X3D no los lista ninguna web; i5-13400 solo MSR Bs 2.300 (no vende sueltos)",
-   "fecha": "2026-11-12"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-12-10",
-   "agente": "local",
-   "titulo": "Oficina: en esta ronda publicar también index.html, pantallas.js y gerente.js (cambiaron el 12/11: link de \"sin oferta hoy\", Cazador en la pantalla de eBay, lista completa en WhatsApp, app Objetivos) y comprobar que la tabla muestra los 19 productos (7600X, 9600X y 9950X3D)",
-   "estado": "hecho",
-   "decision": "Santi en el chat de la Mac 12/11 16:05 · hecho 12/11 16:53 (PC, Oficina): publicada v135 en la misma URL con index.html, pantallas.js, gerente.js, datos.js (generado 16:36: 19 productos, con 7600X, 9600X y 9950X3D) y la captura de 16:50; datos.js publicado = local (sha igual)",
-   "fecha": "2026-11-12"
-  },
-  {
-   "tipo": "idea",
-   "ref": "19",
-   "agente": "ana",
-   "titulo": "Agregar Ryzen 9 9950X3D a vigilar.csv (candidato de mercado.csv)",
-   "estado": "hecha",
-   "decision": "Santi 12/11: agregado a vigilar.csv (19 productos) con precios de Cochabamba y eBay",
-   "fecha": "2026-11-12"
-  },
-  {
-   "tipo": "idea",
-   "ref": "20",
-   "agente": "ana",
-   "titulo": "Agregar Ryzen 5 7600X a vigilar.csv (candidato de mercado.csv)",
-   "estado": "hecha",
-   "decision": "Santi 12/11: agregado a vigilar.csv (19 productos) con precios de Cochabamba y eBay",
-   "fecha": "2026-11-12"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-10-1",
-   "agente": "ebay",
-   "titulo": "Buscar en eBay el precio de compra de SSD NVMe 2TB nuevo (con stock) y de Ryzen 7 5700X3D nuevo, y anotarlos en precios-eeuu.csv (ya están en vigilar.csv)",
-   "estado": "hecho",
-   "decision": "hecho 11/11 10:45 (ebay, Chrome): SSD NVMe 2TB nuevo con stock anotado como opción adicional (WD_BLACK SN770 2TB Gen4 sellado, USD 289, vendedor 100 %, 472 ventas, EE.UU.). Ryzen 7 5700X3D NUEVO: sin anuncio de EE.UU. con stock; solo CPU sueltas desde China o PCs armadas; no se anotó precio",
-   "fecha": "2026-11-11"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-10-2",
-   "agente": "wa",
-   "titulo": "Hacer los seguimientos de agenda.py (HC store, Pop Store Cbba, COMPU-X; GabBoss no: cerró el 05/11), responder lo que llegue y, a las tiendas que respondan, pedir precio de Ryzen 5 5600, 5700X3D y 7500F",
-   "estado": "hecho",
-   "decision": "11/11 10:40 PC: seguimientos a HC store, Pop Store Cbba y COMPU-X enviados (GabBoss no); Punto Tecnologico respondio (5800X3D en stock, Hiksemi 2TB agotado, solo Samsung) y se le pidio modelo/precio y 5600/5700X3D/7500F; ELVYCOMP sin 5600/5700X3D/7500F. Aun ningun precio de los 3.",
-   "fecha": "2026-11-11"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-10-3",
-   "agente": "mkt",
-   "titulo": "Buscar tiendas nuevas en TikTok (rotación del miércoles) y, si da error o pide sesión, por centros comerciales en Google Maps (Supermall, Gold Center, Tecnocenter, Esteban Arze) con \"También se buscó\"; pasar las que tengan celular a WhatsApp",
-   "estado": "hecho",
-   "decision": "11/11 PC: TikTok dio error del servidor 2 veces (04/11 igual); Google Maps por Supermall, Gold Center, Esteban Arze, Quillacollo y Sacaba: 1 tienda nueva con celular (COMPU CELL SYSTEM, Quillacollo, T106) pasada a WhatsApp; el resto ya estaba en la lista (mercado casi agotado)",
-   "fecha": "2026-11-11"
   }
  ],
  "libreta": [
@@ -7802,8 +7818,8 @@
    "fuente": "ronda",
    "resumen": "Cuando Santi cree el grupo de clientes y agregue al número de André como administrador, empezar las publicaciones (ver skill whatsapp, Grupo de clientes) y avisarle cuántos entran por semana.",
    "vence": "",
-   "estado": "abierta",
-   "cerrado": ""
+   "estado": "cumplida",
+   "cerrado": "25/11 20:17: Grupo creado el 25/11 por Santi; André empieza las publicaciones el 26/11"
   },
   {
    "id": "93",
@@ -7811,6 +7827,26 @@
    "tipo": "preferencia",
    "fuente": "ronda",
    "resumen": "Grupo de clientes: ganancia mínima por pedido 15 % (Santi 25/11, antes 20 %); si llega fallado se reclama a eBay y se cambia al cliente; si no llega, devolución total.",
+   "vence": "",
+   "estado": "abierta",
+   "cerrado": ""
+  },
+  {
+   "id": "94",
+   "fecha": "2026-11-25",
+   "tipo": "compromiso",
+   "fuente": "ronda",
+   "resumen": "Contar a Santi el jueves 26/11 si el grupo de clientes arrancó (publicaciones de la mañana) y a las 20:00 cuántos interesados hay por el 7700X",
+   "vence": "2026-11-26",
+   "estado": "abierta",
+   "cerrado": ""
+  },
+  {
+   "id": "95",
+   "fecha": "2026-11-25",
+   "tipo": "dato",
+   "fuente": "ronda",
+   "resumen": "Santi fijó el precio de los 7700X el 25/11: Bs 3.400 c/u, piso 3.000; el anuncio salió a 3.350 y se corrige a 3.400 (tarea 25-17). Pedidos real-1 y real-2 pasaron a entregado el 25/11",
    "vence": "",
    "estado": "abierta",
    "cerrado": ""
@@ -12030,11 +12066,11 @@
   }
  ],
  "sincronizacion": {
-  "ultima_ronda": "2026-11-25 16:08",
+  "ultima_ronda": "2026-11-25 16:28",
   "ultima_ronda_quien": "pc",
-  "oficina_publicada": "2026-11-25 11:20",
+  "oficina_publicada": "2026-11-25 16:30",
   "armado_por": "una ronda o sesión",
-  "armado": "2026-11-25 16:25"
+  "armado": "2026-11-25 20:17"
  },
  "clientes": [
   {
@@ -13051,6 +13087,19 @@
    "clics": "",
    "mensajes": "",
    "notas": "BORRADOR SIN PUBLICAR (falta precio de venta y fotos de Santi). Categoría: componentes de computadora; estado: Nuevo; ubicación: Cochabamba. Descripción: AMD Ryzen 7 7700X, nuevo. 8 núcleos y 16 hilos, 4,5 GHz base y hasta 5,4 GHz, socket AM5. Entrega en Cochabamba a coordinar. 4 unidades disponibles. Etiquetas: ryzen, ryzen 7, 7700x, amd, procesador, am5, pc gamer, cochabamba. Antes de publicar: confirmar con Santi el estado de los 4 y si están sellados y con caja (si sí, agregar \"sellado\" al título y la descripción)."
+  },
+  {
+   "fecha": "2026-11-25",
+   "hora": "20:00",
+   "producto": "Ryzen 7 7700X",
+   "pedido_id": "real-1 + real-2",
+   "accion": "publicada",
+   "precio_bs": "3350",
+   "cantidad": "4",
+   "titulo": "AMD Ryzen 7 7700X nuevo sellado AM5 8 núcleos 16 hilos",
+   "clics": "0",
+   "mensajes": "0",
+   "notas": "Categoría: Electrónica e informática; estado Nuevo; marca AMD; Cochabamba; 20 etiquetas (todas entraron); solo Marketplace, sin grupos; sellados; sin link ni nombres; Facebook la mostraba \"en revisión\" al publicar; sin campo de cantidad (4 en la descripción)"
   }
  ],
  "tiendas": [
@@ -25227,10 +25276,10 @@
   ]
  },
  "whatsapp": {
-  "tiendas_total": 111.0,
-  "contactadas_7d": 26.0,
-  "respondieron_7d": 14.0,
-  "tasa_7d": 0.538,
+  "tiendas_total": 113.0,
+  "contactadas_7d": 27.0,
+  "respondieron_7d": 15.0,
+  "tasa_7d": 0.556,
   "lista_pedida": 70,
   "lista_faltan": 0,
   "seguimiento": [],
@@ -25242,12 +25291,6 @@
   "frias": 15,
   "respondieron": 40,
   "serie": [
-   {
-    "fecha": "2026-11-04",
-    "nuevos": 10.0,
-    "respuestas": 13.0,
-    "con_precio": 4.0
-   },
    {
     "fecha": "2026-11-05",
     "nuevos": 9.0,
@@ -25367,6 +25410,12 @@
     "nuevos": 1.0,
     "respuestas": 2.0,
     "con_precio": 0
+   },
+   {
+    "fecha": "2026-11-25",
+    "nuevos": 4.0,
+    "respuestas": 8.0,
+    "con_precio": 2.0
    }
   ]
  },
@@ -25566,16 +25615,23 @@
   {
    "titulo": "Importación Cochabamba (Excel)",
    "tipo": "Excel",
-   "fecha": "2026-11-25",
+   "fecha": "2026-11-26",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/importacion-cochabamba.xlsx",
    "carpeta": "Excel"
   },
   {
    "titulo": "Historial completo",
    "tipo": "CSV",
-   "fecha": "2026-11-25",
+   "fecha": "2026-11-26",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/historial.csv",
    "carpeta": "Tabla diaria"
+  },
+  {
+   "titulo": "Comparación EE.UU. → Cochabamba",
+   "tipo": "Tabla de comparación",
+   "fecha": "2026-11-26",
+   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
+   "carpeta": "Informes"
   },
   {
    "titulo": "Tabla del 2026-11-25",
@@ -25590,13 +25646,6 @@
    "fecha": "2026-11-25",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/2026-11-25.pdf",
    "carpeta": "Tabla diaria"
-  },
-  {
-   "titulo": "Comparación EE.UU. → Cochabamba",
-   "tipo": "Tabla de comparación",
-   "fecha": "2026-11-25",
-   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
-   "carpeta": "Informes"
   },
   {
    "titulo": "Informe diario 2026-11-25",
@@ -25846,6 +25895,11 @@
  ],
  "informes": [
   {
+   "fecha": "2026-11-25",
+   "tipo": "diario",
+   "url": "https://docs.google.com/document/d/1Or1X8FmBga5HxtlCeT7AAyiLs1a54GqPQTwO4C4_qzs/edit"
+  },
+  {
    "fecha": "2026-11-24",
    "tipo": "diario",
    "url": "https://docs.google.com/document/d/1prgu-awN1vHWyyiADJmwNwZR4BjEeYm6JNfZ9Y_uXC0/edit"
@@ -25989,11 +26043,6 @@
    "fecha": "2026-10-26",
    "tipo": "diario",
    "url": "https://docs.google.com/document/d/1MkKMtkRjd5w1tsSpeFn35nYAzL4-CynlIyW7UwaJjOs/edit"
-  },
-  {
-   "fecha": "2026-10-25",
-   "tipo": "semanal",
-   "url": "https://docs.google.com/document/d/1o4rDwBcu065krcjyVUCr8HFKZO4dJNWsSd8d0f1yJ18/edit"
   }
  ],
  "memoria": [
@@ -26320,77 +26369,28 @@
    "fecha": "2026-11-25"
   },
   {
-   "id": "92",
-   "tipo": "pedido",
-   "resumen": "Cuando Santi cree el grupo de clientes y agregue al número de André como administrador, empezar las publicaciones (ver skill whatsapp, Grupo de clientes) y avisarle cuántos entran por semana.",
-   "vence": "",
-   "fecha": "2026-11-25"
-  },
-  {
    "id": "93",
    "tipo": "preferencia",
    "resumen": "Grupo de clientes: ganancia mínima por pedido 15 % (Santi 25/11, antes 20 %); si llega fallado se reclama a eBay y se cambia al cliente; si no llega, devolución total.",
    "vence": "",
    "fecha": "2026-11-25"
+  },
+  {
+   "id": "94",
+   "tipo": "compromiso",
+   "resumen": "Contar a Santi el jueves 26/11 si el grupo de clientes arrancó (publicaciones de la mañana) y a las 20:00 cuántos interesados hay por el 7700X",
+   "vence": "2026-11-26",
+   "fecha": "2026-11-25"
+  },
+  {
+   "id": "95",
+   "tipo": "dato",
+   "resumen": "Santi fijó el precio de los 7700X el 25/11: Bs 3.400 c/u, piso 3.000; el anuncio salió a 3.350 y se corrige a 3.400 (tarea 25-17). Pedidos real-1 y real-2 pasaron a entregado el 25/11",
+   "vence": "",
+   "fecha": "2026-11-25"
   }
  ],
  "chat": [
-  {
-   "id": "20261031-1",
-   "fecha": "2026-10-31",
-   "hora": "16:18",
-   "de": "gerente",
-   "para": "pedidos",
-   "texto": "Visto: ya superado, los 7700X estan entregados en la casilla y las notas se corrigieron."
-  },
-  {
-   "id": "20261031-2",
-   "fecha": "2026-10-31",
-   "hora": "16:18",
-   "de": "gerente",
-   "para": "pedidos",
-   "texto": "Visto: superado, los 7700X figuran entregados desde el 27/10. Lo que falta es la guia del courier B (necesidad abierta)."
-  },
-  {
-   "id": "20261031-3",
-   "fecha": "2026-10-31",
-   "hora": "16:18",
-   "de": "gerente",
-   "para": "pedidos",
-   "texto": "Visto: superado por la lectura del 28/10 y del 31/10."
-  },
-  {
-   "id": "20261031-4",
-   "fecha": "2026-10-31",
-   "hora": "16:18",
-   "de": "gerente",
-   "para": "pedidos",
-   "texto": "Visto. Tareas 2026-10-30-4 y 2026-10-30-6 cubren el seguimiento y la guia del courier B; la casilla ya se confirmo con Santi."
-  },
-  {
-   "id": "20261031-5",
-   "fecha": "2026-10-31",
-   "hora": "16:18",
-   "de": "gerente",
-   "para": "local",
-   "texto": "Visto: oficina v109 ya publicada, sin errores."
-  },
-  {
-   "id": "20261031-6",
-   "fecha": "2026-10-31",
-   "hora": "16:18",
-   "de": "gerente",
-   "para": "fin",
-   "texto": "Visto: el primer pedido real ya esta registrado en finanzas."
-  },
-  {
-   "id": "20261031-7",
-   "fecha": "2026-10-31",
-   "hora": "16:18",
-   "de": "gerente",
-   "para": "fin",
-   "texto": "Cerrado: nota ya atendida."
-  },
   {
    "id": "20261103-1",
    "fecha": "2026-11-03",
@@ -27534,6 +27534,62 @@
    "de": "ana",
    "para": "wa",
    "texto": "Reservas por si cae alguno (mismas condiciones, 26/11): i5-12400F Bs 2.070, mediana 2.250 pero hay OEM local a 2.050-2.071 (costo 1.756; USD 119,99 + 7,43) https://www.ebay.com/itm/920150064587 ; Ryzen 9 9950X3D OEM Tray, sin caja, Bs 7.470, mediana 9.380 (costo 6.345; USD 499; precio raro de bajo, vendedor 98,5 %) https://www.ebay.com/itm/237202551289 . No publiques: 7700X (tenemos 4 en stock y por pedido saldría Bs 3.330), DDR4 16GB (1.650, sobre la mediana 1.640), 14400F (2.420: casi sin ventaja, sobre la mediana de 30 días 2.412), 9600X (2.720) ni 265K (4.130): quedan apenas 1-2 % bajo la mediana y hay locales más baratos. SSD de INTEGRAL: recalculado, la recomendación no cambia."
+  },
+  {
+   "id": "20261125-14",
+   "fecha": "2026-11-25",
+   "hora": "16:28",
+   "de": "gerente",
+   "para": "wa",
+   "texto": "Recibido el informe de la tarde. Mañana 26/11 publicas en el grupo (tarea 2026-11-25-14); verifica cada anuncio antes. Recordatorio: nada de capturas de la lista de chats ni de ningún chat; los PDF con datos de contacto no van al repo."
+  },
+  {
+   "id": "20261125-15",
+   "fecha": "2026-11-25",
+   "hora": "18:43",
+   "de": "santi",
+   "para": "gerente",
+   "texto": "Fijé el precio del Ryzen 7 7700X: Bs 3400 c/u, piso Bs 3000. Que Marketplace publique y el Analista lo vigile frente a la competencia."
+  },
+  {
+   "id": "20261125-16",
+   "fecha": "2026-11-25",
+   "hora": "18:43",
+   "de": "santi",
+   "para": "gerente",
+   "texto": "Fijé el precio del Ryzen 7 7700X: Bs 3400 c/u, piso Bs 3000. Que Marketplace publique y el Analista lo vigile frente a la competencia."
+  },
+  {
+   "id": "20261125-17",
+   "fecha": "2026-11-25",
+   "hora": "18:43",
+   "de": "santi",
+   "para": "gerente",
+   "texto": "Fijé el precio del Ryzen 7 7700X: Bs 3400 c/u, piso Bs 3000. Que Marketplace publique y el Analista lo vigile frente a la competencia."
+  },
+  {
+   "id": "20261125-18",
+   "fecha": "2026-11-25",
+   "hora": "20:17",
+   "de": "gerente",
+   "para": "wa",
+   "texto": "Recibido tu informe de la tarde 25/11. Mañana en la ronda de la mañana arranca el grupo: resumen sin foto, stock del 7700X a Bs 3.400 (precio de Santi) con su foto de fotos-publicar, y por pedido con 15 % mínimo (tarea 2026-11-25-14). Tareas 2026-11-25-10 (Cyrex, Equipamiento Moderno, ITA) siguen vigentes."
+  },
+  {
+   "id": "20261125-19",
+   "fecha": "2026-11-25",
+   "hora": "20:17",
+   "de": "gerente",
+   "para": "mkt",
+   "texto": "Santi fijó el 7700X en Bs 3.400 c/u (piso 3.000) en el chat de hoy; el anuncio salió a Bs 3.350 por el texto de la tarea de la app. Corrígelo a 3.400 en tu próxima ronda (tarea nueva) y avísame el mismo día."
+  },
+  {
+   "id": "20261125-20",
+   "fecha": "2026-11-25",
+   "hora": "20:17",
+   "de": "gerente",
+   "para": "ana",
+   "texto": "Precio de Santi para el 7700X: Bs 3.400 c/u, piso 3.000. Tu trabajo ahora es vigilarlo frente a Cyrex (3.732), Geek (3.492) y el sellado a 4.000; avisa cuándo conviene bajar. Con 15 % de margen mínimo, el piso de 3.000 deja más de 11 % sobre costo de Bs 2.655."
   }
  ],
  "salud14": [
@@ -27632,16 +27688,16 @@
    "fecha": "2026-11-25",
    "nube": "ok",
    "manana": "ok",
-   "pc": "en curso",
-   "gerente": "pendiente"
+   "pc": "ok",
+   "gerente": "ok"
   }
  ],
  "finanzas_productos": [
   {
    "producto": "Ryzen 7 7700X",
    "comprado": 4,
-   "en_camino": 4,
-   "en_stock": 0,
+   "en_camino": 0,
+   "en_stock": 4,
    "vendido": 0,
    "costo_unitario_bs": 2655.0,
    "ganancia_bs": null
@@ -27649,22 +27705,22 @@
  ],
  "recomendaciones": [
   {
-   "texto": "Fija el precio de los 7700X, súbenos las fotos y dinos si están sellados y con caja",
-   "por_que": "Hay 4 unidades sin anuncio y la meta es venderlas en 7 días; sellados con caja el Analista sugiere Bs 3.300 (piso 2.930, techo 3.450), si no, Bs 3.100",
+   "texto": "Confirma si el precio del 7700X es Bs 3.400: el anuncio salió a 3.350",
+   "por_que": "Tu mensaje dice 3.400 con piso 3.000; la tarea de la app decía 3.350. Marketplace lo corrige mañana",
    "accion": "venta"
   },
   {
-   "texto": "Decide si André puede ofrecer los 7700X a las tiendas ya calificadas (tarea 9)",
-   "por_que": "Hoy la regla lo prohíbe y sin anuncio no hay interesados; él solo avisa y tú cierras el trato",
+   "texto": "Avísame cuando alguien te escriba por el 7700X, o pásale el link del anuncio a tus primeros invitados al grupo",
+   "por_que": "Hoy es el día 1 de los 7 que tenemos para vender las 4 unidades; hay 0 interesados",
    "accion": "tarea"
   },
   {
-   "texto": "Avísanos cuando tengas los 7700X en la mano",
-   "por_que": "Con ese aviso el pedido pasa a entregado; el viaje completo tomó hasta 35 días",
-   "accion": "pedido"
+   "texto": "Invita al grupo de clientes a los primeros compradores de confianza",
+   "por_que": "André publica mañana a la mañana y el grupo tiene solo 2 miembros",
+   "accion": ""
   }
  ],
- "recomendaciones_cuando": "2026-11-25 11:12",
+ "recomendaciones_cuando": "2026-11-25 20:30",
  "constantes": {
   "b_usd_kg": 28,
   "b_min_kg": 1.0,
