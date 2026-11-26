@@ -86,7 +86,7 @@ Cada tarea tiene: `id` (AAAA-MM-DD-N), `fecha_para`, `agente` (el **responsable*
 
 | Lo decides tú (estado `aprobado`, `decision` = "auto (rutina)") | Le consultas a Santi (estado `propuesto`) | Nunca |
 |---|---|---|
-| Seguimientos a tiendas dentro de las reglas, buscar y escribir a tiendas nuevas dentro del tope, revisar webs y catálogos, rastrear paquetes, recalcular análisis, reintentar o mover una ronda que falló, prender la PC para cubrirla, pedirle a un agente que corrija un ERROR de `verificar.py`, pasar un pedido de un agente a otro | Lo nuevo o que cambie cómo se trabaja; agregar o sacar productos de `vigilar.csv`; pasar el tope de chats; escribir a alguien que no sea una tienda; todo lo que tenga que ver con plata (comprar, precios de venta, ofrecer); contestar en nombre de Santi algo que solo él sabe | Comprar, pagar, ofertar, aceptar un trato; dar datos personales |
+| Seguimientos a tiendas dentro de las reglas, buscar y escribir a tiendas nuevas dentro del tope, revisar webs y catálogos, rastrear paquetes, recalcular análisis, reintentar o mover una ronda que falló, prender la PC para cubrirla, pedirle a un agente que corrija un ERROR de `verificar.py`, pasar un pedido de un agente a otro | Lo nuevo o que cambie cómo se trabaja; agregar o sacar productos de `vigilar.csv`; pasar el tope de chats; escribir a alguien que no sea una tienda (salvo el grupo de clientes); todo lo que tenga que ver con plata (comprar, precios de venta, ofrecer); contestar en nombre de Santi algo que solo él sabe | Comprar, pagar, ofertar, aceptar un trato; dar datos personales |
 
 Lo rutinario se hace y se cuenta después: "pasó esto, hice esto, quedó resuelto". Santi ve lo hecho en la vista "Decididas" del tablero de la oficina y puede rechazar una tarea `auto` mientras no esté `hecho`.
 
@@ -128,6 +128,7 @@ Cada agente entrega con el formato AGENTE / HECHO / ARCHIVOS / VERIFICACIÓN / P
 - **Dos datos distintos de lo mismo** (dos precios de la misma tienda, dos estados de un pedido): vale el **más reciente con fuente mejor** (Santi > la tienda directa > su web o catálogo > Marketplace > estimado). Si son del mismo día y la misma calidad, pide al responsable que lo confirme (tarea o chat) y en el informe usa el más conservador (el precio local más bajo, el costo más alto).
 - **Una decisión de Santi contra otra**: vale la más reciente (Telegram, oficina, Doc o chat).
 - **Un agente contra las reglas**: ganan las reglas; es alerta.
+- **Ventas permitidas (Santi, 25/11): no son alerta.** Publicar y renovar en Marketplace y, en el grupo de clientes "Cargo Brothers", el resumen de la mañana, el stock con la foto y el precio de Santi, de 1 a 3 productos por pedido (ganancia ≥ 15 %), el "❌ YA NO DISPONIBLE" de la tarde y confirmar a un cliente **al precio publicado**. Sí es alerta: ofrecer ventas a tiendas, confirmar a otro precio o aceptar un regateo, pedir o dar datos de pago, escribir primero por privado a un miembro, una publicación por pedido sin foto o por debajo del 15 %, o números de clientes en el repo. Un comprador o un regateo que André te pasa (`chat.csv`, de wa) se lo avisas a Santi **en el momento** por Telegram.
 - **Dos agentes que se pisan** (los dos escribieron a la misma tienda el mismo día): asigna un responsable con una tarea y avisa a los dos por el chat.
 
 ## 7. Propuestas de los agentes

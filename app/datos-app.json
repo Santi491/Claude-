@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-25 20:17",
+ "generado": "2026-11-25 23:41",
  "etapa": {
   "numero": 3,
   "nombre": "vendiendo",
@@ -862,7 +862,7 @@
    "margen": 28.6,
    "peor": 15.1,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/168863800993",
    "courier_usd": 14.0,
    "tc": 12.04,
@@ -880,7 +880,7 @@
    "margen": 27.7,
    "peor": 15.2,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/820390285569",
    "courier_usd": 14.0,
    "tc": 12.04,
@@ -1222,7 +1222,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1258,7 +1258,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1276,7 +1276,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1294,7 +1294,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1706,7 +1706,7 @@
   {
    "agente": "gerente",
    "nombre": "Gerente",
-   "acciones": 33,
+   "acciones": 34,
    "serie": [
     3,
     6,
@@ -1714,10 +1714,10 @@
     1,
     5,
     5,
-    11
+    12
    ],
-   "ultima": "Informe de las 20:00 (miércoles): etapa 3, 7700X en Cochabamba y anuncio publicado a Bs 3.350 contra los 3.400 de Santi (tarea de corrección); verificar.py sin errores; 4 tareas nuevas (4 auto por rutina, 0 propuestas); ",
-   "cuando": "2026-11-25 20:30"
+   "ultima": "Sesión con Santi (PC): grupo de clientes 'Cargo Brothers' como excepción a 'ofrecer ventas' en skill gerente (sección 6, Ventas permitidas), reglas-cargo-brothers y rutina de las 20:00; paso 3c del grupo (mañana publicar",
+   "cuando": "2026-11-25 23:45"
   },
   {
    "agente": "mkt",
@@ -5851,17 +5851,17 @@
    "ref": "2026-11-25-17",
    "agente": "mkt",
    "titulo": "Corregir el precio del anuncio del Ryzen 7 7700X a Bs 3.400 por unidad (hoy sale a Bs 3.350) y avisar al Gerente por el chat",
-   "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "estado": "rechazado",
+   "decision": "auto (rutina) · anulada (PC, sesión con Santi 25/11 23:45): Santi corrigió en sesión a las 20:10 a Bs 3.350, más reciente que el 3.400 del chat de las 18:43; el anuncio ya está bien",
    "fecha": "2026-11-26"
   },
   {
    "tipo": "plan",
    "ref": "2026-11-25-18",
    "agente": "ana",
-   "titulo": "Comparar Bs 3.400 de los 7700X con Cyrex (3.732), Geek (3.492) y el sellado a 4.000 y decir si el precio aguanta o cuándo bajar (piso 3.000)",
+   "titulo": "Comparar Bs 3.350 de los 7700X con Cyrex (3.732), Geek (3.492) y el sellado a 4.000 y decir si el precio aguanta o cuándo bajar (piso 3.000)",
    "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "decision": "auto (rutina) · precio corregido a 3.350 (Santi en sesión 25/11 20:10; piso 3.000 del chat sigue)",
    "fecha": "2026-11-26"
   },
   {
@@ -7847,6 +7847,16 @@
    "tipo": "dato",
    "fuente": "ronda",
    "resumen": "Santi fijó el precio de los 7700X el 25/11: Bs 3.400 c/u, piso 3.000; el anuncio salió a 3.350 y se corrige a 3.400 (tarea 25-17). Pedidos real-1 y real-2 pasaron a entregado el 25/11",
+   "vence": "",
+   "estado": "descartada",
+   "cerrado": "25/11 23:41: precio corregido: Santi dijo Bs 3.350 en sesión 25/11 20:10 (nota nueva)"
+  },
+  {
+   "id": "96",
+   "fecha": "2026-11-25",
+   "tipo": "dato",
+   "fuente": "santi",
+   "resumen": "Precio de los 7700X: Bs 3.350 c/u (Santi en sesión 25/11 20:10, corrige el 3.400 del chat de las 18:43), piso Bs 3.000, sellados. El anuncio de Marketplace ya está a 3.350; el grupo publica a 3.350. Pedidos real-1 y real-2 entregados el 25/11",
    "vence": "",
    "estado": "abierta",
    "cerrado": ""
@@ -12070,7 +12080,7 @@
   "ultima_ronda_quien": "pc",
   "oficina_publicada": "2026-11-25 16:30",
   "armado_por": "una ronda o sesión",
-  "armado": "2026-11-25 20:17"
+  "armado": "2026-11-25 23:41"
  },
  "clientes": [
   {
@@ -25615,23 +25625,16 @@
   {
    "titulo": "Importación Cochabamba (Excel)",
    "tipo": "Excel",
-   "fecha": "2026-11-26",
+   "fecha": "2026-11-25",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/importacion-cochabamba.xlsx",
    "carpeta": "Excel"
   },
   {
    "titulo": "Historial completo",
    "tipo": "CSV",
-   "fecha": "2026-11-26",
+   "fecha": "2026-11-25",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/historial.csv",
    "carpeta": "Tabla diaria"
-  },
-  {
-   "titulo": "Comparación EE.UU. → Cochabamba",
-   "tipo": "Tabla de comparación",
-   "fecha": "2026-11-26",
-   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
-   "carpeta": "Informes"
   },
   {
    "titulo": "Tabla del 2026-11-25",
@@ -25646,6 +25649,13 @@
    "fecha": "2026-11-25",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/2026-11-25.pdf",
    "carpeta": "Tabla diaria"
+  },
+  {
+   "titulo": "Comparación EE.UU. → Cochabamba",
+   "tipo": "Tabla de comparación",
+   "fecha": "2026-11-25",
+   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
+   "carpeta": "Informes"
   },
   {
    "titulo": "Informe diario 2026-11-25",
@@ -26383,46 +26393,14 @@
    "fecha": "2026-11-25"
   },
   {
-   "id": "95",
+   "id": "96",
    "tipo": "dato",
-   "resumen": "Santi fijó el precio de los 7700X el 25/11: Bs 3.400 c/u, piso 3.000; el anuncio salió a 3.350 y se corrige a 3.400 (tarea 25-17). Pedidos real-1 y real-2 pasaron a entregado el 25/11",
+   "resumen": "Precio de los 7700X: Bs 3.350 c/u (Santi en sesión 25/11 20:10, corrige el 3.400 del chat de las 18:43), piso Bs 3.000, sellados. El anuncio de Marketplace ya está a 3.350; el grupo publica a 3.350. Pedidos real-1 y real-2 entregados el 25/11",
    "vence": "",
    "fecha": "2026-11-25"
   }
  ],
  "chat": [
-  {
-   "id": "20261103-1",
-   "fecha": "2026-11-03",
-   "hora": "10:43",
-   "de": "mkt",
-   "para": "santi",
-   "texto": "Competencia 7700X en Marketplace Cochabamba hoy: uno a Bs 3.100 (antes 3.500) y otro sellado a Bs 4.000. Nuestro costo es Bs 2.520-2.700, el precio de venta lo fijas vos; todavia sin publicar."
-  },
-  {
-   "id": "20261103-2",
-   "fecha": "2026-11-03",
-   "hora": "10:52",
-   "de": "gerente",
-   "para": "mkt",
-   "texto": "Recibido: se lo paso a Santi en el aviso de fin de ronda."
-  },
-  {
-   "id": "20261103-3",
-   "fecha": "2026-11-03",
-   "hora": "16:35",
-   "de": "wa",
-   "para": "santi",
-   "texto": "Aviso de números (WhatsApp, 03/11): quedan 2 tiendas con número por contactar (menos de 5). Llevo 55 tiendas contactadas de la meta de 78 (08/11) y 100 (15/11). Puede que ya se haya visto casi todo el mercado de Cochabamba, Quillacollo y Sacaba; tú decides si cambias la meta. Ronda de hoy de solo lectura."
-  },
-  {
-   "id": "20261103-4",
-   "fecha": "2026-11-03",
-   "hora": "20:16",
-   "de": "gerente",
-   "para": "mkt",
-   "texto": "Recibido: lo de la competencia del 7700X (Bs 3.100 y Bs 4.000) va a Santi en el informe. Nueva tarea 2026-11-03-5: tiendas nuevas para mkt-1a."
-  },
   {
    "id": "20261103-5",
    "fecha": "2026-11-03",
@@ -27590,6 +27568,38 @@
    "de": "gerente",
    "para": "ana",
    "texto": "Precio de Santi para el 7700X: Bs 3.400 c/u, piso 3.000. Tu trabajo ahora es vigilarlo frente a Cyrex (3.732), Geek (3.492) y el sellado a 4.000; avisa cuándo conviene bajar. Con 15 % de margen mínimo, el piso de 3.000 deja más de 11 % sobre costo de Bs 2.655."
+  },
+  {
+   "id": "20261125-21",
+   "fecha": "2026-11-25",
+   "hora": "23:41",
+   "de": "local",
+   "para": "mkt",
+   "texto": "Anulada la tarea 2026-11-25-17: NO cambies el anuncio del 7700X. Santi corrigió el precio en sesión el 25/11 a las 20:10 a Bs 3.350 c/u (más reciente que el 3.400 del chat de las 18:43). El anuncio ya está bien."
+  },
+  {
+   "id": "20261125-22",
+   "fecha": "2026-11-25",
+   "hora": "23:41",
+   "de": "local",
+   "para": "wa",
+   "texto": "Precio del 7700X para el grupo mañana: Bs 3.350 c/u, no 3.400 (Santi lo corrigió en sesión el 25/11 a las 20:10). Piso 3.000 solo lo maneja Santi: cualquier otro precio va a él."
+  },
+  {
+   "id": "20261125-23",
+   "fecha": "2026-11-25",
+   "hora": "23:41",
+   "de": "local",
+   "para": "ana",
+   "texto": "Tarea 2026-11-25-18: compara con Bs 3.350, no 3.400 (Santi corrigió en sesión el 25/11 a las 20:10). Piso 3.000 sigue."
+  },
+  {
+   "id": "20261125-24",
+   "fecha": "2026-11-25",
+   "hora": "23:41",
+   "de": "local",
+   "para": "gerente",
+   "texto": "Santi 25/11 en sesión (PC): precio del 7700X Bs 3.350 c/u, más reciente que el 3.400 del chat; anulé la tarea 25-17 y corregí la 25-18 y tu libreta (95 descartada, 96 nueva). También, con OK de Santi: grupo de clientes como excepción a 'ofrecer ventas' (skill gerente sección 6, reglas, rutina de las 20:00) y paso 3c del grupo en PROCESO-LOCAL. Guía UPS de los 7700X vaciada por privacidad."
   }
  ],
  "salud14": [
