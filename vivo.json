@@ -1,16 +1,17 @@
 {
  "ronda": {
-  "activa": true,
+  "activa": false,
   "quien": "PC de la casa",
   "desde": "19:54",
-  "fecha": "2026-11-25"
+  "fecha": "2026-11-25",
+  "hasta": "20:00"
  },
- "actualizado": "2026-11-25 19:54",
+ "actualizado": "2026-11-25 20:00",
  "agentes": {
   "mkt": {
-   "estado": "trabajando",
-   "texto": "Publicando los 4 Ryzen 7 7700X en Marketplace",
-   "hora": "19:54"
+   "estado": "terminó",
+   "texto": "Publicados los 4 Ryzen 7 7700X a Bs 3.350",
+   "hora": "20:00"
   }
  }
 }
