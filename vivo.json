@@ -5,7 +5,7 @@
   "desde": "10:35",
   "fecha": "2026-11-26"
  },
- "actualizado": "2026-11-26 10:53",
+ "actualizado": "2026-11-26 10:54",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -16,6 +16,11 @@
    "estado": "terminó",
    "texto": "Anuncio activo, sin mensajes aún; demanda al día",
    "hora": "10:53"
+  },
+  "pedidos": {
+   "estado": "trabajando",
+   "texto": "Revisando las compras",
+   "hora": "10:54"
   }
  }
 }
