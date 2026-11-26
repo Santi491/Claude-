@@ -5,12 +5,12 @@
   "desde": "16:08",
   "fecha": "2026-11-26"
  },
- "actualizado": "2026-11-26 16:08",
+ "actualizado": "2026-11-26 16:16",
  "agentes": {
   "wa": {
-   "estado": "trabajando",
-   "texto": "Respuestas de tiendas y grupo de clientes",
-   "hora": "16:08"
+   "estado": "terminó",
+   "texto": "4 mensajes, 1 chat nuevo, precios de CPUs y RAM",
+   "hora": "16:16"
   }
  }
 }
