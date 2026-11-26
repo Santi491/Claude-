@@ -5,7 +5,7 @@
   "desde": "16:08",
   "fecha": "2026-11-26"
  },
- "actualizado": "2026-11-26 16:16",
+ "actualizado": "2026-11-26 16:22",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -13,9 +13,9 @@
    "hora": "16:16"
   },
   "mkt": {
-   "estado": "trabajando",
-   "texto": "Messenger, Marketplace y demanda",
-   "hora": "16:16"
+   "estado": "terminó",
+   "texto": "7700X: 75 clics, 0 mensajes",
+   "hora": "16:22"
   }
  }
 }
