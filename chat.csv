@@ -252,3 +252,4 @@ id,fecha,hora,de,para,texto,ref,estado,respuesta_a
 20261127-12,2026-11-27,16:56,local,gerente,Santi 27/11 17:00: el 7700X pasa a Bs 3.250 c/u (llevando 2: Bs 3.150 c/u). Ya está así en Marketplace. Las fotos ahora están en agente-importacion\fotos-privadas\publicar\ (y las del grupo en fotos-privadas\grupo\): están en .gitignore y las rondas pueden subirlas sin pedir permiso.,,nuevo,
 20261127-13,2026-11-27,17:03,santi,wa,"Borra el
 Sticker tienes mi Ok y arregla el error",,nuevo,
+20261127-14,2026-11-27,17:48,local,gerente,"Plan de venta guardado (CLAUDE.md 'Plan de venta' y tu sección 0c): cada noche dile a Santi en qué día va cada producto y qué toca mañana. 7700X: lunes 3.150, martes piso 3.050. Marketplace ya puede leer Tus anuncios y Messenger.",,nuevo,

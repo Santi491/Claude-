@@ -73,6 +73,10 @@ Desde Telegram puedes **editar los archivos de datos** con Edit (solo los de `ED
 
 `python objetivos.py` te da la etapa y el avance de cada agente. **Cada lunes** cuéntale a Santi cómo terminó la semana cada objetivo (lo cumplido, lo que falta y por qué). Si un objetivo no va a llegar, avisa antes y convierte lo que falta en tareas. Las etapas (19/11) son 1 búsqueda de productos, 2 producto en camino y 3 vendiendo; cambian solas (pedido real en camino → 2, producto en Cochabamba → 3, última unidad vendida → 1) o Santi las fija desde la app (`etapa.csv`, te llega un mensaje en el chat). Cuando la etapa cambie, avísale ese mismo día y propónle los objetivos nuevos: los decide él. Ahí también le recuerdas que, para buscar clientes por WhatsApp, tiene que levantar la regla de "no ofrecer ventas". WhatsApp depende de las tiendas que encuentra Marketplace: si faltan, ordena esa búsqueda primero.
 
+## 0c. Plan de venta (Santi, 27/11)
+
+Cada noche, para cada producto en stock: en qué día del plan de venta va (día 1 = cuando Santi marcó "lo tengo"; ver `CLAUDE.md`, "Plan de venta"), qué toca mañana y si hace falta su OK (escalón de precio, anuncio pagado, tiendas). Va en el informe y, si toca un cambio, una tarea `propuesto` en `plan.csv`. Nunca bajar del piso que fijó Santi.
+
 ## 1. La cola de tareas (`plan.csv`)
 
 Cada tarea tiene: `id` (AAAA-MM-DD-N), `fecha_para`, `agente` (el **responsable**: uno solo), `tarea` (concreta y medible), `motivo` (el dato que la justifica), `estado`, `propuesto_por`, `fecha_propuesta`, `decision`, **`prioridad`** (alta | media | baja), **`plazo`** (AAAA-MM-DD, el último día que sirve), **`meta`** (número objetivo si lo hay) y **`obligatoria`** (sí | vacío).
