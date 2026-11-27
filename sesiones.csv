@@ -250,3 +250,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-27,pc,ronda,16:08,16:23,alerta,"tarde: wa 1 chat nuevo y 2 sin leer atendidos, ebay --revisar 5 cambios, pedidos sin activos, catalogos sin trabajo, analista sin cambios de categoria, 4 en stock sin ventas, oficina v168, gerente aviso enviado. FALTÓ: bandeja de Messenger, clics y mensajes del 7700X y grupo pendiente (el permiso automatico lo rechazo, no se rodeo): revisarlo Santi; publicaciones con foto en el grupo siguen bloqueadas"
 2026-11-27,raspberry,vigilante,16:30,16:30,alerta,la ronda de las 16:00 terminó a medias
 2026-11-27,pc,encargo,16:48,16:48,en curso,empezó
+2026-11-27,pc,encargo,16:49,16:53,alerta,"grupo: con acceso a las fotos no salió ninguna publicación; la foto del 7700X se envió por error como sticker, sin texto ni precio; falta decidir si se borra"
