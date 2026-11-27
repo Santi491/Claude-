@@ -66,7 +66,7 @@ Santi quiere que publiques en Facebook Marketplace los productos que compramos p
 **Antes de publicar tienen que estar las tres cosas:**
 1. **El producto**: en `pedidos.csv` (compra real) en Cochabamba, o ya en el courier si Santi dijo que se puede publicar antes de que llegue.
 2. **El precio de venta fijado por Santi** (tarea aprobada en `plan.csv`, por el chat o por Telegram, por ejemplo "precio 7700X: 3480"). Nunca pongas un precio tú, ni el que sugiere el Analista, sin que Santi lo diga.
-3. **Las fotos de Santi**, en la carpeta de la PC `Documents\fotos-publicar\<producto>\` (por ejemplo `fotos-publicar\ryzen-7-7700x\`). Nunca van al repo, que es público. Se suben con la herramienta de subir archivos de Chrome.
+3. **Las fotos de Santi**, en la carpeta de la PC `agente-importacion\fotos-privadas\publicar\<producto>\` (por ejemplo `fotos-privadas\publicar\ryzen-7-7700x\`). Nunca van al repo, que es público. Se suben con la herramienta de subir archivos de Chrome.
 
 Si falta alguna, anótala **una vez** en `necesidades.csv` (para Santi) diciendo cuánto tiempo pasó ("los 7700X llegaron hace 3 días y todavía no hay precio ni fotos") y sigue con lo demás. No la repitas cada ronda: si ya está abierta, solo actualiza los días en tu informe.
 

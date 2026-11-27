@@ -1,6 +1,6 @@
 # Borrador de anuncios (sin precio, sin publicar)
 
-Estado: borrador del 03/11/2026. No se publica hasta que Santi fije el precio, haya fotos en `fotos-publicar\ryzen-7-7700x\` y el producto esté en Cochabamba o Santi autorice (skill marketplace).
+Estado: borrador del 03/11/2026. No se publica hasta que Santi fije el precio, haya fotos en `fotos-privadas\publicar\ryzen-7-7700x\` y el producto esté en Cochabamba o Santi autorice (skill marketplace).
 
 ## AMD Ryzen 7 7700X (4 unidades)
 

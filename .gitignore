@@ -8,3 +8,6 @@ __pycache__/
 # personas de Mixamo convertidas (27/10): se publican solo en el artifact de la oficina, nunca en este repo público
 oficina/personas/
 .abierto-*
+
+# fotos de Santi y del grupo (27/11): viven dentro de la carpeta para que las rondas puedan subirlas, pero nunca se suben al repo publico
+fotos-privadas/
