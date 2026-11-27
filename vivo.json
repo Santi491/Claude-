@@ -5,12 +5,12 @@
   "desde": "16:54",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 16:54",
+ "actualizado": "2026-11-27 16:56",
  "agentes": {
   "mkt": {
-   "estado": "trabajando",
-   "texto": "Precio del 7700X a Bs 3.250 (2 por 3.150 c/u)",
-   "hora": "16:54"
+   "estado": "terminó",
+   "texto": "7700X a Bs 3.250",
+   "hora": "16:56"
   }
  }
 }
