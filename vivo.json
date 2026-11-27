@@ -31,6 +31,11 @@
    "estado": "terminó",
    "texto": "Oficina publicada (v168)",
    "hora": "16:21"
+  },
+  "gerente": {
+   "estado": "trabajando",
+   "texto": "Controlando la ronda y avisando a Santi",
+   "hora": "16:21"
   }
  }
 }
