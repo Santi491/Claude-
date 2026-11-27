@@ -5,7 +5,7 @@
   "desde": "10:36",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 11:05",
+ "actualizado": "2026-11-27 11:07",
  "agentes": {
   "ebay": {
    "estado": "terminó",
@@ -33,9 +33,9 @@
    "hora": "11:04"
   },
   "ana": {
-   "estado": "trabajando",
-   "texto": "comparando precios y revisando el 7700X",
-   "hora": "11:05"
+   "estado": "terminó",
+   "texto": "7700X aguanta a Bs 3.350",
+   "hora": "11:07"
   },
   "fin": {
    "estado": "trabajando",
