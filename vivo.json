@@ -1,17 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "16:48",
-  "fecha": "2026-11-27",
-  "hasta": "16:53"
+  "desde": "16:54",
+  "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 16:53",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "grupo: publicaciones aún sin salir",
-   "hora": "16:53"
-  }
- }
+ "actualizado": "2026-11-27 16:54",
+ "agentes": {}
 }
