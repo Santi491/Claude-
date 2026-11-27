@@ -134,9 +134,9 @@
   "Intel Core i5-12400F|nuevo": true,
   "Intel Core i5-12400F|usado": true,
   "Intel Core i5-13400|usado": true,
-  "Intel Core i5-14400F|nuevo": true,
+  "Intel Core i5-14400F|nuevo": false,
   "Intel Core i5-14400F|usado": true,
-  "Intel Core Ultra 7 265K|nuevo": true,
+  "Intel Core Ultra 7 265K|nuevo": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 5600|usado": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|nuevo": false,
   "Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado": false,
@@ -160,5 +160,5 @@
  "ultimas": [
   "⬇ SSD NVMe 1TB (nuevo) bajó 17% en eBay: USD 126.67 → 104.99"
  ],
- "revisado": "2026-11-27 07:54"
+ "revisado": "2026-11-27 11:06"
 }

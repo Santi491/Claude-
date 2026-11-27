@@ -372,3 +372,22 @@ fecha,producto,categoria,precio_bs,moneda,precio_original,estado,tienda,canal,en
 2026-11-26,Intel Core i3-8300 OEM,cpu,1048.35,USD,87,nuevo,La Baticueva-Tec,whatsapp,sí,"catálogo WhatsApp 26/11: USD 87 × 12,05 (USDT 26/11), estimado; la tienda dice que el cambio a Bs varía"
 2026-11-26,Intel Core Ultra 5 225F,cpu,2711.25,USD,225,nuevo,La Baticueva-Tec,whatsapp,sí,"catálogo WhatsApp 26/11: USD 225 × 12,05 (USDT 26/11), estimado; la tienda dice que el cambio a Bs varía"
 2026-11-26,Patriot Viper Venom RGB DDR5 16GB (1x16) 6000,ram,3153.5,BOB,3153.5,no indica,Cyrex Store,whatsapp,sí,foto de su web enviada por chat (=USD 265); precio por módulo; 2 en stock
+2026-11-27,Ryzen 5 5600GT,cpu,2118,BOB,2118,oem,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 2.201,50"
+2026-11-27,Intel Core i7-12700KF,cpu,3320,BOB,3320,oem,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 3.391,50"
+2026-11-27,Ryzen 7 5700G,cpu,2440,BOB,2440,nuevo,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 2.594,20"
+2026-11-27,Ryzen 5 8400F,cpu,1785,BOB,1785,nuevo,Cyrex Store,web,sí,web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 2.261
+2026-11-27,Ryzen 5 8500G,cpu,1904,BOB,1904,nuevo,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 1.939,70"
+2026-11-27,AMD A12-9800E,cpu,417,BOB,417,nuevo,Cyrex Store,web,sí,web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 714
+2026-11-27,Intel Core i5-12600KF,cpu,2380,BOB,2380,nuevo,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 2.915,50"
+2026-11-27,Intel Core i3-8300,cpu,476,BOB,476,oem,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 737,80"
+2026-11-27,Ryzen 7 5700,cpu,2094,BOB,2094,nuevo,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 2.201,50"
+2026-11-27,Apacer Panther DDR5 16GB 5600,ram,2856,BOB,2856,no indica,Cyrex Store,web,sí,web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 3.094
+2026-11-27,OLOy Black Owl DDR4 16GB (2x8) 2666,ram,1856,BOB,1856,no indica,Cyrex Store,web,sí,web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 1.904
+2026-11-27,Colorful SL500 SSD 256GB SATA,ssd,476,BOB,476,no indica,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 511,70"
+2026-11-27,Lexar SSD 960GB,ssd,1654,BOB,1654,no indica,Cyrex Store,web,sí,web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 1.785
+2026-11-27,Crucial E100 1TB NVMe Gen4,ssd,1797,BOB,1797,no indica,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 1.939,70"
+2026-11-27,WD Green SN3000 1TB NVMe,ssd,1642,BOB,1642,no indica,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 1.892,10"
+2026-11-27,Hikvision Wave SSD 240GB SATA,ssd,589,BOB,589,no indica,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 618,80"
+2026-11-27,Crucial BX500 SSD 1TB SATA,ssd,1785,BOB,1785,no indica,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 1.844,50"
+2026-11-27,MSI Spatium S270 SSD 240GB SATA,ssd,559,BOB,559,no indica,Cyrex Store,web,sí,web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 595
+2026-11-27,Colorful SL500 SSD 480GB,ssd,833,BOB,833,no indica,Cyrex Store,web,sí,"web 27/11; oferta Black Friday en Bs hasta el 29/11; antes Bs 928,20"

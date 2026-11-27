@@ -223,7 +223,7 @@ def stock_real(a):
                     else "sin precio local válido: no se calcula precio de venta"))
         if ref:
             L += ["", "| Precio | Bs/u | Margen | Ganancia por lote |", "|---|---|---|---|"]
-            for nom, pv in (("Rápido (piso: 10 % de recargo)", math.ceil(costo * 1.10)),
+            for nom, pv in (("Rápido (mínimo del cálculo: 10 % de recargo)", math.ceil(costo * 1.10)),
                             ("Sugerido (5 % bajo la mediana)", ref["precio_sugerido_bs"]), ("Tope (de tienda: la mediana)", ref["mejor_local_bs"])):
                 L.append(f"| {nom} | {C.bs(pv)} | {(pv - costo) / pv * 100:.1f} % | Bs {C.bs(round((pv - costo) * g['u']))} |")
         L.append("")
@@ -249,6 +249,9 @@ def segundo_pedido(a):
     return "\n".join(L) + "\n"
 
 
+PISO_SANTI_7700X = 3000   # piso que fijó Santi el 25/11
+
+
 def precio_final_7700x(a):
     """ana-3: precio final de venta del 7700X (stock real): piso, sugerido y escalera de bajadas por días."""
     EXCL = ("vendido", "cancelad", "devuelto", "perdido")
@@ -263,15 +266,19 @@ def precio_final_7700x(a):
     if not u or not ref:
         return ""
     costo = bs / u
-    piso = math.ceil(costo * 1.10 / 10) * 10
-    sug = 3300  # precio que ya fijó Santi para publicar (mkt); el script da 5 % bajo la mediana
+    minimo = math.ceil(costo * 1.10 / 10) * 10   # referencia del cálculo (10 % de recargo)
+    piso = max(minimo, PISO_SANTI_7700X)
+    # precio que fijó Santi: la última fila de publicaciones.csv publicada con precio (sin ella, el sugerido del script)
+    pubs = [num(r.get("precio_bs")) for r in C.leer("publicaciones.csv")
+            if r.get("producto") == "Ryzen 7 7700X" and r.get("accion") != "borrador" and num(r.get("precio_bs"))]
+    sug = int(pubs[-1]) if pubs else ref["precio_sugerido_bs"]
     escalera = [("Días 0 a 6 (publicar)", sug), ("Días 7 a 13: si no hubo mensajes", sug - 100),
-                ("Días 14 a 20: igualar al suelto más barato de Marketplace", sug - 200), ("Días 21 a 27", sug - 300), ("Día 28: piso, no bajar más", piso)]
+                ("Días 14 a 20: igualar al suelto más barato de Marketplace", sug - 200), ("Días 21 a 27", sug - 300), ("Día 28: piso de Santi, no bajar más", piso)]
     L = ["", "## Precio final de venta del Ryzen 7 7700X (ana-3)", "",
          f"{u:g} u, costo Bs {C.bs(round(costo))} c/u (pedidos.csv, todo incluido). Mediana local Bs {C.bs(ref['mejor_local_bs'])} "
          f"({ref['precios_locales']} precios distintos, un anuncio cuenta una vez). El script sugiere Bs {C.bs(ref['precio_sugerido_bs'])} (5 % bajo la mediana); "
-         f"el sugerido para publicar es Bs {C.bs(sug)}, 4 % bajo las tiendas más baratas con garantía. **Piso: Bs {C.bs(piso)}** (10 % de recargo sobre el costo, "
-         "margen 9 %): por debajo no se vende. La decisión del precio es de Santi.", "",
+         f"{'el precio publicado es' if pubs else 'el sugerido para publicar es'} Bs {C.bs(sug)}. **Piso de Santi: Bs {C.bs(piso)}** (margen {(piso - costo) / piso * 100:.1f} %): por debajo no se vende. "
+         f"El mínimo del cálculo (10 % de recargo) sería Bs {C.bs(minimo)}: no es el piso. La escalera es una sugerencia; la decisión del precio es de Santi.", "",
          "| Cuándo | Precio Bs/u | Margen | Ganancia por lote |", "|---|---|---|---|"]
     for nom, pv in escalera:
         L.append(f"| {nom} | {C.bs(pv)} | {(pv - costo) / pv * 100:.1f} % | Bs {C.bs(round((pv - costo) * u))} |")

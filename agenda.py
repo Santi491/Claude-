@@ -62,7 +62,8 @@ def calcular(hoy=None):
         nombre, estado = t.get("tienda", ""), t.get("estado_contacto", "")
         # los saludos automáticos no son una respuesta de una persona
         mios = [m for m in msgs if m["tienda"] == nombre
-                and not (m["direccion"] == "recibido" and m.get("tipo") == "automatica")]
+                and not (m["direccion"] == "recibido" and (m.get("tipo") == "automatica"
+                         or (m.get("nota") or "").lower().startswith("revisado el chat")))]
         env = [fecha(m["fecha"]) for m in mios if m["direccion"] == "enviado"]
         rec = [fecha(m["fecha"]) for m in mios if m["direccion"] == "recibido"]
         if re.search(r"esperando|consultad", estado, re.I) and fecha(t.get("ultima_consulta")):
