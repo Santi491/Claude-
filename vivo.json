@@ -26,6 +26,11 @@
    "estado": "terminó",
    "texto": "7700X: ninguna oferta baja de Bs 3.450",
    "hora": "11:04"
+  },
+  "pedidos": {
+   "estado": "trabajando",
+   "texto": "rastreando guías activas",
+   "hora": "11:04"
   }
  }
 }
