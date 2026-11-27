@@ -38,9 +38,9 @@
    "hora": "11:07"
   },
   "fin": {
-   "estado": "trabajando",
-   "texto": "stock y caja",
-   "hora": "11:05"
+   "estado": "terminó",
+   "texto": "4 en stock, sin ventas",
+   "hora": "11:07"
   }
  }
 }
