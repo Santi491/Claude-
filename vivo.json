@@ -1,57 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "10:36",
-  "fecha": "2026-11-27",
-  "hasta": "11:14"
+  "desde": "16:09",
+  "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 11:14",
- "agentes": {
-  "ebay": {
-   "estado": "terminó",
-   "texto": "SSD 2TB WD Gen4 de marca anotado",
-   "hora": "10:39"
-  },
-  "wa": {
-   "estado": "terminó",
-   "texto": "7 mensajes a tiendas, precio nuevo del 14400F",
-   "hora": "10:47"
-  },
-  "mkt": {
-   "estado": "terminó",
-   "texto": "7700X con 105 clics y sin mensajes; demanda anotada",
-   "hora": "11:00"
-  },
-  "cat": {
-   "estado": "terminó",
-   "texto": "7700X: ninguna oferta baja de Bs 3.450",
-   "hora": "11:04"
-  },
-  "pedidos": {
-   "estado": "terminó",
-   "texto": "sin pedidos activos",
-   "hora": "11:04"
-  },
-  "ana": {
-   "estado": "terminó",
-   "texto": "7700X aguanta a Bs 3.350",
-   "hora": "11:07"
-  },
-  "fin": {
-   "estado": "terminó",
-   "texto": "4 en stock, sin ventas",
-   "hora": "11:07"
-  },
-  "oficina": {
-   "estado": "terminó",
-   "texto": "oficina publicada (v167)",
-   "hora": "11:10"
-  },
-  "gerente": {
-   "estado": "terminó",
-   "texto": "control hecho y aviso enviado",
-   "hora": "11:14"
-  }
- }
+ "actualizado": "2026-11-27 16:09",
+ "agentes": {}
 }
