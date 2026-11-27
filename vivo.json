@@ -28,8 +28,8 @@
    "hora": "11:04"
   },
   "pedidos": {
-   "estado": "trabajando",
-   "texto": "rastreando guías activas",
+   "estado": "terminó",
+   "texto": "sin pedidos activos",
    "hora": "11:04"
   }
  }
