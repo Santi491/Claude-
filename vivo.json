@@ -41,6 +41,11 @@
    "estado": "terminó",
    "texto": "4 en stock, sin ventas",
    "hora": "11:07"
+  },
+  "oficina": {
+   "estado": "trabajando",
+   "texto": "regenerando y publicando la oficina",
+   "hora": "11:07"
   }
  }
 }
