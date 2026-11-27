@@ -5,12 +5,12 @@
   "desde": "17:47",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 17:47",
+ "actualizado": "2026-11-27 17:48",
  "agentes": {
   "mkt": {
-   "estado": "trabajando",
-   "texto": "Guardando el plan de venta",
-   "hora": "17:47"
+   "estado": "terminó",
+   "texto": "Plan de venta guardado",
+   "hora": "17:48"
   }
  }
 }
