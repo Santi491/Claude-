@@ -5,12 +5,12 @@
   "desde": "16:48",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 16:48",
+ "actualizado": "2026-11-27 16:53",
  "agentes": {
   "wa": {
-   "estado": "trabajando",
-   "texto": "publicando en el grupo de clientes",
-   "hora": "16:48"
+   "estado": "terminó",
+   "texto": "grupo: publicaciones aún sin salir",
+   "hora": "16:53"
   }
  }
 }
