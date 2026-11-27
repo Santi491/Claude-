@@ -5,12 +5,12 @@
   "desde": "18:14",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 18:14",
+ "actualizado": "2026-11-27 18:17",
  "agentes": {
   "wa": {
-   "estado": "trabajando",
-   "texto": "Borrando sticker y publicando el 7700X en el grupo",
-   "hora": "18:14"
+   "estado": "terminó",
+   "texto": "7700X publicado en el grupo",
+   "hora": "18:17"
   }
  }
 }
