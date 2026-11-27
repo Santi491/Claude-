@@ -36,6 +36,11 @@
    "estado": "trabajando",
    "texto": "comparando precios y revisando el 7700X",
    "hora": "11:05"
+  },
+  "fin": {
+   "estado": "trabajando",
+   "texto": "stock y caja",
+   "hora": "11:05"
   }
  }
 }
