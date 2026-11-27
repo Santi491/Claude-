@@ -2,16 +2,16 @@
  "ronda": {
   "activa": false,
   "quien": "PC de la casa",
-  "desde": "16:54",
+  "desde": "17:47",
   "fecha": "2026-11-27",
-  "hasta": "16:56"
+  "hasta": "17:48"
  },
- "actualizado": "2026-11-27 16:56",
+ "actualizado": "2026-11-27 17:48",
  "agentes": {
   "mkt": {
    "estado": "terminó",
-   "texto": "7700X a Bs 3.250",
-   "hora": "16:56"
+   "texto": "Plan de venta guardado",
+   "hora": "17:48"
   }
  }
 }
