@@ -21,6 +21,11 @@
    "estado": "terminó",
    "texto": "7700X con 105 clics y sin mensajes; demanda anotada",
    "hora": "11:00"
+  },
+  "cat": {
+   "estado": "trabajando",
+   "texto": "ofertas del 7700X en Cyrex y Geek",
+   "hora": "11:00"
   }
  }
 }
