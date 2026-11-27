@@ -5,7 +5,7 @@
   "desde": "10:36",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 11:07",
+ "actualizado": "2026-11-27 11:14",
  "agentes": {
   "ebay": {
    "estado": "terminó",
@@ -43,9 +43,14 @@
    "hora": "11:07"
   },
   "oficina": {
-   "estado": "trabajando",
-   "texto": "regenerando y publicando la oficina",
-   "hora": "11:07"
+   "estado": "terminó",
+   "texto": "oficina publicada (v167)",
+   "hora": "11:10"
+  },
+  "gerente": {
+   "estado": "terminó",
+   "texto": "control hecho y aviso enviado",
+   "hora": "11:14"
   }
  }
 }
