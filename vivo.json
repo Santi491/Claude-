@@ -1,52 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "16:08",
-  "fecha": "2026-11-26",
-  "hasta": "16:29"
+  "desde": "10:36",
+  "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-26 16:29",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "4 mensajes, 1 chat nuevo, precios de CPUs y RAM",
-   "hora": "16:16"
-  },
-  "mkt": {
-   "estado": "terminó",
-   "texto": "7700X: 75 clics, 0 mensajes",
-   "hora": "16:22"
-  },
-  "pedidos": {
-   "estado": "terminó",
-   "texto": "Sin pedidos activos",
-   "hora": "16:23"
-  },
-  "ebay": {
-   "estado": "terminó",
-   "texto": "Anuncios de hoy revisados",
-   "hora": "16:24"
-  },
-  "ana": {
-   "estado": "terminó",
-   "texto": "7700X se mantiene en Bs 3.350",
-   "hora": "16:25"
-  },
-  "fin": {
-   "estado": "terminó",
-   "texto": "4 en stock, sin ventas",
-   "hora": "16:24"
-  },
-  "oficina": {
-   "estado": "terminó",
-   "texto": "Oficina publicada (v166)",
-   "hora": "16:27"
-  },
-  "gerente": {
-   "estado": "terminó",
-   "texto": "Aviso de fin de ronda enviado",
-   "hora": "16:29"
-  }
- }
+ "actualizado": "2026-11-27 10:36",
+ "agentes": {}
 }
