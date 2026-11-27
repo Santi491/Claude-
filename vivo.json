@@ -6,5 +6,11 @@
   "fecha": "2026-11-27"
  },
  "actualizado": "2026-11-27 17:47",
- "agentes": {}
+ "agentes": {
+  "mkt": {
+   "estado": "trabajando",
+   "texto": "Guardando el plan de venta",
+   "hora": "17:47"
+  }
+ }
 }
