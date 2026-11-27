@@ -5,12 +5,12 @@
   "desde": "16:09",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 16:09",
+ "actualizado": "2026-11-27 16:16",
  "agentes": {
   "wa": {
-   "estado": "trabajando",
-   "texto": "Respuestas de tiendas y tienda nueva",
-   "hora": "16:09"
+   "estado": "terminó",
+   "texto": "1 tienda nueva y respuestas atendidas",
+   "hora": "16:16"
   }
  }
 }
