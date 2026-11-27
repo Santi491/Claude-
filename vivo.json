@@ -6,5 +6,11 @@
   "fecha": "2026-11-27"
  },
  "actualizado": "2026-11-27 10:36",
- "agentes": {}
+ "agentes": {
+  "ebay": {
+   "estado": "trabajando",
+   "texto": "buscando un SSD NVMe 2TB Gen4 de marca",
+   "hora": "10:36"
+  }
+ }
 }
