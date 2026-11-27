@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-27 11:08",
+ "generado": "2026-11-27 16:21",
  "etapa": {
   "numero": 3,
   "nombre": "vendiendo",
@@ -801,18 +801,18 @@
   {
    "producto": "Ryzen 7 7800X3D",
    "condicion": "nuevo",
-   "ebay_usd": 314.99,
-   "costo_bs": 3974,
+   "ebay_usd": 317.0,
+   "costo_bs": 3998,
    "local_bs": 5390,
    "sugerido_bs": 5120,
-   "margen": 22.4,
-   "peor": 10.3,
+   "margen": 21.9,
+   "peor": 9.7,
    "recomendacion": "traer",
-   "por_que": "aguanta el peor caso (10.3 %)",
-   "link": "https://www.ebay.com/itm/860155999983",
+   "por_que": "aguanta el peor caso (9.7 %)",
+   "link": "https://www.ebay.com/itm/237109644259",
    "courier_usd": 14.0,
    "tc": 12.08,
-   "ganancia_bs": 1146,
+   "ganancia_bs": 1122,
    "precios_locales": 23,
    "via": "B 1 kg"
   },
@@ -857,17 +857,17 @@
    "condicion": "nuevo",
    "ebay_usd": 104.99,
    "costo_bs": 1437,
-   "local_bs": 1880,
+   "local_bs": 1884,
    "sugerido_bs": 1780,
    "margen": 19.2,
-   "peor": 5.3,
+   "peor": 5.9,
    "recomendacion": "traer",
-   "por_que": "aguanta el peor caso (5.3 %)",
+   "por_que": "aguanta el peor caso (5.9 %)",
    "link": "https://www.ebay.com/itm/800971896775",
    "courier_usd": 14.0,
    "tc": 12.08,
    "ganancia_bs": 343,
-   "precios_locales": 43,
+   "precios_locales": 45,
    "via": "B 1 kg"
   },
   {
@@ -929,7 +929,7 @@
    "condicion": "nuevo",
    "ebay_usd": 223.98,
    "costo_bs": 2875,
-   "local_bs": 3667,
+   "local_bs": 3670,
    "sugerido_bs": 3480,
    "margen": 17.4,
    "peor": 4.3,
@@ -939,7 +939,7 @@
    "courier_usd": 14.0,
    "tc": 12.08,
    "ganancia_bs": 605,
-   "precios_locales": 13,
+   "precios_locales": 14,
    "via": "B 1 kg"
   },
   {
@@ -1037,7 +1037,7 @@
    "condicion": "usado",
    "ebay_usd": 170.0,
    "costo_bs": 2223,
-   "local_bs": 3667,
+   "local_bs": 3670,
    "sugerido_bs": 3480,
    "margen": 36.1,
    "peor": 25.7,
@@ -1047,7 +1047,7 @@
    "courier_usd": 14.0,
    "tc": 12.08,
    "ganancia_bs": 1257,
-   "precios_locales": 13,
+   "precios_locales": 14,
    "via": "B 1 kg"
   },
   {
@@ -1079,7 +1079,7 @@
    "peor": 16.6,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/366799839237",
+   "link": "https://www.ebay.com/itm/227635572504",
    "courier_usd": 14.0,
    "tc": 12.08,
    "ganancia_bs": 2410,
@@ -1089,18 +1089,18 @@
   {
    "producto": "Intel Core i5-14400F",
    "condicion": "usado",
-   "ebay_usd": 133.99,
-   "costo_bs": 1788,
+   "ebay_usd": 134.99,
+   "costo_bs": 1800,
    "local_bs": 2446,
    "sugerido_bs": 2320,
-   "margen": 22.9,
-   "peor": 10.2,
+   "margen": 22.4,
+   "peor": 9.6,
    "recomendacion": "sin datos",
    "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/237183077492",
+   "link": "https://www.ebay.com/itm/960243110052",
    "courier_usd": 14.0,
    "tc": 12.08,
-   "ganancia_bs": 532,
+   "ganancia_bs": 520,
    "precios_locales": 14,
    "via": "B 1 kg"
   },
@@ -1120,24 +1120,6 @@
    "tc": 12.08,
    "ganancia_bs": 418,
    "precios_locales": 17,
-   "via": "B 1 kg"
-  },
-  {
-   "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
-   "condicion": "usado",
-   "ebay_usd": 399.99,
-   "costo_bs": 5001,
-   "local_bs": 6200,
-   "sugerido_bs": 5890,
-   "margen": 15.1,
-   "peor": 2.2,
-   "recomendacion": "sin datos",
-   "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
-   "link": "https://www.ebay.com/itm/920161892533",
-   "courier_usd": 14.0,
-   "tc": 12.08,
-   "ganancia_bs": 889,
-   "precios_locales": 3,
    "via": "B 1 kg"
   },
   {
@@ -1174,6 +1156,24 @@
    "tc": 12.08,
    "ganancia_bs": 732,
    "precios_locales": 6,
+   "via": "B 1 kg"
+  },
+  {
+   "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
+   "condicion": "usado",
+   "ebay_usd": 419.99,
+   "costo_bs": 5243,
+   "local_bs": 6200,
+   "sugerido_bs": 5890,
+   "margen": 11.0,
+   "peor": -2.5,
+   "recomendacion": "sin datos",
+   "por_que": "sin oferta local de usados: en Cochabamba no hay usados para comparar",
+   "link": "https://www.ebay.com/itm/116237423865",
+   "courier_usd": 14.0,
+   "tc": 12.08,
+   "ganancia_bs": 647,
+   "precios_locales": 3,
    "via": "B 1 kg"
   },
   {
@@ -1323,18 +1323,18 @@
   {
    "producto": "SSD NVMe 1TB",
    "condicion": "usado",
-   "ebay_usd": 94.64,
-   "costo_bs": 1312,
+   "ebay_usd": 94.99,
+   "costo_bs": 1317,
    "local_bs": 1400,
    "sugerido_bs": 1330,
-   "margen": 1.3,
-   "peor": -16.5,
+   "margen": 1.0,
+   "peor": -16.9,
    "recomendacion": "no traer",
    "por_que": "margen 1% con el precio sugerido",
-   "link": "https://www.ebay.com/itm/920114758944",
+   "link": "https://www.ebay.com/itm/147699753245",
    "courier_usd": 14.0,
    "tc": 12.08,
-   "ganancia_bs": 18,
+   "ganancia_bs": 13,
    "precios_locales": 3,
    "via": "B 1 kg"
   },
@@ -1460,8 +1460,8 @@
     "producto": "Ryzen 7 7800X3D",
     "tope_usd": 332,
     "mediana_bs": 5190,
-    "hoy_usd": 314.99,
-    "link": "https://www.ebay.com/itm/860155999983",
+    "hoy_usd": 317.0,
+    "link": "https://www.ebay.com/itm/237109644259",
     "bajo_tope": true
    },
    {
@@ -1530,8 +1530,8 @@
    },
    {
     "producto": "SSD NVMe 1TB",
-    "tope_usd": 109,
-    "mediana_bs": 1850,
+    "tope_usd": 111,
+    "mediana_bs": 1880,
     "hoy_usd": 104.99,
     "link": "https://www.ebay.com/itm/800971896775",
     "bajo_tope": true
@@ -1546,8 +1546,8 @@
    },
    {
     "producto": "Ryzen 7 7700X",
-    "tope_usd": 226,
-    "mediana_bs": 3602,
+    "tope_usd": 232,
+    "mediana_bs": 3701,
     "hoy_usd": 223.98,
     "link": "https://www.ebay.com/itm/267042355650",
     "bajo_tope": true
@@ -1598,20 +1598,29 @@
   },
   {
    "tipo": "necesidad",
+   "ref": "63",
+   "agente": "wa",
+   "fecha": "2026-11-27",
+   "titulo": "Corregir el falso aviso 'Responder' de agenda.py: las filas 'Revisado el chat' del 23/11 de EQUIPAMIENTO MODERNO e Importadora ITA quedaron como recibido/respuesta (que agenda.py las ignore)",
+   "detalle": "Que la agenda y verificar.py no marquen respuestas pendientes que no existen (se repite desde el 23/11)",
+   "plazo": ""
+  },
+  {
+   "tipo": "necesidad",
+   "ref": "64",
+   "agente": "mkt",
+   "fecha": "2026-11-27",
+   "titulo": "Mirar en tu Facebook 'Tus anuncios' (clics y mensajes del 7700X), la bandeja de Marketplace por si hay compradores y el grupo pendiente; y decidir si la ronda de la tarde puede leer esas páginas",
+   "detalle": "El 27/11 en la tarde el permiso automático rechazó abrir 'Tus anuncios' (posible fuga de datos sensibles); puede haber un interesado sin ver",
+   "plazo": ""
+  },
+  {
+   "tipo": "necesidad",
    "ref": "59",
    "agente": "wa",
    "fecha": "2026-11-26",
    "titulo": "Dar acceso a la sesión de la ronda a las carpetas Documents\\fotos-publicar y Documents\\fotos-grupo (en una ronda programada sin nadie, la subida de fotos y el pedido de acceso quedan rechazados)",
    "detalle": "Publicar en el grupo de clientes el 7700X en stock y los por pedido, que van con foto. Hoy salió solo el resumen",
-   "plazo": ""
-  },
-  {
-   "tipo": "necesidad",
-   "ref": "61",
-   "agente": "wa",
-   "fecha": "2026-11-26",
-   "titulo": "agenda.py pone en \"Responder\" a EQUIPAMIENTO MODERNO e Importadora ITA por las filas \"recibido\" del 23/11 que solo anotaban \"revisado el chat\" (en WhatsApp no hay nada nuevo desde el 20/11 y el 19/11)",
-   "detalle": "Que agenda.py no cuente las notas de revisión como respuestas y no se escriba de más",
    "plazo": ""
   },
   {
@@ -1658,7 +1667,7 @@
    "fecha": "2026-11-18",
    "titulo": "Que analista.py limite la mediana local a 30 días como cazador.py (hoy analista.py no la limita)",
    "detalle": "Analista 18/11: dos criterios distintos dan medianas distintas para el mismo producto (7700X: 3.574 en analista)",
-   "plazo": "2026-11-27",
+   "plazo": "2026-11-30",
    "fecha_para": "2026-11-19"
   },
   {
@@ -1668,7 +1677,7 @@
    "fecha": "2026-11-16",
    "titulo": "Que agenda.py excluya de 'Pedir lista completa' a las tiendas que ya dijeron que no venden componentes (hoy WhatsApp las salta a mano). Ampliar: también las que su ficha marca como \"no vende\" o \"no volver a escribir\" (18/11: INAV, KANG MIN, COMPUMUNDO, Smash Games, BitCate, Accesorios Technology salen en agenda.py y WhatsApp no les escribió)",
    "detalle": "WhatsApp 16/11: saltó las que ya dijeron que no venden (Quillacollo solo laptops, i2C) al pedir la lista completa; es cambio de código",
-   "plazo": "2026-11-27",
+   "plazo": "2026-11-30",
    "fecha_para": "2026-11-17"
   },
   {
@@ -1694,25 +1703,9 @@
  ],
  "equipo": [
   {
-   "agente": "pedidos",
-   "nombre": "Pedidos",
-   "acciones": 9,
-   "serie": [
-    1,
-    0,
-    1,
-    2,
-    2,
-    2,
-    1
-   ],
-   "ultima": "Ronda de la mañana: no hay pedidos activos (los 6 figuran entregados); la coordinadora no lanzó al agente ni abrió webs de rastreo",
-   "cuando": "2026-11-27 11:08"
-  },
-  {
    "agente": "ana",
    "nombre": "Analista",
-   "acciones": 16,
+   "acciones": 17,
    "serie": [
     2,
     1,
@@ -1720,15 +1713,15 @@
     3,
     3,
     3,
-    2
+    3
    ],
-   "ultima": "Con margen: firmes para traer 7600X (29,6 %, peor caso 17,7 %; confirmar si es OEM), 9950X3D (24,9 %; el de eBay es OEM sin caja) y 7800X3D (22,4 %). SSD 2TB: sale 32,2 % solo con RAM Tech sin marca; con WD de marca 1,9 ",
-   "cuando": "2026-11-27 11:07"
+   "ultima": "Ronda tarde: sin cambios de decisión ni alertas nuevas. 7800X3D nuevo sigue en traer con menos aire por el anuncio nuevo de eBay: margen 21,9 %, peor caso 9,7 % (frente a Bs 4.350, el local más barato, queda en 8 %). 760",
+   "cuando": "2026-11-27 16:20"
   },
   {
    "agente": "fin",
    "nombre": "Finanzas",
-   "acciones": 9,
+   "acciones": 10,
    "serie": [
     1,
     0,
@@ -1736,15 +1729,47 @@
     2,
     2,
     2,
-    1
+    2
    ],
-   "ultima": "Ronda mañana: sin ventas, reservas ni decisiones nuevas; sin mensajes en el chat. 4 Ryzen 7 7700X en stock a Bs 2.655 por unidad (Bs 10.620 invertido), 0 vendidas, 0 reservadas. Ganancia: sin ventas, no se calcula. Dólar",
-   "cuando": "2026-11-27 11:05"
+   "ultima": "Ronda tarde: sin ventas, reservas ni decisiones nuevas; sin mensajes en el chat. 4 Ryzen 7 7700X en stock a Bs 2.655 por unidad (Bs 10.620 invertido), 0 vendidas, 0 reservadas. Ganancia: sin ventas, no se calcula. Dólar ",
+   "cuando": "2026-11-27 16:20"
+  },
+  {
+   "agente": "ebay",
+   "nombre": "Rastreador eBay",
+   "acciones": 10,
+   "serie": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    3
+   ],
+   "ultima": "Revisión de la tarde (ebay.py --revisar): 35 anuncios de hoy revisados, 5 cambiaron y se reemplazaron por el siguiente disponible",
+   "cuando": "2026-11-27 16:19"
+  },
+  {
+   "agente": "pedidos",
+   "nombre": "Pedidos",
+   "acciones": 10,
+   "serie": [
+    1,
+    0,
+    1,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ultima": "Ronda de la tarde: no hay pedidos activos (los 6 figuran entregados); la coordinadora no lanzó al agente ni abrió webs de rastreo",
+   "cuando": "2026-11-27 16:19"
   },
   {
    "agente": "mkt",
    "nombre": "Marketplace",
-   "acciones": 15,
+   "acciones": 16,
    "serie": [
     1,
     0,
@@ -1752,15 +1777,15 @@
     3,
     5,
     3,
-    2
+    3
    ],
-   "ultima": "Catálogos: tarea 25-11 hecha. 7700X en la web: Geek Store Bs 3.503 (USD 290) y Cyrex Bs 3.745 (USD 310, sin oferta); ninguna baja de Bs 3.450. Black Friday de Cyrex hasta el 29/11: i5-14400F OEM Bs 2.202 y NVMe 1TB desde",
-   "cuando": "2026-11-27 11:02"
+   "ultima": "Ronda tarde PC: el permiso automático rechazó abrir 'Tus anuncios' y no se rodeó: sin revisar Messenger, clics, mensajes ni el grupo pendiente (avisado a Santi). 7700X nuestro visible en la búsqueda a 3.350 (publicado ha",
+   "cuando": "2026-11-27 16:17"
   },
   {
    "agente": "dem",
    "nombre": "Analista de demanda",
-   "acciones": 8,
+   "acciones": 9,
    "serie": [
     0,
     0,
@@ -1768,15 +1793,15 @@
     2,
     2,
     2,
-    1
+    2
    ],
-   "ultima": "Demanda 27/11 mañana: 19 filas. 7700X en la zona: 1 competidor a 4.000, 0 desaparecidos. 9950X3D bajó a 8.700. Sin demanda confirmada en ningún producto",
-   "cuando": "2026-11-27 11:00"
+   "ultima": "Tarde: 7700X en la zona: 1 competidor a 4.000, 0 nuevos y 0 desaparecidos en lo visto; sin demanda confirmada. Fila del día completada, sin duplicar",
+   "cuando": "2026-11-27 16:17"
   },
   {
    "agente": "wa",
    "nombre": "WhatsApp",
-   "acciones": 9,
+   "acciones": 10,
    "serie": [
     1,
     0,
@@ -1784,26 +1809,26 @@
     2,
     2,
     2,
-    1
-   ],
-   "ultima": "Ronda mañana: No leídos revisados (5); 7 mensajes a tiendas, 0 chats nuevos (0 de 10); lista completa pedida a las 3 que faltaban; 14400F OEM a Bs 2.403,80 y un SSD 2TB agotado; grupo E calificado y A+B ordenadas (34). G",
-   "cuando": "2026-11-27 10:47"
-  },
-  {
-   "agente": "ebay",
-   "nombre": "Rastreador eBay",
-   "acciones": 9,
-   "serie": [
-    1,
-    1,
-    1,
-    2,
-    1,
-    1,
     2
    ],
-   "ultima": "Tarea 18-34 hecha: SSD NVMe 2TB de marca nuevo (WD_BLACK SN7100 2TB Gen4) a USD 309,99 en eBay, vendedor 100 %, envío gratis; fila en precios-eeuu.csv. El RAM Tech 209,99 no es de marca. No se compró nada.",
-   "cuando": "2026-11-27 10:38"
+   "ultima": "Ronda tarde PC: 2 chats sin leer leídos y contestados (La Baticueva-Tec pasó 4 precios en USD; pedida su lista completa); 1 chat nuevo (T115, sin respuesta aún); 1 del tope de ~10. Grupo: sin mensajes ni miembros nuevos",
+   "cuando": "2026-11-27 16:16"
+  },
+  {
+   "agente": "gerente",
+   "nombre": "Gerente",
+   "acciones": 32,
+   "serie": [
+    2,
+    1,
+    5,
+    5,
+    15,
+    3,
+    1
+   ],
+   "ultima": "Fin de ronda mañana: verificar.py todo sin errores; 26-5 verificada y hecha; tareas nuevas auto 27-1 (PC) y 27-2 (wa); 16-2 y 18-33 al 30/11; chat contestado; libreta: 2 cumplidas y 1 anotada; 3 recomendaciones; sin meta",
+   "cuando": "2026-11-27 11:13"
   },
   {
    "agente": "nube",
@@ -1820,22 +1845,6 @@
    ],
    "ultima": "Revisión diaria hecha: dólar USDT 12,08, eBay, comparación, análisis, Excel y PDF del día, informe 27/11. Alerta enviada: SSD 1TB nuevo bajó 17 %.",
    "cuando": "2026-11-27 08:00"
-  },
-  {
-   "agente": "gerente",
-   "nombre": "Gerente",
-   "acciones": 31,
-   "serie": [
-    2,
-    1,
-    5,
-    5,
-    15,
-    3,
-    0
-   ],
-   "ultima": "Informe de las 20:00 (jueves): etapa 3, 7700X sin ventas (75 clics, 0 mensajes); verificar.py sin errores; 5 tareas nuevas (5 auto por rutina, 0 propuestas); 0 mensajes del chat (ya contestados); libreta: 1 cumplida y 1 ",
-   "cuando": "2026-11-26 20:17"
   }
  ],
  "objetivos": [
@@ -2054,13 +2063,13 @@
   {
    "parte": "manana",
    "nombre": "PC · ronda 10:30",
-   "estado": "en curso",
+   "estado": "ok",
    "hora": "10:30"
   },
   {
    "parte": "pc",
    "nombre": "PC · ronda 16:00",
-   "estado": "pendiente",
+   "estado": "en curso",
    "hora": "16:00"
   },
   {
@@ -6124,6 +6133,15 @@
   },
   {
    "tipo": "plan",
+   "ref": "2026-11-27-1",
+   "agente": "local",
+   "titulo": "Que analista.py y cazador.py no cuenten precios locales con la columna vigencia vencida",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-30"
+  },
+  {
+   "tipo": "plan",
    "ref": "2026-11-25-11",
    "agente": "mkt",
    "titulo": "Catálogos: el viernes 27/11 volver a mirar el 7700X en Cyrex Store y Geek Store (ofertas anunciadas) y avisar al Analista y al Gerente si alguna baja de Bs 3.450",
@@ -6163,8 +6181,8 @@
    "ref": "2026-11-26-5",
    "agente": "local",
    "titulo": "Que agenda.py no cuente como respuesta de una tienda las filas 'recibido' que solo anotan 'revisado el chat'",
-   "estado": "aprobado",
-   "decision": "auto (rutina)",
+   "estado": "hecho",
+   "decision": "auto (rutina) · hecho 27/11 PC, verificado por Gerente: agenda.py ya no cuenta las filas recibido que empiezan 'Revisado el chat'; EQUIPAMIENTO MODERNO e ITA siguen en Responder por filas de cierre anteriores (falso aviso comprobado: no escribirles)",
    "fecha": "2026-11-27"
   },
   {
@@ -6209,7 +6227,16 @@
    "agente": "dem",
    "titulo": "Seguir el 7700X en cada ronda del 27/11: anuncios de la zona, los que desaparecen, clics y mensajes al nuestro",
    "estado": "aprobado",
-   "decision": "auto (rutina) · 27/11 11:00 PC (mañana): 1 competidor a 4.000, 0 desaparecidos; el nuestro 105 clics, 1 guardado, 0 mensajes. Falta la ronda de la tarde",
+   "decision": "auto (rutina) · 27/11 11:00 PC (mañana): 1 competidor a 4.000, 0 desaparecidos; el nuestro 105 clics, 1 guardado, 0 mensajes. Falta la ronda de la tarde · 27/11 16:17 PC (tarde): en la zona 1 competidor a 4.000 (Disponible), 0 nuevos y 0 desaparecidos; el nuestro visible en la búsqueda a 3.350. Clics y mensajes de la tarde SIN revisar: el permiso automático rechazó abrir 'Tus anuncios' y no se rodeó (último dato 11:00: 105 clics, 1 guardado, 0 mensajes)",
+   "fecha": "2026-11-27"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-27-2",
+   "agente": "wa",
+   "titulo": "Tarde: contactar a la tienda T115 (salió de Marketplace) con la consulta habitual de precios, si tiene WhatsApp y dentro del tope; primero confirmar que vende componentes; sin ofrecer ventas",
+   "estado": "hecho",
+   "decision": "auto (rutina) · 27/11 16:12 wa: perfil de empresa verificado (reparación con upgrades de SSD y RAM; venta de piezas sueltas por confirmar); enviada la consulta preguntando si venden piezas y precios; sin respuesta aún; 1 chat nuevo del día",
    "fecha": "2026-11-27"
   },
   {
@@ -6282,6 +6309,15 @@
    "titulo": "Al renovar el 7700X (02/12), cambiar los 2 grupos que eliminaron la publicación por otros grupos de compra-venta de PC y mirar a las pocas horas si quedó publicada",
    "estado": "aprobada",
    "decision": "auto (rutina): tarea 2026-11-26-3",
+   "fecha": "2026-11-26"
+  },
+  {
+   "tipo": "necesidad",
+   "ref": "61",
+   "agente": "wa",
+   "titulo": "agenda.py pone en \"Responder\" a EQUIPAMIENTO MODERNO e Importadora ITA por las filas \"recibido\" del 23/11 que solo anotaban \"revisado el chat\" (en WhatsApp no hay nada nuevo desde el 20/11 y el 19/11)",
+   "estado": "resuelta",
+   "decision": "2026-11-27 arreglo en agenda.py (tarea 26-5); las 2 que siguen en Responder son falso aviso comprobado",
    "fecha": "2026-11-26"
   },
   {
@@ -7165,33 +7201,6 @@
    "estado": "resuelta",
    "decision": "2026-11-23",
    "fecha": "2026-11-13"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-10-7",
-   "agente": "gerente",
-   "titulo": "Santi: decidir la meta de tiendas para el 15/11: propongo bajar wa-1b de 100 a 85 contactadas y mkt-1b de 50 a 30 tiendas nuevas",
-   "estado": "hecho",
-   "decision": "Santi en el chat de la Mac 11/11 18:05: aprobado, wa-1b a 85 y mkt-1b a 30 · hecho 11/11: objetivos.csv con wa-1b 85 y mkt-1b 30",
-   "fecha": "2026-11-12"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-11-3",
-   "agente": "ebay",
-   "titulo": "Correr ebay.py --revisar y aplicar tu idea: que ebay.py descarte SSD NVMe con SATA o 2.5\" y RAM Corsair con códigos CMK; confirmar que el SSD NVMe 2TB y el 5700X3D siguen sin anuncio válido",
-   "estado": "hecho",
-   "decision": "auto (rutina); 12/11 nube: --revisar hecho (28 siguen a la venta); ebay.py descarta SATA/2,5\" en NVMe y CMK o sin RGB en Corsair RGB; 2TB guardado es NVMe; 5700X3D nuevo sigue sin anuncio válido",
-   "fecha": "2026-11-12"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-11-4",
-   "agente": "wa",
-   "titulo": "Seguimiento de precios a HC store, Pop Store Cbba y COMPU-X (sin precios aún de 5600, 5700X3D y 7500F) y responder lo que llegue; correr agenda.py y revisar a mano los chats sin leer ya vistos (agenda.py no los cuenta)",
-   "estado": "rechazado",
-   "decision": "Gerente 11/11 20:17: HC store, Pop Store Cbba y COMPU-X quedaron frías (2 seguimientos sin respuesta, agenda.py); reemplazada por la 11-9",
-   "fecha": "2026-11-12"
   }
  ],
  "libreta": [
@@ -8092,8 +8101,8 @@
    "fuente": "ronda",
    "resumen": "El viernes 27/11 contarle a Santi si las ofertas de Cyrex cambian el rango de precio del 7700X",
    "vence": "2026-11-27",
-   "estado": "abierta",
-   "cerrado": ""
+   "estado": "cumplida",
+   "cerrado": "27/11 11:13: Contado el 27/11: las ofertas de Cyrex no cambian el rango; Geek 3.503 y Cyrex 3.745"
   },
   {
    "id": "91",
@@ -8172,91 +8181,21 @@
    "fuente": "ronda",
    "resumen": "Contarle a Santi el viernes 27/11 si alguien escribió por el 7700X, si el permiso de fotos destrabó el stock en el grupo y la respuesta a la tarea 25-9 (ofrecer a tiendas)",
    "vence": "2026-11-27",
+   "estado": "cumplida",
+   "cerrado": "27/11 11:13: Contado el 27/11: nadie escribió por el 7700X; fotos siguen bloqueadas; 25-9 sin respuesta de Santi, preguntada otra vez"
+  },
+  {
+   "id": "99",
+   "fecha": "2026-11-27",
+   "tipo": "compromiso",
+   "fuente": "ronda",
+   "resumen": "El miércoles 02/12 revisar con Santi el precio del 7700X (el Analista sugeriría 3.250 si sigue sin mensajes; decide él)",
+   "vence": "2026-12-02",
    "estado": "abierta",
    "cerrado": ""
   }
  ],
  "movimientos": [
-  {
-   "fecha": "2026-11-20",
-   "tipo": "ebay",
-   "producto": "Ryzen 7 5700X3D",
-   "concepto": "eBay usado",
-   "detalle": "API · vendedor jiyuu_4 100.0%; AMD Ryzen 7 5700X3D Cpu",
-   "valor": 329.92,
-   "antes": 324.99,
-   "moneda": "USD"
-  },
-  {
-   "fecha": "2026-11-20",
-   "tipo": "ebay",
-   "producto": "Ryzen 5 7600",
-   "concepto": "eBay usado",
-   "detalle": "API · vendedor piedmontreeltimemovies 99.7%; AMD Ryzen 5 7600 6-Core 3.8GHz Desktop CPU Processor Socket ",
-   "valor": 119.0,
-   "antes": 99.99,
-   "moneda": "USD"
-  },
-  {
-   "fecha": "2026-11-20",
-   "tipo": "ebay",
-   "producto": "Ryzen 7 7800X3D",
-   "concepto": "eBay usado",
-   "detalle": "API · vendedor hikeserver 99.7%; AMD Ryzen 7 7800X3D Desktop Processor 4.2GHz, 8-Core, 16-Thr",
-   "valor": 268.88,
-   "antes": 268.88,
-   "moneda": "USD"
-  },
-  {
-   "fecha": "2026-11-20",
-   "tipo": "ebay",
-   "producto": "Ryzen 9 9950X",
-   "concepto": "eBay usado",
-   "detalle": "API · vendedor goodios_direct 99.6%; **  AMD Ryzen 9 9950X Processor - USED  **",
-   "valor": 454.99,
-   "antes": 454.99,
-   "moneda": "USD"
-  },
-  {
-   "fecha": "2026-11-20",
-   "tipo": "ebay",
-   "producto": "Intel Core i5-12400F",
-   "concepto": "eBay usado",
-   "detalle": "API · vendedor jimmysmk3 100.0%; Intel Core i5-12400F 6-Core 2.50GHz CPU LGA1700 Processor SR",
-   "valor": 116.74,
-   "antes": 116.74,
-   "moneda": "USD"
-  },
-  {
-   "fecha": "2026-11-20",
-   "tipo": "ebay",
-   "producto": "Intel Core i5-13400",
-   "concepto": "eBay usado",
-   "detalle": "API · vendedor gadgetpickup 99.9%; Intel Core i5-13400 Desktop Processor (2.5 GHz, 10 Cores, LG",
-   "valor": 139.99,
-   "antes": 140.75,
-   "moneda": "USD"
-  },
-  {
-   "fecha": "2026-11-20",
-   "tipo": "ebay",
-   "producto": "Intel Core i5-14400F",
-   "concepto": "eBay usado",
-   "detalle": "API · vendedor paymore_roundrock 99.6%; Intel Core i5-14400F 2.50GHz 10 Core SRN3R 16 Thread LGA 170",
-   "valor": 129.99,
-   "antes": 129.99,
-   "moneda": "USD"
-  },
-  {
-   "fecha": "2026-11-20",
-   "tipo": "ebay",
-   "producto": "Intel Core Ultra 7 265K",
-   "concepto": "eBay usado",
-   "detalle": "API · vendedor rolamoto 100.0%; Intel Core Ultra 7 265K Series 2 Unlocked CPU LGA1851 20-Cor",
-   "valor": 209.95,
-   "antes": 209.95,
-   "moneda": "USD"
-  },
   {
    "fecha": "2026-11-20",
    "tipo": "ebay",
@@ -11799,6 +11738,36 @@
   },
   {
    "fecha": "2026-11-27",
+   "tipo": "local",
+   "producto": "Ryzen 7 7700X",
+   "concepto": "Tienda · La Baticueva-Tec",
+   "detalle": "nuevo/no indica",
+   "valor": 3865.6,
+   "antes": null,
+   "moneda": "Bs"
+  },
+  {
+   "fecha": "2026-11-27",
+   "tipo": "local",
+   "producto": "SSD NVMe 1TB",
+   "concepto": "Tienda · La Baticueva-Tec",
+   "detalle": "nuevo/no indica",
+   "valor": 1932.8,
+   "antes": null,
+   "moneda": "Bs"
+  },
+  {
+   "fecha": "2026-11-27",
+   "tipo": "local",
+   "producto": "SSD NVMe 1TB",
+   "concepto": "Tienda · La Baticueva-Tec",
+   "detalle": "nuevo/no indica",
+   "valor": 2174.4,
+   "antes": 1932.8,
+   "moneda": "Bs"
+  },
+  {
+   "fecha": "2026-11-27",
    "tipo": "ebay",
    "producto": "Ryzen 5 5600",
    "concepto": "eBay nuevo",
@@ -11832,7 +11801,7 @@
    "tipo": "ebay",
    "producto": "Ryzen 7 7800X3D",
    "concepto": "eBay nuevo",
-   "detalle": "API · vendedor luckyfootllc 99.5%; AMD Ryzen 7 7800X3D Processor (5 GHz, 8 Cores, 16 Threads, A",
+   "detalle": "API · vendedor luckyfootllc 99.5%; AMD Ryzen 7 7800X3D Processor (5 GHz, 8 Cores, 16 Threads, A; vendido o agotado al revisar a las 16:18",
    "valor": 314.99,
    "antes": 314.99,
    "moneda": "USD"
@@ -12042,7 +12011,7 @@
    "tipo": "ebay",
    "producto": "Intel Core i5-14400F",
    "concepto": "eBay usado",
-   "detalle": "API · vendedor paymore_murray 99.8%; Intel Core i5-14400F 2.50GHz 10 Core SRN47 16 Thread LGA 170",
+   "detalle": "API · vendedor paymore_murray 99.8%; Intel Core i5-14400F 2.50GHz 10 Core SRN47 16 Thread LGA 170; vendido o agotado al revisar a las 16:18",
    "valor": 133.99,
    "antes": 129.99,
    "moneda": "USD"
@@ -12062,7 +12031,7 @@
    "tipo": "ebay",
    "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
    "concepto": "eBay usado",
-   "detalle": "API · vendedor gadgetdepot-4usi 99.1%; Corsair VENGEANCE RGB 32GB (2x16GB) DDR5-6000 CL36 Black",
+   "detalle": "API · vendedor gadgetdepot-4usi 99.1%; Corsair VENGEANCE RGB 32GB (2x16GB) DDR5-6000 CL36 Black; vendido o agotado al revisar a las 16:18",
    "valor": 399.99,
    "antes": 399.99,
    "moneda": "USD"
@@ -12082,7 +12051,7 @@
    "tipo": "ebay",
    "producto": "SSD NVMe 1TB",
    "concepto": "eBay usado",
-   "detalle": "API · vendedor hes125 100.0%; WD PC SN530 1TB NVMe M.2 2280 PCIe Gen3 SSD SDBPNPZ-1T00-100",
+   "detalle": "API · vendedor hes125 100.0%; WD PC SN530 1TB NVMe M.2 2280 PCIe Gen3 SSD SDBPNPZ-1T00-100; vendido o agotado al revisar a las 16:18",
    "valor": 94.64,
    "antes": 93.99,
    "moneda": "USD"
@@ -12142,7 +12111,7 @@
    "tipo": "ebay",
    "producto": "Ryzen 9 9950X3D",
    "concepto": "eBay usado",
-   "detalle": "API · vendedor paymore_dayton_south 99.6%; AMD Ryzen 9 9950X3D 4.30GHz 16 Core 100-000000719 32 Thread ",
+   "detalle": "API · vendedor paymore_dayton_south 99.6%; AMD Ryzen 9 9950X3D 4.30GHz 16 Core 100-000000719 32 Thread ; vendido o agotado al revisar a las ",
    "valor": 509.99,
    "antes": 504.0,
    "moneda": "USD"
@@ -12175,6 +12144,56 @@
    "detalle": "API · vendedor asusparts2022 99.9%; AMD Ryzen 7 7700X - Zen 4 8-Core 4.5 GHz - Socket AM5 - 105W",
    "valor": 223.98,
    "antes": 209.95,
+   "moneda": "USD"
+  },
+  {
+   "fecha": "2026-11-27",
+   "tipo": "ebay",
+   "producto": "Ryzen 7 7800X3D",
+   "concepto": "eBay nuevo",
+   "detalle": "API · vendedor totr1863 99.6%; AMD Ryzen 7 7800X3D 8-Core 16-Thread AM5 Zen 4 Desktop Proce",
+   "valor": 317.0,
+   "antes": 314.99,
+   "moneda": "USD"
+  },
+  {
+   "fecha": "2026-11-27",
+   "tipo": "ebay",
+   "producto": "Intel Core i5-14400F",
+   "concepto": "eBay usado",
+   "detalle": "API · vendedor sly-systems 99.8%; Intel Core i5-14400F 2.50GHz 10 Core LGA 1700",
+   "valor": 134.99,
+   "antes": 133.99,
+   "moneda": "USD"
+  },
+  {
+   "fecha": "2026-11-27",
+   "tipo": "ebay",
+   "producto": "Corsair Vengeance RGB DDR5 32GB (2x16) 6000",
+   "concepto": "eBay usado",
+   "detalle": "API · vendedor wazno 99.7%; CORSAIR Vengeance RGB 32GB 2x16GB DDR5 RAM 6000MHz CMH32GX5M",
+   "valor": 419.99,
+   "antes": 399.99,
+   "moneda": "USD"
+  },
+  {
+   "fecha": "2026-11-27",
+   "tipo": "ebay",
+   "producto": "SSD NVMe 1TB",
+   "concepto": "eBay usado",
+   "detalle": "API · vendedor koblitzandbitz2012 100.0%; MSi 2280mm M370 1TB M.2 NVMe Gen 3.0 x 4 SSD SM370N1TB",
+   "valor": 94.99,
+   "antes": 94.64,
+   "moneda": "USD"
+  },
+  {
+   "fecha": "2026-11-27",
+   "tipo": "ebay",
+   "producto": "Ryzen 9 9950X3D",
+   "concepto": "eBay usado",
+   "detalle": "API · vendedor paymore_fort_thomas 99.5%; AMD Ryzen 9 9950X3D 4.30GHz 16 Core 100-000000719 32 Thread ",
+   "valor": 509.99,
+   "antes": 509.99,
    "moneda": "USD"
   }
  ],
@@ -12216,11 +12235,11 @@
    "producto": "Ryzen 7 7800X3D",
    "cat": "CPU",
    "peso_g": 350.0,
-   "nuevo_usd": 314.99,
+   "nuevo_usd": 317.0,
    "usado_usd": 267.99,
    "mkt_bs": 4350.0,
    "tienda_bs": 4760.0,
-   "nuevo_link": "https://www.ebay.com/itm/860155999983",
+   "nuevo_link": "https://www.ebay.com/itm/237109644259",
    "usado_link": "https://www.ebay.com/itm/237188090446"
   },
   {
@@ -12261,11 +12280,11 @@
    "cat": "CPU",
    "peso_g": 250.0,
    "nuevo_usd": 149.99,
-   "usado_usd": 133.99,
+   "usado_usd": 134.99,
    "mkt_bs": null,
    "tienda_bs": 2202.0,
    "nuevo_link": "https://www.ebay.com/itm/126275456933",
-   "usado_link": "https://www.ebay.com/itm/237183077492"
+   "usado_link": "https://www.ebay.com/itm/960243110052"
   },
   {
    "producto": "Intel Core Ultra 7 265K",
@@ -12294,11 +12313,11 @@
    "cat": "RAM",
    "peso_g": 150.0,
    "nuevo_usd": 469.99,
-   "usado_usd": 399.99,
+   "usado_usd": 419.99,
    "mkt_bs": 5800.0,
    "tienda_bs": 6700.0,
    "nuevo_link": "https://www.ebay.com/itm/227632182913",
-   "usado_link": "https://www.ebay.com/itm/920161892533"
+   "usado_link": "https://www.ebay.com/itm/116237423865"
   },
   {
    "producto": "RAM DDR4 16GB (2x8) 3200",
@@ -12316,11 +12335,11 @@
    "cat": "SSD",
    "peso_g": 80.0,
    "nuevo_usd": 104.99,
-   "usado_usd": 94.64,
+   "usado_usd": 94.99,
    "mkt_bs": 1100.0,
    "tienda_bs": 1550.0,
    "nuevo_link": "https://www.ebay.com/itm/800971896775",
-   "usado_link": "https://www.ebay.com/itm/920114758944"
+   "usado_link": "https://www.ebay.com/itm/147699753245"
   },
   {
    "producto": "SSD NVMe 2TB",
@@ -12386,15 +12405,15 @@
    "mkt_bs": 8700.0,
    "tienda_bs": 9560.0,
    "nuevo_link": "https://www.ebay.com/itm/237202551289",
-   "usado_link": "https://www.ebay.com/itm/366799839237"
+   "usado_link": "https://www.ebay.com/itm/227635572504"
   }
  ],
  "sincronizacion": {
-  "ultima_ronda": "2026-11-27 10:36",
+  "ultima_ronda": "2026-11-27 16:09",
   "ultima_ronda_quien": "pc",
-  "oficina_publicada": "2026-11-26 16:27",
+  "oficina_publicada": "2026-11-27 11:10",
   "armado_por": "una ronda o sesión",
-  "armado": "2026-11-27 11:08"
+  "armado": "2026-11-27 16:21"
  },
  "clientes": [
   {
@@ -13411,11 +13430,11 @@
    "tienda": "La Baticueva-Tec",
    "grupo": "C · Revende componentes (compararía precio)",
    "prioridad": "baja",
-   "por_que": "26/11: catálogo WhatsApp con procesadores, GPU, RAM, SSD y laptops; anuncia un 7700X en Marketplace",
+   "por_que": "27/11: cotizó 7700X, 9700X y SSD 1TB en USD; catálogo con procesadores, GPU, RAM, SSD y laptops; anuncia un 7700X en Marketplace",
    "productos": "CPU y GPU",
    "precio_ref_bs": null,
    "proximo_paso": "Solo observar; compite con nuestro 7700X",
-   "actualizado": "2026-11-26"
+   "actualizado": "2026-11-27"
   },
   {
    "tienda": "SYSCITY",
@@ -13626,6 +13645,16 @@
    "precio_ref_bs": null,
    "proximo_paso": "Orden 30 de 34 para ofrecer (10/11: sin 7600 ni SSD NVMe 2TB (Quillacollo; respuestas secas)) · No ofrecer nada hasta que Santi lo apruebe",
    "actualizado": "2026-11-27"
+  },
+  {
+   "tienda": "Pixel & Core",
+   "grupo": "E · Por calificar",
+   "prioridad": "baja",
+   "por_que": "27/11: perfil de reparación con upgrades de SSD y RAM; aún sin respuesta",
+   "productos": "",
+   "precio_ref_bs": null,
+   "proximo_paso": "Esperar respuesta · No ofrecer nada hasta que Santi lo apruebe",
+   "actualizado": "2026-11-27"
   }
  ],
  "publicaciones": [
@@ -13653,7 +13682,7 @@
    "titulo": "AMD Ryzen 7 7700X nuevo sellado AM5 8 núcleos 16 hilos",
    "clics": "105",
    "mensajes": "0",
-   "notas": "Categoría: Electrónica e informática; estado Nuevo; marca AMD; Cochabamba; 20 etiquetas (todas entraron); solo Marketplace, sin grupos; sellados; sin link ni nombres; Facebook la mostraba \"en revisión\" al publicar; sin campo de cantidad (4 en la descripción) · 26/11 00:20 (PC, sesión con Santi): aprobado por Facebook (19 clics); link del grupo de WhatsApp agregado al final de la descripción; compartido en 5 grupos de compra-venta de PC: COMPRA Y VENTA de Computadoras Cochabamba Bolivia (como anuncio), PC GAMER COMPRA Y VENTA, COMPUTADORAS Y ACCESORIOS-COMPRA VENTA (BOLIVIA), COMPUTADORAS Y ACCESORIOS COMPRA VENTA (BOLIVIA) y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA (compartido con texto y link del grupo). Volver a compartir al renovar (2/12). · 26/11 10:53 (mkt): Disponible; 52 clics, 1 guardado, 0 compartidos, 0 mensajes, 0 comentarios vistos. En grupos: publicado en PC GAMER COMPRA Y VENTA y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA (sin comentarios); pendiente de aprobación en COMPRA Y VENTA de Computadoras Cochabamba Bolivia; en Eliminadas en las 2 de COMPUTADORAS Y ACCESORIOS (BOLIVIA), sin motivo visible. Además aparece en VENTAS COCHABAMBA (grupo de ventas general, no de PC; sin comentarios; no estaba en la nota de anoche; no se tocó) · 26/11 16:23 (mkt): Disponible; 75 clics, 1 guardado, 0 compartidos, 0 mensajes. Grupos: publicado en PC GAMER COMPRA Y VENTA y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA (sin comentarios a la vista); sigue pendiente de aprobación en COMPRA Y VENTA de Computadoras Cochabamba Bolivia; sigue en Eliminadas en las 2 de COMPUTADORAS Y ACCESORIOS (BOLIVIA), sin motivo a la vista; VENTAS COCHABAMBA sigue con 0 comentarios, no se tocó · 27/11 11:00 (mkt): Disponible; 105 clics, 1 guardado, 0 compartidos, 0 mensajes; precio 3.350 sin cambio. Grupos de PC: publicado en PC GAMER COMPRA Y VENTA y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA; en COMPRA Y VENTA de Computadoras Cochabamba Bolivia la ficha ya lo lista pero Tu contenido todavía dice 1 pendiente; las 2 donde fue eliminado no se volvieron a mirar. VENTAS COCHABAMBA sigue listado, 0 comentarios, no se tocó"
+   "notas": "Categoría: Electrónica e informática; estado Nuevo; marca AMD; Cochabamba; 20 etiquetas (todas entraron); solo Marketplace, sin grupos; sellados; sin link ni nombres; Facebook la mostraba \"en revisión\" al publicar; sin campo de cantidad (4 en la descripción) · 26/11 00:20 (PC, sesión con Santi): aprobado por Facebook (19 clics); link del grupo de WhatsApp agregado al final de la descripción; compartido en 5 grupos de compra-venta de PC: COMPRA Y VENTA de Computadoras Cochabamba Bolivia (como anuncio), PC GAMER COMPRA Y VENTA, COMPUTADORAS Y ACCESORIOS-COMPRA VENTA (BOLIVIA), COMPUTADORAS Y ACCESORIOS COMPRA VENTA (BOLIVIA) y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA (compartido con texto y link del grupo). Volver a compartir al renovar (2/12). · 26/11 10:53 (mkt): Disponible; 52 clics, 1 guardado, 0 compartidos, 0 mensajes, 0 comentarios vistos. En grupos: publicado en PC GAMER COMPRA Y VENTA y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA (sin comentarios); pendiente de aprobación en COMPRA Y VENTA de Computadoras Cochabamba Bolivia; en Eliminadas en las 2 de COMPUTADORAS Y ACCESORIOS (BOLIVIA), sin motivo visible. Además aparece en VENTAS COCHABAMBA (grupo de ventas general, no de PC; sin comentarios; no estaba en la nota de anoche; no se tocó) · 26/11 16:23 (mkt): Disponible; 75 clics, 1 guardado, 0 compartidos, 0 mensajes. Grupos: publicado en PC GAMER COMPRA Y VENTA y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA (sin comentarios a la vista); sigue pendiente de aprobación en COMPRA Y VENTA de Computadoras Cochabamba Bolivia; sigue en Eliminadas en las 2 de COMPUTADORAS Y ACCESORIOS (BOLIVIA), sin motivo a la vista; VENTAS COCHABAMBA sigue con 0 comentarios, no se tocó · 27/11 11:00 (mkt): Disponible; 105 clics, 1 guardado, 0 compartidos, 0 mensajes; precio 3.350 sin cambio. Grupos de PC: publicado en PC GAMER COMPRA Y VENTA y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA; en COMPRA Y VENTA de Computadoras Cochabamba Bolivia la ficha ya lo lista pero Tu contenido todavía dice 1 pendiente; las 2 donde fue eliminado no se volvieron a mirar. VENTAS COCHABAMBA sigue listado, 0 comentarios, no se tocó · 27/11 16:17 (mkt): sigue visible en la búsqueda de Marketplace a 3.350. Sin revisar esta tarde: clics, mensajes, grupos (incluido el pendiente) y Messenger (permiso automático rechazó 'Tus anuncios'; no se rodeó)"
   }
  ],
  "tiendas": [
@@ -15538,8 +15567,8 @@
    "estado": "respondió",
    "vende": "sí (WhatsApp 26/11: discos SSD; sin RAM)",
    "ultima": "2026-11-27",
-   "enviados": 4,
-   "recibidos": 4,
+   "enviados": 5,
+   "recibidos": 5,
    "con_precio": 1,
    "ultimo_mensaje": "2026-11-27",
    "lista": true,
@@ -16300,14 +16329,32 @@
    "estado": "respondió",
    "vende": "sí (catálogo WhatsApp: procesadores, GPU, RAM, SSD y laptops)",
    "ultima": "2026-11-27",
-   "enviados": 2,
-   "recibidos": 3,
-   "con_precio": 1,
+   "enviados": 3,
+   "recibidos": 4,
+   "con_precio": 2,
    "ultimo_mensaje": "2026-11-27",
-   "lista": false,
+   "lista": true,
    "fria": false,
    "grupo": "C · Revende componentes (compararía precio)",
    "precios": [
+    {
+     "fecha": "2026-11-27",
+     "producto": "Ryzen 7 7700X",
+     "precio_bs": 3865.6,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-11-27",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 1932.8,
+     "estado": "nuevo/no indica"
+    },
+    {
+     "fecha": "2026-11-27",
+     "producto": "SSD NVMe 1TB",
+     "precio_bs": 2174.4,
+     "estado": "nuevo/no indica"
+    },
     {
      "fecha": "2026-11-26",
      "producto": "Intel Core i5-12400F",
@@ -16320,16 +16367,16 @@
    "id": "T115",
    "tienda": "Pixel & Core",
    "ciudad": "Cochabamba",
-   "estado": "sin contactar",
-   "vende": "por verificar (figura como servicio de informática)",
+   "estado": "consultada",
+   "vende": "por verificar (perfil WhatsApp de empresa: reparación; upgrades de SSD y RAM; venta de piezas sueltas por confirmar)",
    "ultima": "2026-11-27",
-   "enviados": 0,
+   "enviados": 1,
    "recibidos": 0,
    "con_precio": 0,
-   "ultimo_mensaje": "",
+   "ultimo_mensaje": "2026-11-27",
    "lista": false,
    "fria": false,
-   "grupo": "",
+   "grupo": "E · Por calificar",
    "precios": []
   }
  ],
@@ -17318,8 +17365,8 @@
    "producto": "SSD NVMe 1TB",
    "cat": "SSD",
    "peso_g": 80.0,
-   "mediana_bs": 1850,
-   "tope_usd": 109
+   "mediana_bs": 1880,
+   "tope_usd": 111
   },
   {
    "producto": "SSD NVMe 2TB",
@@ -17332,8 +17379,8 @@
    "producto": "Ryzen 7 7700X",
    "cat": "CPU",
    "peso_g": 350.0,
-   "mediana_bs": 3602,
-   "tope_usd": 226
+   "mediana_bs": 3701,
+   "tope_usd": 232
   },
   {
    "producto": "Ryzen 5 7500F",
@@ -17678,7 +17725,7 @@
     "fecha": "2026-11-27",
     "nuevo": 209.99,
     "usado": 181.0,
-    "mkt": null,
+    "mkt": 5500.0,
     "tienda": null
    }
   ],
@@ -17994,9 +18041,9 @@
    {
     "fecha": "2026-11-27",
     "nuevo": 104.99,
-    "usado": 94.64,
-    "mkt": null,
-    "tienda": null
+    "usado": 94.99,
+    "mkt": 1610.0,
+    "tienda": 1583.0
    }
   ],
   "Ryzen 9 9950X3D": [
@@ -18123,7 +18170,7 @@
     "fecha": "2026-11-27",
     "nuevo": 529.0,
     "usado": 509.99,
-    "mkt": null,
+    "mkt": 8700.0,
     "tienda": null
    }
   ],
@@ -18755,7 +18802,7 @@
    },
    {
     "fecha": "2026-11-27",
-    "nuevo": 314.99,
+    "nuevo": 317.0,
     "usado": 267.99,
     "mkt": null,
     "tienda": null
@@ -19037,10 +19084,10 @@
    },
    {
     "fecha": "2026-11-27",
-    "nuevo": 209.95,
+    "nuevo": 223.98,
     "usado": 170.0,
     "mkt": null,
-    "tienda": null
+    "tienda": 3503.2
    }
   ],
   "Ryzen 7 5700X3D": [
@@ -21163,14 +21210,14 @@
     "nuevo": 149.99,
     "usado": 129.99,
     "mkt": null,
-    "tienda": null
+    "tienda": 2403.8
    },
    {
     "fecha": "2026-11-27",
     "nuevo": 149.99,
-    "usado": 133.99,
+    "usado": 134.99,
     "mkt": null,
-    "tienda": null
+    "tienda": 2202.0
    }
   ],
   "Intel Core i5-13400": [
@@ -22118,7 +22165,7 @@
    },
    {
     "fecha": "2026-11-27",
-    "nuevo": 248.89,
+    "nuevo": 269.99,
     "usado": null,
     "mkt": null,
     "tienda": null
@@ -22436,7 +22483,7 @@
    {
     "fecha": "2026-11-27",
     "nuevo": 469.99,
-    "usado": 399.99,
+    "usado": 419.99,
     "mkt": null,
     "tienda": null
    }
@@ -25169,6 +25216,24 @@
     "fecha": "2026-11-27",
     "url": "https://cyrexstore.com/tienda?category=almacenamiento",
     "cuenta": true
+   },
+   {
+    "bs": 1932.8,
+    "src": "tienda",
+    "vendedor": "La Baticueva-Tec (WhatsApp)",
+    "estado": "nuevo/no indica",
+    "fecha": "2026-11-27",
+    "url": "",
+    "cuenta": true
+   },
+   {
+    "bs": 2174.4,
+    "src": "tienda",
+    "vendedor": "La Baticueva-Tec (WhatsApp)",
+    "estado": "nuevo/no indica",
+    "fecha": "2026-11-27",
+    "url": "",
+    "cuenta": true
    }
   ],
   "SSD NVMe 2TB": [
@@ -25695,6 +25760,15 @@
     "fecha": "2026-11-27",
     "url": "https://geek-store-bolivia.kyte.site/es/c/procesadores/1732582305626-dxXRD",
     "cuenta": true
+   },
+   {
+    "bs": 3865.6,
+    "src": "tienda",
+    "vendedor": "La Baticueva-Tec (WhatsApp)",
+    "estado": "nuevo/no indica",
+    "fecha": "2026-11-27",
+    "url": "",
+    "cuenta": true
    }
   ],
   "Ryzen 5 7500F": [
@@ -26184,12 +26258,12 @@
   ]
  },
  "whatsapp": {
-  "tiendas_total": 114.0,
-  "contactadas_7d": 25.0,
-  "respondieron_7d": 16.0,
-  "tasa_7d": 0.64,
-  "lista_pedida": 73,
-  "lista_faltan": 1,
+  "tiendas_total": 115.0,
+  "contactadas_7d": 23.0,
+  "respondieron_7d": 14.0,
+  "tasa_7d": 0.609,
+  "lista_pedida": 74,
+  "lista_faltan": 0,
   "seguimiento": [],
   "responder": [
    "EQUIPAMIENTO MODERNO S.R.L.",
@@ -26198,12 +26272,6 @@
   "frias": 15,
   "respondieron": 43,
   "serie": [
-   {
-    "fecha": "2026-11-06",
-    "nuevos": 4.0,
-    "respuestas": 6.0,
-    "con_precio": 3.0
-   },
    {
     "fecha": "2026-11-07",
     "nuevos": 0,
@@ -26323,6 +26391,12 @@
     "nuevos": 2.0,
     "respuestas": 9.0,
     "con_precio": 4.0
+   },
+   {
+    "fecha": "2026-11-27",
+    "nuevos": 2.0,
+    "respuestas": 7.0,
+    "con_precio": 3.0
    }
   ]
  },
@@ -27262,13 +27336,6 @@
    "fecha": "2026-11-24"
   },
   {
-   "id": "90",
-   "tipo": "compromiso",
-   "resumen": "El viernes 27/11 contarle a Santi si las ofertas de Cyrex cambian el rango de precio del 7700X",
-   "vence": "2026-11-27",
-   "fecha": "2026-11-25"
-  },
-  {
    "id": "91",
    "tipo": "preferencia",
    "resumen": "Grupo de clientes por WhatsApp (25/11): solo clientes finales con link, nunca tiendas; André publica a la mañana (resumen, stock, por pedido con 20 % mínimo, 100 % adelantado, 4-5 semanas, devolución si no llega) y revisa a la tarde; ventas al precio publicado las atiende André y avisa; regateos siempre a Santi al momento.",
@@ -27297,38 +27364,14 @@
    "fecha": "2026-11-26"
   },
   {
-   "id": "98",
+   "id": "99",
    "tipo": "compromiso",
-   "resumen": "Contarle a Santi el viernes 27/11 si alguien escribió por el 7700X, si el permiso de fotos destrabó el stock en el grupo y la respuesta a la tarea 25-9 (ofrecer a tiendas)",
-   "vence": "2026-11-27",
-   "fecha": "2026-11-26"
+   "resumen": "El miércoles 02/12 revisar con Santi el precio del 7700X (el Analista sugeriría 3.250 si sigue sin mensajes; decide él)",
+   "vence": "2026-12-02",
+   "fecha": "2026-11-27"
   }
  ],
  "chat": [
-  {
-   "id": "20261109-6",
-   "fecha": "2026-11-09",
-   "hora": "20:16",
-   "de": "gerente",
-   "para": "mkt",
-   "texto": "Visto lo de las tiendas nuevas (T104, T105) y la saturación: se lo llevo a Santi; mientras tanto sigue con mkt-2 y cat-1."
-  },
-  {
-   "id": "20261109-7",
-   "fecha": "2026-11-09",
-   "hora": "20:16",
-   "de": "gerente",
-   "para": "ana",
-   "texto": "Gracias: pasé tu pedido de la segunda tienda del SSD 2TB a WhatsApp (tarea 2026-11-09-3 para ti, plazo 12/11)."
-  },
-  {
-   "id": "20261110-1",
-   "fecha": "2026-11-10",
-   "hora": "13:31",
-   "de": "gerente",
-   "para": "ana",
-   "texto": "Visto tu aviso del 04/11: con el dólar a 11,95 el SSD 2TB ya tiene 2 tiendas; falta sellado y precio por 2 (WhatsApp ya repreguntó). Sigue la 09-3 (5600, 5700X3D, 7500F)."
-  },
   {
    "id": "20261110-2",
    "fecha": "2026-11-10",
@@ -28504,6 +28547,30 @@
    "de": "ana",
    "para": "gerente",
    "texto": "7700X día 2 (105 clics, 1 guardado, 0 mensajes): Bs 3.350 aguanta, margen 20,7 %; 4,4 % bajo Geek 3.503, 10,5 % bajo Cyrex 3.745, 16 % bajo el sellado a 4.000. No bajar aún; el 02/12, si sigue sin mensajes, sugiero 3.250 (18,3 %). Piso 3.000. Decide Santi. Reponerlo hoy dejaría solo 14,2 % a 3.350. Ojo: el SSD 2TB sale 'traer' solo con RAM Tech sin marca; con WD SN7100 de marca (USD 309,99) cuesta Bs 3.914 y deja 1,9 %: no lo des por firme."
+  },
+  {
+   "id": "20261127-4",
+   "fecha": "2026-11-27",
+   "hora": "11:13",
+   "de": "gerente",
+   "para": "ana",
+   "texto": "Visto 20261127-3: 3.350 sigue; la sugerencia de 3.250 queda para el 02/12 y la decide Santi. El SSD 2TB no lo doy por firme. Lo de la vigencia vencida quedó como tarea 27-1 (30/11)."
+  },
+  {
+   "id": "20261127-5",
+   "fecha": "2026-11-27",
+   "hora": "11:13",
+   "de": "gerente",
+   "para": "wa",
+   "texto": "Tarde: tarea 27-2 (T115, verificar antes). EQUIPAMIENTO MODERNO e ITA en Responder son falso aviso: no les escribas. Fotos del grupo: se lo pido de nuevo a Santi; no se rodea."
+  },
+  {
+   "id": "20261127-6",
+   "fecha": "2026-11-27",
+   "hora": "16:17",
+   "de": "mkt",
+   "para": "santi",
+   "texto": "Santi: esta tarde no pude revisar Messenger, los clics ni el grupo pendiente: el permiso automático rechazó abrir 'Tus anuncios' y no lo rodeé. Mira tú la bandeja por si hay un comprador. Último dato (11:00): 105 clics, 0 mensajes. Tu 7700X a 3.350 sigue visible y es el más barato que vi (el otro, 4.000)."
   }
  ],
  "salud14": [
@@ -28601,8 +28668,8 @@
   {
    "fecha": "2026-11-27",
    "nube": "ok",
-   "manana": "en curso",
-   "pc": "pendiente",
+   "manana": "ok",
+   "pc": "en curso",
    "gerente": "pendiente"
   }
  ],
@@ -28619,22 +28686,22 @@
  ],
  "recomendaciones": [
   {
-   "texto": "Da acceso a Documents\\fotos-publicar y fotos-grupo o publica tú el 7700X en el grupo",
-   "por_que": "Sin la foto André no puede publicar el stock en el grupo; hoy salió solo el resumen",
+   "texto": "Da acceso a las carpetas de fotos del grupo o publiquemos el 7700X contigo presente",
+   "por_que": "La corrida programada no puede subir fotos: desde el 26/11 el grupo solo tuvo el resumen",
    "accion": "tarea"
   },
   {
-   "texto": "Mantén el 7700X en su precio un día más",
-   "por_que": "75 clics y 0 mensajes en el día 1; el Analista lo revisa mañana contra Geek y Cyrex",
+   "texto": "Decide hoy si las tiendas reciben la oferta de los 7700X (tarea 25-9)",
+   "por_que": "Vence hoy y van 0 ventas de 4; mientras no levantes la regla no se les ofrece nada",
+   "accion": "tarea"
+  },
+  {
+   "texto": "Mantén el 7700X a Bs 3.350 y lo revisamos el 02/12",
+   "por_que": "105 clics, 1 guardado y 0 mensajes; margen 20,7 % y Geek está en Bs 3.503",
    "accion": "venta"
-  },
-  {
-   "texto": "Decide si las tiendas reciben la oferta de los 7700X (tarea 25-9 vence mañana)",
-   "por_que": "Mientras no levantes la regla no se les ofrece nada y hay 0 ventas de 4 unidades",
-   "accion": "tarea"
   }
  ],
- "recomendaciones_cuando": "2026-11-26 20:20",
+ "recomendaciones_cuando": "2026-11-27 11:13",
  "constantes": {
   "b_usd_kg": 28,
   "b_min_kg": 1.0,

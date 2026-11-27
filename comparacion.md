@@ -14,7 +14,7 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 | Intel Core Ultra 7 265K | [269.99](https://www.ebay.com/itm/860056581610) | 3.431 (B 1 kg) | 3.388 (B 1.5 kg) | 3.950 | 519 (13%) | 562 (14%) | justo |
 | SSD NVMe 2TB | [209.99](https://www.ebay.com/itm/227402767941) | 2.706 (B 1 kg) | 2.621 (B 1 kg) | 3.100 | 394 (13%) | 479 (15%) | justo |
 | Intel Core i5-14400F | [149.99](https://www.ebay.com/itm/126275456933) | 1.981 (B 1 kg) | 1.939 (B 1.5 kg) | 2.202 | 221 (10%) | 263 (12%) | justo |
-| Ryzen 7 7800X3D | [314.99](https://www.ebay.com/itm/860155999983) | 3.974 (B 1 kg) | 3.974 (B 2 kg) | 4.350 | 376 (9%) | 376 (9%) | justo |
+| Ryzen 7 7800X3D | [317.00](https://www.ebay.com/itm/237109644259) | 3.998 (B 1 kg) | 3.998 (B 2 kg) | 4.350 | 352 (8%) | 352 (8%) | justo |
 | Ryzen 7 7700X | [223.98](https://www.ebay.com/itm/267042355650) | 2.875 (B 1 kg) | 2.875 (B 2 kg) | 3.000 | 125 (4%) | 125 (4%) | no conviene |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [469.99](https://www.ebay.com/itm/227632182913) | 5.847 (B 1 kg) | 5.762 (B 1 kg) | 5.800 | -47 (-1%) | 38 (1%) | no conviene |
 | Ryzen 5 7500F | [135.60](https://www.ebay.com/itm/178171158022) | 1.807 (B 1 kg) | 1.807 (B 2 kg) | 1.755 | -52 (-3%) | -52 (-3%) | no conviene |
@@ -29,19 +29,19 @@ Estado sobre el **mejor precio local** y pedido de 2: conviene ≥ 15%, justo 5%
 |---|---|---|---|---|---|---|---|
 | Ryzen 5 7600 | [119.00](https://www.ebay.com/itm/257857896293) | 1.607 (B 1 kg) | 1.607 (B 2 kg) | 2.800 | 1.193 (43%) | 1.193 (43%) | conviene |
 | Ryzen 5 7600X | [133.00](https://www.ebay.com/itm/287751750612) | 1.776 (B 1 kg) | 1.776 (B 2 kg) | 2.550 | 774 (30%) | 774 (30%) | conviene |
-| Ryzen 9 9950X3D | [509.99](https://www.ebay.com/itm/366799839237) | 6.330 (B 1 kg) | 6.330 (B 2 kg) | 8.700 | 2.370 (27%) | 2.370 (27%) | conviene |
+| Ryzen 9 9950X3D | [509.99](https://www.ebay.com/itm/227635572504) | 6.330 (B 1 kg) | 6.330 (B 2 kg) | 8.700 | 2.370 (27%) | 2.370 (27%) | conviene |
 | Ryzen 7 7700X | [170.00](https://www.ebay.com/itm/960185553593) | 2.223 (B 1 kg) | 2.223 (B 2 kg) | 3.000 | 777 (26%) | 777 (26%) | conviene |
 | SSD NVMe 2TB | [181.00](https://www.ebay.com/itm/336908217847) | 2.356 (B 1 kg) | 2.271 (B 1 kg) | 3.100 | 744 (24%) | 829 (27%) | conviene |
 | Ryzen 7 7800X3D | [267.99](https://www.ebay.com/itm/237188090446) | 3.406 (B 1 kg) | 3.406 (B 2 kg) | 4.350 | 944 (22%) | 944 (22%) | conviene |
 | Intel Core i5-12400F | [119.99](https://www.ebay.com/itm/820390285569) | 1.619 (B 1 kg) | 1.576 (B 1.5 kg) | 2.050 | 431 (21%) | 474 (23%) | conviene |
 | Intel Core i5-13400 | [139.99](https://www.ebay.com/itm/307290903175) | 1.860 (B 1 kg) | 1.818 (B 1.5 kg) | 2.300 | 440 (19%) | 482 (21%) | conviene |
-| Intel Core i5-14400F | [133.99](https://www.ebay.com/itm/237183077492) | 1.788 (B 1 kg) | 1.745 (B 1.5 kg) | 2.202 | 414 (19%) | 457 (21%) | conviene |
-| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [399.99](https://www.ebay.com/itm/920161892533) | 5.001 (B 1 kg) | 4.916 (B 1 kg) | 5.800 | 799 (14%) | 884 (15%) | justo |
+| Intel Core i5-14400F | [134.99](https://www.ebay.com/itm/960243110052) | 1.800 (B 1 kg) | 1.758 (B 1.5 kg) | 2.202 | 402 (18%) | 444 (20%) | conviene |
+| Corsair Vengeance RGB DDR5 32GB (2x16) 6000 | [419.99](https://www.ebay.com/itm/116237423865) | 5.243 (B 1 kg) | 5.158 (B 1 kg) | 5.800 | 557 (10%) | 642 (11%) | justo |
 | Ryzen 5 9600X | [169.98](https://www.ebay.com/itm/127803717729) | 2.222 (B 1 kg) | 2.222 (B 2 kg) | 2.450 | 228 (9%) | 228 (9%) | justo |
 | Ryzen 9 9950X | [407.99](https://www.ebay.com/itm/820382700945) | 5.098 (B 1 kg) | 5.098 (B 2 kg) | 5.580 | 482 (9%) | 482 (9%) | justo |
 | Ryzen 5 7500F | [120.70](https://www.ebay.com/itm/257792135268) | 1.627 (B 1 kg) | 1.627 (B 2 kg) | 1.755 | 128 (7%) | 128 (7%) | justo |
 | Corsair Vengeance RGB DDR5 32GB (2x16) 5600 | [409.99](https://www.ebay.com/itm/880127792085) | 5.122 (B 1 kg) | 5.037 (B 1 kg) | 4.500 | -622 (-14%) | -537 (-12%) | no conviene |
-| SSD NVMe 1TB | [94.64](https://www.ebay.com/itm/920114758944) | 1.312 (B 1 kg) | 1.228 (B 1 kg) | 1.100 | -212 (-19%) | -128 (-12%) | no conviene |
+| SSD NVMe 1TB | [94.99](https://www.ebay.com/itm/147699753245) | 1.317 (B 1 kg) | 1.232 (B 1 kg) | 1.100 | -217 (-20%) | -132 (-12%) | no conviene |
 | RAM DDR4 16GB (2x8) 3200 | [75.57](https://www.ebay.com/itm/168863800993) | 1.082 (B 1 kg) | 997 (B 1 kg) | 540 | -542 (-100%) | -457 (-85%) | no conviene |
 
 ## Detalle por vendedor (eBay nuevo)
@@ -60,43 +60,43 @@ eBay nuevo: USD 261.69 con envío en EE.UU. (eBay API; vendedor nothingbutsaving
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/procesadores) | stock bajo (web) | 2.860 | -470 (-16%) | 2026-10-12 |
 
 ### Ryzen 7 7800X3D
-eBay nuevo: USD 314.99 con envío en EE.UU. (eBay API; vendedor luckyfootllc 99.5%; AMD Ryzen 7 7800X3D Processor (5 GHz, 8 Cores, 16 Threads, A, 2026-11-27). Costo puesto: **Bs 3.974**/u en pedido de 2, **Bs 3.974**/u en pedido de 4.
+eBay nuevo: USD 317.00 con envío en EE.UU. (eBay API; vendedor totr1863 99.6%; AMD Ryzen 7 7800X3D 8-Core 16-Thread AM5 Zen 4 Desktop Proce, 2026-11-27). Costo puesto: **Bs 3.998**/u en pedido de 2, **Bs 3.998**/u en pedido de 4.
 
 | Vendedor en Cochabamba | Estado | Precio Bs | Ganancia por u (2 u) | Fecha |
 |---|---|---|---|---|
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo | 4.350 | 376 (9%) | 2026-11-11 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=7800x3d) | nuevo | 4.350 | 376 (9%) | 2026-11-17 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | estado sin dato; Cochabamba | 4.400 | 426 (10%) | 2026-11-10 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | usado/no indica | 4.400 | 426 (10%) | 2026-11-11 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/29029553683371087/) | usado (como nuevo) | 4.400 | 426 (10%) | 2026-11-16 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sin dato; Cochabamba | 4.500 | 526 (12%) | 2026-11-06 |
-| Tienda Supermall (WhatsApp) · [ver](https://www.facebook.com/marketplace/item/1292124363069503/) | no indicado (la tienda lo ofrece como "7700x3d"; foto de caja 7800X3D; stock bajo; garantía 6 meses; confirmar modelo) | 4.760 | 786 (17%) | 2026-10-12 |
-| Marketplace Cochabamba (particular/vendedor) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado (según anuncio) | 4.800 | 826 (17%) | 2026-10-11 |
-| Marketplace Cochabamba (particular/vendedor; Messenger) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado de fábrica, confirmado por el vendedor (último en stock; precio ya rebajado) | 4.800 | 826 (17%) | 2026-10-13 |
-| Marketplace Cochabamba (particular) | nuevo sellado (anuncio "AMD Ryzen 7 7800X3D (Sellado)"; el vendedor dijo el 13/10 que acepta ofertas, no se oferta) | 4.800 | 826 (17%) | 2026-10-26 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sellado; Cochabamba (mismo vendedor del 13/10 probablemente) | 4.800 | 826 (17%) | 2026-11-03 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sellado; Cochabamba | 4.800 | 826 (17%) | 2026-11-09 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sellado | 4.800 | 826 (17%) | 2026-11-12 |
-| Marketplace Cochabamba (tienda sin confirmar) | nuevo (anuncio multi-modelo "9800X3D, 7800X3D, 8700G"; precio desde) | 4.860 | 886 (18%) | 2026-10-21 |
-| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2669179450145313/) | no indicado | 5.190 | 1.216 (23%) | 2026-10-11 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=Ryzen%207%207800X3D) | nuevo/sin dato | 5.190 | 1.216 (23%) | 2026-10-30 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo/no indica | 5.190 | 1.216 (23%) | 2026-11-12 |
-| OverCity (WhatsApp) | nuevo en caja sellada (box; el OEM está a Bs 5.500; el i5-14400F Bs 2.460 es su precio mínimo) | 5.350 | 1.376 (26%) | 2026-10-13 |
-| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1361869715871206/) | no indicado | 5.390 | 1.416 (26%) | 2026-10-11 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1361869715871206/) | nuevo (anuncio 'El mejor para Gaming'; disponible) | 5.390 | 1.416 (26%) | 2026-10-20 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo/sin dato; Cochabamba | 5.390 | 1.416 (26%) | 2026-11-03 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sin dato; Cochabamba (Socket AM5) | 5.390 | 1.416 (26%) | 2026-11-06 |
-| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo/no indica | 5.390 | 1.416 (26%) | 2026-11-12 |
-| Marketplace Cochabamba (tienda) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=7800x3d) | no indica | 5.390 | 1.416 (26%) | 2026-11-17 |
-| Viadata Computadoras (WhatsApp) · [ver](https://www.facebook.com/computadorascochabamba/) | nuevo OEM (solo el chip) | 5.500 | 1.526 (28%) | 2026-10-12 |
-| OverCity (WhatsApp) | nuevo OEM (solo el chip) | 5.500 | 1.526 (28%) | 2026-10-13 |
-| Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | BOX (según foto de su web; USD 480) | 5.664 | 1.690 (30%) | 2026-10-12 |
-| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo BOX (web: USD 480 a 11,80) | 5.664 | 1.690 (30%) | 2026-10-16 |
-| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 5.731 | 1.757 (31%) | 2026-11-12 |
-| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 5.779 | 1.805 (31%) | 2026-11-25 |
-| SMART CUBE (WhatsApp) | nuevo sellado, facturado; llevando 2 rebajan Bs 50 c/u (Bs 5.840) | 5.890 | 1.916 (33%) | 2026-10-15 |
-| ADN Gamer Store (WhatsApp) | nuevo en caja (box); garantía sin dato (se preguntó) | 6.162 | 2.188 (36%) | 2026-10-22 |
-| ADN Gamer Store (WhatsApp) | nuevo (estado y garantía sin confirmar; se preguntó) | 6.193 | 2.219 (36%) | 2026-10-21 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo | 4.350 | 352 (8%) | 2026-11-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=7800x3d) | nuevo | 4.350 | 352 (8%) | 2026-11-17 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | estado sin dato; Cochabamba | 4.400 | 402 (9%) | 2026-11-10 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | usado/no indica | 4.400 | 402 (9%) | 2026-11-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/29029553683371087/) | usado (como nuevo) | 4.400 | 402 (9%) | 2026-11-16 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sin dato; Cochabamba | 4.500 | 502 (11%) | 2026-11-06 |
+| Tienda Supermall (WhatsApp) · [ver](https://www.facebook.com/marketplace/item/1292124363069503/) | no indicado (la tienda lo ofrece como "7700x3d"; foto de caja 7800X3D; stock bajo; garantía 6 meses; confirmar modelo) | 4.760 | 762 (16%) | 2026-10-12 |
+| Marketplace Cochabamba (particular/vendedor) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado (según anuncio) | 4.800 | 802 (17%) | 2026-10-11 |
+| Marketplace Cochabamba (particular/vendedor; Messenger) · [ver](https://www.facebook.com/marketplace/item/2555034215012611/) | nuevo sellado de fábrica, confirmado por el vendedor (último en stock; precio ya rebajado) | 4.800 | 802 (17%) | 2026-10-13 |
+| Marketplace Cochabamba (particular) | nuevo sellado (anuncio "AMD Ryzen 7 7800X3D (Sellado)"; el vendedor dijo el 13/10 que acepta ofertas, no se oferta) | 4.800 | 802 (17%) | 2026-10-26 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sellado; Cochabamba (mismo vendedor del 13/10 probablemente) | 4.800 | 802 (17%) | 2026-11-03 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sellado; Cochabamba | 4.800 | 802 (17%) | 2026-11-09 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sellado | 4.800 | 802 (17%) | 2026-11-12 |
+| Marketplace Cochabamba (tienda sin confirmar) | nuevo (anuncio multi-modelo "9800X3D, 7800X3D, 8700G"; precio desde) | 4.860 | 862 (18%) | 2026-10-21 |
+| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2669179450145313/) | no indicado | 5.190 | 1.192 (23%) | 2026-10-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=Ryzen%207%207800X3D) | nuevo/sin dato | 5.190 | 1.192 (23%) | 2026-10-30 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo/no indica | 5.190 | 1.192 (23%) | 2026-11-12 |
+| OverCity (WhatsApp) | nuevo en caja sellada (box; el OEM está a Bs 5.500; el i5-14400F Bs 2.460 es su precio mínimo) | 5.350 | 1.352 (25%) | 2026-10-13 |
+| Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/1361869715871206/) | no indicado | 5.390 | 1.392 (26%) | 2026-10-11 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/1361869715871206/) | nuevo (anuncio 'El mejor para Gaming'; disponible) | 5.390 | 1.392 (26%) | 2026-10-20 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo/sin dato; Cochabamba | 5.390 | 1.392 (26%) | 2026-11-03 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | sin dato; Cochabamba (Socket AM5) | 5.390 | 1.392 (26%) | 2026-11-06 |
+| Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ryzen%207%207800x3d) | nuevo/no indica | 5.390 | 1.392 (26%) | 2026-11-12 |
+| Marketplace Cochabamba (tienda) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=7800x3d) | no indica | 5.390 | 1.392 (26%) | 2026-11-17 |
+| Viadata Computadoras (WhatsApp) · [ver](https://www.facebook.com/computadorascochabamba/) | nuevo OEM (solo el chip) | 5.500 | 1.502 (27%) | 2026-10-12 |
+| OverCity (WhatsApp) | nuevo OEM (solo el chip) | 5.500 | 1.502 (27%) | 2026-10-13 |
+| Cyrex Store (WhatsApp) · [ver](https://cyrexstore.com/) | BOX (según foto de su web; USD 480) | 5.664 | 1.666 (29%) | 2026-10-12 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo BOX (web: USD 480 a 11,80) | 5.664 | 1.666 (29%) | 2026-10-16 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 5.731 | 1.733 (30%) | 2026-11-12 |
+| Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 5.779 | 1.781 (31%) | 2026-11-25 |
+| SMART CUBE (WhatsApp) | nuevo sellado, facturado; llevando 2 rebajan Bs 50 c/u (Bs 5.840) | 5.890 | 1.892 (32%) | 2026-10-15 |
+| ADN Gamer Store (WhatsApp) | nuevo en caja (box); garantía sin dato (se preguntó) | 6.162 | 2.164 (35%) | 2026-10-22 |
+| ADN Gamer Store (WhatsApp) | nuevo (estado y garantía sin confirmar; se preguntó) | 6.193 | 2.195 (35%) | 2026-10-21 |
 
 ### Ryzen 9 9950X
 eBay nuevo: USD 489.00 con envío en EE.UU. (eBay API; vendedor napapi_87 99.8%; AMD Ryzen 9 9950X (16-Core, 32-Thread, 4.3 GHz, 5.7 GHz Max), 2026-11-27). Costo puesto: **Bs 6.076**/u en pedido de 2, **Bs 6.076**/u en pedido de 4.
@@ -268,6 +268,7 @@ eBay nuevo: USD 104.99 con envío en EE.UU. (eBay API; vendedor nycbst 99.7%; Be
 | Compubol (WhatsApp) | nuevo/sin dato | 1.900 | 463 (24%) | 2026-11-26 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=almacenamiento) | nuevo/no indica | 1.914 | 477 (25%) | 2026-11-25 |
 | Geek Store Bolivia (web) · [ver](https://geek-store-bolivia.kyte.site/es/c/almacenamiento/1732592627077-dxXRD) | nuevo/no indica | 1.914 | 477 (25%) | 2026-11-25 |
+| La Baticueva-Tec (WhatsApp) | nuevo/no indica | 1.933 | 495 (26%) | 2026-11-27 |
 | Soft Computers (WhatsApp) | sin dato | 1.950 | 513 (26%) | 2026-11-04 |
 | Tienda Supermall (Marketplace) (WhatsApp) | nuevo | 1.960 | 523 (27%) | 2026-11-20 |
 | Marketplace Cochabamba · [ver](https://www.facebook.com/marketplace/item/2817371738643128/) | no indicado (Crucial P310 1TB) | 2.000 | 563 (28%) | 2026-10-11 |
@@ -283,6 +284,7 @@ eBay nuevo: USD 104.99 con envío en EE.UU. (eBay API; vendedor nycbst 99.7%; Be
 | Tienda Supermall (Marketplace) (WhatsApp) | nuevo | 2.060 | 623 (30%) | 2026-11-20 |
 | Punto Tecnológico / Supermall (web) · [ver](https://puntotecnologic.com/categories/disco-solido) | nuevo | 2.060 | 623 (30%) | 2026-11-24 |
 | Punto Tecnológico · Supermall (web) · [ver](https://www.puntotecnologic.com/categories/disco-solido) | disponible (web; Kingston NV3 M.2 1TB) | 2.152 | 715 (33%) | 2026-10-12 |
+| La Baticueva-Tec (WhatsApp) | nuevo/no indica | 2.174 | 737 (34%) | 2026-11-27 |
 | TecnoGamer Bolivia (web) · [ver](https://www.tecnogamer.com.bo/categoria/discos-solidos-m-2/) | Kingston NV3 1TB NVMe; estado sin dato | 2.215 | 778 (35%) | 2026-11-04 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/2891757594521096/) | Lexar NM790 1TB con disipador (estado sin dato) | 2.500 | 1.063 (43%) | 2026-10-19 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/cochabamba/search?query=ssd%202tb%20nvme) | Lexar NM790 1TB con disipador (estado sin dato); Cochabamba | 2.500 | 1.063 (43%) | 2026-11-06 |
@@ -334,6 +336,7 @@ eBay nuevo: USD 223.98 con envío en EE.UU. (eBay API; vendedor asusparts2022 99
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 3.701 | 827 (22%) | 2026-11-12 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 3.732 | 858 (23%) | 2026-11-25 |
 | Cyrex Store (web) · [ver](https://cyrexstore.com/tienda?category=procesadores) | nuevo | 3.745 | 870 (23%) | 2026-11-27 |
+| La Baticueva-Tec (WhatsApp) | nuevo/no indica | 3.866 | 991 (26%) | 2026-11-27 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/887277370696710/) | sellado | 4.000 | 1.125 (28%) | 2026-10-20 |
 | Marketplace Cochabamba (particular) | nuevo sellado ("Ryzen 7 7700x Sellado"); Cochabamba | 4.000 | 1.125 (28%) | 2026-10-28 |
 | Marketplace Cochabamba (particular) · [ver](https://www.facebook.com/marketplace/item/887277370696710/) | sellado | 4.000 | 1.125 (28%) | 2026-11-17 |

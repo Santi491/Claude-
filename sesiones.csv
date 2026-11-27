@@ -247,3 +247,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-27,pc,ronda,10:35,11:14,alerta,"mañana: wa 7 msgs (0 chats nuevos), mkt 7700X 105 clics 0 mensajes, catalogos 2 webs, analista mantiene 3.350, oficina v167, gerente aviso enviado. FALTÓ: 7700X y por pedido en el grupo (la ronda programada no puede subir fotos)"
 2026-11-27,raspberry,vigilante,11:30,11:30,alerta,la ronda de las 10:30 terminó a medias
 2026-11-27,pc,ronda,16:09,16:09,en curso,empezó
+2026-11-27,pc,ronda,16:08,16:23,alerta,"tarde: wa 1 chat nuevo y 2 sin leer atendidos, ebay --revisar 5 cambios, pedidos sin activos, catalogos sin trabajo, analista sin cambios de categoria, 4 en stock sin ventas, oficina v168, gerente aviso enviado. FALTÓ: bandeja de Messenger, clics y mensajes del 7700X y grupo pendiente (el permiso automatico lo rechazo, no se rodeo): revisarlo Santi; publicaciones con foto en el grupo siguen bloqueadas"
