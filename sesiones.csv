@@ -251,3 +251,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-27,raspberry,vigilante,16:30,16:30,alerta,la ronda de las 16:00 terminó a medias
 2026-11-27,pc,encargo,16:48,16:48,en curso,empezó
 2026-11-27,pc,encargo,16:49,16:53,alerta,"grupo: con acceso a las fotos no salió ninguna publicación; la foto del 7700X se envió por error como sticker, sin texto ni precio; falta decidir si se borra"
+2026-11-27,pc,encargo,16:54,16:54,en curso,empezó
