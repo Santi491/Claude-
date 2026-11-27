@@ -5,7 +5,7 @@
   "desde": "16:09",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 16:19",
+ "actualizado": "2026-11-27 16:20",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -18,9 +18,9 @@
    "hora": "16:18"
   },
   "ana": {
-   "estado": "trabajando",
-   "texto": "Recalculando márgenes con cambios de la tarde",
-   "hora": "16:19"
+   "estado": "terminó",
+   "texto": "Sin cambios de recomendación; 7800X3D con menos margen",
+   "hora": "16:20"
   },
   "fin": {
    "estado": "trabajando",
