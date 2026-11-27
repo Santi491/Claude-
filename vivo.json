@@ -21,6 +21,11 @@
    "estado": "trabajando",
    "texto": "Recalculando márgenes con cambios de la tarde",
    "hora": "16:19"
+  },
+  "fin": {
+   "estado": "trabajando",
+   "texto": "Stock y ventas del día",
+   "hora": "16:19"
   }
  }
 }
