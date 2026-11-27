@@ -5,7 +5,7 @@
   "desde": "16:09",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 16:21",
+ "actualizado": "2026-11-27 16:23",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -33,9 +33,9 @@
    "hora": "16:21"
   },
   "gerente": {
-   "estado": "trabajando",
-   "texto": "Controlando la ronda y avisando a Santi",
-   "hora": "16:21"
+   "estado": "terminó",
+   "texto": "Ronda controlada y aviso enviado",
+   "hora": "16:23"
   }
  }
 }
