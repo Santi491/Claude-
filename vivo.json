@@ -5,7 +5,7 @@
   "desde": "10:36",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 11:04",
+ "actualizado": "2026-11-27 11:05",
  "agentes": {
   "ebay": {
    "estado": "terminó",
@@ -31,6 +31,11 @@
    "estado": "terminó",
    "texto": "sin pedidos activos",
    "hora": "11:04"
+  },
+  "ana": {
+   "estado": "trabajando",
+   "texto": "comparando precios y revisando el 7700X",
+   "hora": "11:05"
   }
  }
 }
