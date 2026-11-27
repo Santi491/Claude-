@@ -1,42 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "16:09",
-  "fecha": "2026-11-27",
-  "hasta": "16:23"
+  "desde": "16:48",
+  "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 16:23",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "1 tienda nueva y respuestas atendidas",
-   "hora": "16:16"
-  },
-  "mkt": {
-   "estado": "terminó",
-   "texto": "7700X nuestro sigue a Bs 3.350; bandeja sin revisar",
-   "hora": "16:18"
-  },
-  "ana": {
-   "estado": "terminó",
-   "texto": "Sin cambios de recomendación; 7800X3D con menos margen",
-   "hora": "16:20"
-  },
-  "fin": {
-   "estado": "terminó",
-   "texto": "4 en stock, sin ventas nuevas",
-   "hora": "16:20"
-  },
-  "oficina": {
-   "estado": "terminó",
-   "texto": "Oficina publicada (v168)",
-   "hora": "16:21"
-  },
-  "gerente": {
-   "estado": "terminó",
-   "texto": "Ronda controlada y aviso enviado",
-   "hora": "16:23"
-  }
- }
+ "actualizado": "2026-11-27 16:48",
+ "agentes": {}
 }
