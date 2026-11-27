@@ -5,12 +5,12 @@
   "desde": "17:54",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 17:54",
+ "actualizado": "2026-11-27 17:56",
  "agentes": {
   "wa": {
-   "estado": "trabajando",
-   "texto": "Dando de alta las tiendas para llamada",
-   "hora": "17:54"
+   "estado": "terminó",
+   "texto": "Tiendas para llamada dadas de alta",
+   "hora": "17:56"
   }
  }
 }
