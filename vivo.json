@@ -5,7 +5,7 @@
   "desde": "10:36",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 10:47",
+ "actualizado": "2026-11-27 11:00",
  "agentes": {
   "ebay": {
    "estado": "terminó",
@@ -18,9 +18,9 @@
    "hora": "10:47"
   },
   "mkt": {
-   "estado": "trabajando",
-   "texto": "Marketplace, demanda y nuestro anuncio",
-   "hora": "10:47"
+   "estado": "terminó",
+   "texto": "7700X con 105 clics y sin mensajes; demanda anotada",
+   "hora": "11:00"
   }
  }
 }
