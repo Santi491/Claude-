@@ -1,17 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "17:54",
-  "fecha": "2026-11-27",
-  "hasta": "17:56"
+  "desde": "18:14",
+  "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 17:56",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "Tiendas para llamada dadas de alta",
-   "hora": "17:56"
-  }
- }
+ "actualizado": "2026-11-27 18:14",
+ "agentes": {}
 }
