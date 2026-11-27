@@ -16,6 +16,11 @@
    "estado": "terminó",
    "texto": "7 mensajes a tiendas, precio nuevo del 14400F",
    "hora": "10:47"
+  },
+  "mkt": {
+   "estado": "trabajando",
+   "texto": "Marketplace, demanda y nuestro anuncio",
+   "hora": "10:47"
   }
  }
 }
