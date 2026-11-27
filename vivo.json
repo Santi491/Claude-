@@ -2,16 +2,16 @@
  "ronda": {
   "activa": false,
   "quien": "PC de la casa",
-  "desde": "17:47",
+  "desde": "17:54",
   "fecha": "2026-11-27",
-  "hasta": "17:48"
+  "hasta": "17:56"
  },
- "actualizado": "2026-11-27 17:48",
+ "actualizado": "2026-11-27 17:56",
  "agentes": {
-  "mkt": {
+  "wa": {
    "estado": "terminó",
-   "texto": "Plan de venta guardado",
-   "hora": "17:48"
+   "texto": "Tiendas para llamada dadas de alta",
+   "hora": "17:56"
   }
  }
 }
