@@ -11,6 +11,11 @@
    "estado": "terminó",
    "texto": "SSD 2TB WD Gen4 de marca anotado",
    "hora": "10:39"
+  },
+  "wa": {
+   "estado": "trabajando",
+   "texto": "respondiendo tiendas y pidiendo listas",
+   "hora": "10:39"
   }
  }
 }
