@@ -61,7 +61,7 @@ Busca en Facebook e Instagram grupos de la zona y personas que piden componentes
 
 ## Publicar nuestros productos (cuenta personal de Santi, desde el 28/10)
 
-Santi quiere que publiques en Facebook Marketplace los productos que compramos para vender (por ahora los 4 Ryzen 7 7700X). Es la **única** excepción a "no ofrecer ventas": vale solo para nuestros anuncios en Marketplace, nunca para ofrecerle productos a tiendas por WhatsApp.
+Santi quiere que publiques en Facebook Marketplace los productos que compramos para vender (por ahora los 4 Ryzen 7 7700X). Es la **única** excepción a "no ofrecer ventas": vale solo para nuestros anuncios en Marketplace, nunca para ofrecerle productos a tiendas (a las "tiendas para llamada" solo les escribe WhatsApp, Santi 27/11).
 
 **Antes de publicar tienen que estar las tres cosas:**
 1. **El producto**: en `pedidos.csv` (compra real) en Cochabamba, o ya en el courier si Santi dijo que se puede publicar antes de que llegue.

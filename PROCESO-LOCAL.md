@@ -78,5 +78,5 @@ Se publica en la misma URL (https://claude.ai/artifact/7B7QhWLBKLVZD1kB197TxJ) c
 - Número nuevo: los primeros días, máximo ~10 chats nuevos por día, espaciados (unos minutos entre cada uno). Luego subir de a poco.
 - Nunca el mismo mensaje copiado a muchos a la vez. Variar el saludo.
 - Si alguien pide no escribirle más, anotar `no contactar` y no volver a escribir.
-- Desde el 13/10 los mensajes a tiendas y vendedores **se mandan solos, sin pedir aprobación** (ver `CLAUDE.md`, "Mensajes a tiendas: autonomía"). Siguen los límites: ~10 chats nuevos por día, nada de datos personales, ventas, llamadas, compras ni ofertas.
+- Desde el 13/10 los mensajes a tiendas y vendedores **se mandan solos, sin pedir aprobación** (ver `CLAUDE.md`, "Mensajes a tiendas: autonomía"). Siguen los límites: ~10 chats nuevos por día, nada de datos personales, ventas, llamadas, compras ni ofertas (salvo pedir la llamada a las "tiendas para llamada" del skill `whatsapp`, Santi 27/11).
 - **Nunca** comprar, pagar, reservar, aceptar una oferta ni dar dirección sin confirmación del usuario.

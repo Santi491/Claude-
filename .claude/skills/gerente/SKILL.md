@@ -77,6 +77,8 @@ Desde Telegram puedes **editar los archivos de datos** con Edit (solo los de `ED
 
 Cada noche, para cada producto en stock: en qué día del plan de venta va (día 1 = cuando Santi marcó "lo tengo"; ver `CLAUDE.md`, "Plan de venta"), qué toca mañana y si hace falta su OK (escalón de precio, anuncio pagado, tiendas). Va en el informe y, si toca un cambio, una tarea `propuesto` en `plan.csv`. Nunca bajar del piso que fijó Santi.
 
+**Llamadas con tiendas (Santi, 27/11).** Cada noche mira `llamadas.csv`: si hay una `confirmada` para mañana, recuérdasela a Santi por Telegram (tienda, hora). Si una tienda lleva 3 días hábiles sin contestar, cuéntaselo; no se le insiste.
+
 ## 1. La cola de tareas (`plan.csv`)
 
 Cada tarea tiene: `id` (AAAA-MM-DD-N), `fecha_para`, `agente` (el **responsable**: uno solo), `tarea` (concreta y medible), `motivo` (el dato que la justifica), `estado`, `propuesto_por`, `fecha_propuesta`, `decision`, **`prioridad`** (alta | media | baja), **`plazo`** (AAAA-MM-DD, el último día que sirve), **`meta`** (número objetivo si lo hay) y **`obligatoria`** (sí | vacío).
@@ -132,7 +134,7 @@ Cada agente entrega con el formato AGENTE / HECHO / ARCHIVOS / VERIFICACIÓN / P
 - **Dos datos distintos de lo mismo** (dos precios de la misma tienda, dos estados de un pedido): vale el **más reciente con fuente mejor** (Santi > la tienda directa > su web o catálogo > Marketplace > estimado). Si son del mismo día y la misma calidad, pide al responsable que lo confirme (tarea o chat) y en el informe usa el más conservador (el precio local más bajo, el costo más alto).
 - **Una decisión de Santi contra otra**: vale la más reciente (Telegram, oficina, Doc o chat).
 - **Un agente contra las reglas**: ganan las reglas; es alerta.
-- **Ventas permitidas (Santi, 25/11): no son alerta.** Publicar y renovar en Marketplace y, en el grupo de clientes "Cargo Brothers", el resumen de la mañana, el stock con la foto y el precio de Santi, de 1 a 3 productos por pedido (ganancia ≥ 15 %), el "❌ YA NO DISPONIBLE" de la tarde y confirmar a un cliente **al precio publicado**. Sí es alerta: ofrecer ventas a tiendas, confirmar a otro precio o aceptar un regateo, pedir o dar datos de pago, escribir primero por privado a un miembro, una publicación por pedido sin foto o por debajo del 15 %, o números de clientes en el repo. Un comprador o un regateo que André te pasa (`chat.csv`, de wa) se lo avisas a Santi **en el momento** por Telegram.
+- **Ventas permitidas (Santi, 25/11): no son alerta.** Publicar y renovar en Marketplace y, en el grupo de clientes "Cargo Brothers", el resumen de la mañana, el stock con la foto y el precio de Santi, de 1 a 3 productos por pedido (ganancia ≥ 15 %), el "❌ YA NO DISPONIBLE" de la tarde y confirmar a un cliente **al precio publicado**; también el mensaje de André a las "tiendas para llamada" (skill whatsapp, 27/11) y acordar la hora. Sí es alerta: ofrecer ventas a otras tiendas o dar precios a una tienda por chat, confirmar a otro precio o aceptar un regateo, pedir o dar datos de pago, escribir primero por privado a un miembro, una publicación por pedido sin foto o por debajo del 15 %, o números de clientes en el repo. Un comprador o un regateo que André te pasa (`chat.csv`, de wa) se lo avisas a Santi **en el momento** por Telegram.
 - **Dos agentes que se pisan** (los dos escribieron a la misma tienda el mismo día): asigna un responsable con una tarea y avisa a los dos por el chat.
 
 ## 7. Propuestas de los agentes
