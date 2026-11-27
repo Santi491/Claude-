@@ -5,7 +5,7 @@
   "desde": "16:09",
   "fecha": "2026-11-27"
  },
- "actualizado": "2026-11-27 16:16",
+ "actualizado": "2026-11-27 16:18",
  "agentes": {
   "wa": {
    "estado": "terminó",
@@ -13,9 +13,9 @@
    "hora": "16:16"
   },
   "mkt": {
-   "estado": "trabajando",
-   "texto": "Messenger, nuestro 7700X y demanda",
-   "hora": "16:16"
+   "estado": "terminó",
+   "texto": "7700X nuestro sigue a Bs 3.350; bandeja sin revisar",
+   "hora": "16:18"
   }
  }
 }
