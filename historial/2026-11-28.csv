@@ -1,0 +1,20 @@
+﻿Producto,Tipo,Link del producto,eBay nuevo USD,Envío EE.UU. USD,eBay usado USD,Marketplace Bs,Tiendas Bs,Dólar BCB,Dólar paralelo,Peso g,Courier /u USD,Costo puesto Bs,Mejor local Bs,Ganancia /u Bs,Margen,Estado
+Ryzen 9 9950X3D,CPU,https://www.ebay.com/itm/307282888401,579.0,0.0,514.99,8700.0,9560.0,11.86,12.05,350.0,14.0,7139.72,8700.0,1560.28,0.1793,Conviene
+Intel Core i5-12400F,CPU,https://www.ebay.com/itm/920150064587,119.99,7.4,114.99,2350.0,2050.0,11.86,12.05,250.0,14.0,1702.34,2050.0,347.66,0.1696,Conviene
+Intel Core Ultra 7 265K,CPU,https://www.ebay.com/itm/860056581610,269.99,0.0,,4250.0,3950.0,11.86,12.05,300.0,14.0,3419.24,3950.0,530.76,0.1344,Justo
+SSD NVMe 2TB,SSD,https://www.ebay.com/itm/227402767941,209.99,0.0,164.99,3100.0,3800.0,11.86,12.05,80.0,14.0,2696.84,3100.0,403.16,0.1301,Justo
+Ryzen 5 9600X,CPU,https://www.ebay.com/itm/137968933325,164.95,0.0,169.98000000000002,2450.0,2560.0,11.86,12.05,350.0,14.0,2154.56,2450.0,295.44,0.1206,Justo
+Intel Core i5-14400F,CPU,https://www.ebay.com/itm/126275456933,149.99,0.0,134.99,,2202.0,11.86,12.05,250.0,14.0,1974.44,2202.0,227.56,0.1033,Justo
+Ryzen 7 7800X3D,CPU,https://www.ebay.com/itm/237109644259,317.0,0.0,255.99,4350.0,4760.0,11.86,12.05,350.0,14.0,3985.24,4350.0,364.76,0.0839,Justo
+Ryzen 5 7600X,CPU,https://www.ebay.com/itm/287124046285,169.99,11.4,139.99,,2550.0,11.86,12.05,350.0,14.0,2352.5,2550.0,197.5,0.0775,Justo
+Ryzen 7 7700X,CPU,https://www.ebay.com/itm/298329666244,216.0,7.53,170.0,3000.0,3462.6,11.86,12.05,350.0,14.0,2859.86,3000.0,140.14,0.0467,No conviene
+Corsair Vengeance RGB DDR5 32GB (2x16) 6000,RAM,https://www.ebay.com/itm/117546904058,459.99,0.0,419.99,5800.0,,11.86,12.05,150.0,14.0,5706.84,5800.0,93.16,0.0161,No conviene
+Ryzen 5 7500F,CPU,https://www.ebay.com/itm/178171158022,135.6,0.0,120.69999999999999,,1755.2,11.86,12.05,350.0,14.0,1801.18,1755.2,-45.98,-0.0262,No conviene
+Ryzen 9 9950X,CPU,https://www.ebay.com/itm/920185472148,489.0,0.0,407.99,7500.0,5580.0,11.86,12.05,350.0,14.0,6056.12,5580.0,-476.12,-0.0853,No conviene
+Ryzen 5 7600,CPU,https://www.ebay.com/itm/206712855371,261.69,0.0,119.0,,2800.0,11.86,12.05,350.0,14.0,3319.31,2800.0,-519.31,-0.1855,No conviene
+SSD NVMe 1TB,SSD,https://www.ebay.com/itm/227635286889,109.98,5.47,94.99,1100.0,1550.0,11.86,12.05,80.0,14.0,1558.58,1100.0,-458.58,-0.4169,No conviene
+RAM DDR4 16GB (2x8) 3200,RAM,https://www.ebay.com/itm/900026586847,89.99,6.04,75.57,540.0,1420.0,11.86,12.05,120.0,14.0,1324.76,540.0,-784.76,-1.4533,No conviene
+Ryzen 5 5600,CPU,https://www.ebay.com/itm/178171159145,139.8,0.0,119.0,,,11.86,12.05,350.0,14.0,1851.75,,,,Sin precio local
+Ryzen 7 5700X3D,CPU,https://www.ebay.com/itm/820405796482,349.99,0.0,317.53,,,11.86,12.05,350.0,14.0,4382.44,,,,Sin precio local
+Intel Core i5-13400,CPU,https://www.ebay.com/itm/307290903175,,,135.79,,2300.0,11.86,12.05,300.0,,,2300.0,,,Sin precio eBay
+Corsair Vengeance RGB DDR5 32GB (2x16) 5600,RAM,https://www.ebay.com/itm/880127792085,,,409.99,4500.0,,11.86,12.05,150.0,,,4500.0,,,Sin precio eBay

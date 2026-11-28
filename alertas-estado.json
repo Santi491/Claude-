@@ -122,7 +122,8 @@
   "conviene|Corsair Vengeance RGB DDR5 32GB (2x16) 6000|usado|2026-11-24": "2026-11-24 07:54",
   "baja|SSD NVMe 2TB|usado|2026-11-24": "2026-11-24 07:54",
   "baja|RAM DDR4 16GB (2x8) 3200|usado|2026-11-25": "2026-11-25 07:54",
-  "baja|SSD NVMe 1TB|nuevo|2026-11-27": "2026-11-27 07:54"
+  "baja|SSD NVMe 1TB|nuevo|2026-11-27": "2026-11-27 07:54",
+  "baja|Ryzen 7 5700X3D|nuevo|2026-11-28": "2026-11-28 07:54"
  },
  "conviene": {
   "Ryzen 5 7600|nuevo": false,
@@ -152,13 +153,13 @@
   "Ryzen 5 7500F|usado": false,
   "Ryzen 5 9600X|nuevo": false,
   "Ryzen 5 9600X|usado": false,
-  "Ryzen 5 7600X|nuevo": true,
+  "Ryzen 5 7600X|nuevo": false,
   "Ryzen 5 7600X|usado": true,
   "Ryzen 9 9950X3D|nuevo": true,
   "Ryzen 9 9950X3D|usado": true
  },
  "ultimas": [
-  "⬇ SSD NVMe 1TB (nuevo) bajó 17% en eBay: USD 126.67 → 104.99"
+  "⬇ Ryzen 7 5700X3D (nuevo) bajó 26% en eBay: USD 469.99 → 349.99"
  ],
- "revisado": "2026-11-27 16:19"
+ "revisado": "2026-11-28 07:54"
 }
