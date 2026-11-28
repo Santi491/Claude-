@@ -259,3 +259,4 @@ fecha,quien,tipo,inicio,fin,estado,nota
 2026-11-27,pc,encargo,17:54,17:56,ok,11 tiendas para llamada dadas de alta; rutina Gerente actualizada
 2026-11-27,pc,encargo,18:14,18:14,en curso,empezó
 2026-11-27,pc,encargo,18:14,18:17,ok,Sticker borrado; 7700X publicado en el grupo con foto
+2026-11-27,gerente,informe,20:15,20:16,ok,"Informe diario 27/11: 5 tareas nuevas, Doc subido, sin errores de verificar.py"

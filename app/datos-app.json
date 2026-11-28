@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-27 16:21",
+ "generado": "2026-11-27 20:16",
  "etapa": {
   "numero": 3,
   "nombre": "vendiendo",
@@ -880,7 +880,7 @@
    "margen": 28.3,
    "peor": 14.9,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/168863800993",
    "courier_usd": 14.0,
    "tc": 12.08,
@@ -898,7 +898,7 @@
    "margen": 27.4,
    "peor": 14.9,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/820390285569",
    "courier_usd": 14.0,
    "tc": 12.08,
@@ -916,7 +916,7 @@
    "margen": 18.5,
    "peor": 5.8,
    "recomendacion": "esperar",
-   "por_que": "faltan datos: precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan datos: precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "https://www.ebay.com/itm/237188090446",
    "courier_usd": 14.0,
    "tc": 12.08,
@@ -1204,7 +1204,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1240,7 +1240,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio local",
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio local",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1258,7 +1258,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1276,7 +1276,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio local de usados (se comparÃ³ con nuevos), precio de eBay usado, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio local de usados (se comparó con nuevos), precio de eBay usado, precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1294,7 +1294,7 @@
    "margen": null,
    "peor": null,
    "recomendacion": "sin datos",
-   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 dÃ­as) de al menos 2 tiendas distintas",
+   "por_que": "faltan: precio de eBay nuevo, precios recientes (14 días) de al menos 2 tiendas distintas",
    "link": "",
    "courier_usd": null,
    "tc": null,
@@ -1588,6 +1588,35 @@
  },
  "decidir": [
   {
+   "tipo": "plan",
+   "ref": "2026-11-27-11",
+   "agente": "mkt",
+   "fecha": "2026-11-27",
+   "titulo": "Dejar listo (sin pagar) el anuncio pagado del 7700X: objetivo mensajes, Cochabamba +25 km, 18-40 años, intereses PC gamer / hardware / AMD / NVIDIA / Steam, USD 2 por día x 3 días, Marketplace + Feed; lo paga Santi",
+   "detalle": "Plan de venta días 3-4; 114 clics y 0 mensajes: el anuncio no convierte solo",
+   "plazo": "2026-11-30",
+   "fecha_para": "2026-11-28"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-27-12",
+   "agente": "mkt",
+   "fecha": "2026-11-27",
+   "titulo": "Bajar el 7700X a Bs 3.150 el lunes 30/11 (escalón del día 5) y, si no hay mensajes, a Bs 3.050 (piso) el martes 1/12; anotar cada cambio en publicaciones.csv",
+   "detalle": "Santi dejó esa escalera en el chat del 27/11 (lunes 3.150, martes piso 3.050); se confirma por ser cambio de precio",
+   "plazo": "2026-12-01",
+   "fecha_para": "2026-11-30"
+  },
+  {
+   "tipo": "idea",
+   "ref": "27",
+   "agente": "ana",
+   "fecha": "2026-11-27",
+   "titulo": "Aclarar el precio de venta de referencia: dejar la skill del Analista igual que analista.py (5 % bajo la mediana local) o volver a 5 % bajo el local más barato",
+   "detalle": "La skill dice bajo el más barato y analista.py usa la mediana; en el 7800X3D nuevo hay 21,9 % de margen según analista.py y 8 % frente al local más barato (Bs 4.350)",
+   "plazo": ""
+  },
+  {
    "tipo": "necesidad",
    "ref": "62",
    "agente": "ana",
@@ -1620,7 +1649,7 @@
    "agente": "wa",
    "fecha": "2026-11-26",
    "titulo": "Dar acceso a la sesión de la ronda a las carpetas Documents\\fotos-publicar y Documents\\fotos-grupo (en una ronda programada sin nadie, la subida de fotos y el pedido de acceso quedan rechazados)",
-   "detalle": "Publicar en el grupo de clientes el 7700X en stock y los por pedido, que van con foto. Hoy salió solo el resumen",
+   "detalle": "Publicar en el grupo de clientes el 7700X en stock y los por pedido, que van con foto. Hoy salió solo el resumen · 27/11 16:50: Santi dio el acceso solo para esta sesión (las programadas siguen sin él). Con acceso, falta además poder usar Fotos y videos de WhatsApp Web: la automatización solo encontró el campo de stickers (publicar la foto a mano o con Santi presente en el selector de archivos)",
    "plazo": ""
   },
   {
@@ -1648,7 +1677,7 @@
    "fecha": "2026-11-24",
    "titulo": "Si Santi levanta la regla de no ofrecer ventas: ofrecer los 7700X a las tiendas de los grupos A y B (clientes-potenciales.csv) y avisarle a cada interesada (él cierra el trato); mientras no la levante, no se ofrece nada (v-2)",
    "detalle": "Etapa 3: 4 unidades en Cochabamba y la meta es venderlas en 7 días; hoy la regla prohíbe ofrecer por WhatsApp",
-   "plazo": "2026-11-27",
+   "plazo": "2026-11-30",
    "fecha_para": "2026-11-25"
   },
   {
@@ -1702,6 +1731,54 @@
   }
  ],
  "equipo": [
+  {
+   "agente": "gerente",
+   "nombre": "Gerente",
+   "acciones": 34,
+   "serie": [
+    2,
+    1,
+    5,
+    5,
+    15,
+    3,
+    3
+   ],
+   "ultima": "Informe 20:00 (viernes, día 3 del plan de venta del 7700X): verificar.py sin errores; 5 tareas propuestas (27-8 a 27-10 aprobadas por rutina, 27-11 anuncio pagado y 27-12 escalera de precio esperan a Santi); 0 mensajes d",
+   "cuando": "2026-11-27 20:25"
+  },
+  {
+   "agente": "wa",
+   "nombre": "WhatsApp",
+   "acciones": 12,
+   "serie": [
+    1,
+    0,
+    1,
+    2,
+    2,
+    2,
+    4
+   ],
+   "ultima": "Sesión con Santi (PC): sticker del 7700X borrado para todos en el grupo; publicado bien el 7700X (foto + texto, Bs 3.250 / 2x3.150, 4 unidades). El grupo tiene un miembro nuevo (3 en total). Regla nueva de llamadas: 30 m",
+   "cuando": "2026-11-27 18:18"
+  },
+  {
+   "agente": "mkt",
+   "nombre": "Marketplace",
+   "acciones": 18,
+   "serie": [
+    1,
+    0,
+    1,
+    3,
+    5,
+    3,
+    5
+   ],
+   "ultima": "Sesión con Santi (PC): plan de venta guardado como regla (CLAUDE.md 'Plan de venta', gerente 0c, marketplace): día 1 = 'lo tengo', escalones día 3 y 5, anuncio pagado días 3-4 (lo paga Santi), piso día 6 (7700X Bs 3.050;",
+   "cuando": "2026-11-27 17:55"
+  },
   {
    "agente": "ana",
    "nombre": "Analista",
@@ -1767,22 +1844,6 @@
    "cuando": "2026-11-27 16:19"
   },
   {
-   "agente": "mkt",
-   "nombre": "Marketplace",
-   "acciones": 16,
-   "serie": [
-    1,
-    0,
-    1,
-    3,
-    5,
-    3,
-    3
-   ],
-   "ultima": "Ronda tarde PC: el permiso automático rechazó abrir 'Tus anuncios' y no se rodeó: sin revisar Messenger, clics, mensajes ni el grupo pendiente (avisado a Santi). 7700X nuestro visible en la búsqueda a 3.350 (publicado ha",
-   "cuando": "2026-11-27 16:17"
-  },
-  {
    "agente": "dem",
    "nombre": "Analista de demanda",
    "acciones": 9,
@@ -1797,38 +1858,6 @@
    ],
    "ultima": "Tarde: 7700X en la zona: 1 competidor a 4.000, 0 nuevos y 0 desaparecidos en lo visto; sin demanda confirmada. Fila del día completada, sin duplicar",
    "cuando": "2026-11-27 16:17"
-  },
-  {
-   "agente": "wa",
-   "nombre": "WhatsApp",
-   "acciones": 10,
-   "serie": [
-    1,
-    0,
-    1,
-    2,
-    2,
-    2,
-    2
-   ],
-   "ultima": "Ronda tarde PC: 2 chats sin leer leídos y contestados (La Baticueva-Tec pasó 4 precios en USD; pedida su lista completa); 1 chat nuevo (T115, sin respuesta aún); 1 del tope de ~10. Grupo: sin mensajes ni miembros nuevos",
-   "cuando": "2026-11-27 16:16"
-  },
-  {
-   "agente": "gerente",
-   "nombre": "Gerente",
-   "acciones": 32,
-   "serie": [
-    2,
-    1,
-    5,
-    5,
-    15,
-    3,
-    1
-   ],
-   "ultima": "Fin de ronda mañana: verificar.py todo sin errores; 26-5 verificada y hecha; tareas nuevas auto 27-1 (PC) y 27-2 (wa); 16-2 y 18-33 al 30/11; chat contestado; libreta: 2 cumplidas y 1 anotada; 3 recomendaciones; sin meta",
-   "cuando": "2026-11-27 11:13"
   },
   {
    "agente": "nube",
@@ -2069,13 +2098,13 @@
   {
    "parte": "pc",
    "nombre": "PC · ronda 16:00",
-   "estado": "en curso",
+   "estado": "ok",
    "hora": "16:00"
   },
   {
    "parte": "gerente",
    "nombre": "Gerente · informe 20:00",
-   "estado": "pendiente",
+   "estado": "ok",
    "hora": "20:00"
   },
   {
@@ -6133,6 +6162,15 @@
   },
   {
    "tipo": "plan",
+   "ref": "2026-11-25-14",
+   "agente": "wa",
+   "titulo": "Grupo de clientes, primera ronda de publicaciones a la mañana: resumen, stock (7700X solo si Santi ya fijó el precio, con sus fotos) y por pedido con 15 % mínimo y foto solo del producto, verificando antes cada anuncio en eBay (lista del Analista en el chat)",
+   "estado": "aprobado",
+   "decision": "Santi 25/11 (chat) · Gerente 26/11: hoy solo salió el resumen (verificado en mensajes.csv); stock y por pedido sin publicar porque la ronda programada no puede subir fotos. Reprogramada al 27/11; depende de que Santi dé el acceso o publiquemos con él presente (no se rodea) · 27/11 wa: salió el resumen del día sin foto; stock y por pedido sin publicar (van con foto; necesidad de acceso sigue abierta, sin respuesta; no se intentó otra vía) · Gerente 27/11 tarde: vence sin completarse (salió solo el resumen; stock y por pedido siguen bloqueados por las fotos). Reprogramada al 30/11; depende de Santi, no se rodea; las ofertas por pedido se recalculan ese día · 27/11 16:50: con acceso a las fotos (aprobado por Santi en la sesión) se intentó: la foto del 7700X salió como sticker sin texto y \"Fotos y videos\" no dejó un campo donde subir la foto; stock y por pedido NO publicados. Los 3 anuncios de eBay verificados sin cambios a las 16:50",
+   "fecha": "2026-11-30"
+  },
+  {
+   "tipo": "plan",
    "ref": "2026-11-27-1",
    "agente": "local",
    "titulo": "Que analista.py y cazador.py no cuenten precios locales con la columna vigencia vencida",
@@ -6142,20 +6180,83 @@
   },
   {
    "tipo": "plan",
+   "ref": "2026-11-27-3",
+   "agente": "local",
+   "titulo": "Que agenda.py no pida responder a EQUIPAMIENTO MODERNO e Importadora ITA por las filas de cierre del 23/11 que quedaron como recibido/respuesta (sin borrar filas)",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-30"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-27-4",
+   "agente": "dem",
+   "titulo": "Seguir el 7700X en la ronda del 30/11: anuncios de la zona, desaparecidos, clics y mensajes al nuestro. Si el permiso rechaza una página, no se rodea y se avisa",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-30"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-27-5",
+   "agente": "mkt",
+   "titulo": "Revisar el anuncio del 7700X a Bs 3.250 (2 por 3.150 c/u): clics, mensajes en Messenger y si alguien preguntó; contárselo a Santi en el chat con el número de mensajes",
+   "estado": "aprobado",
+   "decision": "Santi en sesión 27/11 17:00",
+   "fecha": "2026-11-30"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-27-6",
+   "agente": "wa",
+   "titulo": "Ronda de la mañana: mensaje de llamada (skill whatsapp, 'Tiendas para llamada') a PC FALCON, SYSTEMS HARDWARE & SOFTWARE SOLUTIONS, PC Armagedon, Digital Hardware Bolivia, COMPUTING y Creative Technology",
+   "estado": "aprobado",
+   "decision": "Santi en sesión 27/11 18:00",
+   "fecha": "2026-11-30"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-27-7",
+   "agente": "wa",
+   "titulo": "Ronda de la tarde: mensaje de llamada (skill whatsapp, 'Tiendas para llamada') a PC Morgana, Esteban Arce, Ovni Express Cbba, Compumas Bolivia y Gamer Store Cbba",
+   "estado": "aprobado",
+   "decision": "Santi en sesión 27/11 18:00",
+   "fecha": "2026-11-30"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-27-8",
+   "agente": "mkt",
+   "titulo": "Ronda ligera del sábado: leer Messenger y 'Tus anuncios' del 7700X (clics y mensajes, Santi lo autorizó el 27/11) y pasarle cada interesado a Santi por el chat el mismo día",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-28"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-27-9",
+   "agente": "wa",
+   "titulo": "Ronda ligera del sábado: leer 'No leídos' y contestar; revisar el grupo de clientes (consultas) y avisar a Santi por el chat cualquier comprador o regateo; sin ofrecer nada fuera de las 11 tiendas para llamada",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-28"
+  },
+  {
+   "tipo": "plan",
+   "ref": "2026-11-27-10",
+   "agente": "ana",
+   "titulo": "Ronda ligera del sábado: decir si Bs 3.250 (2 por 3.150) aguanta frente a Geek (3.503), Cyrex (3.745) y el sellado de 4.000, con clics y mensajes del día 4, y dejar lista la cuenta del escalón del lunes y del piso (3.050)",
+   "estado": "aprobado",
+   "decision": "auto (rutina)",
+   "fecha": "2026-11-28"
+  },
+  {
+   "tipo": "plan",
    "ref": "2026-11-25-11",
    "agente": "mkt",
    "titulo": "Catálogos: el viernes 27/11 volver a mirar el 7700X en Cyrex Store y Geek Store (ofertas anunciadas) y avisar al Analista y al Gerente si alguna baja de Bs 3.450",
    "estado": "hecho",
    "decision": "auto (rutina) · hecho 27/11 11:02 (PC; Catálogos): ninguna baja de Bs 3.450. Geek Store USD 290 = Bs 3.503; Cyrex USD 310 = Bs 3.745 sin oferta de Black Friday en el 7700X (USDT 12,08)",
-   "fecha": "2026-11-27"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-25-14",
-   "agente": "wa",
-   "titulo": "Grupo de clientes, primera ronda de publicaciones a la mañana: resumen, stock (7700X solo si Santi ya fijó el precio, con sus fotos) y por pedido con 15 % mínimo y foto solo del producto, verificando antes cada anuncio en eBay (lista del Analista en el chat)",
-   "estado": "aprobado",
-   "decision": "Santi 25/11 (chat) · Gerente 26/11: hoy solo salió el resumen (verificado en mensajes.csv); stock y por pedido sin publicar porque la ronda programada no puede subir fotos. Reprogramada al 27/11; depende de que Santi dé el acceso o publiquemos con él presente (no se rodea) · 27/11 wa: salió el resumen del día sin foto; stock y por pedido sin publicar (van con foto; necesidad de acceso sigue abierta, sin respuesta; no se intentó otra vía)",
    "fecha": "2026-11-27"
   },
   {
@@ -6226,8 +6327,8 @@
    "ref": "2026-11-26-10",
    "agente": "dem",
    "titulo": "Seguir el 7700X en cada ronda del 27/11: anuncios de la zona, los que desaparecen, clics y mensajes al nuestro",
-   "estado": "aprobado",
-   "decision": "auto (rutina) · 27/11 11:00 PC (mañana): 1 competidor a 4.000, 0 desaparecidos; el nuestro 105 clics, 1 guardado, 0 mensajes. Falta la ronda de la tarde · 27/11 16:17 PC (tarde): en la zona 1 competidor a 4.000 (Disponible), 0 nuevos y 0 desaparecidos; el nuestro visible en la búsqueda a 3.350. Clics y mensajes de la tarde SIN revisar: el permiso automático rechazó abrir 'Tus anuncios' y no se rodeó (último dato 11:00: 105 clics, 1 guardado, 0 mensajes)",
+   "estado": "rechazado",
+   "decision": "auto (rutina) · 27/11 11:00 PC (mañana): 1 competidor a 4.000, 0 desaparecidos; el nuestro 105 clics, 1 guardado, 0 mensajes. Falta la ronda de la tarde · 27/11 16:17 PC (tarde): en la zona 1 competidor a 4.000 (Disponible), 0 nuevos y 0 desaparecidos; el nuestro visible en la búsqueda a 3.350. Clics y mensajes de la tarde SIN revisar: el permiso automático rechazó abrir 'Tus anuncios' y no se rodeó (último dato 11:00: 105 clics, 1 guardado, 0 mensajes) · vencida (Gerente) 27/11: incompleta. Mañana completa; tarde solo anuncios de la zona; clics y mensajes sin revisar por rechazo del permiso. Sigue en 27-4",
    "fecha": "2026-11-27"
   },
   {
@@ -7128,78 +7229,6 @@
    "titulo": "Responder a Cyrex Store, Viadata Computadoras, Punto Tecnológico y COMPU CELL SYSTEM (agenda.py: escribieron y falta contestar) y leer todos los No leídos antes de escribir; GabBoss no (cerró el 05/11)",
    "estado": "hecho",
    "decision": "auto (rutina) · hecho 13/11 10:45 (wa): leídos los No leídos (Microworld, Digital Hardware, Viadata, SYSTEMS, Smash Games, Smart Cube); respondidas Cyrex Store, Viadata, Punto Tecnológico, COMPU CELL y Compuland; GabBoss no",
-   "fecha": "2026-11-13"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-12-12",
-   "agente": "wa",
-   "titulo": "Ver el contacto que compartió COMPU CELL SYSTEM: si es una tienda de Cochabamba, Quillacollo o Sacaba, agregarla a tiendas-cochabamba.csv y escribirle como chat nuevo dentro del tope; si es una persona, no escribir y anotarlo",
-   "estado": "hecho",
-   "decision": "auto (rutina) · hecho 13/11 10:45 (wa): el contacto compartido es DJ COMPUTER QLLO. (tienda de Quillacollo, ya es T046); no es tienda nueva, no se agregó fila ni se gastó tope de chats nuevos",
-   "fecha": "2026-11-13"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-12-13",
-   "agente": "mkt",
-   "titulo": "Buscar tiendas nuevas con celular (Google Maps Cochabamba centro y Sacaba, Facebook páginas de tiendas, TikTok usuarios) y pasarlas a WhatsApp en la ronda de las 10:30 para que les escriba a las 16:00",
-   "estado": "hecho",
-   "decision": "auto (rutina) · hecho 13/11: mañana 0 y tarde 1 tienda nueva dudosa (T109, Google Maps)",
-   "fecha": "2026-11-13"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-12-14",
-   "agente": "mkt",
-   "titulo": "Catálogos: revisar la web o el catálogo de las tiendas que todavía no se vieron (cat-2) y pasar los precios de Ryzen 5 5600, 5700X3D, 7500F, i5-13400 y DDR5 32GB 5600 si aparecen",
-   "estado": "hecho",
-   "decision": "13/11 tarde (Catálogos): web de Crazy Store revisada, única con web sin ver; solo i9-14900K USD 499, sin 5600, 5700X3D, 7500F, i5-13400 ni DDR5 32GB. Otras tiendas sin web (Spartan, Compuland, Pop Store) o por WhatsApp. PDF de Shopping PC no bajado (necesidad abierta)",
-   "fecha": "2026-11-13"
-  },
-  {
-   "tipo": "plan",
-   "ref": "2026-11-12-15",
-   "agente": "dem",
-   "titulo": "Contar la demanda en la ronda completa de las 10:30 y dejar en actividad.csv el ranking semanal de los 5 productos que más se mueven (demanda.py)",
-   "estado": "hecho",
-   "decision": "auto (rutina) · hecho 13/11 (Gerente): demanda contada, 19 productos, top 5 de la semana en actividad.csv (conteo parcial)",
-   "fecha": "2026-11-13"
-  },
-  {
-   "tipo": "necesidad",
-   "ref": "45",
-   "agente": "pedidos",
-   "titulo": "Que verificar.py pedidos no marque ERROR a guías que ya no están en comprado o enviado (real-1 y real-2 están en camino a Santa Cruz; no hay nada que rastrear, y la regla dice no buscar en la web de ese tramo). Hoy da 2 ERROR por no tener revisión de hoy.",
-   "estado": "resuelta",
-   "decision": "2026-11-13",
-   "fecha": "2026-11-13"
-  },
-  {
-   "tipo": "necesidad",
-   "ref": "46",
-   "agente": "wa",
-   "titulo": "Decidir si se le manda una cotización formal por correo a Microworld (pidió que sea por su correo, que está en el chat de WhatsApp; no escribimos a correos sin Santi)",
-   "estado": "resuelta",
-   "decision": "2026-11-18 (Santi: no se manda cotización formal por ahora)",
-   "fecha": "2026-11-13"
-  },
-  {
-   "tipo": "necesidad",
-   "ref": "47",
-   "agente": "mkt",
-   "titulo": "El PDF de componentes que Shopping PC reenvió el 09/11 no se pudo bajar desde WhatsApp Web (el visor no lo descarga). Los precios se leyeron en pantalla (6 productos), pero falta el archivo en oficina/catalogos/",
-   "estado": "resuelta",
-   "decision": "2026-11-17",
-   "fecha": "2026-11-13"
-  },
-  {
-   "tipo": "necesidad",
-   "ref": "48",
-   "agente": "fin",
-   "titulo": "Revisar la fuente del dólar paralelo de dolarbolivia.net: compra mayor que venta 4 días seguidos (10 al 13/11: 11,95/11,91; 11,89/11,87; 11,94/11,91; 11,96/11,93)",
-   "estado": "resuelta",
-   "decision": "2026-11-23",
    "fecha": "2026-11-13"
   }
  ],
@@ -8161,8 +8190,8 @@
    "fuente": "santi",
    "resumen": "Precio de los 7700X: Bs 3.350 c/u (Santi en sesión 25/11 20:10, corrige el 3.400 del chat de las 18:43), piso Bs 3.000, sellados. El anuncio de Marketplace ya está a 3.350; el grupo publica a 3.350. Pedidos real-1 y real-2 entregados el 25/11",
    "vence": "",
-   "estado": "abierta",
-   "cerrado": ""
+   "estado": "descartada",
+   "cerrado": "27/11 16:56: precio cambiado a 3.250 el 27/11 (nota 100)"
   },
   {
    "id": "97",
@@ -8191,6 +8220,46 @@
    "fuente": "ronda",
    "resumen": "El miércoles 02/12 revisar con Santi el precio del 7700X (el Analista sugeriría 3.250 si sigue sin mensajes; decide él)",
    "vence": "2026-12-02",
+   "estado": "abierta",
+   "cerrado": ""
+  },
+  {
+   "id": "100",
+   "fecha": "2026-11-27",
+   "tipo": "dato",
+   "fuente": "santi",
+   "resumen": "27/11 17:00 Santi en sesión: 7700X baja a Bs 3.250 c/u y Bs 3.150 c/u llevando 2 (114 clics y 0 mensajes en 2 días). Si el lunes 30/11 sigue sin mensajes: bajar a 3.150 y proponerle un anuncio pagado chico (USD 5-7, 3-4 días, Cochabamba; lo paga Santi). Piso 3.000.",
+   "vence": "",
+   "estado": "descartada",
+   "cerrado": "27/11 17:48: reemplazada por la 101: piso 3.050 y plan de venta"
+  },
+  {
+   "id": "101",
+   "fecha": "2026-11-27",
+   "tipo": "dato",
+   "fuente": "santi",
+   "resumen": "27/11 17:50 Santi en sesión: plan de venta terminado (CLAUDE.md 'Plan de venta'). 7700X va en el día 3: 3.250 / 2x3.150. Lunes 30/11: 3.150 (2x3.050) + anuncio pagado (lo paga Santi). Martes 1/12: piso 3.050 + cierre. Miércoles 2/12: renovar. Solo Santi baja a 3.000. Permiso nuevo: leer Tus anuncios y Messenger (también chats personales), nada al repo. Ofrecer a tiendas sigue prohibido hasta que Santi apruebe la lista.",
+   "vence": "",
+   "estado": "abierta",
+   "cerrado": ""
+  },
+  {
+   "id": "102",
+   "fecha": "2026-11-27",
+   "tipo": "dato",
+   "fuente": "santi",
+   "resumen": "27/11 18:00 Santi aprobó 11 tiendas para llamada (skill whatsapp) y el mensaje de André. Se mandan el lunes 30/11 (6 mañana, 5 tarde). Si una acepta: hora amigable entre 14:45 y 18:30 de lunes a viernes, aviso a Santi en el momento y recordatorio la noche anterior (llamadas.csv). Llama Santi desde el celular de André. Precios solo en la llamada.",
+   "vence": "",
+   "estado": "abierta",
+   "cerrado": ""
+  },
+  {
+   "id": "103",
+   "fecha": "2026-11-27",
+   "tipo": "dato",
+   "fuente": "santi",
+   "resumen": "27/11 18:16 sticker borrado y 7700X publicado bien en el grupo (foto + texto, Bs 3.250). El grupo ya tiene un cliente (3 miembros). Llamadas con tiendas: 30 min entre una y otra, máximo 3 por día (Santi).",
+   "vence": "",
    "estado": "abierta",
    "cerrado": ""
   }
@@ -12409,11 +12478,11 @@
   }
  ],
  "sincronizacion": {
-  "ultima_ronda": "2026-11-27 16:09",
+  "ultima_ronda": "2026-11-27 16:23",
   "ultima_ronda_quien": "pc",
   "oficina_publicada": "2026-11-27 11:10",
   "armado_por": "una ronda o sesión",
-  "armado": "2026-11-27 16:21"
+  "armado": "2026-11-27 20:16"
  },
  "clientes": [
   {
@@ -13677,12 +13746,12 @@
    "producto": "Ryzen 7 7700X",
    "pedido_id": "real-1 + real-2",
    "accion": "publicada",
-   "precio_bs": "3350",
+   "precio_bs": "3250",
    "cantidad": "4",
    "titulo": "AMD Ryzen 7 7700X nuevo sellado AM5 8 núcleos 16 hilos",
-   "clics": "105",
+   "clics": "114",
    "mensajes": "0",
-   "notas": "Categoría: Electrónica e informática; estado Nuevo; marca AMD; Cochabamba; 20 etiquetas (todas entraron); solo Marketplace, sin grupos; sellados; sin link ni nombres; Facebook la mostraba \"en revisión\" al publicar; sin campo de cantidad (4 en la descripción) · 26/11 00:20 (PC, sesión con Santi): aprobado por Facebook (19 clics); link del grupo de WhatsApp agregado al final de la descripción; compartido en 5 grupos de compra-venta de PC: COMPRA Y VENTA de Computadoras Cochabamba Bolivia (como anuncio), PC GAMER COMPRA Y VENTA, COMPUTADORAS Y ACCESORIOS-COMPRA VENTA (BOLIVIA), COMPUTADORAS Y ACCESORIOS COMPRA VENTA (BOLIVIA) y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA (compartido con texto y link del grupo). Volver a compartir al renovar (2/12). · 26/11 10:53 (mkt): Disponible; 52 clics, 1 guardado, 0 compartidos, 0 mensajes, 0 comentarios vistos. En grupos: publicado en PC GAMER COMPRA Y VENTA y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA (sin comentarios); pendiente de aprobación en COMPRA Y VENTA de Computadoras Cochabamba Bolivia; en Eliminadas en las 2 de COMPUTADORAS Y ACCESORIOS (BOLIVIA), sin motivo visible. Además aparece en VENTAS COCHABAMBA (grupo de ventas general, no de PC; sin comentarios; no estaba en la nota de anoche; no se tocó) · 26/11 16:23 (mkt): Disponible; 75 clics, 1 guardado, 0 compartidos, 0 mensajes. Grupos: publicado en PC GAMER COMPRA Y VENTA y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA (sin comentarios a la vista); sigue pendiente de aprobación en COMPRA Y VENTA de Computadoras Cochabamba Bolivia; sigue en Eliminadas en las 2 de COMPUTADORAS Y ACCESORIOS (BOLIVIA), sin motivo a la vista; VENTAS COCHABAMBA sigue con 0 comentarios, no se tocó · 27/11 11:00 (mkt): Disponible; 105 clics, 1 guardado, 0 compartidos, 0 mensajes; precio 3.350 sin cambio. Grupos de PC: publicado en PC GAMER COMPRA Y VENTA y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA; en COMPRA Y VENTA de Computadoras Cochabamba Bolivia la ficha ya lo lista pero Tu contenido todavía dice 1 pendiente; las 2 donde fue eliminado no se volvieron a mirar. VENTAS COCHABAMBA sigue listado, 0 comentarios, no se tocó · 27/11 16:17 (mkt): sigue visible en la búsqueda de Marketplace a 3.350. Sin revisar esta tarde: clics, mensajes, grupos (incluido el pendiente) y Messenger (permiso automático rechazó 'Tus anuncios'; no se rodeó)"
+   "notas": "Categoría: Electrónica e informática; estado Nuevo; marca AMD; Cochabamba; 20 etiquetas (todas entraron); solo Marketplace, sin grupos; sellados; sin link ni nombres; Facebook la mostraba \"en revisión\" al publicar; sin campo de cantidad (4 en la descripción) · 26/11 00:20 (PC, sesión con Santi): aprobado por Facebook (19 clics); link del grupo de WhatsApp agregado al final de la descripción; compartido en 5 grupos de compra-venta de PC: COMPRA Y VENTA de Computadoras Cochabamba Bolivia (como anuncio), PC GAMER COMPRA Y VENTA, COMPUTADORAS Y ACCESORIOS-COMPRA VENTA (BOLIVIA), COMPUTADORAS Y ACCESORIOS COMPRA VENTA (BOLIVIA) y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA (compartido con texto y link del grupo). Volver a compartir al renovar (2/12). · 26/11 10:53 (mkt): Disponible; 52 clics, 1 guardado, 0 compartidos, 0 mensajes, 0 comentarios vistos. En grupos: publicado en PC GAMER COMPRA Y VENTA y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA (sin comentarios); pendiente de aprobación en COMPRA Y VENTA de Computadoras Cochabamba Bolivia; en Eliminadas en las 2 de COMPUTADORAS Y ACCESORIOS (BOLIVIA), sin motivo visible. Además aparece en VENTAS COCHABAMBA (grupo de ventas general, no de PC; sin comentarios; no estaba en la nota de anoche; no se tocó) · 26/11 16:23 (mkt): Disponible; 75 clics, 1 guardado, 0 compartidos, 0 mensajes. Grupos: publicado en PC GAMER COMPRA Y VENTA y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA (sin comentarios a la vista); sigue pendiente de aprobación en COMPRA Y VENTA de Computadoras Cochabamba Bolivia; sigue en Eliminadas en las 2 de COMPUTADORAS Y ACCESORIOS (BOLIVIA), sin motivo a la vista; VENTAS COCHABAMBA sigue con 0 comentarios, no se tocó · 27/11 11:00 (mkt): Disponible; 105 clics, 1 guardado, 0 compartidos, 0 mensajes; precio 3.350 sin cambio. Grupos de PC: publicado en PC GAMER COMPRA Y VENTA y COMPRA Y VENTA DE PARTES DE COMPUTADORAS COCHABAMBA; en COMPRA Y VENTA de Computadoras Cochabamba Bolivia la ficha ya lo lista pero Tu contenido todavía dice 1 pendiente; las 2 donde fue eliminado no se volvieron a mirar. VENTAS COCHABAMBA sigue listado, 0 comentarios, no se tocó · 27/11 16:17 (mkt): sigue visible en la búsqueda de Marketplace a 3.350. Sin revisar esta tarde: clics, mensajes, grupos (incluido el pendiente) y Messenger (permiso automático rechazó 'Tus anuncios'; no se rodeó) · 27/11 17:00 (PC, sesión con Santi): precio bajado de 3.350 a 3.250 y en la descripción \"Llevando 2: Bs 3.150 c/u\" (114 clics y 0 mensajes en 2 días; Santi confirmó que nadie le escribió). Revisar el lunes 30/11."
   }
  ],
  "tiendas": [
@@ -26394,7 +26463,7 @@
    },
    {
     "fecha": "2026-11-27",
-    "nuevos": 2.0,
+    "nuevos": 4.0,
     "respuestas": 7.0,
     "con_precio": 3.0
    }
@@ -26596,16 +26665,23 @@
   {
    "titulo": "Importación Cochabamba (Excel)",
    "tipo": "Excel",
-   "fecha": "2026-11-27",
+   "fecha": "2026-11-28",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/importacion-cochabamba.xlsx",
    "carpeta": "Excel"
   },
   {
    "titulo": "Historial completo",
    "tipo": "CSV",
-   "fecha": "2026-11-27",
+   "fecha": "2026-11-28",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/historial.csv",
    "carpeta": "Tabla diaria"
+  },
+  {
+   "titulo": "Comparación EE.UU. → Cochabamba",
+   "tipo": "Tabla de comparación",
+   "fecha": "2026-11-28",
+   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
+   "carpeta": "Informes"
   },
   {
    "titulo": "Tabla del 2026-11-27",
@@ -26620,13 +26696,6 @@
    "fecha": "2026-11-27",
    "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/historial/2026-11-27.pdf",
    "carpeta": "Tabla diaria"
-  },
-  {
-   "titulo": "Comparación EE.UU. → Cochabamba",
-   "tipo": "Tabla de comparación",
-   "fecha": "2026-11-27",
-   "url": "https://github.com/Santi491/Claude-/blob/claude/agente-independiente-s3uc8z/comparacion.md",
-   "carpeta": "Informes"
   },
   {
    "titulo": "Informe diario 2026-11-27",
@@ -26876,6 +26945,11 @@
  ],
  "informes": [
   {
+   "fecha": "2026-11-27",
+   "tipo": "diario",
+   "url": "https://docs.google.com/document/d/1aA1BgXdG8Kjip1I8_arj_z20GgSwji63Fki0SHNusbo/edit"
+  },
+  {
    "fecha": "2026-11-26",
    "tipo": "diario",
    "url": "https://docs.google.com/document/d/1Nq-gCXVhsRsADtWpAmZmdsUGFeXOh5yvE-z5RgC0WUw/edit"
@@ -27019,11 +27093,6 @@
    "fecha": "2026-10-28",
    "tipo": "diario",
    "url": "https://docs.google.com/document/d/1Gtsrubhm9Y2SA9yMP_ONTeP3UrDowU9jKMAKm12nzhw/edit"
-  },
-  {
-   "fecha": "2026-10-27",
-   "tipo": "diario",
-   "url": "https://docs.google.com/document/d/1WzN3dw-1n1Mu6Je3uZVeBEN5YYXXWSvustMW9lKjVT8/edit"
   }
  ],
  "memoria": [
@@ -27350,13 +27419,6 @@
    "fecha": "2026-11-25"
   },
   {
-   "id": "96",
-   "tipo": "dato",
-   "resumen": "Precio de los 7700X: Bs 3.350 c/u (Santi en sesión 25/11 20:10, corrige el 3.400 del chat de las 18:43), piso Bs 3.000, sellados. El anuncio de Marketplace ya está a 3.350; el grupo publica a 3.350. Pedidos real-1 y real-2 entregados el 25/11",
-   "vence": "",
-   "fecha": "2026-11-25"
-  },
-  {
    "id": "97",
    "tipo": "dato",
    "resumen": "26/11 00:30 Santi en sesión (PC): el grupo de clientes Cargo Brothers ya existe y André es administrador; publicaciones desde la ronda de las 10:30 del 26/11. El 7700X ya está en 5 grupos de PC de Facebook con el link del grupo.",
@@ -27369,81 +27431,30 @@
    "resumen": "El miércoles 02/12 revisar con Santi el precio del 7700X (el Analista sugeriría 3.250 si sigue sin mensajes; decide él)",
    "vence": "2026-12-02",
    "fecha": "2026-11-27"
+  },
+  {
+   "id": "101",
+   "tipo": "dato",
+   "resumen": "27/11 17:50 Santi en sesión: plan de venta terminado (CLAUDE.md 'Plan de venta'). 7700X va en el día 3: 3.250 / 2x3.150. Lunes 30/11: 3.150 (2x3.050) + anuncio pagado (lo paga Santi). Martes 1/12: piso 3.050 + cierre. Miércoles 2/12: renovar. Solo Santi baja a 3.000. Permiso nuevo: leer Tus anuncios y Messenger (también chats personales), nada al repo. Ofrecer a tiendas sigue prohibido hasta que Santi apruebe la lista.",
+   "vence": "",
+   "fecha": "2026-11-27"
+  },
+  {
+   "id": "102",
+   "tipo": "dato",
+   "resumen": "27/11 18:00 Santi aprobó 11 tiendas para llamada (skill whatsapp) y el mensaje de André. Se mandan el lunes 30/11 (6 mañana, 5 tarde). Si una acepta: hora amigable entre 14:45 y 18:30 de lunes a viernes, aviso a Santi en el momento y recordatorio la noche anterior (llamadas.csv). Llama Santi desde el celular de André. Precios solo en la llamada.",
+   "vence": "",
+   "fecha": "2026-11-27"
+  },
+  {
+   "id": "103",
+   "tipo": "dato",
+   "resumen": "27/11 18:16 sticker borrado y 7700X publicado bien en el grupo (foto + texto, Bs 3.250). El grupo ya tiene un cliente (3 miembros). Llamadas con tiendas: 30 min entre una y otra, máximo 3 por día (Santi).",
+   "vence": "",
+   "fecha": "2026-11-27"
   }
  ],
  "chat": [
-  {
-   "id": "20261110-2",
-   "fecha": "2026-11-10",
-   "hora": "16:13",
-   "de": "mkt",
-   "para": "santi",
-   "texto": "Tiendas: la lista llega a 105 y el 10/11 Facebook (paginas y grupos de Cochabamba, Quillacollo, Sacaba) dio 0 tiendas nuevas; antes Instagram 2, Google Maps 3 y Marketplace 0. Todo lo que aparece ya esta en la lista o es servicio tecnico; creo que ya vimos casi todo el mercado de componentes de la zona. Puede convenir bajar la meta de 100 a lo que hay."
-  },
-  {
-   "id": "20261110-3",
-   "fecha": "2026-11-10",
-   "hora": "16:18",
-   "de": "local",
-   "para": "gerente",
-   "texto": "Oficina: ronda tarde publicada v128 (datos 16:17)"
-  },
-  {
-   "id": "20261110-4",
-   "fecha": "2026-11-10",
-   "hora": "16:19",
-   "de": "gerente",
-   "para": "ebay",
-   "texto": "Visto ebay-2, gracias. Los 5 mejores se eligen por ganancia (margen del Analista en comparacion.md); la demanda desempata. Te anoté la tarea 2026-11-10-1: SSD NVMe 2TB nuevo y Ryzen 7 5700X3D nuevo, plazo 12/11."
-  },
-  {
-   "id": "20261110-5",
-   "fecha": "2026-11-10",
-   "hora": "16:19",
-   "de": "gerente",
-   "para": "ana",
-   "texto": "Visto tu informe de hoy: tu pedido de buscar SSD 2TB nuevo y 5700X3D nuevo en eBay quedó como tarea 2026-11-10-1 para el Rastreador (plazo 12/11). La 09-3 sigue abierta hasta que haya precios locales de 5600, 5700X3D y 7500F."
-  },
-  {
-   "id": "20261110-6",
-   "fecha": "2026-11-10",
-   "hora": "16:19",
-   "de": "gerente",
-   "para": "mkt",
-   "texto": "Visto lo de la saturación del 10/11 (Facebook 0 tiendas nuevas): se lo llevo a Santi para que decida la meta de 100. Sigue con mkt-2 y cat-1."
-  },
-  {
-   "id": "20261110-7",
-   "fecha": "2026-11-10",
-   "hora": "20:18",
-   "de": "gerente",
-   "para": "mkt",
-   "texto": "Visto. El precio de venta de los 7700X lo fija Santi cuando lleguen a Cochabamba (sugerido Bs 3.300); sigue anotando la competencia en cada ronda completa (mkt-2)."
-  },
-  {
-   "id": "20261110-8",
-   "fecha": "2026-11-10",
-   "hora": "20:18",
-   "de": "gerente",
-   "para": "wa",
-   "texto": "Lo de los números quedó como tarea 2026-11-10-7 para Santi: propongo bajar wa-1b a 85 contactadas. Mientras tanto, seguimientos de agenda y precios de 5600, 5700X3D y 7500F (tarea 2026-11-10-2)."
-  },
-  {
-   "id": "20261110-9",
-   "fecha": "2026-11-10",
-   "hora": "20:18",
-   "de": "gerente",
-   "para": "ana",
-   "texto": "Visto. El SSD 2TB ya tiene 2 tiendas (Punto y ELVYCOMP sellado); lo que falta ahora es el precio eBay nuevo con stock: tarea 2026-11-10-1 para el Rastreador."
-  },
-  {
-   "id": "20261110-10",
-   "fecha": "2026-11-10",
-   "hora": "20:18",
-   "de": "gerente",
-   "para": "mkt",
-   "texto": "Lo llevé a Santi como tarea 2026-11-10-7: propongo bajar mkt-1b de 50 a 30. Mañana prueba TikTok y, si falla, centros comerciales en Maps (tarea 2026-11-10-3)."
-  },
   {
    "id": "20261110-11",
    "fecha": "2026-11-10",
@@ -28571,6 +28582,78 @@
    "de": "mkt",
    "para": "santi",
    "texto": "Santi: esta tarde no pude revisar Messenger, los clics ni el grupo pendiente: el permiso automático rechazó abrir 'Tus anuncios' y no lo rodeé. Mira tú la bandeja por si hay un comprador. Último dato (11:00): 105 clics, 0 mensajes. Tu 7700X a 3.350 sigue visible y es el más barato que vi (el otro, 4.000)."
+  },
+  {
+   "id": "20261127-7",
+   "fecha": "2026-11-27",
+   "hora": "16:23",
+   "de": "gerente",
+   "para": "wa",
+   "texto": "Visto: el acceso a las fotos se lo vuelvo a pedir a Santi en el fin de ronda; 25-14 pasa al 30/11. No se rodea. El falso aviso de agenda.py quedó como tarea 27-3."
+  },
+  {
+   "id": "20261127-8",
+   "fecha": "2026-11-27",
+   "hora": "16:23",
+   "de": "gerente",
+   "para": "ana",
+   "texto": "Recibido el cierre: 7800X3D no lo doy por firme (21,9 %, peor caso 9,7 %), tampoco el SSD 2TB. Tu duda sobre el precio de referencia (skill: bajo el más barato; analista.py: bajo la mediana) quedó como idea para Santi."
+  },
+  {
+   "id": "20261127-9",
+   "fecha": "2026-11-27",
+   "hora": "16:53",
+   "de": "wa",
+   "para": "gerente",
+   "texto": "Grupo 27/11 16:55: con el acceso a las fotos intenté publicar. La foto del 7700X salió como STICKER, sin texto ni precio (error mío: usé el campo de stickers). No la borré: eliminar necesita el OK de Santi. Elegir 'Fotos y videos' no me dejó dónde subir el archivo, así que stock y por pedido no salieron. Los 3 anuncios de eBay seguían iguales. Quedan 2 chats de tiendas sin leer, sin abrir, para la próxima ronda."
+  },
+  {
+   "id": "20261127-10",
+   "fecha": "2026-11-27",
+   "hora": "16:56",
+   "de": "local",
+   "para": "wa",
+   "texto": "Santi 27/11 17:00: el 7700X pasa a Bs 3.250 c/u (llevando 2: Bs 3.150 c/u). Ya está así en Marketplace. Las fotos ahora están en agente-importacion\\fotos-privadas\\publicar\\ (y las del grupo en fotos-privadas\\grupo\\): están en .gitignore y las rondas pueden subirlas sin pedir permiso."
+  },
+  {
+   "id": "20261127-11",
+   "fecha": "2026-11-27",
+   "hora": "16:56",
+   "de": "local",
+   "para": "ana",
+   "texto": "Santi 27/11 17:00: el 7700X pasa a Bs 3.250 c/u (llevando 2: Bs 3.150 c/u). Ya está así en Marketplace. Las fotos ahora están en agente-importacion\\fotos-privadas\\publicar\\ (y las del grupo en fotos-privadas\\grupo\\): están en .gitignore y las rondas pueden subirlas sin pedir permiso."
+  },
+  {
+   "id": "20261127-12",
+   "fecha": "2026-11-27",
+   "hora": "16:56",
+   "de": "local",
+   "para": "gerente",
+   "texto": "Santi 27/11 17:00: el 7700X pasa a Bs 3.250 c/u (llevando 2: Bs 3.150 c/u). Ya está así en Marketplace. Las fotos ahora están en agente-importacion\\fotos-privadas\\publicar\\ (y las del grupo en fotos-privadas\\grupo\\): están en .gitignore y las rondas pueden subirlas sin pedir permiso."
+  },
+  {
+   "id": "20261127-13",
+   "fecha": "2026-11-27",
+   "hora": "17:03",
+   "de": "santi",
+   "para": "wa",
+   "texto": "Borra el\nSticker tienes mi Ok y arregla el error"
+  },
+  {
+   "id": "20261127-14",
+   "fecha": "2026-11-27",
+   "hora": "17:48",
+   "de": "local",
+   "para": "gerente",
+   "texto": "Plan de venta guardado (CLAUDE.md 'Plan de venta' y tu sección 0c): cada noche dile a Santi en qué día va cada producto y qué toca mañana. 7700X: lunes 3.150, martes piso 3.050. Marketplace ya puede leer Tus anuncios y Messenger."
+  },
+  {
+   "id": "20261127-15",
+   "fecha": "2026-11-27",
+   "hora": "17:56",
+   "de": "local",
+   "para": "wa",
+   "texto": "Lunes 30/11: mensaje de llamada a las 11 tiendas aprobadas (skill whatsapp, 'Tiendas para llamada'; tareas 2026-11-27-6 y -7). Sin precios por chat; si aceptan, '¿te parece bien a eso de las 4?' y aviso a Santi."
   }
  ],
  "salud14": [
@@ -28669,8 +28752,8 @@
    "fecha": "2026-11-27",
    "nube": "ok",
    "manana": "ok",
-   "pc": "en curso",
-   "gerente": "pendiente"
+   "pc": "ok",
+   "gerente": "ok"
   }
  ],
  "finanzas_productos": [
@@ -28686,22 +28769,22 @@
  ],
  "recomendaciones": [
   {
-   "texto": "Da acceso a las carpetas de fotos del grupo o publiquemos el 7700X contigo presente",
-   "por_que": "La corrida programada no puede subir fotos: desde el 26/11 el grupo solo tuvo el resumen",
-   "accion": "tarea"
-  },
-  {
-   "texto": "Decide hoy si las tiendas reciben la oferta de los 7700X (tarea 25-9)",
-   "por_que": "Vence hoy y van 0 ventas de 4; mientras no levantes la regla no se les ofrece nada",
-   "accion": "tarea"
-  },
-  {
-   "texto": "Mantén el 7700X a Bs 3.350 y lo revisamos el 02/12",
-   "por_que": "105 clics, 1 guardado y 0 mensajes; margen 20,7 % y Geek está en Bs 3.503",
+   "texto": "Mira hoy tu bandeja de Marketplace y 'Tus anuncios' del 7700X",
+   "por_que": "Hoy la tarde no pudo leerlos: 114 clics y 0 mensajes conocidos",
    "accion": "venta"
+  },
+  {
+   "texto": "Decide el anuncio pagado del 7700X (USD 2 por día x 3 días)",
+   "por_que": "Día 3 del plan: precio ya bajó a 3.250 y sigue sin mensajes",
+   "accion": "tarea"
+  },
+  {
+   "texto": "Confirma la escalera: lunes 3.150 y martes piso 3.050",
+   "por_que": "Quedaron como propuesta (tarea 12) por ser cambio de precio",
+   "accion": "tarea"
   }
  ],
- "recomendaciones_cuando": "2026-11-27 11:13",
+ "recomendaciones_cuando": "2026-11-27 20:26",
  "constantes": {
   "b_usd_kg": 28,
   "b_min_kg": 1.0,
