@@ -1,17 +1,10 @@
 {
  "ronda": {
-  "activa": false,
+  "activa": true,
   "quien": "PC de la casa",
-  "desde": "18:14",
-  "fecha": "2026-11-27",
-  "hasta": "18:17"
+  "desde": "16:08",
+  "fecha": "2026-11-28"
  },
- "actualizado": "2026-11-27 18:17",
- "agentes": {
-  "wa": {
-   "estado": "terminó",
-   "texto": "7700X publicado en el grupo",
-   "hora": "18:17"
-  }
- }
+ "actualizado": "2026-11-28 16:08",
+ "agentes": {}
 }
